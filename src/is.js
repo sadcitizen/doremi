@@ -10,6 +10,10 @@ is.args = function (target) {
     return is.type(target) === 'arguments';
 };
 
+is.defined = function () {
+    return target !== 'undefined';
+};
+
 is.equal = function (target, other) {
     return (target === other && (target !== 0 || 1 / target === 1 / other)) || (target !== target && other !== other);
 };
