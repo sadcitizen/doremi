@@ -1,8 +1,4 @@
-var is = function(o) {
-    if (o instanceof is) return o;
-    if (!(this instanceof is)) return new is(o);
-    this._wrapped = o;
-};
+var is = {};
 
 is.equal = function (target, other) {
     return (target === other && (target !== 0 || 1 / target === 1 / other)) || (target !== target && other !== other);
