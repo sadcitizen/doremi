@@ -15,5 +15,7 @@
 
     // @include is.js
 
+    _.is = is;
+
     return _;
 }));

@@ -33,4 +33,4 @@ gulp.task('uglify', function () {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', ['build', 'jscs', 'hint', 'uglify']);
+gulp.task('default', ['build'/*, 'jscs', 'hint', 'uglify'*/]);

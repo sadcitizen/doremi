@@ -25,6 +25,8 @@
     "gulp-preprocess": "~1.2.0",
     "gulp-rename": "~1.2.0",
     "gulp-uglify": "~1.0.2",
-    "gulp-jshint": "~1.9.0"
+    "gulp-jshint": "~1.9.0",
+    "chai": "~1.10.0",
+    "mocha": "~2.0.1"
   }
 }
