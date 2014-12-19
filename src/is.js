@@ -41,6 +41,11 @@ is.not = function () {
     return !Boolean(args.length === 1 ? args[0] : args[0].apply(null, args.slice(1, args.length)));
 };
 
+is.primitive = function (target) {
+    var type = is.type(target);
+    return type === 'boolean' || type === 'number' || type === 'string' || type === 'undefined' || type === 'null';
+};
+
 is.type = function (target) {
     if (target === undefined) {
         return 'undefined';
