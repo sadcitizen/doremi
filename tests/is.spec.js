@@ -145,8 +145,4 @@ describe('_.is', function () {
             expect(_.is.type('')).to.equal('string');
         });
     });
-
-
-
-
 });
