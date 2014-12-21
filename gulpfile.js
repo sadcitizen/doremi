@@ -10,14 +10,21 @@ var template = require('gulp-template');
 var mocha = require('gulp-mocha');
 var cfg = {
     src: './src/*.js',
+    dest: './build/',
     specs: './tests/*.spec.js'
 };
 
 gulp.task('browserify', function () {
-    return browserify('./src/is.js', { standalone: 'is' })
-        .bundle()
-        .pipe(source('mint.is.js'))
-        .pipe(gulp.dest('./build/'));
+    var bundlify = function (src) {
+        src.forEach(function (item) {
+            return browserify('./src/' + item + '.js', { standalone: item })
+                .bundle()
+                .pipe(source('mint.' + item + '.js'))
+                .pipe(gulp.dest('./build/'));
+        });
+    };
+
+    bundlify(['is']);
 });
 
 gulp.task('jscs', function () {
