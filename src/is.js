@@ -17,6 +17,7 @@ is.exists = require('./is/exists');
 is.float = require('./is/float');
 is.fn = require('./is/fn');
 is.int = require('./is/int');
+is.json = require('./is/json');
 is.not = require('./is/not');
 is.odd = require('./is/odd');
 is.primitive = require('./is/primitive');
