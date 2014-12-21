@@ -8,71 +8,15 @@ is.VERSION = '<%= version %>';
     };
 });
 
-is.args = function (target) {
-    return is.type(target) === 'arguments';
-};
-
-is.defined = function (target) {
-    return target !== 'undefined';
-};
-
-is.equal = function (target, other) {
-    return (target === other && (target !== 0 || 1 / target === 1 / other)) || (target !== target && other !== other);
-};
-
-is.exists = function (target) {
-    var type = is.type(target);
-    return type !== 'undefined' && type !== 'null';
-};
-
-is.float = function (target) {
-    return is.number(target) && target % 1 !== 0;
-};
-
-is.fn = function (target) {
-    return is.type(target) === 'function';
-};
-
-is.int = function (target) {
-    return is.not(is.float, target);
-};
-
-is.not = function () {
-    var args = Array.prototype.slice.call(arguments);
-
-    return !Boolean(args.length === 1 ? args[0] : args[0].apply(null, args.slice(1, args.length)));
-};
-
-is.primitive = function (target) {
-    var type = is.type(target);
-    return type === 'boolean' || type === 'number' || type === 'string' || type === 'undefined' || type === 'null';
-};
-
-is.type = function (target) {
-    if (target === undefined) {
-        return 'undefined';
-    }
-
-    if (target === null) {
-        return 'null';
-    }
-
-    if (target && (target.nodeType === 1 || target.nodeType === 9)) {
-        return 'element';
-    }
-
-    var tp = Object.prototype.toString.call(target).slice(8, -1).toLowerCase();
-
-    if (tp === 'number') {
-        if (isNaN(target)) {
-            return 'nan';
-        }
-        if (!isFinite(target)) {
-            return 'infinity';
-        }
-    }
-
-    return tp;
-};
+is.args = require('./is/args');
+is.defined = require('./is/defined');
+is.equal = require('./is/equal');
+is.exists = require('./is/exists');
+is.float = require('./is/float');
+is.fn = require('./is/fn');
+is.int = require('./is/int');
+is.not = require('./is/not');
+is.primitive = require('./is/primitive');
+is.type = require('./is/type');
 
 module.exports = is;
