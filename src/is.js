@@ -10,7 +10,7 @@ is.args = function (target) {
     return is.type(target) === 'arguments';
 };
 
-is.defined = function () {
+is.defined = function (target) {
     return target !== 'undefined';
 };
 

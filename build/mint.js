@@ -25,6 +25,10 @@
         return is.type(target) === 'arguments';
     };
     
+    is.defined = function (target) {
+        return target !== 'undefined';
+    };
+    
     is.equal = function (target, other) {
         return (target === other && (target !== 0 || 1 / target === 1 / other)) || (target !== target && other !== other);
     };
@@ -50,6 +54,11 @@
         var args = Array.prototype.slice.call(arguments);
     
         return !Boolean(args.length === 1 ? args[0] : args[0].apply(null, args.slice(1, args.length)));
+    };
+    
+    is.primitive = function (target) {
+        var type = is.type(target);
+        return type === 'boolean' || type === 'number' || type === 'string' || type === 'undefined' || type === 'null';
     };
     
     is.type = function (target) {
