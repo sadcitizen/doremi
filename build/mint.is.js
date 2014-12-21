@@ -11,71 +11,111 @@ is.VERSION = '<%= version %>';
 
 is.args = require('./is/args');
 is.defined = require('./is/defined');
+is.empty = require('./is/empty');
 is.equal = require('./is/equal');
+is.even = require('./is/even');
 is.exists = require('./is/exists');
 is.float = require('./is/float');
 is.fn = require('./is/fn');
 is.int = require('./is/int');
 is.not = require('./is/not');
+is.odd = require('./is/odd');
 is.primitive = require('./is/primitive');
 is.type = require('./is/type');
 
 module.exports = is;
-},{"./is/args":2,"./is/defined":3,"./is/equal":4,"./is/exists":5,"./is/float":6,"./is/fn":7,"./is/int":8,"./is/not":9,"./is/primitive":10,"./is/type":11}],2:[function(require,module,exports){
+},{"./is/args":2,"./is/defined":3,"./is/empty":4,"./is/equal":5,"./is/even":6,"./is/exists":7,"./is/float":8,"./is/fn":9,"./is/int":10,"./is/not":11,"./is/odd":12,"./is/primitive":13,"./is/type":14}],2:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function args(target) {
     return type(target) === 'arguments';
 };
-},{"./type":11}],3:[function(require,module,exports){
+},{"./type":14}],3:[function(require,module,exports){
 module.exports = function defined(target) {
     return target !== 'undefined';
 };
 },{}],4:[function(require,module,exports){
+var type = require('./type');
+var exists = require('./exists');
+
+module.exports = function empty(target) {
+    if (!exists(target)) {
+        return true;
+    }
+
+    var tp = type(target);
+
+    if (tp === 'array' || tp === 'string' || tp === 'arguments') {
+        return target.length === 0;
+    }
+
+    if (tp === 'object') {
+        for (var key in target) {
+            if (target.hasOwnProperty(key)) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+};
+},{"./exists":7,"./type":14}],5:[function(require,module,exports){
 module.exports = function equal(target, other) {
     return (target === other && (target !== 0 || 1 / target === 1 / other)) || (target !== target && other !== other);
 };
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
+var type = require('./type');
+
+module.exports = function even(target) {
+    return type(target) === 'number' && target % 2 === 0;
+};
+},{"./type":14}],7:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function exists(target) {
     var tp = type(target);
     return tp !== 'undefined' && tp !== 'null';
 };
-},{"./type":11}],6:[function(require,module,exports){
+},{"./type":14}],8:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function float(target) {
     return type(target) === 'number' && target % 1 !== 0;
 };
 
-},{"./type":11}],7:[function(require,module,exports){
+},{"./type":14}],9:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function fn(target) {
     return type(target) === 'function';
 };
-},{"./type":11}],8:[function(require,module,exports){
+},{"./type":14}],10:[function(require,module,exports){
 var not = require('./not');
 var float = require('./float');
 
 module.exports = function int (target) {
     return not(float, target);
 };
-},{"./float":6,"./not":9}],9:[function(require,module,exports){
+},{"./float":8,"./not":11}],11:[function(require,module,exports){
 module.exports = function not() {
     var args = Array.prototype.slice.call(arguments);
 
     return !Boolean(args.length === 1 ? args[0] : args[0].apply(null, args.slice(1, args.length)));
 };
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
+var type = require('./type');
+
+module.exports = function odd(target) {
+    return type(target) === 'number' && target % 2 !== 0;
+};
+},{"./type":14}],13:[function(require,module,exports){
 var type = require('./type');
 var primitives = ['boolean', 'number', 'string', 'undefined', 'null'];
 
 module.exports = function primitive(target) {
     return primitives.indexOf(type(target)) !== -1;
 };
-},{"./type":11}],11:[function(require,module,exports){
+},{"./type":14}],14:[function(require,module,exports){
 module.exports = function type(target) {
     if (target === undefined) {
         return 'undefined';

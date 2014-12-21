@@ -1,6 +1,61 @@
 var is = require('../build/min/mint.is.min');
 var expect = require('chai').expect;
 
+describe('is.empty()', function () {
+    var fn;
+
+    before(function () {
+        fn = function () {
+            return arguments;
+        };
+    });
+
+    it('Should return true for empty string', function () {
+        expect(is.empty('')).to.equal(true);
+    });
+
+    it('Should return false for non-empty string', function () {
+        expect(is.empty('hello')).to.equal(false);
+    });
+
+    it('Should return true for empty object', function () {
+        expect(is.empty({})).to.equal(true);
+    });
+
+    it('Should return false for non-empty object', function () {
+        expect(is.empty({a: 'b', c: 'd'})).to.equal(false);
+    });
+
+    it('Should return true for empty array', function () {
+        expect(is.empty([])).to.equal(true);
+    });
+
+    it('Should return false for non-empty array', function () {
+        expect(is.empty([1, 2, 3, 4])).to.equal(false);
+    });
+
+    it('Should return true for empty arguments', function () {
+        expect(is.empty(fn())).to.equal(true);
+    });
+
+    it('Should return false for non-empty arguments', function () {
+        expect(is.empty(fn(1, 2, 3, 4))).to.equal(false);
+    });
+
+    it('Should return true for non-enumerable value', function () {
+        expect(is.empty(null)).to.equal(true);
+        expect(is.empty(undefined)).to.equal(true);
+        expect(is.empty(0)).to.equal(true);
+        expect(is.empty(42)).to.equal(true);
+        expect(is.empty(-42)).to.equal(true);
+        expect(is.empty(NaN)).to.equal(true);
+        expect(is.empty(Infinity)).to.equal(true);
+        expect(is.empty(-Infinity)).to.equal(true);
+        expect(is.empty(true)).to.equal(true);
+        expect(is.empty(false)).to.equal(true);
+    });
+});
+
 describe('is.equal()', function () {
     it('Two absent args should be equal', function () {
         expect(is.equal()).to.equal(true);
