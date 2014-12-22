@@ -1,15 +1,15 @@
 /**
- * Check if `target` is defined
+ * Check if `target` is defined.
  *
  * @param {*} target The value to check.
- * @returns {boolean} Returns `true` if `target` is defined, else `false`
+ * @returns {boolean} Returns `true` if `target` is defined, else `false`.
  *
  * @example
  *
- * is.defined(void 0)
+ * is.defined(void 0);
  * // => false
  *
- * is.defined('')
+ * is.defined('');
  * // => true
  */
 
