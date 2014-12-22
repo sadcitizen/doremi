@@ -165,13 +165,29 @@ module.exports = function fn(target) {
     return type(target) === 'function';
 };
 },{"./type":17}],12:[function(require,module,exports){
-var not = require('./not');
-var float = require('./float');
+var type = require('./type');
 
+/**
+ * Checks if `target` is integer.
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Returns `true` if `target` is integer, else 'false'.
+ *
+ * @example
+ *
+ * is.int(42);
+ * // => true
+ *
+ * is.int(42.42);
+ * // => false
+ *
+ * is.int('42');
+ * // => false
+ */
 module.exports = function int (target) {
-    return not(float, target);
+    return type(target) === 'number' && target % 1 === 0;
 };
-},{"./float":10,"./not":14}],13:[function(require,module,exports){
+},{"./type":17}],13:[function(require,module,exports){
 module.exports = function json(target) {
     try {
         JSON.parse(target);
