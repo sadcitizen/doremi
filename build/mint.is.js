@@ -3,7 +3,7 @@ var is = {};
 
 is.VERSION = '<%= version %>';
 
-['boolean', 'date', 'element', 'nan', 'number', 'object', 'regexp', 'string'].forEach(function (type) {
+['date', 'element', 'nan', 'number', 'object', 'regexp', 'string'].forEach(function (type) {
     is[type] = function (target) {
         return is.type(target) === type;
     };
@@ -11,6 +11,7 @@ is.VERSION = '<%= version %>';
 
 is.args = require('./is/args');
 is.array = require('./is/array');
+is.bool = require('./is/bool');
 is.defined = require('./is/defined');
 is.empty = require('./is/empty');
 is.equal = require('./is/equal');
@@ -26,13 +27,13 @@ is.primitive = require('./is/primitive');
 is.type = require('./is/type');
 
 module.exports = is;
-},{"./is/args":2,"./is/array":3,"./is/defined":4,"./is/empty":5,"./is/equal":6,"./is/even":7,"./is/exists":8,"./is/float":9,"./is/fn":10,"./is/int":11,"./is/json":12,"./is/not":13,"./is/odd":14,"./is/primitive":15,"./is/type":16}],2:[function(require,module,exports){
+},{"./is/args":2,"./is/array":3,"./is/bool":4,"./is/defined":5,"./is/empty":6,"./is/equal":7,"./is/even":8,"./is/exists":9,"./is/float":10,"./is/fn":11,"./is/int":12,"./is/json":13,"./is/not":14,"./is/odd":15,"./is/primitive":16,"./is/type":17}],2:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function args(target) {
     return type(target) === 'arguments';
 };
-},{"./type":16}],3:[function(require,module,exports){
+},{"./type":17}],3:[function(require,module,exports){
 var type = require('./type');
 
 /**
@@ -54,7 +55,27 @@ function array(target) {
 }
 
 module.exports = Array.isArray || array;
-},{"./type":16}],4:[function(require,module,exports){
+},{"./type":17}],4:[function(require,module,exports){
+var type = require('./type');
+
+/**
+ * Check if `target` is boolean.
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Return `true` if `target` is boolean, else `false`.
+ *
+ * @example
+ *
+ * is.bool(true);
+ * // => true
+ *
+ * is.bool('');
+ * // => false
+ */
+module.exports = function bool(target) {
+    return type(target) === 'boolean';
+};
+},{"./type":17}],5:[function(require,module,exports){
 /**
  * Check if `target` is defined.
  *
@@ -73,7 +94,7 @@ module.exports = Array.isArray || array;
 module.exports = function defined(target) {
     return target !== undefined;
 };
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var type = require('./type');
 var exists = require('./exists');
 
@@ -98,17 +119,17 @@ module.exports = function empty(target) {
 
     return true;
 };
-},{"./exists":8,"./type":16}],6:[function(require,module,exports){
+},{"./exists":9,"./type":17}],7:[function(require,module,exports){
 module.exports = function equal(target, other) {
     return (target === other && (target !== 0 || 1 / target === 1 / other)) || (target !== target && other !== other);
 };
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function even(target) {
     return type(target) === 'number' && target % 2 === 0;
 };
-},{"./type":16}],8:[function(require,module,exports){
+},{"./type":17}],9:[function(require,module,exports){
 var type = require('./type');
 
 /**
@@ -130,27 +151,27 @@ module.exports = function exists(target) {
     var tp = type(target);
     return tp !== 'undefined' && tp !== 'null';
 };
-},{"./type":16}],9:[function(require,module,exports){
+},{"./type":17}],10:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function float(target) {
     return type(target) === 'number' && target % 1 !== 0;
 };
 
-},{"./type":16}],10:[function(require,module,exports){
+},{"./type":17}],11:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function fn(target) {
     return type(target) === 'function';
 };
-},{"./type":16}],11:[function(require,module,exports){
+},{"./type":17}],12:[function(require,module,exports){
 var not = require('./not');
 var float = require('./float');
 
 module.exports = function int (target) {
     return not(float, target);
 };
-},{"./float":9,"./not":13}],12:[function(require,module,exports){
+},{"./float":10,"./not":14}],13:[function(require,module,exports){
 module.exports = function json(target) {
     try {
         JSON.parse(target);
@@ -159,26 +180,26 @@ module.exports = function json(target) {
     }
     return true;
 };
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 module.exports = function not() {
     var args = Array.prototype.slice.call(arguments);
 
     return !Boolean(args.length === 1 ? args[0] : args[0].apply(null, args.slice(1, args.length)));
 };
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function odd(target) {
     return type(target) === 'number' && target % 2 !== 0;
 };
-},{"./type":16}],15:[function(require,module,exports){
+},{"./type":17}],16:[function(require,module,exports){
 var type = require('./type');
 var primitives = ['boolean', 'number', 'string', 'undefined', 'null'];
 
 module.exports = function primitive(target) {
     return primitives.indexOf(type(target)) !== -1;
 };
-},{"./type":16}],16:[function(require,module,exports){
+},{"./type":17}],17:[function(require,module,exports){
 module.exports = function type(target) {
     if (target === undefined) {
         return 'undefined';

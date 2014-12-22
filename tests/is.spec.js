@@ -22,6 +22,29 @@ describe('is.array()', function () {
     });
 });
 
+describe('is.bool()', function () {
+    it('Should return true for boolean', function () {
+        expect(is.bool(true)).to.equal(true);
+        expect(is.bool(Boolean(42))).to.equal(true);
+        /* jshint -W053 */
+        expect(is.bool(new Boolean(42))).to.equal(true);
+        /* jshint +W053 */
+    });
+
+    it('Should return false for non-boolean', function () {
+        expect(is.bool(arguments)).to.equal(false);
+        expect(is.bool(void 0)).to.equal(false);
+        expect(is.bool(null)).to.equal(false);
+        expect(is.bool(NaN)).to.equal(false);
+        expect(is.bool(42)).to.equal(false);
+        expect(is.bool('')).to.equal(false);
+        expect(is.bool([])).to.equal(false);
+        expect(is.bool({})).to.equal(false);
+        expect(is.bool(new Date())).to.equal(false);
+        expect(is.bool(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.defined()', function () {
     it('Should return false for undefined values', function () {
         expect(is.defined()).to.equal(false);

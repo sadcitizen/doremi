@@ -2,7 +2,7 @@ var is = {};
 
 is.VERSION = '<%= version %>';
 
-['boolean', 'date', 'element', 'nan', 'number', 'object', 'regexp', 'string'].forEach(function (type) {
+['date', 'element', 'nan', 'number', 'object', 'regexp', 'string'].forEach(function (type) {
     is[type] = function (target) {
         return is.type(target) === type;
     };
@@ -10,6 +10,7 @@ is.VERSION = '<%= version %>';
 
 is.args = require('./is/args');
 is.array = require('./is/array');
+is.bool = require('./is/bool');
 is.defined = require('./is/defined');
 is.empty = require('./is/empty');
 is.equal = require('./is/equal');
