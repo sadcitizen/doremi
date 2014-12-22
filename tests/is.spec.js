@@ -163,12 +163,29 @@ describe('is.equal()', function () {
     it('Primitive value should be equal to their corresponding wrapper', function() {
         /* jshint -W053*/
         expect(is.equal(42, new Number(42))).to.equal(true);
+        expect(is.equal(42, Number(42))).to.equal(true);
         expect(is.equal('42', new String('42'))).to.equal(true);
+        expect(is.equal('42', String('42'))).to.equal(true);
+        expect(is.equal(true, new Boolean(true))).to.equal(true);
+        expect(is.equal(true, Boolean(true))).to.equal(true);
         /* jshint +W053*/
     });
 
     it('Zero should not be equal to negative zero', function () {
         expect(is.equal(0, -0)).to.equal(false);
+    });
+
+    it('Date should be equal to itself', function () {
+        var now = new Date();
+        expect(is.equal(now, now)).to.equal(true);
+    });
+
+    it('Date objects referencing identical times should be equal', function () {
+        expect(is.equal(new Date(2014, 1, 1), new Date(2014, 1, 1))).to.equal(true);
+    });
+
+    it('Invalid dates should not be equal', function () {
+        expect(is.equal(new Date('Today'), new Date('Today'))).to.equal(false);
     });
 });
 
