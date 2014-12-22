@@ -231,6 +231,17 @@ describe('is.float()', function () {
         expect(is.float(42)).to.equal(false);
         expect(is.float(0)).to.equal(false);
     });
+
+    it('Should return false for non-number and nan', function () {
+        expect(is.float(null)).to.equal(false);
+        expect(is.float(NaN)).to.equal(false);
+        expect(is.float(true)).to.equal(false);
+        expect(is.float('')).to.equal(false);
+        expect(is.float([])).to.equal(false);
+        expect(is.float({})).to.equal(false);
+        expect(is.float(new Date())).to.equal(false);
+        expect(is.float(/\s+/ig)).to.equal(false);
+    });
 });
 
 describe('is.int()', function () {
