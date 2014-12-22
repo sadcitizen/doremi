@@ -28,5 +28,19 @@ module.exports = function equal(target, other) {
         return (target !== 0 || 1 / target === 1 / other) || (target !== target && other !== other);
     }
 
+    if (tp === 'array') {
+        if (target.length !== other.length) {
+            return false;
+        }
+
+        for (var i = 0, length = target.length; i < length; i++) {
+            if (!equal(target[i], other[i])) {
+                break;
+            }
+        }
+
+        return i === length;
+    }
+
     return target === other;
 };

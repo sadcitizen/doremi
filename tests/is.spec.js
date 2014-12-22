@@ -203,6 +203,32 @@ describe('is.equal()', function () {
         expect(is.equal(/\w+/ig, /\s+/ig)).to.equal(false);
         expect(is.equal(/\d+/im, /\s+/gm)).to.equal(false);
     });
+
+    it('Array should be equal to itself', function () {
+        var arr = [1, 2, 3, 4];
+        expect(is.equal(arr, arr)).to.equal(true);
+
+        /* jshint -W053 */
+        var arrCtor = new Array(1, 2, 3, 4);
+        /* jshint +W053 */
+        expect(is.equal(arrCtor, arrCtor)).to.equal(true);
+    });
+
+    it('Arrays containing identical items should be equal', function () {
+        /* jshint -W053 */
+        expect(is.equal([42, true, 'hello', /\s+/ig], new Array(42, true, 'hello', /\s+/ig))).to.equal(true);
+        expect(is.equal(new Array(42, true, 'hello', /\s+/ig), new Array(42, true, 'hello', /\s+/ig))).to.equal(true);
+        expect(is.equal([42, true, 'hello', /\s+/ig], [42, true, 'hello', /\s+/ig])).to.equal(true);
+        /* jshint +W053 */
+    });
+
+    it('Arrays containing equivalent items should be equal', function () {
+        /* jshint -W053 */
+        expect(is.equal([new Number(42), new Boolean(true), new String('hello'), []], new Array(42, true, 'hello', []))).to.equal(true);
+        expect(is.equal(new Array(new Number(42), new Boolean(true), new String('hello'), []), new Array(42, true, 'hello', []))).to.equal(true);
+        expect(is.equal([new Number(42), new Boolean(true), new String('hello'), []], [42, true, 'hello', []])).to.equal(true);
+        /* jshint +W053 */
+    });
 });
 
 describe('is.even()', function () {
