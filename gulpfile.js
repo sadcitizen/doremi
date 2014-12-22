@@ -19,12 +19,12 @@ gulp.task('browserify', function () {
         src.forEach(function (item) {
             return browserify('./src/' + item + '.js', { standalone: item })
                 .bundle()
-                .pipe(source('mint.' + item + '.js'))
+                .pipe(source(item + '.js'))
                 .pipe(gulp.dest('./build/'));
         });
     };
 
-    bundlify(['is']);
+    bundlify(['is', 'object']);
 });
 
 gulp.task('jscs', function () {
@@ -44,7 +44,7 @@ gulp.task('tests', function () {
 });
 
 gulp.task('uglify', function () {
-    return gulp.src('./build/mint.*.js')
+    return gulp.src('./build/*.js')
         .pipe(template({ version: pkg.version }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())

@@ -42,5 +42,9 @@ module.exports = function equal(target, other) {
         return i === length;
     }
 
+    if (tp === 'object') {
+        
+    }
+
     return target === other;
 };
