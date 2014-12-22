@@ -272,6 +272,30 @@ describe('is.float()', function () {
     });
 });
 
+describe('is.fn()', function () {
+    it('Should return true for function', function () {
+        function noop() {}
+
+        expect(is.fn(function () {})).to.equal(true);
+        expect(is.fn(Math.abs)).to.equal(true);
+        expect(is.fn(noop)).to.equal(true);
+    });
+
+    it('Should return false for non-function', function () {
+        expect(is.fn(arguments)).to.equal(false);
+        expect(is.fn(true)).to.equal(false);
+        expect(is.fn(void 0)).to.equal(false);
+        expect(is.fn(null)).to.equal(false);
+        expect(is.fn(NaN)).to.equal(false);
+        expect(is.fn(42)).to.equal(false);
+        expect(is.fn('')).to.equal(false);
+        expect(is.fn([])).to.equal(false);
+        expect(is.fn({})).to.equal(false);
+        expect(is.fn(new Date())).to.equal(false);
+        expect(is.fn(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.int()', function () {
     it('Should return true for integer', function () {
         expect(is.int(42)).to.equal(true);

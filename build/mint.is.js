@@ -30,6 +30,22 @@ module.exports = is;
 },{"./is/args":2,"./is/array":3,"./is/bool":4,"./is/defined":5,"./is/empty":6,"./is/equal":7,"./is/even":8,"./is/exists":9,"./is/float":10,"./is/fn":11,"./is/int":12,"./is/json":13,"./is/not":14,"./is/odd":15,"./is/primitive":16,"./is/type":17}],2:[function(require,module,exports){
 var type = require('./type');
 
+/**
+ * Checks if `target` is classified as an `arguments`.
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Returns `true` if `target` is classified as an `arguments`, else `false`.
+ *
+ * @example
+ * function fn() {
+ *   return arguments;
+ * }
+ * is.args(fn());
+ * // => true
+ *
+ * is.args(1, 2, 3);
+ * // => false
+ */
 module.exports = function args(target) {
     return type(target) === 'arguments';
 };
@@ -39,7 +55,7 @@ var type = require('./type');
 /**
  * Check if `target` is array.
  *
- * @param {*} target The value to check/
+ * @param {*} target The value to check.
  * @returns {boolean} Returns `true` if `target` is array, else `false`.
  *
  * @example
@@ -154,6 +170,23 @@ module.exports = function exists(target) {
 },{"./type":17}],10:[function(require,module,exports){
 var type = require('./type');
 
+/**
+ * Checks if `target` is float.
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Returns `true` if `target` is float, else 'false'.
+ *
+ * @example
+ *
+ * is.float(42);
+ * // => false
+ *
+ * is.float(42.42);
+ * // => true
+ *
+ * is.float('42.42');
+ * // => false
+ */
 module.exports = function float(target) {
     return type(target) === 'number' && target % 1 !== 0;
 };
@@ -161,6 +194,24 @@ module.exports = function float(target) {
 },{"./type":17}],11:[function(require,module,exports){
 var type = require('./type');
 
+/**
+ * Check if `target` is function.
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Return `true` if `target` is function, else `false`.
+ *
+ * @example
+ *
+ * is.fn(null);
+ * // => false
+ *
+ * function noop() {}
+ * is.fn(noop);
+ * // => true
+ *
+ * is.fn(Math.abs);
+ * // => true
+ */
 module.exports = function fn(target) {
     return type(target) === 'function';
 };
