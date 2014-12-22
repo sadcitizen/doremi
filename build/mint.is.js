@@ -32,8 +32,23 @@ module.exports = function args(target) {
     return type(target) === 'arguments';
 };
 },{"./type":15}],3:[function(require,module,exports){
+/**
+ * Check if `target` is defined
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Returns `true` if `target` is defined, else `false`
+ *
+ * @example
+ *
+ * is.defined(void 0)
+ * // => false
+ *
+ * is.defined('')
+ * // => true
+ */
+
 module.exports = function defined(target) {
-    return target !== 'undefined';
+    return target !== undefined;
 };
 },{}],4:[function(require,module,exports){
 var type = require('./type');

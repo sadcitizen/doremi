@@ -1,6 +1,32 @@
 var is = require('../build/min/mint.is.min');
 var expect = require('chai').expect;
 
+describe('is.defined()', function () {
+    it('Should return false for undefined values', function () {
+        expect(is.defined()).to.equal(false);
+        expect(is.defined(void 0)).to.equal(false);
+        expect(is.defined(undefined)).to.equal(false);
+    });
+
+    it('Should return true for defined values', function () {
+        expect(is.defined(null)).to.equal(true);
+        expect(is.defined(0)).to.equal(true);
+        expect(is.defined(42)).to.equal(true);
+        expect(is.defined(-42)).to.equal(true);
+        expect(is.defined(NaN)).to.equal(true);
+        expect(is.defined(Infinity)).to.equal(true);
+        expect(is.defined(-Infinity)).to.equal(true);
+        expect(is.defined(true)).to.equal(true);
+        expect(is.defined(false)).to.equal(true);
+        expect(is.defined('')).to.equal(true);
+        expect(is.defined('hello')).to.equal(true);
+        expect(is.defined([])).to.equal(true);
+        expect(is.defined([1, 2, 3])).to.equal(true);
+        expect(is.defined({})).to.equal(true);
+        expect(is.defined({a: 'b', c: 'd'})).to.equal(true);
+    });
+});
+
 describe('is.empty()', function () {
     var fn;
 
