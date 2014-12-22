@@ -22,6 +22,34 @@ describe('is.array()', function () {
     });
 });
 
+describe('is.args()', function () {
+    var fn;
+
+    before(function () {
+        fn = function () {
+            return arguments;
+        };
+    });
+
+    it('Should return true for arguments', function () {
+        expect(is.args(arguments)).to.equal(true);
+        expect(is.args(fn())).to.equal(true);
+    });
+
+    it('Should return false for non-arguments', function () {
+        expect(is.args(void 0)).to.equal(false);
+        expect(is.args(null)).to.equal(false);
+        expect(is.args(true)).to.equal(false);
+        expect(is.args(NaN)).to.equal(false);
+        expect(is.args(42)).to.equal(false);
+        expect(is.args('')).to.equal(false);
+        expect(is.args({})).to.equal(false);
+        expect(is.args([])).to.equal(false);
+        expect(is.args(new Date())).to.equal(false);
+        expect(is.args(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.bool()', function () {
     it('Should return true for boolean', function () {
         expect(is.bool(true)).to.equal(true);

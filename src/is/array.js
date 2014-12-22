@@ -3,7 +3,7 @@ var type = require('./type');
 /**
  * Check if `target` is array.
  *
- * @param {*} target The value to check/
+ * @param {*} target The value to check.
  * @returns {boolean} Returns `true` if `target` is array, else `false`.
  *
  * @example
