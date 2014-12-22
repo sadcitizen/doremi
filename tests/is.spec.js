@@ -222,6 +222,31 @@ describe('is.equal()', function () {
     });
 });
 
+describe('is.even()', function () {
+    it('Should return true for even numbers', function () {
+        expect(is.even(42)).to.equal(true);
+        expect(is.even(-42)).to.equal(true);
+        expect(is.even(0)).to.equal(true);
+    });
+
+    it('Should return false for odd numbers', function () {
+        expect(is.even(21)).to.equal(false);
+        expect(is.even(-21)).to.equal(false);
+    });
+
+    it('Should return false for non-numeric values', function () {
+        expect(is.even(void 0)).to.equal(false);
+        expect(is.even(null)).to.equal(false);
+        expect(is.even(NaN)).to.equal(false);
+        expect(is.even(true)).to.equal(false);
+        expect(is.even('')).to.equal(false);
+        expect(is.even([])).to.equal(false);
+        expect(is.even({})).to.equal(false);
+        expect(is.even(new Date())).to.equal(false);
+        expect(is.even(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.exists()', function () {
     it('Should return false for undefined', function () {
         expect(is.exists()).to.equal(false);
@@ -318,6 +343,31 @@ describe('is.int()', function () {
         expect(is.int({})).to.equal(false);
         expect(is.int(new Date())).to.equal(false);
         expect(is.int(/\s+/ig)).to.equal(false);
+    });
+});
+
+describe('is.odd()', function () {
+    it('Should return false for even numbers', function () {
+        expect(is.odd(42)).to.equal(false);
+        expect(is.odd(-42)).to.equal(false);
+        expect(is.odd(0)).to.equal(false);
+    });
+
+    it('Should return true for odd numbers', function () {
+        expect(is.odd(21)).to.equal(true);
+        expect(is.odd(-21)).to.equal(true);
+    });
+
+    it('Should return false for non-numeric values', function () {
+        expect(is.odd(void 0)).to.equal(false);
+        expect(is.odd(null)).to.equal(false);
+        expect(is.odd(NaN)).to.equal(false);
+        expect(is.odd(true)).to.equal(false);
+        expect(is.odd('')).to.equal(false);
+        expect(is.odd([])).to.equal(false);
+        expect(is.odd({})).to.equal(false);
+        expect(is.odd(new Date())).to.equal(false);
+        expect(is.odd(/\s+/ig)).to.equal(false);
     });
 });
 
