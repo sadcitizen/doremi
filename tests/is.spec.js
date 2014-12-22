@@ -187,6 +187,22 @@ describe('is.equal()', function () {
     it('Invalid dates should not be equal', function () {
         expect(is.equal(new Date('Today'), new Date('Today'))).to.equal(false);
     });
+
+    it('Regular expression should be equal to itself', function () {
+        var re = new RegExp('s', 'igm');
+        expect(is.equal(re, re)).to.equal(true);
+        expect(is.equal(/\s+/ig, /\s+/ig)).to.equal(true);
+    });
+
+    it('Regular expression with equivalent patterns and different flags should not be equal', function () {
+        expect(is.equal(/\s+/i, /\s+/ig)).to.equal(false);
+        expect(is.equal(/\s+/im, /\s+/gm)).to.equal(false);
+    });
+
+    it('Regular expression with different patterns and equivalent flags should not be equal', function () {
+        expect(is.equal(/\w+/ig, /\s+/ig)).to.equal(false);
+        expect(is.equal(/\d+/im, /\s+/gm)).to.equal(false);
+    });
 });
 
 describe('is.even()', function () {

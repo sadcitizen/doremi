@@ -7,6 +7,13 @@ module.exports = function equal(target, other) {
         return false;
     }
 
+    if (tp === 'regexp') {
+        return target.source === other.source &&
+            target.global === other.global &&
+            target.multiline === other.multiline &&
+            target.ignoreCase === other.ignoreCase;
+    }
+
     if (tp === 'boolean' || tp === 'date' || tp === 'number') {
         target = +target;
         other = +other;
