@@ -3,13 +3,14 @@ var is = {};
 
 is.VERSION = '<%= version %>';
 
-['array', 'boolean', 'date', 'element', 'nan', 'number', 'object', 'regexp', 'string'].forEach(function (type) {
+['boolean', 'date', 'element', 'nan', 'number', 'object', 'regexp', 'string'].forEach(function (type) {
     is[type] = function (target) {
         return is.type(target) === type;
     };
 });
 
 is.args = require('./is/args');
+is.array = require('./is/array');
 is.defined = require('./is/defined');
 is.empty = require('./is/empty');
 is.equal = require('./is/equal');
@@ -25,32 +26,54 @@ is.primitive = require('./is/primitive');
 is.type = require('./is/type');
 
 module.exports = is;
-},{"./is/args":2,"./is/defined":3,"./is/empty":4,"./is/equal":5,"./is/even":6,"./is/exists":7,"./is/float":8,"./is/fn":9,"./is/int":10,"./is/json":11,"./is/not":12,"./is/odd":13,"./is/primitive":14,"./is/type":15}],2:[function(require,module,exports){
+},{"./is/args":2,"./is/array":3,"./is/defined":4,"./is/empty":5,"./is/equal":6,"./is/even":7,"./is/exists":8,"./is/float":9,"./is/fn":10,"./is/int":11,"./is/json":12,"./is/not":13,"./is/odd":14,"./is/primitive":15,"./is/type":16}],2:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function args(target) {
     return type(target) === 'arguments';
 };
-},{"./type":15}],3:[function(require,module,exports){
+},{"./type":16}],3:[function(require,module,exports){
+var type = require('./type');
+
 /**
- * Check if `target` is defined
+ * Check if `target` is array.
  *
- * @param {*} target The value to check.
- * @returns {boolean} Returns `true` if `target` is defined, else `false`
+ * @param {*} target The value to check/
+ * @returns {boolean} Returns `true` if `target` is array, else `false`.
  *
  * @example
  *
- * is.defined(void 0)
+ * is.array([]);
+ * // => true
+ *
+ * is.array(42);
+ * // => false
+ */
+function array(target) {
+    return type(target) === 'array';
+}
+
+module.exports = Array.isArray || array;
+},{"./type":16}],4:[function(require,module,exports){
+/**
+ * Check if `target` is defined.
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Returns `true` if `target` is defined, else `false`.
+ *
+ * @example
+ *
+ * is.defined(void 0);
  * // => false
  *
- * is.defined('')
+ * is.defined('');
  * // => true
  */
 
 module.exports = function defined(target) {
     return target !== undefined;
 };
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var type = require('./type');
 var exists = require('./exists');
 
@@ -75,44 +98,59 @@ module.exports = function empty(target) {
 
     return true;
 };
-},{"./exists":7,"./type":15}],5:[function(require,module,exports){
+},{"./exists":8,"./type":16}],6:[function(require,module,exports){
 module.exports = function equal(target, other) {
     return (target === other && (target !== 0 || 1 / target === 1 / other)) || (target !== target && other !== other);
 };
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function even(target) {
     return type(target) === 'number' && target % 2 === 0;
 };
-},{"./type":15}],7:[function(require,module,exports){
+},{"./type":16}],8:[function(require,module,exports){
 var type = require('./type');
 
+/**
+ * Check if `target` is 'null' or `undefined`.
+ *
+ * @param {*} target The value to check.
+ * @returns {boolean} Return `true` if `target` is not `null` and `undefined`, else `false`.
+ *
+ * @example
+ *
+ * is.exists(null);
+ * // => false
+ *
+ * is.exists('');
+ * // => true
+ *
+ */
 module.exports = function exists(target) {
     var tp = type(target);
     return tp !== 'undefined' && tp !== 'null';
 };
-},{"./type":15}],8:[function(require,module,exports){
+},{"./type":16}],9:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function float(target) {
     return type(target) === 'number' && target % 1 !== 0;
 };
 
-},{"./type":15}],9:[function(require,module,exports){
+},{"./type":16}],10:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function fn(target) {
     return type(target) === 'function';
 };
-},{"./type":15}],10:[function(require,module,exports){
+},{"./type":16}],11:[function(require,module,exports){
 var not = require('./not');
 var float = require('./float');
 
 module.exports = function int (target) {
     return not(float, target);
 };
-},{"./float":8,"./not":12}],11:[function(require,module,exports){
+},{"./float":9,"./not":13}],12:[function(require,module,exports){
 module.exports = function json(target) {
     try {
         JSON.parse(target);
@@ -121,26 +159,26 @@ module.exports = function json(target) {
     }
     return true;
 };
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 module.exports = function not() {
     var args = Array.prototype.slice.call(arguments);
 
     return !Boolean(args.length === 1 ? args[0] : args[0].apply(null, args.slice(1, args.length)));
 };
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var type = require('./type');
 
 module.exports = function odd(target) {
     return type(target) === 'number' && target % 2 !== 0;
 };
-},{"./type":15}],14:[function(require,module,exports){
+},{"./type":16}],15:[function(require,module,exports){
 var type = require('./type');
 var primitives = ['boolean', 'number', 'string', 'undefined', 'null'];
 
 module.exports = function primitive(target) {
     return primitives.indexOf(type(target)) !== -1;
 };
-},{"./type":15}],15:[function(require,module,exports){
+},{"./type":16}],16:[function(require,module,exports){
 module.exports = function type(target) {
     if (target === undefined) {
         return 'undefined';

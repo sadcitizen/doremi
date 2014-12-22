@@ -1,6 +1,27 @@
 var is = require('../build/min/mint.is.min');
 var expect = require('chai').expect;
 
+describe('is.array()', function () {
+    it('Should return true for array', function () {
+        expect(is.array([])).to.equal(true);
+        expect(is.array([1, 2, 3])).to.equal(true);
+        expect(is.array(new Array(1, 2, 3))).to.equal(true);
+    });
+
+    it('Should return false for non-array', function () {
+        expect(is.array(arguments)).to.equal(false);
+        expect(is.array(void 0)).to.equal(false);
+        expect(is.array(null)).to.equal(false);
+        expect(is.array(true)).to.equal(false);
+        expect(is.array(NaN)).to.equal(false);
+        expect(is.array(42)).to.equal(false);
+        expect(is.array('')).to.equal(false);
+        expect(is.array({})).to.equal(false);
+        expect(is.array(new Date())).to.equal(false);
+        expect(is.array(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.defined()', function () {
     it('Should return false for undefined values', function () {
         expect(is.defined()).to.equal(false);
@@ -10,20 +31,14 @@ describe('is.defined()', function () {
 
     it('Should return true for defined values', function () {
         expect(is.defined(null)).to.equal(true);
-        expect(is.defined(0)).to.equal(true);
         expect(is.defined(42)).to.equal(true);
-        expect(is.defined(-42)).to.equal(true);
         expect(is.defined(NaN)).to.equal(true);
-        expect(is.defined(Infinity)).to.equal(true);
-        expect(is.defined(-Infinity)).to.equal(true);
         expect(is.defined(true)).to.equal(true);
-        expect(is.defined(false)).to.equal(true);
         expect(is.defined('')).to.equal(true);
-        expect(is.defined('hello')).to.equal(true);
         expect(is.defined([])).to.equal(true);
-        expect(is.defined([1, 2, 3])).to.equal(true);
         expect(is.defined({})).to.equal(true);
-        expect(is.defined({a: 'b', c: 'd'})).to.equal(true);
+        expect(is.defined(new Date())).to.equal(true);
+        expect(is.defined(/\s+/ig)).to.equal(true);
     });
 });
 
@@ -253,11 +268,9 @@ describe('is.type()', function () {
         expect(is.type(arguments)).to.equal('arguments');
 
         expect(is.type([])).to.equal('array');
-        expect(is.type([1, 2, 3])).to.equal('array');
         expect(is.type(new Array(1, 2, 3))).to.equal('array');
 
         expect(is.type(true)).to.equal('boolean');
-        expect(is.type(false)).to.equal('boolean');
         /* jshint -W053 */
         expect(is.type(new Boolean(false))).to.equal('boolean');
         /* jshint +W053 */
