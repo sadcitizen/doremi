@@ -1,4 +1,4 @@
-var is = require('../build/min/mint.is.min');
+var is = require('../src/is');
 var expect = require('chai').expect;
 
 describe('is.array()', function () {
@@ -155,8 +155,16 @@ describe('is.equal()', function () {
         expect(is.equal(null, null)).to.equal(true);
         expect(is.equal(true, true)).to.equal(true);
         expect(is.equal(NaN, NaN)).to.equal(true);
+        expect(is.equal(Infinity, Infinity)).to.equal(true);
         expect(is.equal(42, 42)).to.equal(true);
         expect(is.equal('', '')).to.equal(true);
+    });
+
+    it('Primitive value should be equal to their corresponding wrapper', function() {
+        /* jshint -W053*/
+        expect(is.equal(42, new Number(42))).to.equal(true);
+        expect(is.equal('42', new String('42'))).to.equal(true);
+        /* jshint +W053*/
     });
 
     it('Zero should not be equal to negative zero', function () {
