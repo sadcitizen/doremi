@@ -149,76 +149,18 @@ describe('is.empty()', function () {
 });
 
 describe('is.equal()', function () {
-    it('Two absent args should be equal', function () {
+    it('Primitive value should be equal to itself', function () {
         expect(is.equal()).to.equal(true);
-    });
-
-    it('One absent arg and undefined should be equal', function () {
-        expect(is.equal(undefined)).to.equal(true);
-    });
-
-    it('Undefined should be equal to undefined', function () {
         expect(is.equal(undefined, undefined)).to.equal(true);
-    });
-
-    it('Null should be equal to null', function () {
         expect(is.equal(null, null)).to.equal(true);
-    });
-
-    it('Undefined should not be equal to null', function () {
-        expect(is.equal(undefined, null)).to.equal(false);
-    });
-
-    it('True should be equal to true', function () {
         expect(is.equal(true, true)).to.equal(true);
-    });
-
-    it('False should be equal to false', function () {
-        expect(is.equal(false, false)).to.equal(true);
-    });
-
-    it('True should not be equal to false', function () {
-        expect(is.equal(true, false)).to.equal(false);
-    });
-
-    it('NaN should be equal to NaN', function () {
         expect(is.equal(NaN, NaN)).to.equal(true);
-    });
-
-    it('Zero should be equal to zero', function () {
-        expect(is.equal(0, 0)).to.equal(true);
+        expect(is.equal(42, 42)).to.equal(true);
+        expect(is.equal('', '')).to.equal(true);
     });
 
     it('Zero should not be equal to negative zero', function () {
         expect(is.equal(0, -0)).to.equal(false);
-    });
-
-    it('Infinity should be equal to infinity', function () {
-        expect(is.equal(Infinity, Infinity)).to.equal(true);
-    });
-
-    it('Infinity should not be equal to negative infinity', function () {
-        expect(is.equal(Infinity, -Infinity)).to.equal(false);
-    });
-
-    it('42 should be equal to 42', function () {
-        expect(is.equal(42, 42)).to.equal(true);
-    });
-
-    it('42 should not be equal to -42', function () {
-        expect(is.equal(42, -42)).to.equal(false);
-    });
-
-    it('Empty string should be equal to empty string', function () {
-        expect(is.equal('', '')).to.equal(true);
-    });
-
-    it('String should be equal to yourself', function () {
-        expect(is.equal('foo', 'foo')).to.equal(true);
-    });
-
-    it('String should not be equal to different string', function () {
-        expect(is.equal('foo', 'bar')).to.equal(false);
     });
 });
 
