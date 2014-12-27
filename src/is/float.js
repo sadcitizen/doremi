@@ -1,4 +1,4 @@
-var type = require('./type');
+var number = require('./number');
 
 /**
  * Checks if `target` is float.
@@ -18,5 +18,5 @@ var type = require('./type');
  * // => false
  */
 module.exports = function float(target) {
-    return type(target) === 'number' && target % 1 !== 0;
+    return number(target) && target % 1 !== 0;
 };

@@ -1,4 +1,4 @@
-var type = require('./type');
+var number = require('./number');
 
 /**
  * Check if `target` is an even number.
@@ -16,8 +16,7 @@ var type = require('./type');
  *
  * is.even(20);
  * // => true
- *
  */
 module.exports = function even(target) {
-    return type(target) === 'number' && target % 2 === 0;
+    return number(target) && target % 2 === 0;
 };
