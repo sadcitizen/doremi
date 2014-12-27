@@ -426,10 +426,11 @@ describe('is.int()', function () {
     });
 });
 
-describe('is.guid()', function () {
+describe('is.json()', function () {
     it('Should return true for a json string', function () {
         expect(is.json(JSON.stringify({}))).to.equal(true);
         expect(is.json(JSON.stringify({ a: 'b', c: 'd' }))).to.equal(true);
+        expect(is.json(JSON.stringify({ a: [1, 2, 3, 4], b: { c: 'd' } }))).to.equal(true);
     });
 
     it('Should return false for other strings', function () {
