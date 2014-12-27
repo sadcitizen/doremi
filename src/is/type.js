@@ -1,3 +1,20 @@
+/**
+ * Returns a type of `target`.
+ *
+ * @param target The value to check.
+ * @returns {string}
+ *
+ * @example
+ *
+ * is.type('');
+ * // => string
+ *
+ * is.type(42);
+ * // => number
+ *
+ * is.type({});
+ * // => object
+ */
 module.exports = function type(target) {
     if (target === undefined) {
         return 'undefined';
