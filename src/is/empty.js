@@ -1,6 +1,25 @@
 var type = require('./type');
 var exists = require('./exists');
 
+/**
+ * Check if `target` is empty.
+ * Returns `true` is `target` is not an enumerable value or array, string
+ * with a length greater than `0` or an object without own enumerable properties.
+ *
+ * @param target The value to check.
+ * @returns {boolean} Returns `true` if `target` is empty, else 'false'.
+ *
+ * @example
+ *
+ * is.empty('');
+ * // => true
+ *
+ * is.empty([]);
+ * // => true
+ *
+ * is.empty({});
+ * // => true
+ */
 module.exports = function empty(target) {
     if (!exists(target)) {
         return true;
