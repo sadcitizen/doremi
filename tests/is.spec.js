@@ -351,6 +351,28 @@ describe('is.fn()', function () {
     });
 });
 
+describe('is.nan()', function () {
+    it('Should return true if value is NaN', function () {
+        expect(is.nan(NaN)).to.equal(true);
+        expect(is.nan(parseInt('hello'))).to.equal(true);
+        expect(is.nan(1 / 'hello')).to.equal(true);
+    });
+
+    it('Should return false if value is not NaN', function () {
+        expect(is.nan(arguments)).to.equal(false);
+        expect(is.nan(void 0)).to.equal(false);
+        expect(is.nan(true)).to.equal(false);
+        expect(is.nan(null)).to.equal(false);
+        expect(is.nan(new Date())).to.equal(false);
+        expect(is.nan(42)).to.equal(false);
+        expect(is.nan('')).to.equal(false);
+        expect(is.nan([])).to.equal(false);
+        expect(is.nan({})).to.equal(false);
+        expect(is.nan(/\s+/ig)).to.equal(false);
+    });
+});
+
+
 describe('is.hex()', function () {
     it('Should return true for a hex string', function () {
         expect(is.hex('ff')).to.equal(true);
