@@ -659,3 +659,16 @@ describe('is.type()', function () {
         expect(is.type('')).to.equal('string');
     });
 });
+
+describe('is.validDate()', function () {
+    it('Should return true if value is a valid date', function () {
+        expect(is.validDate(new Date())).to.equal(true);
+        expect(is.validDate(new Date(2014, 11, 1))).to.equal(true);
+        expect(is.validDate(new Date([2014, 11, 1]))).to.equal(true);
+    });
+
+    it('Should return true if value is not a valid date', function () {
+        expect(is.validDate(new Date('date'))).to.equal(false);
+        expect(is.validDate(new Date(/\s+/))).to.equal(false);
+    });
+});

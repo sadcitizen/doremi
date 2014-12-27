@@ -27,5 +27,6 @@ is.primitive = require('./is/primitive');
 is.regexp = require('./is/regexp');
 is.string = require('./is/string');
 is.type = require('./is/type');
+is.validDate = require('./is/validDate');
 
 module.exports = is;
