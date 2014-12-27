@@ -426,6 +426,20 @@ describe('is.int()', function () {
     });
 });
 
+describe('is.guid()', function () {
+    it('Should return true for a json string', function () {
+        expect(is.json(JSON.stringify({}))).to.equal(true);
+        expect(is.json(JSON.stringify({ a: 'b', c: 'd' }))).to.equal(true);
+    });
+
+    it('Should return false for other strings', function () {
+        expect(is.json('')).to.equal(false);
+        expect(is.json('  ')).to.equal(false);
+        expect(is.json('hello')).to.equal(false);
+        expect(is.json('apple, orange')).to.equal(false);
+    });
+});
+
 describe('is.number()', function () {
     it('Should return false if value is an number', function () {
         expect(is.number(42)).to.equal(true);
