@@ -10,12 +10,12 @@ describe('is.args()', function () {
         };
     });
 
-    it('Should return true for arguments', function () {
+    it('Should return true for if value is an arguments', function () {
         expect(is.args(arguments)).to.equal(true);
         expect(is.args(fn())).to.equal(true);
     });
 
-    it('Should return false for non-arguments', function () {
+    it('Should return false for if value is not an arguments', function () {
         expect(is.args(void 0)).to.equal(false);
         expect(is.args(null)).to.equal(false);
         expect(is.args(true)).to.equal(false);
@@ -30,13 +30,13 @@ describe('is.args()', function () {
 });
 
 describe('is.array()', function () {
-    it('Should return true for array', function () {
+    it('Should return true if value is an array', function () {
         expect(is.array([])).to.equal(true);
         expect(is.array([1, 2, 3])).to.equal(true);
         expect(is.array(new Array(1, 2, 3))).to.equal(true);
     });
 
-    it('Should return false for non-array', function () {
+    it('Should return false if value is not an array', function () {
         expect(is.array(arguments)).to.equal(false);
         expect(is.array(void 0)).to.equal(false);
         expect(is.array(null)).to.equal(false);
@@ -51,7 +51,7 @@ describe('is.array()', function () {
 });
 
 describe('is.bool()', function () {
-    it('Should return true for boolean', function () {
+    it('Should return true if value is a boolean', function () {
         expect(is.bool(true)).to.equal(true);
         expect(is.bool(Boolean(42))).to.equal(true);
         /* jshint -W053 */
@@ -59,7 +59,7 @@ describe('is.bool()', function () {
         /* jshint +W053 */
     });
 
-    it('Should return false for non-boolean', function () {
+    it('Should return false if value is not a boolean', function () {
         expect(is.bool(arguments)).to.equal(false);
         expect(is.bool(void 0)).to.equal(false);
         expect(is.bool(null)).to.equal(false);
@@ -73,14 +73,35 @@ describe('is.bool()', function () {
     });
 });
 
+describe('is.date()', function () {
+    it('Should return true if value is a date', function () {
+        expect(is.date(new Date())).to.equal(true);
+        expect(is.date(new Date('Date'))).to.equal(true);
+        expect(is.date(new Date(2014, 11, 1))).to.equal(true);
+    });
+
+    it('Should return false if value is not a date', function () {
+        expect(is.date(arguments)).to.equal(false);
+        expect(is.date(void 0)).to.equal(false);
+        expect(is.date(true)).to.equal(false);
+        expect(is.date(null)).to.equal(false);
+        expect(is.date(NaN)).to.equal(false);
+        expect(is.date(42)).to.equal(false);
+        expect(is.date('')).to.equal(false);
+        expect(is.date([])).to.equal(false);
+        expect(is.date({})).to.equal(false);
+        expect(is.date(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.defined()', function () {
-    it('Should return false for undefined values', function () {
+    it('Should return false if value is undefined', function () {
         expect(is.defined()).to.equal(false);
         expect(is.defined(void 0)).to.equal(false);
         expect(is.defined(undefined)).to.equal(false);
     });
 
-    it('Should return true for defined values', function () {
+    it('Should return true if value is defined', function () {
         expect(is.defined(null)).to.equal(true);
         expect(is.defined(42)).to.equal(true);
         expect(is.defined(NaN)).to.equal(true);
@@ -102,39 +123,39 @@ describe('is.empty()', function () {
         };
     });
 
-    it('Should return true for empty string', function () {
+    it('Should return true if value is an empty string', function () {
         expect(is.empty('')).to.equal(true);
     });
 
-    it('Should return false for non-empty string', function () {
+    it('Should return false if value is not an empty string', function () {
         expect(is.empty('hello')).to.equal(false);
     });
 
-    it('Should return true for empty object', function () {
+    it('Should return true if value is an empty object', function () {
         expect(is.empty({})).to.equal(true);
     });
 
-    it('Should return false for non-empty object', function () {
+    it('Should return false if value is not an empty object', function () {
         expect(is.empty({a: 'b', c: 'd'})).to.equal(false);
     });
 
-    it('Should return true for empty array', function () {
+    it('Should return true if value is an empty array', function () {
         expect(is.empty([])).to.equal(true);
     });
 
-    it('Should return false for non-empty array', function () {
+    it('Should return false if value is not an empty array', function () {
         expect(is.empty([1, 2, 3, 4])).to.equal(false);
     });
 
-    it('Should return true for empty arguments', function () {
+    it('Should return true if value is an empty arguments', function () {
         expect(is.empty(fn())).to.equal(true);
     });
 
-    it('Should return false for non-empty arguments', function () {
+    it('Should return false if value is not an empty arguments', function () {
         expect(is.empty(fn(1, 2, 3, 4))).to.equal(false);
     });
 
-    it('Should return true for non-enumerable value', function () {
+    it('Should return true if value is not an enumerable', function () {
         expect(is.empty(null)).to.equal(true);
         expect(is.empty(undefined)).to.equal(true);
         expect(is.empty(0)).to.equal(true);
@@ -232,18 +253,18 @@ describe('is.equal()', function () {
 });
 
 describe('is.even()', function () {
-    it('Should return true for even numbers', function () {
+    it('Should return true if value is an even number', function () {
         expect(is.even(42)).to.equal(true);
         expect(is.even(-42)).to.equal(true);
         expect(is.even(0)).to.equal(true);
     });
 
-    it('Should return false for odd numbers', function () {
+    it('Should return false if value is an odd number', function () {
         expect(is.even(21)).to.equal(false);
         expect(is.even(-21)).to.equal(false);
     });
 
-    it('Should return false for non-numeric values', function () {
+    it('Should return false if value is not numeric', function () {
         expect(is.even(void 0)).to.equal(false);
         expect(is.even(null)).to.equal(false);
         expect(is.even(NaN)).to.equal(false);
@@ -257,12 +278,12 @@ describe('is.even()', function () {
 });
 
 describe('is.exists()', function () {
-    it('Should return false for undefined', function () {
+    it('Should return false if value is undefined', function () {
         expect(is.exists()).to.equal(false);
         expect(is.exists(undefined)).to.equal(false);
     });
 
-    it('Should return false for null', function () {
+    it('Should return false if value is null', function () {
         expect(is.exists(null)).to.equal(false);
     });
 
@@ -285,7 +306,7 @@ describe('is.exists()', function () {
 });
 
 describe('is.float()', function () {
-    it('Should return true for float', function () {
+    it('Should return true if value is float number', function () {
         expect(is.float(42.42)).to.equal(true);
     });
 
@@ -294,7 +315,7 @@ describe('is.float()', function () {
         expect(is.float(0)).to.equal(false);
     });
 
-    it('Should return false for non-number and nan', function () {
+    it('Should return false if value is not numeric or is nan', function () {
         expect(is.float(null)).to.equal(false);
         expect(is.float(NaN)).to.equal(false);
         expect(is.float(true)).to.equal(false);
@@ -307,7 +328,7 @@ describe('is.float()', function () {
 });
 
 describe('is.fn()', function () {
-    it('Should return true for function', function () {
+    it('Should return true if value is a function', function () {
         function noop() {}
 
         expect(is.fn(function () {})).to.equal(true);
@@ -315,7 +336,7 @@ describe('is.fn()', function () {
         expect(is.fn(noop)).to.equal(true);
     });
 
-    it('Should return false for non-function', function () {
+    it('Should return false if value is not a function', function () {
         expect(is.fn(arguments)).to.equal(false);
         expect(is.fn(true)).to.equal(false);
         expect(is.fn(void 0)).to.equal(false);
@@ -346,19 +367,19 @@ describe('is.hex()', function () {
 });
 
 describe('is.int()', function () {
-    it('Should return true for integer', function () {
+    it('Should return true if value is an integer', function () {
         expect(is.int(42)).to.equal(true);
     });
 
-    it('Should return true for zero', function () {
+    it('Should return true if value is zero', function () {
         expect(is.int(0)).to.equal(true);
     });
 
-    it('Should return false for float', function () {
+    it('Should return false if value is float number', function () {
         expect(is.int(42.42)).to.equal(false);
     });
 
-    it('Should return false for non-number and nan', function () {
+    it('Should return false if value is not numeric or is nan', function () {
         expect(is.int(null)).to.equal(false);
         expect(is.int(NaN)).to.equal(false);
         expect(is.int(true)).to.equal(false);
@@ -371,18 +392,18 @@ describe('is.int()', function () {
 });
 
 describe('is.odd()', function () {
-    it('Should return false for even numbers', function () {
+    it('Should return false if value is an even number', function () {
         expect(is.odd(42)).to.equal(false);
         expect(is.odd(-42)).to.equal(false);
         expect(is.odd(0)).to.equal(false);
     });
 
-    it('Should return true for odd numbers', function () {
+    it('Should return true if value is odd number', function () {
         expect(is.odd(21)).to.equal(true);
         expect(is.odd(-21)).to.equal(true);
     });
 
-    it('Should return false for non-numeric values', function () {
+    it('Should return false if value is not numeric', function () {
         expect(is.odd(void 0)).to.equal(false);
         expect(is.odd(null)).to.equal(false);
         expect(is.odd(NaN)).to.equal(false);

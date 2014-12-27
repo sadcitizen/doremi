@@ -13,7 +13,6 @@ var type = require('./type');
  *
  * is.exists('');
  * // => true
- *
  */
 module.exports = function exists(target) {
     var tp = type(target);

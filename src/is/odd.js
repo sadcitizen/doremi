@@ -1,4 +1,4 @@
-var type = require('./type');
+var number = require('./number');
 
 /**
  * Check if `target` is an odd number.
@@ -16,8 +16,7 @@ var type = require('./type');
  *
  * is.odd(20);
  * // => false
- *
  */
 module.exports = function odd(target) {
-    return type(target) === 'number' && target % 2 !== 0;
+    return number(target) && target % 2 !== 0;
 };
