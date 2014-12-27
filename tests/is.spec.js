@@ -479,6 +479,28 @@ describe('is.primitive()', function () {
     });
 });
 
+describe('is.string()', function () {
+    it('Should return false if value is a string', function () {
+        expect(is.string('')).to.equal(true);
+        expect(is.string(String(42))).to.equal(true);
+        /* jshint -W053 */
+        expect(is.string(new String(42))).to.equal(true);
+        /* jshint +W053 */
+    });
+
+    it('Should return false if value is not numeric', function () {
+        expect(is.string(void 0)).to.equal(false);
+        expect(is.string(null)).to.equal(false);
+        expect(is.string(NaN)).to.equal(false);
+        expect(is.string(true)).to.equal(false);
+        expect(is.string(42)).to.equal(false);
+        expect(is.string([])).to.equal(false);
+        expect(is.string({})).to.equal(false);
+        expect(is.string(new Date())).to.equal(false);
+        expect(is.string(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.type()', function () {
     it('Should return a type of value', function () {
         expect(is.type(arguments)).to.equal('arguments');
