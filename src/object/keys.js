@@ -1,5 +1,8 @@
 var has = require('./has');
 
+/**
+ * @returns {array} Returns array of keys.
+ */
 module.exports = Object.keys || function keys(target) {
     var result = [];
 

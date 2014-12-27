@@ -263,6 +263,41 @@ describe('is.equal()', function () {
         expect(is.equal([new Number(42), new Boolean(true), new String('hello'), []], [42, true, 'hello', []])).to.equal(true);
         /* jshint +W053 */
     });
+
+    it('Arguments containing equivalent items should be equal', function () {
+        function fn() { return arguments; }
+        expect(is.equal(fn(42, true, 'hello', /\s+/ig), fn(42, true, 'hello', /\s+/ig))).to.equal(true);
+    });
+
+    it('An object should be equal to itself', function () {
+        var obj = {};
+        expect(is.equal(obj, obj)).to.equal(true);
+    });
+
+    it('Empty objects should be equal', function () {
+        expect(is.equal({}, {})).to.equal(true);
+    });
+
+    it('Objects with equivalent structure should be equal', function () {
+        expect(is.equal({ a: 'b', c: 'd' }, { a: 'b', c: 'd' })).to.equal(true);
+
+        var fn = function () { return this.b; };
+        var target = { a: 'b', c: { d: [1, 2, 4], f: fn }};
+        var other = { a: 'b', c: { d: [1, 2, 4], f: fn }};
+        expect(is.equal(target, other)).to.equal(true);
+    });
+
+    it('Objects created by constructor with equivalent parameters should be equal', function () {
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.introduce = function () {
+            return 'Hi, I am ' + this.name;
+        };
+
+        expect(is.equal(new Person('John'), new Person('John'))).to.equal(true);
+    });
 });
 
 describe('is.even()', function () {

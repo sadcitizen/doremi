@@ -1,17 +1,99 @@
+/* jshint -W003 */
 var type = require('./type');
+var keys = require('../object/keys');
+var slice = Array.prototype.slice;
 
-module.exports = function equal(target, other) {
+/**
+ * Check if two regular expressions are equal.
+ * Regular expressions are compared by their source patterns and flags.
+ */
+function regexpEqual(target, other) {
+    return target.source === other.source &&
+        target.global === other.global &&
+        target.multiline === other.multiline &&
+        target.ignoreCase === other.ignoreCase;
+}
+
+/**
+ * Check if two array are equal.
+ * Arrays must contain equivalent contents.
+ */
+function arrayEqual(target, other) {
+    if (target.length !== other.length) {
+        return false;
+    }
+
+    for (var i = 0, length = target.length; i < length; i++) {
+        if (!equal(target[i], other[i])) {
+            break;
+        }
+    }
+
+    return i === length;
+}
+
+/**
+ * Check if two object are equal
+ * Objects must contain equivalent direct members. Members in the prototype chain are ignored.
+ *
+ * @param target
+ * @param other
+ * @returns {boolean}
+ */
+function objectEqual(target, other) {
+    var targetKeys = keys(target),
+        otherKeys = keys(other);
+
+    if (target.constructor !== other.constructor) {
+        return false;
+    }
+
+    if (arrayEqual(targetKeys, otherKeys)) {
+        for (var i = 0, length = targetKeys.length; i < length; i++) {
+            if (!equal(target[targetKeys[i]], other[otherKeys[i]])) {
+                break;
+            }
+        }
+
+        return i === length;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Check if `target` and `other` are equivalent to each other.
+ *
+ * Identical values (target === other) are automatically equivalent.
+ * Primitive values are compared by value. Primitive values and their object wrappers are equivalent.
+ * Null, undefined and functions are compared by identity.
+ * Dates are compared by their millisecond representations.
+ * Function is equal to itself. Two functions are not equivalent.
+ *
+ * @param target The first value to check.
+ * @param other The second value to check.
+ * @returns {boolean} Returns `true` if `target` is equivalent to `other`, else `false`.
+ *
+ * @example
+ *
+ * is.equal([], []);
+ * // => true
+ *
+ * is.equal({}, {});
+ * // => true
+ *
+ * is.equal(new Date(2014, 10, 2), new Date(2014, 10, 2));
+ * // => true
+ */
+function equal(target, other) {
     var tp = type(target);
 
     if (type(target) !== type(other)) {
         return false;
     }
 
-    if (tp === 'regexp') {
-        return target.source === other.source &&
-            target.global === other.global &&
-            target.multiline === other.multiline &&
-            target.ignoreCase === other.ignoreCase;
+    if (tp === 'arguments') {
+        return arrayEqual(slice.call(target), slice.call(other));
     }
 
     if (tp === 'boolean' || tp === 'date' || tp === 'number') {
@@ -29,22 +111,18 @@ module.exports = function equal(target, other) {
     }
 
     if (tp === 'array') {
-        if (target.length !== other.length) {
-            return false;
-        }
-
-        for (var i = 0, length = target.length; i < length; i++) {
-            if (!equal(target[i], other[i])) {
-                break;
-            }
-        }
-
-        return i === length;
+        return arrayEqual(target, other);
     }
 
     if (tp === 'object') {
-        
+        return objectEqual(target, other);
+    }
+
+    if (tp === 'regexp') {
+        return regexpEqual(target, other);
     }
 
     return target === other;
-};
+}
+
+module.exports = equal;
