@@ -391,6 +391,30 @@ describe('is.int()', function () {
     });
 });
 
+describe('is.number()', function () {
+    it('Should return false if value is an number', function () {
+        expect(is.number(42)).to.equal(true);
+        expect(is.number(Number('42'))).to.equal(true);
+        /* jshint -W053 */
+        expect(is.number(new Number('42'))).to.equal(true);
+        /* jshint +W053 */
+        expect(is.number(-42)).to.equal(true);
+        expect(is.number(0)).to.equal(true);
+    });
+
+    it('Should return false if value is not numeric', function () {
+        expect(is.number(void 0)).to.equal(false);
+        expect(is.number(null)).to.equal(false);
+        expect(is.number(NaN)).to.equal(false);
+        expect(is.number(true)).to.equal(false);
+        expect(is.number('')).to.equal(false);
+        expect(is.number([])).to.equal(false);
+        expect(is.number({})).to.equal(false);
+        expect(is.number(new Date())).to.equal(false);
+        expect(is.number(/\s+/ig)).to.equal(false);
+    });
+});
+
 describe('is.odd()', function () {
     it('Should return false if value is an even number', function () {
         expect(is.odd(42)).to.equal(false);
