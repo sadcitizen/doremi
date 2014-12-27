@@ -372,7 +372,6 @@ describe('is.nan()', function () {
     });
 });
 
-
 describe('is.hex()', function () {
     it('Should return true for a hex string', function () {
         expect(is.hex('ff')).to.equal(true);
@@ -434,6 +433,31 @@ describe('is.number()', function () {
         expect(is.number({})).to.equal(false);
         expect(is.number(new Date())).to.equal(false);
         expect(is.number(/\s+/ig)).to.equal(false);
+    });
+});
+
+describe('is.number()', function () {
+    it('Should return false if value is an object', function () {
+        expect(is.object({})).to.equal(true);
+        expect(is.object({ a: 'b', c: 'd' })).to.equal(true);
+        /* jshint -W057 */
+        expect(is.object(new function () {} ())).to.equal(true);
+        /* jshint +W057 */
+        /* jshint -W053, -W010 */
+        expect(is.object(new Object())).to.equal(true);
+        /* jshint +W053, +W010 */
+    });
+
+    it('Should return false if value is not an object', function () {
+        expect(is.object(void 0)).to.equal(false);
+        expect(is.object(null)).to.equal(false);
+        expect(is.object(NaN)).to.equal(false);
+        expect(is.object(true)).to.equal(false);
+        expect(is.object(0)).to.equal(false);
+        expect(is.object('')).to.equal(false);
+        expect(is.object([])).to.equal(false);
+        expect(is.object(new Date())).to.equal(false);
+        expect(is.object(/\s+/ig)).to.equal(false);
     });
 });
 
