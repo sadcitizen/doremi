@@ -1,3 +1,9 @@
+var blankString = require('./blankString');
+var ESCAPES_REGEX = /\\["\\\/bfnrtu]/g;
+var VALUES_REGEX = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;
+var BRACKETS_REGEX = /(?:^|:|,)(?:\s*\[)+/;
+var INVALIDS_REGEX = /^[\],:{}\s]*$/;
+
 /**
  * Checks if `target` is a json string.
  *
@@ -16,10 +22,10 @@
  * // => true
  */
 module.exports = function json(target) {
-    try {
-        JSON.parse(target);
-    } catch (e) {
-        return false;
-    }
-    return true;
+    return !blankString(target) && INVALIDS_REGEX.test(
+        target
+            .replace(ESCAPES_REGEX, '@')
+            .replace(VALUES_REGEX, ']')
+            .replace(BRACKETS_REGEX, '')
+    );
 };

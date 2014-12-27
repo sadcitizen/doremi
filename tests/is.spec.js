@@ -50,6 +50,19 @@ describe('is.array()', function () {
     });
 });
 
+describe('is.blankString()', function () {
+    it('Should return true for a blank string', function () {
+        expect(is.blankString('')).to.equal(true);
+        expect(is.blankString('       \t \n   ')).to.equal(true);
+    });
+
+    it('Should return false for other strings', function () {
+        expect(is.blankString('hello')).to.equal(false);
+        expect(is.blankString('apple, orange')).to.equal(false);
+        expect(is.blankString(JSON.stringify({ a: [1, 2, 3, 4], b: { c: 'd' } }))).to.equal(false);
+    });
+});
+
 describe('is.bool()', function () {
     it('Should return true if value is a boolean', function () {
         expect(is.bool(true)).to.equal(true);

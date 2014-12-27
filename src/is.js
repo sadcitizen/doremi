@@ -4,6 +4,7 @@ is.VERSION = '<%= version %>';
 
 is.args = require('./is/args');
 is.array = require('./is/array');
+is.blankString = require('./is/blankString');
 is.bool = require('./is/bool');
 is.date = require('./is/date');
 is.defined = require('./is/defined');
