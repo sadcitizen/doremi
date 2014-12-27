@@ -479,6 +479,25 @@ describe('is.primitive()', function () {
     });
 });
 
+describe('is.regexp()', function () {
+    it('Should return false if value is a string', function () {
+        expect(is.regexp(/\s+/ig)).to.equal(true);
+        expect(is.regexp(new RegExp('\\s', 'ig'))).to.equal(true);
+    });
+
+    it('Should return false if value is not numeric', function () {
+        expect(is.regexp(void 0)).to.equal(false);
+        expect(is.regexp(null)).to.equal(false);
+        expect(is.regexp(NaN)).to.equal(false);
+        expect(is.regexp(true)).to.equal(false);
+        expect(is.regexp('')).to.equal(false);
+        expect(is.regexp(42)).to.equal(false);
+        expect(is.regexp([])).to.equal(false);
+        expect(is.regexp({})).to.equal(false);
+        expect(is.regexp(new Date())).to.equal(false);
+    });
+});
+
 describe('is.string()', function () {
     it('Should return false if value is a string', function () {
         expect(is.string('')).to.equal(true);
