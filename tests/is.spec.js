@@ -1,27 +1,6 @@
 var is = require('../src/is');
 var expect = require('chai').expect;
 
-describe('is.array()', function () {
-    it('Should return true for array', function () {
-        expect(is.array([])).to.equal(true);
-        expect(is.array([1, 2, 3])).to.equal(true);
-        expect(is.array(new Array(1, 2, 3))).to.equal(true);
-    });
-
-    it('Should return false for non-array', function () {
-        expect(is.array(arguments)).to.equal(false);
-        expect(is.array(void 0)).to.equal(false);
-        expect(is.array(null)).to.equal(false);
-        expect(is.array(true)).to.equal(false);
-        expect(is.array(NaN)).to.equal(false);
-        expect(is.array(42)).to.equal(false);
-        expect(is.array('')).to.equal(false);
-        expect(is.array({})).to.equal(false);
-        expect(is.array(new Date())).to.equal(false);
-        expect(is.array(/\s+/ig)).to.equal(false);
-    });
-});
-
 describe('is.args()', function () {
     var fn;
 
@@ -47,6 +26,27 @@ describe('is.args()', function () {
         expect(is.args([])).to.equal(false);
         expect(is.args(new Date())).to.equal(false);
         expect(is.args(/\s+/ig)).to.equal(false);
+    });
+});
+
+describe('is.array()', function () {
+    it('Should return true for array', function () {
+        expect(is.array([])).to.equal(true);
+        expect(is.array([1, 2, 3])).to.equal(true);
+        expect(is.array(new Array(1, 2, 3))).to.equal(true);
+    });
+
+    it('Should return false for non-array', function () {
+        expect(is.array(arguments)).to.equal(false);
+        expect(is.array(void 0)).to.equal(false);
+        expect(is.array(null)).to.equal(false);
+        expect(is.array(true)).to.equal(false);
+        expect(is.array(NaN)).to.equal(false);
+        expect(is.array(42)).to.equal(false);
+        expect(is.array('')).to.equal(false);
+        expect(is.array({})).to.equal(false);
+        expect(is.array(new Date())).to.equal(false);
+        expect(is.array(/\s+/ig)).to.equal(false);
     });
 });
 
@@ -327,6 +327,21 @@ describe('is.fn()', function () {
         expect(is.fn({})).to.equal(false);
         expect(is.fn(new Date())).to.equal(false);
         expect(is.fn(/\s+/ig)).to.equal(false);
+    });
+});
+
+describe('is.hex()', function () {
+    it('Should return true for a hex string', function () {
+        expect(is.hex('ff')).to.equal(true);
+        expect(is.hex('00ffcc')).to.equal(true);
+        expect(is.hex('0123456789AaBbCcDdEeFf')).to.equal(true);
+    });
+
+    it('Should return false for other strings', function () {
+        expect(is.hex('')).to.equal(false);
+        expect(is.hex('  ')).to.equal(false);
+        expect(is.hex('hello')).to.equal(false);
+        expect(is.hex('apple, orange')).to.equal(false);
     });
 });
 
