@@ -34,16 +34,33 @@ describe('object.get()', function () {
         expect(object.get(foo, 'foo.foo.foo')).to.equal('foo');
     });
 
-    it('Should not return value of nonexistent property', function () {
+    it('Should not return value of non existent property', function () {
         expect(object.get(foo, '')).to.equal(undefined);
         expect(object.get(lorem, 'lorem.ipsum.foo')).to.equal(undefined);
         expect(object.get(foo, 'foo.foo.foo.foo.foo.foo')).to.equal(undefined);
     });
 
-    it('Should return default value of nonexistent property', function () {
+    it('Should return default value of non existent property', function () {
         expect(object.get(foo, '', true)).to.equal(true);
         expect(object.get(lorem, 'lorem.ipsum.foo', 42)).to.equal(42);
         expect(object.get(foo, 'foo.foo.foo.foo.foo.foo', 'foo')).to.equal('foo');
+    });
+});
+
+describe('object.property()', function () {
+    it('Should return the value from an object by property name', function () {
+        var obj = { a: 'b', c: 'd', e: 'f' };
+
+        expect(object.property('a')(obj)).to.equal('b');
+        expect(object.property('c')(obj)).to.equal('d');
+        expect(object.property('e')(obj)).to.equal('f');
+    });
+
+    it('Should return the given default value from an object by non existent property name', function () {
+        var obj = { a: 'b' };
+
+        expect(object.property('c', 'd')(obj)).to.equal('d');
+        expect(object.property('e', 'f')(obj)).to.equal('f');
     });
 });
 
