@@ -3,9 +3,11 @@ var get = require('./get');
 
 /**
  * Resolves the value of property `key` on `target`.
+ * If the value of `key` is a function it is invoked and its result
+ * is returned, else the property value is returned.
  * Returns default value `def` if the property value is `undefined`.
  *
- * @param target
+ * @param target The object to query.
  * @param key The name of property to resolve.
  * @param def Default value.
  * @returns {*} Returns the value of property `key` or default value `def`.
@@ -24,19 +26,6 @@ var get = require('./get');
  * // => 'value'
  */
 module.exports = function result(target, key, def) {
-    if (!is.object(target)) {
-        throw new TypeError('Target must be an object!');
-    }
-
-    if (!is.string(key)) {
-        throw new TypeError('Key must be a string!');
-    }
-
-    var prop = get(target, key);
-
-    if (!is.defined(prop)) {
-        prop = def;
-    }
-
+    var prop = get(target, key, def);
     return is.fn(prop) ? prop.call(target) : prop;
 };

@@ -39,6 +39,12 @@ describe('object.get()', function () {
         expect(object.get(lorem, 'lorem.ipsum.foo')).to.equal(undefined);
         expect(object.get(foo, 'foo.foo.foo.foo.foo.foo')).to.equal(undefined);
     });
+
+    it('Should return default value of nonexistent property', function () {
+        expect(object.get(foo, '', true)).to.equal(true);
+        expect(object.get(lorem, 'lorem.ipsum.foo', 42)).to.equal(42);
+        expect(object.get(foo, 'foo.foo.foo.foo.foo.foo', 'foo')).to.equal('foo');
+    });
 });
 
 describe('object.result()', function () {
