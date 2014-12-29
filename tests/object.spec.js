@@ -116,6 +116,28 @@ describe('object.hasOwn()', function () {
     });
 });
 
+describe('object.keys()', function () {
+    it('Should return array of all own enumerable property names', function () {
+        var obj = { a: 'b', c: 'd', e: 'f' };
+        expect(object.keys(obj)).to.deep.equal(['a', 'c', 'e']);
+    });
+
+    it('Should avoid properties from prototype', function () {
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        Point.prototype.getCoords = function () {
+            return [this.x, this.y];
+        };
+
+        Point.prototype.z = 0;
+
+        expect(object.keys(new Point(0, 0))).to.deep.equal(['x', 'y']);
+    });
+});
+
 describe('object.property()', function () {
     it('Should return the value from an object by property name', function () {
         var obj = { a: 'b', c: 'd', e: 'f' };
@@ -148,20 +170,20 @@ describe('object.result()', function () {
         };
     });
 
-    it('Should return nothing for undefined object properties.', function() {
+    it('Should return nothing for undefined object properties.', function () {
         expect(object.result(obj, 'some')).to.equal(undefined);
     });
 
-    it('Should return default value if property on an object is undefined', function() {
+    it('Should return default value if property on an object is undefined', function () {
         expect(object.result(obj, 'some', true)).to.equal(true);
         expect(object.result(obj, 'other', 42)).to.equal(42);
     });
 
-    it('Should evaluate a method with object context and return its result.', function() {
+    it('Should evaluate a method with object context and return its result.', function () {
         expect(object.result(obj, 'method')).to.equal('value');
     });
 
-    it('Should evaluate an attribute and return its result.', function() {
+    it('Should evaluate an attribute and return its result.', function () {
         expect(object.result(obj, 'attr')).to.equal('value');
         expect(object.result(obj, 'falsey')).to.equal('');
         expect(object.result(obj, 'arr')).to.deep.equal([0, 1, 2]);
