@@ -47,6 +47,47 @@ describe('object.get()', function () {
     });
 });
 
+describe('object.has()', function () {
+    var lorem;
+
+    before(function () {
+        lorem = {
+            lorem: {
+                ipsum: {
+                    dolor: {
+                        sit: 'amet'
+                    }
+                },
+                foo: function () {
+                    return 'bar';
+                }
+            },
+            bar: 42
+        };
+    });
+
+    it('Should return true if object has property', function () {
+        expect(object.has(lorem, 'constructor')).to.equal(true);
+        expect(object.has(lorem, 'valueOf')).to.equal(true);
+        expect(object.has(lorem, 'toString')).to.equal(true);
+        expect(object.has(lorem, 'bar')).to.equal(true);
+        expect(object.has(lorem, 'bar.constructor')).to.equal(true);
+        expect(object.has(lorem, 'bar.valueOf')).to.equal(true);
+        expect(object.has(lorem, 'bar.toString')).to.equal(true);
+        expect(object.has(lorem, 'lorem.ipsum')).to.equal(true);
+        expect(object.has(lorem, 'lorem.ipsum.dolor')).to.equal(true);
+        expect(object.has(lorem, 'lorem.ipsum.dolor.sit')).to.equal(true);
+        expect(object.has(lorem, 'lorem.ipsum.constructor')).to.equal(true);
+    });
+
+    it('Should return undefined if object has no property', function () {
+        expect(object.has(lorem, 'foo')).to.equal(false);
+        expect(object.has(lorem, 'lorem.dolor')).to.equal(false);
+        expect(object.has(lorem, 'lorem.ipsum.sit')).to.equal(false);
+        expect(object.has(lorem, 'lorem.ipsum.dolor.bar')).to.equal(false);
+    });
+});
+
 describe('object.property()', function () {
     it('Should return the value from an object by property name', function () {
         var obj = { a: 'b', c: 'd', e: 'f' };

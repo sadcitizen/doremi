@@ -38,8 +38,6 @@ var get = require('./get');
  */
 module.exports = function has(target, key) {
     /* jshint -W014 */
-    return key.split('.').length > 1
-        ? defined(get(target, key))
-        : Object.hasOwnProperty.call(target, key);
+    return defined(get(target, key));
     /* jshint +W014 */
 };
