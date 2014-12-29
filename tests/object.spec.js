@@ -1,4 +1,5 @@
 var object = require('../src/object');
+var is = require('../src/is');
 var expect = require('chai').expect;
 
 describe('object.get()', function () {
@@ -135,6 +136,47 @@ describe('object.keys()', function () {
         Point.prototype.z = 0;
 
         expect(object.keys(new Point(0, 0))).to.deep.equal(['x', 'y']);
+    });
+});
+
+describe('object.ns()', function () {
+    it('Should creates not existent nested properties', function () {
+        var lorem = {};
+        object.ns(lorem, 'ipsum.dolor.sit');
+
+        expect(is.defined(lorem.ipsum)).to.equal(true);
+        expect(is.defined(lorem.ipsum.dolor)).to.equal(true);
+        expect(is.defined(lorem.ipsum.dolor.sit)).to.equal(true);
+
+        expect(lorem.ipsum).to.deep.equal({ dolor: { sit: {} } });
+        expect(lorem.ipsum.dolor).to.deep.equal({ sit: {} });
+    });
+
+    it('Should reuse existent nested properties', function () {
+        var lorem = { ipsum: { dolor: { foo: 'bar' } } };
+        object.ns(lorem, 'ipsum.dolor.sit');
+
+        expect(is.defined(lorem.ipsum.dolor.sit)).to.equal(true);
+
+        expect(lorem.ipsum).to.deep.equal({ dolor: { foo: 'bar', sit: {} } });
+        expect(lorem.ipsum.dolor).to.deep.equal({ foo: 'bar', sit: {} });
+    });
+
+    it.only('Should override existent nested property if it is not an object', function () {
+        var lorem = { ipsum: 'dolor' };
+        object.ns(lorem, 'ipsum.dolor.sit');
+
+        expect(is.defined(lorem.ipsum.dolor.sit)).to.equal(true);
+
+        expect(lorem.ipsum).to.deep.equal({ dolor: { sit: {} } });
+        expect(lorem.ipsum.dolor).to.deep.equal({ sit: {} });
+    });
+
+    it('Should return an empty object', function () {
+        var lorem = {};
+
+        expect(object.ns(lorem, 'ipsum.dolor.sit')).to.equal(lorem.ipsum.dolor.sit);
+        expect(object.ns(lorem, 'ipsum.dolor.sit')).to.deep.equal({});
     });
 });
 
