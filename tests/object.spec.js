@@ -231,3 +231,23 @@ describe('object.result()', function () {
         expect(object.result(obj, 'arr')).to.deep.equal([0, 1, 2]);
     });
 });
+
+describe('object.set()', function () {
+    it('Should sets value for nested properties', function () {
+        var lorem = {};
+        object.set(lorem, 'ipsum.dolor.sit', 42);
+        object.set(lorem, 'ipsum.dolor.foo', 'bar');
+
+        expect(lorem.ipsum.dolor.sit).to.equal(42);
+        expect(lorem.ipsum.dolor.foo).to.equal('bar');
+    });
+
+    it('Should sets value for not nested properties', function () {
+        var lorem = {};
+        object.set(lorem, 'ipsum', 42);
+        object.set(lorem, 'foo', 'bar');
+
+        expect(lorem.ipsum).to.equal(42);
+        expect(lorem.foo).to.equal('bar');
+    });
+});
