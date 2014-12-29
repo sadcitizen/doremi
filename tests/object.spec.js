@@ -88,6 +88,34 @@ describe('object.has()', function () {
     });
 });
 
+describe('object.hasOwn()', function () {
+    var obj;
+
+    before(function () {
+        obj = {
+            a: 'b',
+            c: 'd',
+            toString: 'toString',
+            /* jshint -W001 */
+            hasOwnProperty: 'hasOwnProperty'
+            /* jshint +W001 */
+        };
+    });
+
+    it('Should return true if object has property', function () {
+        expect(object.hasOwn(obj, 'a')).to.equal(true);
+        expect(object.hasOwn(obj, 'c')).to.equal(true);
+        expect(object.hasOwn(obj, 'toString')).to.equal(true);
+        expect(object.hasOwn(obj, 'hasOwnProperty')).to.equal(true);
+    });
+
+    it('Should return undefined if object has no property', function () {
+        expect(object.hasOwn(obj, 'constructor')).to.equal(false);
+        expect(object.hasOwn(obj, 'valueOf')).to.equal(false);
+        expect(object.hasOwn(obj, 'toLocaleString')).to.equal(false);
+    });
+});
+
 describe('object.property()', function () {
     it('Should return the value from an object by property name', function () {
         var obj = { a: 'b', c: 'd', e: 'f' };

@@ -35,9 +35,10 @@ var get = require('./get');
  *
  * object.has(lorem, 'lorem.ipsum.foo');
  * // => false
+ *
+ * object.has(lorem, 'lorem.toString');
+ * // => true
  */
 module.exports = function has(target, key) {
-    /* jshint -W014 */
     return defined(get(target, key));
-    /* jshint +W014 */
 };
