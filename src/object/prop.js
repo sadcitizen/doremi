@@ -25,7 +25,7 @@ var get = require('./get');
  * users.map(names);
  * // => ['John', 'Jane']
  */
-module.exports = function property(key, def) {
+module.exports = function prop(key, def) {
     return function (target) {
         return get(target, key, def);
     };

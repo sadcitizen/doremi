@@ -138,20 +138,20 @@ describe('object.keys()', function () {
     });
 });
 
-describe('object.property()', function () {
+describe('object.prop()', function () {
     it('Should return the value from an object by property name', function () {
         var obj = { a: 'b', c: 'd', e: 'f' };
 
-        expect(object.property('a')(obj)).to.equal('b');
-        expect(object.property('c')(obj)).to.equal('d');
-        expect(object.property('e')(obj)).to.equal('f');
+        expect(object.prop('a')(obj)).to.equal('b');
+        expect(object.prop('c')(obj)).to.equal('d');
+        expect(object.prop('e')(obj)).to.equal('f');
     });
 
     it('Should return the given default value from an object by non existent property name', function () {
         var obj = { a: 'b' };
 
-        expect(object.property('c', 'd')(obj)).to.equal('d');
-        expect(object.property('e', 'f')(obj)).to.equal('f');
+        expect(object.prop('c', 'd')(obj)).to.equal('d');
+        expect(object.prop('e', 'f')(obj)).to.equal('f');
     });
 });
 
