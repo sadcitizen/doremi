@@ -1,4 +1,4 @@
-var is = require('../is');
+var isFn = require('../is/fn');
 var get = require('./get');
 
 /**
@@ -27,5 +27,5 @@ var get = require('./get');
  */
 module.exports = function result(target, key, def) {
     var prop = get(target, key, def);
-    return is.fn(prop) ? prop.call(target) : prop;
+    return isFn(prop) ? prop.call(target) : prop;
 };

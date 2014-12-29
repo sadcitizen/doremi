@@ -1,4 +1,7 @@
-var is = require('../is');
+var isObject = require('../is/object');
+var isString = require('../is/string');
+var isExists = require('../is/exists');
+var isDefined = require('../is/defined');
 
 /**
  * Resolves the value of property `key` on `target`.
@@ -38,11 +41,11 @@ var is = require('../is');
  * // => 42
  */
 module.exports = function get(target, key, def) {
-    if (!is.object(target)) {
+    if (!isObject(target)) {
         throw new TypeError('Target must be an object!');
     }
 
-    if (!is.string(key)) {
+    if (!isString(key)) {
         throw new TypeError('Property must be a string!');
     }
 
@@ -53,11 +56,11 @@ module.exports = function get(target, key, def) {
     /* jshint -W084 */
     while (key = parts.shift()) {
         obj = obj[key];
-        if (!is.exists(obj)) {
+        if (!isExists(obj)) {
             return def;
         }
     }
     /* jshint +W084 */
 
-    return is.defined(obj[last]) ? obj[last] : def;
+    return isDefined(obj[last]) ? obj[last] : def;
 };
