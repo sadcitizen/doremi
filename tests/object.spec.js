@@ -180,6 +180,47 @@ describe('object.ns()', function () {
     });
 });
 
+describe('object.pairs()', function () {
+    it('Should return array of key-value pairs', function () {
+        var obj = { a: 'b', c: 'd', e: 'f' };
+        expect(object.pairs(obj)).to.deep.equal([['a', 'b'], ['c', 'd'], ['e', 'f']]);
+        expect(object.pairs(obj, 'a', 'c')).to.deep.equal([['a', 'b'], ['c', 'd']]);
+    });
+
+    it('Should return array of key-value pairs for nested properties', function () {
+        var obj = {
+            a: 'b',
+            c: 'd',
+            e: {
+                f: 'g'
+            },
+            h: {
+                i: 'j',
+                k: 'l'
+            }
+        };
+        expect(object.pairs(obj, 'a', 'e.f')).to.deep.equal([['a', 'b'], ['e.f', 'g']]);
+        expect(object.pairs(obj, 'c', 'h.i', 'h.k')).to.deep.equal([['c', 'd'], ['h.i', 'j'], ['h.k', 'l']]);
+    });
+
+    it('Should avoid properties from prototype', function () {
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        Point.prototype.getCoords = function () {
+            return [this.x, this.y];
+        };
+
+        Point.prototype.z = 0;
+
+        expect(object.pairs(new Point(0, 0))).to.deep.equal([['x', 0], ['y', 0]]);
+        expect(object.values(new Point(42, 0), 'x')).to.deep.equal([['x', 42]]);
+        expect(object.values(new Point(0, 42), 'y')).to.deep.equal([['y', 42]]);
+    });
+});
+
 describe('object.prop()', function () {
     it('Should return the value from an object by property name', function () {
         var obj = { a: 'b', c: 'd', e: 'f' };
