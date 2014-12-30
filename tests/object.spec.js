@@ -251,3 +251,44 @@ describe('object.set()', function () {
         expect(lorem.foo).to.equal('bar');
     });
 });
+
+describe('object.values()', function () {
+    it('Should return array of own enumerable property values', function () {
+        var obj = { a: 'b', c: 'd', e: 'f' };
+        expect(object.values(obj)).to.deep.equal(['b', 'd', 'f']);
+        expect(object.values(obj, 'a', 'c')).to.deep.equal(['b', 'd']);
+    });
+
+    it('Should return array of own nested enumerable property values', function () {
+        var obj = {
+            a: 'b',
+            c: 'd',
+            e: {
+                f: 'g'
+            },
+            h: {
+                i: 'j',
+                k: 'l'
+            }
+        };
+        expect(object.values(obj, 'a', 'e.f')).to.deep.equal(['b', 'g']);
+        expect(object.values(obj, 'c', 'h.i', 'h.k')).to.deep.equal(['d', 'j', 'l']);
+    });
+
+    it('Should avoid properties from prototype', function () {
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        Point.prototype.getCoords = function () {
+            return [this.x, this.y];
+        };
+
+        Point.prototype.z = 0;
+
+        expect(object.values(new Point(0, 0))).to.deep.equal([0, 0]);
+        expect(object.values(new Point(42, 0), 'x')).to.deep.equal([42]);
+        expect(object.values(new Point(0, 42), 'y')).to.deep.equal([42]);
+    });
+});

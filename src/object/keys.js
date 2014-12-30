@@ -10,7 +10,7 @@ var hasOwn = require('./hasOwn');
  *
  * var obj = { a: 'b', c: 'd' };
  * object.keys(obj);
- * // => ['a', 'b']
+ * // => ['a', 'c']
  *
  * function Point(x, y) {
  *      this.x = x;

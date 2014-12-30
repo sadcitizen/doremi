@@ -10,5 +10,6 @@ object.ns = require('./object/ns');
 object.prop = require('./object/prop');
 object.result = require('./object/result');
 object.set = require('./object/set');
+object.values = require('./object/values');
 
 module.exports = object;
