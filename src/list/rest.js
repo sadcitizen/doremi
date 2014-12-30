@@ -5,5 +5,5 @@ var slice = Array.prototype.slice;
  * @returns {Array}
  */
 module.exports = function rest(target) {
-    return slice.call(target, 1, target.length);
+    return slice.call(target, 1);
 };
