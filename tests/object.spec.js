@@ -162,7 +162,7 @@ describe('object.ns()', function () {
         expect(lorem.ipsum.dolor).to.deep.equal({ foo: 'bar', sit: {} });
     });
 
-    it.only('Should override existent nested property if it is not an object', function () {
+    it('Should override existent nested property if it is not an object', function () {
         var lorem = { ipsum: 'dolor' };
         object.ns(lorem, 'ipsum.dolor.sit');
 
@@ -216,8 +216,8 @@ describe('object.pairs()', function () {
         Point.prototype.z = 0;
 
         expect(object.pairs(new Point(0, 0))).to.deep.equal([['x', 0], ['y', 0]]);
-        expect(object.values(new Point(42, 0), 'x')).to.deep.equal([['x', 42]]);
-        expect(object.values(new Point(0, 42), 'y')).to.deep.equal([['y', 42]]);
+        expect(object.pairs(new Point(42, 0), 'x')).to.deep.equal([['x', 42]]);
+        expect(object.pairs(new Point(0, 42), 'y')).to.deep.equal([['y', 42]]);
     });
 });
 
