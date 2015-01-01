@@ -2,9 +2,9 @@
  * Inserts a substring in a string before the given index.
  * If the index is larger than the length of the string the substring is appended at the end.
  *
- * @param target The string to insert.
- * @param sub The substring.
- * @param index The position of substring.
+ * @param {string} target The string to insert.
+ * @param {string} sub The substring.
+ * @param {number} index The position of substring.
  * @returns {string} Returns the string with the inserted substring.
  *
  * @example

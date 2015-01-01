@@ -3,9 +3,9 @@ var toString = require('../to/string');
 /**
  * Checks if a string contains a given substring.
  *
- * @param target The string to checks.
- * @param sub The substring.
- * @param from Optional. The index to start search.
+ * @param {string} target The string to checks.
+ * @param {string} sub The substring.
+ * @param {number} from Optional. The index to start search.
  * @returns {boolean} Returns `true` if the string contains the given substring, else 'false'.
  *
  * @example

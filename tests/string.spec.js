@@ -1,6 +1,23 @@
 var string = require('../src/string');
 var expect = require('chai').expect;
 
+describe('string.capitalize()', function () {
+    it('Should capitalize a string', function () {
+        expect(string.capitalize('lorem ipsum')).to.equal('Lorem ipsum');
+    });
+
+    it('Should change only first letter of a string', function () {
+        expect(string.capitalize('lorem IPSUM')).to.equal('Lorem IPSUM');
+    });
+
+    it('Should work with empty strings', function () {
+        expect(string.capitalize('')).to.equal('');
+        expect(string.capitalize()).to.equal('');
+        expect(string.capitalize(void 0)).to.equal('');
+        expect(string.capitalize(null)).to.equal('');
+    });
+});
+
 describe('string.contains()', function () {
     it('Should return true if string contains substring', function () {
         expect(string.contains('lorem ipsum', 'rem')).to.equal(true);

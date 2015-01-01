@@ -1,9 +1,9 @@
 /**
  * Removes a substring in a string from `start` to `end` positions.
  *
- * @param target The given string.
- * @param start The position of start removing.
- * @param end The position of finish removing.
+ * @param {string} target The given string.
+ * @param {number} start The position of start removing.
+ * @param {number} end The position of finish removing.
  * @returns {string} Returns the string without the substring.
  *
  * @example
