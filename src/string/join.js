@@ -12,8 +12,8 @@ var string = require('../to/string');
  * string.join('', 'Lorem', 'Ipsum');
  * // => 'LoremIpsum'
  *
- * string.join(' ', 'Lorem', null);
- * // => 'Lorem '
+ * string.join(' ', 'Lorem', null, '');
+ * // => 'Lorem'
  */
 module.exports = function join(sep) {
     var result = [];
