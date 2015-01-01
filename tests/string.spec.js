@@ -216,6 +216,20 @@ describe('string.remove()', function () {
     });
 });
 
+describe('string.reverse()', function () {
+    it('Should reverse a substring', function () {
+        expect(string.reverse('Hello, World!')).to.equal('!dlroW ,olleH');
+        expect(string.reverse('')).to.equal('');
+        expect(string.reverse(12345)).to.equal('54321');
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.reverse()).to.equal('');
+        expect(string.reverse(void 0)).to.equal('');
+        expect(string.reverse(null)).to.equal('');
+    });
+});
+
 describe('string.rtrim()', function () {
     it('Should remove trailing whitespaces', function () {
         expect(string.rtrim(' Hello, World!             ')).to.equal(' Hello, World!');

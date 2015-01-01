@@ -16,9 +16,7 @@ var string = require('../to/string');
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
 module.exports = function chop(target, step) {
-    var result = [],
-        length = target.length,
-        i;
+    var result = [], i, length;
 
     step = step | 0;
     target = string(target);
@@ -30,6 +28,8 @@ module.exports = function chop(target, step) {
     if (step < 2) {
         return target.split('');
     }
+
+    length = target.length;
 
     for (i = 0; i < length; i += step) {
         result.push(target.slice(i, i + step));

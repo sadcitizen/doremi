@@ -11,6 +11,7 @@ string.insert = require('./string/insert');
 string.join = require('./string/join');
 string.ltrim = require('./string/ltrim');
 string.remove = require('./string/remove');
+string.reverse = require('./string/reverse');
 string.rtrim = require('./string/rtrim');
 string.trim = require('./string/trim');
 
