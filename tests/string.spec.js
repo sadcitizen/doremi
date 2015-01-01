@@ -66,6 +66,28 @@ describe('string.contains()', function () {
     });
 });
 
+describe('string.count()', function () {
+    it('Should find a substring', function () {
+        expect(string.count('Hello, World!', 'l')).to.equal(3);
+        expect(string.count('Hello, World!', 'll')).to.equal(1);
+        expect(string.count(12345, 1)).to.equal(1);
+        expect(string.count(99999, 9)).to.equal(5);
+        expect(string.count(99999, 99)).to.equal(4);
+    });
+
+    it('Should not find a substring', function () {
+        expect(string.count('Hello, World!', 'world')).to.equal(0);
+        expect(string.count('Hello, World!', '! ')).to.equal(0);
+    });
+
+    it('Should work with null, undefined and empty strings', function () {
+        expect(string.count('', 'x')).to.equal(0);
+        expect(string.count('', '')).to.equal(0);
+        expect(string.count(null, 'x')).to.equal(0);
+        expect(string.count(void 0, 'x')).to.equal(0);
+    });
+});
+
 describe('string.insert()', function () {
     it('Should insert a substring in a string', function () {
         expect(string.insert(', World!', 'Hello', 0)).to.equal('Hello, World!');
