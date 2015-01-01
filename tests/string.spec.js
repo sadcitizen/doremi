@@ -216,6 +216,34 @@ describe('string.remove()', function () {
     });
 });
 
+describe('string.repeat()', function () {
+    it('Should repeat a string n times', function () {
+        expect(string.repeat('*', 3)).to.equal('***');
+        expect(string.repeat(123, 2)).to.equal('123123');
+        expect(string.repeat('lorem', 2)).to.equal('loremlorem');
+        expect(string.repeat(' ', 5)).to.equal('     ');
+        expect(string.repeat(' ', 0)).to.equal('');
+        expect(string.repeat('lorem ipsum', 0)).to.equal('');
+    });
+
+    it('Should treat null and undefined as zero', function () {
+        expect(string.repeat('lorem ipsum')).to.equal('');
+        expect(string.repeat('lorem ipsum', void 0)).to.equal('');
+        expect(string.repeat('lorem ipsum', null)).to.equal('');
+    });
+
+    it('Should treat a string as zero', function () {
+        expect(string.repeat('lorem ipsum', 'null')).to.equal('');
+        expect(string.repeat('lorem ipsum', '')).to.equal('');
+    });
+
+    it('Should work with negative counts', function () {
+        expect(string.repeat('*', -3)).to.equal('');
+        expect(string.repeat('lorem', -2)).to.equal('');
+        expect(string.repeat(' ', -5)).to.equal('');
+    });
+});
+
 describe('string.reverse()', function () {
     it('Should reverse a substring', function () {
         expect(string.reverse('Hello, World!')).to.equal('!dlroW ,olleH');
