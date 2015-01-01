@@ -3,6 +3,7 @@ var string = {};
 string.VERSION = '<%= version %>';
 
 string.capitalize = require('./string/capitalize');
+string.chop = require('./string/chop');
 string.contains = require('./string/contains');
 string.count = require('./string/count');
 string.insert = require('./string/insert');
