@@ -3,9 +3,18 @@ var string = require('../to/string');
 var rest = require('../list/rest');
 
 /**
+ * Removes leading and trailing whitespaces or given characters from `target`.
  *
- * @param {String} target
- * @returns {*}
+ * @param {String} target The string to trim.
+ * @returns {String} The trimmed string.
+ *
+ * @example
+ *
+ * string.trim('   lorem   ');
+ * // => 'lorem'
+ *
+ * string.trim('*+/lorem/+*', '/', '+*');
+ * // => 'lorem'
  */
 module.exports = function trim(target) {
     var chars = rest(arguments).join('');

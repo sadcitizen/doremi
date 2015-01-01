@@ -195,3 +195,23 @@ describe('string.remove()', function () {
         expect(string.remove(hello, -100, -90)).to.equal('Hello, World!');
     });
 });
+
+describe('string.trim()', function () {
+    it('Should remove leading and trailing whitespaces', function () {
+        expect(string.trim('           Hello, World!             ')).to.equal('Hello, World!');
+        expect(string.trim('                        ')).to.equal('');
+        expect(string.trim('\n Hello,   \t   World!        \r     ')).to.equal('Hello,   \t   World!');
+        expect(string.trim('\0 \b \t \nHello, World!\v \f \r')).to.equal('Hello, World!');
+    });
+
+    it('Should remove leading and trailing given characters', function () {
+        expect(string.trim('/* Hello, World! */', '/ ', '*')).to.equal('Hello, World!');
+        expect(string.trim('~~~****Hello, World!****~~~', '*~')).to.equal('Hello, World!');
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.trim()).to.equal('');
+        expect(string.trim(void 0)).to.equal('');
+        expect(string.trim(null)).to.equal('');
+    });
+});
