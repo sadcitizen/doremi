@@ -124,6 +124,31 @@ describe('string.count()', function () {
     });
 });
 
+describe('string.endsWith()', function () {
+    it('Should return true if string ends with another string', function () {
+        expect(string.endsWith('lorem ipsum', 'ipsum')).to.equal(true);
+        expect(string.endsWith('foo bar', 'bar')).to.equal(true);
+        expect(string.endsWith(12345, 45)).to.equal(true);
+    });
+
+    it('Should return false if string does not ends with another string', function () {
+        expect(string.endsWith('lorem ipsum', 'lorem')).to.equal(false);
+        expect(string.endsWith('foo bar', 'foo')).to.equal(false);
+    });
+
+    it('Should return true if string for search is empty', function () {
+        expect(string.endsWith('', '')).to.equal(true);
+        expect(string.endsWith('lorem', '')).to.equal(true);
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.endsWith(void 0, 'ipsum')).to.equal(false);
+        expect(string.endsWith('lorem', void 0)).to.equal(true);
+        expect(string.endsWith(null, '')).to.equal(true);
+        expect(string.endsWith('lorem', null)).to.equal(true);
+    });
+});
+
 describe('string.insert()', function () {
     it('Should insert a substring in a string', function () {
         expect(string.insert(', World!', 'Hello', 0)).to.equal('Hello, World!');
@@ -282,6 +307,7 @@ describe('string.startsWith()', function () {
     it('Should return true if string starts with another string', function () {
         expect(string.startsWith('lorem ipsum', 'lorem')).to.equal(true);
         expect(string.startsWith('foo bar', 'foo')).to.equal(true);
+        expect(string.startsWith(12345, 12)).to.equal(true);
     });
 
     it('Should return false if string does not starts with another string', function () {

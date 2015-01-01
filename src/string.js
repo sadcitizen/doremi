@@ -7,6 +7,7 @@ string.chop = require('./string/chop');
 string.clean = require('./string/clean');
 string.contains = require('./string/contains');
 string.count = require('./string/count');
+string.endsWith = require('./string/endsWith');
 string.insert = require('./string/insert');
 string.join = require('./string/join');
 string.ltrim = require('./string/ltrim');
