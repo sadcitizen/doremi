@@ -278,6 +278,30 @@ describe('string.rtrim()', function () {
     });
 });
 
+describe('string.startsWith()', function () {
+    it('Should return true if string starts with another string', function () {
+        expect(string.startsWith('lorem ipsum', 'lorem')).to.equal(true);
+        expect(string.startsWith('foo bar', 'foo')).to.equal(true);
+    });
+
+    it('Should return false if string does not starts with another string', function () {
+        expect(string.startsWith('lorem ipsum', 'ipsum')).to.equal(false);
+        expect(string.startsWith('foo bar', 'bar')).to.equal(false);
+    });
+
+    it('Should return true if string for search is empty', function () {
+        expect(string.startsWith('', '')).to.equal(true);
+        expect(string.startsWith('lorem', '')).to.equal(true);
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.startsWith(void 0, 'ipsum')).to.equal(false);
+        expect(string.startsWith('lorem', void 0)).to.equal(true);
+        expect(string.startsWith(null, '')).to.equal(true);
+        expect(string.startsWith('lorem', null)).to.equal(true);
+    });
+});
+
 describe('string.trim()', function () {
     it('Should remove leading and trailing whitespaces', function () {
         expect(string.trim('           Hello, World!             ')).to.equal('Hello, World!');
