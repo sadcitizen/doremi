@@ -73,3 +73,34 @@ describe('string.insert()', function () {
         expect(string.insert('Hello, ', 'World!', 100)).to.equal('Hello, World!');
     });
 });
+
+describe('string.remove()', function () {
+    it('Should remove a substring from a string', function () {
+        var hello = 'Hello, World!';
+
+        expect(string.remove(hello, 0, 2)).to.equal('llo, World!');
+        expect(string.remove(hello, 0, 100)).to.equal('');
+        expect(string.remove(hello, 0, hello.length)).to.equal('');
+        expect(string.remove(hello, 90, 100)).to.equal('Hello, World!');
+    });
+
+    it('Should treat undefined index as zero', function () {
+        var hello = 'Hello, World!';
+
+        expect(string.remove(hello)).to.equal(hello);
+        expect(string.remove(hello, void 0)).to.equal(hello);
+        expect(string.remove(hello, void 0, void 0)).to.equal(hello);
+        expect(string.remove(hello, null)).to.equal(hello);
+        expect(string.remove(hello, null, null)).to.equal(hello);
+    });
+
+    it('Should accept negative indexes', function () {
+        var hello = 'Hello, World!';
+
+        expect(string.remove(hello, 0, -3)).to.equal('ld!');
+        expect(string.remove(hello, 5, -1)).to.equal('Hello!');
+        expect(string.remove(hello, 2, -2)).to.equal('Hed!');
+        expect(string.remove(hello, -2, -1)).to.equal('Hello, Worl!');
+        expect(string.remove(hello, -100, -90)).to.equal('Hello, World!');
+    });
+});
