@@ -48,3 +48,28 @@ describe('string.contains()', function () {
         expect(string.contains('lorem ipsum', 'o', -11)).to.equal(true);
     });
 });
+
+describe('string.insert()', function () {
+    it('Should insert a substring in a string', function () {
+        expect(string.insert(', World!', 'Hello', 0)).to.equal('Hello, World!');
+        expect(string.insert(', World!', 'Hello', null)).to.equal('Hello, World!');
+        expect(string.insert('Hello, ', 'World!', 10)).to.equal('Hello, World!');
+        expect(string.insert('Hello, Worl', 'd!', 12)).to.equal('Hello, World!');
+        expect(string.insert('Hello, Worl', 'd!', '12')).to.equal('Hello, World!');
+    });
+
+    it('Should treat undefined index as zero', function () {
+        expect(string.insert(', World!', 'Hello')).to.equal('Hello, World!');
+        expect(string.insert(', World!', 'Hello', void 0)).to.equal('Hello, World!');
+    });
+
+    it('Should accept negative indexes', function () {
+        expect(string.insert('Hello, Worl!', 'd', -1)).to.equal('Hello, World!');
+        expect(string.insert('o, World!', 'Hell', -10)).to.equal('Hello, World!');
+        expect(string.insert('o, World!', 'Hell', '-10')).to.equal('Hello, World!');
+    });
+
+    it('Should accept indexes large than the length of a string', function () {
+        expect(string.insert('Hello, ', 'World!', 100)).to.equal('Hello, World!');
+    });
+});
