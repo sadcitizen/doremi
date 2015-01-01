@@ -165,6 +165,26 @@ describe('string.join()', function () {
     });
 });
 
+describe('string.ltrim()', function () {
+    it('Should remove leading whitespaces', function () {
+        expect(string.ltrim('           Hello, World! ')).to.equal('Hello, World! ');
+        expect(string.ltrim('                        ')).to.equal('');
+        expect(string.ltrim('\n Hello,   \t   World!')).to.equal('Hello,   \t   World!');
+        expect(string.ltrim('\0 \b \t \nHello, World!')).to.equal('Hello, World!');
+    });
+
+    it('Should remove leading given characters', function () {
+        expect(string.ltrim('/* Hello, World!*/', '/ ', '*')).to.equal('Hello, World!*/');
+        expect(string.ltrim('~~~****Hello, World!', '*~')).to.equal('Hello, World!');
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.ltrim()).to.equal('');
+        expect(string.ltrim(void 0)).to.equal('');
+        expect(string.ltrim(null)).to.equal('');
+    });
+});
+
 describe('string.remove()', function () {
     it('Should remove a substring from a string', function () {
         var hello = 'Hello, World!';
@@ -193,6 +213,26 @@ describe('string.remove()', function () {
         expect(string.remove(hello, 2, -2)).to.equal('Hed!');
         expect(string.remove(hello, -2, -1)).to.equal('Hello, Worl!');
         expect(string.remove(hello, -100, -90)).to.equal('Hello, World!');
+    });
+});
+
+describe('string.rtrim()', function () {
+    it('Should remove trailing whitespaces', function () {
+        expect(string.rtrim(' Hello, World!             ')).to.equal(' Hello, World!');
+        expect(string.rtrim('        ')).to.equal('');
+        expect(string.rtrim('\tHello,   \t   World!        \r     ')).to.equal('\tHello,   \t   World!');
+        expect(string.rtrim('Hello, World!\v \f \r')).to.equal('Hello, World!');
+    });
+
+    it('Should remove trailing given characters', function () {
+        expect(string.rtrim('/Hello, World! */', '/ ', '*')).to.equal('/Hello, World!');
+        expect(string.rtrim('Hello, World!****~~~', '*~')).to.equal('Hello, World!');
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.rtrim()).to.equal('');
+        expect(string.rtrim(void 0)).to.equal('');
+        expect(string.rtrim(null)).to.equal('');
     });
 });
 
