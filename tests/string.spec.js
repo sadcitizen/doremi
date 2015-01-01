@@ -42,6 +42,18 @@ describe('string.chop()', function () {
     });
 });
 
+describe('string.clean()', function () {
+    it('Should remove all spaces', function () {
+        expect(string.clean('           Hello,      World!             ')).to.equal('Hello, World!');
+        expect(string.clean('                        ')).to.equal('');
+    });
+
+    it('Should remove all whitespace', function () {
+        expect(string.clean('\n Hello,   \t   World!        \r     ')).to.equal('Hello, World!');
+        expect(string.clean('\0 \b \t \n \v \f \r')).to.equal('');
+    });
+});
+
 describe('string.contains()', function () {
     it('Should return true if string contains substring', function () {
         expect(string.contains('lorem ipsum', 'rem')).to.equal(true);
