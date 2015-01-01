@@ -1,7 +1,7 @@
 var slice = Array.prototype.slice;
 
 /**
- * @param target
+ * @param {*} target
  * @returns {Array}
  */
 module.exports = function rest(target) {

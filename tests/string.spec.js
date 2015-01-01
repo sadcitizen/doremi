@@ -91,6 +91,22 @@ describe('string.insert()', function () {
     });
 });
 
+describe('string.join()', function () {
+    it('Should join strings', function () {
+        expect(string.join(' ', 'lorem', 'ipsum', 'dolor', 'sit', 'amet')).to.equal('lorem ipsum dolor sit amet');
+        expect(string.join('', 'h', 'e', 'l', 'lo')).to.equal('hello');
+        expect(string.join('+', 1, 2, 3)).to.equal('1+2+3');
+    });
+
+    it('Should ignore null, undefined and empty strings', function () {
+        expect(string.join()).to.equal('');
+        expect(string.join('', '', '')).to.equal('');
+        expect(string.join(' ', null, null)).to.equal('');
+        expect(string.join(' ', void 0, void 0)).to.equal('');
+        expect(string.join(' ', 'lorem', void 0, void 0)).to.equal('lorem');
+    });
+});
+
 describe('string.remove()', function () {
     it('Should remove a substring from a string', function () {
         var hello = 'Hello, World!';
