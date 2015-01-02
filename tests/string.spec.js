@@ -229,6 +229,27 @@ describe('string.join()', function () {
     });
 });
 
+describe('string.lines()', function () {
+    it('Should return an array of lines', function () {
+        expect(string.lines('lorem\r\nipsum')).to.deep.equal(['lorem', 'ipsum']);
+        expect(string.lines('lorem ipsum')).to.deep.equal(['lorem ipsum']);
+        expect(string.lines('lorem\ripsum')).to.deep.equal(['lorem\ripsum']);
+    });
+
+    it('Should work with empty strings', function () {
+        expect(string.lines('')).to.deep.equal(['']);
+        expect(string.lines('            ')).to.deep.equal(['            ']);
+        expect(string.lines(' \t ')).to.deep.equal([' \t ']);
+        expect(string.lines(' \n ')).to.deep.equal([' ', ' ']);
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.lines()).to.deep.equal(['']);
+        expect(string.lines(void 0)).to.deep.equal(['']);
+        expect(string.lines(null)).to.deep.equal(['']);
+    });
+});
+
 describe('string.ltrim()', function () {
     it('Should remove leading whitespaces', function () {
         expect(string.ltrim('           Hello, World! ')).to.equal('Hello, World! ');

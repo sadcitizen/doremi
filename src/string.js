@@ -12,6 +12,7 @@ string.decapitalize = require('./string/decapitalize');
 string.endsWith = require('./string/endsWith');
 string.insert = require('./string/insert');
 string.join = require('./string/join');
+string.lines = require('./string/lines');
 string.ltrim = require('./string/ltrim');
 string.remove = require('./string/remove');
 string.repeat = require('./string/repeat');
