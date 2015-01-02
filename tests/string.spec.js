@@ -425,3 +425,24 @@ describe('string.truncate()', function () {
         expect(string.truncate(str, 14, null, true)).to.equal('lorem ipsum...');
     });
 });
+
+describe('string.words()', function () {
+    it('Should return an array of words', function () {
+        expect(string.words('lorem ipsum dolor sit')).to.deep.equal(['lorem', 'ipsum', 'dolor', 'sit']);
+        expect(string.words('      lorem        ipsum         dolor        sit     ')).to.deep.equal(['lorem', 'ipsum', 'dolor', 'sit']);
+        expect(string.words('lorem-ipsum-dolor-sit', '-')).to.deep.equal(['lorem', 'ipsum', 'dolor', 'sit']);
+        expect(string.words('lorem_ipsum_dolor_sit', '_')).to.deep.equal(['lorem', 'ipsum', 'dolor', 'sit']);
+        expect(string.words(123)).to.deep.equal(['123']);
+    });
+
+    it('Should work with blank strings', function () {
+        expect(string.words('')).to.deep.equal([]);
+        expect(string.words('                ')).to.deep.equal([]);
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.words()).to.deep.equal([]);
+        expect(string.words(void 0)).to.deep.equal([]);
+        expect(string.words(null)).to.deep.equal([]);
+    });
+});

@@ -19,5 +19,6 @@ string.startsWith = require('./string/startsWith');
 string.template = require('./string/template');
 string.trim = require('./string/trim');
 string.truncate = require('./string/truncate');
+string.words = require('./string/words');
 
 module.exports = string;
