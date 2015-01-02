@@ -198,6 +198,12 @@ describe('string.escape()', function () {
         /* jshint +W109 */
     });
 
+    it('Should not escape an escaped string', function () {
+        expect(string.escape('lorem &amp; ipsum')).to.equal('lorem &amp; ipsum');
+        expect(string.escape('&lt;p&gt;hi!&lt;/p&gt;')).to.equal('&lt;p&gt;hi!&lt;/p&gt;');
+        expect(string.escape('&#x27;hi!&#x27; & bye!')).to.equal('&#x27;hi!&#x27; &amp; bye!');
+    });
+
     it('Should work with empty strings', function () {
         expect(string.escape('')).to.equal('');
         expect(string.escape()).to.equal('');

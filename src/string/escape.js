@@ -19,7 +19,7 @@ module.exports = function escape(target) {
         return '';
     }
 
-    return target.replace(/[&<>"'`]/g, function (match) {
+    return target.replace(/(\&)(?![a-z0-9#]+;)/g, '&amp;').replace(/[<>"'`]/g, function (match) {
         return symbols[match];
     });
 };
