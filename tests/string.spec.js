@@ -433,27 +433,6 @@ describe('string.template()', function () {
     });
 });
 
-describe('string.titleize()', function () {
-    it('Should return a title string', function () {
-        expect(string.titleize('lorem ipsum dolor sit')).to.equal('Lorem Ipsum Dolor Sit');
-        expect(string.titleize('lorem-ipsum-dolor-sit')).to.equal('Lorem-Ipsum-Dolor-Sit');
-        expect(string.titleize('lorem_ipsum_dolor_sit')).to.equal('Lorem_Ipsum_Dolor_Sit');
-        expect(string.titleize('LOREM--IPSUM--DOLOR--SIT')).to.equal('Lorem--Ipsum--Dolor--Sit');
-    });
-
-    it('Should work with blank strings', function () {
-        expect(string.titleize('')).to.equal('');
-        expect(string.titleize('       ')).to.equal('');
-        expect(string.titleize('    \n    ')).to.equal('');
-    });
-
-    it('Should treat null and undefined as empty string', function () {
-        expect(string.titleize()).to.equal('');
-        expect(string.titleize(void 0)).to.equal('');
-        expect(string.titleize(null)).to.equal('');
-    });
-});
-
 describe('string.trim()', function () {
     it('Should remove leading and trailing whitespaces', function () {
         expect(string.trim('           Hello, World!             ')).to.equal('Hello, World!');

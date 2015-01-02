@@ -20,7 +20,6 @@ string.rtrim = require('./string/rtrim');
 string.startsWith = require('./string/startsWith');
 string.swap = require('./string/swap');
 string.template = require('./string/template');
-string.titleize = require('./string/titleize');
 string.trim = require('./string/trim');
 string.truncate = require('./string/truncate');
 string.words = require('./string/words');
