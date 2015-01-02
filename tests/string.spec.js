@@ -124,6 +124,23 @@ describe('string.count()', function () {
     });
 });
 
+describe('string.decapitalize()', function () {
+    it('Should decapitalize a string', function () {
+        expect(string.decapitalize('Lorem ipsum')).to.equal('lorem ipsum');
+    });
+
+    it('Should change only first letter of a string', function () {
+        expect(string.decapitalize('Lorem IPSUM')).to.equal('lorem IPSUM');
+    });
+
+    it('Should work with empty strings', function () {
+        expect(string.decapitalize('')).to.equal('');
+        expect(string.decapitalize()).to.equal('');
+        expect(string.decapitalize(void 0)).to.equal('');
+        expect(string.decapitalize(null)).to.equal('');
+    });
+});
+
 describe('string.endsWith()', function () {
     it('Should return true if string ends with another string', function () {
         expect(string.endsWith('lorem ipsum', 'ipsum')).to.equal(true);
