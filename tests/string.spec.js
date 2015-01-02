@@ -345,6 +345,20 @@ describe('string.startsWith()', function () {
     });
 });
 
+describe('string.swap()', function () {
+    it('Should swap case of characters', function () {
+        expect(string.swap('lorem ipsum')).to.equal('LOREM IPSUM');
+        expect(string.swap('lOREM iPSUM')).to.equal('Lorem Ipsum');
+        expect(string.swap('')).to.equal('');
+    });
+
+    it('Should treat null and undefined as empty string', function () {
+        expect(string.swap()).to.equal('');
+        expect(string.swap(void 0)).to.equal('');
+        expect(string.swap(null)).to.equal('');
+    });
+});
+
 describe('string.template()', function () {
     it('Should return the string replaced with template values', function () {
         var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };

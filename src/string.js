@@ -17,6 +17,7 @@ string.repeat = require('./string/repeat');
 string.reverse = require('./string/reverse');
 string.rtrim = require('./string/rtrim');
 string.startsWith = require('./string/startsWith');
+string.swap = require('./string/swap');
 string.template = require('./string/template');
 string.trim = require('./string/trim');
 string.truncate = require('./string/truncate');
