@@ -10,6 +10,7 @@ string.contains = require('./string/contains');
 string.count = require('./string/count');
 string.decapitalize = require('./string/decapitalize');
 string.endsWith = require('./string/endsWith');
+string.escape = require('./string/escape');
 string.insert = require('./string/insert');
 string.join = require('./string/join');
 string.lines = require('./string/lines');

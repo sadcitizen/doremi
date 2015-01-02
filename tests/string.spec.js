@@ -188,6 +188,24 @@ describe('string.endsWith()', function () {
     });
 });
 
+describe('string.escape()', function () {
+    it('Should escape a string', function () {
+        expect(string.escape('<p>hi!</p>')).to.equal('&lt;p&gt;hi!&lt;/p&gt;');
+        expect(string.escape('<p>lorem & ipsum</p>')).to.equal('&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;');
+        expect(string.escape('"hi!"')).to.equal('&quot;hi!&quot;');
+        /* jshint -W109 */
+        expect(string.escape("'hi!'")).to.equal('&#x27;hi!&#x27;');
+        /* jshint +W109 */
+    });
+
+    it('Should work with empty strings', function () {
+        expect(string.escape('')).to.equal('');
+        expect(string.escape()).to.equal('');
+        expect(string.escape(void 0)).to.equal('');
+        expect(string.escape(null)).to.equal('');
+    });
+});
+
 describe('string.insert()', function () {
     it('Should insert a substring in a string', function () {
         expect(string.insert(', World!', 'Hello', 0)).to.equal('Hello, World!');
