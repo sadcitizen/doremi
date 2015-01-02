@@ -24,6 +24,7 @@ string.swap = require('./string/swap');
 string.template = require('./string/template');
 string.trim = require('./string/trim');
 string.truncate = require('./string/truncate');
+string.unescape = require('./string/unescape');
 string.words = require('./string/words');
 
 module.exports = string;

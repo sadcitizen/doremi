@@ -524,6 +524,24 @@ describe('string.truncate()', function () {
     });
 });
 
+describe('string.unescape()', function () {
+    it('Should escape a string', function () {
+        expect(string.unescape('&lt;p&gt;hi!&lt;/p&gt;')).to.equal('<p>hi!</p>');
+        expect(string.unescape('&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;')).to.equal('<p>lorem & ipsum</p>');
+        expect(string.unescape('&quot;hi!&quot;')).to.equal('"hi!"');
+        /* jshint -W109 */
+        expect(string.unescape('&#x27;hi!&#x27;')).to.equal("'hi!'");
+        /* jshint +W109 */
+    });
+
+    it('Should work with empty strings', function () {
+        expect(string.unescape('')).to.equal('');
+        expect(string.unescape()).to.equal('');
+        expect(string.unescape(void 0)).to.equal('');
+        expect(string.unescape(null)).to.equal('');
+    });
+});
+
 describe('string.words()', function () {
     it('Should return an array of words', function () {
         expect(string.words('lorem ipsum dolor sit')).to.deep.equal(['lorem', 'ipsum', 'dolor', 'sit']);
