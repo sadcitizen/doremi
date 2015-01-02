@@ -1,4 +1,4 @@
-var whitespaces = require('../internal/whitespaces');
+var whitespaces = require('../internal/whitespaces.regex');
 var string = require('../to/string');
 var rest = require('../list/rest');
 

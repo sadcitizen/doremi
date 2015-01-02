@@ -1,5 +1,5 @@
 var trim = require('./trim');
-var whitespaces = require('../internal/whitespaces');
+var whitespaces = require('../internal/whitespaces.regex');
 
 /**
  * Cleans a string from whitespaces.

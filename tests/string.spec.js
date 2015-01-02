@@ -328,6 +328,58 @@ describe('string.startsWith()', function () {
     });
 });
 
+describe('string.template()', function () {
+    it('Should return the string replaced with template values', function () {
+        var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
+        expect(string.template('${a} ${b} ${c}', lorem)).to.equal('lorem ipsum dolor');
+        expect(string.template('${a} ipsum ${c} sit', lorem)).to.equal('lorem ipsum dolor sit');
+    });
+
+    it('Should work with nested values', function () {
+        var lorem = {
+            ipsum: {
+                dolor: 'sit'
+            },
+            sit: {
+                amet: 'consectetur'
+            },
+            foo: ['foo', 'bar']
+        };
+        expect(string.template('${ ipsum.dolor } ${ sit.amet }', lorem)).to.equal('sit consectetur');
+        expect(string.template('${ ipsum.dolor } ${ foo.0 }', lorem)).to.equal('sit foo');
+    });
+
+    it('Should work with arrays', function () {
+        var lorem = ['lorem', 'ipsum', 'dolor'];
+        expect(string.template('${0} ${1} ${2}', lorem)).to.equal('lorem ipsum dolor');
+        expect(string.template('${0} ipsum ${2} sit', lorem)).to.equal('lorem ipsum dolor sit');
+    });
+
+    it('Should treat null and undefined target as empty string', function () {
+        expect(string.template(null, { lorem: 'lorem' })).to.equal('');
+        expect(string.template(undefined, { lorem: 'lorem' })).to.equal('');
+    });
+
+    it('Should not replace undefined values', function () {
+        var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
+        expect(string.template('${a} ${b} ${c} ${d}', lorem)).to.equal('lorem ipsum dolor ${d}');
+    });
+
+    it('Should treat null values as empty string', function () {
+        expect(string.template('${lorem}', { lorem: null })).to.equal('');
+    });
+
+    it('Should work with mustache syntax', function () {
+        var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
+        expect(string.template('{{a}} {{b}} {{c}}', lorem, /\{\{([^\}]+)\}\}/g)).to.equal('lorem ipsum dolor');
+    });
+
+    it('Should work with underscore syntax', function () {
+        var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
+        expect(string.template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g)).to.equal('lorem ipsum dolor');
+    });
+});
+
 describe('string.trim()', function () {
     it('Should remove leading and trailing whitespaces', function () {
         expect(string.trim('           Hello, World!             ')).to.equal('Hello, World!');

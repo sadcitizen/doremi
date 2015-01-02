@@ -1,4 +1,5 @@
 var isObject = require('../is/object');
+var isArray = require('../is/array');
 var isString = require('../is/string');
 var isExists = require('../is/exists');
 var isDefined = require('../is/defined');
@@ -41,8 +42,8 @@ var isDefined = require('../is/defined');
  * // => 42
  */
 module.exports = function get(target, key, def) {
-    if (!isObject(target)) {
-        throw new TypeError('Target must be an object!');
+    if (!isObject(target) && !isArray(target)) {
+        throw new TypeError('Target must be an object or an array!');
     }
 
     if (!isString(key)) {
