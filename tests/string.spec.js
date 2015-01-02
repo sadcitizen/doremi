@@ -1,6 +1,28 @@
 var string = require('../src/string');
 var expect = require('chai').expect;
 
+describe('string.camelize()', function () {
+    it('Should convert string to camel case', function () {
+        expect(string.camelize('lorem ipsum dolor')).to.equal('loremIpsumDolor');
+        expect(string.camelize('    lorem   ipsum   dolor   ')).to.equal('loremIpsumDolor');
+        expect(string.camelize('--lorem--ipsum--dolor--')).to.equal('loremIpsumDolor');
+        expect(string.camelize('__lorem__ipsum__dolor__')).to.equal('loremIpsumDolor');
+        expect(string.camelize(123456)).to.equal('123456');
+    });
+
+    it('Should work with blank strings', function () {
+        expect(string.camelize('')).to.equal('');
+        expect(string.camelize('       ')).to.equal('');
+        expect(string.camelize('    \n   ')).to.equal('');
+    });
+
+    it('Should treat null and undefined as blank string', function () {
+        expect(string.camelize()).to.equal('');
+        expect(string.camelize(void 0)).to.equal('');
+        expect(string.camelize(null)).to.equal('');
+    });
+});
+
 describe('string.capitalize()', function () {
     it('Should capitalize a string', function () {
         expect(string.capitalize('lorem ipsum')).to.equal('Lorem ipsum');

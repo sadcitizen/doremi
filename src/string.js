@@ -2,6 +2,7 @@ var string = {};
 
 string.VERSION = '<%= version %>';
 
+string.camelize = require('./string/camelize');
 string.capitalize = require('./string/capitalize');
 string.chop = require('./string/chop');
 string.clean = require('./string/clean');
