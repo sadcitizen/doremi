@@ -1,3 +1,1 @@
-module.exports = function demethodize() {
-
-};
+module.exports = Function.bind.bind(Function.call);

@@ -1,3 +1,4 @@
+var slice = require('../internal/slice');
 module.exports = function array() {
-    return Array.prototype.slice.call(arguments);
+    return slice(arguments);
 };

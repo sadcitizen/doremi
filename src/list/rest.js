@@ -1,9 +1,11 @@
-var slice = Array.prototype.slice;
+var slice = require('../internal/slice');
 
 /**
- * @param {*} target
+ *
+ * @param target
+ * @param at
  * @returns {Array}
  */
-module.exports = function rest(target) {
-    return slice.call(target, 1);
+module.exports = function rest(target, at) {
+    return slice(target, (at |= 0) < 1 ? 1 : at);
 };
