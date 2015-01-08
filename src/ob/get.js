@@ -29,16 +29,16 @@ var isDefined = require('../is/defined');
  *     bar: 42
  * };
  *
- * object.get(lorem, 'bar');
+ * ob.get(lorem, 'bar');
  * // => 42
  *
- * object.get(lorem, 'lorem.ipsum.dolor.sit');
+ * ob.get(lorem, 'lorem.ipsum.dolor.sit');
  * // => 'amet'
  *
- * object.get(lorem, 'lorem.ipsum.foo');
+ * ob.get(lorem, 'lorem.ipsum.foo');
  * // => undefined
  *
- * object.get(lorem, 'lorem.ipsum.foo', 42);
+ * ob.get(lorem, 'lorem.ipsum.foo', 42);
  * // => 42
  */
 module.exports = function get(target, key, def) {

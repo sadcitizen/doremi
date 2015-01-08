@@ -9,13 +9,13 @@
  *
  * var obj = { a: 'b', c: 'd' };
  *
- * object.hasOwn(obj, 'a');
+ * ob.hasOwn(obj, 'a');
  * // => true
  *
- * object.hasOwn(obj, 'e');
+ * ob.hasOwn(obj, 'e');
  * // => false
  *
- * object.hasOwn(obj, 'toString');
+ * ob.hasOwn(obj, 'toString');
  * // => false
  */
 module.exports = function hasOwn(target, key) {

@@ -16,13 +16,13 @@ var get = require('./get');
  *
  * var obj = { attr: 'value', arr: [0, 1, 2], num: 2, falsey: '', method: function () { return this.attr; } };
  *
- * object.result(obj, 'attr');
+ * ob.result(obj, 'attr');
  * // => 'value'
  *
- * object.result(obj, 'some', 42);
+ * ob.result(obj, 'some', 42);
  * // => 42
  *
- * object.result(obj, 'method');
+ * ob.result(obj, 'method');
  * // => 'value'
  */
 module.exports = function result(target, key, def) {

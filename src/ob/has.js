@@ -24,19 +24,19 @@ var get = require('./get');
  *     bar: 42
  * };
  *
- * object.has(lorem, 'bar');
+ * ob.has(lorem, 'bar');
  * // => true
  *
- * object.has(lorem, 'lorem.ipsum.dolor.sit');
+ * ob.has(lorem, 'lorem.ipsum.dolor.sit');
  * // => true
  *
- * object.has(lorem, 'lorem.ipsum.foo');
+ * ob.has(lorem, 'lorem.ipsum.foo');
  * // => false
  *
- * object.has(lorem, 'lorem.ipsum.foo');
+ * ob.has(lorem, 'lorem.ipsum.foo');
  * // => false
  *
- * object.has(lorem, 'lorem.toString');
+ * ob.has(lorem, 'lorem.toString');
  * // => true
  */
 module.exports = function has(target, key) {

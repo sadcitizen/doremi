@@ -1,6 +1,6 @@
 /* jshint -W003 */
 var type = require('./type');
-var keys = require('../object/keys');
+var keys = require('../ob/keys');
 var slice = Array.prototype.slice;
 
 /**

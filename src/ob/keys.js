@@ -9,7 +9,7 @@ var hasOwn = require('./hasOwn');
  * @example
  *
  * var obj = { a: 'b', c: 'd' };
- * object.keys(obj);
+ * ob.keys(obj);
  * // => ['a', 'c']
  *
  * function Point(x, y) {
@@ -21,7 +21,7 @@ var hasOwn = require('./hasOwn');
  *      return [this.x, this.y];
  * }
  *
- * object.keys(new Point(0, 0));
+ * ob.keys(new Point(0, 0));
  * // => ['x', 'y'] (The `getCoords` is not own property)
  */
 module.exports = Object.keys || function keys(target) {

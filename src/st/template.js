@@ -1,5 +1,5 @@
 var string = require('../to/string');
-var get = require('../object/get');
+var get = require('../ob/get');
 var trim = require('./trim');
 var defined = require('../is/defined');
 var regex = require('../internal/template.regex');

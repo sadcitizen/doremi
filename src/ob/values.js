@@ -3,20 +3,19 @@ var keys = require('./keys');
 var get = require('./get');
 
 /**
- * Creates a two dimensional array of the key-value pairs for `target`,
- * e.g. `[[key1, value1], [key2, value2]]`.
+ * Creates an array of own enumerable property values of `target`.
  * Available for nested properties.
  *
  * @param target The object to inspect.
- * @returns {array} Returns array of key-value pairs.
+ * @returns {array} Returns array of property values.
  *
  * @example
  *
  * var obj = { a: 'b', c: 'd' };
- * object.pairs(obj);
+ * ob.values(obj);
  * // => ['b', 'd']
  *
- * object.pairs(obj, 'a');
+ * ob.values(obj, 'a');
  * // => ['b']
  *
  * function Point(x, y) {
@@ -28,15 +27,15 @@ var get = require('./get');
  *      return [this.x, this.y];
  * }
  *
- * object.pairs(new Point(0, 0));
- * // => [['x', 0], ['y', 0]] (The `getCoords` is not own property)
+ * ob.values(new Point(0, 0));
+ * // => [0, 0] (The `getCoords` is not own property)
  */
-module.exports = function pairs(target) {
+module.exports = function values(target) {
     var args = rest(arguments);
 
     args = args.length ? args : keys(target);
 
     return args.map(function (arg) {
-        return [arg, get(target, arg)];
+        return get(target, arg);
     });
 };

@@ -1,6 +1,6 @@
 var symbols = require('../internal/escape.symbols');
 var string = require('../to/string');
-var invert = require('../object/invert');
+var invert = require('../ob/invert');
 
 /**
  * Converts HTML-entities `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#x27;`, `&#x60;`

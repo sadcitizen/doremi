@@ -1,6 +1,6 @@
-var isDefined = require('../is/defined');
-var isObject = require('../is/object');
-var isString = require('../is/string');
+var defined = require('../is/defined');
+var object = require('../is/object');
+var string = require('../is/string');
 
 /**
  * Creates an empty nested object by `path` and returns it.
@@ -13,26 +13,26 @@ var isString = require('../is/string');
  * @example
  *
  * var lorem = {};
- * object.ns(lorem, 'ipsum.dolor.sit');
+ * ob.ns(lorem, 'ipsum.dolor.sit');
  * // => lorem = { ipsum: { dolor: sit: {} } }
  *
  * var lorem = { ipsum: 'dolor' };
- * object.ns(lorem, 'ipsum.dolor.sit');
+ * ob.ns(lorem, 'ipsum.dolor.sit');
  * // => lorem = { ipsum: { dolor: sit: {} } } (ipsum is overridden)
  */
 module.exports = function ns(target, path) {
-    if (!isObject(target)) {
+    if (!object(target)) {
         throw new TypeError('Target must be an object!');
     }
 
-    if (!isString(path)) {
+    if (!string(path)) {
         throw new TypeError('Path must be a string!');
     }
 
     var obj = target;
 
     path.split('.').forEach(function (key) {
-        if (!(isDefined(obj[key]) && isObject(obj[key]))) {
+        if (!(defined(obj[key]) && object(obj[key]))) {
             obj[key] = {};
         }
 

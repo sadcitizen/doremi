@@ -11,7 +11,7 @@ var ns = require('./ns');
  *
  * var lorem = {};
  *
- * object.set(lorem, 'ipsum.dolor', 'sit');
+ * ob.set(lorem, 'ipsum.dolor', 'sit');
  * // => lorem: { ipsum: { dolor: 'sit' } }
  * console.log(lorem.ipsum.dolor);
  * // => 'sit'

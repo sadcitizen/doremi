@@ -12,16 +12,16 @@ var get = require('./get');
  *
  * var obj = { lorem: 'ipsum' };
  *
- * var lorem = object.property('lorem');
+ * var lorem = ob.prop('lorem');
  * lorem(obj);
  * // => 'ipsum'
  *
- * var sit = object.property('sit', 'amet');
+ * var sit = ob.prop('sit', 'amet');
  * sit(obj);
  * // => 'amet'
  *
  * var users = [{ name: 'John', age: 23 }, { name: 'Jane', age: 21 }];
- * var names = object.property('name');
+ * var names = ob.prop('name');
  * users.map(names);
  * // => ['John', 'Jane']
  */
