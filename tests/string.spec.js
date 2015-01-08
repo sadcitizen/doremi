@@ -274,6 +274,34 @@ describe('string.lines()', function () {
     });
 });
 
+describe('string.lpad()', function () {
+    it('Should add characters to the left', function () {
+        expect(string.lpad('lorem', 4, '^')).to.equal('lorem');
+        expect(string.lpad('lorem', 5, '^')).to.equal('lorem');
+        expect(string.lpad('lorem', 6, '^')).to.equal('^lorem');
+        expect(string.lpad('lorem', 7, '^')).to.equal('^^lorem');
+        expect(string.lpad('lorem', 8, '^')).to.equal('^^^lorem');
+    });
+
+    it('Should take only first character of padding string', function () {
+        expect(string.lpad('lorem', 6, '#')).to.equal('#lorem');
+        expect(string.lpad('lorem', 6, '%#')).to.equal('%lorem');
+        expect(string.lpad('lorem', 6, '&%#')).to.equal('&lorem');
+        expect(string.lpad('lorem', 6, '$&%#')).to.equal('$lorem');
+    });
+
+    it('Should treat null and undefined padding string as space', function () {
+        expect(string.lpad(void 0, 5, '*')).to.equal('*****');
+        expect(string.lpad(null, 5, '*')).to.equal('*****');
+    });
+
+    it('Should treat null and undefined padding string as space', function () {
+        expect(string.lpad('lorem')).to.equal('lorem');
+        expect(string.lpad('lorem', 10, void 0)).to.equal('     lorem');
+        expect(string.lpad('lorem', 10, null)).to.equal('     lorem');
+    });
+});
+
 describe('string.ltrim()', function () {
     it('Should remove leading whitespaces', function () {
         expect(string.ltrim('           Hello, World! ')).to.equal('Hello, World! ');
@@ -364,6 +392,34 @@ describe('string.reverse()', function () {
         expect(string.reverse()).to.equal('');
         expect(string.reverse(void 0)).to.equal('');
         expect(string.reverse(null)).to.equal('');
+    });
+});
+
+describe('string.rpad()', function () {
+    it('Should add characters to the right', function () {
+        expect(string.rpad('lorem', 4, '^')).to.equal('lorem');
+        expect(string.rpad('lorem', 5, '^')).to.equal('lorem');
+        expect(string.rpad('lorem', 6, '^')).to.equal('lorem^');
+        expect(string.rpad('lorem', 7, '^')).to.equal('lorem^^');
+        expect(string.rpad('lorem', 8, '^')).to.equal('lorem^^^');
+    });
+
+    it('Should take only first character of padding string', function () {
+        expect(string.rpad('lorem', 6, '#')).to.equal('lorem#');
+        expect(string.rpad('lorem', 6, '%#')).to.equal('lorem%');
+        expect(string.rpad('lorem', 6, '&%#')).to.equal('lorem&');
+        expect(string.rpad('lorem', 6, '$&%#')).to.equal('lorem$');
+    });
+
+    it('Should treat null and undefined padding string as space', function () {
+        expect(string.rpad(void 0, 5, '*')).to.equal('*****');
+        expect(string.rpad(null, 5, '*')).to.equal('*****');
+    });
+
+    it('Should treat null and undefined padding string as space', function () {
+        expect(string.rpad('lorem')).to.equal('lorem');
+        expect(string.rpad('lorem', 10, void 0)).to.equal('lorem     ');
+        expect(string.rpad('lorem', 10, null)).to.equal('lorem     ');
     });
 });
 
