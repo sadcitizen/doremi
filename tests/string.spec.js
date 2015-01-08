@@ -322,6 +322,35 @@ describe('string.ltrim()', function () {
     });
 });
 
+describe('string.pad()', function () {
+    it('Should add characters to the right', function () {
+        expect(string.pad('sit', 4, '^')).to.equal('^sit');
+        expect(string.pad('sit', 5, '^')).to.equal('^sit^');
+        expect(string.pad('sit', 6, '^')).to.equal('^^sit^');
+        expect(string.pad('sit', 7, '^')).to.equal('^^sit^^');
+        expect(string.pad('sit', 8, '^')).to.equal('^^^sit^^');
+    });
+
+    it('Should take only first character of padding string', function () {
+        expect(string.pad('sit', 6, '#')).to.equal('##sit#');
+        expect(string.pad('sit', 7, '%#')).to.equal('%%sit%%');
+        expect(string.pad('sit', 8, '&%#')).to.equal('&&&sit&&');
+        expect(string.pad('sit', 9, '$&%#')).to.equal('$$$sit$$$');
+    });
+
+    it('Should treat null and undefined padding string as space', function () {
+        expect(string.pad('', 5, '@')).to.equal('@@@@@');
+        expect(string.pad(void 0, 5, '@')).to.equal('@@@@@');
+        expect(string.pad(null, 5, '@')).to.equal('@@@@@');
+    });
+
+    it('Should treat null and undefined padding string as space', function () {
+        expect(string.pad('sit')).to.equal('sit');
+        expect(string.pad('sit', 9, void 0)).to.equal('   sit   ');
+        expect(string.pad('sit', 9, null)).to.equal('   sit   ');
+    });
+});
+
 describe('string.remove()', function () {
     it('Should remove a substring from a string', function () {
         var hello = 'Hello, World!';

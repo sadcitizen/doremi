@@ -16,6 +16,7 @@ string.join = require('./string/join');
 string.lines = require('./string/lines');
 string.lpad = require('./string/lpad');
 string.ltrim = require('./string/ltrim');
+string.pad = require('./string/pad');
 string.remove = require('./string/remove');
 string.repeat = require('./string/repeat');
 string.reverse = require('./string/reverse');
