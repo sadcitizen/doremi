@@ -23,6 +23,6 @@ var repeat = require('./repeat');
  */
 module.exports = function rpad(target, length, char) {
     target = string(target);
-    char = string(char);
-    return target.length < (length |= 0) ? target + repeat((char || ' ').charAt(0), length - target.length) : target;
+    char = (string(char) || ' ').charAt(0);
+    return target.length < (length |= 0) ? target + repeat(char, length - target.length) : target;
 };

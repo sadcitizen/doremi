@@ -23,6 +23,6 @@ var repeat = require('./repeat');
  */
 module.exports = function lpad(target, length, char) {
     target = string(target);
-    char = string(char);
-    return target.length < (length |= 0) ? repeat((char || ' ').charAt(0), length - target.length) + target : target;
+    char = (string(char) || ' ').charAt(0);
+    return target.length < (length |= 0) ? repeat(char, length - target.length) + target : target;
 };
