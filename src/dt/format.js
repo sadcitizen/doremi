@@ -1,7 +1,7 @@
 var valid = require('../is/validDate');
 var defined = require('../is/defined');
 var string = require('../to/string');
-var lpad = require('../string/lpad');
+var lpad = require('../st/lpad');
 var aliases = require('../internal/datetime.aliases');
 var regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
 
