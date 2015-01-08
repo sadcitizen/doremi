@@ -29,8 +29,7 @@ module.exports = function pad(target, length, char) {
         return target;
     }
 
-    char = string(char);
-    char = (char || ' ').charAt(0);
+    char = (string(char) || ' ').charAt(0);
 
     var llen = Math.ceil((length - target.length) / 2),
         rlen = length - target.length - llen;
