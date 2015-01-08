@@ -1,6 +1,6 @@
 var whitespaces = require('../internal/whitespaces.regex');
 var string = require('../to/string');
-var rest = require('../list/rest');
+var rest = require('../ar/rest');
 
 /**
  * Removes leading whitespaces or given characters from `target`.

@@ -1,4 +1,4 @@
-var rest = require('../list/rest');
+var rest = require('../ar/rest');
 var keys = require('./keys');
 var get = require('./get');
 
