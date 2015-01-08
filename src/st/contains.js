@@ -10,10 +10,10 @@ var toString = require('../to/string');
  *
  * @example
  *
- * string.contains('lorem ipsum', 'rem');
+ * st.contains('lorem ipsum', 'rem');
  * // => true
  *
- * string.contains('lorem ipsum', 'foo');
+ * st.contains('lorem ipsum', 'foo');
  * // => false
  */
 module.exports = function contains(target, sub, from) {

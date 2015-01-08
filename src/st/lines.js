@@ -8,10 +8,10 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.lines('Lorem ipsum');
+ * st.lines('Lorem ipsum');
  * // => ['Lorem ipsum']
  *
- * string.lines('Lorem \nipsum');
+ * st.lines('Lorem \nipsum');
  * // => ['Lorem ', 'ipsum']
  */
 module.exports = function lines(target) {

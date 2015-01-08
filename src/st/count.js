@@ -9,13 +9,13 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.count('Hello, World!', 'l');
+ * st.count('Hello, World!', 'l');
  * // => 1
  *
- * string.count(99999, 9);
+ * st.count(99999, 9);
  * // => 5
  *
- * string.count(99999, 99);
+ * st.count(99999, 99);
  * // => 4
  */
 module.exports = function count(target, sub) {

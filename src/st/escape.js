@@ -9,7 +9,7 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.escape('<p>lorem & ipsum</p>');
+ * st.escape('<p>lorem & ipsum</p>');
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
 module.exports = function escape(target) {

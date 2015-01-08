@@ -8,10 +8,10 @@
  *
  * @example
  *
- * string.remove('Hello, World!', 5, -1);
+ * st.remove('Hello, World!', 5, -1);
  * // => 'Hello!'
  *
- * string.remove('Hello, World!', 90, 100)
+ * st.remove('Hello, World!', 90, 100)
  * // => 'Hello, World!'
  */
 module.exports = function remove(target, start, end) {

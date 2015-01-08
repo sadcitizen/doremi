@@ -9,10 +9,10 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.startsWith('lorem', 'lor');
+ * st.startsWith('lorem', 'lor');
  * // => true
  *
- * string.startsWith(12345, 2);
+ * st.startsWith(12345, 2);
  * // => false
  */
 module.exports = function startsWith(target, sub) {

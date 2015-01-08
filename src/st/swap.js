@@ -8,10 +8,10 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.swap('hello');
+ * st.swap('hello');
  * // => 'HELLO'
  *
- * string.swap('lOREM');
+ * st.swap('lOREM');
  * // => 'Lorem'
  */
 module.exports = function swap(target) {

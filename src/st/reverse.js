@@ -8,10 +8,10 @@ var chop = require('./chop');
  *
  * @example
  *
- * string.reverse('lorem');
+ * st.reverse('lorem');
  * // => 'merol'
  *
- * string.reverse(12345);
+ * st.reverse(12345);
  * // => '54321'
  */
 module.exports = function reverse(target) {

@@ -12,13 +12,13 @@ var repeat = require('./repeat');
  *
  * @example
  *
- * string.pad('lorem', 9, '^');
+ * st.pad('lorem', 9, '^');
  * // => '^^lorem^^'
  *
- * string.pad('lorem', 5, '#');
+ * st.pad('lorem', 5, '#');
  * // => 'lorem'
  *
- * string.pad('lorem', 10);
+ * st.pad('lorem', 10);
  * // => '   lorem  '
  */
 module.exports = function pad(target, length, char) {

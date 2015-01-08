@@ -9,10 +9,10 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.repeat('&', 4);
+ * st.repeat('&', 4);
  * // => '&&&&'
  *
- * string.repeat(12, 2);
+ * st.repeat(12, 2);
  * // => '1212'
  */
 module.exports = function repeat(target, count) {

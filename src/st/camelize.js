@@ -9,10 +9,10 @@ var decapitalize = require('./decapitalize');
  *
  * @example
  *
- * string.camelize('lorem ipsum');
+ * st.camelize('lorem ipsum');
  * // => 'loremIpsum'
  *
- * string.camelize('  --dolor --sit -');
+ * st.camelize('  --dolor --sit -');
  * // => 'dolorSit'
  */
 module.exports = function camelize(target) {

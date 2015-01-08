@@ -8,10 +8,10 @@ var toString = require('../to/string');
  *
  * @example
  *
- * string.decapitalize('Hi!');
+ * st.decapitalize('Hi!');
  * // => 'hi!'
  *
- * string.capitalize();
+ * st.capitalize();
  * // => '' (empty string)
  */
 module.exports = function decapitalize(target) {

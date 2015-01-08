@@ -9,10 +9,10 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.chop('lorem ipsum', 5);
+ * st.chop('lorem ipsum', 5);
  * // => ['lorem', ' ipsu', 'm']
  *
- * string.chop(1234567890);
+ * st.chop(1234567890);
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
 module.exports = function chop(target, step) {

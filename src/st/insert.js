@@ -9,10 +9,10 @@
  *
  * @example
  *
- * string.insert(', World!', 'Hello', 0);
+ * st.insert(', World!', 'Hello', 0);
  * // => 'Hello, World!'
  *
- * string.insert('o, World!', 'Hell', -10);
+ * st.insert('o, World!', 'Hell', -10);
  * // => 'Hello, World!'
  */
 module.exports = function insert(target, sub, index) {

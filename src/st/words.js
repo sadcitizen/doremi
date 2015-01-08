@@ -10,10 +10,10 @@ var clean = require('./clean');
  *
  * @example
  *
- * string.words('lorem ipsum dolor sit');
+ * st.words('lorem ipsum dolor sit');
  * // => ['lorem', 'ipsum', 'dolor', 'sit']
  *
- * string.words('lorem/ipsum/dolor/sit', '/');
+ * st.words('lorem/ipsum/dolor/sit', '/');
  * // => ['lorem', 'ipsum', 'dolor', 'sit']
  */
 module.exports = function words(target, sep) {

@@ -10,10 +10,10 @@ var rest = require('../list/rest');
  *
  * @example
  *
- * string.trim('   lorem');
+ * st.trim('   lorem');
  * // => 'lorem'
  *
- * string.trim('*+/lorem', '/', '+*');
+ * st.trim('*+/lorem', '/', '+*');
  * // => 'lorem'
  */
 module.exports = function ltrim(target) {

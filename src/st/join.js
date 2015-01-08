@@ -9,10 +9,10 @@ var string = require('../to/string');
  *
  * @example
  *
- * string.join('', 'Lorem', 'Ipsum');
+ * st.join('', 'Lorem', 'Ipsum');
  * // => 'LoremIpsum'
  *
- * string.join(' ', 'Lorem', null, '');
+ * st.join(' ', 'Lorem', null, '');
  * // => 'Lorem'
  */
 module.exports = function join(sep) {

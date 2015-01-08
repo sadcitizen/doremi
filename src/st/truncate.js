@@ -11,10 +11,10 @@ var trim = require('./trim');
  *
  * @example
  *
- * string.truncate('lorem ipsum dolor sit amet', 10);
+ * st.truncate('lorem ipsum dolor sit amet', 10);
  * // => 'lorem i...'
  *
- * string.truncate('lorem ipsum dolor sit amet', 10, null, true);
+ * st.truncate('lorem ipsum dolor sit amet', 10, null, true);
  * // => 'lorem...'
  */
 module.exports = function truncate(target, limit, sfx, safe) {

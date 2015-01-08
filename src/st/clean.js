@@ -9,10 +9,10 @@ var whitespaces = require('../internal/whitespaces.regex');
  *
  * @example
  *
- * string.clean('\0 \b \t \n \v \f \r');
+ * st.clean('\0 \b \t \n \v \f \r');
  * // => ''
  *
- * string.clean('           Hello,      World!             ');
+ * st.clean('           Hello,      World!             ');
  * // => 'Hello, World!'
  */
 module.exports = function clean(target) {

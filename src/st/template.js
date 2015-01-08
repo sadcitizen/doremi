@@ -15,10 +15,10 @@ var regex = require('../internal/template.regex');
  * @example
  *
  * var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
- * string.template('${a} ipsum ${c} sit', lorem);
+ * st.template('${a} ipsum ${c} sit', lorem);
  * // => 'lorem ipsum dolor sit'
  *
- * string.template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g);
+ * st.template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g);
  * // => 'lorem ipsum dolor'
  */
 module.exports = function template(target, data, syntax) {
