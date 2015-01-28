@@ -23,6 +23,7 @@ is.not = require('./is/not');
 is.number = require('./is/number');
 is.object = require('./is/object');
 is.odd = require('./is/odd');
+is.ok = require('./is/ok');
 is.primitive = require('./is/primitive');
 is.regexp = require('./is/regexp');
 is.string = require('./is/string');

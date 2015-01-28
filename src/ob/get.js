@@ -1,8 +1,9 @@
-var isObject = require('../is/object');
-var isArray = require('../is/array');
-var isString = require('../is/string');
-var isExists = require('../is/exists');
-var isDefined = require('../is/defined');
+var ok = require('../is/ok');
+var object = require('../is/object');
+var array = require('../is/array');
+var string = require('../is/string');
+var exists = require('../is/exists');
+var defined = require('../is/defined');
 
 /**
  * Resolves the value of property `key` on `target`.
@@ -42,13 +43,8 @@ var isDefined = require('../is/defined');
  * // => 42
  */
 module.exports = function get(target, key, def) {
-    if (!isObject(target) && !isArray(target)) {
-        throw new TypeError('Target must be an object or an array!');
-    }
-
-    if (!isString(key)) {
-        throw new TypeError('Property must be a string!');
-    }
+    ok(object(target) || array(target), 'Target must be an object or an array!');
+    ok(string(key), 'Property must be a string!');
 
     var obj = target,
         parts = key.split('.'),
@@ -57,11 +53,11 @@ module.exports = function get(target, key, def) {
     /* jshint -W084 */
     while (key = parts.shift()) {
         obj = obj[key];
-        if (!isExists(obj)) {
+        if (!exists(obj)) {
             return def;
         }
     }
     /* jshint +W084 */
 
-    return isDefined(obj[last]) ? obj[last] : def;
+    return defined(obj[last]) ? obj[last] : def;
 };
