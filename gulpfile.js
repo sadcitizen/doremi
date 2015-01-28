@@ -24,7 +24,7 @@ gulp.task('browserify', function () {
         });
     };
 
-    bundlify(['is', 'object']);
+    bundlify(['is', 'ob']);
 });
 
 gulp.task('jscs', function () {
