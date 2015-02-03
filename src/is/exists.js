@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Check if `target` is 'null' or `undefined`.
@@ -14,7 +14,9 @@ var type = require('./type');
  * is.exists('');
  * // => true
  */
-module.exports = function exists(target) {
+function exists(target) {
     var tp = type(target);
     return tp !== 'undefined' && tp !== 'null';
-};
+}
+
+export default exists;

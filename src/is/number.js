@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Checks if `target` is number.
@@ -17,6 +17,8 @@ var type = require('./type');
  * is.number('42');
  * // => false
  */
-module.exports = function number(target) {
+function number(target) {
     return type(target) === 'number';
-};
+}
+
+export default number;

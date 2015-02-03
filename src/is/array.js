@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Check if `target` is array.
@@ -18,4 +18,4 @@ function array(target) {
     return type(target) === 'array';
 }
 
-module.exports = Array.isArray || array;
+export default Array.isArray || array;

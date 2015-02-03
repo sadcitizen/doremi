@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Checks if `target` is NaN.
@@ -17,6 +17,8 @@ var type = require('./type');
  * is.nan('42');
  * // => false
  */
-module.exports = function nan(target) {
+function nan(target) {
     return type(target) === 'nan';
-};
+}
+
+export default nan;

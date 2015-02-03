@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Checks if `target` is regexp.
@@ -17,6 +17,8 @@ var type = require('./type');
  * is.regexp(new Regexp('0-9', 'ig'));
  * // => true
  */
-module.exports = function regexp(target) {
+function regexp(target) {
     return type(target) === 'regexp';
-};
+}
+
+export default regexp;

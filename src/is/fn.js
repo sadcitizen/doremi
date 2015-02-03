@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Check if `target` is function.
@@ -18,6 +18,8 @@ var type = require('./type');
  * is.fn(Math.abs);
  * // => true
  */
-module.exports = function fn(target) {
+function fn(target) {
     return type(target) === 'function';
-};
+}
+
+export default fn;

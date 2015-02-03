@@ -1,4 +1,4 @@
-var string = require('./string');
+import string from './string';
 var GUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[ab89][a-f0-9]{3}-[a-f0-9]{12}$/;
 
 /**
@@ -22,6 +22,8 @@ var GUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[ab89][a-f0-9]{3}-[a-f0-
  * is.guid('550e8400-e29b-41d4-a716-446655440000');
  * // => true
  */
-module.exports = function guid(target) {
+function guid(target) {
     return string(target) && GUID_REGEX.test(target);
-};
+}
+
+export default guid;

@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Checks if `target` is string.
@@ -17,6 +17,8 @@ var type = require('./type');
  * is.string('42');
  * // => true
  */
-module.exports = function string(target) {
+function string(target) {
     return type(target) === 'string';
-};
+}
+
+export default string;

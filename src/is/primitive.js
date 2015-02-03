@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 var primitives = ['boolean', 'number', 'string', 'undefined', 'null'];
 
 /**
@@ -17,6 +17,8 @@ var primitives = ['boolean', 'number', 'string', 'undefined', 'null'];
  * is.primitive([]);
  * // => false
  */
-module.exports = function primitive(target) {
+function primitive(target) {
     return primitives.indexOf(type(target)) !== -1;
-};
+}
+
+export default primitive;

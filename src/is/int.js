@@ -1,4 +1,4 @@
-var number = require('./number');
+import number from './number';
 
 /**
  * Checks if `target` is integer.
@@ -17,6 +17,8 @@ var number = require('./number');
  * is.int('42');
  * // => false
  */
-module.exports = function int (target) {
+function int(target) {
     return number(target) && target % 1 === 0;
-};
+}
+
+export default int;

@@ -1,4 +1,4 @@
-var number = require('./number');
+import number from './number';
 
 /**
  * Checks if `target` is float.
@@ -17,6 +17,8 @@ var number = require('./number');
  * is.float('42.42');
  * // => false
  */
-module.exports = function float(target) {
+function float(target) {
     return number(target) && target % 1 !== 0;
-};
+}
+
+export default float;

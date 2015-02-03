@@ -1,4 +1,4 @@
-var number = require('./number');
+import number from './number';
 
 /**
  * Check if `target` is an even number.
@@ -17,6 +17,8 @@ var number = require('./number');
  * is.even(20);
  * // => true
  */
-module.exports = function even(target) {
+function even(target) {
     return number(target) && target % 2 === 0;
-};
+}
+
+export default even;

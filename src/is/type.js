@@ -15,7 +15,7 @@
  * is.type({});
  * // => object
  */
-module.exports = function type(target) {
+function type(target) {
     if (target === undefined) {
         return 'undefined';
     }
@@ -40,4 +40,6 @@ module.exports = function type(target) {
     }
 
     return tp;
-};
+}
+
+export default type;

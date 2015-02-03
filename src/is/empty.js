@@ -1,5 +1,5 @@
-var type = require('./type');
-var exists = require('./exists');
+import type from './type';
+import exists from './exists';
 
 /**
  * Check if `target` is empty.
@@ -20,7 +20,7 @@ var exists = require('./exists');
  * is.empty({});
  * // => true
  */
-module.exports = function empty(target) {
+function empty(target) {
     if (!exists(target)) {
         return true;
     }
@@ -40,4 +40,6 @@ module.exports = function empty(target) {
     }
 
     return true;
-};
+}
+
+export default empty;

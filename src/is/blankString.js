@@ -1,6 +1,8 @@
-var whitespaces = require('../internal/whitespaces.regex');
+import whitespaces from '../internal/whitespaces.regex';
+import string from './string';
+
 var WHITESPACES_REGEX = new RegExp('^[' + whitespaces + ']*$');
-var string = require('./string');
+
 /**
  * Checks if `target` is a blank string.
  *
@@ -18,6 +20,8 @@ var string = require('./string');
  * is.blankString('     \t    \n ');
  * // => true
  */
-module.exports = function blankString(target) {
+function blankString(target) {
     return string(target) && WHITESPACES_REGEX.test(target);
-};
+}
+
+export default blankString;

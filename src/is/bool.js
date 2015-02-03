@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Check if `target` is boolean.
@@ -14,6 +14,8 @@ var type = require('./type');
  * is.bool('');
  * // => false
  */
-module.exports = function bool(target) {
+function bool(target) {
     return type(target) === 'boolean';
-};
+}
+
+export default bool;

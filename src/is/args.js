@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Checks if `target` is classified as an `arguments`.
@@ -16,6 +16,8 @@ var type = require('./type');
  * is.args(1, 2, 3);
  * // => false
  */
-module.exports = function args(target) {
+function args(target) {
     return type(target) === 'arguments';
-};
+}
+
+export default args;

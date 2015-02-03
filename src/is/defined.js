@@ -12,6 +12,8 @@
  * is.defined('');
  * // => true
  */
-module.exports = function defined(target) {
+function defined(target) {
     return target !== undefined;
-};
+}
+
+export default defined;

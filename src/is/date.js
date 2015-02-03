@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Checks if `target` is date.
@@ -14,6 +14,8 @@ var type = require('./type');
  * is.date(new Date());
  * // => true
  */
-module.exports = function date(target) {
+function date(target) {
     return type(target) === 'date';
-};
+}
+
+export default date;

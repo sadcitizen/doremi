@@ -1,4 +1,4 @@
-var string = require('./string');
+import string from './string';
 var HEX_REGEX = /^[a-fA-F0-9]+$/;
 
 /**
@@ -18,6 +18,8 @@ var HEX_REGEX = /^[a-fA-F0-9]+$/;
  * is.hex('99zzxx');
  * // => false
  */
-module.exports = function hex(target) {
+function hex(target) {
     return string(target) && HEX_REGEX.test(target);
-};
+}
+
+export default hex;

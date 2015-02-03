@@ -1,4 +1,4 @@
-var type = require('./type');
+import type from './type';
 
 /**
  * Checks if `target` is an object.
@@ -17,6 +17,8 @@ var type = require('./type');
  * is.nan({});
  * // => true
  */
-module.exports = function object(target) {
+function object(target) {
     return type(target) === 'object';
-};
+}
+
+export default object;

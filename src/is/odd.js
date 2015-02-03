@@ -1,4 +1,4 @@
-var number = require('./number');
+import number from './number';
 
 /**
  * Check if `target` is an odd number.
@@ -17,6 +17,8 @@ var number = require('./number');
  * is.odd(20);
  * // => false
  */
-module.exports = function odd(target) {
+function odd(target) {
     return number(target) && target % 2 !== 0;
-};
+}
+
+export default odd;

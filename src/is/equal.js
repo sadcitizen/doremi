@@ -1,7 +1,7 @@
 /* jshint -W003 */
-var type = require('./type');
-var keys = require('../ob/keys');
-var slice = Array.prototype.slice;
+import type from './type';
+import keys from '../ob/keys';
+import slice from '../internal/slice';
 
 /**
  * Check if two regular expressions are equal.
@@ -125,4 +125,4 @@ function equal(target, other) {
     return target === other;
 }
 
-module.exports = equal;
+export default equal;

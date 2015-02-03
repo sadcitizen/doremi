@@ -1,5 +1,5 @@
-var date = require('./date');
-var nan = require('./nan');
+import date from './date';
+import nan from './nan';
 
 /**
  * Check if `target` is a valid date.
@@ -18,6 +18,8 @@ var nan = require('./nan');
  * is.validDate(new Date('date'));
  * // => false
  */
-module.exports = function validDate(target) {
+function validDate(target) {
     return date(target) && !nan(target.getTime());
-};
+}
+
+export default validDate;
