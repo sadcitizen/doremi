@@ -1,12 +1,15 @@
-var rn = {};
+import bool from './rn/bool';
+import choice from './rn/choice';
+import float from './rn/float';
+import guid from './rn/guid';
+import hex from './rn/hex';
+import int from './rn/int';
 
-rn.VERSION = '<%= version %>';
-
-rn.bool = require('./rn/bool');
-rn.choice = require('./rn/choice');
-rn.float = require('./rn/float');
-rn.guid = require('./rn/guid');
-rn.hex = require('./rn/hex');
-rn.int = require('./rn/int');
-
-module.exports = rn;
+export default {
+    bool: bool,
+    choice: choice,
+    float: float,
+    guid: guid,
+    hex: hex,
+    int: int
+};

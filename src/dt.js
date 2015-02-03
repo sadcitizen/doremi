@@ -1,7 +1,5 @@
-var dt = {};
+import format from './dt/format';
 
-dt.VERSION = '<%= version %>';
-
-dt.format = require('./dt/format');
-
-module.exports = dt;
+export default {
+    format: format
+};

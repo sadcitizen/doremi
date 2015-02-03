@@ -1,8 +1,7 @@
-var to = {};
+import constant from './to/constant';
+import string from './to/string';
 
-to.VERSION = '<%= version %>';
-
-to.constant = require('./to/constant');
-to.string = require('./to/string');
-
-module.exports = to;
+export default {
+    constant: constant,
+    string: string
+};

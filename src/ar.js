@@ -1,7 +1,5 @@
-var ar = {};
+import rest from './ar/rest';
 
-ar.VERSION = '<%= version %>';
-
-ar.rest = require('./ar/rest');
-
-module.exports = ar;
+export default {
+    rest: rest
+};
