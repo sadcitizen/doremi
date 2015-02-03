@@ -1,6 +1,6 @@
-var symbols = require('../internal/escape.symbols');
-var string = require('../to/string');
-var invert = require('../ob/invert');
+import symbols from '../internal/escape.symbols';
+import string from '../to/string';
+import invert from '../ob/invert';
 
 /**
  * Converts HTML-entities `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#x27;`, `&#x60;`
@@ -14,7 +14,7 @@ var invert = require('../ob/invert');
  * st.escape('<p>lorem & ipsum</p>');
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
-module.exports = function unescape(target) {
+function unescape(target) {
     target = string(target);
 
     if (target.length === 0) {
@@ -27,7 +27,7 @@ module.exports = function unescape(target) {
     /* jshint +W109 */
     invertedSymbols['&#96;'] = '`';
 
-    return target.replace(/\&([^&;]+);/g, function (match) {
-        return invertedSymbols[match];
-    });
-};
+    return target.replace(/\&([^&;]+);/g, match => invertedSymbols[match]);
+}
+
+export default unescape;

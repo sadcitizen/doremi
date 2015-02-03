@@ -15,7 +15,9 @@
  * st.insert('o, World!', 'Hell', -10);
  * // => 'Hello, World!'
  */
-module.exports = function insert(target, sub, index) {
+function insert(target, sub, index) {
     index = index | 0;
     return target.slice(0, index) + sub + target.slice(index);
-};
+}
+
+export default insert;

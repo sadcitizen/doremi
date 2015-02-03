@@ -1,6 +1,6 @@
-var whitespaces = require('../internal/whitespaces.regex');
-var string = require('../to/string');
-var rest = require('../ar/rest');
+import whitespaces from '../internal/whitespaces.regex';
+import string from '../to/string';
+import rest from '../ar/rest';
 
 /**
  * Removes trailing whitespaces or given characters from `target`.
@@ -16,7 +16,7 @@ var rest = require('../ar/rest');
  * st.trim('lorem/+*', '/', '+*');
  * // => 'lorem'
  */
-module.exports = function rtrim(target) {
+function rtrim(target) {
     var chars = rest(arguments).join('');
     target = string(target);
 
@@ -26,4 +26,6 @@ module.exports = function rtrim(target) {
 
     chars = chars.length ? chars : whitespaces;
     return target.replace(new RegExp('[' + chars + ']+$', 'ig'), '');
-};
+}
+
+export default rtrim;

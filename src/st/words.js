@@ -1,5 +1,5 @@
-var string = require('../to/string');
-var clean = require('./clean');
+import string from '../to/string';
+import clean from './clean';
 
 /**
  * Returns the array of words form `target`.
@@ -16,7 +16,7 @@ var clean = require('./clean');
  * st.words('lorem/ipsum/dolor/sit', '/');
  * // => ['lorem', 'ipsum', 'dolor', 'sit']
  */
-module.exports = function words(target, sep) {
+function words(target, sep) {
     target = clean(target);
     sep = string(sep);
 
@@ -25,4 +25,6 @@ module.exports = function words(target, sep) {
     }
 
     return target.split(sep.length ? sep: ' ');
-};
+}
+
+export default words;

@@ -1,5 +1,5 @@
-var string = require('../to/string');
-var repeat = require('./repeat');
+import string from '../to/string';
+import repeat from './repeat';
 
 /**
  * Pads a string on the right side if its length is less then
@@ -21,8 +21,10 @@ var repeat = require('./repeat');
  * st.rpad('lorem', 10);
  * // => 'lorem     '
  */
-module.exports = function rpad(target, length, char) {
+function rpad(target, length, char) {
     target = string(target);
     char = (string(char) || ' ').charAt(0);
     return target.length < (length |= 0) ? target + repeat(char, length - target.length) : target;
-};
+}
+
+export default rpad;

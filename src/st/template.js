@@ -1,8 +1,8 @@
-var string = require('../to/string');
-var get = require('../ob/get');
-var trim = require('./trim');
-var defined = require('../is/defined');
-var regex = require('../internal/template.regex');
+import string from '../to/string';
+import deepGet from '../ob/deepGet';
+import trim from './trim';
+import defined from '../is/defined';
+import regex from '../internal/template.regex';
 
 /**
  * Replaces tokens form `target` on corresponding values from `data`.
@@ -21,7 +21,7 @@ var regex = require('../internal/template.regex');
  * st.template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g);
  * // => 'lorem ipsum dolor'
  */
-module.exports = function template(target, data, syntax) {
+function template(target, data, syntax) {
     target = string(target);
     syntax = syntax || regex.es6;
 
@@ -30,7 +30,9 @@ module.exports = function template(target, data, syntax) {
     }
 
     return target.replace(syntax, function (match, name) {
-        var value = get(data, trim(name));
+        var value = deepGet(data, trim(name));
         return defined(value) ? string(value) : match;
     });
-};
+}
+
+export default template;

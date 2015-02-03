@@ -1,4 +1,4 @@
-var string = require('../to/string');
+import string from '../to/string';
 
 /**
  * Repeats a given string n times.
@@ -15,7 +15,7 @@ var string = require('../to/string');
  * st.repeat(12, 2);
  * // => '1212'
  */
-module.exports = function repeat(target, count) {
+function repeat(target, count) {
     var result = '';
 
     target = string(target);
@@ -31,4 +31,6 @@ module.exports = function repeat(target, count) {
         }
     }
     return result;
-};
+}
+
+export default repeat;

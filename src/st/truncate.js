@@ -1,4 +1,4 @@
-var trim = require('./trim');
+import trim from './trim';
 
 /**
  * Truncates `target` if it is longer than the given maximum string length.
@@ -17,7 +17,7 @@ var trim = require('./trim');
  * st.truncate('lorem ipsum dolor sit amet', 10, null, true);
  * // => 'lorem...'
  */
-module.exports = function truncate(target, limit, sfx, safe) {
+function truncate(target, limit, sfx, safe) {
     target = trim(target);
     sfx = sfx || '...';
     limit |= 0;
@@ -31,4 +31,6 @@ module.exports = function truncate(target, limit, sfx, safe) {
     target = safe ? target.substr(0, target.lastIndexOf(' ')) : trim(target);
 
     return target + sfx;
-};
+}
+
+export default truncate;

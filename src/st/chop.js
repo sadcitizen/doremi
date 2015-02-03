@@ -1,4 +1,4 @@
-var string = require('../to/string');
+import string from '../to/string';
 
 /**
  * Chops the string into pieces with length equal `step`.
@@ -15,7 +15,7 @@ var string = require('../to/string');
  * st.chop(1234567890);
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
-module.exports = function chop(target, step) {
+function chop(target, step) {
     var result = [], i, length;
 
     step = step | 0;
@@ -36,4 +36,6 @@ module.exports = function chop(target, step) {
     }
 
     return result;
-};
+}
+
+export default chop;

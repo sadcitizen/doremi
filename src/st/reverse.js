@@ -1,4 +1,4 @@
-var chop = require('./chop');
+import chop from './chop';
 
 /**
  * Reverses a string.

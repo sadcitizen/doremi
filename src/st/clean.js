@@ -1,5 +1,5 @@
-var trim = require('./trim');
-var whitespaces = require('../internal/whitespaces.regex');
+import trim from './trim';
+import whitespaces from '../internal/whitespaces.regex';
 
 /**
  * Cleans a string from whitespaces.
@@ -15,7 +15,7 @@ var whitespaces = require('../internal/whitespaces.regex');
  * st.clean('           Hello,      World!             ');
  * // => 'Hello, World!'
  */
-module.exports = function clean(target) {
+function clean(target) {
     target = trim(target);
 
     if (target.length === 0) {
@@ -23,4 +23,6 @@ module.exports = function clean(target) {
     }
 
     return target.replace(new RegExp('[' + whitespaces + ']+', 'ig'), ' ');
-};
+}
+
+export default clean;

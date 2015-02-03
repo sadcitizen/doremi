@@ -14,7 +14,7 @@
  * st.remove('Hello, World!', 90, 100)
  * // => 'Hello, World!'
  */
-module.exports = function remove(target, start, end) {
+function remove(target, start, end) {
     var length = target.length;
     start = start | 0;
     end = end | 0;
@@ -27,4 +27,6 @@ module.exports = function remove(target, start, end) {
     }
 
     return target.slice(0, start) + target.slice(end);
-};
+}
+
+export default remove;

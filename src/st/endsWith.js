@@ -1,4 +1,4 @@
-var string = require('../to/string');
+import string from '../to/string';
 
 /**
  * Checks if `target` ends with `sub`.
@@ -15,9 +15,11 @@ var string = require('../to/string');
  * st.startsWith(12345, 2);
  * // => false
  */
-module.exports = function endsWith(target, sub) {
+function endsWith(target, sub) {
     target = string(target);
     sub = string(sub);
 
     return target.indexOf(sub, target.length - sub.length) !== -1;
-};
+}
+
+export default endsWith;

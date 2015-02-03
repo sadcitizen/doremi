@@ -1,3 +1,5 @@
-module.exports = function extract() {
+function extract() {
 
-};
+}
+
+export default extract;

@@ -1,4 +1,4 @@
-var string = require('../to/string');
+import string from '../to/string';
 
 /**
  * Swaps case of case-based characters in a given string.
@@ -14,7 +14,7 @@ var string = require('../to/string');
  * st.swap('lOREM');
  * // => 'Lorem'
  */
-module.exports = function swap(target) {
+function swap(target) {
     target = string(target);
 
     if (target.length === 0) {
@@ -24,4 +24,6 @@ module.exports = function swap(target) {
     return target.replace(/\S/g, function (char) {
         return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
     });
-};
+}
+
+export default swap;

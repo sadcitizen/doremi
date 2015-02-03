@@ -1,5 +1,5 @@
-var rest = require('../ar/rest');
-var string = require('../to/string');
+import rest from '../ar/rest';
+import string from '../to/string';
 
 /**
  * Joins strings together with a given separator.
@@ -15,7 +15,7 @@ var string = require('../to/string');
  * st.join(' ', 'Lorem', null, '');
  * // => 'Lorem'
  */
-module.exports = function join(sep) {
+function join(sep) {
     var result = [];
     sep = string(sep);
 
@@ -26,4 +26,6 @@ module.exports = function join(sep) {
         }
     });
     return result.join(string(sep));
-};
+}
+
+export default join;

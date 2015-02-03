@@ -1,4 +1,4 @@
-var string = require('../to/string');
+import string from '../to/string';
 
 /**
  * Splits the `target` into array of lines.
@@ -14,6 +14,8 @@ var string = require('../to/string');
  * st.lines('Lorem \nipsum');
  * // => ['Lorem ', 'ipsum']
  */
-module.exports = function lines(target) {
+function lines(target) {
     return string(target).split(/\r?\n/g);
-};
+}
+
+export default lines;

@@ -1,4 +1,4 @@
-var string = require('../to/string');
+import string from '../to/string';
 
 /**
  * Counts the number of occurrences of a substring in a string.
@@ -18,7 +18,7 @@ var string = require('../to/string');
  * st.count(99999, 99);
  * // => 4
  */
-module.exports = function count(target, sub) {
+function count(target, sub) {
     target = string(target);
     sub = string(sub);
 
@@ -37,4 +37,6 @@ module.exports = function count(target, sub) {
         pos = target.indexOf(sub, pos + 1);
     }
     return counter;
-};
+}
+
+export default count;

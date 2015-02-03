@@ -1,4 +1,4 @@
-var toString = require('../to/string');
+import string from '../to/string';
 
 /**
  * Capitalizes the first character of `target`.
@@ -14,7 +14,9 @@ var toString = require('../to/string');
  * st.capitalize();
  * // => '' (empty string)
  */
-module.exports = function capitalize(target) {
-    target = toString(target);
+function capitalize(target) {
+    target = string(target);
     return target.length > 0 ? target.charAt(0).toUpperCase() + target.slice(1) : target;
-};
+}
+
+export default capitalize;

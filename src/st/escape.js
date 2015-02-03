@@ -1,5 +1,5 @@
-var symbols = require('../internal/escape.symbols');
-var string = require('../to/string');
+import symbols from '../internal/escape.symbols';
+import string from '../to/string';
 
 /**
  * Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
@@ -12,14 +12,16 @@ var string = require('../to/string');
  * st.escape('<p>lorem & ipsum</p>');
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
-module.exports = function escape(target) {
+function escape(target) {
     target = string(target);
 
     if (target.length === 0) {
         return '';
     }
 
-    return target.replace(/(\&)(?![a-z0-9#]+;)/g, '&amp;').replace(/[<>"'`]/g, function (match) {
-        return symbols[match];
-    });
-};
+    return target
+        .replace(/(\&)(?![a-z0-9#]+;)/g, '&amp;')
+        .replace(/[<>"'`]/g, match => symbols[match]);
+}
+
+export default escape;

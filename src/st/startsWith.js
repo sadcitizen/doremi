@@ -1,4 +1,4 @@
-var string = require('../to/string');
+import string from '../to/string';
 
 /**
  * Checks if `target` starts with `sub`.
@@ -15,6 +15,8 @@ var string = require('../to/string');
  * st.startsWith(12345, 2);
  * // => false
  */
-module.exports = function startsWith(target, sub) {
+function startsWith(target, sub) {
     return string(target).indexOf(string(sub)) === 0;
-};
+}
+
+export default startsWith;
