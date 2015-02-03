@@ -1,33 +1,57 @@
-var is = {};
+import args from './is/args';
+import array from './is/array';
+import blankString from './is/blankString';
+import bool from './is/bool';
+import date from './is/date';
+import defined from './is/defined';
+import empty from './is/empty';
+import equal from './is/equal';
+import even from './is/even';
+import exists from './is/exists';
+import float from './is/float';
+import fn from './is/fn';
+import guid from './is/guid';
+import hex from './is/hex';
+import int from './is/int';
+import json from './is/json';
+import nan from './is/nan';
+import not from './is/not';
+import number from './is/number';
+import object from './is/object';
+import odd from './is/odd';
+import ok from './is/ok';
+import primitive from './is/primitive';
+import regexp from './is/regexp';
+import string from './is/string';
+import type from './is/type';
+import validDate from './is/validDate';
 
-is.VERSION = '<%= version %>';
-
-is.args = require('./is/args');
-is.array = require('./is/array');
-is.blankString = require('./is/blankString');
-is.bool = require('./is/bool');
-is.date = require('./is/date');
-is.defined = require('./is/defined');
-is.empty = require('./is/empty');
-is.equal = require('./is/equal');
-is.even = require('./is/even');
-is.exists = require('./is/exists');
-is.float = require('./is/float');
-is.fn = require('./is/fn');
-is.guid = require('./is/guid');
-is.hex = require('./is/hex');
-is.int = require('./is/int');
-is.json = require('./is/json');
-is.nan = require('./is/nan');
-is.not = require('./is/not');
-is.number = require('./is/number');
-is.object = require('./is/object');
-is.odd = require('./is/odd');
-is.ok = require('./is/ok');
-is.primitive = require('./is/primitive');
-is.regexp = require('./is/regexp');
-is.string = require('./is/string');
-is.type = require('./is/type');
-is.validDate = require('./is/validDate');
-
-module.exports = is;
+export default {
+    args: args,
+    array: array,
+    blankString: blankString,
+    bool: bool,
+    date: date,
+    defined: defined,
+    empty: empty,
+    equal: equal,
+    even: even,
+    exists: exists,
+    float: float,
+    fn: fn,
+    guid: guid,
+    hex: hex,
+    int: int,
+    json: json,
+    nan: nan,
+    not: not,
+    number: number,
+    object: object,
+    odd: odd,
+    ok: ok,
+    primitive: primitive,
+    regexp: regexp,
+    string: string,
+    type: type,
+    validDate: validDate
+};
