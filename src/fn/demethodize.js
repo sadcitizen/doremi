@@ -1,1 +1,1 @@
-module.exports = Function.bind.bind(Function.call);
+export default Function.bind.bind(Function.call);

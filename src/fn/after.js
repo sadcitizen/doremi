@@ -1,9 +1,9 @@
-var isFn = require('../is/fn');
+import fn from '../is/fn';
 
-module.exports = function after(target, times) {
+function after(target, times) {
     times |= 0;
 
-    if (!isFn(target)) {
+    if (!fn(target)) {
         throw new TypeError('Target must be a function.');
     }
 
@@ -12,4 +12,6 @@ module.exports = function after(target, times) {
             return target.apply(this, arguments);
         }
     };
-};
+}
+
+export default after;

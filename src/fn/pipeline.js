@@ -1,5 +1,5 @@
-var slice = require('../internal/slice');
-var noop = require('./noop');
+import slice from '../internal/slice';
+import noop from './noop';
 
 /**
  * Create a new function that will compose and invoke functions from left-to-right,
@@ -21,7 +21,7 @@ var noop = require('./noop');
  * squareOfSum(2, 3);
  * // => 25
  */
-module.exports = function pipeline() {
+function pipeline() {
     var fns = slice(arguments);
 
     return fns.length === 0 ? noop : function () {
@@ -29,4 +29,6 @@ module.exports = function pipeline() {
             return func.call(this, result);
         }, fns.shift().apply(this, arguments));
     };
-};
+}
+
+export default pipeline;

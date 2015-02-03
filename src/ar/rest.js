@@ -1,4 +1,4 @@
-var slice = require('../internal/slice');
+import slice from '../internal/slice';
 
 /**
  *
@@ -6,6 +6,8 @@ var slice = require('../internal/slice');
  * @param at
  * @returns {Array}
  */
-module.exports = function rest(target, at) {
+function rest(target, at) {
     return slice(target, (at |= 0) < 1 ? 1 : at);
-};
+}
+
+export default rest;

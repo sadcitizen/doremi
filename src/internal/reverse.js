@@ -1,5 +1,7 @@
-var slice = require('./slice');
+import slice from './slice';
 
-module.exports = function reverse(target) {
+function reverse(target) {
     return slice(target).reverse();
-};
+}
+
+export default reverse;

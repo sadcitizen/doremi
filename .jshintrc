@@ -33,5 +33,6 @@
     "white": true,
     "browser": true,
     "node": true,
-    "jquery": true
+    "jquery": true,
+    "esnext": true
 }

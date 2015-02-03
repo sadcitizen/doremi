@@ -1,3 +1,5 @@
-module.exports = function curry() {
+function curry() {
 
-};
+}
+
+export default curry;

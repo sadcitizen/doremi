@@ -1,3 +1,5 @@
-module.exports = function memoize() {
+function memoize() {
 
-};
+}
+
+export default memoize;

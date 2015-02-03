@@ -1,5 +1,7 @@
-var before = require('./before');
+import before from './before';
 
-module.exports = function once(target) {
+function once(target) {
     return before(target, 2);
-};
+}
+
+export default once;

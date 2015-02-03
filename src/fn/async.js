@@ -1,5 +1,7 @@
-var delay = require('./delay');
+import delay from './delay';
 
-module.exports = function async(target) {
+function async(target) {
     return delay(target, 1);
-};
+}
+
+export default async;

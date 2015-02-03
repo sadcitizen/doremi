@@ -1,8 +1,9 @@
-var valid = require('../is/validDate');
-var defined = require('../is/defined');
-var string = require('../to/string');
-var lpad = require('../st/lpad');
-var aliases = require('../internal/datetime.aliases');
+import valid from '../is/validDate';
+import defined from '../is/defined';
+import string from '../to/string';
+import lpad from '../st/lpad';
+import aliases from '../internal/datetime.aliases';
+
 var regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
 
 function dayOfWeek(date) {
@@ -153,7 +154,7 @@ var tokens = {
  * dt.format(date, 'DD.MM.YYYY hh:mm:ss TT');
  * // => '01.01.2015 01:29:06 PM'
  */
-module.exports = function format(target, pattern, locale) {
+function format(target, pattern, locale) {
     if (!valid(target)) {
         throw new TypeError('Target must be a valid date!');
     }
@@ -169,4 +170,6 @@ module.exports = function format(target, pattern, locale) {
     return pattern.replace(regex, function (match) {
         return defined(tokens[match]) ? tokens[match](target, locale) : match;
     });
-};
+}
+
+export default format;

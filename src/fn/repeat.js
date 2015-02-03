@@ -1,3 +1,5 @@
-module.exports = function repeat() {
+function repeat() {
 
-};
+}
+
+export default repeat;

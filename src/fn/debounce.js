@@ -1,3 +1,5 @@
-module.exports = function debounce() {
+function debounce() {
 
-};
+}
+
+export default debounce;

@@ -1,7 +1,9 @@
-var reverse = require('../internal/reverse');
+import reverse from '../internal/reverse';
 
-module.exports = function flip(target) {
+function flip(target) {
     return function () {
         return target.apply(null, reverse(arguments));
     };
-};
+}
+
+export default flip;

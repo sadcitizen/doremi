@@ -1,3 +1,5 @@
-module.exports = function throttle() {
+function throttle() {
 
-};
+}
+
+export default throttle;

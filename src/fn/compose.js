@@ -1,5 +1,5 @@
-var pipeline = require('./pipeline');
-var reverse = require('../internal/reverse');
+import pipeline from './pipeline';
+import reverse from '../internal/reverse';
 
 /**
  * Create a new function that will compose and invoke functions from right-to-left,
@@ -21,6 +21,8 @@ var reverse = require('../internal/reverse');
  * squareOfSum(2, 3);
  * // => 25
  */
-module.exports = function compose() {
+function compose() {
     return pipeline.apply(null, reverse(arguments));
-};
+}
+
+export default compose;
