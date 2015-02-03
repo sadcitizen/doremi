@@ -1,4 +1,4 @@
-var get = require('./get');
+import deepGet from './deepGet';
 
 /**
  * Creates a function which returns the property value of `key` on `target`
@@ -25,8 +25,10 @@ var get = require('./get');
  * users.map(names);
  * // => ['John', 'Jane']
  */
-module.exports = function prop(key, def) {
+function prop(key, def) {
     return function (target) {
-        return get(target, key, def);
+        return deepGet(target, key, def);
     };
-};
+}
+
+export default prop;

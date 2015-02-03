@@ -1,6 +1,6 @@
-var keys = require('./keys');
+import keys from './keys';
 
-module.exports = function invert(target) {
+function invert(target) {
     var result = {};
 
     keys(target).forEach(function (item) {
@@ -8,4 +8,6 @@ module.exports = function invert(target) {
     }, this);
 
     return result;
-};
+}
+
+export default invert;

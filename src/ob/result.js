@@ -1,5 +1,5 @@
-var isFn = require('../is/fn');
-var get = require('./get');
+import fn from '../is/fn';
+import deepGet from './deepGet';
 
 /**
  * Resolves the value of property `key` on `target`.
@@ -25,7 +25,9 @@ var get = require('./get');
  * ob.result(obj, 'method');
  * // => 'value'
  */
-module.exports = function result(target, key, def) {
-    var prop = get(target, key, def);
-    return isFn(prop) ? prop.call(target) : prop;
-};
+function result(target, key, def) {
+    var prop = deepGet(target, key, def);
+    return fn(prop) ? prop.call(target) : prop;
+}
+
+export default result;

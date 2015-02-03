@@ -1,5 +1,5 @@
-var defined = require('../is/defined');
-var get = require('./get');
+import defined from '../is/defined';
+import deepGet from './deepGet';
 
 /**
  * Checks if the given property name exists as a direct or nested property of `target`.
@@ -39,6 +39,8 @@ var get = require('./get');
  * ob.has(lorem, 'lorem.toString');
  * // => true
  */
-module.exports = function has(target, key) {
-    return defined(get(target, key));
-};
+function has(target, key) {
+    return defined(deepGet(target, key));
+}
+
+export default has;

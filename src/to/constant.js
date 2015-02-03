@@ -14,8 +14,10 @@
  * str();
  * // => 'value'
  */
-module.exports = function constant(target) {
+function constant(target) {
     return function () {
         return target;
     };
-};
+}
+
+export default constant;

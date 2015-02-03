@@ -1,4 +1,4 @@
-var ns = require('./ns');
+import ns from './ns';
 
 /**
  * Sets nested property value.
@@ -16,7 +16,7 @@ var ns = require('./ns');
  * console.log(lorem.ipsum.dolor);
  * // => 'sit'
  */
-module.exports = function set(target, prop, value) {
+function deepSet(target, prop, value) {
     var parts = prop.split('.'),
         key;
 
@@ -26,4 +26,6 @@ module.exports = function set(target, prop, value) {
     } else {
         target[prop] = value;
     }
-};
+}
+
+export default deepSet;

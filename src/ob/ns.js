@@ -1,6 +1,6 @@
-var defined = require('../is/defined');
-var object = require('../is/object');
-var string = require('../is/string');
+import defined from '../is/defined';
+import object from '../is/object';
+import string from '../is/string';
 
 /**
  * Creates an empty nested object by `path` and returns it.
@@ -20,7 +20,7 @@ var string = require('../is/string');
  * ob.ns(lorem, 'ipsum.dolor.sit');
  * // => lorem = { ipsum: { dolor: sit: {} } } (ipsum is overridden)
  */
-module.exports = function ns(target, path) {
+function ns(target, path) {
     if (!object(target)) {
         throw new TypeError('Target must be an object!');
     }
@@ -40,4 +40,6 @@ module.exports = function ns(target, path) {
     });
 
     return obj;
-};
+}
+
+export default ns;

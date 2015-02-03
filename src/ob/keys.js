@@ -1,10 +1,10 @@
-var hasOwn = require('./hasOwn');
+import hasOwn from './hasOwn';
 
 /**
  * Creates an array of all own enumerable property names of `target`.
  *
  * @param target The object to inspect.
- * @returns {array} Returns array of property names.
+ * @returns {Array} Returns array of property names.
  *
  * @example
  *
@@ -24,7 +24,7 @@ var hasOwn = require('./hasOwn');
  * ob.keys(new Point(0, 0));
  * // => ['x', 'y'] (The `getCoords` is not own property)
  */
-module.exports = Object.keys || function keys(target) {
+function keys(target) {
     var result = [];
 
     for (var key in target) {
@@ -34,4 +34,6 @@ module.exports = Object.keys || function keys(target) {
     }
 
     return result;
-};
+}
+
+export default Object.keys || keys;

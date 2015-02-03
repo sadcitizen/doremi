@@ -18,6 +18,8 @@
  * ob.hasOwn(obj, 'toString');
  * // => false
  */
-module.exports = function hasOwn(target, key) {
+function hasOwn(target, key) {
     return Object.prototype.hasOwnProperty.call(target, key);
-};
+}
+
+export default hasOwn;

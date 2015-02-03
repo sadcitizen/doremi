@@ -1,7 +1,7 @@
-var exists = require('../is/exists');
-var constants = require('../internal/constants');
+import exists from '../is/exists';
+import constants from '../internal/constants';
 
-module.exports = function float(min, max, fixed) {
+function float(min, max, fixed) {
     var frac = Math.random();
 
     min = exists(min) ? ~~min : constants.MIN_INT;
@@ -12,4 +12,6 @@ module.exports = function float(min, max, fixed) {
     }
 
     return parseFloat((Math.floor(Math.random() * (max - min - frac)) + frac).toFixed(fixed || 5));
-};
+}
+
+export default float;

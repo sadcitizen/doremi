@@ -1,7 +1,7 @@
-var exists = require('../is/exists');
-var constants = require('../internal/constants');
+import exists from '../is/exists';
+import constants from '../internal/constants';
 
-module.exports = function int(min, max) {
+function int(min, max) {
     min = exists(min) ? ~~min : constants.MIN_INT;
     max = exists(max) ? ~~max : constants.MAX_INT;
 
@@ -10,4 +10,6 @@ module.exports = function int(min, max) {
     }
 
     return Math.floor(Math.random() * (max - min + 1) + min);
-};
+}
+
+export default int;

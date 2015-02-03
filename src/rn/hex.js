@@ -1,7 +1,7 @@
-var constants = require('../internal/constants');
-var int = require('./int');
+import constants from '../internal/constants';
+import int from './int';
 
-module.exports = function hex(length) {
+function hex(length) {
     var result = '',
         letters = (constants.HEX_LETTERS + constants.DIGITS).split(''),
         size = letters.length;
@@ -13,4 +13,6 @@ module.exports = function hex(length) {
     }
 
     return result;
-};
+}
+
+export default hex;

@@ -1,6 +1,6 @@
-var rest = require('../ar/rest');
-var keys = require('./keys');
-var get = require('./get');
+import rest from '../ar/rest';
+import keys from './keys';
+import deepGet from './deepGet';
 
 /**
  * Creates an array of own enumerable property values of `target`.
@@ -30,12 +30,10 @@ var get = require('./get');
  * ob.values(new Point(0, 0));
  * // => [0, 0] (The `getCoords` is not own property)
  */
-module.exports = function values(target) {
+function values(target) {
     var args = rest(arguments);
-
     args = args.length ? args : keys(target);
+    return args.map(arg => deepGet(target, arg));
+}
 
-    return args.map(function (arg) {
-        return get(target, arg);
-    });
-};
+export default values;

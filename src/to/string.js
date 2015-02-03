@@ -1,10 +1,12 @@
-var exists = require('../is/exists');
+import exists from '../is/exists';
 
 /**
  *
  * @param {*} target
  * @returns {String}
  */
-module.exports = function string(target) {
+function string(target) {
     return !exists(target) ? '' : target.toString();
-};
+}
+
+export default string;

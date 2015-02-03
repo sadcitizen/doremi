@@ -1,6 +1,6 @@
-var rest = require('../ar/rest');
-var keys = require('./keys');
-var get = require('./get');
+import rest from '../ar/rest';
+import keys from './keys';
+import deepGet from './deepGet';
 
 /**
  * Creates a two dimensional array of the key-value pairs for `target`,
@@ -31,12 +31,10 @@ var get = require('./get');
  * ob.pairs(new Point(0, 0));
  * // => [['x', 0], ['y', 0]] (The `getCoords` is not own property)
  */
-module.exports = function pairs(target) {
+function pairs(target) {
     var args = rest(arguments);
-
     args = args.length ? args : keys(target);
+    return args.map(arg => [arg, deepGet(target, arg)]);
+}
 
-    return args.map(function (arg) {
-        return [arg, get(target, arg)];
-    });
-};
+export default pairs;
