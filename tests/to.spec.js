@@ -1,4 +1,4 @@
-var to = require('../src/to');
+var to = require('../build/to.min');
 var expect = require('chai').expect;
 
 describe('to', function () {

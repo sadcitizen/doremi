@@ -93,7 +93,7 @@ function equal(target, other) {
     }
 
     if (tp === 'arguments') {
-        return arrayEqual(slice.call(target), slice.call(other));
+        return arrayEqual(slice(target), slice(other));
     }
 
     if (tp === 'boolean' || tp === 'date' || tp === 'number') {

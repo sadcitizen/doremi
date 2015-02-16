@@ -1,5 +1,5 @@
-var rn = require('../src/rn');
-var is = require('../src/is');
+var rn = require('../build/rn.min');
+var is = require('../build/is.min');
 var expect = require('chai').expect;
 
 describe('rn', function () {

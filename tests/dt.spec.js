@@ -1,4 +1,4 @@
-var dt = require('../src/dt');
+var dt = require('../build/dt.min');
 var expect = require('chai').expect;
 
 describe('dt', function () {

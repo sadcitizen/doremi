@@ -1,9 +1,9 @@
-var ob = require('../src/ob');
-var is = require('../src/is');
+var ob = require('../build/ob.min');
+var is = require('../build/is.min');
 var expect = require('chai').expect;
 
 describe('ob', function () {
-    describe('ob.get()', function () {
+    describe('ob.deepGet()', function () {
         var lorem, foo;
 
         before(function () {
@@ -29,23 +29,23 @@ describe('ob', function () {
         });
 
         it('Should return value of nested property', function () {
-            expect(ob.get(lorem, 'lorem.ipsum.dolor.sit')).to.equal('amet');
-            expect(ob.get(lorem, 'lorem.foo')).to.be.a('function');
-            expect(ob.get(lorem, 'lorem.foo')()).to.equal('bar');
-            expect(ob.get(foo, 'foo.foo')).to.deep.equal({ foo: 'foo' });
-            expect(ob.get(foo, 'foo.foo.foo')).to.equal('foo');
+            expect(ob.deepGet(lorem, 'lorem.ipsum.dolor.sit')).to.equal('amet');
+            expect(ob.deepGet(lorem, 'lorem.foo')).to.be.a('function');
+            expect(ob.deepGet(lorem, 'lorem.foo')()).to.equal('bar');
+            expect(ob.deepGet(foo, 'foo.foo')).to.deep.equal({ foo: 'foo' });
+            expect(ob.deepGet(foo, 'foo.foo.foo')).to.equal('foo');
         });
 
         it('Should not return value of non existent property', function () {
-            expect(ob.get(foo, '')).to.equal(undefined);
-            expect(ob.get(lorem, 'lorem.ipsum.foo')).to.equal(undefined);
-            expect(ob.get(foo, 'foo.foo.foo.foo.foo.foo')).to.equal(undefined);
+            expect(ob.deepGet(foo, '')).to.equal(undefined);
+            expect(ob.deepGet(lorem, 'lorem.ipsum.foo')).to.equal(undefined);
+            expect(ob.deepGet(foo, 'foo.foo.foo.foo.foo.foo')).to.equal(undefined);
         });
 
         it('Should return default value of non existent property', function () {
-            expect(ob.get(foo, '', true)).to.equal(true);
-            expect(ob.get(lorem, 'lorem.ipsum.foo', 42)).to.equal(42);
-            expect(ob.get(foo, 'foo.foo.foo.foo.foo.foo', 'foo')).to.equal('foo');
+            expect(ob.deepGet(foo, '', true)).to.equal(true);
+            expect(ob.deepGet(lorem, 'lorem.ipsum.foo', 42)).to.equal(42);
+            expect(ob.deepGet(foo, 'foo.foo.foo.foo.foo.foo', 'foo')).to.equal('foo');
         });
     });
 
@@ -295,11 +295,11 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.set()', function () {
+    describe('ob.deepSet()', function () {
         it('Should sets value for nested properties', function () {
             var lorem = {};
-            ob.set(lorem, 'ipsum.dolor.sit', 42);
-            ob.set(lorem, 'ipsum.dolor.foo', 'bar');
+            ob.deepSet(lorem, 'ipsum.dolor.sit', 42);
+            ob.deepSet(lorem, 'ipsum.dolor.foo', 'bar');
 
             expect(lorem.ipsum.dolor.sit).to.equal(42);
             expect(lorem.ipsum.dolor.foo).to.equal('bar');
@@ -307,8 +307,8 @@ describe('ob', function () {
 
         it('Should sets value for not nested properties', function () {
             var lorem = {};
-            ob.set(lorem, 'ipsum', 42);
-            ob.set(lorem, 'foo', 'bar');
+            ob.deepSet(lorem, 'ipsum', 42);
+            ob.deepSet(lorem, 'foo', 'bar');
 
             expect(lorem.ipsum).to.equal(42);
             expect(lorem.foo).to.equal('bar');
