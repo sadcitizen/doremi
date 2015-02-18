@@ -58,4 +58,4 @@ gulp.task('uglify', function () {
         .pipe(gulp.dest('build/min'));
 });
 
-gulp.task('default', [/*'jscs', */'hint', 'browserify', 'uglify']);
+gulp.task('default', ['jscs', 'hint', 'browserify']);
