@@ -1,4 +1,4 @@
-import ok from '../is/ok';
+import ok from '../internal/ok';
 import object from '../is/object';
 import array from '../is/array';
 import string from '../is/string';

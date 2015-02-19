@@ -19,7 +19,6 @@ import not from './is/not';
 import number from './is/number';
 import object from './is/object';
 import odd from './is/odd';
-import ok from './is/ok';
 import primitive from './is/primitive';
 import regexp from './is/regexp';
 import string from './is/string';
@@ -48,7 +47,6 @@ export default {
     number: number,
     object: object,
     odd: odd,
-    ok: ok,
     primitive: primitive,
     regexp: regexp,
     string: string,
