@@ -41,30 +41,6 @@ describe('st', function () {
         });
     });
 
-    describe('st.chop()', function () {
-        it('Should return a st chopped into pieces', function () {
-            expect(st.chop('lorem ipsum', 5)).to.deep.equal(['lorem', ' ipsu', 'm']);
-            expect(st.chop('lorem ipsum', 4)).to.deep.equal(['lore', 'm ip', 'sum']);
-            expect(st.chop('lorem ipsum', 3)).to.deep.equal(['lor', 'em ', 'ips', 'um']);
-            expect(st.chop('lorem ipsum', 2)).to.deep.equal(['lo', 're', 'm ', 'ip', 'su', 'm']);
-            expect(st.chop('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(st.chop('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-        });
-
-        it('Should work with null and undefined', function () {
-            expect(st.chop(1234567890)).to.deep.equal(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
-            expect(st.chop('lorem ipsum')).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(st.chop('lorem ipsum', void 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(st.chop('lorem ipsum', null)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-        });
-
-        it('Should treat negative step as zero', function () {
-            expect(st.chop('lorem ipsum', -0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(st.chop('lorem ipsum', -10)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(st.chop('lorem ipsum', -1000)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-        });
-    });
-
     describe('st.clean()', function () {
         it('Should remove all spaces', function () {
             expect(st.clean('           Hello,      World!             ')).to.equal('Hello, World!');
@@ -254,6 +230,30 @@ describe('st', function () {
         });
     });
 
+    describe('st.lchop()', function () {
+        it('Should return a st chopped into pieces', function () {
+            expect(st.lchop('lorem ipsum', 5)).to.deep.equal(['lorem', ' ipsu', 'm']);
+            expect(st.lchop('lorem ipsum', 4)).to.deep.equal(['lore', 'm ip', 'sum']);
+            expect(st.lchop('lorem ipsum', 3)).to.deep.equal(['lor', 'em ', 'ips', 'um']);
+            expect(st.lchop('lorem ipsum', 2)).to.deep.equal(['lo', 're', 'm ', 'ip', 'su', 'm']);
+            expect(st.lchop('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.lchop('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should work with null and undefined', function () {
+            expect(st.lchop(1234567890)).to.deep.equal(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
+            expect(st.lchop('lorem ipsum')).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.lchop('lorem ipsum', void 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.lchop('lorem ipsum', null)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should treat negative step as zero', function () {
+            expect(st.lchop('lorem ipsum', -0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.lchop('lorem ipsum', -10)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.lchop('lorem ipsum', -1000)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+    });
+
     describe('st.lines()', function () {
         it('Should return an array of lines', function () {
             expect(st.lines('lorem\r\nipsum')).to.deep.equal(['lorem', 'ipsum']);
@@ -349,6 +349,30 @@ describe('st', function () {
             expect(st.pad('sit')).to.equal('sit');
             expect(st.pad('sit', 9, void 0)).to.equal('   sit   ');
             expect(st.pad('sit', 9, null)).to.equal('   sit   ');
+        });
+    });
+
+    describe('st.rchop()', function () {
+        it('Should return a st chopped into pieces', function () {
+            expect(st.rchop('lorem ipsum', 5)).to.deep.equal(['l', 'orem ', 'ipsum']);
+            expect(st.rchop('lorem ipsum', 4)).to.deep.equal(['lor', 'em i', 'psum']);
+            expect(st.rchop('lorem ipsum', 3)).to.deep.equal(['lo', 'rem', ' ip', 'sum']);
+            expect(st.rchop('lorem ipsum', 2)).to.deep.equal(['l', 'or', 'em', ' i', 'ps', 'um']);
+            expect(st.rchop('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.rchop('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should work with null and undefined', function () {
+            expect(st.rchop(1234567890)).to.deep.equal(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
+            expect(st.rchop('lorem ipsum')).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.rchop('lorem ipsum', void 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.rchop('lorem ipsum', null)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should treat negative step as zero', function () {
+            expect(st.rchop('lorem ipsum', -0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.rchop('lorem ipsum', -10)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(st.rchop('lorem ipsum', -1000)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
         });
     });
 
