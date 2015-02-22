@@ -1,4 +1,4 @@
-import chop from './chop';
+import lchop from './lchop';
 
 /**
  * Reverses a string.
@@ -15,5 +15,5 @@ import chop from './chop';
  * // => '54321'
  */
 module.exports = function reverse(target) {
-    return chop(target).reverse().join('');
+    return lchop(target).reverse().join('');
 };

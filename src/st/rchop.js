@@ -9,13 +9,13 @@ import string from '../to/string';
  *
  * @example
  *
- * st.chop('lorem ipsum', 5);
- * // => ['lorem', ' ipsu', 'm']
+ * st.rchop('lorem ipsum', 5);
+ * // => ['l', 'orem ', 'ipsum']
  *
- * st.chop(1234567890);
+ * st.rchop(1234567890);
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
-function chop(target, step) {
+function rchop(target, step) {
     var result = [], i, length;
 
     step = step | 0;
@@ -31,11 +31,11 @@ function chop(target, step) {
 
     length = target.length;
 
-    for (i = 0; i < length; i += step) {
-        result.push(target.slice(i, i + step));
+    for (i = length; i >= 0; i -= step) {
+        result.unshift(target.slice(i - step < 0 ? 0 : i - step, i));
     }
 
     return result;
 }
 
-export default chop;
+export default rchop;
