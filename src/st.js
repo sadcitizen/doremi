@@ -19,6 +19,7 @@ import repeat from './st/repeat';
 import reverse from './st/reverse';
 import rpad from './st/rpad';
 import rtrim from './st/rtrim';
+import splice from './st/splice';
 import startsWith from './st/startsWith';
 import swap from './st/swap';
 import template from './st/template';
@@ -49,6 +50,7 @@ export default {
     reverse: reverse,
     rpad: rpad,
     rtrim: rtrim,
+    splice: splice,
     startsWith: startsWith,
     swap: swap,
     template: template,

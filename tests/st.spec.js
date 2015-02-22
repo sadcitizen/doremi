@@ -497,6 +497,10 @@ describe('st', function () {
         });
     });
 
+    describe('st.splice()', function () {
+
+    });
+
     describe('st.startsWith()', function () {
         it('Should return true if st starts with another st', function () {
             expect(st.startsWith('lorem ipsum', 'lorem')).to.equal(true);
