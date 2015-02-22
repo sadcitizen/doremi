@@ -14,6 +14,8 @@ import lchop from './lchop';
  * st.reverse(12345);
  * // => '54321'
  */
-module.exports = function reverse(target) {
+function reverse(target) {
     return lchop(target).reverse().join('');
-};
+}
+
+export default reverse;
