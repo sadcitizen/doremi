@@ -27,7 +27,7 @@ function unescape(target) {
     /* jshint +W109 */
     invertedSymbols['&#96;'] = '`';
 
-    return target.replace(/\&([^&;]+);/g, match => invertedSymbols[match]);
+    return target.replace(/&([^&;]+);/g, match => invertedSymbols[match]);
 }
 
 export default unescape;
