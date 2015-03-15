@@ -1,4 +1,3 @@
-import rest from '../array/rest';
 import keys from './keys';
 import deepGet from './deepGet';
 
@@ -7,7 +6,8 @@ import deepGet from './deepGet';
  * e.g. `[[key1, value1], [key2, value2]]`.
  * Available for nested properties.
  *
- * @param target The object to inspect.
+ * @param target {object} The object to inspect.
+ * @param args {array} Array of keys.
  * @returns {array} Returns array of key-value pairs.
  *
  * @example
@@ -17,7 +17,7 @@ import deepGet from './deepGet';
  * // => ['b', 'd']
  *
  * ob.pairs(obj, 'a');
- * // => ['b']
+ * // => ['a', 'b']
  *
  * function Point(x, y) {
  *      this.x = x;
@@ -31,8 +31,7 @@ import deepGet from './deepGet';
  * ob.pairs(new Point(0, 0));
  * // => [['x', 0], ['y', 0]] (The `getCoords` is not own property)
  */
-function pairs(target) {
-    var args = rest(arguments);
+function pairs(target, ...args) {
     args = args.length ? args : keys(target);
     return args.map(arg => [arg, deepGet(target, arg)]);
 }
