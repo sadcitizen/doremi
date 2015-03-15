@@ -93,8 +93,8 @@ var tokens = {
         return Math.ceil((date.getMonth() + 1) / 3);
     },
     'Z': function (date) {
-        var offset = date.getTimezoneOffset();
-        var abs = Math.abs(offset);
+        let offset = date.getTimezoneOffset(),
+            abs = Math.abs(offset);
         return (offset > 0 ? '-' : '+') + lpad((abs / 60) | 0, 2, '0') + lpad(abs % 60, 2, '0');
     }
 };

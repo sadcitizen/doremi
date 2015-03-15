@@ -1,10 +1,10 @@
-import slice from '../internal/slice';
 import noop from './noop';
 
 /**
  * Create a new function that will compose and invoke functions from left-to-right,
  * passing the return values from each invocation to the next successive function.
  *
+ * @params {Array} The list of functions.
  * @returns {Function} Returns new function.
  *
  * @example
@@ -21,13 +21,9 @@ import noop from './noop';
  * squareOfSum(2, 3);
  * // => 25
  */
-function pipeline() {
-    var fns = slice(arguments);
-
+function pipeline(...fns) {
     return fns.length === 0 ? noop : function () {
-        return fns.reduce(function (result, func) {
-            return func.call(this, result);
-        }, fns.shift().apply(this, arguments));
+        return fns.reduce((result, func) => func.call(this, result), fns.shift().apply(this, arguments));
     };
 }
 
