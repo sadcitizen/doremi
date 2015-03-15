@@ -4,8 +4,8 @@ import deepGet from './deepGet';
  * Creates a function which returns the property value of `key` on `target`
  * or default value `def` if the property value is undefined.
  *
- * @param key The property name.
- * @param def Default value.
+ * @param {string} key The property name.
+ * @param {*} def Default value.
  * @returns {Function} Returns the new function.
  *
  * @example

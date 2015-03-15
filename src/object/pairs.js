@@ -6,9 +6,9 @@ import deepGet from './deepGet';
  * e.g. `[[key1, value1], [key2, value2]]`.
  * Available for nested properties.
  *
- * @param target {object} The object to inspect.
- * @param args {array} Array of keys.
- * @returns {array} Returns array of key-value pairs.
+ * @param {Object} target The object to inspect.
+ * @param {Array} args The array of keys.
+ * @returns {Array} Returns array of key-value pairs.
  *
  * @example
  *

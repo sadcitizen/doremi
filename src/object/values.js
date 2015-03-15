@@ -5,9 +5,9 @@ import deepGet from './deepGet';
  * Creates an array of own enumerable property values of `target`.
  * Available for nested properties.
  *
- * @param target {object} The object to inspect.
- * @param args {array} Array of keys.
- * @returns {array} Returns array of property values.
+ * @param {Object} target The object to inspect.
+ * @param {Array} args The array of keys.
+ * @returns {Array} Returns array of property values.
  *
  * @example
  *
