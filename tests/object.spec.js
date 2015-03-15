@@ -49,6 +49,26 @@ describe('object', function () {
         });
     });
 
+    describe('object.deepSet()', function () {
+        it('Should sets value for nested properties', function () {
+            var lorem = {};
+            ob.deepSet(lorem, 'ipsum.dolor.sit', 42);
+            ob.deepSet(lorem, 'ipsum.dolor.foo', 'bar');
+
+            expect(lorem.ipsum.dolor.sit).to.equal(42);
+            expect(lorem.ipsum.dolor.foo).to.equal('bar');
+        });
+
+        it('Should sets value for not nested properties', function () {
+            var lorem = {};
+            ob.deepSet(lorem, 'ipsum', 42);
+            ob.deepSet(lorem, 'foo', 'bar');
+
+            expect(lorem.ipsum).to.equal(42);
+            expect(lorem.foo).to.equal('bar');
+        });
+    });
+
     describe('object.has()', function () {
         var lorem;
 
@@ -279,7 +299,7 @@ describe('object', function () {
             expect(ob.result(obj, 'some')).to.equal(undefined);
         });
 
-        it('Should return default value if property on an ob is undefined', function () {
+        it('Should return default value if property on an ob is undefined.', function () {
             expect(ob.result(obj, 'some', true)).to.equal(true);
             expect(ob.result(obj, 'other', 42)).to.equal(42);
         });
@@ -295,23 +315,67 @@ describe('object', function () {
         });
     });
 
-    describe('object.deepSet()', function () {
-        it('Should sets value for nested properties', function () {
-            var lorem = {};
-            ob.deepSet(lorem, 'ipsum.dolor.sit', 42);
-            ob.deepSet(lorem, 'ipsum.dolor.foo', 'bar');
+    describe('object.template()', function () {
+        var target, source, result;
 
-            expect(lorem.ipsum.dolor.sit).to.equal(42);
-            expect(lorem.ipsum.dolor.foo).to.equal('bar');
+        it('Should work with plain objects.', function () {
+            target = {
+                a: '${a}',
+                b: '${b}',
+                c: '${c}'
+            };
+
+            source = {
+                a: 1,
+                b: 5,
+                c: 3
+            };
+
+            result = {
+                a: 1,
+                b: 5,
+                c: 3
+            };
+
+            expect(ob.template(target, source)).to.deep.equal(result);
         });
 
-        it('Should sets value for not nested properties', function () {
-            var lorem = {};
-            ob.deepSet(lorem, 'ipsum', 42);
-            ob.deepSet(lorem, 'foo', 'bar');
+        it('Should work with nested attributes.', function () {
+            target = {
+                a: '${a.c}',
+                b: '${b.e}',
+                c: '${f}',
+                d: {
+                    e: '${d.e}'
+                },
+                f: 'some value'
+            };
 
-            expect(lorem.ipsum).to.equal(42);
-            expect(lorem.foo).to.equal('bar');
+            source = {
+                a: {
+                    c: 'lorem'
+                },
+                b: {
+                    e: 'ipsum'
+                },
+                c: 3,
+                d: {
+                    e: 4
+                },
+                f: 'hello'
+            };
+
+            result = {
+                a: 'lorem',
+                b: 'ipsum',
+                c: 'hello',
+                d: {
+                    e: 4
+                },
+                f: 'some value'
+            };
+
+            expect(ob.template(target, source)).to.deep.equal(result);
         });
     });
 
