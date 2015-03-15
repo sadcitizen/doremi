@@ -36,4 +36,4 @@ function keys(target) {
     return result;
 }
 
-export default Object.keys || keys;
+export default keys;
