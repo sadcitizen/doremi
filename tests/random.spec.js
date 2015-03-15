@@ -2,14 +2,14 @@ var rn = require('../build/random.min');
 var is = require('../build/is.min');
 var expect = require('chai').expect;
 
-describe('rn', function () {
-    describe('rn.bool()', function () {
+describe('random', function () {
+    describe('random.bool()', function () {
         it('Should return boolean', function () {
             expect(is.type(rn.bool())).to.equal('boolean');
         });
     });
 
-    describe('rn.choice()', function () {
+    describe('random.choice()', function () {
         var list = [1, 2, 3],
             random = Math.random(),
             firstChoice,
@@ -36,7 +36,7 @@ describe('rn', function () {
         });
     });
 
-    describe('rn.float()', function () {
+    describe('random.float()', function () {
         var float, range, fix;
 
         before(function () {
@@ -63,7 +63,7 @@ describe('rn', function () {
         });
     });
 
-    describe('rn.guid()', function () {
+    describe('random.guid()', function () {
         var guid;
 
         before(function () {
@@ -75,7 +75,7 @@ describe('rn', function () {
         });
     });
 
-    describe('rn.hex()', function () {
+    describe('random.hex()', function () {
         var hex, hex12;
 
         before(function () {
@@ -97,7 +97,7 @@ describe('rn', function () {
         });
     });
 
-    describe('rn.int()', function () {
+    describe('random.int()', function () {
         var int, range;
 
         before(function () {

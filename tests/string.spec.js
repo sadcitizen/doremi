@@ -1,8 +1,8 @@
 var st = require('../build/string.min');
 var expect = require('chai').expect;
 
-describe('st', function () {
-    describe('st.camelize()', function () {
+describe('string', function () {
+    describe('string.camelize()', function () {
         it('Should convert st to camel case', function () {
             expect(st.camelize('lorem ipsum dolor')).to.equal('loremIpsumDolor');
             expect(st.camelize('    lorem   ipsum   dolor   ')).to.equal('loremIpsumDolor');
@@ -24,7 +24,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.capitalize()', function () {
+    describe('string.capitalize()', function () {
         it('Should capitalize a st', function () {
             expect(st.capitalize('lorem ipsum')).to.equal('Lorem ipsum');
         });
@@ -41,7 +41,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.clean()', function () {
+    describe('string.clean()', function () {
         it('Should remove all spaces', function () {
             expect(st.clean('           Hello,      World!             ')).to.equal('Hello, World!');
             expect(st.clean('                        ')).to.equal('');
@@ -53,7 +53,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.contains()', function () {
+    describe('string.contains()', function () {
         it('Should return true if st contains subst', function () {
             expect(st.contains('lorem ipsum', 'rem')).to.equal(true);
             expect(st.contains('lorem ipsum', 'i')).to.equal(true);
@@ -101,7 +101,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.count()', function () {
+    describe('string.count()', function () {
         it('Should find a subst', function () {
             expect(st.count('Hello, World!', 'l')).to.equal(3);
             expect(st.count('Hello, World!', 'll')).to.equal(1);
@@ -123,7 +123,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.decapitalize()', function () {
+    describe('string.decapitalize()', function () {
         it('Should decapitalize a st', function () {
             expect(st.decapitalize('Lorem ipsum')).to.equal('lorem ipsum');
         });
@@ -165,7 +165,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.escape()', function () {
+    describe('string.escape()', function () {
         it('Should escape a st', function () {
             expect(st.escape('<p>hi!</p>')).to.equal('&lt;p&gt;hi!&lt;/p&gt;');
             expect(st.escape('<p>lorem & ipsum</p>')).to.equal('&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;');
@@ -189,7 +189,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.insert()', function () {
+    describe('string.insert()', function () {
         it('Should insert a subst in a st', function () {
             expect(st.insert(', World!', 'Hello', 0)).to.equal('Hello, World!');
             expect(st.insert(', World!', 'Hello', null)).to.equal('Hello, World!');
@@ -214,7 +214,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.join()', function () {
+    describe('string.join()', function () {
         it('Should join sts', function () {
             expect(st.join(' ', 'lorem', 'ipsum', 'dolor', 'sit', 'amet')).to.equal('lorem ipsum dolor sit amet');
             expect(st.join('', 'h', 'e', 'l', 'lo')).to.equal('hello');
@@ -230,7 +230,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.lchop()', function () {
+    describe('string.lchop()', function () {
         it('Should return a st chopped into pieces', function () {
             expect(st.lchop('lorem ipsum', 5)).to.deep.equal(['lorem', ' ipsu', 'm']);
             expect(st.lchop('lorem ipsum', 4)).to.deep.equal(['lore', 'm ip', 'sum']);
@@ -254,7 +254,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.lines()', function () {
+    describe('string.lines()', function () {
         it('Should return an array of lines', function () {
             expect(st.lines('lorem\r\nipsum')).to.deep.equal(['lorem', 'ipsum']);
             expect(st.lines('lorem ipsum')).to.deep.equal(['lorem ipsum']);
@@ -275,7 +275,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.lpad()', function () {
+    describe('string.lpad()', function () {
         it('Should add characters to the left', function () {
             expect(st.lpad('lorem', 4, '^')).to.equal('lorem');
             expect(st.lpad('lorem', 5, '^')).to.equal('lorem');
@@ -303,7 +303,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.ltrim()', function () {
+    describe('string.ltrim()', function () {
         it('Should remove leading whitespaces', function () {
             expect(st.ltrim('           Hello, World! ')).to.equal('Hello, World! ');
             expect(st.ltrim('                        ')).to.equal('');
@@ -323,7 +323,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.pad()', function () {
+    describe('string.pad()', function () {
         it('Should add characters to the right', function () {
             expect(st.pad('sit', 4, '^')).to.equal('^sit');
             expect(st.pad('sit', 5, '^')).to.equal('^sit^');
@@ -352,7 +352,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.rchop()', function () {
+    describe('string.rchop()', function () {
         it('Should return a st chopped into pieces', function () {
             expect(st.rchop('lorem ipsum', 5)).to.deep.equal(['l', 'orem ', 'ipsum']);
             expect(st.rchop('lorem ipsum', 4)).to.deep.equal(['lor', 'em i', 'psum']);
@@ -376,7 +376,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.remove()', function () {
+    describe('string.remove()', function () {
         it('Should remove a subst from a st', function () {
             var hello = 'Hello, World!';
 
@@ -407,7 +407,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.repeat()', function () {
+    describe('string.repeat()', function () {
         it('Should repeat a st n times', function () {
             expect(st.repeat('*', 3)).to.equal('***');
             expect(st.repeat(123, 2)).to.equal('123123');
@@ -435,7 +435,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.reverse()', function () {
+    describe('string.reverse()', function () {
         it('Should reverse a subst', function () {
             expect(st.reverse('Hello, World!')).to.equal('!dlroW ,olleH');
             expect(st.reverse('')).to.equal('');
@@ -449,7 +449,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.rpad()', function () {
+    describe('string.rpad()', function () {
         it('Should add characters to the right', function () {
             expect(st.rpad('lorem', 4, '^')).to.equal('lorem');
             expect(st.rpad('lorem', 5, '^')).to.equal('lorem');
@@ -477,7 +477,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.rtrim()', function () {
+    describe('string.rtrim()', function () {
         it('Should remove trailing whitespaces', function () {
             expect(st.rtrim(' Hello, World!             ')).to.equal(' Hello, World!');
             expect(st.rtrim('        ')).to.equal('');
@@ -497,11 +497,11 @@ describe('st', function () {
         });
     });
 
-    describe('st.splice()', function () {
+    describe('string.splice()', function () {
 
     });
 
-    describe('st.startsWith()', function () {
+    describe('string.startsWith()', function () {
         it('Should return true if st starts with another st', function () {
             expect(st.startsWith('lorem ipsum', 'lorem')).to.equal(true);
             expect(st.startsWith('foo bar', 'foo')).to.equal(true);
@@ -526,7 +526,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.swap()', function () {
+    describe('string.swap()', function () {
         it('Should swap case of characters', function () {
             expect(st.swap('lorem ipsum')).to.equal('LOREM IPSUM');
             expect(st.swap('lOREM iPSUM')).to.equal('Lorem Ipsum');
@@ -540,7 +540,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.template()', function () {
+    describe('string.template()', function () {
         it('Should return the st replaced with template values', function () {
             var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
             expect(st.template('${a} ${b} ${c}', lorem)).to.equal('lorem ipsum dolor');
@@ -592,7 +592,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.trim()', function () {
+    describe('string.trim()', function () {
         it('Should remove leading and trailing whitespaces', function () {
             expect(st.trim('           Hello, World!             ')).to.equal('Hello, World!');
             expect(st.trim('                        ')).to.equal('');
@@ -612,7 +612,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.truncate()', function () {
+    describe('string.truncate()', function () {
         var str = 'lorem ipsum dolor sit amet';
 
         it('Should limit number of chars', function () {
@@ -638,7 +638,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.unescape()', function () {
+    describe('string.unescape()', function () {
         it('Should escape a st', function () {
             expect(st.unescape('&lt;p&gt;hi!&lt;/p&gt;')).to.equal('<p>hi!</p>');
             expect(st.unescape('&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;')).to.equal('<p>lorem & ipsum</p>');
@@ -656,7 +656,7 @@ describe('st', function () {
         });
     });
 
-    describe('st.words()', function () {
+    describe('string.words()', function () {
         it('Should return an array of words', function () {
             expect(st.words('lorem ipsum dolor sit')).to.deep.equal(['lorem', 'ipsum', 'dolor', 'sit']);
             expect(st.words('      lorem        ipsum         dolor        sit     ')).to.deep.equal(['lorem', 'ipsum', 'dolor', 'sit']);

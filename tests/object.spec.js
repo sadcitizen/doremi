@@ -2,8 +2,8 @@ var ob = require('../build/object.min');
 var is = require('../build/is.min');
 var expect = require('chai').expect;
 
-describe('ob', function () {
-    describe('ob.deepGet()', function () {
+describe('object', function () {
+    describe('object.deepGet()', function () {
         var lorem, foo;
 
         before(function () {
@@ -49,7 +49,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.has()', function () {
+    describe('object.has()', function () {
         var lorem;
 
         before(function () {
@@ -90,7 +90,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.hasOwn()', function () {
+    describe('object.hasOwn()', function () {
         var obj;
 
         before(function () {
@@ -118,7 +118,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.keys()', function () {
+    describe('object.keys()', function () {
         it('Should return array of all own enumerable property names', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
             expect(ob.keys(obj)).to.deep.equal(['a', 'c', 'e']);
@@ -140,7 +140,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.ns()', function () {
+    describe('object.ns()', function () {
         it('Should creates not existent nested properties', function () {
             var lorem = {};
             ob.ns(lorem, 'ipsum.dolor.sit');
@@ -181,7 +181,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.pairs()', function () {
+    describe('object.pairs()', function () {
         it('Should return array of key-value pairs', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
             expect(ob.pairs(obj)).to.deep.equal([
@@ -243,7 +243,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.prop()', function () {
+    describe('object.prop()', function () {
         it('Should return the value from an ob by property name', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
 
@@ -260,7 +260,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.result()', function () {
+    describe('object.result()', function () {
         var obj;
 
         before(function () {
@@ -295,7 +295,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.deepSet()', function () {
+    describe('object.deepSet()', function () {
         it('Should sets value for nested properties', function () {
             var lorem = {};
             ob.deepSet(lorem, 'ipsum.dolor.sit', 42);
@@ -315,7 +315,7 @@ describe('ob', function () {
         });
     });
 
-    describe('ob.values()', function () {
+    describe('object.values()', function () {
         it('Should return array of own enumerable property values', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
             expect(ob.values(obj)).to.deep.equal(['b', 'd', 'f']);
