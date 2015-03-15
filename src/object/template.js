@@ -8,10 +8,20 @@ import deepGet from './deepGet';
 import trim from '../string/trim';
 
 /**
- * @param {*} target
- * @param {Object|Array} source
- * @param {RegExp} syntax
- * @returns {Object}
+ * Replaces tokens from `target` on corresponding values from `source`.
+ *
+ * @param {*} target The target object or array with tokens.
+ * @param {Object|Array} source The values to replace.
+ * @param {RegExp} syntax The regular expression to search for tokens.
+ * @returns {Object} Target object or array with replaced tokens
+ *
+ * @example
+ *
+ * var target = {a: '${a}', b: '${c}', c: '${b}'},
+ *     source = {a: 1, b: 5, c: 3};
+ *
+ * template(target, source);
+ * // => {a: 1, b: 3, c: 5}
  */
 function template(target, source, syntax = regex.es6) {
     if (string(target)) {

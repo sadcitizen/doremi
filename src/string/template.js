@@ -15,10 +15,10 @@ import regex from '../internal/template.regex';
  * @example
  *
  * var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
- * st.template('${a} ipsum ${c} sit', lorem);
+ * template('${a} ipsum ${c} sit', lorem);
  * // => 'lorem ipsum dolor sit'
  *
- * st.template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g);
+ * template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g);
  * // => 'lorem ipsum dolor'
  */
 function template(target, data, syntax) {
