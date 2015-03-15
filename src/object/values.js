@@ -1,4 +1,3 @@
-import rest from '../array/rest';
 import keys from './keys';
 import deepGet from './deepGet';
 
@@ -6,7 +5,8 @@ import deepGet from './deepGet';
  * Creates an array of own enumerable property values of `target`.
  * Available for nested properties.
  *
- * @param target The object to inspect.
+ * @param target {object} The object to inspect.
+ * @param args {array} Array of keys.
  * @returns {array} Returns array of property values.
  *
  * @example
@@ -30,8 +30,7 @@ import deepGet from './deepGet';
  * ob.values(new Point(0, 0));
  * // => [0, 0] (The `getCoords` is not own property)
  */
-function values(target) {
-    var args = rest(arguments);
+function values(target, ...args) {
     args = args.length ? args : keys(target);
     return args.map(arg => deepGet(target, arg));
 }

@@ -26,9 +26,7 @@ import deepGet from './deepGet';
  * // => ['John', 'Jane']
  */
 function prop(key, def) {
-    return function (target) {
-        return deepGet(target, key, def);
-    };
+    return target => deepGet(target, key, def);
 }
 
 export default prop;
