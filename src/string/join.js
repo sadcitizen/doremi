@@ -1,11 +1,11 @@
-import rest from '../array/rest';
 import string from '../to/string';
 
 /**
  * Joins strings together with a given separator.
  *
- * @param {String} sep The separator of strings.
- * @returns {String} Returns the joined string.
+ * @param {string} sep The separator of strings.
+ * @param {string} strings The array of strings to join.
+ * @returns {string} Returns the joined string.
  *
  * @example
  *
@@ -15,11 +15,11 @@ import string from '../to/string';
  * st.join(' ', 'Lorem', null, '');
  * // => 'Lorem'
  */
-function join(sep) {
+function join(sep, ...strings) {
     var result = [];
     sep = string(sep);
 
-    rest(arguments).forEach(function (item) {
+    strings.forEach(function (item) {
         item = string(item);
         if (item.length) {
             result.push(item);
