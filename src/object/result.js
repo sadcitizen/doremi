@@ -26,7 +26,7 @@ import deepGet from './deepGet';
  * // => 'value'
  */
 function result(target, key, def) {
-    var prop = deepGet(target, key, def);
+    let prop = deepGet(target, key, def);
     return fn(prop) ? prop.call(target) : prop;
 }
 

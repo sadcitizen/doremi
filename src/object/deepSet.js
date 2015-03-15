@@ -17,7 +17,7 @@ import ns from './ns';
  * // => 'sit'
  */
 function deepSet(target, prop, value) {
-    var parts = prop.split('.'),
+    let parts = prop.split('.'),
         key;
 
     if (parts.length > 1) {

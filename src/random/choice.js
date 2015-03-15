@@ -3,7 +3,7 @@ import array from '../is/array';
 import slice from '../internal/slice';
 
 function choice(list) {
-    var args = (arguments.length === 1 && array(list)) ? list : slice(arguments);
+    let args = (arguments.length === 1 && array(list)) ? list : slice(arguments);
 
     return args[int(0, args.length - 1)];
 }

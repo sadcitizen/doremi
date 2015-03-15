@@ -2,7 +2,7 @@ import exists from '../is/exists';
 import constants from '../internal/constants';
 
 function float(min, max, fixed) {
-    var frac = Math.random();
+    let frac = Math.random();
 
     min = exists(min) ? ~~min : constants.MIN_INT;
     max = exists(max) ? ~~max : constants.MAX_INT;
