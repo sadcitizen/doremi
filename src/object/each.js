@@ -1,10 +1,10 @@
 import objectKeys from './keys';
 
-function each(target, iteratee, ctx) {
+function each(target, fn, ctx) {
     var keys = objectKeys(target);
 
     for (var i = 0, length = keys.length; i < length; i++) {
-        if (iteratee.call(ctx, target[keys[i]], keys[i], target)) {
+        if (fn.call(ctx, target[keys[i]], keys[i], target) === false) {
             break;
         }
     }

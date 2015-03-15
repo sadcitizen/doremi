@@ -1,6 +1,6 @@
-function each(target, iteratee, ctx) {
+function each(target, fn, ctx) {
     for (var i = 0, length = target.length; i < length; i++) {
-        if (iteratee.call(ctx, target[i], i, target) === false) {
+        if (fn.call(ctx, target[i], i, target) === false) {
             break;
         }
     }
