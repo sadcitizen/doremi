@@ -20,7 +20,7 @@ function escape(target) {
     }
 
     return target
-        .replace(/(\&)(?![a-z0-9#]+;)/g, '&amp;')
+        .replace(/(&)(?![a-z0-9#]+;)/g, '&amp;')
         .replace(/[<>"'`]/g, match => symbols[match]);
 }
 
