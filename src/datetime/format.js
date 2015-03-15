@@ -1,7 +1,7 @@
 import valid from '../is/validDate';
 import defined from '../is/defined';
 import string from '../to/string';
-import lpad from '../st/lpad';
+import lpad from '../string/lpad';
 import aliases from '../internal/datetime.aliases';
 
 var regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;

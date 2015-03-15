@@ -1,22 +1,22 @@
 import whitespaces from '../internal/whitespaces.regex';
 import string from '../to/string';
-import rest from '../ar/rest';
+import rest from '../array/rest';
 
 /**
- * Removes leading and trailing whitespaces or given characters from `target`.
+ * Removes leading whitespaces or given characters from `target`.
  *
  * @param {String} target The string to trim.
  * @returns {String} The trimmed string.
  *
  * @example
  *
- * st.trim('   lorem   ');
+ * st.trim('   lorem');
  * // => 'lorem'
  *
- * st.trim('*+/lorem/+*', '/', '+*');
+ * st.trim('*+/lorem', '/', '+*');
  * // => 'lorem'
  */
-function trim(target) {
+function ltrim(target) {
     var chars = rest(arguments).join('');
     target = string(target);
 
@@ -25,7 +25,7 @@ function trim(target) {
     }
 
     chars = chars.length ? chars : whitespaces;
-    return target.replace(new RegExp('^[' + chars + ']+|[' + chars + ']+$', 'ig'), '');
+    return target.replace(new RegExp('^[' + chars + ']+', 'ig'), '');
 }
 
-export default trim;
+export default ltrim;

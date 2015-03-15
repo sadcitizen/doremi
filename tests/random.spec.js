@@ -1,4 +1,4 @@
-var rn = require('../build/rn.min');
+var rn = require('../build/random.min');
 var is = require('../build/is.min');
 var expect = require('chai').expect;
 

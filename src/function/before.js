@@ -19,4 +19,4 @@ function before(target, times) {
     };
 }
 
-export default fn;
+export default before;

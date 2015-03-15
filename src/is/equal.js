@@ -1,6 +1,6 @@
 /* jshint -W003 */
 import type from './type';
-import keys from '../ob/keys';
+import keys from '../object/keys';
 import slice from '../internal/slice';
 
 /**

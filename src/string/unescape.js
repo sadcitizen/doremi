@@ -1,6 +1,6 @@
 import symbols from '../internal/escape.symbols';
 import string from '../to/string';
-import invert from '../ob/invert';
+import invert from '../object/invert';
 
 /**
  * Converts HTML-entities `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#x27;`, `&#x60;`

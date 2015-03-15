@@ -1,4 +1,4 @@
-import rest from '../ar/rest';
+import rest from '../array/rest';
 import string from '../to/string';
 
 /**

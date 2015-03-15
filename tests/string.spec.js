@@ -1,4 +1,4 @@
-var st = require('../build/st.min');
+var st = require('../build/string.min');
 var expect = require('chai').expect;
 
 describe('st', function () {

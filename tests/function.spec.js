@@ -1,4 +1,4 @@
-var fn = require('../build/fn.min');
+var fn = require('../build/function.min');
 var expect = require('chai').expect;
 var sinon = require('sinon');
 

@@ -1,4 +1,4 @@
-var ob = require('../build/ob.min');
+var ob = require('../build/object.min');
 var is = require('../build/is.min');
 var expect = require('chai').expect;
 

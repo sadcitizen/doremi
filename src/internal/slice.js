@@ -1,3 +1,3 @@
-import demethodize from '../fn/demethodize';
+import demethodize from '../function/demethodize';
 
 export default demethodize(Array.prototype.slice);

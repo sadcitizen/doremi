@@ -15,9 +15,7 @@
  * // => 'value'
  */
 function constant(target) {
-    return function () {
-        return target;
-    };
+    return () => target;
 }
 
 export default constant;

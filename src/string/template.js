@@ -1,5 +1,5 @@
 import string from '../to/string';
-import deepGet from '../ob/deepGet';
+import deepGet from '../object/deepGet';
 import trim from './trim';
 import defined from '../is/defined';
 import regex from '../internal/template.regex';
