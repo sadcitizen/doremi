@@ -5,7 +5,7 @@ import defined from '../is/defined';
 import regex from '../internal/template.regex';
 
 /**
- * Replaces tokens form `target` on corresponding values from `data`.
+ * Replaces tokens from `target` on corresponding values from `data`.
  *
  * @param {String} target The template string with tokens.
  * @param {Object|Array} data The data to replace.

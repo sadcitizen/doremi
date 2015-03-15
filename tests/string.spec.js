@@ -541,7 +541,7 @@ describe('string', function () {
     });
 
     describe('string.template()', function () {
-        it('Should return the st replaced with template values', function () {
+        it('Should return the string replaced with template values', function () {
             var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
             expect(st.template('${a} ${b} ${c}', lorem)).to.equal('lorem ipsum dolor');
             expect(st.template('${a} ipsum ${c} sit', lorem)).to.equal('lorem ipsum dolor sit');
@@ -567,7 +567,7 @@ describe('string', function () {
             expect(st.template('${0} ipsum ${2} sit', lorem)).to.equal('lorem ipsum dolor sit');
         });
 
-        it('Should treat null and undefined target as empty st', function () {
+        it('Should treat null and undefined target as empty string', function () {
             expect(st.template(null, { lorem: 'lorem' })).to.equal('');
             expect(st.template(undefined, { lorem: 'lorem' })).to.equal('');
         });
@@ -577,7 +577,7 @@ describe('string', function () {
             expect(st.template('${a} ${b} ${c} ${d}', lorem)).to.equal('lorem ipsum dolor ${d}');
         });
 
-        it('Should treat null values as empty st', function () {
+        it('Should treat null values as empty string', function () {
             expect(st.template('${lorem}', { lorem: null })).to.equal('');
         });
 

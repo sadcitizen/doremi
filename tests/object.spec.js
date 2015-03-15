@@ -319,63 +319,52 @@ describe('object', function () {
         var target, source, result;
 
         it('Should work with plain objects.', function () {
-            target = {
-                a: '${a}',
-                b: '${b}',
-                c: '${c}'
-            };
-
-            source = {
-                a: 1,
-                b: 5,
-                c: 3
-            };
-
-            result = {
-                a: 1,
-                b: 5,
-                c: 3
-            };
-
+            target = {a: '${a}', b: '${b}', c: '${c}'};
+            source = {a: 1, b: 5, c: 3};
+            result = {a: 1, b: 5, c: 3};
             expect(ob.template(target, source)).to.deep.equal(result);
         });
 
         it('Should work with nested attributes.', function () {
-            target = {
-                a: '${a.c}',
-                b: '${b.e}',
-                c: '${f}',
-                d: {
-                    e: '${d.e}'
-                },
-                f: 'some value'
-            };
-
-            source = {
-                a: {
-                    c: 'lorem'
-                },
-                b: {
-                    e: 'ipsum'
-                },
-                c: 3,
-                d: {
-                    e: 4
-                },
-                f: 'hello'
-            };
-
-            result = {
-                a: 'lorem',
-                b: 'ipsum',
-                c: 'hello',
-                d: {
-                    e: 4
-                },
-                f: 'some value'
-            };
-
+            target = {a: '${a.c}', b: '${b.e}', c: '${f}', d: {e: '${d.e}'}, f: 'some value'};
+            source = {a: {c: 'lorem'}, b: {e: 'ipsum'}, c: 3, d: {e: 4}, f: 'dolor', g: {h: {i: {j: 'sit'}}}};
+            result = {a: 'lorem', b: 'ipsum', c: 'dolor', d: {e: 4}, f: 'some value'};
             expect(ob.template(target, source)).to.deep.equal(result);
+        });
+
+        it('Should work with arrays.', function () {
+            target = ['${a}', '${b}', '${c}', '${d.e}'];
+            source = {a: 'lorem', b: 'ipsum', c: 'sit', d: {e: 'dolor'}};
+            result = ['lorem', 'ipsum', 'sit', 'dolor'];
+            expect(ob.template(target, source)).to.deep.equal(result);
+        });
+
+        it('Should work with arrays as source.', function () {
+            target = ['${1}', '${0}', '${3}', '${2.e}'];
+            source = [1, '2', {e: 3}, null];
+            result = ['2', 1, null, 3];
+            expect(ob.template(target, source)).to.deep.equal(result);
+        });
+
+        it('Should not replace undefined values.', function () {
+            target = {a: '${a}', b: '${b}', c: '${c}', d: '${d}'};
+            source = {a: 1, b: 5, c: 3};
+            result = {a: 1, b: 5, c: 3, d: '${d}'};
+            expect(ob.template(target, source)).to.deep.equal(result);
+        });
+
+        it('Should work with mustache syntax.', function () {
+            target = {a: '{{a}}', b: '{{b}}', c: '{{c}}'};
+            source = {a: 1, b: 5, c: 3};
+            result = {a: 1, b: 5, c: 3};
+            expect(ob.template(target, source, /{{([^}]+)}}/g)).to.deep.equal(result);
+        });
+
+        it('Should work with underscore syntax.', function () {
+            target = {a: '<%= a %>', b: '<%= b %>', c: '<%= c %>'};
+            source = {a: 1, b: 5, c: 3};
+            result = {a: 1, b: 5, c: 3};
+            expect(ob.template(target, source, /<%=([^<%=>]+?)%>/g)).to.deep.equal(result);
         });
     });
 
