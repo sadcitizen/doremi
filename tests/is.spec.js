@@ -87,6 +87,30 @@ describe('is', function () {
         });
     });
 
+    describe('is.char()', function () {
+        it('Should return false if value is a char', function () {
+            expect(is.char('a')).to.equal(true);
+            expect(is.char(String(4))).to.equal(true);
+            /* jshint -W053 */
+            expect(is.char(new String(2))).to.equal(true);
+            /* jshint +W053 */
+        });
+
+        it('Should return false if value is not char', function () {
+            expect(is.char(void 0)).to.equal(false);
+            expect(is.char(null)).to.equal(false);
+            expect(is.char(NaN)).to.equal(false);
+            expect(is.char(true)).to.equal(false);
+            expect(is.char(42)).to.equal(false);
+            expect(is.char('')).to.equal(false);
+            expect(is.char('hello')).to.equal(false);
+            expect(is.char([])).to.equal(false);
+            expect(is.char({})).to.equal(false);
+            expect(is.char(new Date())).to.equal(false);
+            expect(is.char(/\s+/ig)).to.equal(false);
+        });
+    });
+
     describe('is.date()', function () {
         it('Should return true if value is a date', function () {
             expect(is.date(new Date())).to.equal(true);
@@ -521,7 +545,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.number()', function () {
+    describe('is.object()', function () {
         it('Should return false if value is an object', function () {
             expect(is.object({})).to.equal(true);
             expect(is.object({ a: 'b', c: 'd' })).to.equal(true);
@@ -639,7 +663,7 @@ describe('is', function () {
             /* jshint +W053 */
         });
 
-        it('Should return false if value is not numeric', function () {
+        it('Should return false if value is not string', function () {
             expect(is.string(void 0)).to.equal(false);
             expect(is.string(null)).to.equal(false);
             expect(is.string(NaN)).to.equal(false);

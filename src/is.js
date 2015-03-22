@@ -2,6 +2,7 @@ import args from './is/args';
 import array from './is/array';
 import blankString from './is/blankString';
 import bool from './is/bool';
+import char from './is/char';
 import date from './is/date';
 import defined from './is/defined';
 import empty from './is/empty';
@@ -30,6 +31,7 @@ export default {
     array: array,
     blankString: blankString,
     bool: bool,
+    char: char,
     date: date,
     defined: defined,
     empty: empty,
