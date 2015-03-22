@@ -12,87 +12,65 @@ function dayOfWeek(date) {
 }
 
 var tokens = {
-    'YYYY': function (date) {
-        return lpad(date.getFullYear(), 4, '0');
-    },
-    'YYY': function (date) {
-        return date.getFullYear();
-    },
-    'YY': function (date) {
-        return lpad(date.getFullYear() % 100, 2, '0');
-    },
-    'Y': function (date) {
-        return date.getFullYear() % 100;
-    },
-    'MMMM': function (date, aliases) {
-        return aliases.months.longs[date.getMonth()];
-    },
-    'MMM': function (date, aliases) {
-        return aliases.months.shorts[date.getMonth()];
-    },
-    'MM': function (date) {
-        return lpad((date.getMonth() + 1) % 100, 2, '0');
-    },
-    'M': function (date) {
-        return (date.getMonth() + 1) % 100;
-    },
-    'DDDD': function (date, aliases) {
-        return aliases.days.longs[dayOfWeek(date)];
-    },
-    'DDD': function (date, aliases) {
-        return aliases.days.shorts[dayOfWeek(date)];
-    },
-    'DD': function (date) {
-        return lpad(date.getDate() % 100, 2, '0');
-    },
-    'D': function (date) {
-        return date.getDate();
-    },
-    'HH': function (date) {
-        return lpad(date.getHours(), 2, '0');
-    },
-    'H': function (date) {
-        return date.getHours();
-    },
-    'hh': function (date) {
-        var hours = date.getHours();
+    'YYYY': date => lpad(date.getFullYear(), 4, '0'),
+
+    'YYY': date => date.getFullYear(),
+
+    'YY': date => lpad(date.getFullYear() % 100, 2, '0'),
+
+    'Y': date => date.getFullYear() % 100,
+
+    'MMMM': (date, aliases) => aliases.months.longs[date.getMonth()],
+
+    'MMM': (date, aliases) => aliases.months.shorts[date.getMonth()],
+
+    'MM': date => lpad((date.getMonth() + 1) % 100, 2, '0'),
+
+    'M': date => (date.getMonth() + 1) % 100,
+
+    'DDDD': (date, aliases) => aliases.days.longs[dayOfWeek(date)],
+
+    'DDD': (date, aliases) => aliases.days.shorts[dayOfWeek(date)],
+
+    'DD': date => lpad(date.getDate() % 100, 2, '0'),
+
+    'D': date => date.getDate(),
+
+    'HH': date => lpad(date.getHours(), 2, '0'),
+
+    'H': date => date.getHours(),
+
+    'hh': (date) => {
+        let hours = date.getHours();
         return lpad(hours <= 12 ? hours : hours - 12, 2, '0');
     },
-    'h': function (date) {
-        var hours = date.getHours();
+
+    'h': date => {
+        let hours = date.getHours();
         return hours <= 12 ? hours : hours - 12;
     },
-    'mm': function (date) {
-        return lpad(date.getMinutes(), 2, '0');
-    },
-    'm': function (date) {
-        return date.getMinutes();
-    },
-    'ss': function (date) {
-        return lpad(date.getSeconds(), 2, '0');
-    },
-    's': function (date) {
-        return date.getSeconds();
-    },
-    'fff': function (date) {
-        return lpad(date.getMilliseconds(), 3, '0');
-    },
-    'ff': function (date) {
-        return lpad((date.getMilliseconds() / 10) | 0, 2, '0');
-    },
-    'f': function (date) {
-        return (date.getMilliseconds() / 100) | 0;
-    },
-    'TT': function (date) {
-        return date.getHours() >= 12 ? 'PM' : 'AM';
-    },
-    'tt': function (date) {
-        return date.getHours() >= 12 ? 'pm' : 'am';
-    },
-    'Q': function (date) {
-        return Math.ceil((date.getMonth() + 1) / 3);
-    },
-    'Z': function (date) {
+
+    'mm': date => lpad(date.getMinutes(), 2, '0'),
+
+    'm': date => date.getMinutes(),
+
+    'ss': date => lpad(date.getSeconds(), 2, '0'),
+
+    's': date => date.getSeconds(),
+
+    'fff': date => lpad(date.getMilliseconds(), 3, '0'),
+
+    'ff': date => lpad((date.getMilliseconds() / 10) | 0, 2, '0'),
+
+    'f': date => (date.getMilliseconds() / 100) | 0,
+
+    'TT': date => date.getHours() >= 12 ? 'PM' : 'AM',
+
+    'tt': date => date.getHours() >= 12 ? 'pm' : 'am',
+
+    'Q': date => Math.ceil((date.getMonth() + 1) / 3),
+
+    'Z': date => {
         let offset = date.getTimezoneOffset(),
             abs = Math.abs(offset);
         return (offset > 0 ? '-' : '+') + lpad((abs / 60) | 0, 2, '0') + lpad(abs % 60, 2, '0');
