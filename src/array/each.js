@@ -4,6 +4,8 @@ function each(target, fn, ctx) {
             break;
         }
     }
+
+    return target;
 }
 
 export default each;
