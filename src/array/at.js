@@ -1,7 +1,7 @@
 import array from '../is/array';
 
 function at(target, ...indexes) {
-    var index;
+    let index;
 
     if (indexes.length === 1) {
         index = indexes[0];
