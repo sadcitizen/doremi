@@ -9,10 +9,10 @@
  *
  * @example
  *
- * st.insert(', World!', 'Hello', 0);
+ * insert(', World!', 'Hello', 0);
  * // => 'Hello, World!'
  *
- * st.insert('o, World!', 'Hell', -10);
+ * insert('o, World!', 'Hell', -10);
  * // => 'Hello, World!'
  */
 function insert(target, sub, index) {

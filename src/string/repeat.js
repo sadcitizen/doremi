@@ -9,10 +9,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.repeat('&', 4);
+ * repeat('&', 4);
  * // => '&&&&'
  *
- * st.repeat(12, 2);
+ * repeat(12, 2);
  * // => '1212'
  */
 function repeat(target, count) {

@@ -10,10 +10,10 @@ import rest from '../array/rest';
  *
  * @example
  *
- * st.trim('   lorem');
+ * trim('   lorem');
  * // => 'lorem'
  *
- * st.trim('*+/lorem', '/', '+*');
+ * trim('*+/lorem', '/', '+*');
  * // => 'lorem'
  */
 function ltrim(target) {

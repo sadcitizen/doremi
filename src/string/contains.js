@@ -10,10 +10,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.contains('lorem ipsum', 'rem');
+ * contains('lorem ipsum', 'rem');
  * // => true
  *
- * st.contains('lorem ipsum', 'foo');
+ * contains('lorem ipsum', 'foo');
  * // => false
  */
 function contains(target, sub, start) {

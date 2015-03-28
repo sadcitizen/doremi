@@ -8,10 +8,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.lines('Lorem ipsum');
+ * lines('Lorem ipsum');
  * // => ['Lorem ipsum']
  *
- * st.lines('Lorem \nipsum');
+ * lines('Lorem \nipsum');
  * // => ['Lorem ', 'ipsum']
  */
 function lines(target) {

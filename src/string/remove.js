@@ -8,10 +8,10 @@
  *
  * @example
  *
- * st.remove('Hello, World!', 5, -1);
+ * remove('Hello, World!', 5, -1);
  * // => 'Hello!'
  *
- * st.remove('Hello, World!', 90, 100)
+ * remove('Hello, World!', 90, 100)
  * // => 'Hello, World!'
  */
 function remove(target, start, end) {

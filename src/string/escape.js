@@ -9,7 +9,7 @@ import string from '../to/string';
  *
  * @example
  *
- * st.escape('<p>lorem & ipsum</p>');
+ * escape('<p>lorem & ipsum</p>');
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
 function escape(target) {

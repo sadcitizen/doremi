@@ -8,10 +8,10 @@ import lchop from './lchop';
  *
  * @example
  *
- * st.reverse('lorem');
+ * reverse('lorem');
  * // => 'merol'
  *
- * st.reverse(12345);
+ * reverse(12345);
  * // => '54321'
  */
 function reverse(target) {

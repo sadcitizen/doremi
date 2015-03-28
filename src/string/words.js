@@ -10,10 +10,10 @@ import clean from './clean';
  *
  * @example
  *
- * st.words('lorem ipsum dolor sit');
+ * words('lorem ipsum dolor sit');
  * // => ['lorem', 'ipsum', 'dolor', 'sit']
  *
- * st.words('lorem/ipsum/dolor/sit', '/');
+ * words('lorem/ipsum/dolor/sit', '/');
  * // => ['lorem', 'ipsum', 'dolor', 'sit']
  */
 function words(target, sep) {

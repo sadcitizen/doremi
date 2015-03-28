@@ -9,10 +9,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.join('', 'Lorem', 'Ipsum');
+ * join('', 'Lorem', 'Ipsum');
  * // => 'LoremIpsum'
  *
- * st.join(' ', 'Lorem', null, '');
+ * join(' ', 'Lorem', null, '');
  * // => 'Lorem'
  */
 function join(sep, ...strings) {

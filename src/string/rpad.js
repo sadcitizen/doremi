@@ -12,13 +12,13 @@ import repeat from './repeat';
  *
  * @example
  *
- * st.rpad('lorem', 8, '^');
+ * rpad('lorem', 8, '^');
  * // => 'lorem^^^'
  *
- * st.rpad('lorem', 5, '#');
+ * rpad('lorem', 5, '#');
  * // => 'lorem'
  *
- * st.rpad('lorem', 10);
+ * rpad('lorem', 10);
  * // => 'lorem     '
  */
 function rpad(target, length, char) {

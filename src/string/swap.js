@@ -8,10 +8,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.swap('hello');
+ * swap('hello');
  * // => 'HELLO'
  *
- * st.swap('lOREM');
+ * swap('lOREM');
  * // => 'Lorem'
  */
 function swap(target) {

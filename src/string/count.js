@@ -9,13 +9,13 @@ import string from '../to/string';
  *
  * @example
  *
- * st.count('Hello, World!', 'l');
+ * count('Hello, World!', 'l');
  * // => 1
  *
- * st.count(99999, 9);
+ * count(99999, 9);
  * // => 5
  *
- * st.count(99999, 99);
+ * count(99999, 99);
  * // => 4
  */
 function count(target, sub) {

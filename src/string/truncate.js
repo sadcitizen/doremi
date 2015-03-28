@@ -11,10 +11,10 @@ import trim from './trim';
  *
  * @example
  *
- * st.truncate('lorem ipsum dolor sit amet', 10);
+ * truncate('lorem ipsum dolor sit amet', 10);
  * // => 'lorem i...'
  *
- * st.truncate('lorem ipsum dolor sit amet', 10, null, true);
+ * truncate('lorem ipsum dolor sit amet', 10, null, true);
  * // => 'lorem...'
  */
 function truncate(target, limit, sfx, safe) {

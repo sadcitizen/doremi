@@ -8,10 +8,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.capitalize('hi!');
+ * capitalize('hi!');
  * // => 'Hi!'
  *
- * st.capitalize();
+ * capitalize();
  * // => '' (empty string)
  */
 function capitalize(target) {

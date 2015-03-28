@@ -9,10 +9,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.lchop('lorem ipsum', 5);
+ * lchop('lorem ipsum', 5);
  * // => ['lorem', ' ipsu', 'm']
  *
- * st.lchop(1234567890);
+ * lchop(1234567890);
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
 function lchop(target, step) {

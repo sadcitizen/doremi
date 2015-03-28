@@ -9,10 +9,10 @@ import whitespaces from '../internal/whitespaces.regex';
  *
  * @example
  *
- * st.clean('\0 \b \t \n \v \f \r');
+ * clean('\0 \b \t \n \v \f \r');
  * // => ''
  *
- * st.clean('           Hello,      World!             ');
+ * clean('           Hello,      World!             ');
  * // => 'Hello, World!'
  */
 function clean(target) {

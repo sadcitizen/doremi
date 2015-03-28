@@ -11,7 +11,7 @@ import invert from '../object/invert';
  *
  * @example
  *
- * st.escape('<p>lorem & ipsum</p>');
+ * escape('<p>lorem & ipsum</p>');
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
 function unescape(target) {

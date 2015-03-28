@@ -9,10 +9,10 @@ import string from '../to/string';
  *
  * @example
  *
- * st.startsWith('lorem', 'lor');
+ * startsWith('lorem', 'lor');
  * // => true
  *
- * st.startsWith(12345, 2);
+ * startsWith(12345, 2);
  * // => false
  */
 function startsWith(target, sub) {

@@ -9,10 +9,10 @@ import decapitalize from './decapitalize';
  *
  * @example
  *
- * st.camelize('lorem ipsum');
+ * camelize('lorem ipsum');
  * // => 'loremIpsum'
  *
- * st.camelize('  --dolor --sit -');
+ * camelize('  --dolor --sit -');
  * // => 'dolorSit'
  */
 function camelize(target) {
