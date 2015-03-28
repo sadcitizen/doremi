@@ -1,8 +1,8 @@
 var is = require('../build/is.min');
 var expect = require('chai').expect;
 
-describe('is', function () {
-    describe('is.args()', function () {
+describe('Is', function () {
+    describe('.args()', function () {
         var fn;
 
         before(function () {
@@ -30,7 +30,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.array()', function () {
+    describe('.array()', function () {
         it('Should return true if value is an array', function () {
             expect(is.array([])).to.equal(true);
             expect(is.array([1, 2, 3])).to.equal(true);
@@ -51,7 +51,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.blankString()', function () {
+    describe('.blankString()', function () {
         it('Should return true for a blank string', function () {
             expect(is.blankString('')).to.equal(true);
             expect(is.blankString('       \t \n   ')).to.equal(true);
@@ -64,7 +64,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.bool()', function () {
+    describe('.bool()', function () {
         it('Should return true if value is a boolean', function () {
             expect(is.bool(true)).to.equal(true);
             expect(is.bool(Boolean(42))).to.equal(true);
@@ -87,7 +87,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.char()', function () {
+    describe('.char()', function () {
         it('Should return false if value is a char', function () {
             expect(is.char('a')).to.equal(true);
             expect(is.char(String(4))).to.equal(true);
@@ -111,7 +111,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.date()', function () {
+    describe('.date()', function () {
         it('Should return true if value is a date', function () {
             expect(is.date(new Date())).to.equal(true);
             expect(is.date(new Date('Date'))).to.equal(true);
@@ -132,7 +132,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.defined()', function () {
+    describe('.defined()', function () {
         it('Should return false if value is undefined', function () {
             expect(is.defined()).to.equal(false);
             expect(is.defined(void 0)).to.equal(false);
@@ -152,7 +152,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.empty()', function () {
+    describe('.empty()', function () {
         var fn;
 
         before(function () {
@@ -207,7 +207,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.equal()', function () {
+    describe('.equal()', function () {
         it('Primitive value should be equal to itself', function () {
             expect(is.equal()).to.equal(true);
             expect(is.equal(undefined, undefined)).to.equal(true);
@@ -330,7 +330,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.even()', function () {
+    describe('.even()', function () {
         it('Should return true if value is an even number', function () {
             expect(is.even(42)).to.equal(true);
             expect(is.even(-42)).to.equal(true);
@@ -355,7 +355,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.exists()', function () {
+    describe('.exists()', function () {
         it('Should return false if value is undefined', function () {
             expect(is.exists()).to.equal(false);
             expect(is.exists(undefined)).to.equal(false);
@@ -383,7 +383,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.float()', function () {
+    describe('.float()', function () {
         it('Should return true if value is float number', function () {
             expect(is.float(42.42)).to.equal(true);
         });
@@ -405,7 +405,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.fn()', function () {
+    describe('.fn()', function () {
         it('Should return true if value is a function', function () {
             function noop() {
             }
@@ -431,7 +431,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.guid()', function () {
+    describe('.guid()', function () {
         it('Should return true for a guid string', function () {
             expect(is.guid('550e8400-e29b-41d4-a716-446655440000')).to.equal(true);
             expect(is.guid('f47ac10b-58cc-4372-a567-0e02b2c3d479')).to.equal(true);
@@ -445,7 +445,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.nan()', function () {
+    describe('.nan()', function () {
         it('Should return true if value is NaN', function () {
             expect(is.nan(NaN)).to.equal(true);
             expect(is.nan(parseInt('hello'))).to.equal(true);
@@ -466,7 +466,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.hex()', function () {
+    describe('.hex()', function () {
         it('Should return true for a hex string', function () {
             expect(is.hex('ff')).to.equal(true);
             expect(is.hex('00ffcc')).to.equal(true);
@@ -481,7 +481,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.int()', function () {
+    describe('.int()', function () {
         it('Should return true if value is an integer', function () {
             expect(is.int(42)).to.equal(true);
         });
@@ -506,7 +506,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.json()', function () {
+    describe('.json()', function () {
         it('Should return true for a json string', function () {
             expect(is.json(JSON.stringify({}))).to.equal(true);
             expect(is.json(JSON.stringify({ a: 'b', c: 'd' }))).to.equal(true);
@@ -521,7 +521,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.number()', function () {
+    describe('.number()', function () {
         it('Should return false if value is an number', function () {
             expect(is.number(42)).to.equal(true);
             expect(is.number(Number('42'))).to.equal(true);
@@ -545,7 +545,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.object()', function () {
+    describe('.object()', function () {
         it('Should return false if value is an object', function () {
             expect(is.object({})).to.equal(true);
             expect(is.object({ a: 'b', c: 'd' })).to.equal(true);
@@ -571,7 +571,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.odd()', function () {
+    describe('.odd()', function () {
         it('Should return false if value is an even number', function () {
             expect(is.odd(42)).to.equal(false);
             expect(is.odd(-42)).to.equal(false);
@@ -596,7 +596,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.primitive()', function () {
+    describe('.primitive()', function () {
         it('Boolean should be primitive', function () {
             expect(is.primitive(true)).to.equal(true);
             expect(is.primitive(false)).to.equal(true);
@@ -635,7 +635,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.regexp()', function () {
+    describe('.regexp()', function () {
         it('Should return false if value is a string', function () {
             expect(is.regexp(/\s+/ig)).to.equal(true);
             expect(is.regexp(new RegExp('\\s', 'ig'))).to.equal(true);
@@ -654,7 +654,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.string()', function () {
+    describe('.string()', function () {
         it('Should return false if value is a string', function () {
             expect(is.string('')).to.equal(true);
             expect(is.string(String(42))).to.equal(true);
@@ -676,7 +676,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.type()', function () {
+    describe('.type()', function () {
         it('Should return a type of value', function () {
             expect(is.type(arguments)).to.equal('arguments');
 
@@ -728,7 +728,7 @@ describe('is', function () {
         });
     });
 
-    describe('is.validDate()', function () {
+    describe('.validDate()', function () {
         it('Should return true if value is a valid date', function () {
             expect(is.validDate(new Date())).to.equal(true);
             expect(is.validDate(new Date(2014, 11, 1))).to.equal(true);

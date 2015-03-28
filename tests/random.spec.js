@@ -1,15 +1,15 @@
-var rn = require('../build/random.min');
+var rnd = require('../build/random.min');
 var is = require('../build/is.min');
 var expect = require('chai').expect;
 
-describe('random', function () {
-    describe('random.bool()', function () {
+describe('Random', function () {
+    describe('.bool()', function () {
         it('Should return boolean', function () {
-            expect(is.type(rn.bool())).to.equal('boolean');
+            expect(is.type(rnd.bool())).to.equal('boolean');
         });
     });
 
-    describe('random.choice()', function () {
+    describe('.choice()', function () {
         var list = [1, 2, 3],
             random = Math.random(),
             firstChoice,
@@ -18,11 +18,11 @@ describe('random', function () {
             secondApplyChoice;
 
         before(function () {
-            firstChoice = rn.choice(list);
-            secondChoice = rn.choice(list);
+            firstChoice = rnd.choice(list);
+            secondChoice = rnd.choice(list);
 
-            firstApplyChoice = rn.choice.apply(random, list);
-            secondApplyChoice = rn.choice.apply(random, list);
+            firstApplyChoice = rnd.choice.apply(random, list);
+            secondApplyChoice = rnd.choice.apply(random, list);
         });
 
         it('Should pick a random item from list', function () {
@@ -36,13 +36,13 @@ describe('random', function () {
         });
     });
 
-    describe('random.float()', function () {
+    describe('.float()', function () {
         var float, range, fix;
 
         before(function () {
-            float = rn.float();
-            range = rn.float(0.113, 94.378);
-            fix = rn.float(0, 10, 3);
+            float = rnd.float();
+            range = rnd.float(0.113, 94.378);
+            fix = rnd.float(0, 10, 3);
         });
 
         it('Should return a float', function () {
@@ -58,16 +58,16 @@ describe('random', function () {
 
         it('Should return an float with less than 3 digits after point', function () {
             expect(('' + fix).split('.')[1].length).to.be.at.most(3);
-            expect(('' + rn.float(0, 10, 3)).split('.')[1].length).to.be.at.most(3);
-            expect(('' + rn.float(0, 100, 3)).split('.')[1].length).to.be.at.most(3);
+            expect(('' + rnd.float(0, 10, 3)).split('.')[1].length).to.be.at.most(3);
+            expect(('' + rnd.float(0, 100, 3)).split('.')[1].length).to.be.at.most(3);
         });
     });
 
-    describe('random.guid()', function () {
+    describe('.guid()', function () {
         var guid;
 
         before(function () {
-            guid = rn.guid();
+            guid = rnd.guid();
         });
 
         it('Guid should be guid', function () {
@@ -75,12 +75,12 @@ describe('random', function () {
         });
     });
 
-    describe('random.hex()', function () {
+    describe('.hex()', function () {
         var hex, hex12;
 
         before(function () {
-            hex = rn.hex();
-            hex12 = rn.hex(12);
+            hex = rnd.hex();
+            hex12 = rnd.hex(12);
         });
 
         it('Should return a string', function () {
@@ -97,12 +97,12 @@ describe('random', function () {
         });
     });
 
-    describe('random.int()', function () {
+    describe('.int()', function () {
         var int, range;
 
         before(function () {
-            int = rn.int();
-            range = rn.int(0, 1000);
+            int = rnd.int();
+            range = rnd.int(0, 1000);
         });
 
         it('Should return a integer', function () {

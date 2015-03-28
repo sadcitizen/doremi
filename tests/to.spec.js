@@ -1,8 +1,8 @@
 var to = require('../build/to.min');
 var expect = require('chai').expect;
 
-describe('to', function () {
-    describe('to.constant', function () {
+describe('To', function () {
+    describe('.constant()', function () {
         it('Should return new function that returns a value', function () {
             var hi = to.constant('hi');
             expect(hi()).to.equal('hi');

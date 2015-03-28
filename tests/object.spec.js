@@ -1,9 +1,9 @@
-var ob = require('../build/object.min');
+var obj = require('../build/object.min');
 var is = require('../build/is.min');
 var expect = require('chai').expect;
 
-describe('object', function () {
-    describe('object.deepGet()', function () {
+describe('Object', function () {
+    describe('.deepGet()', function () {
         var lorem, foo;
 
         before(function () {
@@ -29,31 +29,31 @@ describe('object', function () {
         });
 
         it('Should return value of nested property', function () {
-            expect(ob.deepGet(lorem, 'lorem.ipsum.dolor.sit')).to.equal('amet');
-            expect(ob.deepGet(lorem, 'lorem.foo')).to.be.a('function');
-            expect(ob.deepGet(lorem, 'lorem.foo')()).to.equal('bar');
-            expect(ob.deepGet(foo, 'foo.foo')).to.deep.equal({ foo: 'foo' });
-            expect(ob.deepGet(foo, 'foo.foo.foo')).to.equal('foo');
+            expect(obj.deepGet(lorem, 'lorem.ipsum.dolor.sit')).to.equal('amet');
+            expect(obj.deepGet(lorem, 'lorem.foo')).to.be.a('function');
+            expect(obj.deepGet(lorem, 'lorem.foo')()).to.equal('bar');
+            expect(obj.deepGet(foo, 'foo.foo')).to.deep.equal({ foo: 'foo' });
+            expect(obj.deepGet(foo, 'foo.foo.foo')).to.equal('foo');
         });
 
         it('Should not return value of non existent property', function () {
-            expect(ob.deepGet(foo, '')).to.equal(undefined);
-            expect(ob.deepGet(lorem, 'lorem.ipsum.foo')).to.equal(undefined);
-            expect(ob.deepGet(foo, 'foo.foo.foo.foo.foo.foo')).to.equal(undefined);
+            expect(obj.deepGet(foo, '')).to.equal(undefined);
+            expect(obj.deepGet(lorem, 'lorem.ipsum.foo')).to.equal(undefined);
+            expect(obj.deepGet(foo, 'foo.foo.foo.foo.foo.foo')).to.equal(undefined);
         });
 
         it('Should return default value of non existent property', function () {
-            expect(ob.deepGet(foo, '', true)).to.equal(true);
-            expect(ob.deepGet(lorem, 'lorem.ipsum.foo', 42)).to.equal(42);
-            expect(ob.deepGet(foo, 'foo.foo.foo.foo.foo.foo', 'foo')).to.equal('foo');
+            expect(obj.deepGet(foo, '', true)).to.equal(true);
+            expect(obj.deepGet(lorem, 'lorem.ipsum.foo', 42)).to.equal(42);
+            expect(obj.deepGet(foo, 'foo.foo.foo.foo.foo.foo', 'foo')).to.equal('foo');
         });
     });
 
-    describe('object.deepSet()', function () {
+    describe('.deepSet()', function () {
         it('Should sets value for nested properties', function () {
             var lorem = {};
-            ob.deepSet(lorem, 'ipsum.dolor.sit', 42);
-            ob.deepSet(lorem, 'ipsum.dolor.foo', 'bar');
+            obj.deepSet(lorem, 'ipsum.dolor.sit', 42);
+            obj.deepSet(lorem, 'ipsum.dolor.foo', 'bar');
 
             expect(lorem.ipsum.dolor.sit).to.equal(42);
             expect(lorem.ipsum.dolor.foo).to.equal('bar');
@@ -61,15 +61,15 @@ describe('object', function () {
 
         it('Should sets value for not nested properties', function () {
             var lorem = {};
-            ob.deepSet(lorem, 'ipsum', 42);
-            ob.deepSet(lorem, 'foo', 'bar');
+            obj.deepSet(lorem, 'ipsum', 42);
+            obj.deepSet(lorem, 'foo', 'bar');
 
             expect(lorem.ipsum).to.equal(42);
             expect(lorem.foo).to.equal('bar');
         });
     });
 
-    describe('object.has()', function () {
+    describe('.has()', function () {
         var lorem;
 
         before(function () {
@@ -88,29 +88,29 @@ describe('object', function () {
             };
         });
 
-        it('Should return true if ob has property', function () {
-            expect(ob.has(lorem, 'constructor')).to.equal(true);
-            expect(ob.has(lorem, 'valueOf')).to.equal(true);
-            expect(ob.has(lorem, 'toString')).to.equal(true);
-            expect(ob.has(lorem, 'bar')).to.equal(true);
-            expect(ob.has(lorem, 'bar.constructor')).to.equal(true);
-            expect(ob.has(lorem, 'bar.valueOf')).to.equal(true);
-            expect(ob.has(lorem, 'bar.toString')).to.equal(true);
-            expect(ob.has(lorem, 'lorem.ipsum')).to.equal(true);
-            expect(ob.has(lorem, 'lorem.ipsum.dolor')).to.equal(true);
-            expect(ob.has(lorem, 'lorem.ipsum.dolor.sit')).to.equal(true);
-            expect(ob.has(lorem, 'lorem.ipsum.constructor')).to.equal(true);
+        it('Should return true if object has property', function () {
+            expect(obj.has(lorem, 'constructor')).to.equal(true);
+            expect(obj.has(lorem, 'valueOf')).to.equal(true);
+            expect(obj.has(lorem, 'toString')).to.equal(true);
+            expect(obj.has(lorem, 'bar')).to.equal(true);
+            expect(obj.has(lorem, 'bar.constructor')).to.equal(true);
+            expect(obj.has(lorem, 'bar.valueOf')).to.equal(true);
+            expect(obj.has(lorem, 'bar.toString')).to.equal(true);
+            expect(obj.has(lorem, 'lorem.ipsum')).to.equal(true);
+            expect(obj.has(lorem, 'lorem.ipsum.dolor')).to.equal(true);
+            expect(obj.has(lorem, 'lorem.ipsum.dolor.sit')).to.equal(true);
+            expect(obj.has(lorem, 'lorem.ipsum.constructor')).to.equal(true);
         });
 
-        it('Should return undefined if ob has no property', function () {
-            expect(ob.has(lorem, 'foo')).to.equal(false);
-            expect(ob.has(lorem, 'lorem.dolor')).to.equal(false);
-            expect(ob.has(lorem, 'lorem.ipsum.sit')).to.equal(false);
-            expect(ob.has(lorem, 'lorem.ipsum.dolor.bar')).to.equal(false);
+        it('Should return undefined if objext has no property', function () {
+            expect(obj.has(lorem, 'foo')).to.equal(false);
+            expect(obj.has(lorem, 'lorem.dolor')).to.equal(false);
+            expect(obj.has(lorem, 'lorem.ipsum.sit')).to.equal(false);
+            expect(obj.has(lorem, 'lorem.ipsum.dolor.bar')).to.equal(false);
         });
     });
 
-    describe('object.hasOwn()', function () {
+    describe('.hasOwn()', function () {
         var obj;
 
         before(function () {
@@ -124,24 +124,24 @@ describe('object', function () {
             };
         });
 
-        it('Should return true if ob has property', function () {
-            expect(ob.hasOwn(obj, 'a')).to.equal(true);
-            expect(ob.hasOwn(obj, 'c')).to.equal(true);
-            expect(ob.hasOwn(obj, 'toString')).to.equal(true);
-            expect(ob.hasOwn(obj, 'hasOwnProperty')).to.equal(true);
+        it('Should return true if object has property', function () {
+            expect(obj.hasOwn(obj, 'a')).to.equal(true);
+            expect(obj.hasOwn(obj, 'c')).to.equal(true);
+            expect(obj.hasOwn(obj, 'toString')).to.equal(true);
+            expect(obj.hasOwn(obj, 'hasOwnProperty')).to.equal(true);
         });
 
-        it('Should return undefined if ob has no property', function () {
-            expect(ob.hasOwn(obj, 'constructor')).to.equal(false);
-            expect(ob.hasOwn(obj, 'valueOf')).to.equal(false);
-            expect(ob.hasOwn(obj, 'toLocaleString')).to.equal(false);
+        it('Should return undefined if object has no property', function () {
+            expect(obj.hasOwn(obj, 'constructor')).to.equal(false);
+            expect(obj.hasOwn(obj, 'valueOf')).to.equal(false);
+            expect(obj.hasOwn(obj, 'toLocaleString')).to.equal(false);
         });
     });
 
-    describe('object.keys()', function () {
+    describe('.keys()', function () {
         it('Should return array of all own enumerable property names', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
-            expect(ob.keys(obj)).to.deep.equal(['a', 'c', 'e']);
+            expect(obj.keys(obj)).to.deep.equal(['a', 'c', 'e']);
         });
 
         it('Should avoid properties from prototype', function () {
@@ -156,14 +156,14 @@ describe('object', function () {
 
             Point.prototype.z = 0;
 
-            expect(ob.keys(new Point(0, 0))).to.deep.equal(['x', 'y']);
+            expect(obj.keys(new Point(0, 0))).to.deep.equal(['x', 'y']);
         });
     });
 
-    describe('object.ns()', function () {
+    describe('.ns()', function () {
         it('Should creates not existent nested properties', function () {
             var lorem = {};
-            ob.ns(lorem, 'ipsum.dolor.sit');
+            obj.ns(lorem, 'ipsum.dolor.sit');
 
             expect(is.defined(lorem.ipsum)).to.equal(true);
             expect(is.defined(lorem.ipsum.dolor)).to.equal(true);
@@ -175,7 +175,7 @@ describe('object', function () {
 
         it('Should reuse existent nested properties', function () {
             var lorem = { ipsum: { dolor: { foo: 'bar' } } };
-            ob.ns(lorem, 'ipsum.dolor.sit');
+            obj.ns(lorem, 'ipsum.dolor.sit');
 
             expect(is.defined(lorem.ipsum.dolor.sit)).to.equal(true);
 
@@ -183,9 +183,9 @@ describe('object', function () {
             expect(lorem.ipsum.dolor).to.deep.equal({ foo: 'bar', sit: {} });
         });
 
-        it('Should override existent nested property if it is not an ob', function () {
+        it('Should override existent nested property if it is not an object', function () {
             var lorem = { ipsum: 'dolor' };
-            ob.ns(lorem, 'ipsum.dolor.sit');
+            obj.ns(lorem, 'ipsum.dolor.sit');
 
             expect(is.defined(lorem.ipsum.dolor.sit)).to.equal(true);
 
@@ -193,23 +193,23 @@ describe('object', function () {
             expect(lorem.ipsum.dolor).to.deep.equal({ sit: {} });
         });
 
-        it('Should return an empty ob', function () {
+        it('Should return an empty object', function () {
             var lorem = {};
 
-            expect(ob.ns(lorem, 'ipsum.dolor.sit')).to.equal(lorem.ipsum.dolor.sit);
-            expect(ob.ns(lorem, 'ipsum.dolor.sit')).to.deep.equal({});
+            expect(obj.ns(lorem, 'ipsum.dolor.sit')).to.equal(lorem.ipsum.dolor.sit);
+            expect(obj.ns(lorem, 'ipsum.dolor.sit')).to.deep.equal({});
         });
     });
 
-    describe('object.pairs()', function () {
+    describe('.pairs()', function () {
         it('Should return array of key-value pairs', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
-            expect(ob.pairs(obj)).to.deep.equal([
+            expect(obj.pairs(obj)).to.deep.equal([
                 ['a', 'b'],
                 ['c', 'd'],
                 ['e', 'f']
             ]);
-            expect(ob.pairs(obj, 'a', 'c')).to.deep.equal([
+            expect(obj.pairs(obj, 'a', 'c')).to.deep.equal([
                 ['a', 'b'],
                 ['c', 'd']
             ]);
@@ -227,11 +227,11 @@ describe('object', function () {
                     k: 'l'
                 }
             };
-            expect(ob.pairs(obj, 'a', 'e.f')).to.deep.equal([
+            expect(obj.pairs(obj, 'a', 'e.f')).to.deep.equal([
                 ['a', 'b'],
                 ['e.f', 'g']
             ]);
-            expect(ob.pairs(obj, 'c', 'h.i', 'h.k')).to.deep.equal([
+            expect(obj.pairs(obj, 'c', 'h.i', 'h.k')).to.deep.equal([
                 ['c', 'd'],
                 ['h.i', 'j'],
                 ['h.k', 'l']
@@ -250,37 +250,37 @@ describe('object', function () {
 
             Point.prototype.z = 0;
 
-            expect(ob.pairs(new Point(0, 0))).to.deep.equal([
+            expect(obj.pairs(new Point(0, 0))).to.deep.equal([
                 ['x', 0],
                 ['y', 0]
             ]);
-            expect(ob.pairs(new Point(42, 0), 'x')).to.deep.equal([
+            expect(obj.pairs(new Point(42, 0), 'x')).to.deep.equal([
                 ['x', 42]
             ]);
-            expect(ob.pairs(new Point(0, 42), 'y')).to.deep.equal([
+            expect(obj.pairs(new Point(0, 42), 'y')).to.deep.equal([
                 ['y', 42]
             ]);
         });
     });
 
-    describe('object.prop()', function () {
-        it('Should return the value from an ob by property name', function () {
+    describe('.prop()', function () {
+        it('Should return the value from an object by property name', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
 
-            expect(ob.prop('a')(obj)).to.equal('b');
-            expect(ob.prop('c')(obj)).to.equal('d');
-            expect(ob.prop('e')(obj)).to.equal('f');
+            expect(obj.prop('a')(obj)).to.equal('b');
+            expect(obj.prop('c')(obj)).to.equal('d');
+            expect(obj.prop('e')(obj)).to.equal('f');
         });
 
-        it('Should return the given default value from an ob by non existent property name', function () {
+        it('Should return the given default value from an object by non existent property name', function () {
             var obj = { a: 'b' };
 
-            expect(ob.prop('c', 'd')(obj)).to.equal('d');
-            expect(ob.prop('e', 'f')(obj)).to.equal('f');
+            expect(obj.prop('c', 'd')(obj)).to.equal('d');
+            expect(obj.prop('e', 'f')(obj)).to.equal('f');
         });
     });
 
-    describe('object.result()', function () {
+    describe('.result()', function () {
         var obj;
 
         before(function () {
@@ -295,84 +295,84 @@ describe('object', function () {
             };
         });
 
-        it('Should return nothing for undefined ob properties.', function () {
-            expect(ob.result(obj, 'some')).to.equal(undefined);
+        it('Should return nothing for undefined object properties.', function () {
+            expect(obj.result(obj, 'some')).to.equal(undefined);
         });
 
-        it('Should return default value if property on an ob is undefined.', function () {
-            expect(ob.result(obj, 'some', true)).to.equal(true);
-            expect(ob.result(obj, 'other', 42)).to.equal(42);
+        it('Should return default value if property on an object is undefined.', function () {
+            expect(obj.result(obj, 'some', true)).to.equal(true);
+            expect(obj.result(obj, 'other', 42)).to.equal(42);
         });
 
-        it('Should evaluate a method with ob context and return its result.', function () {
-            expect(ob.result(obj, 'method')).to.equal('value');
+        it('Should evaluate a method with object context and return its result.', function () {
+            expect(obj.result(obj, 'method')).to.equal('value');
         });
 
         it('Should evaluate an attribute and return its result.', function () {
-            expect(ob.result(obj, 'attr')).to.equal('value');
-            expect(ob.result(obj, 'falsey')).to.equal('');
-            expect(ob.result(obj, 'arr')).to.deep.equal([0, 1, 2]);
+            expect(obj.result(obj, 'attr')).to.equal('value');
+            expect(obj.result(obj, 'falsey')).to.equal('');
+            expect(obj.result(obj, 'arr')).to.deep.equal([0, 1, 2]);
         });
     });
 
-    describe('object.template()', function () {
+    describe('.template()', function () {
         var target, source, result;
 
         it('Should work with plain objects.', function () {
             target = {a: '${a}', b: '${b}', c: '${c}'};
             source = {a: 1, b: 5, c: 3};
             result = {a: 1, b: 5, c: 3};
-            expect(ob.template(target, source)).to.deep.equal(result);
+            expect(obj.template(target, source)).to.deep.equal(result);
         });
 
         it('Should work with nested attributes.', function () {
             target = {a: '${a.c}', b: '${b.e}', c: '${f}', d: {e: '${d.e}'}, f: 'some value'};
             source = {a: {c: 'lorem'}, b: {e: 'ipsum'}, c: 3, d: {e: 4}, f: 'dolor', g: {h: {i: {j: 'sit'}}}};
             result = {a: 'lorem', b: 'ipsum', c: 'dolor', d: {e: 4}, f: 'some value'};
-            expect(ob.template(target, source)).to.deep.equal(result);
+            expect(obj.template(target, source)).to.deep.equal(result);
         });
 
         it('Should work with arrays.', function () {
             target = ['${a}', '${b}', '${c}', '${d.e}'];
             source = {a: 'lorem', b: 'ipsum', c: 'sit', d: {e: 'dolor'}};
             result = ['lorem', 'ipsum', 'sit', 'dolor'];
-            expect(ob.template(target, source)).to.deep.equal(result);
+            expect(obj.template(target, source)).to.deep.equal(result);
         });
 
         it('Should work with arrays as source.', function () {
             target = ['${1}', '${0}', '${3}', '${2.e}'];
             source = [1, '2', {e: 3}, null];
             result = ['2', 1, null, 3];
-            expect(ob.template(target, source)).to.deep.equal(result);
+            expect(obj.template(target, source)).to.deep.equal(result);
         });
 
         it('Should not replace undefined values.', function () {
             target = {a: '${a}', b: '${b}', c: '${c}', d: '${d}'};
             source = {a: 1, b: 5, c: 3};
             result = {a: 1, b: 5, c: 3, d: '${d}'};
-            expect(ob.template(target, source)).to.deep.equal(result);
+            expect(obj.template(target, source)).to.deep.equal(result);
         });
 
         it('Should work with mustache syntax.', function () {
             target = {a: '{{a}}', b: '{{b}}', c: '{{c}}'};
             source = {a: 1, b: 5, c: 3};
             result = {a: 1, b: 5, c: 3};
-            expect(ob.template(target, source, /{{([^}]+)}}/g)).to.deep.equal(result);
+            expect(obj.template(target, source, /{{([^}]+)}}/g)).to.deep.equal(result);
         });
 
         it('Should work with underscore syntax.', function () {
             target = {a: '<%= a %>', b: '<%= b %>', c: '<%= c %>'};
             source = {a: 1, b: 5, c: 3};
             result = {a: 1, b: 5, c: 3};
-            expect(ob.template(target, source, /<%=([^<%=>]+?)%>/g)).to.deep.equal(result);
+            expect(obj.template(target, source, /<%=([^<%=>]+?)%>/g)).to.deep.equal(result);
         });
     });
 
-    describe('object.values()', function () {
+    describe('.values()', function () {
         it('Should return array of own enumerable property values', function () {
             var obj = { a: 'b', c: 'd', e: 'f' };
-            expect(ob.values(obj)).to.deep.equal(['b', 'd', 'f']);
-            expect(ob.values(obj, 'a', 'c')).to.deep.equal(['b', 'd']);
+            expect(obj.values(obj)).to.deep.equal(['b', 'd', 'f']);
+            expect(obj.values(obj, 'a', 'c')).to.deep.equal(['b', 'd']);
         });
 
         it('Should return array of own nested enumerable property values', function () {
@@ -387,8 +387,8 @@ describe('object', function () {
                     k: 'l'
                 }
             };
-            expect(ob.values(obj, 'a', 'e.f')).to.deep.equal(['b', 'g']);
-            expect(ob.values(obj, 'c', 'h.i', 'h.k')).to.deep.equal(['d', 'j', 'l']);
+            expect(obj.values(obj, 'a', 'e.f')).to.deep.equal(['b', 'g']);
+            expect(obj.values(obj, 'c', 'h.i', 'h.k')).to.deep.equal(['d', 'j', 'l']);
         });
 
         it('Should avoid properties from prototype', function () {
@@ -403,9 +403,9 @@ describe('object', function () {
 
             Point.prototype.z = 0;
 
-            expect(ob.values(new Point(0, 0))).to.deep.equal([0, 0]);
-            expect(ob.values(new Point(42, 0), 'x')).to.deep.equal([42]);
-            expect(ob.values(new Point(0, 42), 'y')).to.deep.equal([42]);
+            expect(obj.values(new Point(0, 0))).to.deep.equal([0, 0]);
+            expect(obj.values(new Point(42, 0), 'x')).to.deep.equal([42]);
+            expect(obj.values(new Point(0, 42), 'y')).to.deep.equal([42]);
         });
     });
 });

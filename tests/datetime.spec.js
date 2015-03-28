@@ -1,8 +1,8 @@
 var dt = require('../build/datetime.min');
 var expect = require('chai').expect;
 
-describe('datetime', function () {
-    describe('datetime.format()', function () {
+describe('Datetime', function () {
+    describe('.format()', function () {
         it('Should format year to string', function () {
             var first = new Date(2015, 1, 1);
             var second = new Date(909, 1, 1);

@@ -2,8 +2,8 @@ var fn = require('../build/function.min');
 var expect = require('chai').expect;
 var sinon = require('sinon');
 
-describe('function', function () {
-    describe('function.compose()', function () {
+describe('Function', function () {
+    describe('.compose()', function () {
         var fn1 = sinon.spy();
         var fn2 = sinon.spy();
         var fn3 = sinon.spy();
@@ -39,7 +39,7 @@ describe('function', function () {
         });
     });
 
-    describe('function.pipeline()', function () {
+    describe('.pipeline()', function () {
         var fn1 = sinon.spy();
         var fn2 = sinon.spy();
         var fn3 = sinon.spy();
