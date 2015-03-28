@@ -9,7 +9,7 @@ import hasOwn from './hasOwn';
  * @example
  *
  * var obj = { a: 'b', c: 'd' };
- * ob.keys(obj);
+ * keys(obj);
  * // => ['a', 'c']
  *
  * function Point(x, y) {
@@ -21,7 +21,7 @@ import hasOwn from './hasOwn';
  *      return [this.x, this.y];
  * }
  *
- * ob.keys(new Point(0, 0));
+ * keys(new Point(0, 0));
  * // => ['x', 'y'] (The `getCoords` is not own property)
  */
 function keys(target) {

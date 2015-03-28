@@ -12,16 +12,16 @@ import deepGet from './deepGet';
  *
  * var obj = { lorem: 'ipsum' };
  *
- * var lorem = ob.prop('lorem');
+ * var lorem = prop('lorem');
  * lorem(obj);
  * // => 'ipsum'
  *
- * var sit = ob.prop('sit', 'amet');
+ * var sit = prop('sit', 'amet');
  * sit(obj);
  * // => 'amet'
  *
  * var users = [{ name: 'John', age: 23 }, { name: 'Jane', age: 21 }];
- * var names = ob.prop('name');
+ * var names = prop('name');
  * users.map(names);
  * // => ['John', 'Jane']
  */

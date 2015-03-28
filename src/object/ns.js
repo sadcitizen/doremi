@@ -13,11 +13,11 @@ import string from '../is/string';
  * @example
  *
  * var lorem = {};
- * ob.ns(lorem, 'ipsum.dolor.sit');
+ * ns(lorem, 'ipsum.dolor.sit');
  * // => lorem = { ipsum: { dolor: sit: {} } }
  *
  * var lorem = { ipsum: 'dolor' };
- * ob.ns(lorem, 'ipsum.dolor.sit');
+ * ns(lorem, 'ipsum.dolor.sit');
  * // => lorem = { ipsum: { dolor: sit: {} } } (ipsum is overridden)
  */
 function ns(target, path) {

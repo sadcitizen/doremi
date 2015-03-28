@@ -30,16 +30,16 @@ import defined from '../is/defined';
  *     bar: 42
  * };
  *
- * ob.get(lorem, 'bar');
+ * get(lorem, 'bar');
  * // => 42
  *
- * ob.get(lorem, 'lorem.ipsum.dolor.sit');
+ * get(lorem, 'lorem.ipsum.dolor.sit');
  * // => 'amet'
  *
- * ob.get(lorem, 'lorem.ipsum.foo');
+ * get(lorem, 'lorem.ipsum.foo');
  * // => undefined
  *
- * ob.get(lorem, 'lorem.ipsum.foo', 42);
+ * get(lorem, 'lorem.ipsum.foo', 42);
  * // => 42
  */
 function get(target, key, def) {

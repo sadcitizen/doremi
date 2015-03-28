@@ -12,10 +12,10 @@ import deepGet from './deepGet';
  * @example
  *
  * var obj = { a: 'b', c: 'd' };
- * ob.values(obj);
+ * values(obj);
  * // => ['b', 'd']
  *
- * ob.values(obj, 'a');
+ * values(obj, 'a');
  * // => ['b']
  *
  * function Point(x, y) {
@@ -27,7 +27,7 @@ import deepGet from './deepGet';
  *      return [this.x, this.y];
  * }
  *
- * ob.values(new Point(0, 0));
+ * values(new Point(0, 0));
  * // => [0, 0] (The `getCoords` is not own property)
  */
 function values(target, ...args) {

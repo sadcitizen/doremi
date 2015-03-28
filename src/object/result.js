@@ -16,13 +16,13 @@ import deepGet from './deepGet';
  *
  * var obj = { attr: 'value', arr: [0, 1, 2], num: 2, falsey: '', method: function () { return this.attr; } };
  *
- * ob.result(obj, 'attr');
+ * result(obj, 'attr');
  * // => 'value'
  *
- * ob.result(obj, 'some', 42);
+ * result(obj, 'some', 42);
  * // => 42
  *
- * ob.result(obj, 'method');
+ * result(obj, 'method');
  * // => 'value'
  */
 function result(target, key, def) {

@@ -11,7 +11,7 @@ import ns from './ns';
  *
  * var lorem = {};
  *
- * ob.set(lorem, 'ipsum.dolor', 'sit');
+ * set(lorem, 'ipsum.dolor', 'sit');
  * // => lorem: { ipsum: { dolor: 'sit' } }
  * console.log(lorem.ipsum.dolor);
  * // => 'sit'

@@ -24,19 +24,19 @@ import deepGet from './deepGet';
  *     bar: 42
  * };
  *
- * ob.has(lorem, 'bar');
+ * has(lorem, 'bar');
  * // => true
  *
- * ob.has(lorem, 'lorem.ipsum.dolor.sit');
+ * has(lorem, 'lorem.ipsum.dolor.sit');
  * // => true
  *
- * ob.has(lorem, 'lorem.ipsum.foo');
+ * has(lorem, 'lorem.ipsum.foo');
  * // => false
  *
- * ob.has(lorem, 'lorem.ipsum.foo');
+ * has(lorem, 'lorem.ipsum.foo');
  * // => false
  *
- * ob.has(lorem, 'lorem.toString');
+ * has(lorem, 'lorem.toString');
  * // => true
  */
 function has(target, key) {

@@ -9,13 +9,13 @@
  *
  * var obj = { a: 'b', c: 'd' };
  *
- * ob.hasOwn(obj, 'a');
+ * hasOwn(obj, 'a');
  * // => true
  *
- * ob.hasOwn(obj, 'e');
+ * hasOwn(obj, 'e');
  * // => false
  *
- * ob.hasOwn(obj, 'toString');
+ * hasOwn(obj, 'toString');
  * // => false
  */
 function hasOwn(target, key) {
