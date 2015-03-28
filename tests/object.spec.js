@@ -111,10 +111,10 @@ describe('Object', function () {
     });
 
     describe('.hasOwn()', function () {
-        var obj;
+        var object;
 
         before(function () {
-            obj = {
+            object = {
                 a: 'b',
                 c: 'd',
                 toString: 'toString',
@@ -125,23 +125,23 @@ describe('Object', function () {
         });
 
         it('Should return true if object has property', function () {
-            expect(obj.hasOwn(obj, 'a')).to.equal(true);
-            expect(obj.hasOwn(obj, 'c')).to.equal(true);
-            expect(obj.hasOwn(obj, 'toString')).to.equal(true);
-            expect(obj.hasOwn(obj, 'hasOwnProperty')).to.equal(true);
+            expect(obj.hasOwn(object, 'a')).to.equal(true);
+            expect(obj.hasOwn(object, 'c')).to.equal(true);
+            expect(obj.hasOwn(object, 'toString')).to.equal(true);
+            expect(obj.hasOwn(object, 'hasOwnProperty')).to.equal(true);
         });
 
         it('Should return undefined if object has no property', function () {
-            expect(obj.hasOwn(obj, 'constructor')).to.equal(false);
-            expect(obj.hasOwn(obj, 'valueOf')).to.equal(false);
-            expect(obj.hasOwn(obj, 'toLocaleString')).to.equal(false);
+            expect(obj.hasOwn(object, 'constructor')).to.equal(false);
+            expect(obj.hasOwn(object, 'valueOf')).to.equal(false);
+            expect(obj.hasOwn(object, 'toLocaleString')).to.equal(false);
         });
     });
 
     describe('.keys()', function () {
         it('Should return array of all own enumerable property names', function () {
-            var obj = { a: 'b', c: 'd', e: 'f' };
-            expect(obj.keys(obj)).to.deep.equal(['a', 'c', 'e']);
+            var object = { a: 'b', c: 'd', e: 'f' };
+            expect(obj.keys(object)).to.deep.equal(['a', 'c', 'e']);
         });
 
         it('Should avoid properties from prototype', function () {
@@ -203,20 +203,20 @@ describe('Object', function () {
 
     describe('.pairs()', function () {
         it('Should return array of key-value pairs', function () {
-            var obj = { a: 'b', c: 'd', e: 'f' };
-            expect(obj.pairs(obj)).to.deep.equal([
+            var object = { a: 'b', c: 'd', e: 'f' };
+            expect(obj.pairs(object)).to.deep.equal([
                 ['a', 'b'],
                 ['c', 'd'],
                 ['e', 'f']
             ]);
-            expect(obj.pairs(obj, 'a', 'c')).to.deep.equal([
+            expect(obj.pairs(object, 'a', 'c')).to.deep.equal([
                 ['a', 'b'],
                 ['c', 'd']
             ]);
         });
 
         it('Should return array of key-value pairs for nested properties', function () {
-            var obj = {
+            var object = {
                 a: 'b',
                 c: 'd',
                 e: {
@@ -227,11 +227,11 @@ describe('Object', function () {
                     k: 'l'
                 }
             };
-            expect(obj.pairs(obj, 'a', 'e.f')).to.deep.equal([
+            expect(obj.pairs(object, 'a', 'e.f')).to.deep.equal([
                 ['a', 'b'],
                 ['e.f', 'g']
             ]);
-            expect(obj.pairs(obj, 'c', 'h.i', 'h.k')).to.deep.equal([
+            expect(obj.pairs(object, 'c', 'h.i', 'h.k')).to.deep.equal([
                 ['c', 'd'],
                 ['h.i', 'j'],
                 ['h.k', 'l']
@@ -265,26 +265,26 @@ describe('Object', function () {
 
     describe('.prop()', function () {
         it('Should return the value from an object by property name', function () {
-            var obj = { a: 'b', c: 'd', e: 'f' };
+            var object = { a: 'b', c: 'd', e: 'f' };
 
-            expect(obj.prop('a')(obj)).to.equal('b');
-            expect(obj.prop('c')(obj)).to.equal('d');
-            expect(obj.prop('e')(obj)).to.equal('f');
+            expect(obj.prop('a')(object)).to.equal('b');
+            expect(obj.prop('c')(object)).to.equal('d');
+            expect(obj.prop('e')(object)).to.equal('f');
         });
 
         it('Should return the given default value from an object by non existent property name', function () {
-            var obj = { a: 'b' };
+            var object = { a: 'b' };
 
-            expect(obj.prop('c', 'd')(obj)).to.equal('d');
-            expect(obj.prop('e', 'f')(obj)).to.equal('f');
+            expect(obj.prop('c', 'd')(object)).to.equal('d');
+            expect(obj.prop('e', 'f')(object)).to.equal('f');
         });
     });
 
     describe('.result()', function () {
-        var obj;
+        var object;
 
         before(function () {
-            obj = {
+            object = {
                 attr: 'value',
                 arr: [0, 1, 2],
                 num: 2,
@@ -296,22 +296,22 @@ describe('Object', function () {
         });
 
         it('Should return nothing for undefined object properties.', function () {
-            expect(obj.result(obj, 'some')).to.equal(undefined);
+            expect(obj.result(object, 'some')).to.equal(undefined);
         });
 
         it('Should return default value if property on an object is undefined.', function () {
-            expect(obj.result(obj, 'some', true)).to.equal(true);
-            expect(obj.result(obj, 'other', 42)).to.equal(42);
+            expect(obj.result(object, 'some', true)).to.equal(true);
+            expect(obj.result(object, 'other', 42)).to.equal(42);
         });
 
         it('Should evaluate a method with object context and return its result.', function () {
-            expect(obj.result(obj, 'method')).to.equal('value');
+            expect(obj.result(object, 'method')).to.equal('value');
         });
 
         it('Should evaluate an attribute and return its result.', function () {
-            expect(obj.result(obj, 'attr')).to.equal('value');
-            expect(obj.result(obj, 'falsey')).to.equal('');
-            expect(obj.result(obj, 'arr')).to.deep.equal([0, 1, 2]);
+            expect(obj.result(object, 'attr')).to.equal('value');
+            expect(obj.result(object, 'falsey')).to.equal('');
+            expect(obj.result(object, 'arr')).to.deep.equal([0, 1, 2]);
         });
     });
 
@@ -370,13 +370,13 @@ describe('Object', function () {
 
     describe('.values()', function () {
         it('Should return array of own enumerable property values', function () {
-            var obj = { a: 'b', c: 'd', e: 'f' };
-            expect(obj.values(obj)).to.deep.equal(['b', 'd', 'f']);
-            expect(obj.values(obj, 'a', 'c')).to.deep.equal(['b', 'd']);
+            var object = { a: 'b', c: 'd', e: 'f' };
+            expect(obj.values(object)).to.deep.equal(['b', 'd', 'f']);
+            expect(obj.values(object, 'a', 'c')).to.deep.equal(['b', 'd']);
         });
 
         it('Should return array of own nested enumerable property values', function () {
-            var obj = {
+            var object = {
                 a: 'b',
                 c: 'd',
                 e: {
@@ -387,8 +387,8 @@ describe('Object', function () {
                     k: 'l'
                 }
             };
-            expect(obj.values(obj, 'a', 'e.f')).to.deep.equal(['b', 'g']);
-            expect(obj.values(obj, 'c', 'h.i', 'h.k')).to.deep.equal(['d', 'j', 'l']);
+            expect(obj.values(object, 'a', 'e.f')).to.deep.equal(['b', 'g']);
+            expect(obj.values(object, 'c', 'h.i', 'h.k')).to.deep.equal(['d', 'j', 'l']);
         });
 
         it('Should avoid properties from prototype', function () {

@@ -613,28 +613,28 @@ describe('String', function () {
     });
 
     describe('.truncate()', function () {
-        var str = 'lorem ipsum dolor sit amet';
+        var string = 'lorem ipsum dolor sit amet';
 
         it('Should limit number of chars', function () {
-            expect(str.truncate(str, 10)).to.have.length.below(11);
-            expect(str.truncate(str, 10)).to.equal('lorem i...');
+            expect(str.truncate(string, 10)).to.have.length.below(11);
+            expect(str.truncate(string, 10)).to.equal('lorem i...');
 
-            expect(str.truncate(str, 14)).to.have.length.below(15);
-            expect(str.truncate(str, 14)).to.equal('lorem ipsum...');
+            expect(str.truncate(string, 14)).to.have.length.below(15);
+            expect(str.truncate(string, 14)).to.equal('lorem ipsum...');
         });
 
         it('Should append str param', function () {
-            var truncated = str.truncate(str, 10, '--');
+            var truncated = str.truncate(string, 10, '--');
             expect(truncated).to.have.length.below(11);
             expect(truncated).to.equal('lorem ip--');
         });
 
         it('Should allow cropping at full words', function () {
-            expect(str.truncate(str, 10, '*', true)).to.have.length.below(11);
-            expect(str.truncate(str, 10, '*', true)).to.equal('lorem*');
+            expect(str.truncate(string, 10, '*', true)).to.have.length.below(11);
+            expect(str.truncate(string, 10, '*', true)).to.equal('lorem*');
 
-            expect(str.truncate(str, 14, null, true)).to.have.length.below(15);
-            expect(str.truncate(str, 14, null, true)).to.equal('lorem ipsum...');
+            expect(str.truncate(string, 14, null, true)).to.have.length.below(15);
+            expect(str.truncate(string, 14, null, true)).to.equal('lorem ipsum...');
         });
     });
 
