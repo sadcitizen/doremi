@@ -2,7 +2,7 @@ import string from '../to/string';
 import repeat from './repeat';
 
 /**
- * Pads a string on the left side if its length is less then
+ * Pads a string on the right side if its length is less then
  * the given padding length.
  *
  * @param {String} target The string to pad.
@@ -12,19 +12,19 @@ import repeat from './repeat';
  *
  * @example
  *
- * lpad('lorem', 8, '^');
- * // => '^^^lorem'
+ * padRight('lorem', 8, '^');
+ * // => 'lorem^^^'
  *
- * lpad('lorem', 5, '#');
+ * padRight('lorem', 5, '#');
  * // => 'lorem'
  *
- * lpad('lorem', 10);
- * // => '     lorem'
+ * padRight('lorem', 10);
+ * // => 'lorem     '
  */
-function lpad(target, length, char) {
+function padRight(target, length, char) {
     target = string(target);
     char = (string(char) || ' ').charAt(0);
-    return target.length < (length |= 0) ? repeat(char, length - target.length) + target : target;
+    return target.length < (length |= 0) ? target + repeat(char, length - target.length) : target;
 }
 
-export default lpad;
+export default padRight;

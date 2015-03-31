@@ -41,6 +41,54 @@ describe('String', function () {
         });
     });
 
+    describe('.chop()', function () {
+        it('Should return a str chopped into pieces', function () {
+            expect(str.chop('lorem ipsum', 5)).to.deep.equal(['lorem', ' ipsu', 'm']);
+            expect(str.chop('lorem ipsum', 4)).to.deep.equal(['lore', 'm ip', 'sum']);
+            expect(str.chop('lorem ipsum', 3)).to.deep.equal(['lor', 'em ', 'ips', 'um']);
+            expect(str.chop('lorem ipsum', 2)).to.deep.equal(['lo', 're', 'm ', 'ip', 'su', 'm']);
+            expect(str.chop('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chop('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should work with null and undefined', function () {
+            expect(str.chop(1234567890)).to.deep.equal(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
+            expect(str.chop('lorem ipsum')).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chop('lorem ipsum', void 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chop('lorem ipsum', null)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should treat negative step as zero', function () {
+            expect(str.chop('lorem ipsum', -0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chop('lorem ipsum', -10)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chop('lorem ipsum', -1000)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+    });
+
+    describe('.chopRight()', function () {
+        it('Should return a str chopped into pieces', function () {
+            expect(str.chopRight('lorem ipsum', 5)).to.deep.equal(['l', 'orem ', 'ipsum']);
+            expect(str.chopRight('lorem ipsum', 4)).to.deep.equal(['lor', 'em i', 'psum']);
+            expect(str.chopRight('lorem ipsum', 3)).to.deep.equal(['lo', 'rem', ' ip', 'sum']);
+            expect(str.chopRight('lorem ipsum', 2)).to.deep.equal(['l', 'or', 'em', ' i', 'ps', 'um']);
+            expect(str.chopRight('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chopRight('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should work with null and undefined', function () {
+            expect(str.chopRight(1234567890)).to.deep.equal(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
+            expect(str.chopRight('lorem ipsum')).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chopRight('lorem ipsum', void 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chopRight('lorem ipsum', null)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+
+        it('Should treat negative step as zero', function () {
+            expect(str.chopRight('lorem ipsum', -0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chopRight('lorem ipsum', -10)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+            expect(str.chopRight('lorem ipsum', -1000)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        });
+    });
+
     describe('.clean()', function () {
         it('Should remove all spaces', function () {
             expect(str.clean('           Hello,      World!             ')).to.equal('Hello, World!');
@@ -230,30 +278,6 @@ describe('String', function () {
         });
     });
 
-    describe('.lchop()', function () {
-        it('Should return a str chopped into pieces', function () {
-            expect(str.lchop('lorem ipsum', 5)).to.deep.equal(['lorem', ' ipsu', 'm']);
-            expect(str.lchop('lorem ipsum', 4)).to.deep.equal(['lore', 'm ip', 'sum']);
-            expect(str.lchop('lorem ipsum', 3)).to.deep.equal(['lor', 'em ', 'ips', 'um']);
-            expect(str.lchop('lorem ipsum', 2)).to.deep.equal(['lo', 're', 'm ', 'ip', 'su', 'm']);
-            expect(str.lchop('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.lchop('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-        });
-
-        it('Should work with null and undefined', function () {
-            expect(str.lchop(1234567890)).to.deep.equal(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
-            expect(str.lchop('lorem ipsum')).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.lchop('lorem ipsum', void 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.lchop('lorem ipsum', null)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-        });
-
-        it('Should treat negative step as zero', function () {
-            expect(str.lchop('lorem ipsum', -0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.lchop('lorem ipsum', -10)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.lchop('lorem ipsum', -1000)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-        });
-    });
-
     describe('.lines()', function () {
         it('Should return an array of lines', function () {
             expect(str.lines('lorem\r\nipsum')).to.deep.equal(['lorem', 'ipsum']);
@@ -272,54 +296,6 @@ describe('String', function () {
             expect(str.lines()).to.deep.equal(['']);
             expect(str.lines(void 0)).to.deep.equal(['']);
             expect(str.lines(null)).to.deep.equal(['']);
-        });
-    });
-
-    describe('.lpad()', function () {
-        it('Should add characters to the left', function () {
-            expect(str.lpad('lorem', 4, '^')).to.equal('lorem');
-            expect(str.lpad('lorem', 5, '^')).to.equal('lorem');
-            expect(str.lpad('lorem', 6, '^')).to.equal('^lorem');
-            expect(str.lpad('lorem', 7, '^')).to.equal('^^lorem');
-            expect(str.lpad('lorem', 8, '^')).to.equal('^^^lorem');
-        });
-
-        it('Should take only first character of padding str', function () {
-            expect(str.lpad('lorem', 6, '#')).to.equal('#lorem');
-            expect(str.lpad('lorem', 6, '%#')).to.equal('%lorem');
-            expect(str.lpad('lorem', 6, '&%#')).to.equal('&lorem');
-            expect(str.lpad('lorem', 6, '$&%#')).to.equal('$lorem');
-        });
-
-        it('Should treat null and undefined padding str as space', function () {
-            expect(str.lpad(void 0, 5, '*')).to.equal('*****');
-            expect(str.lpad(null, 5, '*')).to.equal('*****');
-        });
-
-        it('Should treat null and undefined padding str as space', function () {
-            expect(str.lpad('lorem')).to.equal('lorem');
-            expect(str.lpad('lorem', 10, void 0)).to.equal('     lorem');
-            expect(str.lpad('lorem', 10, null)).to.equal('     lorem');
-        });
-    });
-
-    describe('.ltrim()', function () {
-        it('Should remove leading whitespaces', function () {
-            expect(str.ltrim('           Hello, World! ')).to.equal('Hello, World! ');
-            expect(str.ltrim('                        ')).to.equal('');
-            expect(str.ltrim('\n Hello,   \t   World!')).to.equal('Hello,   \t   World!');
-            expect(str.ltrim('\0 \b \t \nHello, World!')).to.equal('Hello, World!');
-        });
-
-        it('Should remove leading given characters', function () {
-            expect(str.ltrim('/* Hello, World!*/', '/ ', '*')).to.equal('Hello, World!*/');
-            expect(str.ltrim('~~~****Hello, World!', '*~')).to.equal('Hello, World!');
-        });
-
-        it('Should treat null and undefined as empty str', function () {
-            expect(str.ltrim()).to.equal('');
-            expect(str.ltrim(void 0)).to.equal('');
-            expect(str.ltrim(null)).to.equal('');
         });
     });
 
@@ -352,27 +328,59 @@ describe('String', function () {
         });
     });
 
-    describe('.rchop()', function () {
-        it('Should return a str chopped into pieces', function () {
-            expect(str.rchop('lorem ipsum', 5)).to.deep.equal(['l', 'orem ', 'ipsum']);
-            expect(str.rchop('lorem ipsum', 4)).to.deep.equal(['lor', 'em i', 'psum']);
-            expect(str.rchop('lorem ipsum', 3)).to.deep.equal(['lo', 'rem', ' ip', 'sum']);
-            expect(str.rchop('lorem ipsum', 2)).to.deep.equal(['l', 'or', 'em', ' i', 'ps', 'um']);
-            expect(str.rchop('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.rchop('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+    describe('.padLeft()', function () {
+        it('Should add characters to the left', function () {
+            expect(str.padLeft('lorem', 4, '^')).to.equal('lorem');
+            expect(str.padLeft('lorem', 5, '^')).to.equal('lorem');
+            expect(str.padLeft('lorem', 6, '^')).to.equal('^lorem');
+            expect(str.padLeft('lorem', 7, '^')).to.equal('^^lorem');
+            expect(str.padLeft('lorem', 8, '^')).to.equal('^^^lorem');
         });
 
-        it('Should work with null and undefined', function () {
-            expect(str.rchop(1234567890)).to.deep.equal(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
-            expect(str.rchop('lorem ipsum')).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.rchop('lorem ipsum', void 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.rchop('lorem ipsum', null)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        it('Should take only first character of padding str', function () {
+            expect(str.padLeft('lorem', 6, '#')).to.equal('#lorem');
+            expect(str.padLeft('lorem', 6, '%#')).to.equal('%lorem');
+            expect(str.padLeft('lorem', 6, '&%#')).to.equal('&lorem');
+            expect(str.padLeft('lorem', 6, '$&%#')).to.equal('$lorem');
         });
 
-        it('Should treat negative step as zero', function () {
-            expect(str.rchop('lorem ipsum', -0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.rchop('lorem ipsum', -10)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
-            expect(str.rchop('lorem ipsum', -1000)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        it('Should treat null and undefined padding str as space', function () {
+            expect(str.padLeft(void 0, 5, '*')).to.equal('*****');
+            expect(str.padLeft(null, 5, '*')).to.equal('*****');
+        });
+
+        it('Should treat null and undefined padding str as space', function () {
+            expect(str.padLeft('lorem')).to.equal('lorem');
+            expect(str.padLeft('lorem', 10, void 0)).to.equal('     lorem');
+            expect(str.padLeft('lorem', 10, null)).to.equal('     lorem');
+        });
+    });
+
+    describe('.padRight()', function () {
+        it('Should add characters to the right', function () {
+            expect(str.padRight('lorem', 4, '^')).to.equal('lorem');
+            expect(str.padRight('lorem', 5, '^')).to.equal('lorem');
+            expect(str.padRight('lorem', 6, '^')).to.equal('lorem^');
+            expect(str.padRight('lorem', 7, '^')).to.equal('lorem^^');
+            expect(str.padRight('lorem', 8, '^')).to.equal('lorem^^^');
+        });
+
+        it('Should take only first character of padding str', function () {
+            expect(str.padRight('lorem', 6, '#')).to.equal('lorem#');
+            expect(str.padRight('lorem', 6, '%#')).to.equal('lorem%');
+            expect(str.padRight('lorem', 6, '&%#')).to.equal('lorem&');
+            expect(str.padRight('lorem', 6, '$&%#')).to.equal('lorem$');
+        });
+
+        it('Should treat null and undefined padding str as space', function () {
+            expect(str.padRight(void 0, 5, '*')).to.equal('*****');
+            expect(str.padRight(null, 5, '*')).to.equal('*****');
+        });
+
+        it('Should treat null and undefined padding str as space', function () {
+            expect(str.padRight('lorem')).to.equal('lorem');
+            expect(str.padRight('lorem', 10, void 0)).to.equal('lorem     ');
+            expect(str.padRight('lorem', 10, null)).to.equal('lorem     ');
         });
     });
 
@@ -446,54 +454,6 @@ describe('String', function () {
             expect(str.reverse()).to.equal('');
             expect(str.reverse(void 0)).to.equal('');
             expect(str.reverse(null)).to.equal('');
-        });
-    });
-
-    describe('.rpad()', function () {
-        it('Should add characters to the right', function () {
-            expect(str.rpad('lorem', 4, '^')).to.equal('lorem');
-            expect(str.rpad('lorem', 5, '^')).to.equal('lorem');
-            expect(str.rpad('lorem', 6, '^')).to.equal('lorem^');
-            expect(str.rpad('lorem', 7, '^')).to.equal('lorem^^');
-            expect(str.rpad('lorem', 8, '^')).to.equal('lorem^^^');
-        });
-
-        it('Should take only first character of padding str', function () {
-            expect(str.rpad('lorem', 6, '#')).to.equal('lorem#');
-            expect(str.rpad('lorem', 6, '%#')).to.equal('lorem%');
-            expect(str.rpad('lorem', 6, '&%#')).to.equal('lorem&');
-            expect(str.rpad('lorem', 6, '$&%#')).to.equal('lorem$');
-        });
-
-        it('Should treat null and undefined padding str as space', function () {
-            expect(str.rpad(void 0, 5, '*')).to.equal('*****');
-            expect(str.rpad(null, 5, '*')).to.equal('*****');
-        });
-
-        it('Should treat null and undefined padding str as space', function () {
-            expect(str.rpad('lorem')).to.equal('lorem');
-            expect(str.rpad('lorem', 10, void 0)).to.equal('lorem     ');
-            expect(str.rpad('lorem', 10, null)).to.equal('lorem     ');
-        });
-    });
-
-    describe('.rtrim()', function () {
-        it('Should remove trailing whitespaces', function () {
-            expect(str.rtrim(' Hello, World!             ')).to.equal(' Hello, World!');
-            expect(str.rtrim('        ')).to.equal('');
-            expect(str.rtrim('\tHello,   \t   World!        \r     ')).to.equal('\tHello,   \t   World!');
-            expect(str.rtrim('Hello, World!\v \f \r')).to.equal('Hello, World!');
-        });
-
-        it('Should remove trailing given characters', function () {
-            expect(str.rtrim('/Hello, World! */', '/ ', '*')).to.equal('/Hello, World!');
-            expect(str.rtrim('Hello, World!****~~~', '*~')).to.equal('Hello, World!');
-        });
-
-        it('Should treat null and undefined as empty str', function () {
-            expect(str.rtrim()).to.equal('');
-            expect(str.rtrim(void 0)).to.equal('');
-            expect(str.rtrim(null)).to.equal('');
         });
     });
 
@@ -609,6 +569,46 @@ describe('String', function () {
             expect(str.trim()).to.equal('');
             expect(str.trim(void 0)).to.equal('');
             expect(str.trim(null)).to.equal('');
+        });
+    });
+
+    describe('.trimLeft()', function () {
+        it('Should remove leading whitespaces', function () {
+            expect(str.trimLeft('           Hello, World! ')).to.equal('Hello, World! ');
+            expect(str.trimLeft('                        ')).to.equal('');
+            expect(str.trimLeft('\n Hello,   \t   World!')).to.equal('Hello,   \t   World!');
+            expect(str.trimLeft('\0 \b \t \nHello, World!')).to.equal('Hello, World!');
+        });
+
+        it('Should remove leading given characters', function () {
+            expect(str.trimLeft('/* Hello, World!*/', '/ ', '*')).to.equal('Hello, World!*/');
+            expect(str.trimLeft('~~~****Hello, World!', '*~')).to.equal('Hello, World!');
+        });
+
+        it('Should treat null and undefined as empty str', function () {
+            expect(str.trimLeft()).to.equal('');
+            expect(str.trimLeft(void 0)).to.equal('');
+            expect(str.trimLeft(null)).to.equal('');
+        });
+    });
+
+    describe('.trimRight()', function () {
+        it('Should remove trailing whitespaces', function () {
+            expect(str.trimRight(' Hello, World!             ')).to.equal(' Hello, World!');
+            expect(str.trimRight('        ')).to.equal('');
+            expect(str.trimRight('\tHello,   \t   World!        \r     ')).to.equal('\tHello,   \t   World!');
+            expect(str.trimRight('Hello, World!\v \f \r')).to.equal('Hello, World!');
+        });
+
+        it('Should remove trailing given characters', function () {
+            expect(str.trimRight('/Hello, World! */', '/ ', '*')).to.equal('/Hello, World!');
+            expect(str.trimRight('Hello, World!****~~~', '*~')).to.equal('Hello, World!');
+        });
+
+        it('Should treat null and undefined as empty str', function () {
+            expect(str.trimRight()).to.equal('');
+            expect(str.trimRight(void 0)).to.equal('');
+            expect(str.trimRight(null)).to.equal('');
         });
     });
 

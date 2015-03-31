@@ -1,7 +1,7 @@
 import valid from '../is/validDate';
 import defined from '../is/defined';
 import string from '../to/string';
-import lpad from '../string/lpad';
+import padLeft from '../string/padLeft';
 import aliases from '../internal/datetime.aliases';
 
 var regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
@@ -12,11 +12,11 @@ function dayOfWeek(date) {
 }
 
 var tokens = {
-    'YYYY': date => lpad(date.getFullYear(), 4, '0'),
+    'YYYY': date => padLeft(date.getFullYear(), 4, '0'),
 
     'YYY': date => date.getFullYear(),
 
-    'YY': date => lpad(date.getFullYear() % 100, 2, '0'),
+    'YY': date => padLeft(date.getFullYear() % 100, 2, '0'),
 
     'Y': date => date.getFullYear() % 100,
 
@@ -24,7 +24,7 @@ var tokens = {
 
     'MMM': (date, aliases) => aliases.months.shorts[date.getMonth()],
 
-    'MM': date => lpad((date.getMonth() + 1) % 100, 2, '0'),
+    'MM': date => padLeft((date.getMonth() + 1) % 100, 2, '0'),
 
     'M': date => (date.getMonth() + 1) % 100,
 
@@ -32,17 +32,17 @@ var tokens = {
 
     'DDD': (date, aliases) => aliases.days.shorts[dayOfWeek(date)],
 
-    'DD': date => lpad(date.getDate() % 100, 2, '0'),
+    'DD': date => padLeft(date.getDate() % 100, 2, '0'),
 
     'D': date => date.getDate(),
 
-    'HH': date => lpad(date.getHours(), 2, '0'),
+    'HH': date => padLeft(date.getHours(), 2, '0'),
 
     'H': date => date.getHours(),
 
     'hh': (date) => {
         let hours = date.getHours();
-        return lpad(hours <= 12 ? hours : hours - 12, 2, '0');
+        return padLeft(hours <= 12 ? hours : hours - 12, 2, '0');
     },
 
     'h': date => {
@@ -50,17 +50,17 @@ var tokens = {
         return hours <= 12 ? hours : hours - 12;
     },
 
-    'mm': date => lpad(date.getMinutes(), 2, '0'),
+    'mm': date => padLeft(date.getMinutes(), 2, '0'),
 
     'm': date => date.getMinutes(),
 
-    'ss': date => lpad(date.getSeconds(), 2, '0'),
+    'ss': date => padLeft(date.getSeconds(), 2, '0'),
 
     's': date => date.getSeconds(),
 
-    'fff': date => lpad(date.getMilliseconds(), 3, '0'),
+    'fff': date => padLeft(date.getMilliseconds(), 3, '0'),
 
-    'ff': date => lpad((date.getMilliseconds() / 10) | 0, 2, '0'),
+    'ff': date => padLeft((date.getMilliseconds() / 10) | 0, 2, '0'),
 
     'f': date => (date.getMilliseconds() / 100) | 0,
 
@@ -73,7 +73,7 @@ var tokens = {
     'Z': date => {
         let offset = date.getTimezoneOffset(),
             abs = Math.abs(offset);
-        return (offset > 0 ? '-' : '+') + lpad((abs / 60) | 0, 2, '0') + lpad(abs % 60, 2, '0');
+        return (offset > 0 ? '-' : '+') + padLeft((abs / 60) | 0, 2, '0') + padLeft(abs % 60, 2, '0');
     }
 };
 
@@ -126,10 +126,10 @@ var tokens = {
  * @example
  *
  * var date = new Date(2015, 1, 1, 13, 29, 6);
- * dt.format(date, 'DD-MM-YYYY HH:mm:ss');
+ * format(date, 'DD-MM-YYYY HH:mm:ss');
  * // => '01-01-2015 13:29:06'
  *
- * dt.format(date, 'DD.MM.YYYY hh:mm:ss TT');
+ * format(date, 'DD.MM.YYYY hh:mm:ss TT');
  * // => '01.01.2015 01:29:06 PM'
  */
 function format(target, pattern, locale) {

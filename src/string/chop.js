@@ -9,13 +9,13 @@ import string from '../to/string';
  *
  * @example
  *
- * lchop('lorem ipsum', 5);
+ * chop('lorem ipsum', 5);
  * // => ['lorem', ' ipsu', 'm']
  *
- * lchop(1234567890);
+ * chop(1234567890);
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
-function lchop(target, step) {
+function chop(target, step) {
     var result = [], i, length;
 
     step = step | 0;
@@ -38,4 +38,4 @@ function lchop(target, step) {
     return result;
 }
 
-export default lchop;
+export default chop;
