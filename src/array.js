@@ -2,6 +2,7 @@ import append from './array/append';
 import at from './array/at';
 import compact from './array/compact';
 import each from './array/each';
+import eachRight from './array/eachRight';
 import first from './array/first';
 import flatten from './array/flatten';
 import last from './array/last';
@@ -12,6 +13,7 @@ export default {
     at: at,
     compact: compact,
     each: each,
+    eachRight: eachRight,
     first: first,
     flatten: flatten,
     last: last,
