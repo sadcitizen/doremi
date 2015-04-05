@@ -6,6 +6,8 @@ import eachRight from './array/eachRight';
 import first from './array/first';
 import flatten from './array/flatten';
 import last from './array/last';
+import partition from './array/partition';
+import pluck from './array/pluck';
 import rest from './array/rest';
 
 export default {
@@ -17,5 +19,7 @@ export default {
     first: first,
     flatten: flatten,
     last: last,
+    partition: partition,
+    pluck: pluck,
     rest: rest
 };
