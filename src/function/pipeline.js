@@ -17,7 +17,7 @@ import noop from './noop';
  *      return x * x;
  * }
  *
- * var squareOfSum = fn.pipeline(sum, square);
+ * var squareOfSum = pipeline(sum, square);
  * squareOfSum(2, 3);
  * // => 25
  */

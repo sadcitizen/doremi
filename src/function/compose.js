@@ -17,7 +17,7 @@ import reverse from '../internal/reverse';
  *      return x * x;
  * }
  *
- * var squareOfSum = fn.compose(square, sum);
+ * var squareOfSum = compose(square, sum);
  * squareOfSum(2, 3);
  * // => 25
  */
