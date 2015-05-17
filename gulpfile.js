@@ -29,7 +29,7 @@ gulp.task('browserify', function () {
         });
     };
 
-    bundlify(['is', 'object', 'datetime', 'function', 'random', 'string', 'to']);
+    bundlify(['array', 'is', 'object', 'datetime', 'function', 'random', 'string', 'to']);
 });
 
 gulp.task('jscs', function () {
