@@ -32,6 +32,46 @@ describe('Array', function () {
         });
     });
 
+    describe('.contains()', function () {
+        var target;
+
+        before(function () {
+            target = [1, 2, 3, 4];
+        });
+
+        it('Should return true if array contains value', function () {
+            expect(arr.contains(target, 1)).to.equal(true);
+            expect(arr.contains(target, 2)).to.equal(true);
+            expect(arr.contains(target, 3)).to.equal(true);
+            expect(arr.contains(target, 4)).to.equal(true);
+        });
+
+        it('Should return false if array does not contain value', function () {
+            expect(arr.contains(target, 5)).to.equal(false);
+            expect(arr.contains(target, 6)).to.equal(false);
+            expect(arr.contains(target, 7)).to.equal(false);
+        });
+
+        it('Should work with empty arrays', function () {
+            expect(arr.contains([], 1)).to.equal(false);
+            expect(arr.contains([], null)).to.equal(false);
+        });
+
+        it('Should start search at given index', function () {
+            expect(arr.contains(target, 1, 0)).to.equal(true);
+            expect(arr.contains(target, 1, 1)).to.equal(false);
+            expect(arr.contains(target, 4, 3)).to.equal(true);
+            expect(arr.contains(target, 4, 300)).to.equal(false);
+        });
+
+        it('Should treat negative index as zero', function () {
+            expect(arr.contains(target, 4, -1)).to.equal(true);
+            expect(arr.contains(target, 2, -9)).to.equal(true);
+            expect(arr.contains(target, 5, -10)).to.equal(false);
+            expect(arr.contains(target, 2, -1)).to.equal(false);
+        });
+    });
+
     describe('.first()', function () {
         it('Should be ok', function () {
             var array = [1, 2, 3, 4, 5];
