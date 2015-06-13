@@ -1,3 +1,5 @@
+// TODO: add description
+
 function delay(target, ms) {
     return function () {
         var args = arguments;

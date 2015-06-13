@@ -1,5 +1,7 @@
 import array from '../is/array';
 
+// TODO: add description
+
 function at(target, ...indexes) {
     let index;
 

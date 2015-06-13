@@ -1,5 +1,7 @@
 import fn from '../is/fn';
 
+// TODO: add description
+
 function before(target, times) {
     var result;
 

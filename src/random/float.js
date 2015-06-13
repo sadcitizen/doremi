@@ -1,6 +1,8 @@
 import exists from '../is/exists';
 import constants from '../internal/constants';
 
+// TODO: add description
+
 function float(min, max, fixed) {
     let frac = Math.random();
 

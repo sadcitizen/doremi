@@ -1,5 +1,7 @@
 import objectKeys from './keys';
 
+// TODO: add description
+
 function each(target, fn, ctx) {
     var keys = objectKeys(target);
 

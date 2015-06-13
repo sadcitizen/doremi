@@ -1,5 +1,7 @@
 import fn from '../is/fn';
 
+// TODO: add description
+
 function after(target, times) {
     times |= 0;
 

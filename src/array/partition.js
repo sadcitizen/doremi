@@ -1,5 +1,7 @@
 import each from './each';
 
+// TODO: add description
+
 function partition(target, fn, ctx) {
     var pass = [], fail = [];
 

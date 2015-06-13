@@ -1,5 +1,7 @@
 import slice from '../internal/slice';
 
+// TODO: add description
+
 /**
  *
  * @param target

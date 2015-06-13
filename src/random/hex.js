@@ -1,6 +1,8 @@
 import constants from '../internal/constants';
 import int from './int';
 
+// TODO: add description
+
 function hex(length) {
     var result = '',
         letters = (constants.HEX_LETTERS + constants.DIGITS).split(''),

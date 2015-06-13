@@ -1,5 +1,5 @@
 import keys from './keys';
-
+// TODO: add description
 function invert(target) {
     var result = {};
 

@@ -1,5 +1,7 @@
 import slice from '../internal/slice';
 
+// TODO: add description
+
 function last(target, count = 1) {
     let length = target.length;
 

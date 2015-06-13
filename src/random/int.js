@@ -1,6 +1,8 @@
 import exists from '../is/exists';
 import constants from '../internal/constants';
 
+// TODO: add description
+
 function int(min, max) {
     min = exists(min) ? ~~min : constants.MIN_INT;
     max = exists(max) ? ~~max : constants.MAX_INT;
