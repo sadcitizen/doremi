@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 
 describe('String', function () {
     describe('.camelize()', function () {
-        it('Should convert str to camel case', function () {
+        it('Should convert string to camel case', function () {
             expect(str.camelize('lorem ipsum dolor')).to.equal('loremIpsumDolor');
             expect(str.camelize('    lorem   ipsum   dolor   ')).to.equal('loremIpsumDolor');
             expect(str.camelize('--lorem--ipsum--dolor--')).to.equal('loremIpsumDolor');
@@ -11,13 +11,13 @@ describe('String', function () {
             expect(str.camelize(123456)).to.equal('123456');
         });
 
-        it('Should work with blank sts', function () {
+        it('Should work with blank string', function () {
             expect(str.camelize('')).to.equal('');
             expect(str.camelize('       ')).to.equal('');
             expect(str.camelize('    \n   ')).to.equal('');
         });
 
-        it('Should treat null and undefined as blank str', function () {
+        it('Should treat null and undefined as blank string', function () {
             expect(str.camelize()).to.equal('');
             expect(str.camelize(void 0)).to.equal('');
             expect(str.camelize(null)).to.equal('');
@@ -25,15 +25,15 @@ describe('String', function () {
     });
 
     describe('.capitalize()', function () {
-        it('Should capitalize a str', function () {
+        it('Should capitalize a string', function () {
             expect(str.capitalize('lorem ipsum')).to.equal('Lorem ipsum');
         });
 
-        it('Should change only first letter of a str', function () {
+        it('Should change only first letter of a string', function () {
             expect(str.capitalize('lorem IPSUM')).to.equal('Lorem IPSUM');
         });
 
-        it('Should work with empty sts', function () {
+        it('Should work with empty string', function () {
             expect(str.capitalize('')).to.equal('');
             expect(str.capitalize()).to.equal('');
             expect(str.capitalize(void 0)).to.equal('');
@@ -42,7 +42,7 @@ describe('String', function () {
     });
 
     describe('.chop()', function () {
-        it('Should return a str chopped into pieces', function () {
+        it('Should return a string chopped into pieces', function () {
             expect(str.chop('lorem ipsum', 5)).to.deep.equal(['lorem', ' ipsu', 'm']);
             expect(str.chop('lorem ipsum', 4)).to.deep.equal(['lore', 'm ip', 'sum']);
             expect(str.chop('lorem ipsum', 3)).to.deep.equal(['lor', 'em ', 'ips', 'um']);
@@ -66,7 +66,7 @@ describe('String', function () {
     });
 
     describe('.chopRight()', function () {
-        it('Should return a str chopped into pieces', function () {
+        it('Should return a string chopped into pieces', function () {
             expect(str.chopRight('lorem ipsum', 5)).to.deep.equal(['l', 'orem ', 'ipsum']);
             expect(str.chopRight('lorem ipsum', 4)).to.deep.equal(['lor', 'em i', 'psum']);
             expect(str.chopRight('lorem ipsum', 3)).to.deep.equal(['lo', 'rem', ' ip', 'sum']);
@@ -102,32 +102,32 @@ describe('String', function () {
     });
 
     describe('.contains()', function () {
-        it('Should return true if str contains subst', function () {
+        it('Should return true if string contains substring', function () {
             expect(str.contains('lorem ipsum', 'rem')).to.equal(true);
             expect(str.contains('lorem ipsum', 'i')).to.equal(true);
             expect(str.contains('lorem ipsum', 'or')).to.equal(true);
             expect(str.contains('lorem ipsum', 'sum')).to.equal(true);
         });
 
-        it('Should return false if str does not contain subst', function () {
+        it('Should return false if string does not contain substring', function () {
             expect(str.contains('lorem ipsum', '!')).to.equal(false);
             expect(str.contains('lorem ipsum', 'foo')).to.equal(false);
             expect(str.contains('lorem ipsum', 'bar')).to.equal(false);
         });
 
-        it('Should work with empty sts', function () {
+        it('Should work with empty strings', function () {
             expect(str.contains('', '')).to.equal(true);
             expect(str.contains('lorem ipsum', '')).to.equal(true);
         });
 
-        it('Should treat null as empty str', function () {
+        it('Should treat null as empty string', function () {
             expect(str.contains(null, 'lorem ipsum')).to.equal(false);
             expect(str.contains(null, '')).to.equal(true);
             expect(str.contains('lorem ipsum', null)).to.equal(true);
             expect(str.contains('', null)).to.equal(true);
         });
 
-        it('Should treat undefined as empty str', function () {
+        it('Should treat undefined as empty string', function () {
             expect(str.contains(void 0, 'lorem ipsum')).to.equal(false);
             expect(str.contains(void 0, '')).to.equal(true);
             expect(str.contains('lorem ipsum', void 0)).to.equal(true);
@@ -150,7 +150,7 @@ describe('String', function () {
     });
 
     describe('.count()', function () {
-        it('Should find a subst', function () {
+        it('Should find a substring', function () {
             expect(str.count('Hello, World!', 'l')).to.equal(3);
             expect(str.count('Hello, World!', 'll')).to.equal(1);
             expect(str.count(12345, 1)).to.equal(1);
@@ -158,12 +158,12 @@ describe('String', function () {
             expect(str.count(99999, 99)).to.equal(4);
         });
 
-        it('Should not find a subst', function () {
+        it('Should not find a substring', function () {
             expect(str.count('Hello, World!', 'world')).to.equal(0);
             expect(str.count('Hello, World!', '! ')).to.equal(0);
         });
 
-        it('Should work with null, undefined and empty sts', function () {
+        it('Should work with null, undefined and empty strings', function () {
             expect(str.count('', 'x')).to.equal(0);
             expect(str.count('', '')).to.equal(0);
             expect(str.count(null, 'x')).to.equal(0);
@@ -172,15 +172,15 @@ describe('String', function () {
     });
 
     describe('.decapitalize()', function () {
-        it('Should decapitalize a str', function () {
+        it('Should decapitalize a string', function () {
             expect(str.decapitalize('Lorem ipsum')).to.equal('lorem ipsum');
         });
 
-        it('Should change only first letter of a str', function () {
+        it('Should change only first letter of a string', function () {
             expect(str.decapitalize('Lorem IPSUM')).to.equal('lorem IPSUM');
         });
 
-        it('Should work with empty sts', function () {
+        it('Should work with empty strings', function () {
             expect(str.decapitalize('')).to.equal('');
             expect(str.decapitalize()).to.equal('');
             expect(str.decapitalize(void 0)).to.equal('');
@@ -189,23 +189,23 @@ describe('String', function () {
     });
 
     describe('.endsWith()', function () {
-        it('Should return true if str ends with another str', function () {
+        it('Should return true if string ends with another string', function () {
             expect(str.endsWith('lorem ipsum', 'ipsum')).to.equal(true);
             expect(str.endsWith('foo bar', 'bar')).to.equal(true);
             expect(str.endsWith(12345, 45)).to.equal(true);
         });
 
-        it('Should return false if str does not ends with another str', function () {
+        it('Should return false if string does not ends with another string', function () {
             expect(str.endsWith('lorem ipsum', 'lorem')).to.equal(false);
             expect(str.endsWith('foo bar', 'foo')).to.equal(false);
         });
 
-        it('Should return true if str for search is empty', function () {
+        it('Should return true if string for search is empty', function () {
             expect(str.endsWith('', '')).to.equal(true);
             expect(str.endsWith('lorem', '')).to.equal(true);
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.endsWith(void 0, 'ipsum')).to.equal(false);
             expect(str.endsWith('lorem', void 0)).to.equal(true);
             expect(str.endsWith(null, '')).to.equal(true);
@@ -214,7 +214,7 @@ describe('String', function () {
     });
 
     describe('.escape()', function () {
-        it('Should escape a str', function () {
+        it('Should escape a string', function () {
             expect(str.escape('<p>hi!</p>')).to.equal('&lt;p&gt;hi!&lt;/p&gt;');
             expect(str.escape('<p>lorem & ipsum</p>')).to.equal('&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;');
             expect(str.escape('"hi!"')).to.equal('&quot;hi!&quot;');
@@ -223,13 +223,13 @@ describe('String', function () {
             /* jshint +W109 */
         });
 
-        it('Should not escape an escaped str', function () {
+        it('Should not escape an escaped string', function () {
             expect(str.escape('lorem &amp; ipsum')).to.equal('lorem &amp; ipsum');
             expect(str.escape('&lt;p&gt;hi!&lt;/p&gt;')).to.equal('&lt;p&gt;hi!&lt;/p&gt;');
             expect(str.escape('&#x27;hi!&#x27; & bye!')).to.equal('&#x27;hi!&#x27; &amp; bye!');
         });
 
-        it('Should work with empty sts', function () {
+        it('Should work with empty strings', function () {
             expect(str.escape('')).to.equal('');
             expect(str.escape()).to.equal('');
             expect(str.escape(void 0)).to.equal('');
@@ -238,7 +238,7 @@ describe('String', function () {
     });
 
     describe('.insert()', function () {
-        it('Should insert a subst in a str', function () {
+        it('Should insert a substring in a string', function () {
             expect(str.insert(', World!', 'Hello', 0)).to.equal('Hello, World!');
             expect(str.insert(', World!', 'Hello', null)).to.equal('Hello, World!');
             expect(str.insert('Hello, ', 'World!', 10)).to.equal('Hello, World!');
@@ -257,19 +257,19 @@ describe('String', function () {
             expect(str.insert('o, World!', 'Hell', '-10')).to.equal('Hello, World!');
         });
 
-        it('Should accept indexes large than the length of a str', function () {
+        it('Should accept indexes large than the length of a string', function () {
             expect(str.insert('Hello, ', 'World!', 100)).to.equal('Hello, World!');
         });
     });
 
     describe('.join()', function () {
-        it('Should join sts', function () {
+        it('Should join strings', function () {
             expect(str.join(' ', 'lorem', 'ipsum', 'dolor', 'sit', 'amet')).to.equal('lorem ipsum dolor sit amet');
             expect(str.join('', 'h', 'e', 'l', 'lo')).to.equal('hello');
             expect(str.join('+', 1, 2, 3)).to.equal('1+2+3');
         });
 
-        it('Should ignore null, undefined and empty sts', function () {
+        it('Should ignore null, undefined and empty strings', function () {
             expect(str.join()).to.equal('');
             expect(str.join('', '', '')).to.equal('');
             expect(str.join(' ', null, null)).to.equal('');
@@ -285,14 +285,14 @@ describe('String', function () {
             expect(str.lines('lorem\ripsum')).to.deep.equal(['lorem\ripsum']);
         });
 
-        it('Should work with empty sts', function () {
+        it('Should work with empty strings', function () {
             expect(str.lines('')).to.deep.equal(['']);
             expect(str.lines('            ')).to.deep.equal(['            ']);
             expect(str.lines(' \t ')).to.deep.equal([' \t ']);
             expect(str.lines(' \n ')).to.deep.equal([' ', ' ']);
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.lines()).to.deep.equal(['']);
             expect(str.lines(void 0)).to.deep.equal(['']);
             expect(str.lines(null)).to.deep.equal(['']);
@@ -308,20 +308,20 @@ describe('String', function () {
             expect(str.pad('sit', 8, '^')).to.equal('^^^sit^^');
         });
 
-        it('Should take only first character of padding str', function () {
+        it('Should take only first character of padding string', function () {
             expect(str.pad('sit', 6, '#')).to.equal('##sit#');
             expect(str.pad('sit', 7, '%#')).to.equal('%%sit%%');
             expect(str.pad('sit', 8, '&%#')).to.equal('&&&sit&&');
             expect(str.pad('sit', 9, '$&%#')).to.equal('$$$sit$$$');
         });
 
-        it('Should treat null and undefined padding str as space', function () {
+        it('Should treat null and undefined padding string as space', function () {
             expect(str.pad('', 5, '@')).to.equal('@@@@@');
             expect(str.pad(void 0, 5, '@')).to.equal('@@@@@');
             expect(str.pad(null, 5, '@')).to.equal('@@@@@');
         });
 
-        it('Should treat null and undefined padding str as space', function () {
+        it('Should treat null and undefined padding string as space', function () {
             expect(str.pad('sit')).to.equal('sit');
             expect(str.pad('sit', 9, void 0)).to.equal('   sit   ');
             expect(str.pad('sit', 9, null)).to.equal('   sit   ');
@@ -337,19 +337,19 @@ describe('String', function () {
             expect(str.padLeft('lorem', 8, '^')).to.equal('^^^lorem');
         });
 
-        it('Should take only first character of padding str', function () {
+        it('Should take only first character of padding string', function () {
             expect(str.padLeft('lorem', 6, '#')).to.equal('#lorem');
             expect(str.padLeft('lorem', 6, '%#')).to.equal('%lorem');
             expect(str.padLeft('lorem', 6, '&%#')).to.equal('&lorem');
             expect(str.padLeft('lorem', 6, '$&%#')).to.equal('$lorem');
         });
 
-        it('Should treat null and undefined padding str as space', function () {
+        it('Should treat null and undefined padding string as space', function () {
             expect(str.padLeft(void 0, 5, '*')).to.equal('*****');
             expect(str.padLeft(null, 5, '*')).to.equal('*****');
         });
 
-        it('Should treat null and undefined padding str as space', function () {
+        it('Should treat null and undefined padding string as space', function () {
             expect(str.padLeft('lorem')).to.equal('lorem');
             expect(str.padLeft('lorem', 10, void 0)).to.equal('     lorem');
             expect(str.padLeft('lorem', 10, null)).to.equal('     lorem');
@@ -365,19 +365,19 @@ describe('String', function () {
             expect(str.padRight('lorem', 8, '^')).to.equal('lorem^^^');
         });
 
-        it('Should take only first character of padding str', function () {
+        it('Should take only first character of padding string', function () {
             expect(str.padRight('lorem', 6, '#')).to.equal('lorem#');
             expect(str.padRight('lorem', 6, '%#')).to.equal('lorem%');
             expect(str.padRight('lorem', 6, '&%#')).to.equal('lorem&');
             expect(str.padRight('lorem', 6, '$&%#')).to.equal('lorem$');
         });
 
-        it('Should treat null and undefined padding str as space', function () {
+        it('Should treat null and undefined padding string as space', function () {
             expect(str.padRight(void 0, 5, '*')).to.equal('*****');
             expect(str.padRight(null, 5, '*')).to.equal('*****');
         });
 
-        it('Should treat null and undefined padding str as space', function () {
+        it('Should treat null and undefined padding string as space', function () {
             expect(str.padRight('lorem')).to.equal('lorem');
             expect(str.padRight('lorem', 10, void 0)).to.equal('lorem     ');
             expect(str.padRight('lorem', 10, null)).to.equal('lorem     ');
@@ -385,7 +385,7 @@ describe('String', function () {
     });
 
     describe('.remove()', function () {
-        it('Should remove a subst from a str', function () {
+        it('Should remove a substring from a string', function () {
             var hello = 'Hello, World!';
 
             expect(str.remove(hello, 0, 2)).to.equal('llo, World!');
@@ -416,7 +416,7 @@ describe('String', function () {
     });
 
     describe('.repeat()', function () {
-        it('Should repeat a str n times', function () {
+        it('Should repeat a string n times', function () {
             expect(str.repeat('*', 3)).to.equal('***');
             expect(str.repeat(123, 2)).to.equal('123123');
             expect(str.repeat('lorem', 2)).to.equal('loremlorem');
@@ -444,13 +444,13 @@ describe('String', function () {
     });
 
     describe('.reverse()', function () {
-        it('Should reverse a subst', function () {
+        it('Should reverse a substring', function () {
             expect(str.reverse('Hello, World!')).to.equal('!dlroW ,olleH');
             expect(str.reverse('')).to.equal('');
             expect(str.reverse(12345)).to.equal('54321');
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.reverse()).to.equal('');
             expect(str.reverse(void 0)).to.equal('');
             expect(str.reverse(null)).to.equal('');
@@ -462,23 +462,23 @@ describe('String', function () {
     });
 
     describe('.startsWith()', function () {
-        it('Should return true if str starts with another str', function () {
+        it('Should return true if string starts with another string', function () {
             expect(str.startsWith('lorem ipsum', 'lorem')).to.equal(true);
             expect(str.startsWith('foo bar', 'foo')).to.equal(true);
             expect(str.startsWith(12345, 12)).to.equal(true);
         });
 
-        it('Should return false if str does not starts with another str', function () {
+        it('Should return false if string does not starts with another string', function () {
             expect(str.startsWith('lorem ipsum', 'ipsum')).to.equal(false);
             expect(str.startsWith('foo bar', 'bar')).to.equal(false);
         });
 
-        it('Should return true if str for search is empty', function () {
+        it('Should return true if string for search is empty', function () {
             expect(str.startsWith('', '')).to.equal(true);
             expect(str.startsWith('lorem', '')).to.equal(true);
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.startsWith(void 0, 'ipsum')).to.equal(false);
             expect(str.startsWith('lorem', void 0)).to.equal(true);
             expect(str.startsWith(null, '')).to.equal(true);
@@ -493,7 +493,7 @@ describe('String', function () {
             expect(str.swap('')).to.equal('');
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.swap()).to.equal('');
             expect(str.swap(void 0)).to.equal('');
             expect(str.swap(null)).to.equal('');
@@ -565,7 +565,7 @@ describe('String', function () {
             expect(str.trim('~~~****Hello, World!****~~~', '*~')).to.equal('Hello, World!');
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.trim()).to.equal('');
             expect(str.trim(void 0)).to.equal('');
             expect(str.trim(null)).to.equal('');
@@ -585,7 +585,7 @@ describe('String', function () {
             expect(str.trimLeft('~~~****Hello, World!', '*~')).to.equal('Hello, World!');
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.trimLeft()).to.equal('');
             expect(str.trimLeft(void 0)).to.equal('');
             expect(str.trimLeft(null)).to.equal('');
@@ -605,7 +605,7 @@ describe('String', function () {
             expect(str.trimRight('Hello, World!****~~~', '*~')).to.equal('Hello, World!');
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.trimRight()).to.equal('');
             expect(str.trimRight(void 0)).to.equal('');
             expect(str.trimRight(null)).to.equal('');
@@ -623,7 +623,7 @@ describe('String', function () {
             expect(str.truncate(string, 14)).to.equal('lorem ipsum...');
         });
 
-        it('Should append str param', function () {
+        it('Should append string param', function () {
             var truncated = str.truncate(string, 10, '--');
             expect(truncated).to.have.length.below(11);
             expect(truncated).to.equal('lorem ip--');
@@ -639,7 +639,7 @@ describe('String', function () {
     });
 
     describe('.unescape()', function () {
-        it('Should escape a str', function () {
+        it('Should escape a string', function () {
             expect(str.unescape('&lt;p&gt;hi!&lt;/p&gt;')).to.equal('<p>hi!</p>');
             expect(str.unescape('&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;')).to.equal('<p>lorem & ipsum</p>');
             expect(str.unescape('&quot;hi!&quot;')).to.equal('"hi!"');
@@ -648,7 +648,7 @@ describe('String', function () {
             /* jshint +W109 */
         });
 
-        it('Should work with empty sts', function () {
+        it('Should work with empty strings', function () {
             expect(str.unescape('')).to.equal('');
             expect(str.unescape()).to.equal('');
             expect(str.unescape(void 0)).to.equal('');
@@ -665,12 +665,12 @@ describe('String', function () {
             expect(str.words(123)).to.deep.equal(['123']);
         });
 
-        it('Should work with blank sts', function () {
+        it('Should work with blank strings', function () {
             expect(str.words('')).to.deep.equal([]);
             expect(str.words('                ')).to.deep.equal([]);
         });
 
-        it('Should treat null and undefined as empty str', function () {
+        it('Should treat null and undefined as empty string', function () {
             expect(str.words()).to.deep.equal([]);
             expect(str.words(void 0)).to.deep.equal([]);
             expect(str.words(null)).to.deep.equal([]);
