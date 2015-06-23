@@ -1,5 +1,7 @@
+import exist from '../is/exists';
+
 /**
- * Returns a copy of the `target` with all falsey values removed.
+ * Returns a copy of the `target` without any 'null' or 'undefined' values.
  *
  * @param target The array to compact.
  * @returns {Array}
@@ -9,12 +11,12 @@
  * compact([1, 2, 3]);
  * // => [1, 2, 3]
  *
- * compact([null, 1, false]);
- * // => [1]
+ * compact([null, undefined, 1, false]);
+ * // => [1, false]
  */
 
 function compact(target) {
-    return target.filter(Boolean);
+    return target.filter(exist);
 }
 
 export default compact;

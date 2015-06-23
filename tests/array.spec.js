@@ -26,9 +26,13 @@ describe('Array', function () {
     });
 
     describe('.compact()', function () {
-        it('Should be ok', function () {
-            var array = [0, 1, false, 2, '', 3];
-            expect(arr.compact(array)).to.deep.equal([1, 2, 3]);
+        it('Should return array without null or undefined', function () {
+            expect(arr.compact([0, 1, false, 2, null, 3, undefined, '', 'null'])).to.deep.equal([0, 1, false, 2, 3, '', 'null']);
+            expect(arr.compact([null, undefined])).to.deep.equal([]);
+        });
+
+        it('Should return empty array if source is empty array', function () {
+            expect(arr.compact([])).to.deep.equal([]);
         });
     });
 
