@@ -6,7 +6,7 @@ import type from '../../src/is/type';
 
 const expect = chai.expect;
 
-describe('random/hex()', function () {
+describe('random/hex()', () => {
     let hexed, hex12;
 
     before(function () {
