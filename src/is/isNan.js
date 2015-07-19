@@ -8,17 +8,13 @@ import type from './type';
  *
  * @example
  *
- * is.nan('NaN');
+ * isNan('NaN');
  * // => false
  *
- * is.nan(NaN);
+ * isNan(NaN);
  * // => true
  *
- * is.nan('42');
+ * isNan('42');
  * // => false
  */
-function nan(target) {
-    return type(target) === 'nan';
-}
-
-export default nan;
+export default target => type(target) === 'nan';
