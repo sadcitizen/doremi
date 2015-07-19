@@ -1,4 +1,4 @@
-import string from './string';
+import isString from './isString';
 
 /**
  * Checks if `target` is a char.
@@ -8,20 +8,16 @@ import string from './string';
  *
  * @example
  *
- * char(false);
+ * isChar(false);
  * // => false
  *
- * char(42);
+ * isChar(42);
  * // => false
  *
- * char('42');
+ * isChar('42');
  * // => false
  *
- * char('4');
+ * isChar('4');
  * // => true
  */
-function char(target) {
-    return string(target) && target.length === 1;
-}
-
-export default char;
+export default target => isString(target) && target.length === 1;

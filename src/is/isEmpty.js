@@ -1,5 +1,5 @@
 import type from './type';
-import exists from './exists';
+import isExists from './isExists';
 
 /**
  * Check if `target` is empty.
@@ -11,17 +11,17 @@ import exists from './exists';
  *
  * @example
  *
- * is.empty('');
+ * isEmpty('');
  * // => true
  *
- * is.empty([]);
+ * isEmpty([]);
  * // => true
  *
- * is.empty({});
+ * isEmpty({});
  * // => true
  */
 function empty(target) {
-    if (!exists(target)) {
+    if (!isExists(target)) {
         return true;
     }
 

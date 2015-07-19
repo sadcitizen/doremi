@@ -1,4 +1,4 @@
-import number from './number';
+import isNumber from './isNumber';
 
 /**
  * Check if `target` is an even number.
@@ -8,17 +8,13 @@ import number from './number';
  *
  * @example
  *
- * is.even(null);
+ * isEven(null);
  * // => false
  *
- * is.even(21);
+ * isEven(21);
  * // => false
  *
- * is.even(20);
+ * isEven(20);
  * // => true
  */
-function even(target) {
-    return number(target) && target % 2 === 0;
-}
-
-export default even;
+export default target => isNumber(target) && target % 2 === 0;

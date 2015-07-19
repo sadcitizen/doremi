@@ -1,4 +1,4 @@
-import fn from '../is/fn';
+import isFunction from '../is/isFunction';
 import deepGet from './deepGet';
 
 /**
@@ -27,7 +27,7 @@ import deepGet from './deepGet';
  */
 function result(target, key, def) {
     let prop = deepGet(target, key, def);
-    return fn(prop) ? prop.call(target) : prop;
+    return isFunction(prop) ? prop.call(target) : prop;
 }
 
 export default result;

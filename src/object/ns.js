@@ -1,6 +1,6 @@
-import defined from '../is/defined';
-import object from '../is/object';
-import string from '../is/string';
+import isUndefined from '../is/isUndefined';
+import isObject from '../is/isObject';
+import isString from '../is/isString';
 
 /**
  * Creates an empty nested object by `path` and returns it.
@@ -21,18 +21,18 @@ import string from '../is/string';
  * // => lorem = { ipsum: { dolor: sit: {} } } (ipsum is overridden)
  */
 function ns(target, path) {
-    if (!object(target)) {
+    if (!isObject(target)) {
         throw new TypeError('Target must be an object!');
     }
 
-    if (!string(path)) {
+    if (!isString(path)) {
         throw new TypeError('Path must be a string!');
     }
 
     var obj = target;
 
     path.split('.').forEach(function (key) {
-        if (!(defined(obj[key]) && object(obj[key]))) {
+        if (!(!isUndefined(obj[key]) && isObject(obj[key]))) {
             obj[key] = {};
         }
 

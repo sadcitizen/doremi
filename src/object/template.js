@@ -1,7 +1,7 @@
 import regex from '../internal/template.regex';
-import array from '../is/array';
-import object from '../is/object';
-import string from '../is/string';
+import isArray from '../is/array';
+import isObject from '../is/isObject';
+import isString from '../is/isString';
 import arrayEach from '../array/each';
 import objectEach from '../object/each';
 import deepGet from './deepGet';
@@ -24,7 +24,7 @@ import trim from '../string/trim';
  * // => {a: 1, b: 3, c: 5}
  */
 function template(target, source, syntax = regex.es6) {
-    if (string(target)) {
+    if (isString(target)) {
         if (target.length === 0) {
             return '';
         }
@@ -32,8 +32,8 @@ function template(target, source, syntax = regex.es6) {
         return deepGet(source, trim(target.replace(syntax, '$1')), target);
     }
 
-    let isArr = array(target),
-        isObj = object(target),
+    let isArr = isArray(target),
+        isObj = isObject(target),
         fn;
 
     fn = (value, key) => { target[key] = template(value, source, syntax); };

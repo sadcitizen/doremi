@@ -1,4 +1,4 @@
-import defined from '../is/defined';
+import isUndefined from '../is/isUndefined';
 import deepGet from './deepGet';
 
 /**
@@ -40,7 +40,7 @@ import deepGet from './deepGet';
  * // => true
  */
 function has(target, key) {
-    return defined(deepGet(target, key));
+    return !isUndefined(deepGet(target, key));
 }
 
 export default has;

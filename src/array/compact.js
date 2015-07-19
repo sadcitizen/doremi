@@ -1,4 +1,4 @@
-import exist from '../is/exists';
+import isExist from '../is/isExists';
 
 /**
  * Returns a copy of the `target` without any 'null' or 'undefined' values.
@@ -14,9 +14,4 @@ import exist from '../is/exists';
  * compact([null, undefined, 1, false]);
  * // => [1, false]
  */
-
-function compact(target) {
-    return target.filter(exist);
-}
-
-export default compact;
+export default target => target.filter(isExist);

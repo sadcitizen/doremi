@@ -1,4 +1,4 @@
-import number from './number';
+import isNumber from './isNumber';
 
 /**
  * Check if `target` is an odd number.
@@ -8,17 +8,13 @@ import number from './number';
  *
  * @example
  *
- * is.odd(null);
+ * isOdd(null);
  * // => false
  *
- * is.odd(21);
+ * isOdd(21);
  * // => true
  *
- * is.odd(20);
+ * isOdd(20);
  * // => false
  */
-function odd(target) {
-    return number(target) && target % 2 !== 0;
-}
-
-export default odd;
+export default target => isNumber(target) && target % 2 !== 0;

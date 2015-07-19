@@ -1,5 +1,5 @@
 import isValidDate from '../is/isValidDate';
-import defined from '../is/defined';
+import isUndefined from '../is/isUndefined';
 import string from '../to/string';
 import padLeft from '../string/padLeft';
 import aliases from '../internal/datetime.aliases';
@@ -146,7 +146,7 @@ function format(target, pattern, locale) {
     locale = locale || aliases;
 
     return pattern.replace(regex, function (match) {
-        return defined(tokens[match]) ? tokens[match](target, locale) : match;
+        return !isUndefined(tokens[match]) ? tokens[match](target, locale) : match;
     });
 }
 

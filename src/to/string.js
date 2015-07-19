@@ -1,4 +1,4 @@
-import exists from '../is/exists';
+import exists from '../is/isExists';
 
 /**
  *

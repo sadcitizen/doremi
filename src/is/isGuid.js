@@ -1,5 +1,5 @@
-import string from './string';
-var GUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[ab89][a-f0-9]{3}-[a-f0-9]{12}$/;
+import isString from './isString';
+const GUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[ab89][a-f0-9]{3}-[a-f0-9]{12}$/;
 
 /**
  * Check if `target` is an guid string (UUID v4).
@@ -16,14 +16,10 @@ var GUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[ab89][a-f0-9]{3}-[a-f0-
  *
  * @example
  *
- * is.guid('');
+ * isGuid('');
  * // => false
  *
- * is.guid('550e8400-e29b-41d4-a716-446655440000');
+ * isGuid('550e8400-e29b-41d4-a716-446655440000');
  * // => true
  */
-function guid(target) {
-    return string(target) && GUID_REGEX.test(target);
-}
-
-export default guid;
+export default target => isString(target) && GUID_REGEX.test(target);

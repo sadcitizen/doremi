@@ -8,17 +8,13 @@ import type from './type';
  *
  * @example
  *
- * is.string(false);
+ * isString(false);
  * // => false
  *
- * is.string(42);
+ * isString(42);
  * // => false
  *
- * is.string('42');
+ * isString('42');
  * // => true
  */
-function string(target) {
-    return type(target) === 'string';
-}
-
-export default string;
+export default target => type(target) === 'string';

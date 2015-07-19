@@ -1,4 +1,4 @@
-import number from './number';
+import isNumber from './isNumber';
 
 /**
  * Checks if `target` is integer.
@@ -8,17 +8,13 @@ import number from './number';
  *
  * @example
  *
- * is.int(42);
+ * isInteger(42);
  * // => true
  *
- * is.int(42.42);
+ * isInteger(42.42);
  * // => false
  *
- * is.int('42');
+ * isInteger('42');
  * // => false
  */
-function int(target) {
-    return number(target) && target % 1 === 0;
-}
-
-export default int;
+export default target => isNumber(target) && target % 1 === 0;

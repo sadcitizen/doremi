@@ -1,11 +1,22 @@
 import int from './int';
-import array from '../is/array';
-import slice from '../internal/slice';
+import isArray from '../is/isArray';
 
-// TODO: add description
-
+/**
+ *
+ * @param {Array} list The list to choice.
+ * @returns {*} Returns the pseudo-random element.
+ *
+ * @example
+ *
+ * let list = [1, 2, 3];
+ * choice(list);
+ * // => 2
+ *
+ * choice('lorem', 'ipsum', 'sit');
+ * // => 'sit'
+ */
 function choice(list) {
-    let args = (arguments.length === 1 && array(list)) ? list : slice(arguments);
+    let args = (arguments.length === 1 && isArray(list)) ? list : arguments;
 
     return args[int(0, args.length - 1)];
 }

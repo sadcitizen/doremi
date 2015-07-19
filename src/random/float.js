@@ -1,4 +1,4 @@
-import exists from '../is/exists';
+import isExists from '../is/isExists';
 import constants from '../internal/constants';
 
 // TODO: add description
@@ -6,8 +6,8 @@ import constants from '../internal/constants';
 function float(min, max, fixed) {
     let frac = Math.random();
 
-    min = exists(min) ? ~~min : constants.MIN_INT;
-    max = exists(max) ? ~~max : constants.MAX_INT;
+    min = isExists(min) ? ~~min : constants.MIN_INT;
+    max = isExists(max) ? ~~max : constants.MAX_INT;
 
     if (min > max) {
         throw new Error('Minimum value cannot be greater than maximum value.');

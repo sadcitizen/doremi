@@ -8,18 +8,14 @@ import type from './type';
  *
  * @example
  *
- * is.fn(null);
+ * isFunction(null);
  * // => false
  *
  * function noop() {}
- * is.fn(noop);
+ * isFunction(noop);
  * // => true
  *
- * is.fn(Math.abs);
+ * isFunction(Math.abs);
  * // => true
  */
-function fn(target) {
-    return type(target) === 'function';
-}
-
-export default fn;
+export default target => type(target) === 'function';

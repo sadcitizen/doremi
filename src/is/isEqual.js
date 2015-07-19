@@ -24,7 +24,7 @@ function arrayEqual(target, other) {
     }
 
     for (var i = 0, length = target.length; i < length; i++) {
-        if (!equal(target[i], other[i])) {
+        if (!isEqual(target[i], other[i])) {
             break;
         }
     }
@@ -50,7 +50,7 @@ function objectEqual(target, other) {
 
     if (arrayEqual(targetKeys, otherKeys)) {
         for (var i = 0, length = targetKeys.length; i < length; i++) {
-            if (!equal(target[targetKeys[i]], other[otherKeys[i]])) {
+            if (!isEqual(target[targetKeys[i]], other[otherKeys[i]])) {
                 break;
             }
         }
@@ -76,16 +76,16 @@ function objectEqual(target, other) {
  *
  * @example
  *
- * is.equal([], []);
+ * isEqual([], []);
  * // => true
  *
- * is.equal({}, {});
+ * isEqual({}, {});
  * // => true
  *
- * is.equal(new Date(2014, 10, 2), new Date(2014, 10, 2));
+ * isEqual(new Date(2014, 10, 2), new Date(2014, 10, 2));
  * // => true
  */
-function equal(target, other) {
+function isEqual(target, other) {
     var tp = type(target);
 
     if (type(target) !== type(other)) {
@@ -125,4 +125,4 @@ function equal(target, other) {
     return target === other;
 }
 
-export default equal;
+export default isEqual;

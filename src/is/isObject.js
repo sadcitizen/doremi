@@ -8,17 +8,13 @@ import type from './type';
  *
  * @example
  *
- * is.object('');
+ * isObject('');
  * // => false
  *
- * is.object({ a: 'b', c: 'd' });
+ * isObject({ a: 'b', c: 'd' });
  * // => true
  *
- * is.nan({});
+ * isObject({});
  * // => true
  */
-function object(target) {
-    return type(target) === 'object';
-}
-
-export default object;
+export default target => type(target) === 'object';

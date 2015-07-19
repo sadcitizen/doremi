@@ -1,5 +1,5 @@
 import whitespaces from '../internal/whitespaces.regex';
-import isString from './string';
+import isString from './isString';
 
 var WHITESPACES_REGEX = new RegExp('^[' + whitespaces + ']*$');
 

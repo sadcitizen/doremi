@@ -1,4 +1,4 @@
-import blankString from './blankString';
+import isBlankString from './isBlankString';
 var ESCAPES_REGEX = /\\["\\\/bfnrtu]/g;
 var VALUES_REGEX = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;
 var BRACKETS_REGEX = /(?:^|:|,)(?:\s*\[)+/;
@@ -12,17 +12,17 @@ var INVALIDS_REGEX = /^[\],:{}\s]*$/;
  *
  * @example
  *
- * is.json('');
+ * isJson('');
  * // => false
  *
- * is.json('{"a":"b","c":"d"}');
+ * isJson('{"a":"b","c":"d"}');
  * // => true
  *
- * is.json('{}');
+ * isJson('{}');
  * // => true
  */
-function json(target) {
-    return !blankString(target) && INVALIDS_REGEX.test(
+function isJson(target) {
+    return !isBlankString(target) && INVALIDS_REGEX.test(
         target
             .replace(ESCAPES_REGEX, '@')
             .replace(VALUES_REGEX, ']')
@@ -30,4 +30,4 @@ function json(target) {
     );
 }
 
-export default json;
+export default isJson;

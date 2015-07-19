@@ -8,17 +8,13 @@ import type from './type';
  *
  * @example
  *
- * is.number(false);
+ * isNumber(false);
  * // => false
  *
- * is.number(42);
+ * isNumber(42);
  * // => true
  *
- * is.number('42');
+ * isNumber('42');
  * // => false
  */
-function number(target) {
-    return type(target) === 'number';
-}
-
-export default number;
+export default target => type(target) === 'number';

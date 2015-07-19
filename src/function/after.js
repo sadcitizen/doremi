@@ -1,11 +1,11 @@
-import fn from '../is/fn';
+import isFunction from '../is/isFunction';
 
 // TODO: add description
 
 function after(target, times) {
     times |= 0;
 
-    if (!fn(target)) {
+    if (!isFunction(target)) {
         throw new TypeError('Target must be a function.');
     }
 

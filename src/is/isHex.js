@@ -1,5 +1,5 @@
-import string from './string';
-var HEX_REGEX = /^[a-fA-F0-9]+$/;
+import isString from './isString';
+const HEX_REGEX = /^[a-fA-F0-9]+$/;
 
 /**
  * Checks if `target` is a hex string.
@@ -9,17 +9,13 @@ var HEX_REGEX = /^[a-fA-F0-9]+$/;
  *
  * @example
  *
- * is.hex('42');
+ * isHex('42');
  * // => true
  *
- * is.hex('00ffcc');
+ * isHex('00ffcc');
  * // => true
  *
- * is.hex('99zzxx');
+ * isHex('99zzxx');
  * // => false
  */
-function hex(target) {
-    return string(target) && HEX_REGEX.test(target);
-}
-
-export default hex;
+export default target => isString(target) && HEX_REGEX.test(target);

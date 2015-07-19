@@ -1,9 +1,9 @@
 import ok from '../internal/ok';
-import object from '../is/object';
-import array from '../is/array';
-import string from '../is/string';
-import exists from '../is/exists';
-import defined from '../is/defined';
+import isObject from '../is/isObject';
+import isArray from '../is/array';
+import isString from '../is/isString';
+import isExists from '../is/isExists';
+import isUndefined from '../is/isUndefined';
 
 /**
  * Resolves the value of property `key` on `target`.
@@ -43,8 +43,8 @@ import defined from '../is/defined';
  * // => 42
  */
 function get(target, key, def) {
-    ok(object(target) || array(target), 'Target must be an object or an array!');
-    ok(string(key), 'Property must be a string!');
+    ok(isObject(target) || isArray(target), 'Target must be an object or an array!');
+    ok(isString(key), 'Property must be a string!');
 
     var obj = target,
         parts = key.split('.'),
@@ -53,13 +53,13 @@ function get(target, key, def) {
     /* jshint -W084 */
     while (key = parts.shift()) {
         obj = obj[key];
-        if (!exists(obj)) {
+        if (!isExists(obj)) {
             return def;
         }
     }
     /* jshint +W084 */
 
-    return defined(obj[last]) ? obj[last] : def;
+    return !isUndefined(obj[last]) ? obj[last] : def;
 }
 
 export default get;

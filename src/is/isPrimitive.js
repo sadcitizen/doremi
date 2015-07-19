@@ -11,14 +11,10 @@ var primitives = ['boolean', 'number', 'string', 'undefined', 'null'];
  *
  * @example
  *
- * is.primitive(42);
+ * isPrimitive(42);
  * // => true
  *
- * is.primitive([]);
+ * isPrimitive([]);
  * // => false
  */
-function primitive(target) {
-    return primitives.indexOf(type(target)) !== -1;
-}
-
-export default primitive;
+export default target => primitives.indexOf(type(target)) !== -1;

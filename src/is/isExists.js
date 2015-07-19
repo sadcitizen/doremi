@@ -1,4 +1,5 @@
-import type from './type';
+import isUndefined from './isUndefined';
+import isNull from './isNull';
 
 /**
  * Check if `target` is 'null' or `undefined`.
@@ -8,15 +9,10 @@ import type from './type';
  *
  * @example
  *
- * is.exists(null);
+ * isExists(null);
  * // => false
  *
- * is.exists('');
+ * isExists('');
  * // => true
  */
-function exists(target) {
-    var tp = type(target);
-    return tp !== 'undefined' && tp !== 'null';
-}
-
-export default exists;
+export default target => !isUndefined(target) && !isNull(target);

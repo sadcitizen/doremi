@@ -1,4 +1,4 @@
-import number from './number';
+import isNumber from './isNumber';
 
 /**
  * Checks if `target` is float.
@@ -8,17 +8,13 @@ import number from './number';
  *
  * @example
  *
- * is.float(42);
+ * isFloat(42);
  * // => false
  *
- * is.float(42.42);
+ * isFloat(42.42);
  * // => true
  *
- * is.float('42.42');
+ * isFloat('42.42');
  * // => false
  */
-function float(target) {
-    return number(target) && target % 1 !== 0;
-}
-
-export default float;
+export default target => isNumber(target) && target % 1 !== 0;

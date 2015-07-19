@@ -8,17 +8,13 @@ import type from './type';
  *
  * @example
  *
- * is.regexp('\d');
+ * isRegexp('\d');
  * // => false
  *
- * is.regexp(/\d+/);
+ * isRegexp(/\d+/);
  * // => true
  *
- * is.regexp(new Regexp('0-9', 'ig'));
+ * isRegexp(new Regexp('0-9', 'ig'));
  * // => true
  */
-function regexp(target) {
-    return type(target) === 'regexp';
-}
-
-export default regexp;
+export default target => type(target) === 'regexp';

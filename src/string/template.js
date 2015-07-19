@@ -1,7 +1,7 @@
 import string from '../to/string';
 import deepGet from '../object/deepGet';
 import trim from './trim';
-import defined from '../is/defined';
+import defined from '../is/isUndefined';
 import regex from '../internal/template.regex';
 
 /**
