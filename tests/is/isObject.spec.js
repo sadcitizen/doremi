@@ -6,7 +6,7 @@ import isObject from '../../src/is/isObject';
 const expect = chai.expect;
 
 describe('is/isObject()', () => {
-    it('Should return false if value is an object', () => {
+    it('Should return true if value is an object', () => {
         function Noop() {}
         const noop = new Noop();
 
