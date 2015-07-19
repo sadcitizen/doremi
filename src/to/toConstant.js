@@ -6,16 +6,16 @@
  *
  * @example
  *
- * var num = to.constant(42);
+ * var num = toConstant(42);
  * num();
  * // => 42
  *
- * var str = to.constant('value');
+ * var str = toConstant('value');
  * str();
  * // => 'value'
  */
-function constant(target) {
+function toConstant(target) {
     return () => target;
 }
 
-export default constant;
+export default toConstant;
