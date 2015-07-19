@@ -8,14 +8,12 @@ import type from './type';
  *
  * @example
  *
- * is.array([]);
+ * isArray([]);
  * // => true
  *
- * is.array(42);
+ * isArray(42);
  * // => false
  */
-function array(target) {
-    return type(target) === 'array';
-}
+const isArray = target => type(target) === 'array';
 
-export default Array.isArray || array;
+export default Array.isArray || isArray;
