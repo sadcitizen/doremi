@@ -1,4 +1,4 @@
-import valid from '../is/validDate';
+import isValidDate from '../is/isValidDate';
 import defined from '../is/defined';
 import string from '../to/string';
 import padLeft from '../string/padLeft';
@@ -133,7 +133,7 @@ var tokens = {
  * // => '01.01.2015 01:29:06 PM'
  */
 function format(target, pattern, locale) {
-    if (!valid(target)) {
+    if (!isValidDate(target)) {
         throw new TypeError('Target must be a valid date!');
     }
 
