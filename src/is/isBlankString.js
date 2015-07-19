@@ -1,5 +1,5 @@
 import whitespaces from '../internal/whitespaces.regex';
-import string from './string';
+import isString from './string';
 
 var WHITESPACES_REGEX = new RegExp('^[' + whitespaces + ']*$');
 
@@ -11,17 +11,13 @@ var WHITESPACES_REGEX = new RegExp('^[' + whitespaces + ']*$');
  *
  * @example
  *
- * is.blankString('');
+ * isBlankString('');
  * // => true
  *
- * is.blankString('{"a":"b","c":"d"}');
+ * isBlankString('{"a":"b","c":"d"}');
  * // => false
  *
- * is.blankString('     \t    \n ');
+ * isBlankString('     \t    \n ');
  * // => true
  */
-function blankString(target) {
-    return string(target) && WHITESPACES_REGEX.test(target);
-}
-
-export default blankString;
+export default target => isString(target) && WHITESPACES_REGEX.test(target);
