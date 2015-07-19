@@ -6,13 +6,13 @@
  *
  * @example
  *
- * is.type('');
+ * type('');
  * // => string
  *
- * is.type(42);
+ * type(42);
  * // => number
  *
- * is.type({});
+ * type({});
  * // => object
  */
 function type(target) {

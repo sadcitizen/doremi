@@ -2,7 +2,7 @@ import isDate from './isDate';
 import isNan from './isNan';
 
 /**
- * Check if `target` is a valid date.
+ * Checks if `target` is a valid date.
  *
  * @param target The value to check.
  * @returns {boolean} Returns `true` if value is a valid date, else `false`.

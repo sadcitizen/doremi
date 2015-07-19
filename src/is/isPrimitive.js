@@ -2,7 +2,7 @@ import type from './type';
 var primitives = ['boolean', 'number', 'string', 'undefined', 'null'];
 
 /**
- * Check if `target` is a primitive value.
+ * Checks if `target` is a primitive value.
  * Primitive values are booleans, numbers, strings, `undefined` and `null`.
  * Equivalent object wrappers for primitive values are also primitive.
  *

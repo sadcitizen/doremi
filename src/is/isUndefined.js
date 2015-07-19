@@ -1,5 +1,5 @@
 /**
- * Check if `target` is undefined.
+ * Checks if `target` is undefined.
  *
  * @param {*} target The value to check.
  * @returns {boolean} Returns `true` if `target` is undefined, else `false`.

@@ -4,7 +4,7 @@ import keys from '../object/keys';
 import slice from '../internal/slice';
 
 /**
- * Check if two regular expressions are equal.
+ * Checks if two regular expressions are equal.
  * Regular expressions are compared by their source patterns and flags.
  */
 function regexpEqual(target, other) {
@@ -15,7 +15,7 @@ function regexpEqual(target, other) {
 }
 
 /**
- * Check if two array are equal.
+ * Checks if two array are equal.
  * Arrays must contain equivalent contents.
  */
 function arrayEqual(target, other) {
@@ -33,7 +33,7 @@ function arrayEqual(target, other) {
 }
 
 /**
- * Check if two object are equal
+ * Checks if two object are equal
  * Objects must contain equivalent direct members. Members in the prototype chain are ignored.
  *
  * @param target
@@ -62,7 +62,7 @@ function objectEqual(target, other) {
 }
 
 /**
- * Check if `target` and `other` are equivalent to each other.
+ * Checks if `target` and `other` are equivalent to each other.
  *
  * Identical values (target === other) are automatically equivalent.
  * Primitive values are compared by value. Primitive values and their object wrappers are equivalent.

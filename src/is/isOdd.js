@@ -1,7 +1,7 @@
 import isNumber from './isNumber';
 
 /**
- * Check if `target` is an odd number.
+ * Checks if `target` is an odd number.
  *
  * @param {*} target The value to check.
  * @returns {boolean} Return `true` if `target` is an odd number, else `false`.

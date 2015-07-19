@@ -1,5 +1,5 @@
 /**
- * Check if `target` is null.
+ * Checks if `target` is null.
  *
  * @param {*} target The value to check.
  * @returns {boolean} Returns `true` if `target` is null, else `false`.

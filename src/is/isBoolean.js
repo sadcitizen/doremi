@@ -1,7 +1,7 @@
 import type from './type';
 
 /**
- * Check if `target` is boolean.
+ * Checks if `target` is boolean.
  *
  * @param {*} target The value to check.
  * @returns {boolean} Return `true` if `target` is boolean, else `false`.

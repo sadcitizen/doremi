@@ -1,7 +1,7 @@
 import type from './type';
 
 /**
- * Check if `target` is function.
+ * Checks if `target` is function.
  *
  * @param {*} target The value to check.
  * @returns {boolean} Return `true` if `target` is function, else `false`.

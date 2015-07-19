@@ -2,7 +2,7 @@ import type from './type';
 import isExists from './isExists';
 
 /**
- * Check if `target` is empty.
+ * Checks if `target` is empty.
  * Returns `true` is `target` is not an enumerable value or array, string
  * with a length greater than `0` or an object without own enumerable properties.
  *

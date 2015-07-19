@@ -1,7 +1,7 @@
 import isNumber from './isNumber';
 
 /**
- * Check if `target` is an even number.
+ * Checks if `target` is an even number.
  *
  * @param {*} target The value to check.
  * @returns {boolean} Return `true` if `target` is an even number, else `false`.

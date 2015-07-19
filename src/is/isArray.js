@@ -1,7 +1,7 @@
 import type from './type';
 
 /**
- * Check if `target` is array.
+ * Checks if `target` is array.
  *
  * @param {*} target The value to check.
  * @returns {boolean} Returns `true` if `target` is array, else `false`.

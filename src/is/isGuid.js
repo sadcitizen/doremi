@@ -2,7 +2,7 @@ import isString from './isString';
 const GUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[ab89][a-f0-9]{3}-[a-f0-9]{12}$/;
 
 /**
- * Check if `target` is an guid string (UUID v4).
+ * Checks if `target` is an guid string (UUID v4).
  *
  * Wikipedia:
  * Version 4 UUIDs use a scheme relying only on random numbers.
