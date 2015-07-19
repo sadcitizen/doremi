@@ -1,7 +1,7 @@
 import string from '../to/string';
 import deepGet from '../object/deepGet';
 import trim from './trim';
-import defined from '../is/isUndefined';
+import isUndefined from '../is/isUndefined';
 import regex from '../internal/template.regex';
 
 /**
@@ -31,7 +31,7 @@ function template(target, data, syntax) {
 
     return target.replace(syntax, function (match, name) {
         var value = deepGet(data, trim(name));
-        return defined(value) ? string(value) : match;
+        return !isUndefined(value) ? string(value) : match;
     });
 }
 

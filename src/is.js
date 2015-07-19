@@ -16,7 +16,7 @@ import hex from './is/isHex';
 import int from './is/isInteger';
 import json from './is/isJson';
 import nan from './is/nan';
-import not from './is/not';
+import not from './internal/not';
 import number from './is/isNumber';
 import object from './is/isObject';
 import odd from './is/isOdd';
