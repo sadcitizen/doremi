@@ -1,4 +1,4 @@
-import array from '../is/array';
+import isArray from '../is/isArray';
 
 // TODO: add description
 
@@ -8,7 +8,7 @@ function at(target, ...indexes) {
     if (indexes.length === 1) {
         index = indexes[0];
 
-        if (array(index)) {
+        if (isArray(index)) {
             return index.map(x => at(target, x));
         }
 
