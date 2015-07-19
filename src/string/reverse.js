@@ -14,8 +14,4 @@ import chop from './chop';
  * reverse(12345);
  * // => '54321'
  */
-function reverse(target) {
-    return chop(target).reverse().join('');
-}
-
-export default reverse;
+export default target => chop(target).reverse().join('');

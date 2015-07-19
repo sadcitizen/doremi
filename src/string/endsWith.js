@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Checks if `target` ends with `sub`.
@@ -9,15 +9,15 @@ import string from '../to/string';
  *
  * @example
  *
- * startsWith('lorem', 'lor');
+ * endsWith('lorem', 'rem');
  * // => true
  *
- * startsWith(12345, 2);
+ * endsWith(12345, 2);
  * // => false
  */
 function endsWith(target, sub) {
-    target = string(target);
-    sub = string(sub);
+    target = toString(target);
+    sub = toString(sub);
 
     return target.indexOf(sub, target.length - sub.length) !== -1;
 }

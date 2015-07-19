@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 import deepGet from '../object/deepGet';
 import trim from './trim';
 import isUndefined from '../is/isUndefined';
@@ -22,7 +22,7 @@ import regex from '../internal/template.regex';
  * // => 'lorem ipsum dolor'
  */
 function template(target, data, syntax) {
-    target = string(target);
+    target = toString(target);
     syntax = syntax || regex.es6;
 
     if (target.length === 0) {
@@ -31,7 +31,7 @@ function template(target, data, syntax) {
 
     return target.replace(syntax, function (match, name) {
         var value = deepGet(data, trim(name));
-        return !isUndefined(value) ? string(value) : match;
+        return !isUndefined(value) ? toString(value) : match;
     });
 }
 

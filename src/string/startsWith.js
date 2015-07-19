@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Checks if `target` starts with `sub`.
@@ -15,8 +15,4 @@ import string from '../to/string';
  * startsWith(12345, 2);
  * // => false
  */
-function startsWith(target, sub) {
-    return string(target).indexOf(string(sub)) === 0;
-}
-
-export default startsWith;
+export default (target, sub) => toString(target).indexOf(toString(sub)) === 0;

@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Joins strings together with a given separator.
@@ -17,15 +17,15 @@ import string from '../to/string';
  */
 function join(sep, ...strings) {
     var result = [];
-    sep = string(sep);
+    sep = toString(sep);
 
     strings.forEach(function (item) {
-        item = string(item);
+        item = toString(item);
         if (item.length) {
             result.push(item);
         }
     });
-    return result.join(string(sep));
+    return result.join(toString(sep));
 }
 
 export default join;

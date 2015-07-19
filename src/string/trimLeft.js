@@ -1,5 +1,5 @@
 import whitespaces from '../internal/whitespaces.regex';
-import string from '../to/string';
+import toString from '../to/toString';
 import rest from '../array/rest';
 
 /**
@@ -18,7 +18,7 @@ import rest from '../array/rest';
  */
 function trimLeft(target) {
     var chars = rest(arguments).join('');
-    target = string(target);
+    target = toString(target);
 
     if (target.length === 0) {
         return '';

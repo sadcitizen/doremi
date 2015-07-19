@@ -1,5 +1,5 @@
 import symbols from '../internal/escape.symbols';
-import string from '../to/string';
+import toString from '../to/toString';
 import invert from '../object/invert';
 
 /**
@@ -15,7 +15,7 @@ import invert from '../object/invert';
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
 function unescape(target) {
-    target = string(target);
+    target = toString(target);
 
     if (target.length === 0) {
         return '';

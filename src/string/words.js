@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 import clean from './clean';
 
 /**
@@ -18,7 +18,7 @@ import clean from './clean';
  */
 function words(target, sep) {
     target = clean(target);
-    sep = string(sep);
+    sep = toString(sep);
 
     if (target.length === 0) {
         return [];

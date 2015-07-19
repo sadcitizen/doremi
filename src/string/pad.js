@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 import repeat from './repeat';
 
 /**
@@ -22,14 +22,14 @@ import repeat from './repeat';
  * // => '   lorem  '
  */
 function pad(target, length, char) {
-    target = string(target);
+    target = toString(target);
     length |= 0;
 
     if (target.length > length) {
         return target;
     }
 
-    char = (string(char) || ' ').charAt(0);
+    char = (toString(char) || ' ').charAt(0);
 
     var llen = Math.ceil((length - target.length) / 2),
         rlen = length - target.length - llen;

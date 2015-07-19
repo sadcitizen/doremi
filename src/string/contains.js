@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Checks if a string contains a given substring.
@@ -16,8 +16,4 @@ import string from '../to/string';
  * contains('lorem ipsum', 'foo');
  * // => false
  */
-function contains(target, sub, start) {
-    return string(target).indexOf(string(sub), start) !== -1;
-}
-
-export default contains;
+export default (target, sub, start) => toString(target).indexOf(toString(sub), start) !== -1;

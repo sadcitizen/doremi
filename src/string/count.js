@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Counts the number of occurrences of a substring in a string.
@@ -19,8 +19,8 @@ import string from '../to/string';
  * // => 4
  */
 function count(target, sub) {
-    target = string(target);
-    sub = string(sub);
+    target = toString(target);
+    sub = toString(sub);
 
     if (target.length === 0) {
         return 0;

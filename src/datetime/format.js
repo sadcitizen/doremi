@@ -1,6 +1,6 @@
 import isValidDate from '../is/isValidDate';
 import isUndefined from '../is/isUndefined';
-import string from '../to/string';
+import toString from '../to/toString';
 import padLeft from '../string/padLeft';
 import aliases from '../internal/datetime.aliases';
 
@@ -137,7 +137,7 @@ function format(target, pattern, locale) {
         throw new TypeError('Target must be a valid date!');
     }
 
-    pattern = string(pattern);
+    pattern = toString(pattern);
 
     if (pattern.length === 0) {
         return '';

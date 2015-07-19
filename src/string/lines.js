@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Splits the `target` into array of lines.
@@ -14,8 +14,4 @@ import string from '../to/string';
  * lines('Lorem \nipsum');
  * // => ['Lorem ', 'ipsum']
  */
-function lines(target) {
-    return string(target).split(/\r?\n/g);
-}
-
-export default lines;
+export default target => toString(target).split(/\r?\n/g);

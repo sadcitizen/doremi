@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Swaps case of case-based characters in a given string.
@@ -15,7 +15,7 @@ import string from '../to/string';
  * // => 'Lorem'
  */
 function swap(target) {
-    target = string(target);
+    target = toString(target);
 
     if (target.length === 0) {
         return '';

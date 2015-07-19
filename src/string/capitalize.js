@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Capitalizes the first character of `target`.
@@ -15,7 +15,7 @@ import string from '../to/string';
  * // => '' (empty string)
  */
 function capitalize(target) {
-    target = string(target);
+    target = toString(target);
     return target.length > 0 ? target.charAt(0).toUpperCase() + target.slice(1) : target;
 }
 

@@ -1,10 +1,10 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Chops the string into pieces with length equal `step`.
  *
- * @param {String} target The string to chopping.
- * @param {Number} step The length of piece.
+ * @param {string} target The string to chopping.
+ * @param {number} step The length of piece.
  * @returns {Array} The array of pieces.
  *
  * @example
@@ -19,7 +19,7 @@ function chop(target, step) {
     var result = [], i, length;
 
     step = step | 0;
-    target = string(target);
+    target = toString(target);
 
     if (target.length === 0) {
         return [];

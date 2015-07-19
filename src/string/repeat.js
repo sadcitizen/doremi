@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Repeats a given string n times.
@@ -18,7 +18,7 @@ import string from '../to/string';
 function repeat(target, count) {
     var result = '';
 
-    target = string(target);
+    target = toString(target);
     count = count | 0;
 
     if (target.length === 0) {

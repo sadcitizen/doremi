@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Decapitalizes the first character of `target`.
@@ -11,11 +11,11 @@ import string from '../to/string';
  * decapitalize('Hi!');
  * // => 'hi!'
  *
- * capitalize();
+ * decapitalize();
  * // => '' (empty string)
  */
 function decapitalize(target) {
-    target = string(target);
+    target = toString(target);
     return target.length > 0 ? target.charAt(0).toLowerCase() + target.slice(1) : target;
 }
 

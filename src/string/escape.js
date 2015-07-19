@@ -1,5 +1,5 @@
 import symbols from '../internal/escape.symbols';
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
@@ -13,7 +13,7 @@ import string from '../to/string';
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
 function escape(target) {
-    target = string(target);
+    target = toString(target);
 
     if (target.length === 0) {
         return '';

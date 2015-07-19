@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 import repeat from './repeat';
 
 /**
@@ -22,8 +22,8 @@ import repeat from './repeat';
  * // => 'lorem     '
  */
 function padRight(target, length, char) {
-    target = string(target);
-    char = (string(char) || ' ').charAt(0);
+    target = toString(target);
+    char = (toString(char) || ' ').charAt(0);
     return target.length < (length |= 0) ? target + repeat(char, length - target.length) : target;
 }
 

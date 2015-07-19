@@ -1,4 +1,4 @@
-import string from '../to/string';
+import toString from '../to/toString';
 
 /**
  * Chops the string into pieces with length equal `step`.
@@ -9,17 +9,17 @@ import string from '../to/string';
  *
  * @example
  *
- * rchop('lorem ipsum', 5);
+ * chopRight('lorem ipsum', 5);
  * // => ['l', 'orem ', 'ipsum']
  *
- * rchop(1234567890);
+ * chopRight(1234567890);
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
-function rchop(target, step) {
+function chopRight(target, step) {
     var result = [], i, length;
 
     step = step | 0;
-    target = string(target);
+    target = toString(target);
 
     if (target.length === 0) {
         return [];
@@ -38,4 +38,4 @@ function rchop(target, step) {
     return result;
 }
 
-export default rchop;
+export default chopRight;
