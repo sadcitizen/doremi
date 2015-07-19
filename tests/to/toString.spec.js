@@ -5,7 +5,7 @@ import toString from '../../src/to/toString';
 
 const expect = chai.expect;
 
-describe.only('to/toString()', () => {
+describe('to/toString()', () => {
     it('Should convert null to empty string', () => {
         expect(toString(null)).to.equal('');
     });

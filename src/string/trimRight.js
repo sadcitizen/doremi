@@ -1,11 +1,11 @@
 import whitespaces from '../internal/whitespaces.regex';
 import toString from '../to/toString';
-import rest from '../array/rest';
 
 /**
  * Removes trailing whitespaces or given characters from `target`.
  *
  * @param {String} target The string to trim.
+ * @param {Array} rest The characters to remove.
  * @returns {String} The trimmed string.
  *
  * @example
@@ -16,8 +16,8 @@ import rest from '../array/rest';
  * trimRight('lorem/+*', '/', '+*');
  * // => 'lorem'
  */
-function trimRight(target) {
-    var chars = rest(arguments).join('');
+function trimRight(target, ...rest) {
+    var chars = rest.join('');
     target = toString(target);
 
     if (target.length === 0) {
