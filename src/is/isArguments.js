@@ -10,14 +10,10 @@ import type from './type';
  * function fn() {
  *   return arguments;
  * }
- * is.args(fn());
+ * isArguments(fn());
  * // => true
  *
- * is.args(1, 2, 3);
+ * isArguments(1, 2, 3);
  * // => false
  */
-function args(target) {
-    return type(target) === 'arguments';
-}
-
-export default args;
+export default target => type(target) === 'arguments';
