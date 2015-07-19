@@ -8,14 +8,10 @@ import type from './type';
  *
  * @example
  *
- * is.date('2014-11-22');
+ * isDate('2014-11-22');
  * // => false
  *
- * is.date(new Date());
+ * isDate(new Date());
  * // => true
  */
-function date(target) {
-    return type(target) === 'date';
-}
-
-export default date;
+export default target => type(target) === 'date';
