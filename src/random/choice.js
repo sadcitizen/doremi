@@ -1,4 +1,4 @@
-import int from './int';
+import integer from './integer';
 import isArray from '../is/isArray';
 
 /**
@@ -18,7 +18,7 @@ import isArray from '../is/isArray';
 function choice(list) {
     let args = (arguments.length === 1 && isArray(list)) ? list : arguments;
 
-    return args[int(0, args.length - 1)];
+    return args[integer(0, args.length - 1)];
 }
 
 export default choice;

@@ -3,7 +3,7 @@ import choice from './random/choice';
 import float from './random/float';
 import guid from './random/guid';
 import hex from './random/hex';
-import int from './random/int';
+import int from './random/integer';
 
 export default {
     bool: bool,

@@ -1,5 +1,5 @@
 import constants from '../internal/constants';
-import int from './int';
+import integer from './integer';
 
 // TODO: add description
 
@@ -11,7 +11,7 @@ function hex(length) {
     length = length && length > 0 ? length : 1;
 
     while (length--) {
-        result += letters[int(0, size - 1)];
+        result += letters[integer(0, size - 1)];
     }
 
     return result;
