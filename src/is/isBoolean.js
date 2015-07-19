@@ -8,14 +8,11 @@ import type from './type';
  *
  * @example
  *
- * is.bool(true);
+ * isBoolean(true);
  * // => true
  *
- * is.bool('');
+ * isBoolean('');
  * // => false
  */
-function bool(target) {
-    return type(target) === 'boolean';
-}
 
-export default bool;
+export default target => type(target) === 'boolean';
