@@ -9,7 +9,6 @@ import flatten from './array/flatten';
 import last from './array/last';
 import partition from './array/partition';
 import pluck from './array/pluck';
-import rest from './array/rest';
 
 export default {
     append: append,
@@ -22,6 +21,5 @@ export default {
     flatten: flatten,
     last: last,
     partition: partition,
-    pluck: pluck,
-    rest: rest
+    pluck: pluck
 };
