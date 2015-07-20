@@ -5,7 +5,7 @@ import isNumber from '../../src/is/isNumber';
 
 const expect = chai.expect;
 
-describe('.number()', () => {
+describe('is/isNumber()', () => {
     it('Should return false if value is an number', () => {
         expect(isNumber(42)).to.equal(true);
         expect(isNumber(Number('42'))).to.equal(true);

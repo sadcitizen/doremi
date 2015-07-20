@@ -5,7 +5,7 @@ import isFunction from '../../src/is/isFunction';
 
 const expect = chai.expect;
 
-describe('.fn()', () => {
+describe('is/isFunction()', () => {
     it('Should return true if value is a function', () => {
         const noop = () => {};
 
