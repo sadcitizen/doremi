@@ -5,7 +5,7 @@ import floor from '../../src/math/floor';
 
 const expect = chai.expect;
 
-describe.only('math/floor()', () => {
+describe('math/floor()', () => {
     it('Should round down value', () => {
         expect(floor(42.42)).to.equal(42);
         expect(floor(0.42)).to.equal(0);
