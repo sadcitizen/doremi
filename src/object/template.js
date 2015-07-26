@@ -1,4 +1,4 @@
-import regex from '../internal/template.regex';
+import regex from '../internal/regexes/template';
 import isArray from '../is/array';
 import isObject from '../is/isObject';
 import isString from '../is/isString';

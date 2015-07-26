@@ -2,7 +2,7 @@ import toString from '../to/toString';
 import deepGet from '../object/deepGet';
 import trim from './trim';
 import isUndefined from '../is/isUndefined';
-import regex from '../internal/template.regex';
+import regex from '../internal/regexes/template';
 
 /**
  * Replaces tokens from `target` on corresponding values from `data`.

@@ -1,4 +1,4 @@
-import whitespaces from '../internal/whitespaces.regex';
+import whitespaces from '../internal/regexes/whitespaces';
 import isString from './isString';
 
 var WHITESPACES_REGEX = new RegExp('^[' + whitespaces + ']*$');

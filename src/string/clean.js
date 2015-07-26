@@ -1,5 +1,5 @@
 import trim from './trim';
-import whitespaces from '../internal/whitespaces.regex';
+import whitespaces from '../internal/regexes/whitespaces';
 
 /**
  * Cleans a string from whitespaces.
