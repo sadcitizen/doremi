@@ -5,7 +5,7 @@ import clone from '../../src/datetime/clone';
 
 const expect = chai.expect;
 
-describe.only('datetime/clone()', function () {
+describe('datetime/clone()', function () {
     it('Should return a date', function () {
         expect(clone(new Date())).to.be.instanceof(Date);
     });
