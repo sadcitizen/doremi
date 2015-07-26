@@ -5,8 +5,8 @@ import format from '../../src/datetime/format';
 
 const expect = chai.expect;
 
-describe('datetime/format()', function () {
-    it('Should format year to string', function () {
+describe('datetime/format()', () => {
+    it('Should format year to string', () => {
         const first = new Date(2015, 1, 1);
         const second = new Date(909, 1, 1);
 
@@ -21,7 +21,7 @@ describe('datetime/format()', function () {
         expect(format(second, 'Y')).to.equal('9');
     });
 
-    it('Should format month to string', function () {
+    it('Should format month to string', () => {
         const first = new Date(2015, 0, 1);
         const second = new Date(2015, 11, 1);
 
@@ -36,7 +36,7 @@ describe('datetime/format()', function () {
         expect(format(second, 'M')).to.equal('12');
     });
 
-    it('Should format days to string', function () {
+    it('Should format days to string', () => {
         const first = new Date(2015, 0, 1);
         const second = new Date(2015, 0, 20);
 
@@ -47,7 +47,7 @@ describe('datetime/format()', function () {
         expect(format(second, 'D')).to.equal('20');
     });
 
-    it('Should format weekday to string', function () {
+    it('Should format weekday to string', () => {
         const monday = new Date(2015, 0, 5);
         const tuesday = new Date(2015, 0, 6);
         const wednesday = new Date(2015, 0, 7);
@@ -78,7 +78,7 @@ describe('datetime/format()', function () {
         expect(format(sunday, 'DDD')).to.equal('Sun');
     });
 
-    it('Should format hours to string', function () {
+    it('Should format hours to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 11, 9, 6);
         const third = new Date(2015, 1, 1, 22, 0, 0);
@@ -102,7 +102,7 @@ describe('datetime/format()', function () {
         expect(format(third, 'h')).to.equal('10');
     });
 
-    it('Should format minutes to string', function () {
+    it('Should format minutes to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 0, 9, 6);
         const third = new Date(2015, 1, 1, 0, 0, 0);
@@ -117,7 +117,7 @@ describe('datetime/format()', function () {
         expect(format(third, 'm')).to.equal('0');
     });
 
-    it('Should format seconds to string', function () {
+    it('Should format seconds to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 0, 9, 6);
         const third = new Date(2015, 1, 1, 0, 0, 0);
@@ -132,7 +132,7 @@ describe('datetime/format()', function () {
         expect(format(third, 's')).to.equal('0');
     });
 
-    it('Should format milliseconds to string', function () {
+    it('Should format milliseconds to string', () => {
         const first = new Date(2015, 1, 1, 1, 1, 1, 1);
         const second = new Date(2015, 1, 1, 1, 1, 1, 10);
         const third = new Date(2015, 1, 1, 1, 1, 1, 100);
@@ -150,7 +150,7 @@ describe('datetime/format()', function () {
         expect(format(third, 'f')).to.equal('1');
     });
 
-    it('Should format am/pm to string', function () {
+    it('Should format am/pm to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 11, 9, 6);
         const third = new Date(2015, 1, 1, 22, 0, 0);
@@ -165,7 +165,7 @@ describe('datetime/format()', function () {
         expect(format(third, 'tt')).to.equal('pm');
     });
 
-    it('Should format quarter to string', function () {
+    it('Should format quarter to string', () => {
         expect(format(new Date(2015, 0, 1), 'Q')).to.equal('1');
         expect(format(new Date(2015, 1, 1), 'Q')).to.equal('1');
         expect(format(new Date(2015, 2, 1), 'Q')).to.equal('1');
@@ -180,7 +180,7 @@ describe('datetime/format()', function () {
         expect(format(new Date(2015, 11, 1), 'Q')).to.equal('4');
     });
 
-    it('Should format date to string', function () {
+    it('Should format date to string', () => {
         const date = new Date(2015, 1, 1, 13, 29, 6);
         expect(format(date, 'YYYY')).to.equal('2015');
         expect(format(date, 'DD-MM-YYYY HH:mm:ss')).to.equal('01-02-2015 13:29:06');
@@ -188,7 +188,7 @@ describe('datetime/format()', function () {
         expect(format(date, 'DD/MM/YY h:m:s tt')).to.equal('01/02/15 1:29:6 pm');
     });
 
-    it('Should format date to string with localization', function () {
+    it('Should format date to string with localization', () => {
         const date = new Date(2015, 1, 4, 13, 29, 6);
         expect(format(date, 'DDDD, DD MMMM')).to.equal('Wednesday, 04 February');
         expect(format(date, 'DDD, DD MMM')).to.equal('Wed, 04 Feb.');
