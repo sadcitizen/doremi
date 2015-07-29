@@ -3,6 +3,7 @@
 import isNumber from '../is/isNumber';
 import log from '../math/log';
 import floor from '../math/floor';
+import fixed from './fixed';
 
 const symbols = {
     kilo: 'k', // 1000 ^ 1
@@ -50,7 +51,7 @@ export default function (target, precision = 2, dict = symbols) {
         return '';
     }
 
-    const basis = floor(log(target, base) / 3) * 3;
+    const basis = floor(log(Math.abs(target), base) / 3) * 3;
 
-    return (target / Math.pow(base, basis)).toFixed(precision) + dict[prefixes[basis]];
+    return fixed(target / Math.pow(base, basis), precision) + dict[prefixes[basis]];
 }

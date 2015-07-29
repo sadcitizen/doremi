@@ -16,7 +16,7 @@ describe('math/floor()', () => {
         expect(floor(-0.42)).to.equal(-1);
     });
 
-    it('Should allow custom precision', function () {
+    it('Should allow custom precision', () => {
         expect(floor(5.4321, 3)).to.equal(5.432);
         expect(floor(5.4321, 2)).to.equal(5.43);
         expect(floor(5.4321, 1)).to.equal(5.4);
@@ -28,7 +28,7 @@ describe('math/floor()', () => {
         expect(floor(-5.4321, 0)).to.equal(-6);
     });
 
-    it('Should allow custom negative precision', function () {
+    it('Should allow custom negative precision', () => {
         expect(floor(54321, -3)).to.equal(54000);
         expect(floor(54321, -2)).to.equal(54300);
         expect(floor(54321, -1)).to.equal(54320);

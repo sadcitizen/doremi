@@ -16,7 +16,7 @@ describe('math/ceil()', () => {
         expect(ceil(-0.42)).to.equal(0);
     });
 
-    it('Should allow custom precision', function () {
+    it('Should allow custom precision', () => {
         expect(ceil(5.4321, 3)).to.equal(5.433);
         expect(ceil(5.4321, 2)).to.equal(5.44);
         expect(ceil(5.4321, 1)).to.equal(5.5);
@@ -28,7 +28,7 @@ describe('math/ceil()', () => {
         expect(ceil(-5.4321, 0)).to.equal(-5);
     });
 
-    it('Should allow custom negative precision', function () {
+    it('Should allow custom negative precision', () => {
         expect(ceil(54321, -3)).to.equal(55000);
         expect(ceil(54321, -2)).to.equal(54400);
         expect(ceil(54321, -1)).to.equal(54330);

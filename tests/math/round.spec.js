@@ -50,7 +50,7 @@ describe('math/round()', () => {
         expect(round(-5.6321, 0)).to.equal(-6);
     });
 
-    it('Should allow custom negative precision', function () {
+    it('Should allow custom negative precision', () => {
         expect(round(54321, -3)).to.equal(54000);
         expect(round(54621, -3)).to.equal(55000);
 
