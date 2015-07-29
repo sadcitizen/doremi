@@ -70,7 +70,7 @@ describe('math/round()', () => {
         expect(round(-54326, -1)).to.equal(-54330);
     });
 
-    it('Should return NaN for non-number value', () => {
+    it('Should return NaN for non-numeric value', () => {
         expect(round('')).to.deep.equal(NaN);
         expect(round('42')).to.deep.equal(NaN);
         expect(round('42.42')).to.deep.equal(NaN);

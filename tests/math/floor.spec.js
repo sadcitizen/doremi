@@ -38,7 +38,7 @@ describe('math/floor()', () => {
         expect(floor(-54321, -1)).to.equal(-54330);
     });
 
-    it('Should return NaN for non-number value', () => {
+    it('Should return NaN for non-numeric value', () => {
         expect(floor('')).to.deep.equal(NaN);
         expect(floor('42')).to.deep.equal(NaN);
         expect(floor('42.42')).to.deep.equal(NaN);

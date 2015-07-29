@@ -38,7 +38,7 @@ describe('math/ceil()', () => {
         expect(ceil(-54321, -1)).to.equal(-54320);
     });
 
-    it('Should return NaN for non-number value', () => {
+    it('Should return NaN for non-numeric value', () => {
         expect(ceil('')).to.deep.equal(NaN);
         expect(ceil('42')).to.deep.equal(NaN);
         expect(ceil('42.42')).to.deep.equal(NaN);
