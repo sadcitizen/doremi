@@ -1,7 +1,7 @@
 'use strict';
 
 import isNumber from '../is/isNumber';
-import log10 from '../math/log10';
+import log from '../math/log';
 import floor from '../math/floor';
 
 const symbols = {
@@ -15,7 +15,7 @@ const symbols = {
     yotta: 'Y' // 1000 ^ 8
 };
 
-var prefixes = {
+const prefixes = {
     3: 'kilo',
     6: 'mega',
     9: 'giga',
@@ -25,6 +25,8 @@ var prefixes = {
     21: 'zeta',
     24: 'yotta'
 };
+
+const base = 10;
 
 /**
  * Creates the abbreviated number as string.
@@ -48,8 +50,7 @@ export default function (target, precision = 2, dict = symbols) {
         return '';
     }
 
-    const basis = floor(log10(target) / 3) * 3;
-    const mantissa = target / Math.pow(10, basis);
+    const basis = floor(log(target, base) / 3) * 3;
 
-    return mantissa.toFixed(precision) + dict[prefixes[basis]];
+    return (target / Math.pow(base, basis)).toFixed(precision) + dict[prefixes[basis]];
 }
