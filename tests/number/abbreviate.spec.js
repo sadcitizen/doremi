@@ -5,7 +5,7 @@ import abbreviate from '../../src/number/abbreviate';
 
 const expect = chai.expect;
 
-describe.only('number/abbreviate()', () => {
+describe('number/abbreviate()', () => {
     it('Should abbreviate numbers', () => {
         expect(abbreviate(1234)).to.equal('1.23k');
         expect(abbreviate(12345)).to.equal('12.34k');
