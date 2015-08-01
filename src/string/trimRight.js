@@ -25,7 +25,7 @@ function trimRight(target, ...rest) {
     }
 
     chars = chars.length ? chars : whitespaces;
-    return target.replace(new RegExp('[' + chars + ']+$', 'ig'), '');
+    return target.replace(new RegExp(`[${chars}]+$`, 'ig'), '');
 }
 
 export default trimRight;

@@ -95,5 +95,7 @@
   "requireSpaceBeforeObjectValues": true,
   "requireSpaceBetweenArguments": true,
   "requireSpread": true,
-  "validateIndentation": 4
+  "validateIndentation": 4,
+  "requireTemplateStrings": true,
+  "requireShorthandArrowFunctions": true
 }

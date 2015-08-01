@@ -2,6 +2,7 @@
 import type from './type';
 import keys from '../object/keys';
 import slice from '../internal/slice';
+import toString from '../to/toString';
 
 /**
  * Checks if two regular expressions are equal.
@@ -102,8 +103,8 @@ function isEqual(target, other) {
     }
 
     if (tp === 'string') {
-        target = '' + target;
-        other = '' + other;
+        target = toString(target);
+        other = toString(other);
     }
 
     if (tp === 'number' || tp === 'nan' || tp === 'infinity') {

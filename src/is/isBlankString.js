@@ -1,7 +1,7 @@
 import whitespaces from '../internal/regexes/whitespaces';
 import isString from './isString';
 
-var WHITESPACES_REGEX = new RegExp('^[' + whitespaces + ']*$');
+const WHITESPACES_REGEX = new RegExp(`^[${whitespaces}]*$`);
 
 /**
  * Checks if `target` is a blank string.

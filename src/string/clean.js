@@ -22,7 +22,7 @@ function clean(target) {
         return '';
     }
 
-    return target.replace(new RegExp('[' + whitespaces + ']+', 'ig'), ' ');
+    return target.replace(new RegExp(`[${whitespaces}]+`, 'ig'), ' ');
 }
 
 export default clean;
