@@ -23,7 +23,7 @@ import noop from './noop';
  */
 function pipeline(...fns) {
     return fns.length === 0 ? noop : function () {
-        return fns.reduce((result, func) => func.call(this, result), fns.shift().apply(this, arguments));
+        return fns.reduce((result, func) => func.call(this, result), fns.shift()(...arguments));
     };
 }
 

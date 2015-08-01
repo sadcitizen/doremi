@@ -88,5 +88,12 @@
   ],
   "disallowYodaConditions": true,
   "disallowSpacesInCallExpression": true,
-  "requireArrowFunctions": true
+  "requireArrowFunctions": true,
+  "requireLineBreakAfterVariableAssignment": true,
+  "requirePaddingNewLinesAfterUseStrict": true,
+  "requireSemicolons": true,
+  "requireSpaceBeforeObjectValues": true,
+  "requireSpaceBetweenArguments": true,
+  "requireSpread": true,
+  "validateIndentation": 4
 }
