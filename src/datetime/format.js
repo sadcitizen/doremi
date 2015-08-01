@@ -4,14 +4,14 @@ import toString from '../to/toString';
 import padLeft from '../string/padLeft';
 import aliases from '../internal/datetime.aliases';
 
-var regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
+const regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
 
 function dayOfWeek(date) {
-    var day = date.getDay();
+    const day = date.getDay();
     return day === 0 ? 6 : day - 1;
 }
 
-var tokens = {
+const tokens = {
     'YYYY': date => padLeft(date.getFullYear(), 4, '0'),
 
     'YYY': date => date.getFullYear(),
@@ -71,8 +71,8 @@ var tokens = {
     'Q': date => Math.ceil((date.getMonth() + 1) / 3),
 
     'Z': date => {
-        let offset = date.getTimezoneOffset(),
-            abs = Math.abs(offset);
+        const offset = date.getTimezoneOffset();
+        const abs = Math.abs(offset);
         return (offset > 0 ? '-' : '+') + padLeft((abs / 60) | 0, 2, '0') + padLeft(abs % 60, 2, '0');
     }
 };

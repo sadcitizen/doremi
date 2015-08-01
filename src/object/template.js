@@ -32,11 +32,9 @@ function template(target, source, syntax = regex.es6) {
         return deepGet(source, trim(target.replace(syntax, '$1')), target);
     }
 
-    let isArr = isArray(target),
-        isObj = isObject(target),
-        fn;
-
-    fn = (value, key) => { target[key] = template(value, source, syntax); };
+    const isArr = isArray(target);
+    const isObj = isObject(target);
+    const fn = (value, key) => target[key] = template(value, source, syntax);
 
     /* jshint -W030 */
     isArr && arrayEach(target, fn);

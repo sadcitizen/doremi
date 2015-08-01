@@ -1,8 +1,11 @@
+'use strict';
+
 import isBlankString from './isBlankString';
-var ESCAPES_REGEX = /\\["\\\/bfnrtu]/g;
-var VALUES_REGEX = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;
-var BRACKETS_REGEX = /(?:^|:|,)(?:\s*\[)+/;
-var INVALIDS_REGEX = /^[\],:{}\s]*$/;
+
+const ESCAPES_REGEX = /\\["\\\/bfnrtu]/g;
+const VALUES_REGEX = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;
+const BRACKETS_REGEX = /(?:^|:|,)(?:\s*\[)+/;
+const INVALIDS_REGEX = /^[\],:{}\s]*$/;
 
 /**
  * Checks if `target` is a json string.

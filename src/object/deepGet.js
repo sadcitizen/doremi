@@ -42,13 +42,13 @@ import isUndefined from '../is/isUndefined';
  * get(lorem, 'lorem.ipsum.foo', 42);
  * // => 42
  */
-function get(target, key, def) {
+export default function (target, key, def) {
     ok(isObject(target) || isArray(target), 'Target must be an object or an array!');
     ok(isString(key), 'Property must be a string!');
 
-    var obj = target,
-        parts = key.split('.'),
-        last = parts.pop();
+    let obj = target;
+    const parts = key.split('.');
+    const last = parts.pop();
 
     /* jshint -W084 */
     while (key = parts.shift()) {
@@ -61,5 +61,3 @@ function get(target, key, def) {
 
     return !isUndefined(obj[last]) ? obj[last] : def;
 }
-
-export default get;

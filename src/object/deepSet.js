@@ -16,9 +16,9 @@ import ns from './ns';
  * console.log(lorem.ipsum.dolor);
  * // => 'sit'
  */
-function deepSet(target, prop, value) {
-    let parts = prop.split('.'),
-        key;
+export default function (target, prop, value) {
+    const parts = prop.split('.');
+    let key;
 
     if (parts.length > 1) {
         key = parts.pop();
@@ -27,5 +27,3 @@ function deepSet(target, prop, value) {
         target[prop] = value;
     }
 }
-
-export default deepSet;

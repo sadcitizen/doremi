@@ -4,7 +4,7 @@ var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
 
 var cfg = {
-    src: './src/*.js',
+    src: './src/**/*.js',
     dest: './build/',
     tmp: './tmp/',
     specs: './tests/**/*.spec.js'

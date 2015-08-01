@@ -30,12 +30,14 @@ function count(target, sub) {
         throw new RangeError('Search string must not be empty!');
     }
 
-    var counter = 0,
-        pos = target.indexOf(sub);
+    let counter = 0;
+    let pos = target.indexOf(sub);
+
     while (pos >= 0) {
         counter += 1;
         pos = target.indexOf(sub, pos + 1);
     }
+
     return counter;
 }
 

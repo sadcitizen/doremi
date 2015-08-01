@@ -19,7 +19,8 @@ import each from './each';
  * // => [[], [null, false, undefined]]
  */
 function partition(target, predicate, ctx) {
-    var pass = [], fail = [];
+    let pass = [];
+    let fail = [];
 
     each(target, (value, index, target) => (predicate.call(ctx, value, index, target) ? pass : fail).push(value));
 

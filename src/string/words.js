@@ -24,7 +24,7 @@ function words(target, sep) {
         return [];
     }
 
-    return target.split(sep.length ? sep: ' ');
+    return target.split(sep.length ? sep : ' ');
 }
 
 export default words;

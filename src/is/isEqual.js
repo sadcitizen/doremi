@@ -41,8 +41,8 @@ function arrayEqual(target, other) {
  * @returns {boolean}
  */
 function objectEqual(target, other) {
-    var targetKeys = keys(target),
-        otherKeys = keys(other);
+    const targetKeys = keys(target);
+    const otherKeys = keys(other);
 
     if (target.constructor !== other.constructor) {
         return false;
@@ -86,7 +86,7 @@ function objectEqual(target, other) {
  * // => true
  */
 function isEqual(target, other) {
-    var tp = type(target);
+    const tp = type(target);
 
     if (type(target) !== type(other)) {
         return false;

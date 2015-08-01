@@ -31,8 +31,8 @@ function pad(target, length, char) {
 
     char = (toString(char) || ' ').charAt(0);
 
-    var llen = Math.ceil((length - target.length) / 2),
-        rlen = length - target.length - llen;
+    const llen = Math.ceil((length - target.length) / 2);
+    const rlen = length - target.length - llen;
 
     return repeat(char, llen) + target + repeat(char, rlen);
 }

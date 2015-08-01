@@ -16,7 +16,9 @@ import toString from '../to/toString';
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
 function chopRight(target, step) {
-    var result = [], i, length;
+    let result = [];
+    let i;
+    let length;
 
     step = step | 0;
     target = toString(target);

@@ -4,9 +4,9 @@ import integer from './integer';
 // TODO: add description
 
 function hex(length) {
-    var result = '',
-        letters = (constants.HEX_LETTERS + constants.DIGITS).split(''),
-        size = letters.length;
+    let result = '';
+    const letters = (constants.HEX_LETTERS + constants.DIGITS).split('');
+    const size = letters.length;
 
     length = length && length > 0 ? length : 1;
 
