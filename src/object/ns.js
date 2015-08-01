@@ -31,7 +31,7 @@ function ns(target, path) {
 
     var obj = target;
 
-    path.split('.').forEach(function (key) {
+    path.split('.').forEach(key => {
         if (!(!isUndefined(obj[key]) && isObject(obj[key]))) {
             obj[key] = {};
         }

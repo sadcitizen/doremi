@@ -29,8 +29,8 @@ function template(target, data, syntax) {
         return '';
     }
 
-    return target.replace(syntax, function (match, name) {
-        var value = deepGet(data, trim(name));
+    return target.replace(syntax, (match, name) => {
+        const value = deepGet(data, trim(name));
         return !isUndefined(value) ? toString(value) : match;
     });
 }

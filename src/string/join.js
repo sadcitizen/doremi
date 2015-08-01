@@ -19,7 +19,7 @@ function join(sep, ...strings) {
     var result = [];
     sep = toString(sep);
 
-    strings.forEach(function (item) {
+    strings.forEach(item => {
         item = toString(item);
         if (item.length) {
             result.push(item);

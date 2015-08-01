@@ -145,9 +145,7 @@ function format(target, pattern, locale) {
 
     locale = locale || aliases;
 
-    return pattern.replace(regex, function (match) {
-        return !isUndefined(tokens[match]) ? tokens[match](target, locale) : match;
-    });
+    return pattern.replace(regex, match => !isUndefined(tokens[match]) ? tokens[match](target, locale) : match);
 }
 
 export default format;

@@ -21,9 +21,7 @@ function swap(target) {
         return '';
     }
 
-    return target.replace(/\S/g, function (char) {
-        return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
-    });
+    return target.replace(/\S/g, char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase());
 }
 
 export default swap;
