@@ -1,5 +1,5 @@
-export default {
-    es6: /\$\{([^${}]+?)\}/g,
-    underscore: /<\%\=([^<%=>]+?)\%>/g,
-    mustache: /\{\{([^\}]+)\}\}/g
-};
+export const es6 = /\$\{([^${}]+?)\}/g;
+
+export const underscore = /<\%\=([^<%=>]+?)\%>/g;
+
+export const mustache = /\{\{([^\}]+)\}\}/g;

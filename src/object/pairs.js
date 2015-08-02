@@ -1,5 +1,5 @@
 import keys from './keys';
-import deepGet from './deepGet';
+import get from './get';
 
 /**
  * Creates a two dimensional array of the key-value pairs for `target`,
@@ -33,7 +33,7 @@ import deepGet from './deepGet';
  */
 function pairs(target, ...args) {
     args = args.length ? args : keys(target);
-    return args.map(arg => [arg, deepGet(target, arg)]);
+    return args.map(arg => [arg, get(target, arg)]);
 }
 
 export default pairs;

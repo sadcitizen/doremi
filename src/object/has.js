@@ -1,5 +1,5 @@
 import isUndefined from '../is/isUndefined';
-import deepGet from './deepGet';
+import get from './get';
 
 /**
  * Checks if the given property name exists as a direct or nested property of `target`.
@@ -40,7 +40,7 @@ import deepGet from './deepGet';
  * // => true
  */
 function has(target, key) {
-    return !isUndefined(deepGet(target, key));
+    return !isUndefined(get(target, key));
 }
 
 export default has;

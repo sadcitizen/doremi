@@ -1,5 +1,5 @@
 import keys from './keys';
-import deepGet from './deepGet';
+import get from './get';
 
 /**
  * Creates an array of own enumerable property values of `target`.
@@ -32,7 +32,7 @@ import deepGet from './deepGet';
  */
 function values(target, ...args) {
     args = args.length ? args : keys(target);
-    return args.map(arg => deepGet(target, arg));
+    return args.map(arg => get(target, arg));
 }
 
 export default values;

@@ -1,4 +1,4 @@
-import deepGet from './deepGet';
+import get from './get';
 
 /**
  * Creates a function which returns the property value of `key` on `target`
@@ -26,7 +26,7 @@ import deepGet from './deepGet';
  * // => ['John', 'Jane']
  */
 function prop(key, def) {
-    return target => deepGet(target, key, def);
+    return target => get(target, key, def);
 }
 
 export default prop;

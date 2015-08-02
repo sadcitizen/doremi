@@ -1,5 +1,5 @@
 import isFunction from '../is/isFunction';
-import deepGet from './deepGet';
+import get from './get';
 
 /**
  * Resolves the value of property `key` on `target`.
@@ -26,7 +26,7 @@ import deepGet from './deepGet';
  * // => 'value'
  */
 function result(target, key, def) {
-    let prop = deepGet(target, key, def);
+    let prop = get(target, key, def);
     return isFunction(prop) ? prop.call(target) : prop;
 }
 

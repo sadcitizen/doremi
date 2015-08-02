@@ -2,6 +2,7 @@
 
 import chai from 'chai';
 import template from '../../src/string/template';
+import * as regex from '../../src/internal/regexes/template';
 
 const expect = chai.expect;
 
@@ -48,11 +49,11 @@ describe('string/template()', () => {
 
     it('Should work with mustache syntax', () => {
         var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
-        expect(template('{{a}} {{b}} {{c}}', lorem, /\{\{([^\}]+)\}\}/g)).to.equal('lorem ipsum dolor');
+        expect(template('{{a}} {{b}} {{c}}', lorem, regex.mustache)).to.equal('lorem ipsum dolor');
     });
 
     it('Should work with underscore syntax', () => {
         var lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
-        expect(template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g)).to.equal('lorem ipsum dolor');
+        expect(template('<%= a %> <%= b %> <%= c %>', lorem, regex.underscore)).to.equal('lorem ipsum dolor');
     });
 });

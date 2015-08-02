@@ -4,7 +4,7 @@ import isObject from '../is/isObject';
 import isString from '../is/isString';
 import arrayEach from '../array/each';
 import objectEach from '../object/each';
-import deepGet from './deepGet';
+import get from './get';
 import trim from '../string/trim';
 
 /**
@@ -29,7 +29,7 @@ function template(target, source, syntax = regex.es6) {
             return '';
         }
 
-        return deepGet(source, trim(target.replace(syntax, '$1')), target);
+        return get(source, trim(target.replace(syntax, '$1')), target);
     }
 
     const isArr = isArray(target);

@@ -1,8 +1,10 @@
+'use strict';
+
 import toString from '../to/toString';
-import deepGet from '../object/deepGet';
+import get from '../object/get';
 import trim from './trim';
 import isUndefined from '../is/isUndefined';
-import regex from '../internal/regexes/template';
+import { es6 } from '../internal/regexes/template';
 
 /**
  * Replaces tokens from `target` on corresponding values from `data`.
@@ -21,18 +23,17 @@ import regex from '../internal/regexes/template';
  * template('<%= a %> <%= b %> <%= c %>', lorem, /<\%\=([^<%=>]+?)\%>/g);
  * // => 'lorem ipsum dolor'
  */
-function template(target, data, syntax) {
+export default function (target, data, syntax = es6) {
     target = toString(target);
-    syntax = syntax || regex.es6;
 
     if (target.length === 0) {
         return '';
     }
 
+    let value;
+
     return target.replace(syntax, (match, name) => {
-        const value = deepGet(data, trim(name));
+        value = get(data, trim(name));
         return !isUndefined(value) ? toString(value) : match;
     });
 }
-
-export default template;
