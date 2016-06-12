@@ -50,14 +50,14 @@ export default function (target, key, def) {
     const parts = key.split('.');
     const last = parts.pop();
 
-    /* jshint -W084 */
+    /* eslint-disable no-cond-assign */
     while (key = parts.shift()) {
         obj = obj[key];
         if (!isExists(obj)) {
             return def;
         }
     }
-    /* jshint +W084 */
+    /* eslint-enable no-cond-assign */
 
     return !isUndefined(obj[last]) ? obj[last] : def;
 }

@@ -1,5 +1,5 @@
-import regex from '../internal/regexes/template';
-import isArray from '../is/array';
+import { es6 } from '../internal/regexes/template';
+import isArray from '../is/isArray';
 import isObject from '../is/isObject';
 import isString from '../is/isString';
 import arrayEach from '../array/each';
@@ -23,7 +23,7 @@ import trim from '../string/trim';
  * template(target, source);
  * // => {a: 1, b: 3, c: 5}
  */
-function template(target, source, syntax = regex.es6) {
+function template(target, source, syntax = es6) {
     if (isString(target)) {
         if (target.length === 0) {
             return '';
