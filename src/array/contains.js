@@ -14,8 +14,5 @@
  * contains([1, 3, 5], 2);
  * // => false
  */
-function contains(target, value, start) {
-    return target.indexOf(value, start) !== -1;
-}
 
-export default contains;
+export default (target, value, start) => target.indexOf(value, start) !== -1;
