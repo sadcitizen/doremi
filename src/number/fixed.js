@@ -16,6 +16,4 @@
  * // => '12.35'
  */
 
-export default function (target, precision = 2) {
-    return target.toFixed(precision + 1).slice(0, -1);
-}
+export default (target, precision = 2) => target.toFixed(precision + 1).slice(0, -1);
