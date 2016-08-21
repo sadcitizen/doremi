@@ -2,7 +2,6 @@ import { es6 } from '../internal/regexes/template';
 import isArray from '../is/isArray';
 import isObject from '../is/isObject';
 import isString from '../is/isString';
-import arrayEach from '../array/each';
 import objectEach from '../object/each';
 import get from './get';
 import trim from '../string/trim';
@@ -37,7 +36,7 @@ function template(target, source, syntax = es6) {
     const fn = (value, key) => target[key] = template(value, source, syntax);
 
     /* jshint -W030 */
-    isArr && arrayEach(target, fn);
+    isArr && target.forEach(fn);
     isObj && objectEach(target, fn);
     /* jshint +W030 */
 
