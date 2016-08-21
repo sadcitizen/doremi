@@ -1,5 +1,3 @@
-import each from './each';
-
 /**
  * Returns an array of two arrays.
  * The first array is items that return true for the predicate function.
@@ -22,7 +20,7 @@ function partition(target, predicate, ctx) {
     let pass = [];
     let fail = [];
 
-    each(target, (value, index, target) => (predicate.call(ctx, value, index, target) ? pass : fail).push(value));
+    target.forEach((value, index, target) => (predicate.call(ctx, value, index, target) ? pass : fail).push(value));
 
     return [pass, fail];
 }
