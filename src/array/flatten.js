@@ -1,13 +1,12 @@
-import array from '../is/array';
+import isArray from '../is/isArray';
 import append from './append';
-import each from './each';
 
 /**
  * Flattens a nested array. If `deep` is true the array is recursively
  * flattened, otherwise it is only flattened a single level.
  *
- * @param target The array to flatten.
- * @param deep Specify a deep flatten.
+ * @param target {Array} The array to flatten.
+ * @param deep {boolean} Specify a deep flatten.
  * @returns {Array} The new flattened array.
  *
  * @example
@@ -21,7 +20,7 @@ import each from './each';
 function flatten(target, deep = true) {
     let result = [];
 
-    each(target, x => array(x) ? append(result, deep ? flatten(x, deep) : x) : result.push(x));
+    target.forEach(x => isArray(x) ? append(result, deep ? flatten(x, deep) : x) : result.push(x));
 
     return result;
 }
