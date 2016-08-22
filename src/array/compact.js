@@ -1,7 +1,7 @@
 import isExist from '../is/isExists';
 
 /**
- * Returns a copy of the `target` without any 'null' or 'undefined' values.
+ * Returns a copy of the `target` without any `null` or `undefined` values.
  *
  * @param target The array to compact.
  * @returns {Array}
