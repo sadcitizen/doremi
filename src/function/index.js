@@ -1,5 +1,4 @@
 import after from './after';
-import async from './async';
 import before from './before';
 import compose from './compose';
 import delay from './delay';
@@ -13,7 +12,6 @@ import pipeline from './pipeline';
 
 export default {
     after,
-    async,
     before,
     compose,
     delay,
