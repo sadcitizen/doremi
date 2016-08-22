@@ -3,7 +3,7 @@
  *
  * @param {Array} target The array to checks.
  * @param {*} value The value.
- * @param {number} start Optional. The index to start search.
+ * @param {number} [start] The index to start search. Optional.
  * @returns {boolean} Returns `true` if the array contains the given value, else 'false'.
  *
  * @example
