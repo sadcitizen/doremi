@@ -6,7 +6,6 @@
  * @returns {*} {Array} Returns `target` with appended items of `source`.
  *
  * @example
- *
  * const foo = [3, 6, 9, 12];
  * const bar = [4, 7, 10, 13];
  * append(foo, bar);
