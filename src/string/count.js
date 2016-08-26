@@ -1,11 +1,11 @@
 import stringify from './stringify';
 
 /**
- * Counts the number of occurrences of a substring in a stringify.
+ * Counts the number of occurrences of a substring in a string.
  *
- * @param {string} target The stringify to search.
- * @param {string} sub The
- * @returns {number}
+ * @param {string} target The string to search.
+ * @param {string} sub The substring.
+ * @returns {number} Return the count.
  *
  * @example
  *
