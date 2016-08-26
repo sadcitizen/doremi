@@ -1,6 +1,6 @@
 import isValidDate from '../is/isValidDate';
 import isUndefined from '../is/isUndefined';
-import toString from '../to/toString';
+import toString from '../string/stringify';
 import padLeft from '../string/padLeft';
 import aliases from '../internal/datetime.aliases';
 
@@ -81,9 +81,9 @@ const tokens = {
  * Formats a date to a string according to `pattern`.
  *
  * @param {Date} target The date to format.
- * @param {String} pattern The string of tokens.
- * @param {Object} locale The localization.
- * @returns {String} Returns the string with formatted date.
+ * @param {string} pattern The string of tokens.
+ * @param {Object} [locale] The localization. Optional.
+ * @returns {string} Returns the string with formatted date.
  *
  * Replaced tokens:
  * YYYY - Year with century as a zero-padded decimal number (e.g. 0900 or 2014)
