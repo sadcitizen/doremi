@@ -6,5 +6,5 @@ node_js:
   - "6.0"
   - "6.1"
 script:
-  - "npm lint"
-  - "npm tests"
+  - "npm run lint"
+  - "npm run tests"
