@@ -1,8 +1,8 @@
 {
-  "name": "mint",
+  "name": "doremi",
   "version": "0.0.1",
   "description": "utility library",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "lint": "node_modules/.bin/eslint src tests --config .eslintrc",
     "tests": "node_modules/.bin/mocha --compilers js:babel-core/register tests/**/*.spec.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sadcitizen/mint.git"
+    "url": "https://github.com/sadcitizen/doremi.git"
   },
   "keywords": [
     "utilities"
@@ -19,7 +19,7 @@
   "author": "Eugene Abrosimov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sadcitizen/mint/issues"
+    "url": "https://github.com/sadcitizen/doremi/issues"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
