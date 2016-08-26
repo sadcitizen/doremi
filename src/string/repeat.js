@@ -1,11 +1,11 @@
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
- * Repeats a given string n times.
+ * Repeats a given stringify n times.
  *
- * @param {String} target The string to repeat.
+ * @param {String} target The stringify to repeat.
  * @param {Number} count The number of times to repeat.
- * @returns {String} Returns the repeated string.
+ * @returns {String} Returns the repeated stringify.
  *
  * @example
  *
@@ -16,10 +16,9 @@ import toString from '../to/toString';
  * // => '1212'
  */
 function repeat(target, count) {
-    var result = '';
-
-    target = toString(target);
-    count = count | 0;
+    let result = '';
+    target = stringify(target);
+    count |= 0;
 
     if (target.length === 0) {
         return result;
@@ -30,6 +29,7 @@ function repeat(target, count) {
             result += target;
         }
     }
+
     return result;
 }
 

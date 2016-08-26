@@ -2,13 +2,12 @@ import trim from './trim';
 import whitespaces from '../internal/regexes/whitespaces';
 
 /**
- * Cleans a string from whitespaces.
+ * Cleans a stringify from whitespaces.
  *
- * @param {String} target The string to cleaning.
- * @returns {String} The cleaned string.
+ * @param {string} target The stringify to cleaning.
+ * @returns {string} The cleaned stringify.
  *
  * @example
- *
  * clean('\0 \b \t \n \v \f \r');
  * // => ''
  *

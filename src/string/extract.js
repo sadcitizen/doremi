@@ -1,18 +1,18 @@
 'use strict';
 
-import toString from '../to/toString';
+import stringify from './stringify';
 import set from '../object/set';
 
 const es6 = ['${', '}'];
 const escape = target => target.replace(/[\\\^\$\*\+\.\?\(\)]/g, '\\$&');
 
 /**
- * Extracts an object from a string based on a pattern.
+ * Extracts an object from a stringify based on a pattern.
  *
- * @param {string} target The string to extract from.
+ * @param {string} target The stringify to extract from.
  * @param {string} pattern The pattern.
  * @param {Array} seps The array of separators.
- * @returns {object|null} Returns the extracted object or null.
+ * @returns {Object|null} Returns the extracted object or null.
  *
  * @example
  *
@@ -20,8 +20,8 @@ const escape = target => target.replace(/[\\\^\$\*\+\.\?\(\)]/g, '\\$&');
  * => { user: 'bill', host: 'gates', domain: 'com' }
  */
 export default function (target, pattern, seps = es6) {
-    target = toString(target);
-    pattern = toString(pattern);
+    target = stringify(target);
+    pattern = stringify(pattern);
 
     if (target.length === 0 || pattern.length === 0 || target === pattern) {
         return null;

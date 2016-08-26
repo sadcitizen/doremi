@@ -1,17 +1,16 @@
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
  * Splits the `target` into array of lines.
  *
- * @param {String} target The string to split.
+ * @param {string} target The stringify to split.
  * @returns {Array} The array of lines.
  *
  * @example
- *
  * lines('Lorem ipsum');
  * // => ['Lorem ipsum']
  *
  * lines('Lorem \nipsum');
  * // => ['Lorem ', 'ipsum']
  */
-export default target => toString(target).split(/\r?\n/g);
+export default target => stringify(target).split(/\r?\n/g);

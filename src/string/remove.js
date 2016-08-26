@@ -1,13 +1,12 @@
 /**
- * Removes a substring in a string from `start` to `end` positions.
+ * Removes a substring in a stringify from `start` to `end` positions.
  *
- * @param {string} target The given string.
+ * @param {string} target The given stringify.
  * @param {number} start The position of start removing.
  * @param {number} end The position of finish removing.
- * @returns {string} Returns the string without the substring.
+ * @returns {string} Returns the stringify without the substring.
  *
  * @example
- *
  * remove('Hello, World!', 5, -1);
  * // => 'Hello!'
  *
@@ -16,8 +15,8 @@
  */
 function remove(target, start, end) {
     var length = target.length;
-    start = start | 0;
-    end = end | 0;
+    start |= 0;
+    end |= 0;
 
     start = start < 0 ? length + start : start;
     end = end < 0 ? length + end : end;

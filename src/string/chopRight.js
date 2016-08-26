@@ -1,14 +1,13 @@
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
- * Chops the string into pieces with length equal `step`.
+ * Chops the stringify into pieces with length equal `step`.
  *
- * @param {String} target The string to chopping.
- * @param {Number} step The length of piece.
+ * @param {string|*} target The stringify to chopping.
+ * @param {number} step The length of piece.
  * @returns {Array} The array of pieces.
  *
  * @example
- *
  * chopRight('lorem ipsum', 5);
  * // => ['l', 'orem ', 'ipsum']
  *
@@ -21,7 +20,7 @@ function chopRight(target, step) {
     let length;
 
     step = step | 0;
-    target = toString(target);
+    target = stringify(target);
 
     if (target.length === 0) {
         return [];

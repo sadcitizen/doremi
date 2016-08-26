@@ -1,6 +1,6 @@
 'use strict';
 
-import toString from '../to/toString';
+import toString from './stringify';
 import get from '../object/get';
 import trim from './trim';
 import isUndefined from '../is/isUndefined';
@@ -9,10 +9,10 @@ import { es6 } from '../internal/regexes/template';
 /**
  * Replaces tokens from `target` on corresponding values from `data`.
  *
- * @param {String} target The template string with tokens.
+ * @param {string} target The template stringify with tokens.
  * @param {Object|Array} data The data to replace.
  * @param {RegExp} syntax The regular expression to search for tokens.
- * @returns {String} Returns the string with replaced values.
+ * @returns {string} Returns the stringify with replaced values.
  *
  * @example
  *

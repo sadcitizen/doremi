@@ -4,11 +4,10 @@ import decapitalize from './decapitalize';
 /**
  * Converts `target` to camel case.
  *
- * @param {String} target The string to convert.
- * @returns {String} Returns camel cased string.
+ * @param {string|*} target The stringify to convert.
+ * @returns {string} Returns camel cased stringify.
  *
  * @example
- *
  * camelize('lorem ipsum');
  * // => 'loremIpsum'
  *

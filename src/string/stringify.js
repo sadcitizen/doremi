@@ -1,23 +1,23 @@
 import isExists from '../is/isExists';
 
 /**
- * Returns a string representation of `target`.
+ * Returns a stringify representation of `target`.
  *
  * @param {*} target The value to convert.
- * @returns {String} The string representation of `target`.
+ * @returns {string} The stringify representation of `target`.
  *
  * @example
  *
- * toString(123);
+ * stringify(123);
  * // => '123'
  *
- * toString(null);
+ * stringify(null);
  * // => ''
  *
- * toString(undefined);
+ * stringify(undefined);
  * // => ''
  *
- * toString(/[a-z0-9]/igm);
+ * stringify(/[a-z0-9]/igm);
  * // => '/[a-z0-9]/gim'
  */
 //TODO: Array, Object, Date, Function

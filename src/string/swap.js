@@ -1,13 +1,12 @@
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
- * Swaps case of case-based characters in a given string.
+ * Swaps case of case-based characters in a given stringify.
  *
- * @param {String} target The string to swap.
- * @returns {String} Returns the swapped string.
+ * @param {string} target The stringify to swap.
+ * @returns {string} Returns the swapped stringify.
  *
  * @example
- *
  * swap('hello');
  * // => 'HELLO'
  *
@@ -15,7 +14,7 @@ import toString from '../to/toString';
  * // => 'Lorem'
  */
 function swap(target) {
-    target = toString(target);
+    target = stringify(target);
 
     if (target.length === 0) {
         return '';

@@ -1,14 +1,13 @@
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
  * Checks if `target` ends with `sub`.
  *
- * @param {String} target The string to inspect.
- * @param {String} sub The substring to search in `target`.
- * @returns {Boolean} Returns `true` if `target` ends with `sub`, else `false`.
+ * @param {string} target The stringify to inspect.
+ * @param {string} sub The substring to search in `target`.
+ * @returns {boolean} Returns `true` if `target` ends with `sub`, else `false`.
  *
  * @example
- *
  * endsWith('lorem', 'rem');
  * // => true
  *
@@ -16,8 +15,8 @@ import toString from '../to/toString';
  * // => false
  */
 function endsWith(target, sub) {
-    target = toString(target);
-    sub = toString(sub);
+    target = stringify(target);
+    sub = stringify(sub);
 
     return target.indexOf(sub, target.length - sub.length) !== -1;
 }

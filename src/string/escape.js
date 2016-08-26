@@ -1,19 +1,18 @@
 import symbols from '../internal/escape.symbols';
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
- * Escapes a string for insertion into HTML, replacing &, <, >, ", `, and ' characters.
+ * Escapes a stringify for insertion into HTML, replacing &, <, >, ", `, and ' characters.
  *
- * @param {String} target The string to replace.
- * @returns {String} Returns the escaped string.
+ * @param {string} target The stringify to replace.
+ * @returns {string} Returns the escaped stringify.
  *
  * @example
- *
  * escape('<p>lorem & ipsum</p>');
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
 function escape(target) {
-    target = toString(target);
+    target = stringify(target);
 
     if (target.length === 0) {
         return '';

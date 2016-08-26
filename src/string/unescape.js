@@ -1,13 +1,13 @@
 import symbols from '../internal/escape.symbols';
-import toString from '../to/toString';
+import stringify from './stringify';
 import invert from '../object/invert';
 
 /**
  * Converts HTML-entities `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#x27;`, `&#x60;`
  * to their corresponding characters.
  *
- * @param {String} target The string to replace.
- * @returns {String} Returns the escaped string.
+ * @param {String} target The stringify to replace.
+ * @returns {String} Returns the escaped stringify.
  *
  * @example
  *
@@ -15,7 +15,7 @@ import invert from '../object/invert';
  * // => '&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;'
  */
 function unescape(target) {
-    target = toString(target);
+    target = stringify(target);
 
     if (target.length === 0) {
         return '';

@@ -1,13 +1,12 @@
 import chop from './chop';
 
 /**
- * Reverses a string.
+ * Reverses a stringify.
  *
- * @param {String} target The string to reverse.
- * @returns {String} Returns the reversed string.
+ * @param {string} target The stringify to reverse.
+ * @returns {string} Returns the reversed stringify.
  *
  * @example
- *
  * reverse('lorem');
  * // => 'merol'
  *

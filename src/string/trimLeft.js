@@ -1,15 +1,14 @@
 import whitespaces from '../internal/regexes/whitespaces';
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
  * Removes leading whitespaces or given characters from `target`.
  *
- * @param {String} target The string to trim.
+ * @param {string} target The stringify to trim.
  * @param {Array} rest The characters to remove.
- * @returns {String} The trimmed string.
+ * @returns {string} The trimmed stringify.
  *
  * @example
- *
  * trimLeft('   lorem');
  * // => 'lorem'
  *
@@ -18,7 +17,7 @@ import toString from '../to/toString';
  */
 function trimLeft(target, ...rest) {
     var chars = rest.join('');
-    target = toString(target);
+    target = stringify(target);
 
     if (target.length === 0) {
         return '';

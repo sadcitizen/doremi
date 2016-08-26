@@ -1,16 +1,15 @@
 import trim from './trim';
 
 /**
- * Truncates `target` if it is longer than the given maximum string length.
+ * Truncates `target` if it is longer than the given maximum stringify length.
  *
- * @param {String} target The string to truncate.
- * @param {Number} limit The maximum string length.
- * @param {String} sfx The string to indicate text is omitted. Defaults is '...'.
- * @param {Boolean} safe If it should not break words. Default is false.
- * @returns {String} Returns the truncated string.
+ * @param {string} target The stringify to truncate.
+ * @param {number} limit The maximum stringify length.
+ * @param {string} sfx The stringify to indicate text is omitted. Defaults is '...'.
+ * @param {boolean} safe If it should not break words. Default is false.
+ * @returns {string} Returns the truncated stringify.
  *
  * @example
- *
  * truncate('lorem ipsum dolor sit amet', 10);
  * // => 'lorem i...'
  *

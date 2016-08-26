@@ -1,11 +1,11 @@
-import toString from '../to/toString';
+import stringify from './stringify';
 
 /**
- * Counts the number of occurrences of a substring in a string.
+ * Counts the number of occurrences of a substring in a stringify.
  *
- * @param {String} target The string to search.
- * @param {String} sub The
- * @returns {Number}
+ * @param {string} target The stringify to search.
+ * @param {string} sub The
+ * @returns {number}
  *
  * @example
  *
@@ -19,15 +19,15 @@ import toString from '../to/toString';
  * // => 4
  */
 function count(target, sub) {
-    target = toString(target);
-    sub = toString(sub);
+    target = stringify(target);
+    sub = stringify(sub);
 
     if (target.length === 0) {
         return 0;
     }
 
     if (!sub.length) {
-        throw new RangeError('Search string must not be empty!');
+        throw new RangeError('Search stringify must not be empty!');
     }
 
     let counter = 0;

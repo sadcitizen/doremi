@@ -1,14 +1,14 @@
-import toString from '../to/toString';
+import stringify from './stringify';
 import repeat from './repeat';
 
 /**
- * Pads a string on the right and left sides if its length is less then
+ * Pads a stringify on the right and left sides if its length is less then
  * the given padding length.
  *
- * @param {String} target The string to pad.
+ * @param {String} target The stringify to pad.
  * @param {Number} length The padding length.
- * @param {String} char The string used as padding.
- * @returns {String} Returns the padded string.
+ * @param {String} char The stringify used as padding.
+ * @returns {String} Returns the padded stringify.
  *
  * @example
  *
@@ -22,14 +22,14 @@ import repeat from './repeat';
  * // => '   lorem  '
  */
 function pad(target, length, char) {
-    target = toString(target);
+    target = stringify(target);
     length |= 0;
 
     if (target.length > length) {
         return target;
     }
 
-    char = (toString(char) || ' ').charAt(0);
+    char = (stringify(char) || ' ').charAt(0);
 
     const llen = Math.ceil((length - target.length) / 2);
     const rlen = length - target.length - llen;
