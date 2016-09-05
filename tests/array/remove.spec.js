@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import remove from '../../src/array/remove';
 
-describe.only('array/remove()', function () {
+describe('array/remove()', function () {
     it('Should modify the array and return removed elements', () => {
         const target = [1, 2, 3, 4, 5, 6];
         const result = remove(target, x => x % 2 === 0);
@@ -14,9 +14,10 @@ describe.only('array/remove()', function () {
 
     it('Should not modify the array if predicate returns false for all elements', () => {
         const target = [1, 2, 3, 4, 5, 6];
-        const result = remove(target, x => !Boolean(x));
+        const result = remove(target, x => !x);
 
         expect(target).to.deep.equal([1, 2, 3, 4, 5, 6]);
+        expect(result).to.deep.equal([]);
     });
 
     it('Should returns empty arrays for empty arrays', () => {
@@ -28,7 +29,7 @@ describe.only('array/remove()', function () {
     });
 
     it('Should treat `null` or `undefined` as empty array', () => {
-        const truthy = x => Boolean(x);
+        const truthy = x => !!x;
 
         expect(remove(null, truthy)).to.deep.equal([]);
         expect(remove(void 0, truthy)).to.deep.equal([]);
