@@ -2,8 +2,8 @@
   "name": "doremi",
   "version": "0.0.3",
   "description": "utility library",
-  "main": "./lib/index.js",
-  "es6": "./src/index.js",
+  "main": "lib/index.js",
+  "es6": "src/index.js",
   "scripts": {
     "lint": "node_modules/.bin/eslint src tests --config .eslintrc",
     "tests": "node_modules/.bin/mocha --compilers js:babel-core/register tests/**/*.spec.js",
