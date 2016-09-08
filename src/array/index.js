@@ -6,7 +6,6 @@ import first from './first';
 import flatten from './flatten';
 import last from './last';
 import partition from './partition';
-import pluck from './pluck';
 import prepend from './prepend';
 import remove from './remove';
 
@@ -19,7 +18,6 @@ export default {
     flatten,
     last,
     partition,
-    pluck,
     prepend,
     remove
 };
