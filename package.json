@@ -2,13 +2,14 @@
   "name": "doremi",
   "version": "0.0.4",
   "description": "utility library",
-  "main": "lib/index.js",
-  "es6": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "lint": "node_modules/.bin/eslint src tests --config .eslintrc",
     "tests": "node_modules/.bin/mocha --compilers js:babel-core/register tests/**/*.spec.js",
-    "build": "node_modules/.bin/babel src --out-dir lib",
-    "prepublish": "npm build"
+    "build": "node_modules/.bin/babel src --out-dir .",
+    "clean": "rimraf array datetime function internal is math number object random string to index.js",
+    "prepublish": "npm build",
+    "postpublish": "npm clean"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "chai": "^1.10.0",
     "eslint": "^2.12.0",
     "mocha": "^2.5.3",
+    "rimraf": "^2.5.4",
     "sinon": "^1.17.4",
     "webpack": "^1.13.1"
   }
