@@ -2,12 +2,16 @@
 
 [![Build Status](https://travis-ci.org/sadcitizen/doremi.svg?branch=master)](https://travis-ci.org/sadcitizen/doremi)
 
-A collection of utilities.
+A collection of utilities. Work in progress.
 
 ## Installation
 
-`npm install doremi`
+```
+npm install doremi
+```
 
 ## Usage
 
-`import doremi from 'doremi';`
+```
+import doremi from 'doremi';
+```

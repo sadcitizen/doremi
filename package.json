@@ -32,7 +32,7 @@
   "keywords": [
     "utilities"
   ],
-  "author": "Eugene Abrosimov",
+  "author": "Eugene Abrosimov <sadcitizen@yandex.ru>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sadcitizen/doremi/issues"
