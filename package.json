@@ -4,9 +4,9 @@
   "description": "utility library",
   "main": "index.js",
   "scripts": {
-    "lint": "node_modules/.bin/eslint src tests --config .eslintrc",
-    "tests": "node_modules/.bin/mocha --compilers js:babel-core/register tests/**/*.spec.js",
-    "build": "node_modules/.bin/babel src --out-dir .",
+    "lint": "eslint src tests --config .eslintrc",
+    "tests": "mocha --compilers js:babel-core/register tests/**/*.spec.js",
+    "build": "babel src --out-dir .",
     "clean": "rimraf array datetime function internal is math number object random string to index.js",
     "prepublish": "npm build",
     "postpublish": "npm clean"
