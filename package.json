@@ -11,20 +11,6 @@
     "prepublish": "npm build",
     "postpublish": "npm run clean && git push --follow-tags"
   },
-  "files": [
-    "array",
-    "datetime",
-    "function",
-    "internal",
-    "is",
-    "math",
-    "number",
-    "object",
-    "random",
-    "string",
-    "to",
-    "index.js"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sadcitizen/doremi.git"
