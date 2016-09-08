@@ -9,7 +9,7 @@
     "build": "babel src --out-dir .",
     "clean": "rimraf array datetime function internal is math number object random string to index.js",
     "prepublish": "npm build",
-    "postpublish": "npm run clean"
+    "postpublish": "npm run clean && git push --follow-tags"
   },
   "files": [
     "array",
