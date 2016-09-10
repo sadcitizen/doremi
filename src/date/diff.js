@@ -1,5 +1,8 @@
 'use strict';
 
+import units from '../internal/time.units';
+
 export default (first, second, unit) => {
-    return;
+	const diffInMs = second - first;
+    return diffInMs / units.get(unit);
 }

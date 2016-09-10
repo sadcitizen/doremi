@@ -7,7 +7,7 @@ const week = 7 * day;
 const month = 30 * day; // roughly
 const year = 365 * day; // not at leep year
 
-export defaut {
+export const units = {
 	millisecond,
 	second,
 	minute,
@@ -17,3 +17,11 @@ export defaut {
 	month,
 	year
 };
+
+export default {
+	get(unitString) {
+		if (units[unitString] !== undefined) return units[unitString];
+
+		return units[unitString.slice(0, -1)]; // 'days' → 'day'
+	}
+}
