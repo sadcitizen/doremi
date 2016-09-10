@@ -2,7 +2,7 @@
 
 import chai from 'chai';
 import sinon from 'sinon';
-import pipeline from '../../src/function/pipeline';
+import pipeline from '../../src/func/pipeline';
 
 const expect = chai.expect;
 

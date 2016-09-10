@@ -2,7 +2,7 @@
 
 import { expect } from 'chai';
 import sinon from 'sinon';
-import delay from '../../src/function/delay';
+import delay from '../../src/func/delay';
 
 describe('function/delay()', () => {
     it('Should return new function', () => {

@@ -2,7 +2,7 @@
 
 import chai from 'chai';
 import sinon from 'sinon';
-import compose from '../../src/function/compose';
+import compose from '../../src/func/compose';
 
 const expect = chai.expect;
 

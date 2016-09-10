@@ -2,7 +2,7 @@
 
 import chai from 'chai';
 import sinon from 'sinon';
-import partial from '../../src/function/partial';
+import partial from '../../src/func/partial';
 
 const expect = chai.expect;
 
