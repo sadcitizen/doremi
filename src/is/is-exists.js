@@ -1,5 +1,5 @@
-import isUndefined from './isUndefined';
-import isNull from './isNull';
+import isUndefined from './is-undefined';
+import isNull from './is-null';
 
 /**
  * Checks if `target` is 'null' or `undefined`.

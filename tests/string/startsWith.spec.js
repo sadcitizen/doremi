@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import startsWith from '../../src/string/startsWith';
+import startsWith from '../../src/string/starts-with';
 
 const expect = chai.expect;
 

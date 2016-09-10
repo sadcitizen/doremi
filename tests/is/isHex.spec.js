@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import isHex from '../../src/is/isHex';
+import isHex from '../../src/is/is-hex';
 
 const expect = chai.expect;
 

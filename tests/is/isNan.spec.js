@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import isNan from '../../src/is/isNan';
+import isNan from '../../src/is/is-nan';
 
 const expect = chai.expect;
 

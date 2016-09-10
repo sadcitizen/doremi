@@ -1,4 +1,4 @@
-import isExist from '../is/isExists';
+import isExist from '../is/is-exists';
 
 /**
  * Returns a copy of the `target` without any `null` or `undefined` values.

@@ -1,6 +1,6 @@
-import isUndefined from '../is/isUndefined';
-import isObject from '../is/isObject';
-import isString from '../is/isString';
+import isUndefined from '../is/is-undefined';
+import isObject from '../is/is-object';
+import isString from '../is/is-string';
 
 /**
  * Creates an empty nested object by `path` and returns it.

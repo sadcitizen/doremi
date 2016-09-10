@@ -1,8 +1,8 @@
-import isValidDate from '../is/isValidDate';
-import isUndefined from '../is/isUndefined';
+import isValidDate from '../is/is-valid-date';
+import isUndefined from '../is/is-undefined';
 import toString from '../string/stringify';
-import padLeft from '../string/padLeft';
-import aliases from '../internal/datetime.aliases';
+import padLeft from '../string/pad-left';
+import aliases from '../internal/datetime-aliases';
 
 const regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
 

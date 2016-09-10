@@ -1,4 +1,4 @@
-import isExists from '../is/isExists';
+import isExists from '../is/is-exists';
 import constants from '../internal/constants';
 
 // TODO: add description

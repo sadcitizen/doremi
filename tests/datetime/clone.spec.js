@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import clone from '../../src/datetime/clone';
+import clone from '../../src/date/clone';
 
 const expect = chai.expect;
 

@@ -1,6 +1,6 @@
 'use strict';
 
-import isNumber from '../is/isNumber';
+import isNumber from '../is/is-number';
 
 /**
  * Creates a `ceil`, `round` or `floor` function.

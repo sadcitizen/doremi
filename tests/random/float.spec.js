@@ -2,7 +2,7 @@
 
 import chai from 'chai';
 import float from '../../src/random/float';
-import isFloat from '../../src/is/isFloat';
+import isFloat from '../../src/is/is-float';
 
 const expect = chai.expect;
 

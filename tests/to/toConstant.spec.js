@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import toConstant from '../../src/to/toConstant';
+import toConstant from '../../src/to/to-constant';
 
 const expect = chai.expect;
 

@@ -1,4 +1,4 @@
-import isExists from '../is/isExists';
+import isExists from '../is/is-exists';
 
 /**
  * Returns a stringify representation of `target`.

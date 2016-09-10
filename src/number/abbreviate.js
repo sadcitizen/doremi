@@ -1,6 +1,6 @@
 'use strict';
 
-import isNumber from '../is/isNumber';
+import isNumber from '../is/is-number';
 import log from '../math/log';
 import floor from '../math/floor';
 import fixed from './fixed';

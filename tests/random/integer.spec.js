@@ -2,7 +2,7 @@
 
 import chai from 'chai';
 import randomInteger from '../../src/random/integer';
-import isInteger from '../../src/is/isInteger';
+import isInteger from '../../src/is/is-integer';
 
 const expect = chai.expect;
 

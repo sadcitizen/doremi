@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import format from '../../src/datetime/format';
+import format from '../../src/date/format';
 
 const expect = chai.expect;
 

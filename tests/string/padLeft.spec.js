@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import padLeft from '../../src/string/padLeft';
+import padLeft from '../../src/string/pad-left';
 
 const expect = chai.expect;
 

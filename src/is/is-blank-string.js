@@ -1,5 +1,5 @@
 import whitespaces from '../internal/regexes/whitespaces';
-import isString from './isString';
+import isString from './is-string';
 
 const WHITESPACES_REGEX = new RegExp(`^[${whitespaces}]*$`);
 

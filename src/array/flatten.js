@@ -1,4 +1,4 @@
-import isArray from '../is/isArray';
+import isArray from '../is/is-array';
 import append from './append';
 
 /**

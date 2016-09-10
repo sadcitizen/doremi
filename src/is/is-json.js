@@ -1,6 +1,6 @@
 'use strict';
 
-import isBlankString from './isBlankString';
+import isBlankString from './is-blank-string';
 
 const ESCAPES_REGEX = /\\["\\\/bfnrtu]/g;
 const VALUES_REGEX = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;

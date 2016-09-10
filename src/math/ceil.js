@@ -1,6 +1,6 @@
 'use strict';
 
-import baseRound from '../internal/baseRound';
+import baseRound from '../internal/base-round';
 
 /**
  * Creates number rounded up to precision.

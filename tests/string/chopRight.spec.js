@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import chopRight from '../../src/string/chopRight';
+import chopRight from '../../src/string/chop-right';
 
 const expect = chai.expect;
 

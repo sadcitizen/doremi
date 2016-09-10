@@ -1,4 +1,4 @@
-import symbols from '../internal/escape.symbols';
+import symbols from '../internal/escape-symbols';
 import stringify from './stringify';
 import invert from '../object/invert';
 

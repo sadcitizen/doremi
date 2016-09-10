@@ -1,4 +1,4 @@
-import isUndefined from '../is/isUndefined';
+import isUndefined from '../is/is-undefined';
 import get from './get';
 
 /**

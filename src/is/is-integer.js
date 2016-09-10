@@ -1,4 +1,4 @@
-import isNumber from './isNumber';
+import isNumber from './is-number';
 
 /**
  * Checks if `target` is integer.
