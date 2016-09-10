@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import noop from '../../src/function/noop';
+import noop from '../../src/func/noop';
 import isFunction from '../../src/is/is-function';
 
 const expect = chai.expect;
