@@ -2,7 +2,7 @@
 
 import chai from 'chai';
 import noop from '../../src/function/noop';
-import isFunction from '../../src/is/isFunction';
+import isFunction from '../../src/is/is-function';
 
 const expect = chai.expect;
 

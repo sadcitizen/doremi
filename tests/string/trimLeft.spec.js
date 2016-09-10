@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import trimLeft from '../../src/string/trimLeft';
+import trimLeft from '../../src/string/trim-left';
 
 const expect = chai.expect;
 

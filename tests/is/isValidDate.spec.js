@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import isValidDate from '../../src/is/isValidDate';
+import isValidDate from '../../src/is/is-valid-date';
 
 const expect = chai.expect;
 

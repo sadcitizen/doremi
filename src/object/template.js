@@ -1,7 +1,7 @@
 import { es6 } from '../internal/regexes/template';
-import isArray from '../is/isArray';
-import isObject from '../is/isObject';
-import isString from '../is/isString';
+import isArray from '../is/is-array';
+import isObject from '../is/is-object';
+import isString from '../is/is-string';
 import objectEach from '../object/each';
 import get from './get';
 import trim from '../string/trim';

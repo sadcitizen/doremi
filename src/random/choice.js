@@ -1,5 +1,5 @@
 import integer from './integer';
-import isArray from '../is/isArray';
+import isArray from '../is/is-array';
 
 /**
  *

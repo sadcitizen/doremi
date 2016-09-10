@@ -1,5 +1,5 @@
-import isDate from './isDate';
-import isNan from './isNan';
+import isDate from './is-date';
+import isNan from './is-nan';
 
 /**
  * Checks if `target` is a valid date.

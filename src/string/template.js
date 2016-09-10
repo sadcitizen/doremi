@@ -3,7 +3,7 @@
 import toString from './stringify';
 import get from '../object/get';
 import trim from './trim';
-import isUndefined from '../is/isUndefined';
+import isUndefined from '../is/is-undefined';
 import { es6 } from '../internal/regexes/template';
 
 /**

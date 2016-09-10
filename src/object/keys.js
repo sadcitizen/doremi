@@ -1,4 +1,4 @@
-import hasOwn from './hasOwn';
+import hasOwn from './has-own';
 
 /**
  * Creates an array of all own enumerable property names of `target`.

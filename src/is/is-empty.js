@@ -1,5 +1,5 @@
 import type from './type';
-import isExists from './isExists';
+import isExists from './is-exists';
 
 /**
  * Checks if `target` is empty.

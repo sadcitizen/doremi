@@ -7,7 +7,7 @@ import flip from './flip';
 import noop from './noop';
 import once from './once';
 import partial from './partial';
-import partialRight from './partialRight';
+import partialRight from './partial-right';
 import pipeline from './pipeline';
 
 export default {

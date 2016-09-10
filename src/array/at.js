@@ -1,4 +1,4 @@
-import isArray from '../is/isArray';
+import isArray from '../is/is-array';
 
 /**
  * Returns an array of elements corresponding to the given indexes.

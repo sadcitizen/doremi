@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import isFloat from '../../src/is/isFloat';
+import isFloat from '../../src/is/is-float';
 
 const expect = chai.expect;
 

@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import isUndefined from '../../src/is/isUndefined';
+import isUndefined from '../../src/is/is-undefined';
 
 const expect = chai.expect;
 

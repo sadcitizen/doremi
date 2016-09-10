@@ -1,4 +1,4 @@
-import isString from './isString';
+import isString from './is-string';
 
 /**
  * Checks if `target` is a char.

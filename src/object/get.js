@@ -1,9 +1,9 @@
 import ok from '../internal/ok';
-import isObject from '../is/isObject';
-import isArray from '../is/isArray';
-import isString from '../is/isString';
-import isExists from '../is/isExists';
-import isUndefined from '../is/isUndefined';
+import isObject from '../is/is-object';
+import isArray from '../is/is-array';
+import isString from '../is/is-string';
+import isExists from '../is/is-exists';
+import isUndefined from '../is/is-undefined';
 
 /**
  * Resolves the value of property `key` on `target`.

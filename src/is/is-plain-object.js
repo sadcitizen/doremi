@@ -1,7 +1,7 @@
 'use strict';
 
-import isExists from './isExists';
-import isObject from './isObject';
+import isExists from './is-exists';
+import isObject from './is-object';
 
 /**
  * Checks if the `target` is created by the `Object` constructor.

@@ -1,4 +1,4 @@
-import isString from './isString';
+import isString from './is-string';
 const HEX_REGEX = /^[a-fA-F0-9]+$/;
 
 /**

@@ -1,7 +1,7 @@
 'use strict';
 
 import chai from 'chai';
-import isBoolean from '../../src/is/isBoolean';
+import isBoolean from '../../src/is/is-boolean';
 
 const expect = chai.expect;
 
