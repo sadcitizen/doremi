@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import add from '../../src/date/add';
 
 
-describe.only('date/add()', () => {
+describe('date/add()', () => {
     it('Should add years', () => {
         expect(add(new Date(2015, 0, 1), 1, 'years')).to.deep.equal(new Date(2016, 0, 1));
         expect(add(new Date(2015, 0, 1), 2, 'years')).to.deep.equal(new Date(2017, 0, 1));
