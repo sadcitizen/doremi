@@ -2,7 +2,9 @@
 
 import units from '../internal/time-units';
 
-export default (first, second, unit) => {
+function diff(first, second, unit) {
     const diffInMs = second - first;
     return diffInMs / units.get(unit);
 }
+
+export default diff;
