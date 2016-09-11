@@ -38,10 +38,18 @@ const adders = {
 };
 
 /**
- * [add description]
- * @param {[type]} target [description]
- * @param {[type]} count  [description]
- * @param {[type]} unit   [description]
+ * Adds time units to a date.
+ *
+ * @param {Date} target The date to modify.
+ * @param {number} count The count of units.
+ * @param {string="years", "months", "days", "hours", "minutes", "seconds", "milliseconds"} unit The time unit.
+ * @returns {Date} The mutated date.
+ *
+ * @example
+ * const date = new Date(2015, 0, 1);
+ * add(date, 1, 'years');
+ * console.log(date.toUTCString());
+ * // => "Thu, 31 Dec 2015 19:00:00 GMT"
  */
 function add(target, count, unit) {
     const adder = adders[unit];
@@ -49,7 +57,7 @@ function add(target, count, unit) {
     if (adder) {
         return adder(target, count);
     } else {
-        throw new Error('!');
+        throw new Error('Unexpected time unit!');
     }
 }
 
