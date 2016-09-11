@@ -8,7 +8,7 @@
     "test": "mocha --compilers js:babel-core/register tests/**/*.spec.js",
     "watch:tests": "mocha --compilers js:babel-core/register tests/**/*.spec.js --reporter progress --watch",
     "build": "babel src --out-dir .",
-    "clean": "rimraf array datetime function internal is math number object random string to index.js",
+    "clean": "rimraf array date function internal is math number object random string to index.js",
     "prepublish": "npm run build",
     "postpublish": "npm run clean && git push --follow-tags"
   },
