@@ -20,6 +20,20 @@ describe.only('date/add()', () => {
         expect(add(new Date(2015, 0, 1), 2, 'months')).to.deep.equal(new Date(2015, 2, 1));
     });
 
+    it('Should works with tail of month', () => {
+        const jan31 = new Date(2015, 0, 31);
+        const feb28 = new Date(2015, 1, 28);
+
+        expect(add(jan31, 1, 'months')).to.deep.equal(feb28);
+    });
+
+    it('Should works with tail of month of leap year', () => {
+        const jan31 = new Date(2016, 0, 31);
+        const feb29 = new Date(2016, 1, 29);
+
+        expect(add(jan31, 1, 'months')).to.deep.equal(feb29);
+    });
+
     it('Should subtract months if count is negative', () => {
         expect(add(new Date(2015, 0, 1), -1, 'months')).to.deep.equal(new Date(2014, 11, 1));
         expect(add(new Date(2015, 0, 1), -2, 'months')).to.deep.equal(new Date(2014, 10, 1));

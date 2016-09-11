@@ -1,5 +1,3 @@
-'use strict';
-
 const adders = {
     years(target, count) {
         target.setFullYear(target.getFullYear() + count);
@@ -7,7 +5,19 @@ const adders = {
     },
 
     months(target, count) {
+        const m = target.getMonth();
+        let next = m + count;
+
+        if (next < 0) {
+            next = 12 + next;
+        }
+
         target.setMonth(target.getMonth() + count);
+
+        if (target.getMonth() !== next) {
+            target.setDate(0);
+        }
+
         return target;
     },
 
