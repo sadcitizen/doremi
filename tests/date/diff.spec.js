@@ -82,14 +82,14 @@ describe('date/diff()', () => {
         expect(diff(nextMonth, from, 'd')).to.be.equal(-31);
     });
 
-    it.skip('throws on unknown unit', () => {
+    it('throws on unknown unit', () => {
         const d = new Date()
-        expect(diff(d, d, 'cheese!&')).to.throw();
+        expect(diff.bind(this, d, d, 'cheese!&')).to.throw();
     });
 
-    it.skip('throws on undefined args', () => {
+    it('throws on undefined args', () => {
         const d = new Date()
-        expect(diff(d)).to.throw();
-        expect(diff()).to.throw();
+        expect(diff.bind(this, d)).to.throw();
+        expect(diff.bind(this)).to.throw();
     });
 });
