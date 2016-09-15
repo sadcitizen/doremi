@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import diff from '../../src/date/diff';
 
 describe('date/diff()', () => {
-    it('in years', () => {
+    it('returns diff in years', () => {
         const from = new Date(2000, 0);
         const twoYearsAgo = new Date(2002, 0);
 
@@ -12,7 +12,7 @@ describe('date/diff()', () => {
         expect(diff(from, twoYearsAgo, 'y')).to.be.equal(2);
     });
 
-    it('in months', () => {
+    it('returns diff in months', () => {
         const from = new Date(2000, 0);
         const nextYear = new Date(2001, 0);
 
@@ -20,7 +20,7 @@ describe('date/diff()', () => {
         expect(diff(from, nextYear, 'M')).to.be.equal(12);
     });
 
-    it('in weeks', () => {
+    it('returns diff in weeks', () => {
         const from = new Date(2000, 0, 1);
         const nextWeek = new Date(2000, 0, 8);
 
@@ -28,7 +28,7 @@ describe('date/diff()', () => {
         expect(diff(from, nextWeek, 'w')).to.be.equal(1);
     });
 
-    it('in days', () => {
+    it('returns diff in days', () => {
         const from = new Date(2000, 0, 1);
         const oneDayMore = new Date(2000, 0, 2);
         const nextMonth = new Date(2000, 1, 1);
@@ -38,7 +38,7 @@ describe('date/diff()', () => {
         expect(diff(from, nextMonth, 'days')).to.be.equal(31);
     });
 
-    it('in seconds', () => {
+    it('returns diff in seconds', () => {
         const from = new Date(2000, 0, 1, 0, 0, 0, 0);
         const nextSecond = new Date(2000, 0, 1, 0, 0, 1, 0);
 
@@ -46,7 +46,7 @@ describe('date/diff()', () => {
         expect(diff(from, nextSecond, 's')).to.be.equal(1);
     });
 
-    it('in milliseconds', () => {
+    it('returns diff in milliseconds', () => {
         const from = new Date(2000, 0, 1, 0, 0, 0, 0);
         const nextSecond = new Date(2000, 0, 1, 0, 0, 1, 0);
 
@@ -61,7 +61,7 @@ describe('date/diff()', () => {
         expect(diff(from, nextSecond)).to.be.equal(1000);
     });
 
-    it('results are rounded', () => {
+    it('rounds results', () => {
         const from = new Date(2000, 0, 1);
         const dayAndSomeMore = new Date(2000, 0, 2, 11);
         const almostTwoDaysAfter = new Date(2000, 0, 2, 21);
@@ -73,7 +73,7 @@ describe('date/diff()', () => {
         expect(diff(from, yearAndSomeMore, 'y')).to.be.equal(1);
     });
 
-    it('negative diff result', () => {
+    it('returns negative diff result', () => {
         const from = new Date(2000, 0, 1);
         const oneDayMore = new Date(2000, 0, 2);
         const nextMonth = new Date(2000, 1, 1);
