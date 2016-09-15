@@ -1,3 +1,5 @@
+import normalize from '../internal/normalize-time-unit';
+
 const adders = {
     years(target, count) {
         target.setFullYear(target.getFullYear() + count);
@@ -62,7 +64,7 @@ const adders = {
  * // => "Thu, 31 Dec 2015 19:00:00 GMT"
  */
 function add(target, count, unit) {
-    const adder = adders[unit];
+    const adder = adders[normalize(unit)];
 
     if (adder) {
         return adder(target, count);
