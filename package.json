@@ -7,7 +7,7 @@
     "lint": "eslint src tests --config .eslintrc",
     "test": "mocha --compilers js:babel-core/register tests/**/*.spec.js --reporter progress",
     "build": "babel src --out-dir .",
-    "clean": "rimraf array datetime function internal is math number object random string to index.js",
+    "clean": "rimraf array date func internal is math number object random string to index.js",
     "prepublish": "npm run build",
     "postpublish": "npm run clean && git push --follow-tags"
   },
