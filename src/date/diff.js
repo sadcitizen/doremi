@@ -2,7 +2,13 @@
 
 import units from '../internal/time-units';
 
-export default (first, second, unit) => {
+function diff(first, second, unit) {
+    if (first === undefined || second === undefined)
+        throw new Error('diff() expects at least two arguments');
+
     const diffInMs = second - first;
-    return diffInMs / units.get(unit);
+    const diff = diffInMs / units.get(unit);
+    return Math.round(diff);
 }
+
+export default diff;
