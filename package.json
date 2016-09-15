@@ -1,6 +1,6 @@
 {
   "name": "doremi",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "utility library",
   "main": "index.js",
   "scripts": {
