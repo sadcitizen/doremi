@@ -1,5 +1,5 @@
 import keys from './keys';
-import get from './get';
+import getValue from './get-value';
 
 /**
  * Creates an array of own enumerable property values of `target`.
@@ -32,7 +32,7 @@ import get from './get';
  */
 function values(target, ...args) {
     args = args.length ? args : keys(target);
-    return args.map(arg => get(target, arg));
+    return args.map(arg => getValue(target, arg));
 }
 
 export default values;

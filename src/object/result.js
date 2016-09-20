@@ -1,5 +1,5 @@
 import isFunction from '../is/is-function';
-import get from './get';
+import getValue from './get-value';
 
 /**
  * Resolves the value of property `key` on `target`.
@@ -26,7 +26,7 @@ import get from './get';
  * // => 'value'
  */
 function result(target, key, def) {
-    let prop = get(target, key, def);
+    let prop = getValue(target, key, def);
     return isFunction(prop) ? prop.call(target) : prop;
 }
 

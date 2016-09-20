@@ -3,7 +3,7 @@ import isArray from '../is/is-array';
 import isObject from '../is/is-object';
 import isString from '../is/is-string';
 import objectEach from '../object/each';
-import get from './get';
+import getValue from './get-value';
 import trim from '../string/trim';
 
 /**
@@ -28,7 +28,7 @@ function template(target, source, syntax = es6) {
             return '';
         }
 
-        return get(source, trim(target.replace(syntax, '$1')), target);
+        return getValue(source, trim(target.replace(syntax, '$1')), target);
     }
 
     const isArr = isArray(target);

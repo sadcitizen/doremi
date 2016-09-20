@@ -1,4 +1,4 @@
-import get from './get';
+import getValue from './get-value';
 
 /**
  * Creates a function which returns the property value of `key` on `target`
@@ -26,7 +26,7 @@ import get from './get';
  * // => ['John', 'Jane']
  */
 function prop(key, def) {
-    return target => get(target, key, def);
+    return target => getValue(target, key, def);
 }
 
 export default prop;
