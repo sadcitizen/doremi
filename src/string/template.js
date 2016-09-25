@@ -1,7 +1,7 @@
 'use strict';
 
 import toString from './stringify';
-import get from '../object/get';
+import getValue from '../object/get-value';
 import trim from './trim';
 import isUndefined from '../is/is-undefined';
 import { es6 } from '../internal/regexes/template';
@@ -33,7 +33,7 @@ export default function (target, data, syntax = es6) {
     let value;
 
     return target.replace(syntax, (match, name) => {
-        value = get(data, trim(name));
+        value = getValue(data, trim(name));
         return !isUndefined(value) ? toString(value) : match;
     });
 }

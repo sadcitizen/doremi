@@ -1,7 +1,7 @@
 'use strict';
 
 import stringify from './stringify';
-import set from '../object/set';
+import setValue from '../object/set-value';
 
 const es6 = ['${', '}'];
 const escape = target => target.replace(/[\\\^\$\*\+\.\?\(\)]/g, '\\$&');
@@ -48,7 +48,7 @@ export default function (target, pattern, seps = es6) {
 
     let result = {};
 
-    tokens.forEach((token, i) => set(result, token, matches[i]));
+    tokens.forEach((token, i) => setValue(result, token, matches[i]));
 
     return result;
 }

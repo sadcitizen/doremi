@@ -1,5 +1,5 @@
 import keys from './keys';
-import get from './get';
+import getValue from './get-value';
 
 /**
  * Creates a two dimensional array of the key-value pairs for `target`,
@@ -33,7 +33,7 @@ import get from './get';
  */
 function pairs(target, ...args) {
     args = args.length ? args : keys(target);
-    return args.map(arg => [arg, get(target, arg)]);
+    return args.map(arg => [arg, getValue(target, arg)]);
 }
 
 export default pairs;
