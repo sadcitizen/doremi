@@ -24,19 +24,19 @@ import getValue from './get-value';
  *     bar: 42
  * };
  *
- * has(lorem, 'bar');
+ * hasValue(lorem, 'bar');
  * // => true
  *
- * has(lorem, 'lorem.ipsum.dolor.sit');
+ * hasValue(lorem, 'lorem.ipsum.dolor.sit');
  * // => true
  *
- * has(lorem, 'lorem.ipsum.foo');
+ * hasValue(lorem, 'lorem.ipsum.foo');
  * // => false
  *
- * has(lorem, 'lorem.ipsum.foo');
+ * hasValue(lorem, 'lorem.ipsum.foo');
  * // => false
  *
- * has(lorem, 'lorem.toString');
+ * hasvalue(lorem, 'lorem.toString');
  * // => true
  */
 function hasValue(target, key) {
