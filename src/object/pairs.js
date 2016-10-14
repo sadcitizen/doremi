@@ -1,4 +1,3 @@
-import keys from './keys';
 import getValue from './get-value';
 
 /**
@@ -32,7 +31,7 @@ import getValue from './get-value';
  * // => [['x', 0], ['y', 0]] (The `getCoords` is not own property)
  */
 function pairs(target, ...args) {
-    args = args.length ? args : keys(target);
+    args = args.length ? args : Object.keys(target);
     return args.map(arg => [arg, getValue(target, arg)]);
 }
 

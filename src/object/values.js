@@ -1,4 +1,3 @@
-import keys from './keys';
 import getValue from './get-value';
 
 /**
@@ -31,7 +30,7 @@ import getValue from './get-value';
  * // => [0, 0] (The `getCoords` is not own property)
  */
 function values(target, ...args) {
-    args = args.length ? args : keys(target);
+    args = args.length ? args : Object.keys(target);
     return args.map(arg => getValue(target, arg));
 }
 
