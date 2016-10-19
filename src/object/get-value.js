@@ -1,7 +1,3 @@
-import ok from '../internal/ok';
-import isObject from '../is/is-object';
-import isArray from '../is/is-array';
-import isString from '../is/is-string';
 import isExists from '../is/is-exists';
 import isUndefined from '../is/is-undefined';
 
@@ -43,9 +39,6 @@ import isUndefined from '../is/is-undefined';
  * // => 42
  */
 export default function (target, key, def) {
-    ok(isObject(target) || isArray(target), 'Target must be an object or an array!');
-    ok(isString(key), 'Property must be a string!');
-
     let obj = target;
     const parts = key.split('.');
     const last = parts.pop();
