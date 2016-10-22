@@ -1,8 +1,5 @@
-'use strict';
-
 import { expect } from 'chai';
-import add from '../../src/date/add';
-
+import add from '.';
 
 describe('date/add()', () => {
     it('add years', () => {

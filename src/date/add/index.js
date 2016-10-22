@@ -1,4 +1,4 @@
-import normalize from '../internal/normalize-time-unit';
+import normalize from '../../internal/normalize-time-unit';
 
 const adders = {
     years(target, count) {
@@ -63,7 +63,7 @@ const adders = {
  * console.log(date.toUTCString());
  * // => "Thu, 31 Dec 2015 19:00:00 GMT"
  */
-function add(target, count, unit) {
+export default function (target, count, unit) {
     const adder = adders[normalize(unit)];
 
     if (adder) {
@@ -72,5 +72,3 @@ function add(target, count, unit) {
         throw new Error('Unexpected time unit!');
     }
 }
-
-export default add;
