@@ -1,4 +1,4 @@
-import append from './append';
+import append from '../append';
 
 /**
  * Removes all elements from `target` that `predicate` returns truthy for and returns an array of the removed elements.
