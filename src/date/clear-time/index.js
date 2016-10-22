@@ -10,9 +10,7 @@
  * console.log(date.toUTCString());
  * // => "Thu, 31 Dec 2015 19:00:00 GMT"
  */
-function clearTime(target) {
+export default function (target) {
     target.setHours(0, 0, 0, 0);
     return target;
 }
-
-export default clearTime;
