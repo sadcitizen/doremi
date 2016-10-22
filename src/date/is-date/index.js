@@ -1,5 +1,3 @@
-import type from './type';
-
 /**
  * Checks if `target` is date.
  *
@@ -14,4 +12,4 @@ import type from './type';
  * isDate(new Date());
  * // => true
  */
-export default target => type(target) === 'date';
+export default target => Object.prototype.toString.call(target) === '[object Date]';
