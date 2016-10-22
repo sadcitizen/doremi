@@ -2,7 +2,7 @@
  * Returns distinct elements from an array
  *
  * @param {Array} target
- * @param {Function} getter Optional. A function to apply before comparing elements.
+ * @param {Function} iteratee Optional. A function to apply before comparing elements.
  * @returns {Array} Returns new array with unique values.
  *
  * @example
@@ -14,17 +14,15 @@
  * // => [{name: 'Casper'}, {name: 'Richard'}]
  */
 
-import contains from './contains'
-
-function distinct(target, getter = null) {
+export default function (target, iteratee = x => x) {
     let result = [];
     let seen = [];
 
     for (let i = 0; i < target.length; i++) {
         let value = target[i];
-        let comparable = getter ? getter(value) : value;
+        let comparable = iteratee(value);
 
-        if (!contains(seen, comparable)) {
+        if (!seen.includes(comparable)) {
             result.push(value);
             seen.push(comparable);
         }
@@ -32,5 +30,3 @@ function distinct(target, getter = null) {
 
     return result;
 }
-
-export default distinct;
