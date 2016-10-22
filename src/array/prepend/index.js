@@ -12,9 +12,7 @@
  * // => [4, 7, 10, 13, 3, 6, 9, 12]
  */
 
-function append(target, source) {
+export default function (target, source) {
     target.unshift.apply(target, source);
     return target;
 }
-
-export default append;
