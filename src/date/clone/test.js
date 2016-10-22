@@ -1,12 +1,8 @@
-'use strict';
-
-import chai from 'chai';
-import clone from '../../src/date/clone';
-
-const expect = chai.expect;
+import { expect } from 'chai';
+import clone from '.';
 
 describe('datetime/clone()', function () {
-    it('Should return a date', function () {
+    it('Return a date', function () {
         expect(clone(new Date())).to.be.instanceof(Date);
     });
 

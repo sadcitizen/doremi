@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Returns a copy of the date.
  *
@@ -11,6 +9,4 @@
  * clone(now).toUTCString();
  * // => Wed, 31 Dec 2014 19:00:00 GMT
  */
-export default function (target) {
-    return new Date(target.valueOf());
-}
+export default target => new Date(target.valueOf());
