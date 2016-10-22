@@ -1,23 +1,19 @@
-'use strict';
+import { expect } from 'chai';
+import isOdd from '.';
 
-import chai from 'chai';
-import isOdd from '../../src/is/is-odd';
-
-const expect = chai.expect;
-
-describe('is/isOdd()', () => {
-    it('Should return false if value is an even number', () => {
+describe('number/isOdd()', () => {
+    it('Return false if value is an even number', () => {
         expect(isOdd(42)).to.equal(false);
         expect(isOdd(-42)).to.equal(false);
         expect(isOdd(0)).to.equal(false);
     });
 
-    it('Should return true if value is odd number', () => {
+    it('Return true if value is odd number', () => {
         expect(isOdd(21)).to.equal(true);
         expect(isOdd(-21)).to.equal(true);
     });
 
-    it('Should return false if value is not numeric', () => {
+    it('Return false if value is not numeric', () => {
         expect(isOdd(void 0)).to.equal(false);
         expect(isOdd(null)).to.equal(false);
         expect(isOdd(NaN)).to.equal(false);
