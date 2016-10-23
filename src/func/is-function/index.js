@@ -1,5 +1,3 @@
-import type from './type';
-
 /**
  * Checks if `target` is function.
  *
@@ -18,4 +16,4 @@ import type from './type';
  * isFunction(Math.abs);
  * // => true
  */
-export default target => type(target) === 'function';
+export default target => Object.prototype.toString.call(target) === '[object Function]';

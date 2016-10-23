@@ -1,12 +1,8 @@
-'use strict';
+import { expect } from 'chai';
+import isFunction from '.';
 
-import chai from 'chai';
-import isFunction from '../../src/is/is-function';
-
-const expect = chai.expect;
-
-describe('is/isFunction()', () => {
-    it('Should return true if value is a function', () => {
+describe('func/isFunction()', () => {
+    it('Return true if value is a function', () => {
         const noop = () => {};
 
         expect(isFunction(() => {})).to.equal(true);
@@ -14,7 +10,7 @@ describe('is/isFunction()', () => {
         expect(isFunction(noop)).to.equal(true);
     });
 
-    it('Should return false if value is not a function', () => {
+    it('Return false if value is not a function', () => {
         expect(isFunction(arguments)).to.equal(false);
         expect(isFunction(true)).to.equal(false);
         expect(isFunction(void 0)).to.equal(false);
