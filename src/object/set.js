@@ -1,4 +1,4 @@
-import ns from './ns';
+import namespace from './namespace';
 
 /**
  * Sets nested property value.
@@ -22,7 +22,7 @@ export default function (target, prop, value) {
 
     if (parts.length > 1) {
         key = parts.pop();
-        ns(target, parts.join('.'))[key] = value;
+        namespace(target, parts.join('.'))[key] = value;
     } else {
         target[prop] = value;
     }

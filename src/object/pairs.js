@@ -1,5 +1,4 @@
-import keys from './keys';
-import get from './get';
+import getValue from './get-value';
 
 /**
  * Creates a two dimensional array of the key-value pairs for `target`,
@@ -32,8 +31,8 @@ import get from './get';
  * // => [['x', 0], ['y', 0]] (The `getCoords` is not own property)
  */
 function pairs(target, ...args) {
-    args = args.length ? args : keys(target);
-    return args.map(arg => [arg, get(target, arg)]);
+    args = args.length ? args : Object.keys(target);
+    return args.map(arg => [arg, getValue(target, arg)]);
 }
 
 export default pairs;

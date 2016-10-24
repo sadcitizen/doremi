@@ -1,6 +1,6 @@
 'use strict';
 
-import isBlankString from './is-blank-string';
+import isBlank from '../string/is-blank';
 
 const ESCAPES_REGEX = /\\["\\\/bfnrtu]/g;
 const VALUES_REGEX = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;
@@ -25,7 +25,7 @@ const INVALIDS_REGEX = /^[\],:{}\s]*$/;
  * // => true
  */
 function isJson(target) {
-    return !isBlankString(target) && INVALIDS_REGEX.test(
+    return !isBlank(target) && INVALIDS_REGEX.test(
         target
             .replace(ESCAPES_REGEX, '@')
             .replace(VALUES_REGEX, ']')

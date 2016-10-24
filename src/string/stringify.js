@@ -1,4 +1,4 @@
-import isExists from '../is/is-exists';
+import isDefined from '../common/is-defined';
 
 /**
  * Returns a stringify representation of `target`.
@@ -21,4 +21,4 @@ import isExists from '../is/is-exists';
  * // => '/[a-z0-9]/gim'
  */
 //TODO: Array, Object, Date, Function
-export default target => !isExists(target) ? '' : target.toString();
+export default target => !isDefined(target) ? '' : target.toString();

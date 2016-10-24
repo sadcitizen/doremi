@@ -1,5 +1,5 @@
 import type from './type';
-import isExists from './is-exists';
+import isDefined from '../common/is-defined';
 
 /**
  * Checks if `target` is empty.
@@ -21,7 +21,7 @@ import isExists from './is-exists';
  * // => true
  */
 function empty(target) {
-    if (!isExists(target)) {
+    if (!isDefined(target)) {
         return true;
     }
 

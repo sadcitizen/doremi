@@ -1,13 +1,5 @@
-import isFunction from '../is/is-function';
-
-// TODO: add description
-
-function after(target, times) {
+export default function (target, times) {
     times |= 0;
-
-    if (!isFunction(target)) {
-        throw new TypeError('Target must be a function.');
-    }
 
     return function () {
         if (--times < 1) {
@@ -15,5 +7,3 @@ function after(target, times) {
         }
     };
 }
-
-export default after;

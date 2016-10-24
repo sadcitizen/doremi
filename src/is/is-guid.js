@@ -1,4 +1,4 @@
-import isString from './is-string';
+import isString from '../string/is-string';
 const GUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[ab89][a-f0-9]{3}-[a-f0-9]{12}$/;
 
 /**

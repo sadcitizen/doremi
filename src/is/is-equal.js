@@ -1,6 +1,5 @@
 /* jshint -W003 */
 import type from './type';
-import keys from '../object/keys';
 import slice from '../internal/slice';
 import stringify from '../string/stringify';
 
@@ -42,8 +41,8 @@ function arrayEqual(target, other) {
  * @returns {boolean}
  */
 function objectEqual(target, other) {
-    const targetKeys = keys(target);
-    const otherKeys = keys(other);
+    const targetKeys = Object.keys(target);
+    const otherKeys = Object.keys(other);
 
     if (target.constructor !== other.constructor) {
         return false;

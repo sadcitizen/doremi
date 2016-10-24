@@ -1,9 +1,7 @@
 import { es6 } from '../internal/regexes/template';
-import isArray from '../is/is-array';
-import isObject from '../is/is-object';
-import isString from '../is/is-string';
-import objectEach from '../object/each';
-import get from './get';
+import isObject from '../object/is-object';
+import isString from '../string/is-string';
+import getValue from './get-value';
 import trim from '../string/trim';
 
 /**
@@ -28,16 +26,16 @@ function template(target, source, syntax = es6) {
             return '';
         }
 
-        return get(source, trim(target.replace(syntax, '$1')), target);
+        return getValue(source, trim(target.replace(syntax, '$1')), target);
     }
 
-    const isArr = isArray(target);
+    const isArr = Array.isArray(target);
     const isObj = isObject(target);
     const fn = (value, key) => target[key] = template(value, source, syntax);
 
     /* jshint -W030 */
     isArr && target.forEach(fn);
-    isObj && objectEach(target, fn);
+    isObj && Object.keys(target).forEach(fn);
     /* jshint +W030 */
 
     return target;

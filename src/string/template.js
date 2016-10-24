@@ -1,9 +1,6 @@
-'use strict';
-
-import toString from './stringify';
-import get from '../object/get';
+import stringify from './stringify';
+import getValue from '../object/get-value';
 import trim from './trim';
-import isUndefined from '../is/is-undefined';
 import { es6 } from '../internal/regexes/template';
 
 /**
@@ -24,7 +21,7 @@ import { es6 } from '../internal/regexes/template';
  * // => 'lorem ipsum dolor'
  */
 export default function (target, data, syntax = es6) {
-    target = toString(target);
+    target = stringify(target);
 
     if (target.length === 0) {
         return '';
@@ -33,7 +30,7 @@ export default function (target, data, syntax = es6) {
     let value;
 
     return target.replace(syntax, (match, name) => {
-        value = get(data, trim(name));
-        return !isUndefined(value) ? toString(value) : match;
+        value = getValue(data, trim(name));
+        return value !== undefined ? stringify(value) : match;
     });
 }

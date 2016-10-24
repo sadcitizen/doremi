@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src tests --config .eslintrc",
-    "test": "mocha --recursive --compilers js:babel-core/register src",
+    "test": "mocha src --recursive --compilers js:babel-core/register",
     "build": "babel src --out-dir .",
     "clean": "rimraf array date func internal is math number object random string to index.js",
     "prepublish": "npm run build",

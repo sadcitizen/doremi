@@ -1,5 +1,4 @@
-import isUndefined from '../is/is-undefined';
-import get from './get';
+import getValue from './get-value';
 
 /**
  * Checks if the given property name exists as a direct or nested property of `target`.
@@ -39,8 +38,4 @@ import get from './get';
  * has(lorem, 'lorem.toString');
  * // => true
  */
-function has(target, key) {
-    return !isUndefined(get(target, key));
-}
-
-export default has;
+export default (target, key) => getValue(target, key) !== undefined;
