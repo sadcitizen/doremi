@@ -6,6 +6,4 @@
  * noop();
  * // => undefined
  */
-function noop() {}
-
-export default noop;
+export default () => {};
