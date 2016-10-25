@@ -15,11 +15,4 @@
  * sayHello('World');
  * // => 'Hello, World!'
  */
-
-function partial(target, ...args) {
-    return function (...partialArgs) {
-        return target.apply(this, args.concat(partialArgs));
-    };
-}
-
-export default partial;
+export default (target, ...args) => (...partialArgs) => target(...args, ...partialArgs);

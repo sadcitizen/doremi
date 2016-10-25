@@ -1,20 +1,16 @@
-'use strict';
-
-import chai from 'chai';
+import { expect } from 'chai';
 import sinon from 'sinon';
-import partial from '../../src/func/partial';
-
-const expect = chai.expect;
+import partial from '.';
 
 describe('function/partial()', () => {
-    it('Should return new function', () => {
+    it('Return new function', () => {
         const fnc = sinon.spy();
         const partialFn = partial(fnc);
 
         expect(partialFn).to.be.a('function');
     });
 
-    it('Should partially apply arguments to a function', () => {
+    it('Partially apply arguments to a function', () => {
         const func = (a, b, c, d, e) => [ a, b, c, d, e ];
 
         const partialFunc = partial(func, 1, 'string', true);
