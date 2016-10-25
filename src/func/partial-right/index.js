@@ -1,5 +1,5 @@
 /**
- * Return a new function that invokes `fn` with `args` prepended to the arguments it receives.
+ * Return a new function that invokes `fn` with `args` appended to the arguments it receives.
  *
  * @param {Function} fn The function to partially apply arguments to.
  * @param {Array} args The arguments to be partially applied.
@@ -10,8 +10,8 @@
  *     return word + ', ' + name + '!';
  * }
  *
- * var sayHello = partial('Hello');
- * sayHello('World');
+ * var sayWorld = partial('World');
+ * sayWorld('Hello');
  * // => 'Hello, World!'
  */
-export default (fn, ...args) => (...partialArgs) => fn(...args, ...partialArgs);
+export default (fn, ...args) => (...partialArgs) => fn(...partialArgs, ...args);

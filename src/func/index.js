@@ -8,7 +8,7 @@ import noop from './noop';
 import once from './once';
 import partial from './partial';
 import partialRight from './partial-right';
-import pipeline from './pipeline';
+import pipe from './pipe';
 
 export default {
     after,
@@ -21,6 +21,5 @@ export default {
     once,
     partial,
     partialRight,
-    pipeline
+    pipe
 };
-
