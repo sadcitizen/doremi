@@ -17,7 +17,7 @@ import append from '../append';
  * // => [2, 4, 6]
  */
 
-function remove(target, predicate) {
+export default function (target, predicate) {
     let result = [];
 
     if (!(target && target.length)) {
@@ -36,5 +36,3 @@ function remove(target, predicate) {
 
     return result;
 }
-
-export default remove;
