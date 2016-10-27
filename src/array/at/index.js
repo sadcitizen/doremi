@@ -6,7 +6,6 @@
  * @returns {*|Array} The array of elements.
  *
  * @example
- *
  * at([1, 2, 3, 4, 5], 1);
  * // => 2
  *
