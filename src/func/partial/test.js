@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import partial from '.';
 
-describe('function/partial()', () => {
+describe('func/partial()', () => {
     it('Return new function', () => {
         const fn = sinon.spy();
         const partialFn = partial(fn);

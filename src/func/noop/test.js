@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import noop from '.';
 
-describe('function/noop()', () => {
+describe('func/noop()', () => {
     it('Be a function', () => {
         expect(noop).to.be.a('function');
     });

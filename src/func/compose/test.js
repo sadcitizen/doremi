@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import compose from '.';
 
-describe('function/compose()', () => {
+describe('func/compose()', () => {
     const f1 = sinon.spy();
     const f2 = sinon.spy();
     const f3 = sinon.spy();

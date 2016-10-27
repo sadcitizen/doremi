@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import pipe from '.';
 
-describe('function/pipe()', () => {
+describe('func/pipe()', () => {
     const f1 = sinon.spy();
     const f2 = sinon.spy();
     const f3 = sinon.spy();
