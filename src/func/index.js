@@ -6,6 +6,7 @@ import defer from './defer';
 import flip from './flip';
 import identity from './identity';
 import isFunction from './is-function';
+import negate from './negate';
 import noop from './noop';
 import once from './once';
 import partial from './partial';
@@ -20,6 +21,7 @@ export { defer };
 export { flip };
 export { identity };
 export { isFunction };
+export { negate };
 export { noop };
 export { once };
 export { partial };
@@ -35,6 +37,7 @@ export default {
     flip,
     identity,
     isFunction,
+    negate,
     noop,
     once,
     partial,
