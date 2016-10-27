@@ -1,3 +1,4 @@
+import identity from '../../func/identity';
 /**
  * Returns distinct elements from an array
  *
@@ -14,7 +15,7 @@
  * // => [{name: 'Casper'}, {name: 'Richard'}]
  */
 
-export default function (target, iteratee = x => x) {
+export default function (target, iteratee = identity) {
     let result = [];
     let seen = [];
 
