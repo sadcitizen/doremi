@@ -3,11 +3,11 @@ import sinon from 'sinon';
 import delay from '.';
 
 describe('func/delay()', () => {
-    it('Return new function', () => {
+    it('Return a new function', () => {
         expect(delay(sinon.spy(), 100)).to.be.a('function');
     });
 
-    it('return new function that invoked after 50 milliseconds', () => {
+    it('return a new function that invoked after 50 milliseconds', () => {
         const timer = sinon.useFakeTimers();
         const fn = sinon.spy();
         const delayed = delay(fn, 50);
