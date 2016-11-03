@@ -25,16 +25,16 @@ import isDefined from '../../common/is-defined';
  *     bar: 42
  * };
  *
- * get(lorem, 'bar');
+ * getValue(lorem, 'bar');
  * // => 42
  *
- * get(lorem, 'lorem.ipsum.dolor.sit');
+ * getValue(lorem, 'lorem.ipsum.dolor.sit');
  * // => 'amet'
  *
- * get(lorem, 'lorem.ipsum.foo');
+ * getValue(lorem, 'lorem.ipsum.foo');
  * // => undefined
  *
- * get(lorem, 'lorem.ipsum.foo', 42);
+ * getValue(lorem, 'lorem.ipsum.foo', 42);
  * // => 42
  */
 export default function (target, key, def) {
