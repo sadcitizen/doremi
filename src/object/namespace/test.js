@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import namespace from '.';
 
-describe.only('object/namespace()', () => {
+describe('object/namespace()', () => {
     it('Create nested properties', () => {
         expect(namespace({}, 'lorem.ipsum.dolor')).to.deep.equal({ lorem: { ipsum: { dolor: {} } } });
     });
