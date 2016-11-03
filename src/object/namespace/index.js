@@ -19,17 +19,19 @@ import isObject from '../is-object';
  * // => lorem = { ipsum: { dolor: sit: {} } } (ipsum is overridden)
  */
 export default function (target, path) {
-    if (path) {
-        let obj = target;
-
-        path.split('.').forEach(key => {
-            if (!(obj[key] !== undefined && isObject(obj[key]))) {
-                obj[key] = {};
-            }
-
-            obj = obj[key];
-        });
+    if (!path) {
+        return target;
     }
 
-    return target;
+    let obj = target;
+
+    path.split('.').forEach(key => {
+        if (!(obj[key] !== undefined && isObject(obj[key]))) {
+            obj[key] = {};
+        }
+
+        obj = obj[key];
+    });
+
+    return obj;
 }
