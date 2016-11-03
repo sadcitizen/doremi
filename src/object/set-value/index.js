@@ -1,4 +1,4 @@
-import namespace from './namespace';
+import namespace from '../namespace';
 
 /**
  * Sets nested property value.
