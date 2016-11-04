@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import isChar from '.';
 
 describe('string/isChar()', () => {
-    it('Return false if value is a char', () => {
+    it('Returns false if value is a char', () => {
         expect(isChar('a')).to.equal(true);
         expect(isChar(String(4))).to.equal(true);
         /* jshint -W053 */
@@ -10,7 +10,7 @@ describe('string/isChar()', () => {
         /* jshint +W053 */
     });
 
-    it('Return false if value is not char', () => {
+    it('Returns false if value is not char', () => {
         expect(isChar(void 0)).to.equal(false);
         expect(isChar(null)).to.equal(false);
         expect(isChar(NaN)).to.equal(false);

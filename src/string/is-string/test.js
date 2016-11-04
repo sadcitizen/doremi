@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import isString from '.';
 
 describe('string/isString()', () => {
-    it('Return false if value is a string', () => {
+    it('Returns false if value is a string', () => {
         expect(isString('')).to.equal(true);
         expect(isString(String(42))).to.equal(true);
         /* jshint -W053 */
@@ -10,7 +10,7 @@ describe('string/isString()', () => {
         /* jshint +W053 */
     });
 
-    it('Return false if value is not string', () => {
+    it('Returns false if value is not string', () => {
         expect(isString(void 0)).to.equal(false);
         expect(isString(null)).to.equal(false);
         expect(isString(NaN)).to.equal(false);

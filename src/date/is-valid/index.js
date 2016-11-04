@@ -1,5 +1,4 @@
 import isDate from '../is-date';
-import isNan from '../../is/is-nan';
 
 /**
  * Checks if `target` is a valid date.
@@ -18,4 +17,4 @@ import isNan from '../../is/is-nan';
  * isValidDate(new Date('date'));
  * // => false
  */
-export default target => isDate(target) && !isNan(target.getTime());
+export default target => isDate(target) && !isNaN(target.getTime());

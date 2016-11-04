@@ -1,5 +1,4 @@
 import isValid from '../is-valid';
-import stringify from '../../string/stringify';
 import padLeft from '../../string/pad-left';
 import aliases from '../../internal/datetime-aliases';
 
@@ -136,7 +135,7 @@ export default function (target, pattern, locale) {
         throw new TypeError('Target must be a valid date!');
     }
 
-    pattern = stringify(pattern);
+    pattern = String(pattern);
 
     if (pattern.length === 0) {
         return '';

@@ -1,7 +1,6 @@
 /* jshint -W003 */
 import type from './type';
 import slice from '../internal/slice';
-import stringify from '../string/stringify';
 
 /**
  * Checks if two regular expressions are equal.
@@ -102,8 +101,8 @@ function isEqual(target, other) {
     }
 
     if (tp === 'string') {
-        target = stringify(target);
-        other = stringify(other);
+        target = String(target);
+        other = String(other);
     }
 
     if (tp === 'number' || tp === 'nan' || tp === 'infinity') {
