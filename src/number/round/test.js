@@ -1,12 +1,8 @@
-'use strict';
+import { expect } from 'chai';
+import round from '.';
 
-import chai from 'chai';
-import round from '../../src/math/round';
-
-const expect = chai.expect;
-
-describe('math/round()', () => {
-    it('Should round down value', () => {
+describe('number/round()', () => {
+    it('Rounds down value', () => {
         expect(round(42.4)).to.equal(42);
         expect(round(42.5)).to.equal(43);
         expect(round(42.6)).to.equal(43);
@@ -15,7 +11,7 @@ describe('math/round()', () => {
         expect(round(0.6)).to.equal(1);
     });
 
-    it('Should work with negative values', () => {
+    it('Works with negative values', () => {
         expect(round(-42.4)).to.equal(-42);
         expect(round(-42.5)).to.equal(-42);
         expect(round(-42.6)).to.equal(-43);
@@ -24,7 +20,7 @@ describe('math/round()', () => {
         expect(round(-0.6)).to.equal(-1);
     });
 
-    it('Should allow custom precision', function () {
+    it('Allows custom precision', function () {
         expect(round(5.4321, 3)).to.equal(5.432);
         expect(round(5.4326, 3)).to.equal(5.433);
 
@@ -50,7 +46,7 @@ describe('math/round()', () => {
         expect(round(-5.6321, 0)).to.equal(-6);
     });
 
-    it('Should allow custom negative precision', () => {
+    it('Allows custom negative precision', () => {
         expect(round(54321, -3)).to.equal(54000);
         expect(round(54621, -3)).to.equal(55000);
 
@@ -70,7 +66,7 @@ describe('math/round()', () => {
         expect(round(-54326, -1)).to.equal(-54330);
     });
 
-    it('Should return NaN for non-numeric value', () => {
+    it('Returns NaN for non-numeric value', () => {
         expect(round('')).to.deep.equal(NaN);
         expect(round('42')).to.deep.equal(NaN);
         expect(round('42.42')).to.deep.equal(NaN);

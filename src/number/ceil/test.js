@@ -1,22 +1,18 @@
-'use strict';
+import { expect } from 'chai';
+import ceil from '.';
 
-import chai from 'chai';
-import ceil from '../../src/math/ceil';
-
-const expect = chai.expect;
-
-describe('math/ceil()', () => {
-    it('Should round up value', () => {
+describe('number/ceil()', () => {
+    it('Rounds up value', () => {
         expect(ceil(42.42)).to.equal(43);
         expect(ceil(0.42)).to.equal(1);
     });
 
-    it('Should work with negative values', () => {
+    it('Works with negative values', () => {
         expect(ceil(-42.42)).to.equal(-42);
         expect(ceil(-0.42)).to.equal(0);
     });
 
-    it('Should allow custom precision', () => {
+    it('Allows custom precision', () => {
         expect(ceil(5.4321, 3)).to.equal(5.433);
         expect(ceil(5.4321, 2)).to.equal(5.44);
         expect(ceil(5.4321, 1)).to.equal(5.5);
@@ -28,7 +24,7 @@ describe('math/ceil()', () => {
         expect(ceil(-5.4321, 0)).to.equal(-5);
     });
 
-    it('Should allow custom negative precision', () => {
+    it('Allows custom negative precision', () => {
         expect(ceil(54321, -3)).to.equal(55000);
         expect(ceil(54321, -2)).to.equal(54400);
         expect(ceil(54321, -1)).to.equal(54330);
@@ -38,7 +34,7 @@ describe('math/ceil()', () => {
         expect(ceil(-54321, -1)).to.equal(-54320);
     });
 
-    it('Should return NaN for non-numeric value', () => {
+    it('Returns NaN for non-numeric value', () => {
         expect(ceil('')).to.deep.equal(NaN);
         expect(ceil('42')).to.deep.equal(NaN);
         expect(ceil('42.42')).to.deep.equal(NaN);
