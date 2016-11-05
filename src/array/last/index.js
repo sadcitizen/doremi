@@ -1,5 +1,3 @@
-import slice from '../../internal/slice';
-
 /**
  * Returns the last element of an array. Passing `count`
  * will return the last `count` elements of the array.
@@ -32,7 +30,7 @@ function last(target, count = 1) {
     }
 
     if (count > 0) {
-        return slice(target, target.length - count, target.length);
+        return target.slice(target.length - count, target.length);
     }
 }
 

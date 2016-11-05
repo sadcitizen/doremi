@@ -1,5 +1,3 @@
-import slice from '../../internal/slice';
-
 /**
  * Returns the first element of an array. Passing `count`
  * will return the first `count` elements of the array.
@@ -22,7 +20,7 @@ import slice from '../../internal/slice';
 
 function first(target, count = 1) {
     if (count > 0) {
-        return count === 1 ? target[0] : slice(target, 0, count);
+        return count === 1 ? target[0] : target.slice(0, count);
     }
 }
 
