@@ -11,13 +11,13 @@ const WHITESPACES_REGEX = new RegExp(`^[${whitespaces}]*$`);
  *
  * @example
  *
- * isBlankString('');
+ * isBlank('');
  * // => true
  *
- * isBlankString('{"a":"b","c":"d"}');
+ * isBlank('{"a":"b","c":"d"}');
  * // => false
  *
- * isBlankString('     \t    \n ');
+ * isBlank('     \t    \n ');
  * // => true
  */
 export default target => isString(target) && WHITESPACES_REGEX.test(target);
