@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import log from '.';
 
-describe.only('number/log()', () => {
+describe('number/log()', () => {
     it('Returns logarithm of a number', () => {
         expect(log(2, 2)).to.equal(1);
         expect(log(9, 3)).to.equal(2);

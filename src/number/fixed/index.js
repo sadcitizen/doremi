@@ -13,4 +13,10 @@
  * (12.345).toFixed(2);
  * // => '12.35'
  */
-export default (target, precision = 2) => target.toFixed(precision + 1).slice(0, -1);
+export default (target, precision = 2) => {
+    if (precision > 0) {
+        return target.toFixed(precision + 1).slice(0, -1);
+    }
+
+    return target.toFixed(1).slice(0, -2);
+};
