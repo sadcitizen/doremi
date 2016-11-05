@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import fixed from '.';
 
-describe.only('number/fixed()', () => {
+describe('number/fixed()', () => {
     it('Returns formatted number', () => {
         expect(fixed(1.23456789, 0)).to.equal('1');
         expect(fixed(1.23456789, 1)).to.equal('1.2');
