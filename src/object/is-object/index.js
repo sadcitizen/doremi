@@ -1,5 +1,3 @@
-import type from '../../is/type';
-
 /**
  * Checks if `target` is an object.
  *
@@ -17,4 +15,4 @@ import type from '../../is/type';
  * isObject({});
  * // => true
  */
-export default target => type(target) === 'object';
+export default target => Object.prototype.toString.call(target) === '[object Object]';
