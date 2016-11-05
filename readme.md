@@ -15,3 +15,7 @@ npm install doremi
 ```
 import doremi from 'doremi';
 ```
+
+## Source
+
+* [string](./src/string)
