@@ -13,21 +13,21 @@
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
 function chopRight(target, step) {
-    let result = [];
-    let i;
-
-    step |= 0;
     target = String(target);
 
     if (target.length === 0) {
         return [];
     }
 
+    step |= 0;
+
     if (step < 2) {
         return target.split('');
     }
 
-    for (i = target.length; i >= 0; i -= step) {
+    let result = [];
+
+    for (let i = target.length; i >= 0; i -= step) {
         result.unshift(target.slice(i - step < 0 ? 0 : i - step, i));
     }
 

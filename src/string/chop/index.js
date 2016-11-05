@@ -13,22 +13,21 @@
  * // => ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
  */
 export default function (target, step) {
-    let result = [];
-    let i;
-    let length;
-
-    step |= 0;
     target = String(target);
 
     if (target.length === 0) {
         return [];
     }
 
+    step |= 0;
+
     if (step < 2) {
         return target.split('');
     }
 
-    for (i = 0, length = target.length; i < length; i += step) {
+    let result = [];
+
+    for (let i = 0, length = target.length; i < length; i += step) {
         result.push(target.slice(i, i + step));
     }
 

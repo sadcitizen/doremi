@@ -16,9 +16,8 @@ import trim from '../trim';
  * truncate('lorem ipsum dolor sit amet', 10, null, true);
  * // => 'lorem...'
  */
-export default function (target, limit, sfx, safe) {
+export default function (target, limit, sfx = '...', safe) {
     target = trim(target);
-    sfx = sfx || '...';
     limit |= 0;
     limit = safe ? limit + 1 : limit;
 

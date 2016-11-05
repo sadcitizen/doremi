@@ -21,7 +21,5 @@ export default function (target) {
         return '';
     }
 
-    target = target.replace(/[-_\s]+(.)?/g, (match, char) => char ? char.toUpperCase() : '');
-
-    return decapitalize(target);
+    return decapitalize(target.replace(/[-_\s]+(.)?/g, (match, char) => char ? char.toUpperCase() : ''));
 }
