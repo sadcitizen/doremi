@@ -18,4 +18,11 @@ import doremi from 'doremi';
 
 ## Source
 
-* [string](./src/string)
+- [array](./src/array)
+- [common](./src/common)
+- [date](./src/date)
+- [func](./src/func)
+- [number](./src/number)
+- [object](./src/object)
+- [random](./src/random)
+- [string](./src/string)
