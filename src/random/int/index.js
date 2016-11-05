@@ -1,17 +1,29 @@
 import isDefined from '../../common/is-defined';
-import constants from '../../internal/constants';
+import { MIN_INT, MAX_INT } from '../../internal/constants';
 
-// TODO: add description
+const { floor, random } = Math;
 
-function int(min, max) {
-    min = isDefined(min) ? ~~min : constants.MIN_INT;
-    max = isDefined(max) ? ~~max : constants.MAX_INT;
+/**
+ * Generates a pseudo-random integer number.
+ *
+ * @param {number} min The minimum value to generate.
+ * @param {number} max The maximum value to generate.
+ * @return {number} Return the integer number.
+ *
+ * @example
+ * int(10, 20);
+ * // => 16
+ *
+ * int(10, 20);
+ * // => 12
+ */
+export default function (min, max) {
+    min = isDefined(min) ? ~~min : MIN_INT;
+    max = isDefined(max) ? ~~max : MAX_INT;
 
     if (min > max) {
         throw new Error('Minimum value cannot be greater than maximum value.');
     }
 
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    return floor(random() * (max - min + 1) + min);
 }
-
-export default int;

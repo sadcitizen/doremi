@@ -1,19 +1,29 @@
 import isDefined from '../../common/is-defined';
-import constants from '../../internal/constants';
+import { MIN_INT, MAX_INT } from '../../internal/constants';
 
-// TODO: add description
+const { floor, random } = Math;
 
-function float(min, max, fixed) {
-    let frac = Math.random();
+/**
+ * Generates a pseudo-random float number.
+ *
+ * @param {number} min The minimum value to generate.
+ * @param {number} max The maximum value to generate.
+ * @param {number} fixed The length of fraction.
+ * @return {number} Returns the float number.
+ *
+ * @example
+ * float(10, 20, 3);
+ * // => 16.792
+ */
+export default function (min, max, fixed) {
+    let frac = random();
 
-    min = isDefined(min) ? ~~min : constants.MIN_INT;
-    max = isDefined(max) ? ~~max : constants.MAX_INT;
+    min = isDefined(min) ? ~~min : MIN_INT;
+    max = isDefined(max) ? ~~max : MAX_INT;
 
     if (min > max) {
         throw new Error('Minimum value cannot be greater than maximum value.');
     }
 
-    return parseFloat((Math.floor(Math.random() * (max - min - frac)) + frac).toFixed(fixed || 5));
+    return parseFloat((floor(random() * (max - min - frac)) + frac).toFixed(fixed || 5));
 }
-
-export default float;

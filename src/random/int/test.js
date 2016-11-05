@@ -10,12 +10,12 @@ describe('random/int()', () => {
         range = randomInteger(0, 1000);
     });
 
-    it('Should return a integer', () => {
+    it('Returns an integer', () => {
         expect(isInteger(num)).to.equal(true);
         expect(isInteger(range)).to.equal(true);
     });
 
-    it('Should return an integer inside range', () => {
+    it('Returns an integer inside range', () => {
         expect(range > 0 && range < 1000).to.equal(true);
     });
 });
