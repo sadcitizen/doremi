@@ -8,10 +8,16 @@ describe('number/isInt()', () => {
 
     it('Return true if value is zero', () => {
         expect(isInt(0)).to.equal(true);
+        expect(isInt(-0)).to.equal(true);
     });
 
     it('Return false if value is float number', () => {
         expect(isInt(42.42)).to.equal(false);
+    });
+
+    it('Return false if value is infinity', () => {
+        expect(isInt(Infinity)).to.equal(false);
+        expect(isInt(-Infinity)).to.equal(false);
     });
 
     it('Return false if value is not numeric or is nan', () => {

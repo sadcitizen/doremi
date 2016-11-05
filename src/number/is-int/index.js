@@ -8,13 +8,13 @@ import isNumber from '../is-number';
  *
  * @example
  *
- * isInteger(42);
+ * isInt(42);
  * // => true
  *
- * isInteger(42.42);
+ * isInt(42.42);
  * // => false
  *
- * isInteger('42');
+ * isInt('42');
  * // => false
  */
 export default target => isNumber(target) && target % 1 === 0;

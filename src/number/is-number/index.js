@@ -1,5 +1,4 @@
-import type from '../../is/type';
-
+import type from '../../common/type';
 /**
  * Checks if `target` is number.
  *

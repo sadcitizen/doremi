@@ -1,9 +1,11 @@
 'use strict';
 
 import isNumber from '../is-number';
-import log from '../../math/log';
-import floor from '../../math/floor';
+import log from '../log';
+import floor from '../floor';
 import fixed from '../fixed';
+
+const { abs, pow } = Math;
 
 const symbols = {
     kilo: 'k', // 1000 ^ 1
@@ -51,7 +53,7 @@ export default function (target, precision = 2, dict = symbols) {
         return '';
     }
 
-    const basis = floor(log(Math.abs(target), base) / 3) * 3;
+    const basis = floor(log(abs(target), base) / 3) * 3;
 
-    return fixed(target / Math.pow(base, basis), precision) + dict[prefixes[basis]];
+    return fixed(target / pow(base, basis), precision) + dict[prefixes[basis]];
 }
