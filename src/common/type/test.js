@@ -1,13 +1,9 @@
-'use strict';
+import { expect } from 'chai';
+import type from '.';
+import noop from '../../func/noop';
 
-import chai from 'chai';
-import type from '../../src/is/type';
-import noop from '../../src/func/noop';
-
-const expect = chai.expect;
-
-describe('is/type()', () => {
-    it('Should return a type of value', () => {
+describe('common/type()', () => {
+    it('Returns a type of value', () => {
         expect(type(arguments)).to.equal('arguments');
 
         expect(type([])).to.equal('array');

@@ -15,7 +15,7 @@
  * type({});
  * // => object
  */
-function type(target) {
+export default function (target) {
     if (target === undefined) {
         return 'undefined';
     }
@@ -41,5 +41,3 @@ function type(target) {
 
     return tp;
 }
-
-export default type;
