@@ -6,6 +6,7 @@ import defer from './defer';
 import flip from './flip';
 import identity from './identity';
 import isFunction from './is-function';
+import memoize from './memoize';
 import negate from './negate';
 import noop from './noop';
 import once from './once';
@@ -21,6 +22,7 @@ export { defer };
 export { flip };
 export { identity };
 export { isFunction };
+export { memoize };
 export { negate };
 export { noop };
 export { once };
@@ -37,6 +39,7 @@ export default {
     flip,
     identity,
     isFunction,
+    memoize,
     negate,
     noop,
     once,
