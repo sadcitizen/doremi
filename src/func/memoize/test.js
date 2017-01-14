@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import memoize from '.';
 
-describe.only('func/memoize()', () => {
+describe('func/memoize()', () => {
     it('Returns a new function', () => {
         expect(memoize(sinon.spy(), 100)).to.be.a('function');
     });
