@@ -13,6 +13,6 @@
  */
 
 export default function (target, source) {
-    target.unshift.apply(target, source);
+    target.unshift(...source);
     return target;
 }

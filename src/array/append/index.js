@@ -12,6 +12,6 @@
  * // => [3, 6, 9, 12, 4, 7, 10, 13]
  */
 export default function (target, source) {
-    target.push.apply(target, source);
+    target.push(...source);
     return target;
 }
