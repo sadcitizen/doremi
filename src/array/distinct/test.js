@@ -11,10 +11,22 @@ describe('array/distinct()', () => {
     });
 
     it('Allows getter to determine equality', () => {
-        const target = [{name: 'Casper'}, {name: 'Richard'}, {name: 'Casper'}];
-        const expected = [{name: 'Casper'}, {name: 'Richard'}];
-        const getter = i => i.name;
+        const target = [{
+            name: 'Casper'
+        }, {
+            name: 'Richard'
+        }, {
+            name: 'Casper'
+        }];
 
-        expect(distinct(target, getter)).to.deep.equal(expected);
+        const expected = [{
+            name: 'Casper'
+        }, {
+            name: 'Richard'
+        }];
+
+        const iterator = i => i.name;
+
+        expect(distinct(target, iterator)).to.deep.equal(expected);
     });
 });

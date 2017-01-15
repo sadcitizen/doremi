@@ -9,6 +9,7 @@ import min from './min';
 import partition from './partition';
 import prepend from './prepend';
 import remove from './remove';
+import sum from './sum';
 
 export default {
     append,
@@ -21,5 +22,6 @@ export default {
     min,
     partition,
     prepend,
-    remove
+    remove,
+    sum
 };
