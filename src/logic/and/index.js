@@ -1,7 +1,14 @@
-export default (...conditions) => {
-    if (conditions.length === 0) {
-        return false;
-    }
-
-    return conditions.every(Boolean)
-};
+/**
+ * Returns true if all conditions are true, false otherwise.
+ *
+ * @param {Array} conditions The conditions to check.
+ * @return {boolean} Returns true or false.
+ *
+ * @example
+ * and(true, true, true);
+ * // => true
+ *
+ * and(true, false, true);
+ * // => false
+ */
+export default (...conditions) => conditions.length ? conditions.every(Boolean) : false;
