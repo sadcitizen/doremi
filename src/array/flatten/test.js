@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import flatten from '.';
 
-describe.only('array/flatten()', () => {
+describe('array/flatten()', () => {
     const target = [1, [2], [3, [4, [5]], 6], 7];
 
     it('Returns recursively flatten array', () => {

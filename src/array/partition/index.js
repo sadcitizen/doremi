@@ -1,3 +1,5 @@
+import identity from '../../func/identity';
+
 /**
  * Returns an array of two arrays.
  * The first array is items that return true for the predicate function.
@@ -15,7 +17,7 @@
  * partition([null, false, undefined], Boolean);
  * // => [[], [null, false, undefined]]
  */
-export default function (target, predicate, ctx) {
+export default function (target, predicate = identity, ctx) {
     let pass = [];
     let fail = [];
 
