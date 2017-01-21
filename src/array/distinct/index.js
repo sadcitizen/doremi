@@ -1,4 +1,5 @@
 import identity from '../../func/identity';
+
 /**
  * Returns distinct elements from an array
  *
@@ -7,7 +8,6 @@ import identity from '../../func/identity';
  * @returns {Array} Returns new array with unique values.
  *
  * @example
- *
  * distinct([1, 2, 1, 3, 1, 4]);
  * // => [1, 2, 3, 4]
  *

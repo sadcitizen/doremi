@@ -8,6 +8,7 @@
  * @example
  * const foo = [3, 6, 9, 12];
  * const bar = [4, 7, 10, 13];
+ *
  * append(foo, bar);
  * // => [3, 6, 9, 12, 4, 7, 10, 13]
  */

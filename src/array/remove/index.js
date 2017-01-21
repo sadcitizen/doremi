@@ -11,12 +11,12 @@ import append from '../append';
  * @example
  * const target = [1, 2, 3, 4, 5, 6];
  * const evens = remove(target, x => x % 2 === 0);
+ * 
  * console.log(target);
  * // => [1, 3, 5]
  * console.log(evens);
  * // => [2, 4, 6]
  */
-
 export default function (target, predicate) {
     let result = [];
 

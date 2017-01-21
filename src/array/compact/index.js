@@ -7,7 +7,6 @@ import isDefined from '../../common/is-defined';
  * @returns {Array}
  *
  * @example
- *
  * compact([1, 2, 3]);
  * // => [1, 2, 3]
  *

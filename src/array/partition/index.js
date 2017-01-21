@@ -9,14 +9,13 @@
  * @returns {Array} Returns the array of two arrays.
  *
  * @example
- *
  * partition([1, 2, 3, 4, 5], isEven);
  * // => [[2, 4], [1, 3, 5]]
  *
  * partition([null, false, undefined], Boolean);
  * // => [[], [null, false, undefined]]
  */
-function partition(target, predicate, ctx) {
+export default function (target, predicate, ctx) {
     let pass = [];
     let fail = [];
 
@@ -24,5 +23,3 @@ function partition(target, predicate, ctx) {
 
     return [pass, fail];
 }
-
-export default partition;

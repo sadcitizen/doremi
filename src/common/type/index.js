@@ -2,10 +2,9 @@
  * Returns a type of `target`.
  *
  * @param target The value to check.
- * @returns {string}
+ * @returns {string} The type of `target`.
  *
  * @example
- *
  * type('');
  * // => string
  *

@@ -5,7 +5,6 @@
  * @returns {boolean} Return `true` if `target` is not `null` and `undefined`, else `false`.
  *
  * @example
- *
  * isDefined(null);
  * // => false
  *

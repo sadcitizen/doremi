@@ -7,7 +7,6 @@
  * @returns {*|Array} Returns elements of the array.
  *
  * @example
- *
  * last([1, 2, 3, 4, 5]);
  * // => 5
  *
@@ -18,7 +17,7 @@
  * // => [1, 2, 3, 4, 5]
  */
 
-function last(target, count = 1) {
+export default function (target, count = 1) {
     let length = target.length;
 
     if (count >= length) {
@@ -33,5 +32,3 @@ function last(target, count = 1) {
         return target.slice(target.length - count, target.length);
     }
 }
-
-export default last;
