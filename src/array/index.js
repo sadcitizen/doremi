@@ -11,6 +11,7 @@ import prepend from './prepend';
 import remove from './remove';
 import sortBy from './sort-by';
 import sum from './sum';
+import update from './update';
 
 export default {
     append,
@@ -25,5 +26,6 @@ export default {
     prepend,
     remove,
     sortBy,
-    sum
+    sum,
+    update
 };

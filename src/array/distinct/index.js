@@ -14,7 +14,6 @@ import identity from '../../func/identity';
  * distinct([{name: 'Casper'}, {name: 'Richard'}, {name: 'Casper'}], i => i.name);
  * // => [{name: 'Casper'}, {name: 'Richard'}]
  */
-
 export default function (target, iteratee = identity) {
     let result = [];
     let seen = [];
