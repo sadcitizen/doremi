@@ -9,6 +9,7 @@ import min from './min';
 import partition from './partition';
 import prepend from './prepend';
 import remove from './remove';
+import sortBy from './sort-by';
 import sum from './sum';
 
 export default {
@@ -23,5 +24,6 @@ export default {
     partition,
     prepend,
     remove,
+    sortBy,
     sum
 };
