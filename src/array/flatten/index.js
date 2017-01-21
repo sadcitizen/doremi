@@ -16,6 +16,10 @@ import append from '../append';
  * // => [1, 2, 3, [[4]]]
  */
 function flatten(target, deep = true) {
+    if (!Array.isArray(target)) {
+        return [];
+    }
+    
     let result = [];
 
     target.forEach(x => Array.isArray(x) ? append(result, deep ? flatten(x, deep) : x) : result.push(x));
