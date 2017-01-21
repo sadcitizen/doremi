@@ -18,15 +18,14 @@ export default function (target, iteratee = identity) {
     let result = [];
     let seen = [];
 
-    for (let i = 0; i < target.length; i++) {
-        let value = target[i];
+    target.forEach(value => {
         let comparable = iteratee(value);
 
         if (!seen.includes(comparable)) {
             result.push(value);
             seen.push(comparable);
         }
-    }
+    });
 
     return result;
 }

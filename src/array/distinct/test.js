@@ -11,19 +11,8 @@ describe('array/distinct()', () => {
     });
 
     it('Allows getter to determine equality', () => {
-        const target = [{
-            name: 'Casper'
-        }, {
-            name: 'Richard'
-        }, {
-            name: 'Casper'
-        }];
-
-        const expected = [{
-            name: 'Casper'
-        }, {
-            name: 'Richard'
-        }];
+        const target = [{ name: 'Casper' }, { name: 'Richard' }, { name: 'Casper' }];
+        const expected = [{ name: 'Casper' }, { name: 'Richard' }];
 
         const iterator = i => i.name;
 
