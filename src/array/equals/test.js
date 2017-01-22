@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import equals from '.';
 
-describe.only('array/equals()', () => {
+describe('array/equals()', () => {
     it('Checks if the arrays contain the same elements', () => {
         const a = [1, 2, 3, 4];
         const b = [1, 2, 3, 4];
