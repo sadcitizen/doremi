@@ -1,8 +1,10 @@
+.git
 .idea
 node_modules
 npm-debug.log
 src
-tests
 .babelrc
+.editorconfig
 .eslintrc
+.gitignore
 .travis.yml
