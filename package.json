@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src tests --config .eslintrc",
-    "test": "mocha --compilers js:babel-core/register tests/**/*.spec.js --reporter progress",
+    "test": "mocha src --recursive --compilers js:babel-core/register",
     "build": "babel src --out-dir .",
-    "clean": "rimraf array date func internal is math number object random string to index.js",
+    "clean": "rimraf array common date func internal logic number object random string index.js test.js",
     "prepublish": "npm run build",
     "postpublish": "npm run clean && git push --follow-tags"
   },
@@ -27,7 +27,9 @@
     "babel-cli": "^6.14.0",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.22.0",
     "chai": "^1.10.0",
     "eslint": "^2.12.0",
     "mocha": "^2.5.3",

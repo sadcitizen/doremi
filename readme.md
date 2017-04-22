@@ -15,3 +15,14 @@ npm install doremi
 ```
 import doremi from 'doremi';
 ```
+
+## Source
+
+- [array](./src/array)
+- [common](./src/common)
+- [date](./src/date)
+- [func](./src/func)
+- [number](./src/number)
+- [object](./src/object)
+- [random](./src/random)
+- [string](./src/string)
