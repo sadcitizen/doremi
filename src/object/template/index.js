@@ -1,8 +1,8 @@
-import { es6 } from '../internal/regexes/template';
-import isObject from '../object/is-object';
-import isString from '../string/is-string';
-import getValue from './get-value';
-import trim from '../string/trim';
+import { es6 } from '../../internal/regexes/template';
+import isObject from '../is-object';
+import isString from '../../string/is-string';
+import getValue from '../get-value';
+import trim from '../../string/trim';
 
 /**
  * Replaces tokens from `target` on corresponding values from `source`.

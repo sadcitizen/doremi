@@ -1,4 +1,4 @@
-import getValue from './get-value';
+import getValue from '../get-value';
 
 /**
  * Creates an array of own enumerable property values of `target`.

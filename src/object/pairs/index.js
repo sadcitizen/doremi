@@ -1,4 +1,4 @@
-import getValue from './get-value';
+import getValue from '../get-value';
 
 /**
  * Creates a two dimensional array of the key-value pairs for `target`,
