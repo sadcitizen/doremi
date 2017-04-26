@@ -27,7 +27,7 @@ function chopRight(target, step) {
 
     let result = [];
 
-    for (let i = target.length; i >= 0; i -= step) {
+    for (let i = target.length; i > 0; i -= step) {
         result.unshift(target.slice(i - step < 0 ? 0 : i - step, i));
     }
 

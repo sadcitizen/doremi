@@ -9,6 +9,7 @@ describe('string/chopRight()', () => {
         expect(chopRight('lorem ipsum', 2)).to.deep.equal(['l', 'or', 'em', ' i', 'ps', 'um']);
         expect(chopRight('lorem ipsum', 1)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
         expect(chopRight('lorem ipsum', 0)).to.deep.equal(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+        expect(chopRight('haha', 2)).to.deep.equal(['ha', 'ha']);
     });
 
     it('Works with null and undefined', () => {
