@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import choice from '.';
 
 describe('random/choice()', () => {
@@ -9,7 +8,7 @@ describe('random/choice()', () => {
         firstApplyChoice,
         secondApplyChoice;
 
-    before(() => {
+    beforeAll(() => {
         firstChoice = choice(list);
         secondChoice = choice(list);
 
@@ -17,13 +16,13 @@ describe('random/choice()', () => {
         secondApplyChoice = choice.apply(random, list);
     });
 
-    it('Pick a random item from list', () => {
-        expect(list).to.contain(firstChoice);
-        expect(list).to.contain(secondChoice);
+    test('Picks a random item from list', () => {
+        expect(list).toContain(firstChoice);
+        expect(list).toContain(secondChoice);
     });
 
-    it('Pick a random item from arguments', () => {
-        expect(list).to.contain(firstApplyChoice);
-        expect(list).to.contain(secondApplyChoice);
+    test('Picks a random item from arguments', () => {
+        expect(list).toContain(firstApplyChoice);
+        expect(list).toContain(secondApplyChoice);
     });
 });
