@@ -1,7 +1,7 @@
 /**
  * Returns true if all conditions are true, false otherwise.
  *
- * @param {Array} conditions The conditions to check.
+ * @param {boolean[]} conditions The conditions to check.
  * @return {boolean} Returns true or false.
  *
  * @example
