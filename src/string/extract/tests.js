@@ -1,18 +1,17 @@
-import { expect } from 'chai';
 import extract from '.';
 
 describe('string/extract()', () => {
-    it('Extracts values', () => {
+    test('Extracts values', () => {
         const result = {
             user: 'bill',
             host: 'gates',
             domain: 'com'
         };
 
-        expect(extract('bill@gates.com', '${user}@${host}.${domain}')).to.deep.equal(result);
+        expect(extract('bill@gates.com', '${user}@${host}.${domain}')).toEqual(result);
     });
 
-    it('Works with nested values', () => {
+    test('Works with nested values', () => {
         const post = {
             slug: 'hello-world',
             date: {
@@ -24,18 +23,18 @@ describe('string/extract()', () => {
         const target = '/2015/08/21/hello-world.html';
         const pattern = '/${date.year}/${date.month}/${date.day}/${slug}.html';
 
-        expect(extract(target, pattern)).to.deep.equal(post);
+        expect(extract(target, pattern)).toEqual(post);
     });
 
-    it('Works with custom separators', () => {
+    test('Works with custom separators', () => {
         const result = {
             user: 'bill',
             host: 'gates',
             domain: 'com'
         };
 
-        expect(extract('bill@gates.com', '{user}@{host}.{domain}', ['{', '}'])).to.deep.equal(result);
-        expect(extract('bill@gates.com', '$user$@$host$.$domain$', ['$', '$'])).to.deep.equal(result);
-        expect(extract('bill@gates.com', '{%user%}@{%host%}.{%domain%}', ['{%', '%}'])).to.deep.equal(result);
+        expect(extract('bill@gates.com', '{user}@{host}.{domain}', ['{', '}'])).toEqual(result);
+        expect(extract('bill@gates.com', '$user$@$host$.$domain$', ['$', '$'])).toEqual(result);
+        expect(extract('bill@gates.com', '{%user%}@{%host%}.{%domain%}', ['{%', '%}'])).toEqual(result);
     });
 });

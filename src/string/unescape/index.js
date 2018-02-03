@@ -20,7 +20,7 @@ export default function (target) {
         return '';
     }
 
-    var invertedSymbols = invert(symbols);
+    const invertedSymbols = invert(symbols);
     /* jshint -W109 */
     invertedSymbols['&#39;'] = "'";
     /* jshint +W109 */
