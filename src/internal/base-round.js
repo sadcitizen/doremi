@@ -11,6 +11,6 @@ export default function (target) {
     const fn = Math[target];
     return function (num, precision = 0) {
         precision = Math.pow(10, precision | 0);
-        return isNumber(num) ? fn(num * precision) / precision : NaN;
+        return isNumber(num) ? (fn(num * precision) + 0) / precision : NaN;
     };
 }
