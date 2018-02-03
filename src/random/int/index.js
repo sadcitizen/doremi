@@ -18,8 +18,8 @@ const { floor, random } = Math;
  * // => 12
  */
 export default function (min, max) {
-    min = isDefined(min) ? ~~min : MIN_INT;
-    max = isDefined(max) ? ~~max : MAX_INT;
+    min = isDefined(min) ? min : MIN_INT;
+    max = isDefined(max) ? max : MAX_INT;
 
     if (min > max) {
         throw new Error('Minimum value cannot be greater than maximum value.');
