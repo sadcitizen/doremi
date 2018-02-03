@@ -1,6 +1,6 @@
 /**
  * Return a new function which accepts arguments in the reverse order that the original function specifies.
- * @param  {Function} fn Thefunction which needs to accept arguments in reverse order.
+ * @param  {Function} fn The function which needs to accept arguments in reverse order.
  * @return {Function} The new function.
  *
  * @example
