@@ -1,5 +1,5 @@
 export default function (target) {
-    var result = {};
+    const result = {};
     Object.keys(target).forEach(item => result[target[item]] = item, this);
     return result;
 }
