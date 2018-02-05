@@ -1,11 +1,12 @@
 const units = {
-    'Y': 'years',
-    'M': 'months',
-    'D': 'days',
-    'h': 'hours',
-    'm': 'minutes',
-    's': 'seconds',
-    'ms': 'milliseconds'
+    'Y': 'year',
+    'M': 'month',
+    'W': 'week',
+    'D': 'day',
+    'h': 'hour',
+    'm': 'minute',
+    's': 'second',
+    'ms': 'millisecond'
 };
 
 export default unit => units[unit] || unit;
