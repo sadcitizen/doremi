@@ -1,12 +1,13 @@
 import normalize from '../../internal/normalize-time-unit';
+import clone from '../clone';
 
-const adders = {
-    years(target, count) {
+const handlers = {
+    year(target, count) {
         target.setFullYear(target.getFullYear() + count);
         return target;
     },
 
-    months(target, count) {
+    month(target, count) {
         const m = target.getMonth();
         let next = m + count;
 
@@ -23,27 +24,27 @@ const adders = {
         return target;
     },
 
-    days(target, count) {
+    day(target, count) {
         target.setDate(target.getDate() + count);
         return target;
     },
 
-    hours(target, count) {
+    hour(target, count) {
         target.setHours(target.getHours() + count);
         return target;
     },
 
-    minutes(target, count) {
+    minute(target, count) {
         target.setMinutes(target.getMinutes() + count);
         return target;
     },
 
-    seconds(target, count) {
+    second(target, count) {
         target.setSeconds(target.getSeconds() + count);
         return target;
     },
 
-    milliseconds(target, count) {
+    millisecond(target, count) {
         target.setMilliseconds(target.getMilliseconds() + count);
         return target;
     }
@@ -54,7 +55,7 @@ const adders = {
  *
  * @param {Date} target The date to modify.
  * @param {number} count The count of units.
- * @param {string="years", "months", "days", "hours", "minutes", "seconds", "milliseconds"} unit The time unit.
+ * @param {string="year", "month", "day", "hour", "minute", "second", "millisecond"} unit The time unit.
  * @returns {Date} The mutated date.
  *
  * @example
@@ -64,11 +65,11 @@ const adders = {
  * // => "Thu, 31 Dec 2015 19:00:00 GMT"
  */
 export default function (target, count, unit) {
-    const adder = adders[normalize(unit)];
+    const handler = handlers[normalize(unit)];
 
-    if (adder) {
-        return adder(target, count);
+    if (handler) {
+        return handler(clone(target), count);
     } else {
-        throw new Error('Unexpected time unit!');
+        throw new Error(`"${unit}" is invalid time unit`);
     }
 }
