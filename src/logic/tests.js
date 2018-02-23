@@ -1,7 +1,7 @@
 import logic, { and, or, ternary } from '.';
 
 describe('doremi/logic', () => {
-    test('Imports doremi/logic as object', () => {
+    test('imports doremi/logic as object', () => {
         expect(logic).toEqual(expect.any(Object));
     });
 

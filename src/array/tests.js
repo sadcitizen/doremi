@@ -1,7 +1,7 @@
 import array, { append, at, compact, countBy, distinct, equals, first, flatten, groupBy, last, max, min, partition, prepend, remove, sortBy, sum, union, update } from '.';
 
 describe('doremi/array', () => {
-    test('Imports doremi/array as object', () => {
+    test('imports doremi/array as object', () => {
         expect(array).toEqual(expect.any(Object));
     });
 

@@ -1,7 +1,7 @@
 import func, { after, before, compose, defer, delay, flip, identity, isFunction, memoize, negate, noop, once, partial, partialRight, pipe } from '.';
 
 describe('doremi/func', () => {
-    test('Imports doremi/func as object', () => {
+    test('imports doremi/func as object', () => {
         expect(func).toEqual(expect.any(Object));
     });
 

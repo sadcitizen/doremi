@@ -1,7 +1,7 @@
 import object, { getValue, invert, isObject, isPlain, namespace, pairs, property, result, setValue, template, values } from '.';
 
 describe('doremi/object', () => {
-    test('Imports doremi/object as object', () => {
+    test('imports doremi/object as object', () => {
         expect(object).toEqual(expect.any(Object));
     });
 

@@ -1,7 +1,7 @@
 import common, { isDefined, type } from '.';
 
 describe('doremi/common', () => {
-    test('Imports doremi/common as object', () => {
+    test('imports doremi/common as object', () => {
         expect(common).toEqual(expect.any(Object));
     });
 

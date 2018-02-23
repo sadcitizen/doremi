@@ -1,7 +1,7 @@
 import string, { camelize, capitalize, chop, chopRight, clean, count, decapitalize, escape, extract, insert, isBlank, isChar, isEmpty, isString, join, lines, pad, padLeft, padRight, remove, repeat, reverse, swap, template, trim, trimLeft, trimRight, truncate, unescape } from '.';
 
 describe('doremi/string', () => {
-    test('Imports doremi/string as object', () => {
+    test('imports doremi/string as object', () => {
         expect(string).toEqual(expect.any(Object));
     });
 

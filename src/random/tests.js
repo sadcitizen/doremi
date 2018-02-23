@@ -1,7 +1,7 @@
 import random, { bool, choice, date, float, guid, hex, int } from '.';
 
 describe('doremi/random', () => {
-    test('Imports doremi/random as object', () => {
+    test('imports doremi/random as object', () => {
         expect(random).toEqual(expect.any(Object));
     });
 
