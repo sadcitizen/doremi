@@ -1,15 +1,5 @@
 /**
- * Checks if `target` is date.
- *
- * @param {*} target The value to check.
- * @returns {boolean} Returns `true` if `target` is date, else 'false'.
- *
- * @example
- *
- * isDate('2014-11-22');
- * // => false
- *
- * isDate(new Date());
- * // => true
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns true if the value is date, false otherwise.
  */
-export default target => Object.prototype.toString.call(target) === '[object Date]';
+export default value => Object.prototype.toString.call(value) === '[object Date]';
