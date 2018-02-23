@@ -1,13 +1,14 @@
-import number, { abbreviate, ceil, fixed, floor, isEven, isFloat, isInt, isNumber, isOdd, log, round } from '.';
+import number, { abbreviate, ceil, equals, fixed, floor, isEven, isFloat, isInt, isNumber, isOdd, log, round } from '.';
 
 describe('doremi/number', () => {
-    test('Imports doremi/number as object', () => {
+    test('imports doremi/number as object', () => {
         expect(number).toEqual(expect.any(Object));
     });
 
     test('doremi/number has correct properties', () => {
         expect(number).toHaveProperty('abbreviate', abbreviate);
         expect(number).toHaveProperty('ceil', ceil);
+        expect(number).toHaveProperty('equals', equals);
         expect(number).toHaveProperty('fixed', fixed);
         expect(number).toHaveProperty('floor', floor);
         expect(number).toHaveProperty('isEven', isEven);

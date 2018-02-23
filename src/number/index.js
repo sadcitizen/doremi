@@ -1,5 +1,6 @@
 import abbreviate from './abbreviate';
 import ceil from './ceil';
+import equals from './equals';
 import fixed from './fixed';
 import floor from './floor';
 import isEven from './is-even';
@@ -12,6 +13,7 @@ import round from './round';
 
 export { abbreviate };
 export { ceil };
+export { equals };
 export { fixed };
 export { floor };
 export { isEven };
@@ -25,6 +27,7 @@ export { round };
 export default {
     abbreviate,
     ceil,
+    equals,
     fixed,
     floor,
     isEven,
