@@ -1,43 +1,48 @@
 import normalize from '../../internal/normalize-time-unit';
 import clone from '../clone';
 
-function year(target) {
-    target.setMonth(0);
-    return month(target);
+function year(value) {
+    value.setMonth(0);
+    return month(value);
 }
 
-function month(target) {
-    target.setDate(1);
-    return day(target);
+function month(value) {
+    value.setDate(1);
+    return day(value);
 }
 
-function day(target) {
-    target.setHours(0);
-    return hour(target);
+function day(value) {
+    value.setHours(0);
+    return hour(value);
 }
 
-function hour(target) {
-    target.setMinutes(0);
-    return minute(target);
+function hour(value) {
+    value.setMinutes(0);
+    return minute(value);
 }
 
-function minute(target) {
-    target.setSeconds(0);
-    return second(target);
+function minute(value) {
+    value.setSeconds(0);
+    return second(value);
 }
 
-function second(target) {
-    target.setMilliseconds(0);
-    return target;
+function second(value) {
+    value.setMilliseconds(0);
+    return value;
 }
 
 const handlers = { year, month, day, hour, minute, second };
 
-export default function (target, unit) {
+/**
+ * @param {Date} value The date to modify.
+ * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit The time unit.
+ * @returns {Date} The mutated date.
+ */
+export default function (value, unit) {
     const handler = handlers[normalize(unit)];
 
     if (handler) {
-        return handler(clone(target));
+        return handler(clone(value));
     } else {
         throw new Error(`"${unit}" is invalid time unit`);
     }
