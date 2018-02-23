@@ -1,7 +1,7 @@
 import round from '.';
 
 describe('number/round()', () => {
-    test('Rounds down value', () => {
+    test('rounds down value', () => {
         expect(round(42.4)).toBe(42);
         expect(round(42.5)).toBe(43);
         expect(round(42.6)).toBe(43);
@@ -10,7 +10,7 @@ describe('number/round()', () => {
         expect(round(0.6)).toBe(1);
     });
 
-    test('Works with negative values', () => {
+    test('works with negative values', () => {
         expect(round(-42.4)).toBe(-42);
         expect(round(-42.5)).toBe(-42);
         expect(round(-42.6)).toBe(-43);
@@ -19,7 +19,7 @@ describe('number/round()', () => {
         expect(round(-0.6)).toBe(-1);
     });
 
-    test('Allows custom precision', function () {
+    test('allows custom precision', function () {
         expect(round(5.4321, 3)).toBe(5.432);
         expect(round(5.4326, 3)).toBe(5.433);
 
@@ -45,7 +45,7 @@ describe('number/round()', () => {
         expect(round(-5.6321, 0)).toBe(-6);
     });
 
-    test('Allows custom negative precision', () => {
+    test('allows custom negative precision', () => {
         expect(round(54321, -3)).toBe(54000);
         expect(round(54621, -3)).toBe(55000);
 
@@ -65,7 +65,7 @@ describe('number/round()', () => {
         expect(round(-54326, -1)).toBe(-54330);
     });
 
-    test('Returns NaN for non-numeric value', () => {
+    test('returns NaN for non-numeric value', () => {
         expect(round('')).toEqual(NaN);
         expect(round('42')).toEqual(NaN);
         expect(round('42.42')).toEqual(NaN);

@@ -1,7 +1,7 @@
 import fixed from '.';
 
 describe('number/fixed()', () => {
-    test('Returns formatted number', () => {
+    test('returns formatted number', () => {
         expect(fixed(1.23456789, 0)).toBe('1');
         expect(fixed(1.23456789, 1)).toBe('1.2');
         expect(fixed(1.23456789, 2)).toBe('1.23');
@@ -14,7 +14,7 @@ describe('number/fixed()', () => {
         expect(fixed(1.23456789, 9)).toBe('1.234567890');
     });
 
-    test('Treats negative precision as zero', () => {
+    test('treats negative precision as zero', () => {
         expect(fixed(1234.56789, -3)).toBe('1234');
         expect(fixed(12.3456789, -4)).toBe('12');
     });

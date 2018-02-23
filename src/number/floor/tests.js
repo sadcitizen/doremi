@@ -1,17 +1,17 @@
 import floor from '.';
 
 describe('number/floor()', () => {
-    test('Rounds down value', () => {
+    test('rounds down value', () => {
         expect(floor(42.42)).toBe(42);
         expect(floor(0.42)).toBe(0);
     });
 
-    test('Works with negative values', () => {
+    test('works with negative values', () => {
         expect(floor(-42.42)).toBe(-43);
         expect(floor(-0.42)).toBe(-1);
     });
 
-    test('Allows custom precision', () => {
+    test('allows custom precision', () => {
         expect(floor(5.4321, 3)).toBe(5.432);
         expect(floor(5.4321, 2)).toBe(5.43);
         expect(floor(5.4321, 1)).toBe(5.4);
@@ -23,7 +23,7 @@ describe('number/floor()', () => {
         expect(floor(-5.4321, 0)).toBe(-6);
     });
 
-    test('Allows custom negative precision', () => {
+    test('allows custom negative precision', () => {
         expect(floor(54321, -3)).toBe(54000);
         expect(floor(54321, -2)).toBe(54300);
         expect(floor(54321, -1)).toBe(54320);
@@ -33,7 +33,7 @@ describe('number/floor()', () => {
         expect(floor(-54321, -1)).toBe(-54330);
     });
 
-    test('Returns NaN for non-numeric value', () => {
+    test('returns NaN for non-numeric value', () => {
         expect(floor('')).toEqual(NaN);
         expect(floor('42')).toEqual(NaN);
         expect(floor('42.42')).toEqual(NaN);

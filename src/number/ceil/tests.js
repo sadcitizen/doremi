@@ -1,17 +1,17 @@
 import ceil from '.';
 
 describe('number/ceil()', () => {
-    test('Rounds up value', () => {
+    test('rounds up value', () => {
         expect(ceil(42.42)).toBe(43);
         expect(ceil(0.42)).toBe(1);
     });
 
-    test('Works with negative values', () => {
+    test('works with negative values', () => {
         expect(ceil(-42.42)).toBe(-42);
         expect(ceil(-0.42)).toBe(0);
     });
 
-    test('Allows custom precision', () => {
+    test('allows custom precision', () => {
         expect(ceil(5.4321, 3)).toBe(5.433);
         expect(ceil(5.4321, 2)).toBe(5.44);
         expect(ceil(5.4321, 1)).toBe(5.5);
@@ -23,7 +23,7 @@ describe('number/ceil()', () => {
         expect(ceil(-5.4321, 0)).toBe(-5);
     });
 
-    test('Allows custom negative precision', () => {
+    test('allows custom negative precision', () => {
         expect(ceil(54321, -3)).toBe(55000);
         expect(ceil(54321, -2)).toBe(54400);
         expect(ceil(54321, -1)).toBe(54330);
@@ -33,7 +33,7 @@ describe('number/ceil()', () => {
         expect(ceil(-54321, -1)).toBe(-54320);
     });
 
-    test('Returns NaN for non-numeric value', () => {
+    test('returns NaN for non-numeric value', () => {
         expect(ceil('')).toEqual(NaN);
         expect(ceil('42')).toEqual(NaN);
         expect(ceil('42.42')).toEqual(NaN);
