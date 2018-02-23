@@ -1,67 +1,67 @@
 import normalize from '../../internal/normalize-time-unit';
 import clone from '../clone';
 
-function year(target, count) {
-    target.setFullYear(target.getFullYear() + count);
-    return target;
+function year(value, num) {
+    value.setFullYear(value.getFullYear() + num);
+    return value;
 }
 
-function month(target, count) {
-    const m = target.getMonth();
-    let next = m + count;
+function month(value, num) {
+    const m = value.getMonth();
+    let next = m + num;
 
     if (next < 0) {
         next = 12 + next;
     }
 
-    target.setMonth(target.getMonth() + count);
+    value.setMonth(value.getMonth() + num);
 
-    if (target.getMonth() !== next) {
-        target.setDate(0);
+    if (value.getMonth() !== next) {
+        value.setDate(0);
     }
 
-    return target;
+    return value;
 }
 
-function day(target, count) {
-    target.setDate(target.getDate() + count);
-    return target;
+function day(value, num) {
+    value.setDate(value.getDate() + num);
+    return value;
 }
 
-function hour(target, count) {
-    target.setHours(target.getHours() + count);
-    return target;
+function hour(value, num) {
+    value.setHours(value.getHours() + num);
+    return value;
 }
 
-function minute(target, count) {
-    target.setMinutes(target.getMinutes() + count);
-    return target;
+function minute(value, num) {
+    value.setMinutes(value.getMinutes() + num);
+    return value;
 }
 
-function second(target, count) {
-    target.setSeconds(target.getSeconds() + count);
-    return target;
+function second(value, num) {
+    value.setSeconds(value.getSeconds() + num);
+    return value;
 }
 
-function millisecond(target, count) {
-    target.setMilliseconds(target.getMilliseconds() + count);
-    return target;
+function millisecond(value, num) {
+    value.setMilliseconds(value.getMilliseconds() + num);
+    return value;
 }
 
 const handlers = { year, month, day, hour, minute, second, millisecond };
 
 /**
- * @param {Date} target The date to modify.
- * @param {number} count The count of units.
+ * @param {Date} value The date to modify.
+ * @param {number} num The number of units.
  * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit The time unit.
  * @returns {Date} The mutated date.
  */
-export default function (target, count, unit) {
+export default function (value, num, unit) {
     const handler = handlers[normalize(unit)];
 
     if (handler) {
-        return handler(clone(target), count);
+        return handler(clone(value), num);
     } else {
-        throw new Error('Unexpected time unit!');
+        throw new Error(`"${unit}" is invalid time unit`);
     }
 }
