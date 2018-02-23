@@ -1,7 +1,7 @@
 import bool from '.';
 
 describe('random/bool()', () => {
-    test('Returns a boolean', () => {
+    test('returns a boolean', () => {
         expect(bool()).toEqual(expect.any(Boolean));
     });
 });

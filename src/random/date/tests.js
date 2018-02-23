@@ -1,7 +1,7 @@
 import date from '.';
 
 describe('random/date()', () => {
-    test('Returns a date between 1 January 2000 and 31 December 2010', () => {
+    test('returns a date between 1 January 2000 and 31 December 2010', () => {
         const jan = new Date(2000, 0, 1);
         const dec = new Date(2010, 11, 31);
         const result = date(jan, dec);

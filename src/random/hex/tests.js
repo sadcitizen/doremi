@@ -8,7 +8,7 @@ describe('random/hex()', () => {
         hex12 = hex(12);
     });
 
-    test('Returns a string', () => {
+    test('returns a string', () => {
         expect(hexed).toEqual(expect.any(String));
         expect(hex12).toEqual(expect.any(String));
 

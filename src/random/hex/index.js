@@ -2,14 +2,8 @@ import { HEX_LETTERS, DIGITS } from '../../internal/constants';
 import int from '../int';
 
 /**
- * Generates a pseudo-random hexadecimal number as string.
- *
  * @param {number} length The length of generated number.
  * @return {string} Return the string of hexadecimal number.
- *
- * @example
- * hex(7);
- * // => '8af7a0e'
  */
 export default function (length) {
     let result = '';

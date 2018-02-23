@@ -10,18 +10,18 @@ describe('random/float()', () => {
         fix = float(0, 10, 3);
     });
 
-    test('Returns a float', () => {
+    test('returns a float', () => {
         expect(isFloat(floated)).toBe(true);
         expect(isFloat(range)).toBe(true);
         expect(isFloat(fix)).toBe(true);
     });
 
-    test('Returns a float inside range', () => {
+    test('returns a float inside range', () => {
         expect(range > 0.113 && range < 94.378).toBe(true);
         expect(fix > 0 && fix < 10).toBe(true);
     });
 
-    test('Returns a float with less than 3 digits after point', () => {
+    test('returns a float with less than 3 digits after point', () => {
         expect(('' + fix).split('.')[1].length).toBeLessThanOrEqual(3);
         expect(('' + float(0, 10, 3)).split('.')[1].length).toBeLessThanOrEqual(3);
         expect(('' + float(0, 100, 3)).split('.')[1].length).toBeLessThanOrEqual(3);
