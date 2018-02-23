@@ -1,5 +1,3 @@
-'use strict';
-
 import isNumber from '../is-number';
 import log from '../log';
 import floor from '../floor';
@@ -32,28 +30,17 @@ const prefixes = {
 const base = 10;
 
 /**
- * Creates the abbreviated number as string.
- *
- * @param {number} target The number to abbreviate.
+ * @param {number} value The number to abbreviate.
  * @param {number} precision
  * @param {object} dict
  * @returns {string} Returns the abbreviated number.
- *
- * @example
- *
- * abbreviate(2300);
- * // => '2.3k'
- *
- * abbreviate(1000000);
- * // => '1M'
  */
-
-export default function (target, precision = 2, dict = symbols) {
-    if (!isNumber(target)) {
+export default function (value, precision = 2, dict = symbols) {
+    if (!isNumber(value)) {
         return '';
     }
 
-    const basis = floor(log(abs(target), base) / 3) * 3;
+    const basis = floor(log(abs(value), base) / 3) * 3;
 
-    return fixed(target / pow(base, basis), precision) + dict[prefixes[basis]];
+    return fixed(value / pow(base, basis), precision) + dict[prefixes[basis]];
 }

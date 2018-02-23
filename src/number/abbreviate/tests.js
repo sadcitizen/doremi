@@ -1,7 +1,7 @@
 import abbreviate from '.';
 
 describe('number/abbreviate()', () => {
-    test('Abbreviate numbers', () => {
+    test('abbreviates numbers', () => {
         expect(abbreviate(1234)).toBe('1.23k');
         expect(abbreviate(12345)).toBe('12.34k');
         expect(abbreviate(123456)).toBe('123.45k');
@@ -13,7 +13,7 @@ describe('number/abbreviate()', () => {
         expect(abbreviate(123456789012)).toBe('123.45G');
     });
 
-    test('Abbreviate negative numbers', () => {
+    test('abbreviates negative numbers', () => {
         expect(abbreviate(-1234)).toBe('-1.23k');
         expect(abbreviate(-12345)).toBe('-12.34k');
         expect(abbreviate(-123456)).toBe('-123.45k');
@@ -25,7 +25,7 @@ describe('number/abbreviate()', () => {
         expect(abbreviate(-123456789012)).toBe('-123.45G');
     });
 
-    test('Allow custom precision', () => {
+    test('allows custom precision', () => {
         expect(abbreviate(1234567, 1)).toBe('1.2M');
         expect(abbreviate(1234567, 2)).toBe('1.23M');
         expect(abbreviate(1234567, 3)).toBe('1.234M');
@@ -33,7 +33,7 @@ describe('number/abbreviate()', () => {
         expect(abbreviate(1234, 6)).toBe('1.234000k');
     });
 
-    test('Allow custom dictionary', () => {
+    test('allows custom dictionary', () => {
         const hz = { kilo: ' кГц', mega: ' МГц', giga: ' ГГц' };
 
         expect(abbreviate(1234, 2, hz)).toBe('1.23 кГц');
@@ -47,7 +47,7 @@ describe('number/abbreviate()', () => {
         expect(abbreviate(123456789012, 2, hz)).toBe('123.45 ГГц');
     });
 
-    test('Return empty string for non-numeric value', () => {
+    test('returns empty string for non-numeric value', () => {
         expect(abbreviate('')).toBe('');
         expect(abbreviate('42')).toBe('');
         expect(abbreviate('42.42')).toBe('');
