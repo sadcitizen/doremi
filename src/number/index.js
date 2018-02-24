@@ -1,5 +1,6 @@
 import abbreviate from './abbreviate';
 import ceil from './ceil';
+import clamp from './clamp';
 import equals from './equals';
 import fixed from './fixed';
 import floor from './floor';
@@ -10,9 +11,11 @@ import isNumber from './is-number';
 import isOdd from './is-odd';
 import log from './log';
 import round from './round';
+import sign from './sign';
 
 export { abbreviate };
 export { ceil };
+export { clamp };
 export { equals };
 export { fixed };
 export { floor };
@@ -23,10 +26,12 @@ export { isNumber };
 export { isOdd };
 export { log };
 export { round };
+export { sign };
 
 export default {
     abbreviate,
     ceil,
+    clamp,
     equals,
     fixed,
     floor,
@@ -36,5 +41,6 @@ export default {
     isNumber,
     isOdd,
     log,
-    round
+    round,
+    sign
 };
