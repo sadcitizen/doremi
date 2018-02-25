@@ -1,15 +1,15 @@
 import identity from '../../func/identity';
 
 /**
- * Counts the elements of the array by key.
+ * Groups the elements of the array by key.
  *
- * @param {Array} value The array to count.
+ * @param {Array} value The array to group.
  * @param {Function} [iteratee] The iteratee to resolve keys.
- * @return {Object} Returns object with counts of elements.
+ * @return {Object} Returns object with grouped elements.
  *
  * @example
- * countBy([1, 2, 3, 3, 2, 4]);
- * // => { '1': 1, '2': 2, '3': 2, '4': 1 }
+ * group([1, 2, 3, 3, 2, 4]);
+ * // => { '1': [1], '2': [2, 2], '3': [3, 3], '4': [4] }
  */
 export default function (value, iteratee = identity) {
     const result = {};
@@ -19,10 +19,10 @@ export default function (value, iteratee = identity) {
         key = iteratee(el);
 
         if (!result[key]) {
-            result[key] = 0;
+            result[key] = [];
         }
 
-        result[key] += 1
+        result[key].push(el);
     });
 
     return result;

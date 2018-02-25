@@ -1,19 +1,19 @@
 import append from './append';
 import at from './at';
 import compact from './compact';
-import countBy from './count-by';
+import count from './count';
 import distinct from './distinct';
 import equals from './equals';
 import first from './first';
 import flatten from './flatten';
-import groupBy from './group-by';
+import groupBy from './group';
 import last from './last';
 import max from './max';
 import min from './min';
 import partition from './partition';
 import prepend from './prepend';
 import remove from './remove';
-import sortBy from './sort-by';
+import sortBy from './sort';
 import sum from './sum';
 import union from './union';
 import update from './update';
@@ -21,7 +21,7 @@ import update from './update';
 export { append };
 export { at };
 export { compact };
-export { countBy };
+export { count };
 export { distinct };
 export { equals };
 export { first };
@@ -42,7 +42,7 @@ export default {
     append,
     at,
     compact,
-    countBy,
+    count,
     distinct,
     equals,
     first,

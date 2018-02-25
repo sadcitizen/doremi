@@ -1,19 +1,19 @@
-import sortBy from '.';
+import sort from '.';
 
-describe('array/sortBy()', () => {
+describe('array/sort()', () => {
     test('Sorts the array numerically', () => {
-        expect(sortBy([9, 12, 3, 4, -5, 18])).toEqual([-5, 3, 4, 9, 12, 18]);
+        expect(sort([9, 12, 3, 4, -5, 18])).toEqual([-5, 3, 4, 9, 12, 18]);
     });
 
     test('Sorts the array alphabetically', () => {
-        expect(sortBy(['red', 'green', 'blue'])).toEqual(['blue', 'green', 'red']);
+        expect(sort(['red', 'green', 'blue'])).toEqual(['blue', 'green', 'red']);
     });
 
-    test('Returns the empty array if source is empty array', () => {
-        expect(sortBy([])).toEqual([]);
+    test('returns the empty array if source is empty array', () => {
+        expect(sort([])).toEqual([]);
     });
 
-    test('Allows the custom iterator', () => {
+    test('allows the custom iterator', () => {
         const guests = [{
             name: 'Bill',
             age: 21
@@ -42,6 +42,6 @@ describe('array/sortBy()', () => {
             age: 22
         }];
 
-        expect(sortBy(guests, x => x.name.length)).toEqual(sortedByNameLengthGuests);
+        expect(sort(guests, x => x.name.length)).toEqual(sortedByNameLengthGuests);
     });
 });

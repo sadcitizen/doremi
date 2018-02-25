@@ -1,6 +1,7 @@
 /**
  * Adds items of an array to the beginning of other.
  *
+ * @deprecated
  * @param target {Array} The array to modify.
  * @param source {Array} The array to prepend.
  * @returns {*} {Array} Returns `target` with prepended items of `source`.

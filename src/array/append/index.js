@@ -1,9 +1,10 @@
 /**
  * Appends items of an array to the end of other.
  *
+ * @deprecated
  * @param target {Array} The array to modify.
  * @param source {Array} The array to append.
- * @returns {*} {Array} Returns `target` with appended items of `source`.
+ * @returns {Array} Returns `target` with appended items of `source`.
  *
  * @example
  * const foo = [3, 6, 9, 12];

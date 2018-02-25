@@ -8,7 +8,7 @@ import identity from '../../func/identity';
  * @return {Array} Returns the sorted array.
  *
  * @example
- * sortBy(['Moscow', 'Tokyo', 'New York', 'Amsterdam'], x => x.length);
+ * sort(['Moscow', 'Tokyo', 'New York', 'Amsterdam'], x => x.length);
  * // => ['Tokyo', 'Moscow', 'New York', 'Amsterdam']
  */
 export default function (target, iteratee = identity) {

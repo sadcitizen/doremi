@@ -4,6 +4,7 @@ import append from '../append';
  * Removes all elements from `target` that `predicate` returns truthy for and returns an array of the removed elements.
  * The `predicate` is invoked with three arguments: (value, index, array).
  *
+ * @deprecated
  * @param target {Array} The array to modify.
  * @param predicate {Function} The function onvoked per iteration.
  * @returns {*} {Array} Returns the new array if removed items.

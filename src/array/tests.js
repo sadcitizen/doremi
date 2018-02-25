@@ -9,7 +9,7 @@ describe('doremi/array', () => {
         expect(array).toHaveProperty('append', append);
         expect(array).toHaveProperty('at', at);
         expect(array).toHaveProperty('compact', compact);
-        expect(array).toHaveProperty('countBy', countBy);
+        expect(array).toHaveProperty('count', countBy);
         expect(array).toHaveProperty('distinct', distinct);
         expect(array).toHaveProperty('equals', equals);
         expect(array).toHaveProperty('first', first);
