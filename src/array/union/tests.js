@@ -19,7 +19,7 @@ describe('array/union()', () => {
         expect(union(['a', 'b', 'c'])).toEqual(['a', 'b', 'c']);
     });
 
-    test('Allows custom iterator', () => {
+    test('allows custom iterator', () => {
         const target = [{ count: 1 }, { count: 2 }, { count: 3 }];
         const source = [{ count: 4 }, { count: 2 }];
 

@@ -2,7 +2,7 @@ import type from '.';
 import noop from '../../func/noop';
 
 describe('common/type()', () => {
-    test('Returns a type of value', () => {
+    test('returns a type of value', () => {
         expect(type(arguments)).toBe('arguments');
 
         expect(type([])).toBe('array');

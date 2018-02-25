@@ -1,7 +1,7 @@
 import after from '.';
 
 describe('func/after()', () => {
-    test('Returns a new function', () => {
+    test('returns a new function', () => {
         expect(after(jest.fn(), 2)).toEqual(expect.any(Function));
     });
 

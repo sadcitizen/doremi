@@ -9,7 +9,7 @@ describe('string/decapitalize()', () => {
         expect(decapitalize('Lorem IPSUM')).toBe('lorem IPSUM');
     });
 
-    test('Works with empty strings', () => {
+    test('works with empty strings', () => {
         expect(decapitalize('')).toBe('');
         expect(decapitalize()).toBe('undefined');
         expect(decapitalize(void 0)).toBe('undefined');

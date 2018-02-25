@@ -15,6 +15,6 @@ import identity from '../../func/identity';
  * // => 13
  *
  * sum([]);
- * // => NaN
+ * // => 0
  */
 export default (target, iteratee = identity) => target.reduce((total, item) => total + iteratee(item), 0);

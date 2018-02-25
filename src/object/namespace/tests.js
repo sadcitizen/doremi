@@ -15,7 +15,7 @@ describe('object/namespace()', () => {
         expect(target).toEqual({ foo: 'bar', baz: { quux: {} } });
     });
 
-    test('Return original object if no path', () => {
+    test('returns original object if no path', () => {
         const target = { foo: 'bar' };
         expect(namespace(target)).toEqual({ foo: 'bar' });
         expect(namespace(target)).toBe(target);

@@ -16,7 +16,7 @@ describe('string/escape()', () => {
         expect(escape('&#x27;hi!&#x27; & bye!')).toBe('&#x27;hi!&#x27; &amp; bye!');
     });
 
-    test('Works with empty strings', () => {
+    test('works with empty strings', () => {
         expect(escape('')).toBe('');
         expect(escape()).toBe('undefined');
         expect(escape(void 0)).toBe('undefined');

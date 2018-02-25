@@ -1,11 +1,11 @@
 import defer from '.';
 
 describe('func/defer()', () => {
-    test('Returns a new function', () => {
+    test('returns a new function', () => {
         expect(defer(jest.fn(), 100)).toEqual(expect.any(Function));
     });
 
-    test('Returns the new function that invoked at the end of the event loop', () => {
+    test('returns the new function that invoked at the end of the event loop', () => {
         jest.useFakeTimers();
         const fn = jest.fn();
         const deferred = defer(fn);

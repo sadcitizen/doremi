@@ -5,7 +5,7 @@ describe('func/noop()', () => {
         expect(noop).toEqual(expect.any(Function));
     });
 
-    test('Return undefined', () => {
+    test('returns undefined', () => {
         expect(noop()).toBe(undefined);
     });
 });

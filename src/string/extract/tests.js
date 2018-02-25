@@ -11,7 +11,7 @@ describe('string/extract()', () => {
         expect(extract('bill@gates.com', '${user}@${host}.${domain}')).toEqual(result);
     });
 
-    test('Works with nested values', () => {
+    test('works with nested values', () => {
         const post = {
             slug: 'hello-world',
             date: {
@@ -26,7 +26,7 @@ describe('string/extract()', () => {
         expect(extract(target, pattern)).toEqual(post);
     });
 
-    test('Works with custom separators', () => {
+    test('works with custom separators', () => {
         const result = {
             user: 'bill',
             host: 'gates',

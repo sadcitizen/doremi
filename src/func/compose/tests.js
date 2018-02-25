@@ -6,7 +6,7 @@ describe('func/compose()', () => {
     const f3 = jest.fn();
     const composed = compose(f1, f2, f3);
 
-    test('Return new function', () => {
+    test('returns new function', () => {
         expect(composed).toEqual(expect.any(Function));
     });
 
@@ -17,7 +17,7 @@ describe('func/compose()', () => {
         expect(f3).toHaveBeenCalled();
     });
 
-    test('Return result of invoking the provided functions', () => {
+    test('returns result of invoking the provided functions', () => {
         const f1 = n => n + 1;
         const f2 = n => n * 2;
         const f3 = n => n - 3;

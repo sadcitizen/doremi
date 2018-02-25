@@ -1,7 +1,7 @@
 import flip from '.';
 
 describe('func/flip()', () => {
-    test('Returns a new function', () => {
+    test('returns a new function', () => {
         const fn = jest.fn();
         expect(flip(fn)).toEqual(expect.any(Function));
     });

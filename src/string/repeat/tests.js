@@ -21,7 +21,7 @@ describe('string/repeat()', () => {
         expect(repeat('lorem ipsum', '')).toBe('');
     });
 
-    test('Works with negative counts', () => {
+    test('works with negative counts', () => {
         expect(repeat('*', -3)).toBe('');
         expect(repeat('lorem', -2)).toBe('');
         expect(repeat(' ', -5)).toBe('');

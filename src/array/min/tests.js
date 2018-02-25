@@ -1,16 +1,16 @@
 import min from '.';
 
 describe('array/min()', () => {
-    test('Returns the element with lowest value', () => {
+    test('returns the element with lowest value', () => {
         expect(min([1, 2, 3, 4, 5])).toBe(1);
         expect(min([1, -2, 3, 4, -5])).toBe(-5);
     });
 
-    test('Returns NaN if the array is empty', () => {
+    test('returns NaN if the array is empty', () => {
         expect(min([])).toEqual(NaN);
     });
 
-    test('Allows the custom iterator', () => {
+    test('allows the custom iterator', () => {
         const guests = [{
             name: 'Bill',
             age: 21

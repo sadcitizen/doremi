@@ -1,7 +1,7 @@
 import isObject from '.';
 
 describe('object/isObject()', () => {
-    test('Return true if value is an object', () => {
+    test('returns true if value is an object', () => {
         function Noop() {}
         const noop = new Noop();
 
@@ -15,7 +15,7 @@ describe('object/isObject()', () => {
         /* jshint +W053, +W010 */
     });
 
-    test('Return false if value is not an object', () => {
+    test('returns false if value is not an object', () => {
         expect(isObject(void 0)).toBe(false);
         expect(isObject(null)).toBe(false);
         expect(isObject(NaN)).toBe(false);

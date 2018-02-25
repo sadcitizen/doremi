@@ -10,7 +10,7 @@ describe('string/remove()', () => {
         expect(remove(hello, 90, 100)).toBe('Hello, World!');
     });
 
-    test('Treats undefined index as zero', () => {
+    test('treats undefined index as zero', () => {
         var hello = 'Hello, World!';
 
         expect(remove(hello)).toBe(hello);

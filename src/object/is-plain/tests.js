@@ -1,7 +1,7 @@
 import isPlain from '.';
 
 describe('object/isPlain()', () => {
-    test('Return true if value is a plain object', () => {
+    test('returns true if value is a plain object', () => {
         expect(isPlain({})).toBe(true);
         expect(isPlain({ lorem: 'ipsum' })).toBe(true);
         /* jshint -W053, -W010 */
@@ -9,7 +9,7 @@ describe('object/isPlain()', () => {
         /* jshint +W053, +W010 */
     });
 
-    test('Return false if value is an object created with constructor function', () => {
+    test('returns false if value is an object created with constructor function', () => {
         function Noop() {}
         Noop.prototype.useless = function () {};
         const noop = new Noop();
@@ -17,7 +17,7 @@ describe('object/isPlain()', () => {
         expect(isPlain(noop)).toBe(false);
     });
 
-    test('Return false if value is not an object', () => {
+    test('returns false if value is not an object', () => {
         expect(isPlain(void 0)).toBe(false);
         expect(isPlain(null)).toBe(false);
         expect(isPlain(NaN)).toBe(false);

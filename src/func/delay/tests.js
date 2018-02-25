@@ -1,7 +1,7 @@
 import delay from '.';
 
 describe('func/delay()', () => {
-    test('Return a new function', () => {
+    test('returns a new function', () => {
         expect(delay(jest.fn(), 100)).toEqual(expect.any(Function));
     });
 

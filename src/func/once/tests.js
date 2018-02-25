@@ -1,7 +1,7 @@
 import once from '.';
 
 describe('func/once()', () => {
-    test('Returns a new function', () => {
+    test('returns a new function', () => {
         expect(once(jest.fn())).toEqual(expect.any(Function));
     });
 

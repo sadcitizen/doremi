@@ -1,7 +1,7 @@
 import partial from '.';
 
 describe('func/partial()', () => {
-    test('Return new function', () => {
+    test('returns new function', () => {
         const fn = jest.fn();
         const partialFn = partial(fn);
 

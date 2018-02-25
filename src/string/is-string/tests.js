@@ -1,7 +1,7 @@
 import isString from '.';
 
 describe('string/isString()', () => {
-    test('Returns false if value is a string', () => {
+    test('returns false if value is a string', () => {
         expect(isString('')).toBe(true);
         expect(isString(String(42))).toBe(true);
         /* jshint -W053 */
@@ -9,7 +9,7 @@ describe('string/isString()', () => {
         /* jshint +W053 */
     });
 
-    test('Returns false if value is not string', () => {
+    test('returns false if value is not string', () => {
         expect(isString(void 0)).toBe(false);
         expect(isString(null)).toBe(false);
         expect(isString(NaN)).toBe(false);

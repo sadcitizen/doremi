@@ -17,7 +17,7 @@ describe('array/remove()', function () {
         expect(result).toEqual([]);
     });
 
-    test('Return empty arrays for empty arrays', () => {
+    test('returns empty arrays for empty arrays', () => {
         const target = [];
         const result = remove(target, x => x % 2 === 0);
 

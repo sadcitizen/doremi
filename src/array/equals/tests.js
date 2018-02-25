@@ -10,11 +10,11 @@ describe('array/equals()', () => {
         expect(equals(a, c)).toBe(false);
     });
 
-    test('Returns true if the arrays are empty', () => {
+    test('returns true if the arrays are empty', () => {
         expect(equals([], [])).toBe(true);
     });
 
-    test('Allows custom compare function', () => {
+    test('allows custom compare function', () => {
         const a = [{ name: 'Donald' }, { name: 'Hillary' }, { name: 'Vladimir' }];
         const b = [{ name: 'Donald' }, { name: 'Hillary' }, { name: 'Vladimir' }];
         const c = [{ name: 'Donald' }, { name: 'Bill' }, { name: 'Vladimir' }];

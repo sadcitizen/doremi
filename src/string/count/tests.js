@@ -14,7 +14,7 @@ describe('string/count()', () => {
         expect(count('Hello, World!', '! ')).toBe(0);
     });
 
-    test('Works with null, undefined and empty strings', () => {
+    test('works with null, undefined and empty strings', () => {
         expect(count('', 'x')).toBe(0);
         expect(count('', '')).toBe(0);
         expect(count(null, 'x')).toBe(0);

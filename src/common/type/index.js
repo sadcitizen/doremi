@@ -27,7 +27,7 @@ export default function (target) {
         return 'element';
     }
 
-    var tp = Object.prototype.toString.call(target).slice(8, -1).toLowerCase();
+    const tp = Object.prototype.toString.call(target).slice(8, -1).toLowerCase();
 
     if (tp === 'number') {
         if (isNaN(target)) {

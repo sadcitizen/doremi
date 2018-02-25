@@ -10,7 +10,7 @@ describe('array/prepend()', function () {
         expect(prepend([4, 5, 6], [])).toEqual([4, 5, 6]);
     });
 
-    test('Returns the first array with prepended items', function () {
+    test('returns the first array with prepended items', function () {
         const target = [1, 2, 3];
         const source = [4, 5, 6];
 

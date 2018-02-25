@@ -16,7 +16,7 @@ describe('string/padRight()', () => {
         expect(padRight('lorem', 6, '$&%#')).toBe('lorem$');
     });
 
-    test('Works with null and undefined', () => {
+    test('works with null and undefined', () => {
         expect(padRight(void 0, 5, '*')).toBe('undefined');
         expect(padRight(null, 5, '*')).toBe('null*');
     });

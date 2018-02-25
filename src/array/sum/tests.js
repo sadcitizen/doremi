@@ -1,16 +1,16 @@
 import sum from '.';
 
 describe('array/sum()', () => {
-    test('Returns the sum of values', () => {
+    test('returns the sum of values', () => {
         expect(sum([1, 2, 3, 4, 5])).toBe(15);
         expect(sum([1, -2, 3, 4, -5])).toBe(1);
     });
 
-    test('Returns zero if the array is empty', () => {
+    test('returns zero if the array is empty', () => {
         expect(sum([])).toEqual(0);
     });
 
-    test('Allows the custom iterator', () => {
+    test('allows the custom iterator', () => {
         const guests = [{
             name: 'Bill',
             age: 21

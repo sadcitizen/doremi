@@ -1,7 +1,7 @@
 import memoize from '.';
 
 describe('func/memoize()', () => {
-    test('Returns a new function', () => {
+    test('returns a new function', () => {
         expect(memoize(jest.fn(), 100)).toEqual(expect.any(Function));
     });
 

@@ -1,7 +1,7 @@
 import partialRight from '.';
 
 describe('func/partialRight()', () => {
-    test('Return new function', () => {
+    test('returns new function', () => {
         const fn = jest.fn();
         const partialFn = partialRight(fn);
 

@@ -16,7 +16,7 @@ describe('string/pad()', () => {
         expect(pad('sit', 9, '$&%#')).toBe('$$$sit$$$');
     });
 
-    test('Works with null and undefined', () => {
+    test('works with null and undefined', () => {
         expect(pad(void 0, 6, '@')).toBe('undefined');
         expect(pad(null, 6, '@')).toBe('@null@');
     });

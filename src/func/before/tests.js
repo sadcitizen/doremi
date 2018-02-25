@@ -1,7 +1,7 @@
 import before from '.';
 
 describe('func/before()', () => {
-    test('Returns a new function', () => {
+    test('returns a new function', () => {
         expect(before(jest.fn(), 5)).toEqual(expect.any(Function));
     });
 

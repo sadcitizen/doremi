@@ -1,7 +1,7 @@
 import camelize from '.';
 
 describe('string/camelize()', () => {
-    test('Converts string to camel case', () => {
+    test('converts string to camel case', () => {
         expect(camelize('lorem ipsum dolor')).toBe('loremIpsumDolor');
         expect(camelize('    lorem   ipsum   dolor   ')).toBe('loremIpsumDolor');
         expect(camelize('--lorem--ipsum--dolor--')).toBe('loremIpsumDolor');
@@ -9,7 +9,7 @@ describe('string/camelize()', () => {
         expect(camelize(123456)).toBe('123456');
     });
 
-    test('Works with blank string', () => {
+    test('works with blank string', () => {
         expect(camelize('')).toBe('');
         expect(camelize('       ')).toBe('');
         expect(camelize('    \n   ')).toBe('');

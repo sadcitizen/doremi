@@ -9,7 +9,7 @@ describe('string/insert()', () => {
         expect(insert('Hello, Worl', 'd!', '12')).toBe('Hello, World!');
     });
 
-    test('Treats undefined index as zero', () => {
+    test('treats undefined index as zero', () => {
         expect(insert(', World!', 'Hello')).toBe('Hello, World!');
         expect(insert(', World!', 'Hello', void 0)).toBe('Hello, World!');
     });
