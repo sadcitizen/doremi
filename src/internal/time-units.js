@@ -5,7 +5,7 @@ const hours = 60 * minutes;
 const days = 24 * hours;
 const weeks = 7 * days;
 const months = 30 * days; // roughly
-const years = 365 * days; // not at leep year
+const years = 365 * days; // not a leap year
 
 export const units = {
     milliseconds,

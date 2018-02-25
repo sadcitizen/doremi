@@ -4,9 +4,9 @@ import isDefined from '../../common/is-defined';
  * Resolves the value of property `key` on `target`.
  * Returns default value `def` if the property value is `undefined`.
  *
- * @param target The object to query.
- * @param key The name of property to resolve.
- * @param def Default value.
+ * @param {Object} target The object to query.
+ * @param {string} key The name of property to resolve.
+ * @param {*} [def] Default value.
  * @returns {*} Returns the value of property `key` or default value `def`.
  *
  * @example

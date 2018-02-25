@@ -1,7 +1,7 @@
 import isChar from '.';
 
 describe('string/isChar()', () => {
-    test('Returns false if value is a char', () => {
+    test('returns false if value is a char', () => {
         expect(isChar('a')).toBe(true);
         expect(isChar(String(4))).toBe(true);
         /* jshint -W053 */
@@ -9,7 +9,7 @@ describe('string/isChar()', () => {
         /* jshint +W053 */
     });
 
-    test('Returns false if value is not char', () => {
+    test('returns false if value is not char', () => {
         expect(isChar(void 0)).toBe(false);
         expect(isChar(null)).toBe(false);
         expect(isChar(NaN)).toBe(false);
