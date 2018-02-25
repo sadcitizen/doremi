@@ -1,7 +1,7 @@
 import format from '.';
 
-describe('datetime/format()', () => {
-    test('Should format year to string', () => {
+describe('date/format()', () => {
+    test('formats year to string', () => {
         const first = new Date(2015, 1, 1);
         const second = new Date(909, 1, 1);
 
@@ -16,7 +16,7 @@ describe('datetime/format()', () => {
         expect(format(second, 'Y')).toBe('9');
     });
 
-    test('Should format month to string', () => {
+    test('formats month to string', () => {
         const first = new Date(2015, 0, 1);
         const second = new Date(2015, 11, 1);
 
@@ -31,7 +31,7 @@ describe('datetime/format()', () => {
         expect(format(second, 'M')).toBe('12');
     });
 
-    test('Should format days to string', () => {
+    test('formats days to string', () => {
         const first = new Date(2015, 0, 1);
         const second = new Date(2015, 0, 20);
 
@@ -42,7 +42,7 @@ describe('datetime/format()', () => {
         expect(format(second, 'D')).toBe('20');
     });
 
-    test('Should format weekday to string', () => {
+    test('formats weekday to string', () => {
         const monday = new Date(2015, 0, 5);
         const tuesday = new Date(2015, 0, 6);
         const wednesday = new Date(2015, 0, 7);
@@ -73,7 +73,7 @@ describe('datetime/format()', () => {
         expect(format(sunday, 'DDD')).toBe('Sun');
     });
 
-    test('Should format hours to string', () => {
+    test('formats hours to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 11, 9, 6);
         const third = new Date(2015, 1, 1, 22, 0, 0);
@@ -97,7 +97,7 @@ describe('datetime/format()', () => {
         expect(format(third, 'h')).toBe('10');
     });
 
-    test('Should format minutes to string', () => {
+    test('formats minutes to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 0, 9, 6);
         const third = new Date(2015, 1, 1, 0, 0, 0);
@@ -112,7 +112,7 @@ describe('datetime/format()', () => {
         expect(format(third, 'm')).toBe('0');
     });
 
-    test('Should format seconds to string', () => {
+    test('formats seconds to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 0, 9, 6);
         const third = new Date(2015, 1, 1, 0, 0, 0);
@@ -127,7 +127,7 @@ describe('datetime/format()', () => {
         expect(format(third, 's')).toBe('0');
     });
 
-    test('Should format milliseconds to string', () => {
+    test('formats milliseconds to string', () => {
         const first = new Date(2015, 1, 1, 1, 1, 1, 1);
         const second = new Date(2015, 1, 1, 1, 1, 1, 10);
         const third = new Date(2015, 1, 1, 1, 1, 1, 100);
@@ -145,7 +145,7 @@ describe('datetime/format()', () => {
         expect(format(third, 'f')).toBe('1');
     });
 
-    test('Should format am/pm to string', () => {
+    test('formats am/pm to string', () => {
         const first = new Date(2015, 1, 1, 0, 45, 29);
         const second = new Date(2015, 1, 1, 11, 9, 6);
         const third = new Date(2015, 1, 1, 22, 0, 0);
@@ -160,7 +160,7 @@ describe('datetime/format()', () => {
         expect(format(third, 'tt')).toBe('pm');
     });
 
-    test('Should format quarter to string', () => {
+    test('formats quarter to string', () => {
         expect(format(new Date(2015, 0, 1), 'Q')).toBe('1');
         expect(format(new Date(2015, 1, 1), 'Q')).toBe('1');
         expect(format(new Date(2015, 2, 1), 'Q')).toBe('1');
@@ -175,7 +175,7 @@ describe('datetime/format()', () => {
         expect(format(new Date(2015, 11, 1), 'Q')).toBe('4');
     });
 
-    test('Should format date to string', () => {
+    test('formats date to string', () => {
         const date = new Date(2015, 1, 1, 13, 29, 6);
         expect(format(date, 'YYYY')).toBe('2015');
         expect(format(date, 'DD-MM-YYYY HH:mm:ss')).toBe('01-02-2015 13:29:06');
@@ -183,7 +183,7 @@ describe('datetime/format()', () => {
         expect(format(date, 'DD/MM/YY h:m:s tt')).toBe('01/02/15 1:29:6 pm');
     });
 
-    test('Should format date to string with localization', () => {
+    test('formats date to string with localization', () => {
         const date = new Date(2015, 1, 4, 13, 29, 6);
         expect(format(date, 'DDDD, DD MMMM')).toBe('Wednesday, 04 February');
         expect(format(date, 'DDD, DD MMM')).toBe('Wed, 04 Feb.');
@@ -201,5 +201,9 @@ describe('datetime/format()', () => {
 
         expect(format(date, 'DDDD, DD MMMM', ru)).toBe('Среда, 04 Февраль');
         expect(format(date, 'DDD, DD MMM', ru)).toBe('Ср, 04 Фев');
+    });
+
+    test('throws exception if date is invalid', () => {
+        expect(() => format(new Date('Invalid date'), 'DD/MM/YY h:m:s tt')).toThrow('A valid date is expected');
     });
 });

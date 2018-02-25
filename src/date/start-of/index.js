@@ -1,5 +1,6 @@
 import normalize from '../../internal/normalize-time-unit';
 import clone from '../clone';
+import isValid from '../is-valid';
 
 function year(value) {
     value.setMonth(0);
@@ -39,6 +40,10 @@ const handlers = { year, month, day, hour, minute, second };
  * @returns {Date} The mutated date.
  */
 export default function (value, unit) {
+    if (!isValid(value)) {
+        throw new Error('A valid date is expected');
+    }
+
     const handler = handlers[normalize(unit)];
 
     if (handler) {

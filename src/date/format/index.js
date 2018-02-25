@@ -132,7 +132,7 @@ const tokens = {
  */
 export default function (target, pattern, locale) {
     if (!isValid(target)) {
-        throw new TypeError('Target must be a valid date!');
+        throw new TypeError('A valid date is expected');
     }
 
     pattern = String(pattern);

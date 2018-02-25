@@ -25,6 +25,6 @@ describe('date/isPast()', () => {
     test('throws the error if value is invalid', () => {
         const invalidDate = new Date('Invalid date');
 
-        expect(() => isPast(invalidDate)).toThrow('The value must be a valid date');
+        expect(() => isPast(invalidDate)).toThrow('A valid date is expected');
     });
 });

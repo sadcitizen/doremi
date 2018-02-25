@@ -6,7 +6,7 @@ import isValid from '../is-valid';
  */
 export default function (value) {
     if (!isValid(value)) {
-        throw new Error('The value must be a valid date');
+        throw new Error('A valid date is expected');
     }
 
     const now = new Date();

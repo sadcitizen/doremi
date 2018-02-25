@@ -1,5 +1,4 @@
 import add from '../add';
-import isValid from '../is-valid';
 import startOf from '../start-of';
 
 /**
@@ -7,10 +6,6 @@ import startOf from '../start-of';
  * @returns {boolean}
  */
 export default function (value) {
-    if (!isValid(value)) {
-        throw new Error('The value must be a valid date');
-    }
-
     const tomorrow = add(new Date(), 1, 'D');
 
     return startOf(value, 'D').getTime() === startOf(tomorrow, 'D').getTime();

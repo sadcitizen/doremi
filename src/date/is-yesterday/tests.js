@@ -24,6 +24,6 @@ describe('date/isYesterday()', () => {
     test('throws the error if value is invalid', () => {
         const invalidDate = new Date('Invalid date');
 
-        expect(() => isYesterday(invalidDate)).toThrow('The value must be a valid date');
+        expect(() => isYesterday(invalidDate)).toThrow('A valid date is expected');
     });
 });

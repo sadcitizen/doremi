@@ -37,7 +37,11 @@ describe('date/startOf()', () => {
         expect(startOf(date, 's')).toEqual(new Date(2015, 2, 23, 23, 20, 11, 0));
     });
 
-    test('Throws exception if time unit is invalid', () => {
+    test('throws exception if date is invalid', () => {
+        expect(() => startOf(new Date('Invalid date'), 'M')).toThrow('A valid date is expected');
+    });
+
+    test('throws exception if time unit is invalid', () => {
         expect(() => startOf(date, 'quarter')).toThrow('"quarter" is invalid time unit');
     });
 });

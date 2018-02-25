@@ -128,7 +128,11 @@ describe('date/add()', () => {
         expect(add(date, -100, 'ms')).toEqual(new Date(2014, 11, 31, 23, 59, 59, 900));
     });
 
-    test('Throws exception if time unit is invalid', () => {
+    test('throws exception if date is invalid', () => {
+        expect(() => add(new Date('Invalid date'), 1, 'M')).toThrow('A valid date is expected');
+    });
+
+    test('throws exception if time unit is invalid', () => {
         expect(() => add(new Date(2015, 0, 1), 1, 'quarter')).toThrow('"quarter" is invalid time unit');
     });
 });
