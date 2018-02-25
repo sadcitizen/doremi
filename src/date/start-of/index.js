@@ -35,7 +35,7 @@ const handlers = { year, month, day, hour, minute, second };
 
 /**
  * @param {Date} value The date to modify.
- * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} [unit] The time unit.
+ * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s')} unit The time unit.
  * @returns {Date} The mutated date.
  */
 export default function (value, unit) {
