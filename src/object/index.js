@@ -3,7 +3,9 @@ import invert from './invert';
 import isObject from './is-object';
 import isPlain from './is-plain';
 import namespace from './namespace';
+import omit from './omit';
 import pairs from './pairs';
+import pick from './pick';
 import property from './property';
 import result from './result';
 import setValue from './set-value';
@@ -15,7 +17,9 @@ export { invert };
 export { isObject };
 export { isPlain };
 export { namespace };
+export { omit };
 export { pairs };
+export { pick };
 export { property };
 export { result };
 export { setValue };
@@ -28,7 +32,9 @@ export default {
     isObject,
     isPlain,
     namespace,
+    omit,
     pairs,
+    pick,
     property,
     result,
     setValue,
