@@ -24,14 +24,15 @@
     "url": "https://github.com/sadcitizen/doremi/issues"
   },
   "devDependencies": {
-    "babel-cli": "^6.14.0",
-    "babel-core": "^6.9.1",
-    "babel-eslint": "^6.0.4",
-    "babel-polyfill": "^6.16.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "eslint": "^2.12.0",
-    "jest": "^22.1.4",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2",
     "mockdate": "^2.0.2",
     "rimraf": "^2.5.4"
   }
