@@ -1,0 +1,3 @@
+# defaults(object, ...sources)
+
+Recursively!

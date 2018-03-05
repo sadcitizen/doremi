@@ -1,0 +1,3 @@
+# assign(object, ...sources)
+
+Recursively!
