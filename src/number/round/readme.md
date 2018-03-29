@@ -1,10 +1,15 @@
-### round 
+# round(num, precision = 0)
 
 Creates number rounded to precision.
 
-#### Example
+## Usage
 
 ```js
-round(42.52); // => 43
-round(5.4321, 2); // => 5.43
+import round from 'doremi/number/round';
+
+round(42.52);
+// => 43
+
+round(5.4321, 2);
+// => 5.43
 ```

@@ -30,10 +30,10 @@ const prefixes = {
 const base = 10;
 
 /**
- * @param {number} value The number to abbreviate.
+ * @param {number} value
  * @param {number} precision
- * @param {object} dict
- * @returns {string} Returns the abbreviated number.
+ * @param {Object} dict
+ * @returns {string}
  */
 export default function (value, precision = 2, dict = symbols) {
     if (!isNumber(value)) {
