@@ -1,8 +1,8 @@
 import int from '../int';
 
 /**
- * @param {Array} list The list to choice.
- * @returns {*} Returns the pseudo-random element.
+ * @param {Array} list
+ * @returns {*}
  */
 export default function (list) {
     let args = (arguments.length === 1 && Array.isArray(list)) ? list : arguments;

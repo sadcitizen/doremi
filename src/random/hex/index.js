@@ -2,8 +2,8 @@ import { HEX_LETTERS, DIGITS } from '../../internal/constants';
 import int from '../int';
 
 /**
- * @param {number} length The length of generated number.
- * @return {string} Return the string of hexadecimal number.
+ * @param {number} length
+ * @return {string}
  */
 export default function (length) {
     let result = '';

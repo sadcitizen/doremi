@@ -1,9 +1,12 @@
-### float
+# float(min, max, precision)
 
 Generates a pseudo-random float number.
 
-#### Example
+## Usage
 
 ```js
-float(10, 20, 3); // => 16.792
+import float from 'doremi/random/float';
+
+float(10, 20, 3);
+// => 16.792
 ```

@@ -1,10 +1,15 @@
-### int
+# int(min, max)
 
 Generates a pseudo-random integer number.
 
-#### Example
+## Usage
 
 ```js
-int(10, 20); // => 16
-int(10, 20); // => 12
+import int from 'doremi/random/int';
+
+int(10, 20);
+// => 16
+
+int(10, 20);
+// => 12
 ```

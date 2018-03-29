@@ -1,4 +1,4 @@
 /**
- * @returns {boolean} Returns the boolean value.
+ * @returns {boolean}
  */
 export default () => Math.random() < 0.5;

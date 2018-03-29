@@ -3,9 +3,9 @@ import isValid from '../../date/is-valid';
 import int from '../int';
 
 /**
- * @param {Date} before The minimum value to generate.
- * @param {Date} after The maximum value to generate.
- * @return {Date} Return the integer number.
+ * @param {Date} before
+ * @param {Date} after
+ * @return {Date}
  */
 export default (before, after) => {
     if (!isDefined(before) || !isValid(before)) {

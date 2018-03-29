@@ -16,12 +16,12 @@ describe('random/choice()', () => {
         secondApplyChoice = choice.apply(random, list);
     });
 
-    test('Picks a random item from list', () => {
+    test('picks a random item from list', () => {
         expect(list).toContain(firstChoice);
         expect(list).toContain(secondChoice);
     });
 
-    test('Picks a random item from arguments', () => {
+    test('picks a random item from arguments', () => {
         expect(list).toContain(firstApplyChoice);
         expect(list).toContain(secondApplyChoice);
     });

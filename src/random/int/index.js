@@ -4,9 +4,9 @@ import { MIN_INT, MAX_INT } from '../../internal/constants';
 const { floor, random } = Math;
 
 /**
- * @param {number} min The minimum value to generate.
- * @param {number} max The maximum value to generate.
- * @return {number} Return the integer number.
+ * @param {number} min
+ * @param {number} max
+ * @return {number}
  */
 export default function (min, max) {
     min = isDefined(min) ? min : MIN_INT;

@@ -1,10 +1,15 @@
-### choice
+# choice(list)
 
 Returns the pseudo-random element of array.
 
-#### Example
+## Usage
 
 ```js
-choice([1, 2, 3]); // => 2
-choice('lorem', 'ipsum', 'sit'); // => 'sit'
+import choice from 'doremi/random/choice';
+
+choice([1, 2, 3]);
+// => 2
+
+choice('lorem', 'ipsum', 'sit');
+// => 'sit'
 ```

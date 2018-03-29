@@ -1,10 +1,15 @@
-### bool
+# bool()
 
 Generates a pseudo-random boolean value.
 
-#### Example
+## Usage
 
 ```js
-bool(); // => true
-bool(); // => false
+import bool from 'doremi/random/bool';
+
+bool();
+// => true
+
+bool();
+// => false
 ```

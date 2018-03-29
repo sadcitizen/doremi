@@ -4,12 +4,12 @@ import { MIN_INT, MAX_INT } from '../../internal/constants';
 const { floor, random } = Math;
 
 /**
- * @param {number} [min] The minimum value to generate.
- * @param {number} [max] The maximum value to generate.
- * @param {number} [fixed] The length of fraction.
- * @return {number} Returns the float number.
+ * @param {number} [min]
+ * @param {number} [max]
+ * @param {number} [precision]
+ * @return {number}
  */
-export default function (min, max, fixed) {
+export default function (min, max, precision = 5) {
     let frac = random();
 
     min = isDefined(min) ? ~~min : MIN_INT;
@@ -19,5 +19,5 @@ export default function (min, max, fixed) {
         throw new Error('Minimum value cannot be greater than maximum value.');
     }
 
-    return parseFloat((floor(random() * (max - min - frac)) + frac).toFixed(fixed || 5));
+    return parseFloat((floor(random() * (max - min - frac)) + frac).toFixed(precision));
 }
