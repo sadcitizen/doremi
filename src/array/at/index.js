@@ -1,7 +1,7 @@
 /**
- * @param target {Array} The array to iterate over.
- * @param indexes {Array} The indexes of elements to pick.
- * @returns {*|Array} The array of elements.
+ * @param {Array} target
+ * @param {Array} indexes
+ * @returns {*|Array}
  */
 function at(target, ...indexes) {
     let index;
