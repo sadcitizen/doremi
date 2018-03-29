@@ -12,15 +12,19 @@ describe('number/isOdd()', () => {
         expect(isOdd(-21)).toBe(true);
     });
 
-    test('returns false if value is not numeric', () => {
-        expect(isOdd(void 0)).toBe(false);
-        expect(isOdd(null)).toBe(false);
-        expect(isOdd(NaN)).toBe(false);
-        expect(isOdd(true)).toBe(false);
-        expect(isOdd('')).toBe(false);
-        expect(isOdd([])).toBe(false);
-        expect(isOdd({})).toBe(false);
-        expect(isOdd(new Date())).toBe(false);
-        expect(isOdd(/\s+/ig)).toBe(false);
+    test('throws an error if value is not integer', () => {
+        expect(() => isOdd(3.14)).toThrow('An integer is expected');
+    });
+
+    test('throws an error if value is not numeric', () => {
+        expect(() => isOdd(void 0)).toThrow('A number is expected');
+        expect(() => isOdd(null)).toThrow('A number is expected');
+        expect(() => isOdd(NaN)).toThrow('A number is expected');
+        expect(() => isOdd(true)).toThrow('A number is expected');
+        expect(() => isOdd('')).toThrow('A number is expected');
+        expect(() => isOdd([])).toThrow('A number is expected');
+        expect(() => isOdd({})).toThrow('A number is expected');
+        expect(() => isOdd(new Date())).toThrow('A number is expected');
+        expect(() => isOdd(/\s+/ig)).toThrow('A number is expected');
     });
 });

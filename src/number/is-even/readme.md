@@ -1,11 +1,15 @@
-### isEven
+# isEven(number)
 
-Checks if the number is even.
+Checks if the given number is even.
 
-#### Example
+## Usage
 
 ```js
-isEven(null); // => false
-isEven(21); // => false
-isEven(20); // => true
+import isEven from 'doremi/number/is-even';
+
+isEven(21);
+// => false
+
+isEven(20);
+// => true
 ```

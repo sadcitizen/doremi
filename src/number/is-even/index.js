@@ -1,7 +1,17 @@
 import isNumber from '../is-number';
 
 /**
- * @param {*} target The value to check.
- * @returns {boolean} Return true if target is an even number, else false.
+ * @param {number} target
+ * @returns {boolean}
  */
-export default target => isNumber(target) && target % 2 === 0;
+export default function (target) {
+    if (!isNumber(target)) {
+        throw new Error('A number is expected');
+    }
+
+    if (target !== Math.floor(target)) {
+        throw new Error('An integer is expected');
+    }
+
+    return target % 2 === 0;
+}

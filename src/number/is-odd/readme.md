@@ -1,11 +1,15 @@
-### isOdd
+# isOdd(number)
 
-Checks if the number is odd.
+Checks if the given number is odd.
 
-#### Example
+## Usage
 
 ```js
-isOdd(null); // => false
-isOdd(21); // => true
-isOdd(20); // => false
+import isOdd from 'doremi/number/is-odd';
+
+isOdd(21);
+// => true
+
+isOdd(20);
+// => false
 ```
