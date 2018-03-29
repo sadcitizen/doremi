@@ -1,5 +1,5 @@
 /**
- * @param {boolean[]} conditions The conditions to check.
- * @return {boolean} Returns true or false.
+ * @param {...boolean} conditions
+ * @return {boolean}
  */
 export default (...conditions) => conditions.length ? conditions.every(Boolean) : false;
