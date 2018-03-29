@@ -10,7 +10,7 @@ describe('func/compose()', () => {
         expect(composed).toEqual(expect.any(Function));
     });
 
-    test('Call all provided functions', () => {
+    test('calls all provided functions', () => {
         composed();
         expect(f1).toHaveBeenCalled();
         expect(f2).toHaveBeenCalled();
