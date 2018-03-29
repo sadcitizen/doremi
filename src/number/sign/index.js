@@ -1,7 +1,5 @@
 /**
  * @param {number} value
- * @returns {-1|0|1}
+ * @returns {number}
  */
-export default function (value) {
-    return value < 0 ? -1 : (value > 0 ? 1 : 0);
-}
+export default value => value < 0 ? -1 : (value > 0 ? 1 : 0);

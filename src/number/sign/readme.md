@@ -1,11 +1,18 @@
-### sign
+# sign(value)
 
 Returns sign of the given number.
 
-#### Example
+## Usage
 
 ```js
-sign(42); // => 1
-sign(-42); // => -1
-sign(0); // => 0
+import sign from 'doremi/number/sign';
+
+sign(42);
+// => 1
+
+sign(-42);
+// => -1
+
+sign(0);
+// => 0
 ```
