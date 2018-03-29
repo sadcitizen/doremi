@@ -1,8 +1,5 @@
 /**
- * Returns the first of provided arguments.
- * Used as the default iteratee.
- *
- * @param {*} x Any value.
- * @return {*} Returns value.
+ * @param {*} x
+ * @return {*}
  */
 export default x => x;
