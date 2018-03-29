@@ -1,8 +1,6 @@
 # getValue(object, path, defaultValue)
 
-Gets a nested value of an object by property path.
-
-Returns a default value if it is specified.
+Gets a nested value of an object by property path. Returns a default value if it is specified.
 
 ## Usage
 
