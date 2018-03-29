@@ -5,11 +5,13 @@ describe('number/isOdd()', () => {
         expect(isOdd(42)).toBe(false);
         expect(isOdd(-42)).toBe(false);
         expect(isOdd(0)).toBe(false);
+        expect(isOdd(1e1)).toBe(false);
     });
 
     test('returns true if value is odd number', () => {
         expect(isOdd(21)).toBe(true);
         expect(isOdd(-21)).toBe(true);
+        expect(isOdd(1e0)).toBe(true);
     });
 
     test('throws an error if value is not integer', () => {
