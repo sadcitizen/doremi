@@ -1,7 +1,7 @@
 /**
- * @param {number} target The number to format.
- * @param {number} precision The precision to format to.
- * @returns {string} Returns the formatted number.
+ * @param {number} target
+ * @param {number} precision
+ * @returns {string}
  */
 export default (target, precision = 2) => {
     if (precision > 0) {
