@@ -10,14 +10,14 @@ describe('number/isFloat()', () => {
         expect(isFloat(0)).toBe(false);
     });
 
-    test('returns false if value is not numeric or is nan', () => {
-        expect(isFloat(null)).toBe(false);
-        expect(isFloat(NaN)).toBe(false);
-        expect(isFloat(true)).toBe(false);
-        expect(isFloat('')).toBe(false);
-        expect(isFloat([])).toBe(false);
-        expect(isFloat({})).toBe(false);
-        expect(isFloat(new Date())).toBe(false);
-        expect(isFloat(/\s+/ig)).toBe(false);
+    test('throws an error if value is not numeric or is nan', () => {
+        expect(() => isFloat(null)).toThrow('A number is expected');
+        expect(() => isFloat(NaN)).toThrow('A number is expected');
+        expect(() => isFloat(true)).toThrow('A number is expected');
+        expect(() => isFloat('')).toThrow('A number is expected');
+        expect(() => isFloat([])).toThrow('A number is expected');
+        expect(() => isFloat({})).toThrow('A number is expected');
+        expect(() => isFloat(new Date())).toThrow('A number is expected');
+        expect(() => isFloat(/\s+/ig)).toThrow('A number is expected');
     });
 });

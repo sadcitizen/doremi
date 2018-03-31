@@ -1,7 +1,13 @@
 import isNumber from '../is-number';
 
 /**
- * @param {*} target The value to check.
- * @returns {boolean} Returns `true` if `target` is float, else 'false'.
+ * @param {number} target
+ * @returns {boolean}
  */
-export default target => isNumber(target) && target % 1 !== 0;
+export default function (target) {
+    if (!isNumber(target)) {
+        throw new Error('A number is expected');
+    }
+
+    return target % 1 !== 0;
+}

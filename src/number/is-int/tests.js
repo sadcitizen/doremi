@@ -19,14 +19,14 @@ describe('number/isInt()', () => {
         expect(isInt(-Infinity)).toBe(false);
     });
 
-    test('returns false if value is not numeric or is nan', () => {
-        expect(isInt(null)).toBe(false);
-        expect(isInt(NaN)).toBe(false);
-        expect(isInt(true)).toBe(false);
-        expect(isInt('')).toBe(false);
-        expect(isInt([])).toBe(false);
-        expect(isInt({})).toBe(false);
-        expect(isInt(new Date())).toBe(false);
-        expect(isInt(/\s+/ig)).toBe(false);
+    test('throws an error if value is not numeric or is nan', () => {
+        expect(() => isInt(null)).toThrow('A number is expected');
+        expect(() => isInt(NaN)).toThrow('A number is expected');
+        expect(() => isInt(true)).toThrow('A number is expected');
+        expect(() => isInt('')).toThrow('A number is expected');
+        expect(() => isInt([])).toThrow('A number is expected');
+        expect(() => isInt({})).toThrow('A number is expected');
+        expect(() => isInt(new Date())).toThrow('A number is expected');
+        expect(() => isInt(/\s+/ig)).toThrow('A number is expected');
     });
 });

@@ -1,11 +1,15 @@
-### isFloat
+# isFloat(number)
 
-Checks if the number is float.
+Checks if the given number is float.
 
-#### Example
+## Usage
 
 ```js
-isFloat(42); // => false
-isFloat(42.42); // => true
-isFloat('42.42'); // => false
+import isFloat from 'doremi/number/is-float';
+
+isFloat(42);
+// => false
+
+isFloat(42.42);
+// => true
 ```

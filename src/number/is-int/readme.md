@@ -1,11 +1,15 @@
-### isInt
+# isInt(number)
 
-Checks if the number is integer.
+Checks if the given number is integer.
 
-#### Example
+## Usage
 
 ```js
-isInt(42); // => true
-isInt(42.42); // => false
-isInt('42'); // => false
+import isInt from 'doremi/number/is-int';
+
+isInt(42);
+// => true
+
+isInt(42.42);
+// => false
 ```
