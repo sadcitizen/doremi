@@ -9,6 +9,10 @@ describe('number/isNumber()', () => {
         /* jshint +W053 */
         expect(isNumber(-42)).toBe(true);
         expect(isNumber(0)).toBe(true);
+        expect(isNumber(0xff)).toBe(true);
+        expect(isNumber(1e4)).toBe(true);
+        expect(isNumber(parseInt('042'))).toBe(true);
+        expect(isNumber(parseFloat('042'))).toBe(true);
     });
 
     test('returns false if value is not numeric', () => {
