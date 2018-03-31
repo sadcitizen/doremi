@@ -1,11 +1,18 @@
-### isNumber
+# isNumber(num)
 
 Checks if the value is a number.
 
-#### Example
+## Usage
 
 ```js
-isNumber(false); // => false
-isNumber(42); // => true
-isNumber('42'); // => false
+import isNumber from 'doremi/number/is-number';
+
+isNumber(false);
+// => false
+
+isNumber(42);
+// => true
+
+isNumber('42');
+// => false
 ```
