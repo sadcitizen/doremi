@@ -1,3 +1,3 @@
 # random
 
-- [`bool`](/bool)
+- [`bool`](./bool)
