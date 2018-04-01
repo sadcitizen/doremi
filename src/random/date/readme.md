@@ -2,7 +2,7 @@
 
 Generates a pseudo-random date.
 
-#### Example
+## Usage
 
 ```js
 import date from 'doremi/random/date';
