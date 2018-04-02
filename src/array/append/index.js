@@ -1,10 +1,9 @@
 /**
  * Appends items of an array to the end of other.
  *
- * @deprecated
- * @param target {Array} The array to modify.
- * @param source {Array} The array to append.
- * @returns {Array} Returns `target` with appended items of `source`.
+ * @param {Array} target
+ * @param {...Array} sources
+ * @returns {Array}
  *
  * @example
  * const foo = [3, 6, 9, 12];
@@ -13,7 +12,19 @@
  * append(foo, bar);
  * // => [3, 6, 9, 12, 4, 7, 10, 13]
  */
-export default function (target, source) {
-    target.push(...source);
+export default function (target, ...sources) {
+    if (sources.length === 0) {
+        return target;
+    }
+
+    if (sources.length === 1) {
+        target.push(...sources[0]);
+        return target;
+    }
+
+    sources.forEach(source => {
+        target.push(...source);
+    });
+
     return target;
 }
