@@ -3,7 +3,7 @@ import whitespaces from '../../internal/regexes/whitespaces';
 /**
  * Removes leading and trailing whitespaces or given characters from `target`.
  *
- * @param {String} target The string to trim.
+ * @param {string} target The string to trim.
  * @param {Array} rest The characters to remove.
  * @returns {String} The trimmed string.
  *

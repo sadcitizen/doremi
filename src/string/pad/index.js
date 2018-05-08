@@ -4,9 +4,9 @@ import repeat from '../repeat';
  * Pads a string on the right and left sides if its length is less then
  * the given padding length.
  *
- * @param {String} target The string to pad.
- * @param {Number} length The padding length.
- * @param {String} char The string used as padding.
+ * @param {string} target The string to pad.
+ * @param {number} length The padding length.
+ * @param {string} char The string used as padding.
  * @returns {String} Returns the padded string.
  *
  * @example

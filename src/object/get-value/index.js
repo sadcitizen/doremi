@@ -1,7 +1,7 @@
 import isDefined from '../../common/is-defined';
 
 /**
- * @param {object} target
+ * @param {Object} target
  * @param {string} path
  * @param {*} [def]
  * @returns {*}

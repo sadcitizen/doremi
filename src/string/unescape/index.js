@@ -5,7 +5,7 @@ import invert from '../../object/invert';
  * Converts HTML-entities `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#x27;`, `&#x60;`
  * to their corresponding characters.
  *
- * @param {String} target The string to replace.
+ * @param {string} target The string to replace.
  * @returns {String} Returns the escaped string.
  *
  * @example
