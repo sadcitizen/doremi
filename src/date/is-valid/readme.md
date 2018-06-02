@@ -1,8 +1,8 @@
-### isValid
+# isValid
 
 Checks if the value is a valid date.
 
-#### Example
+## Usage
 
 ```js
 isValid(''); // => false

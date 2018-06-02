@@ -1,8 +1,8 @@
-### startOf
+# startOf
 
 Creates a new date at the end of time period
 
-#### Example
+## Usage
 
 ```js
 const date = new Date(2015, 2, 23, 23, 20, 11, 491);

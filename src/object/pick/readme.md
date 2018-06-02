@@ -1,11 +1,9 @@
-# pick(object, ...keys)
-
-
+# pick(object, properties)
 
 ## Usage
 
 ```js
-import pick from 'doremi/object/pick';
+import pick from 'doremi/object/pick-properties';
 
 pick({ a: 'a', b: 'b' }, 'a');
 //=> { a: 'a' }

@@ -1,8 +1,8 @@
-### isTomorrow
+# isTomorrow
 
 Checks if a date is tomorrow.
 
-#### Example
+## Usage
 
 ```js
 // TODO

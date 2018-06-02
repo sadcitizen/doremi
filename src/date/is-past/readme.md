@@ -1,8 +1,8 @@
-### isPast
+# isPast
 
 Checks if a date is past.
 
-#### Example
+## Usage
 
 ```js
 // TODO

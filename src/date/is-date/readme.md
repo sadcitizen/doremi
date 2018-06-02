@@ -1,8 +1,8 @@
-### isDate
+# isDate
 
 Checks if the value is date.
 
-#### Example
+## Usage
 
 ```js
 isDate('2014-11-22'); // => false

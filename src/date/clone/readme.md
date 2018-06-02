@@ -1,8 +1,8 @@
-### clone
+# clone
 
 Returns a copy of the date.
 
-#### Example
+## Usage
 
 ```js
 const date = new Date(2015, 0, 1);

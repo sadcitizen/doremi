@@ -1,8 +1,8 @@
-### isToday
+# isToday
 
 Checks if a date is today.
 
-#### Example
+## Usage
 
 ```js
 // TODO

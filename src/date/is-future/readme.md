@@ -1,8 +1,8 @@
-### isFuture
+# isFuture
 
 Checks if a date is future.
 
-#### Example
+## Usage
 
 ```js
 // TODO

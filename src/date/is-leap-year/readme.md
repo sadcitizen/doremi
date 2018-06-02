@@ -1,4 +1,4 @@
-### isLeapYear
+# isLeapYear
 
 Checks if the value is a leap year
 

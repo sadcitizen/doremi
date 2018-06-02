@@ -1,8 +1,8 @@
-### difference
+# difference
 
 Calculates the difference between the dates.
 
-#### Example
+## Usage
 
 ```js
 const value = new Date(2000, 0);
