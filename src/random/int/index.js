@@ -9,12 +9,12 @@ const { floor, random } = Math;
  * @return {number}
  */
 export default function (min, max) {
-    min = isDefined(min) ? min : MIN_INT;
-    max = isDefined(max) ? max : MAX_INT;
+    const minValue = isDefined(min) ? min : MIN_INT;
+    const maxValue = isDefined(max) ? max : MAX_INT;
 
-    if (min > max) {
+    if (minValue > maxValue) {
         throw new Error('Minimum value cannot be greater than maximum value.');
     }
 
-    return floor((random() * (max - min + 1)) + min);
+    return floor((random() * (maxValue - minValue + 1)) + minValue);
 }
