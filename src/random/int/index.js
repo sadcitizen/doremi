@@ -16,5 +16,5 @@ export default function (min, max) {
         throw new Error('Minimum value cannot be greater than maximum value.');
     }
 
-    return floor(random() * (max - min + 1) + min);
+    return floor((random() * (max - min + 1)) + min);
 }

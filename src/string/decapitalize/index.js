@@ -13,5 +13,8 @@
  */
 export default function (target) {
     target = String(target);
-    return target.length > 0 ? target.charAt(0).toLowerCase() + target.slice(1) : target;
+
+    return target.length > 0
+        ? target.charAt(0).toLowerCase() + target.slice(1)
+        : target;
 }

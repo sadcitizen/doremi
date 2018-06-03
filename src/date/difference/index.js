@@ -1,7 +1,8 @@
 import units from '../../internal/time-units';
+import { UNDEF } from '../../internal/constants';
 // TODO: Refactoring
 export default function (first, second, unit) {
-    if (first === undefined || second === undefined) {
+    if (first === UNDEF || second === UNDEF) {
         throw new Error('diff() expects at least two arguments');
     }
 

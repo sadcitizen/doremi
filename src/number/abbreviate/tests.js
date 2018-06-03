@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import abbreviate from '.';
 
 describe('number/abbreviate()', () => {
@@ -51,7 +52,7 @@ describe('number/abbreviate()', () => {
         expect(abbreviate('')).toBe('');
         expect(abbreviate('42')).toBe('');
         expect(abbreviate('42.42')).toBe('');
-        expect(abbreviate(void 0)).toBe('');
+        expect(abbreviate(VOID_0)).toBe('');
         expect(abbreviate(null)).toBe('');
         expect(abbreviate({})).toBe('');
         expect(abbreviate([])).toBe('');

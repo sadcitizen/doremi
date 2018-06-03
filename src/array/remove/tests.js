@@ -1,7 +1,8 @@
+import { VOID_0 } from '../../internal/constants';
 import remove from '.';
 
 describe('array/remove()', () => {
-    test('Modify the array and return removed elements', () => {
+    test('modify the array and return removed elements', () => {
         const target = [1, 2, 3, 4, 5, 6];
         const result = remove(target, x => x % 2 === 0);
 
@@ -9,7 +10,7 @@ describe('array/remove()', () => {
         expect(result).toEqual([2, 4, 6]);
     });
 
-    test('Do not modify the array if predicate returns false for all elements', () => {
+    test('do not modify the array if predicate returns false for all elements', () => {
         const target = [1, 2, 3, 4, 5, 6];
         const result = remove(target, x => !x);
 
@@ -29,6 +30,6 @@ describe('array/remove()', () => {
         const truthy = x => !!x;
 
         expect(remove(null, truthy)).toEqual([]);
-        expect(remove(void 0, truthy)).toEqual([]);
+        expect(remove(VOID_0, truthy)).toEqual([]);
     });
 });

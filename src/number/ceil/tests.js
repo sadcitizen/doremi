@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import ceil from '.';
 
 describe('number/ceil()', () => {
@@ -37,7 +38,7 @@ describe('number/ceil()', () => {
         expect(ceil('')).toEqual(NaN);
         expect(ceil('42')).toEqual(NaN);
         expect(ceil('42.42')).toEqual(NaN);
-        expect(ceil(void 0)).toEqual(NaN);
+        expect(ceil(VOID_0)).toEqual(NaN);
         expect(ceil(null)).toEqual(NaN);
         expect(ceil({})).toEqual(NaN);
         expect(ceil([])).toEqual(NaN);

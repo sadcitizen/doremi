@@ -1,3 +1,5 @@
+import { UNDEF } from '../../internal/constants';
+
 /**
  * Checks if `target` is 'null' or `undefined`.
  *
@@ -11,4 +13,4 @@
  * isDefined('');
  * // => true
  */
-export default target => target !== undefined && target !== null;
+export default target => target !== UNDEF && target !== null;

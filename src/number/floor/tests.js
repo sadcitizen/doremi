@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import floor from '.';
 
 describe('number/floor()', () => {
@@ -37,7 +38,7 @@ describe('number/floor()', () => {
         expect(floor('')).toEqual(NaN);
         expect(floor('42')).toEqual(NaN);
         expect(floor('42.42')).toEqual(NaN);
-        expect(floor(void 0)).toEqual(NaN);
+        expect(floor(VOID_0)).toEqual(NaN);
         expect(floor(null)).toEqual(NaN);
         expect(floor({})).toEqual(NaN);
         expect(floor([])).toEqual(NaN);
