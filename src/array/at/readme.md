@@ -7,12 +7,18 @@ Returns an array of elements corresponding to the given indexes.
 ```js
 import at from 'doremi/array/at';
 
-at([1, 2, 3, 4, 5], 1);
+const item = at([1, 2, 3, 4, 5], 1);
+
+console.log(item);
 // => [2]
 
-at([1, 2, 3, 4, 5], 1, 3);
+const pair = at([1, 2, 3, 4, 5], 1, 3);
+
+console.log(pair);
 // => [2, 4]
 
-at([1, 2, 3, 4, 5], [-1, -2, 0]);
+const trio = at([1, 2, 3, 4, 5], [-1, -2, 0]);
+
+console.log(trio);
 // => [5, 4, 1]
 ```
