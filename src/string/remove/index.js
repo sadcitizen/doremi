@@ -14,7 +14,7 @@
  * // => 'Hello, World!'
  */
 export default function (target, start, end) {
-    const length = target.length;
+    const { length } = target;
 
     start |= 0;
     end |= 0;
