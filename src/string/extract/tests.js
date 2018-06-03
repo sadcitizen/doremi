@@ -1,14 +1,14 @@
 import extract from '.';
 
 describe('string/extract()', () => {
-    test('Extracts values', () => {
+    test('extracts values', () => {
         const result = {
             user: 'bill',
             host: 'gates',
             domain: 'com'
         };
 
-        expect(extract('bill@gates.com', '${user}@${host}.${domain}')).toEqual(result);
+        expect(extract('bill@gates.com', '${user}@${host}.${domain}')).toEqual(result); // eslint-disable-line no-template-curly-in-string
     });
 
     test('works with nested values', () => {
@@ -21,7 +21,7 @@ describe('string/extract()', () => {
             }
         };
         const target = '/2015/08/21/hello-world.html';
-        const pattern = '/${date.year}/${date.month}/${date.day}/${slug}.html';
+        const pattern = '/${date.year}/${date.month}/${date.day}/${slug}.html'; // eslint-disable-line no-template-curly-in-string
 
         expect(extract(target, pattern)).toEqual(post);
     });

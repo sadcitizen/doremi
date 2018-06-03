@@ -1,6 +1,7 @@
-import template from '.';
 import * as regex from '../../internal/regexes/template';
+import template from '.';
 
+/* eslint-disable no-template-curly-in-string */
 describe('string/template()', () => {
     test('returns the string replaced with template values', () => {
         const lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
@@ -31,7 +32,7 @@ describe('string/template()', () => {
         expect(template('${0} ipsum ${2} sit', lorem)).toBe('lorem ipsum dolor sit');
     });
 
-    test('Do not replace undefined values', () => {
+    test('do not replace undefined values', () => {
         const lorem = { a: 'lorem', b: 'ipsum', c: 'dolor' };
 
         expect(template('${a} ${b} ${c} ${d}', lorem)).toBe('lorem ipsum dolor ${d}');
@@ -49,3 +50,4 @@ describe('string/template()', () => {
         expect(template('<%= a %> <%= b %> <%= c %>', lorem, regex.underscore)).toBe('lorem ipsum dolor');
     });
 });
+/* eslint-enable no-template-curly-in-string */

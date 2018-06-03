@@ -1,7 +1,7 @@
 import pad from '.';
 
 describe('string/pad()', () => {
-    test('Adds characters to the right', () => {
+    test('adds characters to the right', () => {
         expect(pad('sit', 4, '^')).toBe('^sit');
         expect(pad('sit', 5, '^')).toBe('^sit^');
         expect(pad('sit', 6, '^')).toBe('^^sit^');
@@ -9,7 +9,7 @@ describe('string/pad()', () => {
         expect(pad('sit', 8, '^')).toBe('^^^sit^^');
     });
 
-    test('Takes only first character of padding string', () => {
+    test('takes only first character of padding string', () => {
         expect(pad('sit', 6, '#')).toBe('##sit#');
         expect(pad('sit', 7, '%#')).toBe('%%sit%%');
         expect(pad('sit', 8, '&%#')).toBe('&&&sit&&');

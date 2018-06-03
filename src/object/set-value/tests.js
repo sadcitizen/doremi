@@ -1,7 +1,7 @@
 import setValue from '.';
 
 describe('object/setValue()', () => {
-    test('Set value with not nested path', () => {
+    test('sets value with not nested path', () => {
         const target = {};
 
         setValue(target, 'lorem', 'ipsum');
@@ -10,7 +10,7 @@ describe('object/setValue()', () => {
         expect(target).toEqual({ lorem: 'ipsum', dolor: 'sit' });
     });
 
-    test('Set value with nested path', () => {
+    test('sets value with nested path', () => {
         const target = {};
 
         setValue(target, 'lorem.ipsum.dolor', 'sit');
@@ -18,7 +18,7 @@ describe('object/setValue()', () => {
         expect(target).toEqual({ lorem: { ipsum: { dolor: 'sit' } } });
     });
 
-    test('Set value if nested property is exists', () => {
+    test('sets value if nested property is exists', () => {
         const target = { lorem: { ipsum: { dolor: 'amet' } } };
 
         setValue(target, 'lorem.ipsum.dolor', 'sit');

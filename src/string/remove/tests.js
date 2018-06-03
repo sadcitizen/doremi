@@ -1,7 +1,7 @@
 import remove from '.';
 
 describe('string/remove()', () => {
-    test('Removes a substring from a string', () => {
+    test('removes a substring from a string', () => {
         const hello = 'Hello, World!';
 
         expect(remove(hello, 0, 2)).toBe('llo, World!');
@@ -20,7 +20,7 @@ describe('string/remove()', () => {
         expect(remove(hello, null, null)).toBe(hello);
     });
 
-    test('Accepts negative indexes', () => {
+    test('accepts negative indexes', () => {
         const hello = 'Hello, World!';
 
         expect(remove(hello, 0, -3)).toBe('ld!');

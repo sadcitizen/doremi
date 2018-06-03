@@ -1,11 +1,11 @@
 import decapitalize from '.';
 
 describe('string/decapitalize()', () => {
-    test('Decapitalizes a string', () => {
+    test('decapitalizes a string', () => {
         expect(decapitalize('Lorem ipsum')).toBe('lorem ipsum');
     });
 
-    test('Changes only first letter of a string', () => {
+    test('changes only first letter of a string', () => {
         expect(decapitalize('Lorem IPSUM')).toBe('lorem IPSUM');
     });
 

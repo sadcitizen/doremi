@@ -1,11 +1,11 @@
 import capitalize from '.';
 
 describe('string/capitalize()', () => {
-    test('Capitalizes a string', () => {
+    test('capitalizes a string', () => {
         expect(capitalize('lorem ipsum')).toBe('Lorem ipsum');
     });
 
-    test('Changes only first letter of a string', () => {
+    test('changes only first letter of a string', () => {
         expect(capitalize('lorem IPSUM')).toBe('Lorem IPSUM');
     });
 

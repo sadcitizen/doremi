@@ -1,7 +1,7 @@
 import padLeft from '.';
 
 describe('string/padLeft()', () => {
-    test('Adds characters to the left', () => {
+    test('adds characters to the left', () => {
         expect(padLeft('lorem', 4, '^')).toBe('lorem');
         expect(padLeft('lorem', 5, '^')).toBe('lorem');
         expect(padLeft('lorem', 6, '^')).toBe('^lorem');
@@ -9,7 +9,7 @@ describe('string/padLeft()', () => {
         expect(padLeft('lorem', 8, '^')).toBe('^^^lorem');
     });
 
-    test('Takes only first character of padding string', () => {
+    test('takes only first character of padding string', () => {
         expect(padLeft('lorem', 6, '#')).toBe('#lorem');
         expect(padLeft('lorem', 6, '%#')).toBe('%lorem');
         expect(padLeft('lorem', 6, '&%#')).toBe('&lorem');

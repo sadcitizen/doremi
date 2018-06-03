@@ -20,7 +20,6 @@ module.exports = {
         'import/exports-last': 'error', // ensure all exports appear after other statements
         'import/extensions': [ // ensure consistent use of file extension within the import path
             'error',
-            'always',
             {
                 js: 'never',
                 ignorePackages: true
