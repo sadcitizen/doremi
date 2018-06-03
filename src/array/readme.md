@@ -1,28 +1,28 @@
-# TODO
+# array
 
-- [x] append
-- [x] at
-- [ ] average
-- [ ] chunk
-- [ ] compact
-- [x] count
-- [ ] difference
-- [ ] distinct
-- [ ] equals
-- [x] first
-- [ ] flatten
-- [ ] group
-- [ ] intersection
-- [ ] is-empty
-- [x] last
-- [ ] max
-- [ ] min
-- [ ] partition
-- [ ] pluck
-- [ ] prepend
-- [ ] remove
-- [ ] sort
-- [ ] sum
-- [ ] union
-- [ ] update
+- [x] [`append`](./append)
+- [x] [`at`](./at)
+- [ ] [`average`](./average)
+- [ ] [`chunk`](./chunk)
+- [ ] [`compact`](./compact)
+- [x] [`count`](./count)
+- [ ] [`difference`](./difference)
+- [ ] [`distinct`](./distinct)
+- [ ] [`equals`](./equals)
+- [x] [`first`](./first)
+- [ ] [`flatten`](./flatten)
+- [ ] [`group`](./group)
+- [ ] [`intersection`](./intersection)
+- [ ] [`is-empty`](./is-empty)
+- [x] [`last`](./last)
+- [ ] [`max`](./max)
+- [ ] [`min`](./min)
+- [ ] [`partition`](./partition)
+- [ ] [`pluck`](./pluck)
+- [ ] [`prepend`](./prepend)
+- [ ] [`remove`](./remove)
+- [ ] [`sort`](./sort)
+- [ ] [`sum`](./sum)
+- [ ] [`union`](./union)
+- [ ] [`update`](./update)
 
