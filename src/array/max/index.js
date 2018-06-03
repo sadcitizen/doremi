@@ -25,7 +25,7 @@ export default function (target, iteratee) {
     let compare = iteratee(target[0]);
     let temp;
 
-    for (let i = 0, length = target.length; i < length; i++) {
+    for (let i = 0, length = target.length; i < length; i += 1) {
         temp = iteratee(target[i]);
 
         if (temp > compare) {

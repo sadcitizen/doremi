@@ -1,10 +1,11 @@
+import { UNDEF, VOID_0 } from '../../internal/constants';
 import isEmpty from '.';
 
 describe('array/isEmpty()', () => {
     test('returns true if the array is undefined', () => {
         expect(isEmpty()).toBe(true);
-        expect(isEmpty(undefined)).toBe(true);
-        expect(isEmpty(void 0)).toBe(true);
+        expect(isEmpty(UNDEF)).toBe(true);
+        expect(isEmpty(VOID_0)).toBe(true);
     });
 
     test('returns true if the array is null', () => {

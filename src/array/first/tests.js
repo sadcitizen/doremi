@@ -4,7 +4,7 @@ describe('array/first()', () => {
     const target = [1, 2, 3, 4, 5, 6, 7];
 
     test('returns the first element of the array', () => {
-        expect(first(target)).toBe(1);
+        expect(first(target)).toEqual([1]);
     });
 
     test('returns the first N elements of the array', () => {

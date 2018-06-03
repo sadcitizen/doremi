@@ -18,6 +18,8 @@
  */
 export default function (target, count = 1) {
     if (count > 0) {
-        return count === 1 ? target[0] : target.slice(0, count);
+        return target.slice(0, count);
     }
+
+    return [];
 }

@@ -4,7 +4,7 @@ describe('array/last()', () => {
     const target = [1, 2, 3, 4, 5, 6, 7];
 
     test('returns the last element of the array', () => {
-        expect(last(target)).toBe(7);
+        expect(last(target)).toEqual([7]);
     });
 
     test('returns the last N elements of the array', () => {

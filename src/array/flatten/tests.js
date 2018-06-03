@@ -7,7 +7,7 @@ describe('array/flatten()', () => {
         expect(flatten(target)).toEqual([1, 2, 3, 4, 5, 6, 7]);
     });
 
-    test('Flattens only one layer of the array', () => {
+    test('flattens only one layer of the array', () => {
         expect(flatten(target, false)).toEqual([1, 2, 3, [4, [5]], 6, 7]);
     });
 
