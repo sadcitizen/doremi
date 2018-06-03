@@ -5,7 +5,7 @@ describe('func/after()', () => {
         expect(after(jest.fn(), 2)).toEqual(expect.any(Function));
     });
 
-    test('Executes the function after 5 calls', () => {
+    test('executes the function after 5 calls', () => {
         const fn = jest.fn();
         const afterFiveTimes = after(fn, 5);
 
@@ -25,7 +25,7 @@ describe('func/after()', () => {
         expect(fn).toHaveBeenCalled();
     });
 
-    test('Apply arguments', () => {
+    test('applies arguments', () => {
         const fn = jest.fn();
         const afterTwoTimes = after(fn, 2);
 

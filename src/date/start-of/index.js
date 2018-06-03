@@ -2,28 +2,10 @@ import normalize from '../../internal/normalize-time-unit';
 import clone from '../clone';
 import isValid from '../is-valid';
 
-function year(value) {
-    value.setMonth(0);
+function second(value) {
+    value.setMilliseconds(0);
 
-    return month(value);
-}
-
-function month(value) {
-    value.setDate(1);
-
-    return day(value);
-}
-
-function day(value) {
-    value.setHours(0);
-
-    return hour(value);
-}
-
-function hour(value) {
-    value.setMinutes(0);
-
-    return minute(value);
+    return value;
 }
 
 function minute(value) {
@@ -32,10 +14,28 @@ function minute(value) {
     return second(value);
 }
 
-function second(value) {
-    value.setMilliseconds(0);
+function hour(value) {
+    value.setMinutes(0);
 
-    return value;
+    return minute(value);
+}
+
+function day(value) {
+    value.setHours(0);
+
+    return hour(value);
+}
+
+function month(value) {
+    value.setDate(1);
+
+    return day(value);
+}
+
+function year(value) {
+    value.setMonth(0);
+
+    return month(value);
 }
 
 const handlers = { year, month, day, hour, minute, second };

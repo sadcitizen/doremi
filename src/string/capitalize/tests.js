@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import capitalize from '.';
 
 describe('string/capitalize()', () => {
@@ -12,7 +13,7 @@ describe('string/capitalize()', () => {
     test('works with empty string', () => {
         expect(capitalize('')).toBe('');
         expect(capitalize()).toBe('Undefined');
-        expect(capitalize(void 0)).toBe('Undefined');
+        expect(capitalize(VOID_0)).toBe('Undefined');
         expect(capitalize(null)).toBe('Null');
     });
 });

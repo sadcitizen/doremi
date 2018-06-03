@@ -18,12 +18,12 @@ describe('func/compose()', () => {
     });
 
     test('returns result of invoking the provided functions', () => {
-        const f1 = n => n + 1;
-        const f2 = n => n * 2;
-        const f3 = n => n - 3;
+        const plus = n => n + 1;
+        const multiply = n => n * 2;
+        const minus = n => n - 3;
 
-        expect(compose(f1)(1)).toBe(2);
-        expect(compose(f2, f1)(1)).toBe(4);
-        expect(compose(f3, f2, f1)(1)).toBe(1);
+        expect(compose(plus)(1)).toBe(2);
+        expect(compose(multiply, plus)(1)).toBe(4);
+        expect(compose(minus, multiply, plus)(1)).toBe(1);
     });
 });

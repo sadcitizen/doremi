@@ -1,3 +1,5 @@
+import { UNDEF } from '../../internal/constants';
+
 /**
  * Returns a type of `target`.
  *
@@ -15,7 +17,7 @@
  * // => object
  */
 export default function (target) {
-    if (target === undefined) {
+    if (target === UNDEF) {
         return 'undefined';
     }
 

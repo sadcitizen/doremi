@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import count from '.';
 
 describe('string/count()', () => {
@@ -18,6 +19,6 @@ describe('string/count()', () => {
         expect(count('', 'x')).toBe(0);
         expect(count('', '')).toBe(0);
         expect(count(null, 'x')).toBe(0);
-        expect(count(void 0, 'x')).toBe(0);
+        expect(count(VOID_0, 'x')).toBe(0);
     });
 });

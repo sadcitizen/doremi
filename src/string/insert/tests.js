@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import insert from '.';
 
 describe('string/insert()', () => {
@@ -11,7 +12,7 @@ describe('string/insert()', () => {
 
     test('treats undefined index as zero', () => {
         expect(insert(', World!', 'Hello')).toBe('Hello, World!');
-        expect(insert(', World!', 'Hello', void 0)).toBe('Hello, World!');
+        expect(insert(', World!', 'Hello', VOID_0)).toBe('Hello, World!');
     });
 
     test('accepts negative indexes', () => {

@@ -1,6 +1,7 @@
 import getValue from '../../object/get-value';
 import trim from '../trim';
 import { es6 } from '../../internal/regexes/template';
+import { UNDEF } from '../../internal/constants';
 
 /**
  * Replaces tokens from `target` on corresponding values from `data`.
@@ -31,6 +32,6 @@ export default function (target, data, syntax = es6) {
     return target.replace(syntax, (match, name) => {
         value = getValue(data, trim(name));
 
-        return value !== undefined ? String(value) : match;
+        return value !== UNDEF ? String(value) : match;
     });
 }

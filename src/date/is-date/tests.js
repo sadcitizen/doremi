@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import isDate from '.';
 
 describe('date/isDate()', () => {
@@ -9,7 +10,7 @@ describe('date/isDate()', () => {
 
     test('returns false if value is not a date', () => {
         expect(isDate(arguments)).toBe(false);
-        expect(isDate(void 0)).toBe(false);
+        expect(isDate(VOID_0)).toBe(false);
         expect(isDate(true)).toBe(false);
         expect(isDate(null)).toBe(false);
         expect(isDate(NaN)).toBe(false);

@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import decapitalize from '.';
 
 describe('string/decapitalize()', () => {
@@ -12,7 +13,7 @@ describe('string/decapitalize()', () => {
     test('works with empty strings', () => {
         expect(decapitalize('')).toBe('');
         expect(decapitalize()).toBe('undefined');
-        expect(decapitalize(void 0)).toBe('undefined');
+        expect(decapitalize(VOID_0)).toBe('undefined');
         expect(decapitalize(null)).toBe('null');
     });
 });

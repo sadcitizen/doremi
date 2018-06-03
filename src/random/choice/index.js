@@ -5,7 +5,9 @@ import int from '../int';
  * @returns {*}
  */
 export default function (list) {
-    let args = (arguments.length === 1 && Array.isArray(list)) ? list : arguments;
+    const args = arguments.length === 1 && Array.isArray(list)
+        ? list
+        : arguments;
 
     return args[int(0, args.length - 1)];
 }

@@ -1,16 +1,15 @@
+import { VOID_0 } from '../../internal/constants';
 import isChar from '.';
 
 describe('string/isChar()', () => {
     test('returns false if value is a char', () => {
         expect(isChar('a')).toBe(true);
         expect(isChar(String(4))).toBe(true);
-        /* jshint -W053 */
-        expect(isChar(new String(2))).toBe(true);
-        /* jshint +W053 */
+        expect(isChar(new String(2))).toBe(true); // eslint-disable-line no-new-wrappers
     });
 
     test('returns false if value is not char', () => {
-        expect(isChar(void 0)).toBe(false);
+        expect(isChar(VOID_0)).toBe(false);
         expect(isChar(null)).toBe(false);
         expect(isChar(NaN)).toBe(false);
         expect(isChar(true)).toBe(false);

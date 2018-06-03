@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import isFunction from '.';
 
 describe('func/isFunction()', () => {
@@ -12,7 +13,7 @@ describe('func/isFunction()', () => {
     test('returns false if value is not a function', () => {
         expect(isFunction(arguments)).toBe(false);
         expect(isFunction(true)).toBe(false);
-        expect(isFunction(void 0)).toBe(false);
+        expect(isFunction(VOID_0)).toBe(false);
         expect(isFunction(null)).toBe(false);
         expect(isFunction(NaN)).toBe(false);
         expect(isFunction(42)).toBe(false);

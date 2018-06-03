@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import remove from '.';
 
 describe('string/remove()', () => {
@@ -14,8 +15,8 @@ describe('string/remove()', () => {
         const hello = 'Hello, World!';
 
         expect(remove(hello)).toBe(hello);
-        expect(remove(hello, void 0)).toBe(hello);
-        expect(remove(hello, void 0, void 0)).toBe(hello);
+        expect(remove(hello, VOID_0)).toBe(hello);
+        expect(remove(hello, VOID_0, VOID_0)).toBe(hello);
         expect(remove(hello, null)).toBe(hello);
         expect(remove(hello, null, null)).toBe(hello);
     });

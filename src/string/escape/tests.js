@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import escape from '.';
 
 describe('string/escape()', () => {
@@ -19,7 +20,7 @@ describe('string/escape()', () => {
     test('works with empty strings', () => {
         expect(escape('')).toBe('');
         expect(escape()).toBe('undefined');
-        expect(escape(void 0)).toBe('undefined');
+        expect(escape(VOID_0)).toBe('undefined');
         expect(escape(null)).toBe('null');
     });
 });

@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import padLeft from '.';
 
 describe('string/padLeft()', () => {
@@ -17,7 +18,7 @@ describe('string/padLeft()', () => {
     });
 
     test('works with null and undefined', () => {
-        expect(padLeft(void 0, 5, '*')).toBe('undefined');
+        expect(padLeft(VOID_0, 5, '*')).toBe('undefined');
         expect(padLeft(null, 5, '*')).toBe('*null');
     });
 });

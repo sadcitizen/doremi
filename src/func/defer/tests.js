@@ -17,9 +17,9 @@ describe('func/defer()', () => {
         expect(fn).toHaveBeenCalled();
 
         jest.clearAllTimers();
-	});
+    });
 
-    test('Applies arguments', () => {
+    test('applies arguments', () => {
         jest.useFakeTimers();
         let counter = 0;
         const increment = x => counter += x;

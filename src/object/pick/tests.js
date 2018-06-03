@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import pick from '.';
 
 describe('object/pick()', () => {
@@ -9,7 +10,7 @@ describe('object/pick()', () => {
 
     test('throws an error if value is not an object', () => {
         expect(() => pick(null, 'a', 'b')).toThrow('An object is expected');
-        expect(() => pick(void 0, 'a', 'b')).toThrow('An object is expected');
+        expect(() => pick(VOID_0, 'a', 'b')).toThrow('An object is expected');
     });
 
     test('returns new object with passed keys', () => {

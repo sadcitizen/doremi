@@ -5,7 +5,7 @@ describe('func/before()', () => {
         expect(before(jest.fn(), 5)).toEqual(expect.any(Function));
     });
 
-    test('Does not execute the function after 2 calls', () => {
+    test('does not execute the function after 2 calls', () => {
         const add = (x, y) => x + y;
         const addThreeTimes = before(add, 3);
 

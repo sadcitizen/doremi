@@ -19,5 +19,5 @@ describe('func/delay()', () => {
         expect(fn).toHaveBeenCalled();
 
         jest.clearAllTimers();
-	});
+    });
 });

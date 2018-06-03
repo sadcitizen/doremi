@@ -5,7 +5,7 @@ describe('func/memoize()', () => {
         expect(memoize(jest.fn(), 100)).toEqual(expect.any(Function));
     });
 
-    test('Memoizes functions', () => {
+    test('memoizes functions', () => {
         const sum = jest.fn((x, y) => x + y);
         const square = jest.fn(x => x * x);
 

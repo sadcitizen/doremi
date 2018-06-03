@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import date from '.';
 
 describe('random/date()', () => {
@@ -15,7 +16,7 @@ describe('random/date()', () => {
     });
 
     test('throws the exception if minimum value is not provided', () => {
-        expect(() => date(void 0, new Date(2000, 11, 31))).toThrowError('Minimum value must be provided.');
+        expect(() => date(VOID_0, new Date(2000, 11, 31))).toThrowError('Minimum value must be provided.');
     });
 
     test('throws the exception if minimum value is greater than maximum value', () => {

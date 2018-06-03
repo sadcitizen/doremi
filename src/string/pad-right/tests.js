@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import padRight from '.';
 
 describe('string/padRight()', () => {
@@ -17,7 +18,7 @@ describe('string/padRight()', () => {
     });
 
     test('works with null and undefined', () => {
-        expect(padRight(void 0, 5, '*')).toBe('undefined');
+        expect(padRight(VOID_0, 5, '*')).toBe('undefined');
         expect(padRight(null, 5, '*')).toBe('null*');
     });
 });

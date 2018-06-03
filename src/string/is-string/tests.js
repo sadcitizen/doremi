@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import isString from '.';
 
 describe('string/isString()', () => {
@@ -5,12 +6,12 @@ describe('string/isString()', () => {
         expect(isString('')).toBe(true);
         expect(isString(String(42))).toBe(true);
         /* jshint -W053 */
-        expect(isString(new String(42))).toBe(true);
+        expect(isString(new String(42))).toBe(true); // eslint-disable-line no-new-wrappers
         /* jshint +W053 */
     });
 
     test('returns false if value is not string', () => {
-        expect(isString(void 0)).toBe(false);
+        expect(isString(VOID_0)).toBe(false);
         expect(isString(null)).toBe(false);
         expect(isString(NaN)).toBe(false);
         expect(isString(true)).toBe(false);

@@ -1,5 +1,5 @@
-import isPast from '.';
 import mockDate from 'mockdate';
+import isPast from '.';
 
 describe('date/isPast()', () => {
     test('returns true if the date is past', () => {

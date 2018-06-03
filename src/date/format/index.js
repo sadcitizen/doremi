@@ -1,76 +1,81 @@
 import isValid from '../is-valid';
 import padLeft from '../../string/pad-left';
 import aliases from '../../internal/datetime-aliases';
+import { UNDEF } from '../../internal/constants';
 
 const regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
 
 function dayOfWeek(date) {
     const day = date.getDay();
+
     return day === 0 ? 6 : day - 1;
 }
 
 const tokens = {
-    'YYYY': date => padLeft(date.getFullYear(), 4, '0'),
+    YYYY: date => padLeft(date.getFullYear(), 4, '0'),
 
-    'YYY': date => date.getFullYear(),
+    YYY: date => date.getFullYear(),
 
-    'YY': date => padLeft(date.getFullYear() % 100, 2, '0'),
+    YY: date => padLeft(date.getFullYear() % 100, 2, '0'),
 
-    'Y': date => date.getFullYear() % 100,
+    Y: date => date.getFullYear() % 100,
 
-    'MMMM': (date, aliases) => aliases.months.longs[date.getMonth()],
+    MMMM: (date, lang) => lang.months.longs[date.getMonth()],
 
-    'MMM': (date, aliases) => aliases.months.shorts[date.getMonth()],
+    MMM: (date, lang) => lang.months.shorts[date.getMonth()],
 
-    'MM': date => padLeft((date.getMonth() + 1) % 100, 2, '0'),
+    MM: date => padLeft((date.getMonth() + 1) % 100, 2, '0'),
 
-    'M': date => (date.getMonth() + 1) % 100,
+    M: date => (date.getMonth() + 1) % 100,
 
-    'DDDD': (date, aliases) => aliases.days.longs[dayOfWeek(date)],
+    DDDD: (date, lang) => lang.days.longs[dayOfWeek(date)],
 
-    'DDD': (date, aliases) => aliases.days.shorts[dayOfWeek(date)],
+    DDD: (date, lang) => lang.days.shorts[dayOfWeek(date)],
 
-    'DD': date => padLeft(date.getDate() % 100, 2, '0'),
+    DD: date => padLeft(date.getDate() % 100, 2, '0'),
 
-    'D': date => date.getDate(),
+    D: date => date.getDate(),
 
-    'HH': date => padLeft(date.getHours(), 2, '0'),
+    HH: date => padLeft(date.getHours(), 2, '0'),
 
-    'H': date => date.getHours(),
+    H: date => date.getHours(),
 
-    'hh': (date) => {
-        let hours = date.getHours();
+    hh(date) {
+        const hours = date.getHours();
+
         return padLeft(hours <= 12 ? hours : hours - 12, 2, '0');
     },
 
-    'h': date => {
-        let hours = date.getHours();
+    h(date) {
+        const hours = date.getHours();
+
         return hours <= 12 ? hours : hours - 12;
     },
 
-    'mm': date => padLeft(date.getMinutes(), 2, '0'),
+    mm: date => padLeft(date.getMinutes(), 2, '0'),
 
-    'm': date => date.getMinutes(),
+    m: date => date.getMinutes(),
 
-    'ss': date => padLeft(date.getSeconds(), 2, '0'),
+    ss: date => padLeft(date.getSeconds(), 2, '0'),
 
-    's': date => date.getSeconds(),
+    s: date => date.getSeconds(),
 
-    'fff': date => padLeft(date.getMilliseconds(), 3, '0'),
+    fff: date => padLeft(date.getMilliseconds(), 3, '0'),
 
-    'ff': date => padLeft((date.getMilliseconds() / 10) | 0, 2, '0'),
+    ff: date => padLeft((date.getMilliseconds() / 10) | 0, 2, '0'),
 
-    'f': date => (date.getMilliseconds() / 100) | 0,
+    f: date => (date.getMilliseconds() / 100) | 0,
 
-    'TT': date => date.getHours() >= 12 ? 'PM' : 'AM',
+    TT: date => date.getHours() >= 12 ? 'PM' : 'AM',
 
-    'tt': date => date.getHours() >= 12 ? 'pm' : 'am',
+    tt: date => date.getHours() >= 12 ? 'pm' : 'am',
 
-    'Q': date => Math.ceil((date.getMonth() + 1) / 3),
+    Q: date => Math.ceil((date.getMonth() + 1) / 3),
 
-    'Z': date => {
+    Z(date) {
         const offset = date.getTimezoneOffset();
         const abs = Math.abs(offset);
+
         return (offset > 0 ? '-' : '+') + padLeft((abs / 60) | 0, 2, '0') + padLeft(abs % 60, 2, '0');
     }
 };
@@ -143,5 +148,5 @@ export default function (target, pattern, locale) {
 
     locale = locale || aliases;
 
-    return pattern.replace(regex, match => tokens[match] !== undefined ? tokens[match](target, locale) : match);
+    return pattern.replace(regex, match => tokens[match] !== UNDEF ? tokens[match](target, locale) : match);
 }

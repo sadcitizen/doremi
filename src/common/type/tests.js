@@ -1,16 +1,17 @@
-import type from '.';
 import noop from '../../func/noop';
+import { UNDEF } from '../../internal/constants';
+import type from '.';
 
 describe('common/type()', () => {
     test('returns a type of value', () => {
         expect(type(arguments)).toBe('arguments');
 
         expect(type([])).toBe('array');
-        expect(type(new Array(1, 2, 3))).toBe('array');
+        expect(type(new Array(1, 2, 3))).toBe('array'); // eslint-disable-line no-new-wrappers
 
         expect(type(true)).toBe('boolean');
         /* jshint -W053 */
-        expect(type(new Boolean(false))).toBe('boolean');
+        expect(type(new Boolean(false))).toBe('boolean'); // eslint-disable-line no-new-wrappers
         /* jshint +W053 */
         expect(type(Boolean(true))).toBe('boolean');
 
@@ -18,17 +19,17 @@ describe('common/type()', () => {
 
         expect(type(noop)).toBe('function');
         /* jshint -W054 */
-        expect(type(new Function('return true'))).toBe('function');
+        expect(type(new Function('return true'))).toBe('function'); // eslint-disable-line no-new-func
         /* jshint +W054 */
         expect(type(Math.abs)).toBe('function');
 
-        expect(type(undefined)).toBe('undefined');
+        expect(type(UNDEF)).toBe('undefined');
 
         expect(type(NaN)).toBe('nan');
 
         expect(type(42)).toBe('number');
         /* jshint -W053 */
-        expect(type(new Number(42))).toBe('number');
+        expect(type(new Number(42))).toBe('number'); // eslint-disable-line no-new-wrappers
         /* jshint +W053 */
         expect(type(Number(42))).toBe('number');
         expect(type(0)).toBe('number');
@@ -45,7 +46,7 @@ describe('common/type()', () => {
 
         expect(type('foo')).toBe('string');
         /* jshint -W053 */
-        expect(type(new String('foo'))).toBe('string');
+        expect(type(new String('foo'))).toBe('string'); // eslint-disable-line no-new-wrappers
         /* jshint +W053 */
         expect(type(String('foo'))).toBe('string');
         expect(type('')).toBe('string');

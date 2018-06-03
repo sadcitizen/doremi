@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import join from '.';
 
 describe('string/join()', () => {
@@ -11,7 +12,7 @@ describe('string/join()', () => {
         expect(join()).toBe('');
         expect(join('', '', '')).toBe('');
         expect(join(' ', null, null)).toBe('');
-        expect(join(' ', void 0, void 0)).toBe('');
-        expect(join(' ', 'lorem', void 0, void 0)).toBe('lorem');
+        expect(join(' ', VOID_0, VOID_0)).toBe('');
+        expect(join(' ', 'lorem', VOID_0, VOID_0)).toBe('lorem');
     });
 });

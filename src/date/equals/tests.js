@@ -103,7 +103,7 @@ describe('date/equals()', () => {
         expect(equals(value, other, 's')).toBe(true);
     });
 
-    test('returns false if minutes are not equal', () => {
+    test('returns false if seconds are not equal', () => {
         const value = new Date(2015, 2, 23, 3, 10, 36);
         const other = new Date(2015, 2, 23, 3, 10, 48);
 

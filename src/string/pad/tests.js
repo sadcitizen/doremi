@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import pad from '.';
 
 describe('string/pad()', () => {
@@ -17,7 +18,7 @@ describe('string/pad()', () => {
     });
 
     test('works with null and undefined', () => {
-        expect(pad(void 0, 6, '@')).toBe('undefined');
+        expect(pad(VOID_0, 6, '@')).toBe('undefined');
         expect(pad(null, 6, '@')).toBe('@null@');
     });
 });
