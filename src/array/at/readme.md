@@ -8,7 +8,7 @@ Returns an array of elements corresponding to the given indexes.
 import at from 'doremi/array/at';
 
 at([1, 2, 3, 4, 5], 1);
-// => 2
+// => [2]
 
 at([1, 2, 3, 4, 5], 1, 3);
 // => [2, 4]

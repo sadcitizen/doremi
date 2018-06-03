@@ -1,24 +1,18 @@
+import flatten from '../flatten';
+
 /**
  * @param {Array} target
- * @param {Array} indexes
- * @returns {*|Array}
+ * @param {...Array|Array} indexes
+ * @returns {Array}
+ *
+ * @immutable
  */
-function at(target, ...indexes) {
-    let index;
+export default function (target, ...indexes) {
+    const flattenIndexes = flatten(indexes);
 
-    if (indexes.length === 1) {
-        index = indexes[0];
-
-        if (Array.isArray(index)) {
-            return index.map(x => at(target, x));
-        }
-
-        return target[index < 0 ? target.length + index : index];
+    if (flattenIndexes.length > 0) {
+        return flattenIndexes.map(value => target[value < 0 ? target.length + value : value]);
     }
 
-    if (indexes.length > 1) {
-        return indexes.map(x => at(target, x));
-    }
+    return [];
 }
-
-export default at;
