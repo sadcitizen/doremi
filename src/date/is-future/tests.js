@@ -1,5 +1,5 @@
 import isFuture from '.';
-import mockDate from "mockdate";
+import mockDate from 'mockdate';
 
 describe('date/isFuture()', () => {
     test('returns true if the date is future', () => {

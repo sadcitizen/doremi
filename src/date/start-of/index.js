@@ -4,31 +4,37 @@ import isValid from '../is-valid';
 
 function year(value) {
     value.setMonth(0);
+
     return month(value);
 }
 
 function month(value) {
     value.setDate(1);
+
     return day(value);
 }
 
 function day(value) {
     value.setHours(0);
+
     return hour(value);
 }
 
 function hour(value) {
     value.setMinutes(0);
+
     return minute(value);
 }
 
 function minute(value) {
     value.setSeconds(0);
+
     return second(value);
 }
 
 function second(value) {
     value.setMilliseconds(0);
+
     return value;
 }
 
@@ -48,7 +54,6 @@ export default function (value, unit) {
 
     if (handler) {
         return handler(clone(value));
-    } else {
-        throw new Error(`"${unit}" is invalid time unit`);
     }
+    throw new Error(`"${unit}" is invalid time unit`);
 }

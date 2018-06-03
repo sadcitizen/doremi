@@ -4,6 +4,7 @@ import clone from '../clone';
 
 function year(value, num) {
     value.setFullYear(value.getFullYear() + num);
+
     return value;
 }
 
@@ -26,26 +27,31 @@ function month(value, num) {
 
 function day(value, num) {
     value.setDate(value.getDate() + num);
+
     return value;
 }
 
 function hour(value, num) {
     value.setHours(value.getHours() + num);
+
     return value;
 }
 
 function minute(value, num) {
     value.setMinutes(value.getMinutes() + num);
+
     return value;
 }
 
 function second(value, num) {
     value.setSeconds(value.getSeconds() + num);
+
     return value;
 }
 
 function millisecond(value, num) {
     value.setMilliseconds(value.getMilliseconds() + num);
+
     return value;
 }
 
@@ -66,7 +72,6 @@ export default function (value, num, unit) {
 
     if (handler) {
         return handler(clone(value), num);
-    } else {
-        throw new Error(`"${unit}" is invalid time unit`);
     }
+    throw new Error(`"${unit}" is invalid time unit`);
 }

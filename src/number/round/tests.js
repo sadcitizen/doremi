@@ -19,7 +19,7 @@ describe('number/round()', () => {
         expect(round(-0.6)).toBe(-1);
     });
 
-    test('allows custom precision', function () {
+    test('allows custom precision', () => {
         expect(round(5.4321, 3)).toBe(5.432);
         expect(round(5.4326, 3)).toBe(5.433);
 

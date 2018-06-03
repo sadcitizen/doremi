@@ -177,6 +177,7 @@ describe('date/format()', () => {
 
     test('formats date to string', () => {
         const date = new Date(2015, 1, 1, 13, 29, 6);
+
         expect(format(date, 'YYYY')).toBe('2015');
         expect(format(date, 'DD-MM-YYYY HH:mm:ss')).toBe('01-02-2015 13:29:06');
         expect(format(date, 'DD.MM.YYYY hh:mm:ss TT')).toBe('01.02.2015 01:29:06 PM');
@@ -185,6 +186,7 @@ describe('date/format()', () => {
 
     test('formats date to string with localization', () => {
         const date = new Date(2015, 1, 4, 13, 29, 6);
+
         expect(format(date, 'DDDD, DD MMMM')).toBe('Wednesday, 04 February');
         expect(format(date, 'DDD, DD MMM')).toBe('Wed, 04 Feb.');
 
