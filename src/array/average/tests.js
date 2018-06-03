@@ -1,3 +1,3 @@
 describe('array/average()', () => {
-    test('TODO');
+    test('todo');
 });

@@ -1,9 +1,9 @@
-import randomInteger from '.';
 import isInteger from '../../number/is-int';
+import randomInteger from '.';
 
 describe('random/int()', () => {
-    let num,
-        range;
+    let num;
+    let range;
 
     beforeAll(() => {
         num = randomInteger();

@@ -1,3 +1,3 @@
 describe('func/ary()', () => {
-    test('TODO');
+    test('todo');
 });

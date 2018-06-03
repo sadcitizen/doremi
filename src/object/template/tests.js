@@ -1,3 +1,3 @@
 describe('object/template()', () => {
-    test('TODO');
+    test('todo');
 });

@@ -1,7 +1,7 @@
 import namespace from '.';
 
 describe('object/namespace()', () => {
-    test('Create nested properties', () => {
+    test('creates nested properties', () => {
         const target = {};
 
         namespace(target, 'lorem.ipsum.dolor');
@@ -9,7 +9,7 @@ describe('object/namespace()', () => {
         expect(target).toEqual({ lorem: { ipsum: { dolor: {} } } });
     });
 
-    test('Reuse existing nested properties', () => {
+    test('reuses existing nested properties', () => {
         const target = { foo: 'bar' };
 
         namespace(target, 'baz.quux');
@@ -24,7 +24,7 @@ describe('object/namespace()', () => {
         expect(namespace(target)).toBe(target);
     });
 
-    test('Do not overwrite existing nested properties', () => {
+    test('do not overwrite existing nested properties', () => {
         const target = { foo: { bar: { baz: {} } } };
 
         namespace(target, 'foo.bar.quux');

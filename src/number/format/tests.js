@@ -1,3 +1,3 @@
 describe('number/format()', () => {
-    test('TODO');
+    test('todo');
 });

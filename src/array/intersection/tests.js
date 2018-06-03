@@ -1,3 +1,3 @@
 describe('array/intersection()', () => {
-    test('TODO');
+    test('todo');
 });

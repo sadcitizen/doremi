@@ -1,3 +1,3 @@
 describe('func/debounce()', () => {
-    test('TODO');
+    test('todo');
 });

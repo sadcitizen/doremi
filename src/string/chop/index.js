@@ -25,7 +25,7 @@ export default function (target, step) {
         return target.split('');
     }
 
-    let result = [];
+    const result = [];
 
     for (let i = 0, length = target.length; i < length; i += step) {
         result.push(target.slice(i, i + step));

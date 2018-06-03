@@ -1,8 +1,10 @@
-import float from '.';
 import isFloat from '../../number/is-float';
+import float from '.';
 
 describe('random/float()', () => {
-    let floated, range, fix;
+    let floated;
+    let range;
+    let fix;
 
     beforeAll(() => {
         floated = float();
@@ -22,8 +24,8 @@ describe('random/float()', () => {
     });
 
     test('returns a float with less than 3 digits after point', () => {
-        expect(('' + fix).split('.')[1].length).toBeLessThanOrEqual(3);
-        expect(('' + float(0, 10, 3)).split('.')[1].length).toBeLessThanOrEqual(3);
-        expect(('' + float(0, 100, 3)).split('.')[1].length).toBeLessThanOrEqual(3);
+        expect(String(fix).split('.')[1].length).toBeLessThanOrEqual(3);
+        expect(String(float(0, 10, 3)).split('.')[1].length).toBeLessThanOrEqual(3);
+        expect(String(float(0, 100, 3)).split('.')[1].length).toBeLessThanOrEqual(3);
     });
 });

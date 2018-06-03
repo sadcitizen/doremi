@@ -1,3 +1,3 @@
 describe('array/difference()', () => {
-    test('TODO');
+    test('todo');
 });

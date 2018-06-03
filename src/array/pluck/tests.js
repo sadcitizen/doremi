@@ -1,3 +1,3 @@
 describe('array/pluck()', () => {
-    test('TODO');
+    test('todo');
 });

@@ -1,3 +1,3 @@
 describe('func/throttle()', () => {
-    test('TODO');
+    test('todo');
 });

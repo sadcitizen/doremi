@@ -1,3 +1,3 @@
 describe('object/pairs()', () => {
-    test('TODO');
+    test('todo');
 });

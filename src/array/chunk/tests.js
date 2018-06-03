@@ -1,3 +1,3 @@
 describe('array/chunk()', () => {
-    test('TODO');
+    test('todo');
 });

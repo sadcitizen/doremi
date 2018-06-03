@@ -1,3 +1,3 @@
 describe('func/curry()', () => {
-    test('TODO');
+    test('todo');
 });

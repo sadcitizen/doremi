@@ -1,12 +1,12 @@
 import choice from '.';
 
 describe('random/choice()', () => {
-    let list = [1, 2, 3],
-        random = Math.random(),
-        firstChoice,
-        secondChoice,
-        firstApplyChoice,
-        secondApplyChoice;
+    const list = [1, 2, 3];
+    const random = Math.random();
+    let firstChoice;
+    let secondChoice;
+    let firstApplyChoice;
+    let secondApplyChoice;
 
     beforeAll(() => {
         firstChoice = choice(list);

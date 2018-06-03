@@ -1,3 +1,3 @@
 describe('object/result()', () => {
-    test('TODO');
+    test('todo');
 });
