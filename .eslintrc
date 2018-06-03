@@ -9,5 +9,8 @@
   "ecmaFeatures": {
     "modules": true
   },
-  "extends": "eslint:recommended"
+  "extends": "./eslint/index.js",
+  "rules": {
+    "no-magic-numbers": "off"
+  }
 }
