@@ -15,6 +15,7 @@
  */
 export default function (target, count) {
     let result = '';
+
     target = String(target);
 
     if (target.length === 0) {

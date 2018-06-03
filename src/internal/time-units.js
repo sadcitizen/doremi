@@ -31,12 +31,14 @@ export const shortUnits = {
 
 export default {
     get(unitName = 'ms') {
-        if (units[unitName] !== undefined)
+        if (units[unitName] !== undefined) {
             return units[unitName];
+        }
 
-        if (shortUnits[unitName] !== undefined)
+        if (shortUnits[unitName] !== undefined) {
             return shortUnits[unitName];
+        }
 
         throw new Error('Unknown unit name');
     }
-}
+};

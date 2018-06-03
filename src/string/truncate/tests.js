@@ -17,6 +17,7 @@ describe('string/truncate()', () => {
 
     test('appends string param', () => {
         const truncated = truncate(string, 10, '--');
+
         expect(truncated.length).toBeLessThan(11);
         expect(truncated).toBe('lorem ip--');
     });

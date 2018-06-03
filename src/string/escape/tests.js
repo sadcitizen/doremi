@@ -6,7 +6,7 @@ describe('string/escape()', () => {
         expect(escape('<p>lorem & ipsum</p>')).toBe('&lt;p&gt;lorem &amp; ipsum&lt;/p&gt;');
         expect(escape('"hi!"')).toBe('&quot;hi!&quot;');
         /* jshint -W109 */
-        expect(escape("'hi!'")).toBe('&#x27;hi!&#x27;');
+        expect(escape('\'hi!\'')).toBe('&#x27;hi!&#x27;');
         /* jshint +W109 */
     });
 

@@ -30,6 +30,7 @@ export default function (target, data, syntax = es6) {
 
     return target.replace(syntax, (match, name) => {
         value = getValue(data, trim(name));
+
         return value !== undefined ? String(value) : match;
     });
 }

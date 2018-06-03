@@ -2,7 +2,7 @@ import remove from '.';
 
 describe('string/remove()', () => {
     test('Removes a substring from a string', () => {
-        var hello = 'Hello, World!';
+        const hello = 'Hello, World!';
 
         expect(remove(hello, 0, 2)).toBe('llo, World!');
         expect(remove(hello, 0, 100)).toBe('');
@@ -11,7 +11,7 @@ describe('string/remove()', () => {
     });
 
     test('treats undefined index as zero', () => {
-        var hello = 'Hello, World!';
+        const hello = 'Hello, World!';
 
         expect(remove(hello)).toBe(hello);
         expect(remove(hello, void 0)).toBe(hello);
@@ -21,7 +21,7 @@ describe('string/remove()', () => {
     });
 
     test('Accepts negative indexes', () => {
-        var hello = 'Hello, World!';
+        const hello = 'Hello, World!';
 
         expect(remove(hello, 0, -3)).toBe('ld!');
         expect(remove(hello, 5, -1)).toBe('Hello!');

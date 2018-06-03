@@ -10,7 +10,7 @@ const { floor, random } = Math;
  * @return {number}
  */
 export default function (min, max, precision = 5) {
-    let frac = random();
+    const frac = random();
 
     min = isDefined(min) ? ~~min : MIN_INT;
     max = isDefined(max) ? ~~max : MAX_INT;

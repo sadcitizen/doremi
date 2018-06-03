@@ -19,7 +19,7 @@ import append from '../append';
  * // => [2, 4, 6]
  */
 export default function (target, predicate) {
-    let result = [];
+    const result = [];
 
     if (!(target && target.length)) {
         return result;

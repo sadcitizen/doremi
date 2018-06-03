@@ -18,8 +18,8 @@ import identity from '../../func/identity';
  * // => [[], [null, false, undefined]]
  */
 export default function (target, predicate = identity, ctx) {
-    let pass = [];
-    let fail = [];
+    const pass = [];
+    const fail = [];
 
     target.forEach((value, index, target) => (predicate.call(ctx, value, index, target) ? pass : fail).push(value));
 

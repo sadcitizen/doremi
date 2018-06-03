@@ -26,6 +26,7 @@ import getValue from '../get-value';
  * // => 'value'
  */
 export default function (target, key, def) {
-    let prop = getValue(target, key, def);
+    const prop = getValue(target, key, def);
+
     return isFunction(prop) ? prop.call(target) : prop;
 }

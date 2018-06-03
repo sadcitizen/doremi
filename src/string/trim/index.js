@@ -22,6 +22,7 @@ export default function (target, ...rest) {
     }
 
     let chars = rest.join('');
+
     chars = chars.length ? chars : whitespaces;
 
     return target.replace(new RegExp(`^[${chars}]+|[${chars}]+$`, 'ig'), '');

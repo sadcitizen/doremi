@@ -43,7 +43,7 @@ export default function (target, pattern, seps = es6) {
     matches = matches.splice(1);
     tokens = tokens.map(x => x.replace(new RegExp(escaped.join('|'), 'g'), ''));
 
-    let result = {};
+    const result = {};
 
     tokens.forEach((token, i) => setValue(result, token, matches[i]));
 

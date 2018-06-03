@@ -32,6 +32,7 @@ import getValue from '../get-value';
  */
 function pairs(target, ...args) {
     args = args.length ? args : Object.keys(target);
+
     return args.map(arg => [arg, getValue(target, arg)]);
 }
 

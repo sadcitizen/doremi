@@ -16,6 +16,7 @@
  */
 export default function (fn, n) {
     let result;
+
     n |= 0;
 
     return function (...args) {

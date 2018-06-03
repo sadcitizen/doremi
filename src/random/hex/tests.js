@@ -1,9 +1,10 @@
 import hex from '.';
 
 describe('random/hex()', () => {
-    let hexed, hex12;
+    let hexed,
+        hex12;
 
-    beforeAll(function () {
+    beforeAll(() => {
         hexed = hex();
         hex12 = hex(12);
     });

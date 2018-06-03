@@ -22,5 +22,6 @@ import repeat from '../repeat';
 export default function (target, length, char) {
     target = String(target);
     char = (String(char) || ' ').charAt(0);
+
     return target.length < (length |= 0) ? target + repeat(char, length - target.length) : target;
 }

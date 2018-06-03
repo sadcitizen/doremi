@@ -31,6 +31,7 @@ import getValue from '../get-value';
  */
 function values(target, ...args) {
     args = args.length ? args : Object.keys(target);
+
     return args.map(arg => getValue(target, arg));
 }
 

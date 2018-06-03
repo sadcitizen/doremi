@@ -1,6 +1,6 @@
 import remove from '.';
 
-describe('array/remove()', function () {
+describe('array/remove()', () => {
     test('Modify the array and return removed elements', () => {
         const target = [1, 2, 3, 4, 5, 6];
         const result = remove(target, x => x % 2 === 0);

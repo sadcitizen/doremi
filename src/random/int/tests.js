@@ -2,7 +2,8 @@ import randomInteger from '.';
 import isInteger from '../../number/is-int';
 
 describe('random/int()', () => {
-    let num, range;
+    let num,
+        range;
 
     beforeAll(() => {
         num = randomInteger();

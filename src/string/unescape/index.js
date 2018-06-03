@@ -21,8 +21,9 @@ export default function (target) {
     }
 
     const invertedSymbols = invert(symbols);
+
     /* jshint -W109 */
-    invertedSymbols['&#39;'] = "'";
+    invertedSymbols['&#39;'] = '\'';
     /* jshint +W109 */
     invertedSymbols['&#96;'] = '`';
 
