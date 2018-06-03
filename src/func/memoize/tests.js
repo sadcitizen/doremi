@@ -10,6 +10,7 @@ describe('func/memoize()', () => {
         const square = jest.fn(x => x * x);
 
         const memoizedSum = memoize(sum);
+
         expect(memoizedSum(2, 2)).toBe(4);
         expect(memoizedSum(2, 2)).toBe(4);
         expect(memoizedSum(2, 2)).toBe(4);
@@ -21,6 +22,7 @@ describe('func/memoize()', () => {
         expect(sum).toHaveBeenCalledTimes(2);
 
         const memoizedSquare = memoize(square);
+
         expect(memoizedSquare(3, 3)).toBe(9);
         expect(memoizedSquare(3, 3)).toBe(9);
         expect(memoizedSquare(3, 3)).toBe(9);

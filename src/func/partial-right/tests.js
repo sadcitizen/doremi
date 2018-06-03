@@ -9,7 +9,7 @@ describe('func/partialRight()', () => {
     });
 
     test('Partially apply arguments to a function', () => {
-        const fn = (a, b, c, d, e) => [ a, b, c, d, e ];
+        const fn = (a, b, c, d, e) => [a, b, c, d, e];
 
         const partialFn = partialRight(fn, 1, 'string', true);
         const result = partialFn(3, false);

@@ -19,6 +19,7 @@ export default function (target, ...sources) {
 
     if (sources.length === 1) {
         target.push(...sources[0]);
+
         return target;
     }
 

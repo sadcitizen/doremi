@@ -1,6 +1,6 @@
 import at from '.';
 
-describe('array/at()', function () {
+describe('array/at()', () => {
     test('returns an array of elements corresponding to the given indexes', () => {
         const array = [1, 2, 3, 4, 5];
 

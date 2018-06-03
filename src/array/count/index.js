@@ -22,7 +22,7 @@ export default function (value, iteratee = identity) {
             result[key] = 0;
         }
 
-        result[key] += 1
+        result[key] += 1;
     });
 
     return result;

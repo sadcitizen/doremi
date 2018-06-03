@@ -3,6 +3,7 @@ import negate from '.';
 describe('func/negate()', () => {
     test('returns a new function', () => {
         const fn = x => !!x;
+
         expect(negate(fn)).toEqual(expect.any(Function));
     });
 

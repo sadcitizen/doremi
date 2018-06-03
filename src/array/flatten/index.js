@@ -19,8 +19,8 @@ function flatten(target, deep = true) {
     if (!Array.isArray(target)) {
         return [];
     }
-    
-    let result = [];
+
+    const result = [];
 
     target.forEach(x => Array.isArray(x) ? append(result, deep ? flatten(x, deep) : x) : result.push(x));
 

@@ -15,11 +15,11 @@ import identity from '../../func/identity';
  * // => [{name: 'Casper'}, {name: 'Richard'}]
  */
 export default function (target, iteratee = identity) {
-    let result = [];
-    let seen = [];
+    const result = [];
+    const seen = [];
 
     target.forEach(value => {
-        let comparable = iteratee(value);
+        const comparable = iteratee(value);
 
         if (!seen.includes(comparable)) {
             result.push(value);
