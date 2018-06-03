@@ -1,13 +1,14 @@
+import flatten from '../../array/flatten';
 import int from '../int';
 
 /**
- * @param {Array} list
+ * @param {...Array} args
  * @returns {*}
+ *
+ * @immutable
  */
-export default function (list) {
-    const args = arguments.length === 1 && Array.isArray(list)
-        ? list
-        : arguments;
+export default function (...args) {
+    const variants = flatten(args);
 
-    return args[int(0, args.length - 1)];
+    return variants[int(0, variants.length - 1)];
 }
