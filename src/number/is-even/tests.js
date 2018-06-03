@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import isEven from '.';
 
 describe('number/isEven()', () => {
@@ -19,7 +20,7 @@ describe('number/isEven()', () => {
     });
 
     test('throws an error if value is not numeric', () => {
-        expect(() => isEven(void 0)).toThrow('A number is expected');
+        expect(() => isEven(VOID_0)).toThrow('A number is expected');
         expect(() => isEven(null)).toThrow('A number is expected');
         expect(() => isEven(NaN)).toThrow('A number is expected');
         expect(() => isEven(true)).toThrow('A number is expected');
