@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import isObject from '.';
 
 describe('object/isObject()', () => {
@@ -7,16 +8,12 @@ describe('object/isObject()', () => {
 
         expect(isObject({})).toBe(true);
         expect(isObject({ a: 'b', c: 'd' })).toBe(true);
-        /* jshint -W057 */
         expect(isObject(noop)).toBe(true);
-        /* jshint +W057 */
-        /* jshint -W053, -W010 */
-        expect(isObject(new Object())).toBe(true);
-        /* jshint +W053, +W010 */
+        expect(isObject(new Object())).toBe(true); // eslint-disable-line no-new-object
     });
 
     test('returns false if value is not an object', () => {
-        expect(isObject(void 0)).toBe(false);
+        expect(isObject(VOID_0)).toBe(false);
         expect(isObject(null)).toBe(false);
         expect(isObject(NaN)).toBe(false);
         expect(isObject(true)).toBe(false);

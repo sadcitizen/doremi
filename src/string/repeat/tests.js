@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import repeat from '.';
 
 describe('string/repeat()', () => {
@@ -12,7 +13,7 @@ describe('string/repeat()', () => {
 
     test('treats null and undefined as zero', () => {
         expect(repeat('lorem ipsum')).toBe('');
-        expect(repeat('lorem ipsum', void 0)).toBe('');
+        expect(repeat('lorem ipsum', VOID_0)).toBe('');
         expect(repeat('lorem ipsum', null)).toBe('');
     });
 

@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import omit from '.';
 
 describe('object/omit()', () => {
@@ -9,7 +10,7 @@ describe('object/omit()', () => {
 
     test('throws an error if value is not an object', () => {
         expect(() => omit(null, 'a', 'b')).toThrow('An object is expected');
-        expect(() => omit(void 0, 'a', 'b')).toThrow('An object is expected');
+        expect(() => omit(VOID_0, 'a', 'b')).toThrow('An object is expected');
     });
 
     test('returns new object without passed keys', () => {

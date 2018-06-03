@@ -8,7 +8,7 @@ describe('func/partialRight()', () => {
         expect(partialFn).toEqual(expect.any(Function));
     });
 
-    test('Partially apply arguments to a function', () => {
+    test('partially apply arguments to a function', () => {
         const fn = (a, b, c, d, e) => [a, b, c, d, e];
 
         const partialFn = partialRight(fn, 1, 'string', true);

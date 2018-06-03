@@ -10,7 +10,7 @@ describe('func/pipe()', () => {
         expect(piped).toEqual(expect.any(Function));
     });
 
-    test('Call all provided functions', () => {
+    test('call all provided functions', () => {
         piped();
         expect(f1).toHaveBeenCalled();
         expect(f2).toHaveBeenCalled();
@@ -18,12 +18,12 @@ describe('func/pipe()', () => {
     });
 
     test('returns result of invoking the provided functions', () => {
-        const f1 = n => n + 1;
-        const f2 = n => n * 2;
-        const f3 = n => n - 3;
+        const plus = n => n + 1;
+        const multiply = n => n * 2;
+        const minus = n => n - 3;
 
-        expect(pipe(f1)(1)).toBe(2);
-        expect(pipe(f1, f2)(1)).toBe(4);
-        expect(pipe(f1, f2, f3)(1)).toBe(1);
+        expect(pipe(plus)(1)).toBe(2);
+        expect(pipe(plus, multiply)(1)).toBe(4);
+        expect(pipe(plus, multiply, minus)(1)).toBe(1);
     });
 });

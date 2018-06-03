@@ -1,11 +1,11 @@
 import sort from '.';
 
 describe('array/sort()', () => {
-    test('Sorts the array numerically', () => {
+    test('sorts the array numerically', () => {
         expect(sort([9, 12, 3, 4, -5, 18])).toEqual([-5, 3, 4, 9, 12, 18]);
     });
 
-    test('Sorts the array alphabetically', () => {
+    test('sorts the array alphabetically', () => {
         expect(sort(['red', 'green', 'blue'])).toEqual(['blue', 'green', 'red']);
     });
 

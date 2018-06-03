@@ -1,9 +1,10 @@
+import { UNDEF } from '../../internal/constants';
 import isDefined from '.';
 
 describe('common/isDefined()', () => {
     test('returns false if value is undefined', () => {
         expect(isDefined()).toBe(false);
-        expect(isDefined(undefined)).toBe(false);
+        expect(isDefined(UNDEF)).toBe(false);
     });
 
     test('returns false if value is null', () => {
@@ -24,6 +25,6 @@ describe('common/isDefined()', () => {
         expect(isDefined([])).toBe(true);
         expect(isDefined([1, 2, 3])).toBe(true);
         expect(isDefined({})).toBe(true);
-        expect(isDefined({a: 'b', c: 'd'})).toBe(true);
+        expect(isDefined({ a: 'b', c: 'd' })).toBe(true);
     });
 });

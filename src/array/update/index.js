@@ -18,9 +18,5 @@ export default function (target, index, modifier = identity) {
         return target.slice(0);
     }
 
-    return [
-        ...target.slice(0, index),
-        modifier(target[index]),
-        ...target.slice(index + 1)
-    ];
+    return [...target.slice(0, index), modifier(target[index]), ...target.slice(index + 1)];
 }

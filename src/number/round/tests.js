@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import round from '.';
 
 describe('number/round()', () => {
@@ -69,7 +70,7 @@ describe('number/round()', () => {
         expect(round('')).toEqual(NaN);
         expect(round('42')).toEqual(NaN);
         expect(round('42.42')).toEqual(NaN);
-        expect(round(void 0)).toEqual(NaN);
+        expect(round(VOID_0)).toEqual(NaN);
         expect(round(null)).toEqual(NaN);
         expect(round({})).toEqual(NaN);
         expect(round([])).toEqual(NaN);

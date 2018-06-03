@@ -1,3 +1,4 @@
+import { VOID_0 } from '../../internal/constants';
 import isOdd from '.';
 
 describe('number/isOdd()', () => {
@@ -19,7 +20,7 @@ describe('number/isOdd()', () => {
     });
 
     test('throws an error if value is not numeric', () => {
-        expect(() => isOdd(void 0)).toThrow('A number is expected');
+        expect(() => isOdd(VOID_0)).toThrow('A number is expected');
         expect(() => isOdd(null)).toThrow('A number is expected');
         expect(() => isOdd(NaN)).toThrow('A number is expected');
         expect(() => isOdd(true)).toThrow('A number is expected');

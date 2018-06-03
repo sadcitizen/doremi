@@ -1,7 +1,7 @@
 import update from '.';
 
 describe('array/update()', () => {
-    test('Update the element at given index', () => {
+    test('update the element at given index', () => {
         const target = [1, 2, 3, 4, 5];
 
         expect(update(target, 1, () => 3)).toEqual([1, 3, 3, 4, 5]);
