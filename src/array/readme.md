@@ -17,7 +17,7 @@
 - [x] [`last`](./last)
 - [ ] [`max`](./max)
 - [ ] [`min`](./min)
-- [ ] [`partition`](./partition)
+- [x] [`partition`](./partition)
 - [ ] [`pluck`](./pluck)
 - [ ] [`prepend`](./prepend)
 - [ ] [`remove`](./remove)
