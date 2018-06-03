@@ -10,10 +10,11 @@ export default function (length) {
     const letters = (HEX_LETTERS + DIGITS).split('');
     const size = letters.length;
 
-    length = length && length > 0 ? length : 1;
+    let count = length && length > 0 ? length : 1;
 
-    while (length--) {
+    while (count > 0) {
         result += letters[int(0, size - 1)];
+        count -= 1;
     }
 
     return result;
