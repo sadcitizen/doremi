@@ -11,19 +11,24 @@ describe('array/max()', () => {
     });
 
     test('allows the custom iterator', () => {
-        const guests = [{
-            name: 'Bill',
-            age: 21
-        }, {
-            name: 'Hillary',
-            age: 22
-        }, {
-            name: 'Donald',
-            age: 30
-        }, {
-            name: 'Barak',
-            age: 25
-        }];
+        const guests = [
+            {
+                name: 'Bill',
+                age: 21
+            },
+            {
+                name: 'Hillary',
+                age: 22
+            },
+            {
+                name: 'Donald',
+                age: 30
+            },
+            {
+                name: 'Barak',
+                age: 25
+            }
+        ];
 
         expect(max(guests, x => x.age)).toEqual({ name: 'Donald', age: 30 });
         expect(max(guests, x => x.name.length)).toEqual({ name: 'Hillary', age: 22 });

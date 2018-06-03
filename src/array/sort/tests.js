@@ -14,33 +14,43 @@ describe('array/sort()', () => {
     });
 
     test('allows the custom iterator', () => {
-        const guests = [{
-            name: 'Bill',
-            age: 21
-        }, {
-            name: 'Hillary',
-            age: 22
-        }, {
-            name: 'Donald',
-            age: 30
-        }, {
-            name: 'Barak',
-            age: 25
-        }];
+        const guests = [
+            {
+                name: 'Bill',
+                age: 21
+            },
+            {
+                name: 'Hillary',
+                age: 22
+            },
+            {
+                name: 'Donald',
+                age: 30
+            },
+            {
+                name: 'Barak',
+                age: 25
+            }
+        ];
 
-        const sortedByNameLengthGuests = [{
-            name: 'Bill',
-            age: 21
-        }, {
-            name: 'Barak',
-            age: 25
-        }, {
-            name: 'Donald',
-            age: 30
-        }, {
-            name: 'Hillary',
-            age: 22
-        }];
+        const sortedByNameLengthGuests = [
+            {
+                name: 'Bill',
+                age: 21
+            },
+            {
+                name: 'Barak',
+                age: 25
+            },
+            {
+                name: 'Donald',
+                age: 30
+            },
+            {
+                name: 'Hillary',
+                age: 22
+            }
+        ];
 
         expect(sort(guests, x => x.name.length)).toEqual(sortedByNameLengthGuests);
     });

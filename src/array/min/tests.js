@@ -11,19 +11,24 @@ describe('array/min()', () => {
     });
 
     test('allows the custom iterator', () => {
-        const guests = [{
-            name: 'Bill',
-            age: 21
-        }, {
-            name: 'Hillary',
-            age: 22
-        }, {
-            name: 'Donald',
-            age: 30
-        }, {
-            name: 'Barak',
-            age: 25
-        }];
+        const guests = [
+            {
+                name: 'Bill',
+                age: 21
+            },
+            {
+                name: 'Hillary',
+                age: 22
+            },
+            {
+                name: 'Donald',
+                age: 30
+            },
+            {
+                name: 'Barak',
+                age: 25
+            }
+        ];
 
         expect(min(guests, x => x.age)).toEqual({ name: 'Bill', age: 21 });
         expect(min(guests, x => x.name.length)).toEqual({ name: 'Bill', age: 21 });

@@ -21,11 +21,11 @@ export default function (target, iteratee) {
         return Math.min(...target);
     }
 
-    let result = target[0];
+    let [result] = target;
     let compare = iteratee(target[0]);
     let temp;
 
-    for (let i = 0, length = target.length; i < length; i += 1) {
+    for (let i = 0, { length } = target; i < length; i += 1) {
         temp = iteratee(target[i]);
 
         if (temp < compare) {
