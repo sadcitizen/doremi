@@ -6,7 +6,7 @@ import distinct from './distinct';
 import equals from './equals';
 import first from './first';
 import flatten from './flatten';
-import groupBy from './group';
+import group from './group';
 import last from './last';
 import max from './max';
 import min from './min';
@@ -26,7 +26,7 @@ export { distinct };
 export { equals };
 export { first };
 export { flatten };
-export { groupBy };
+export { group };
 export { last };
 export { max };
 export { min };
@@ -47,7 +47,7 @@ export default {
     equals,
     first,
     flatten,
-    groupBy,
+    group,
     last,
     max,
     min,
