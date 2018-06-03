@@ -5,7 +5,7 @@
 - [ ] average
 - [ ] chunk
 - [ ] compact
-- [ ] count
+- [x] count
 - [ ] difference
 - [ ] distinct
 - [ ] equals

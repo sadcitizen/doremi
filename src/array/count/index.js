@@ -1,15 +1,11 @@
 import identity from '../../func/identity';
 
 /**
- * Counts the elements of the array by key.
+ * @param {Array} value
+ * @param {Function} [iteratee]
+ * @return {Object}
  *
- * @param {Array} value The array to count.
- * @param {Function} [iteratee] The iteratee to resolve keys.
- * @return {Object} Returns object with counts of elements.
- *
- * @example
- * count([1, 2, 3, 3, 2, 4]);
- * // => { '1': 1, '2': 2, '3': 2, '4': 1 }
+ * @immutable
  */
 export default function (value, iteratee = identity) {
     const result = {};
