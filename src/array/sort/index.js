@@ -1,4 +1,5 @@
 import identity from '../../func/identity';
+import ternary from '../../logic/ternary';
 
 /**
  * Sorts the array.
@@ -16,6 +17,6 @@ export default function (target, iteratee = identity) {
         const l = iteratee(left);
         const r = iteratee(right);
 
-        return l < r ? -1 : (l > r ? 1 : 0);
+        return ternary(l < r, -1, ternary(l > r, 1, 0));
     });
 }

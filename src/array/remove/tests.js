@@ -26,7 +26,7 @@ describe('array/remove()', () => {
         expect(result).toEqual([]);
     });
 
-    test('Treat `null` or `undefined` as empty array', () => {
+    test('treats `null` or `undefined` as empty array', () => {
         const truthy = x => !!x;
 
         expect(remove(null, truthy)).toEqual([]);

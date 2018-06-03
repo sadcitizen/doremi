@@ -21,11 +21,12 @@ export default function (target, iteratee) {
         return Math.max(...target);
     }
 
-    let result = target[0];
-    let compare = iteratee(target[0]);
+    const { length } = target;
+    let [result] = target;
+    let compare = iteratee(result);
     let temp;
 
-    for (let i = 0, length = target.length; i < length; i += 1) {
+    for (let i = 0; i < length; i += 1) {
         temp = iteratee(target[i]);
 
         if (temp > compare) {
