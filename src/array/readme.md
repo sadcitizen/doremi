@@ -10,7 +10,7 @@
 - [ ] [`distinct`](./distinct)
 - [ ] [`equals`](./equals)
 - [x] [`first`](./first)
-- [ ] [`flatten`](./flatten)
+- [x] [`flatten`](./flatten)
 - [ ] [`group`](./group)
 - [ ] [`intersection`](./intersection)
 - [ ] [`is-empty`](./is-empty)
