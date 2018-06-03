@@ -13,8 +13,9 @@ describe('array/append/immutable()', () => {
     test('returns new array with appended items', () => {
         const target = [1, 2, 3];
         const source = [4, 5, 6];
-        const expected = [1, 2, 3, 4, 5, 6];
-        const received = append(target, source);
+        const other = [7, 8, 9];
+        const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const received = append(target, source, other);
 
         expect(received).not.toBe(target);
         expect(received).toEqual(expected);

@@ -1,31 +1,24 @@
 /**
- * Appends items of an array to the end of other.
- *
- * @param {Array} target
+ * @param {Array} value
  * @param {...Array} sources
  * @returns {Array}
  *
- * @example
- * const foo = [3, 6, 9, 12];
- * const bar = [4, 7, 10, 13];
- *
- * append(foo, bar);
- * // => [3, 6, 9, 12, 4, 7, 10, 13]
+ * @mutable
  */
-export default function (target, ...sources) {
+export default function (value, ...sources) {
     if (sources.length === 0) {
-        return target;
+        return value;
     }
 
     if (sources.length === 1) {
-        target.push(...sources[0]);
+        value.push(...sources[0]);
 
-        return target;
+        return value;
     }
 
     sources.forEach(source => {
-        target.push(...source);
+        value.push(...source);
     });
 
-    return target;
+    return value;
 }

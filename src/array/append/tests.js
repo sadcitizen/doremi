@@ -13,7 +13,8 @@ describe('array/append()', () => {
     test('returns first array with appended items', () => {
         const target = [1, 2, 3];
         const source = [4, 5, 6];
+        const other = [7, 8, 9];
 
-        expect(append(target, source)).toBe(target);
+        expect(append(target, source, other)).toBe(target);
     });
 });

@@ -1,7 +1,10 @@
 /**
- * @param {Array} target
+ * @param {Array} value
  * @param {...Array} sources
+ * @returns {Array}
+ *
+ * @immutable
  */
-export default function (target, ...sources) {
-    return [].concat(target, ...sources);
+export default function (value, ...sources) {
+    return [].concat(value, ...sources);
 }
