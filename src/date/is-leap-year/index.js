@@ -2,8 +2,8 @@ import isValid from '../is-valid';
 import isNumber from '../../number/is-number';
 
 /**
- * @param {Date|number} value The year to check.
- * @returns {boolean} Returns true if the year is leap, false otherwise.
+ * @param {Date|number} value
+ * @returns {boolean}
  */
 export default function (value) {
     let year;
