@@ -1,18 +1,20 @@
 # number
 
-- [x] [`abbreviate`](./abbreviate)
-- [ ] [`cast`](./cast)
-- [x] [`ceil`](./ceil)
-- [x] [`clamp`](./clamp)
-- [x] [`equals`](./equals)
-- [x] [`fixed`](./fixed)
-- [x] [`floor`](./floor)
-- [ ] [`format`](./format)
-- [x] [`is-even`](./is-even)
-- [x] [`is-float`](./is-float)
-- [x] [`is-int`](./is-int)
-- [x] [`is-number`](./is-number)
-- [x] [`is-odd`](./is-odd)
-- [x] [`log`](./log)
-- [x] [`round`](./round)
-- [x] [`sign`](./sign)
+- [`abbreviate`](./abbreviate)
+- [`ceil`](./ceil)
+- [`clamp`](./clamp)
+- [`equals`](./equals)
+- [`fixed`](./fixed)
+- [`floor`](./floor)
+- [`is-even`](./is-even)
+- [`is-float`](./is-float)
+- [`is-int`](./is-int)
+- [`is-number`](./is-number)
+- [`is-odd`](./is-odd)
+- [`log`](./log)
+- [`round`](./round)
+- [`sign`](./sign)
+
+### todo
+
+- `format`
