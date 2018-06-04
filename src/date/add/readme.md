@@ -1,4 +1,4 @@
-# add
+# add(value, num, unit)
 
 Adds time units to a date.
 
@@ -8,6 +8,6 @@ Adds time units to a date.
 const date = new Date(2015, 0, 1);
 const nextDate = add(date, 1, 'year');
 
-console.log(nextDate.toUTCString());
+nextDate.toUTCString();
 // => "Thu, 31 Dec 2015 19:00:00 GMT"
 ```

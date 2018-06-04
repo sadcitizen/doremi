@@ -1,11 +1,11 @@
 # date
 
-- [ ] [`add`](./add)
-- [ ] [`clone`](./clone)
+- [x] [`add`](./add)
+- [x] [`clone`](./clone)
 - [ ] [`compare`](./compare)
 - [ ] [`difference`](./difference)
-- [ ] [`end-of`](./end-of)
-- [ ] [`equals`](./equals)
+- [x] [`end-of`](./end-of)
+- [x] [`equals`](./equals)
 - [ ] [`format`](./format)
 - [ ] [`is-date`](./is-date)
 - [ ] [`is-future`](./is-future)

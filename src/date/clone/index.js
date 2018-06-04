@@ -1,5 +1,5 @@
 /**
- * @param {Date} value The date to clone.
- * @returns {Date} Return new date.
+ * @param {Date} value
+ * @returns {Date}
  */
 export default value => new Date(value.valueOf());

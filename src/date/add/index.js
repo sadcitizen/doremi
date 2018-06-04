@@ -58,10 +58,10 @@ function millisecond(value, num) {
 const handlers = { year, month, day, hour, minute, second, millisecond };
 
 /**
- * @param {Date} value The date to modify.
- * @param {number} num The number of units.
- * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit The time unit.
- * @returns {Date} The mutated date.
+ * @param {Date} value
+ * @param {number} num
+ * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit
+ * @returns {Date}
  */
 export default function (value, num, unit) {
     if (!isValid(value)) {
