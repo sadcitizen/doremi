@@ -1,19 +1,22 @@
 # date
 
-- [x] [`add`](./add)
-- [x] [`clone`](./clone)
-- [x] [`compare`](./compare)
-- [ ] [`difference`](./difference)
-- [x] [`end-of`](./end-of)
-- [x] [`equals`](./equals)
-- [x] [`format`](./format)
-- [x] [`is-date`](./is-date)
-- [x] [`is-future`](./is-future)
-- [x] [`is-leap-year`](./is-leap-year)
-- [x] [`is-past`](./is-past)
-- [x] [`is-today`](./is-today)
-- [x] [`is-tomorrow`](./is-tomorrow)
-- [x] [`is-valid`](./is-valid)
-- [x] [`is-yesterday`](./is-yesterday)
-- [ ] [`parse`](./parse)
-- [x] [`start-of`](./start-of)
+- [`add`](./add)
+- [`clone`](./clone)
+- [`compare`](./compare)
+- [`end-of`](./end-of)
+- [`equals`](./equals)
+- [`format`](./format)
+- [`is-date`](./is-date)
+- [`is-future`](./is-future)
+- [`is-leap-year`](./is-leap-year)
+- [`is-past`](./is-past)
+- [`is-today`](./is-today)
+- [`is-tomorrow`](./is-tomorrow)
+- [`is-valid`](./is-valid)
+- [`is-yesterday`](./is-yesterday)
+- [`start-of`](./start-of)
+
+### todo
+
+- `difference`
+- `parse`
