@@ -1,7 +1,7 @@
 import isValid from '../is-valid';
 import isString from '../../string/is-string';
 import padLeft from '../../string/pad-left';
-import aliases from '../../internal/datetime-aliases';
+import defaultLocale from './locales/en';
 import { UNDEF } from '../../internal/constants';
 
 const regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
@@ -21,17 +21,17 @@ const tokens = {
 
     Y: date => date.getFullYear() % 100,
 
-    MMMM: (date, lang) => lang.months.longs[date.getMonth()],
+    MMMM: (date, locale) => locale.months.longs[date.getMonth()],
 
-    MMM: (date, lang) => lang.months.shorts[date.getMonth()],
+    MMM: (date, locale) => locale.months.shorts[date.getMonth()],
 
     MM: date => padLeft((date.getMonth() + 1) % 100, 2, '0'),
 
     M: date => (date.getMonth() + 1) % 100,
 
-    DDDD: (date, lang) => lang.days.longs[dayOfWeek(date)],
+    DDDD: (date, locale) => locale.days.longs[dayOfWeek(date)],
 
-    DDD: (date, lang) => lang.days.shorts[dayOfWeek(date)],
+    DDD: (date, locale) => locale.days.shorts[dayOfWeek(date)],
 
     DD: date => padLeft(date.getDate() % 100, 2, '0'),
 
@@ -90,7 +90,7 @@ const tokens = {
  *
  * @immutable
  */
-export default function (target, pattern, locale = aliases) {
+export default function (target, pattern, locale = defaultLocale) {
     if (!isValid(target)) {
         throw new TypeError('A valid date is expected');
     }

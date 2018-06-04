@@ -1,3 +1,4 @@
+import ru from './locales/ru';
 import format from '.';
 
 describe('date/format()', () => {
@@ -21,12 +22,12 @@ describe('date/format()', () => {
         const second = new Date(2015, 11, 1);
 
         expect(format(first, 'MMMM')).toBe('January');
-        expect(format(first, 'MMM')).toBe('Jan.');
+        expect(format(first, 'MMM')).toBe('Jan');
         expect(format(first, 'MM')).toBe('01');
         expect(format(first, 'M')).toBe('1');
 
         expect(format(second, 'MMMM')).toBe('December');
-        expect(format(second, 'MMM')).toBe('Dec.');
+        expect(format(second, 'MMM')).toBe('Dec');
         expect(format(second, 'MM')).toBe('12');
         expect(format(second, 'M')).toBe('12');
     });
@@ -188,18 +189,7 @@ describe('date/format()', () => {
         const date = new Date(2015, 1, 4, 13, 29, 6);
 
         expect(format(date, 'DDDD, DD MMMM')).toBe('Wednesday, 04 February');
-        expect(format(date, 'DDD, DD MMM')).toBe('Wed, 04 Feb.');
-
-        const ru = {
-            months: {
-                shorts: ['Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-                longs: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-            },
-            days: {
-                shorts: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-                longs: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
-            }
-        };
+        expect(format(date, 'DDD, DD MMM')).toBe('Wed, 04 Feb');
 
         expect(format(date, 'DDDD, DD MMMM', ru)).toBe('Среда, 04 Февраль');
         expect(format(date, 'DDD, DD MMM', ru)).toBe('Ср, 04 Фев');
