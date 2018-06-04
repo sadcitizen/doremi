@@ -208,4 +208,8 @@ describe('date/format()', () => {
     test('throws exception if date is invalid', () => {
         expect(() => format(new Date('Invalid date'), 'DD/MM/YY h:m:s tt')).toThrow('A valid date is expected');
     });
+
+    test('throws exception if pattern isn\'t string', () => {
+        expect(() => format(new Date(2015, 1, 4, 13, 29, 6), null)).toThrow('The pattern must be a string');
+    });
 });

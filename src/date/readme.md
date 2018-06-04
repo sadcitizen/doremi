@@ -2,11 +2,11 @@
 
 - [x] [`add`](./add)
 - [x] [`clone`](./clone)
-- [ ] [`compare`](./compare)
+- [x] [`compare`](./compare)
 - [ ] [`difference`](./difference)
 - [x] [`end-of`](./end-of)
 - [x] [`equals`](./equals)
-- [ ] [`format`](./format)
+- [x] [`format`](./format)
 - [ ] [`is-date`](./is-date)
 - [ ] [`is-future`](./is-future)
 - [ ] [`is-leap-year`](./is-leap-year)

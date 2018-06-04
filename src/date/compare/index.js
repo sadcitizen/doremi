@@ -4,7 +4,7 @@ import sign from '../../number/sign';
 /**
  * @param {Date} value
  * @param {Date} other
- * @returns {-1|0|1}
+ * @returns {number}
  */
 export default function (value, other) {
     if (!isValid(value) || !isValid(other)) {
