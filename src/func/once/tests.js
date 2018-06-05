@@ -5,7 +5,7 @@ describe('func/once()', () => {
         expect(once(jest.fn())).toEqual(expect.any(Function));
     });
 
-    test('Execute the function once', () => {
+    test('executes the function once', () => {
         const add = (x, y) => x + y;
         const addOnce = once(add);
 
