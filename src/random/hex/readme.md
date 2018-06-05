@@ -5,7 +5,7 @@ Generates a pseudo-random hexadecimal number as string.
 ## Usage
 
 ```js
-import guid from 'doremi/random/guid';
+import hex from 'doremi/random/hex';
 
 hex(7); // => '8af7a0e'
 ```
