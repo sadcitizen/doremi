@@ -1,27 +1,18 @@
 /**
- * Return a new function that caches invocations of `fn`.
- * The default resolver is JSON.stringify.
- *
- * @param {Function} fn The function to memoize.
- * @param {Function} resolver The function to resolve the cache key.
- * @return {Function} Returns the new memoized function.
- *
- * @example
- * const sum = (x, y) => x + y;
- * const memoizedSum = memoize(sum);
- *
- * memoizedSum(2, 2);
- * // => 4
- *
- * memoizedSum(2, 2);
- * // => 4, without invocation of `sum`
+ * @param {Function} fn
+ * @param {Function} resolver
+ * @return {Function}
  */
-export default function memoize(fn, resolver = JSON.stringify) {
-    fn._cache = fn._cache || {};
+export default function (fn, resolver = JSON.stringify) {
+    fn.memo = fn.memo || {};
 
     return (...args) => {
         const key = resolver(args);
 
-        return key in fn._cache ? fn._cache[key] : (fn._cache[key] = fn(...args));
+        if (!(key in fn.memo)) {
+            fn.memo[key] = fn(...args);
+        }
+
+        return fn.memo[key];
     };
 }
