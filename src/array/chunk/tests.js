@@ -31,12 +31,4 @@ describe('array/chunk()', () => {
         expect(chunk(array, -10)).toEqual(result);
         expect(chunk(array, -1000)).toEqual(result);
     });
-
-    test('throws error if array is not array', () => {
-        expect(() => chunk('array', 1)).toThrow('The array must be an array');
-    });
-
-    test('throws error if size is not number', () => {
-        expect(() => chunk(array, '1')).toThrow('The size must be a number');
-    });
 });
