@@ -1,13 +1,13 @@
-import min from '.';
+import minBy from '.';
 
-describe('array/min()', () => {
+describe('array/minBy()', () => {
     test('returns the element with lowest value', () => {
-        expect(min([1, 2, 3, 4, 5])).toBe(1);
-        expect(min([1, -2, 3, 4, -5])).toBe(-5);
+        expect(minBy([1, 2, 3, 4, 5])).toBe(1);
+        expect(minBy([1, -2, 3, 4, -5])).toBe(-5);
     });
 
     test('returns NaN if the array is empty', () => {
-        expect(min([])).toEqual(NaN);
+        expect(minBy([])).toEqual(NaN);
     });
 
     test('allows the custom iterator', () => {
@@ -30,7 +30,7 @@ describe('array/min()', () => {
             }
         ];
 
-        expect(min(guests, x => x.age)).toEqual({ name: 'Bill', age: 21 });
-        expect(min(guests, x => x.name.length)).toEqual({ name: 'Bill', age: 21 });
+        expect(minBy(guests, x => x.age)).toEqual({ name: 'Bill', age: 21 });
+        expect(minBy(guests, x => x.name.length)).toEqual({ name: 'Bill', age: 21 });
     });
 });
