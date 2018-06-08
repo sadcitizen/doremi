@@ -1,17 +1,17 @@
 import identity from '../../func/identity';
 
 /**
- * @param {Array} value
+ * @param {Array} array
  * @param {Function} [iteratee]
  * @return {Object}
  *
  * @immutable
  */
-export default function (value, iteratee = identity) {
+export default function (array, iteratee = identity) {
     const result = {};
     let key;
 
-    value.forEach(el => {
+    array.forEach(el => {
         key = iteratee(el);
 
         if (!result[key]) {
