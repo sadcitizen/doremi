@@ -1,16 +1,16 @@
-import sort from '.';
+import sortBy from '.';
 
-describe('array/sort()', () => {
+describe('array/sortBy()', () => {
     test('sorts the array numerically', () => {
-        expect(sort([9, 12, 3, 4, -5, 18])).toEqual([-5, 3, 4, 9, 12, 18]);
+        expect(sortBy([9, 12, 3, 4, -5, 18])).toEqual([-5, 3, 4, 9, 12, 18]);
     });
 
     test('sorts the array alphabetically', () => {
-        expect(sort(['red', 'green', 'blue'])).toEqual(['blue', 'green', 'red']);
+        expect(sortBy(['red', 'green', 'blue'])).toEqual(['blue', 'green', 'red']);
     });
 
     test('returns the empty array if source is empty array', () => {
-        expect(sort([])).toEqual([]);
+        expect(sortBy([])).toEqual([]);
     });
 
     test('allows the custom iterator', () => {
@@ -52,6 +52,6 @@ describe('array/sort()', () => {
             }
         ];
 
-        expect(sort(guests, x => x.name.length)).toEqual(sortedByNameLengthGuests);
+        expect(sortBy(guests, x => x.name.length)).toEqual(sortedByNameLengthGuests);
     });
 });

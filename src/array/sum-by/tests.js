@@ -1,13 +1,13 @@
-import sum from '.';
+import sumBy from '.';
 
-describe('array/sum()', () => {
+describe('array/sumBy()', () => {
     test('returns the sum of values', () => {
-        expect(sum([1, 2, 3, 4, 5])).toBe(15);
-        expect(sum([1, -2, 3, 4, -5])).toBe(1);
+        expect(sumBy([1, 2, 3, 4, 5])).toBe(15);
+        expect(sumBy([1, -2, 3, 4, -5])).toBe(1);
     });
 
     test('returns zero if the array is empty', () => {
-        expect(sum([])).toEqual(0);
+        expect(sumBy([])).toEqual(0);
     });
 
     test('allows the custom iterator', () => {
@@ -30,7 +30,7 @@ describe('array/sum()', () => {
             }
         ];
 
-        expect(sum(guests, x => x.age)).toBe(98);
-        expect(sum(guests, x => x.name.length)).toBe(22);
+        expect(sumBy(guests, x => x.age)).toBe(98);
+        expect(sumBy(guests, x => x.name.length)).toBe(22);
     });
 });

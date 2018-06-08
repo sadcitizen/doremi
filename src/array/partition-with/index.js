@@ -1,12 +1,11 @@
 import identity from '../../func/identity';
 
 /**
- * @param {Array} target
- * @param {Function} predicate
- * @param {*} ctx
- * @returns {Array}
- *
  * @immutable
+ * @param {Array} target
+ * @param {Function} [predicate]
+ * @param {*} [ctx]
+ * @returns {Array}
  */
 export default function (target, predicate = identity, ctx) {
     const pass = [];
