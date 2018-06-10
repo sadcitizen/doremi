@@ -1,11 +1,11 @@
-# distinct(array, [iteratee])
+# distinctBy(array, [iteratee])
 
 Removes duplicates and returns distinct elements from an array.
 
 # Usage
 
 ```js
-import distinct from 'doremi/array/distinct';
+import distinctBy from 'doremi/array/distinct-by';
 
 distinct([1, 2, 1, 3, 1, 4]);
 // => [1, 2, 3, 4]
