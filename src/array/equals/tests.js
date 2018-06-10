@@ -18,12 +18,12 @@ describe('array/equals()', () => {
         const a = [{ name: 'Donald' }, { name: 'Hillary' }, { name: 'Vladimir' }];
         const b = [{ name: 'Donald' }, { name: 'Hillary' }, { name: 'Vladimir' }];
         const c = [{ name: 'Donald' }, { name: 'Bill' }, { name: 'Vladimir' }];
-        const comparer = (left, right) => left.name === right.name;
+        const comparator = (left, right) => left.name === right.name;
 
         expect(equals(a, b)).toBe(false);
-        expect(equals(a, b, comparer)).toBe(true);
+        expect(equals(a, b, comparator)).toBe(true);
 
         expect(equals(a, c)).toBe(false);
-        expect(equals(a, c, comparer)).toBe(false);
+        expect(equals(a, c, comparator)).toBe(false);
     });
 });

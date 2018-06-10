@@ -1,4 +1,4 @@
-# equals(array, other, [comparer])
+# equals(array, other, [comparator])
 
 Checks if the arrays contain the same elements.
 
@@ -19,11 +19,11 @@ equals(oneToFour, fiveToEight);
 const a = [{ name: 'Donald' }, { name: 'Hillary' }, { name: 'Vladimir' }];
 const b = [{ name: 'Donald' }, { name: 'Hillary' }, { name: 'Vladimir' }];
 const c = [{ name: 'Donald' }, { name: 'Bill' }, { name: 'Vladimir' }];
-const comparer = (left, right) => left.name === right.name;
+const comparator = (left, right) => left.name === right.name;
 
-equals(a, b, comparer);
+equals(a, b, comparator);
 // => true
 
-equals(a, c, comparer);
+equals(a, c, comparator);
 // => false
 ```

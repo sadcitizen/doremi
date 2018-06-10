@@ -1,15 +1,15 @@
-const defaultComparer = (value, other) => value === other;
+const defaultComparator = (value, other) => value === other;
 
 /**
  * @param {Array} array
  * @param {Array} other
- * @param {Function} [comparer]
+ * @param {Function} [comparator]
  * @return {Boolean}
  */
-export default function (array, other, comparer = defaultComparer) {
+export default function (array, other, comparator = defaultComparator) {
     if (array.length !== other.length) {
         return false;
     }
 
-    return array.every((el, i) => comparer(el, other[i]));
+    return array.every((el, i) => comparator(el, other[i]));
 }
