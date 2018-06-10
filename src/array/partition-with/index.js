@@ -1,13 +1,11 @@
-import identity from '../../func/identity';
-
 /**
  * @immutable
  * @param {Array} target
- * @param {Function} [predicate]
+ * @param {BooleanConstructor|Function} [predicate]
  * @param {*} [ctx]
  * @returns {Array}
  */
-export default function (target, predicate = identity, ctx) {
+export default function (target, predicate = Boolean, ctx = null) {
     const pass = [];
     const fail = [];
 
