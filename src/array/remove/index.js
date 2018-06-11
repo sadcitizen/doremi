@@ -1,5 +1,5 @@
 import append from '../append';
-
+// https://github.com/jonschlinkert/array-pull
 /**
  * Removes all elements from `target` that `predicate` returns truthy for and returns an array of the removed elements.
  * The `predicate` is invoked with three arguments: (value, index, array).

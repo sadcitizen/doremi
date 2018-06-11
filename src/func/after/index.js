@@ -1,3 +1,4 @@
+import { UNDEF } from '../../internal/constants';
 /**
  * Return a new function that invokes `fn` once it's called `times` or more times.
  *
@@ -14,9 +15,11 @@
 export default function (fn, times) {
     times |= 0;
 
-    return function (...args) {
+    return (...args) => {
         if (--times < 1) {
             return fn(...args);
         }
+
+        return UNDEF;
     };
 }

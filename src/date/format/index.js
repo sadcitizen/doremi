@@ -1,8 +1,8 @@
 import isValid from '../is-valid';
 import isString from '../../string/is-string';
 import padLeft from '../../string/pad-left';
-import defaultLocale from './locales/en';
 import { UNDEF } from '../../internal/constants';
+import defaultLocale from './locales/en';
 
 const regex = /(Q|Y{1,4}|M{1,4}|D{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|f{1,3}|T{1,2}|t{1,2}|Z)/g;
 
