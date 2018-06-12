@@ -1,4 +1,5 @@
 import equals from '../../logic/equals';
+import uniqueWith from '../unique-with';
 
 /**
  * @param {Array} array
@@ -7,9 +8,5 @@ import equals from '../../logic/equals';
  * @returns {*[]}
  */
 export default function (array, other, comparator = equals) {
-    const result = [...array];
-
-
-
-    return result;
+    return uniqueWith([...array, ...other], comparator);
 }
