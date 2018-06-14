@@ -2,7 +2,10 @@ import curry from '.';
 
 describe('func/curry()', () => {
     test('returns new function', () => {
-        expect(curry(jest.fn())).toEqual(expect.any(Function));
+        const fn = x => x;
+        const curried = curry(fn);
+
+        expect(curried).toEqual(expect.any(Function));
     });
 
     test('partially apply arguments to a function', () => {
