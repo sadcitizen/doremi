@@ -21,8 +21,9 @@ describe('func/defer()', () => {
 
     test('applies arguments', () => {
         jest.useFakeTimers();
+
         let counter = 0;
-        const increment = x => counter += x;
+        const increment = x => counter += x; // eslint-disable-line no-return-assign
         const deferredIncrement = defer(increment);
 
         deferredIncrement(10);
