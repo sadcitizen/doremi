@@ -6,7 +6,7 @@ import fixed from './fixed';
 import floor from './floor';
 import isEven from './is-even';
 import isFloat from './is-float';
-import isInt from './is-int';
+import isInteger from './is-integer';
 import isNumber from './is-number';
 import isOdd from './is-odd';
 import log from './log';
@@ -21,7 +21,7 @@ export { fixed };
 export { floor };
 export { isEven };
 export { isFloat };
-export { isInt };
+export { isInteger };
 export { isNumber };
 export { isOdd };
 export { log };
@@ -37,7 +37,7 @@ export default {
     floor,
     isEven,
     isFloat,
-    isInt,
+    isInteger,
     isNumber,
     isOdd,
     log,

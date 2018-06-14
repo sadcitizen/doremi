@@ -7,7 +7,7 @@ import number, {
     floor,
     isEven,
     isFloat,
-    isInt,
+    isInteger,
     isNumber,
     isOdd,
     log,
@@ -29,7 +29,7 @@ describe('doremi/number', () => {
         expect(number).toHaveProperty('floor', floor);
         expect(number).toHaveProperty('isEven', isEven);
         expect(number).toHaveProperty('isFloat', isFloat);
-        expect(number).toHaveProperty('isInt', isInt);
+        expect(number).toHaveProperty('isInteger', isInteger);
         expect(number).toHaveProperty('isNumber', isNumber);
         expect(number).toHaveProperty('isOdd', isOdd);
         expect(number).toHaveProperty('log', log);

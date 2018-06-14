@@ -22,6 +22,15 @@ export default function (target, count) {
         return result;
     }
 
+    // Quick case
+    if (count === 1) {
+        return target;
+    }
+
+    if (count === 2) {
+        return `${target}${target}`;
+    }
+
     for (count |= 0; count > 0; count >>>= 1, target += target) {
         if ((count & 1) === 1) {
             result += target;

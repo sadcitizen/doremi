@@ -1,10 +1,13 @@
 import isObject from '../is-object';
 import flatten from '../../array/flatten';
-
+//https://github.com/jonschlinkert/object.omit
+//https://github.com/jonschlinkert/omit-deep
+//https://github.com/jonschlinkert/omit-value
 /**
  * @param {Object} value
  * @param {*} args
  * @returns {Object}
+ * TODO: Ключи должны быть вложенными, например 'a.b.c'
  */
 export default function (value, ...args) {
     if (!isObject(value)) {

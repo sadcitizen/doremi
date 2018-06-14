@@ -1,29 +1,20 @@
 import namespace from '../namespace';
-
+//https://github.com/jonschlinkert/set-value
+// TODO: Поддержка работы с массивами
 /**
- * Sets nested property value.
- *
- * @param target The object to inspect.
- * @param prop The property name.
- * @param value The value to setValue.
- *
- * @example
- *
- * var lorem = {};
- *
- * setValue(lorem, 'ipsum.dolor', 'sit');
- * // => lorem: { ipsum: { dolor: 'sit' } }
- * console.log(lorem.ipsum.dolor);
- * // => 'sit'
+ * @param {Object} target
+ * @param {string} path
+ * @param {*} value
+ * @param {boolean} merge
  */
-export default function (target, prop, value) {
-    const parts = prop.split('.');
+export default function (target, path, value, merge = false) {
+    const steps = path.split('.');
     let key;
 
-    if (parts.length > 1) {
-        key = parts.pop();
-        namespace(target, parts.join('.'))[key] = value;
+    if (steps.length > 1) {
+        key = steps.pop();
+        namespace(target, steps.join('.'))[key] = value;
     } else {
-        target[prop] = value;
+        target[path] = value;
     }
 }

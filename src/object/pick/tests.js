@@ -2,11 +2,7 @@ import { VOID_0 } from '../../internal/constants';
 import pick from '.';
 
 describe('object/pick()', () => {
-    let source;
-
-    beforeAll(() => {
-        source = { a: 0, b: 1, c: 2, d: 3, e: 4, f: 5 };
-    });
+    const source = { a: 0, b: 1, c: 2, d: 3, e: 4, f: 5 };
 
     test('throws an error if value is not an object', () => {
         expect(() => pick(null, 'a', 'b')).toThrow('An object is expected');

@@ -1,0 +1,3 @@
+describe('object/bind', () => {
+    test('');
+});

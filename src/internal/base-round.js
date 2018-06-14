@@ -9,8 +9,10 @@ import isNumber from '../number/is-number';
  */
 export default function (target) {
     const fn = Math[target];
+
     return function (num, precision = 0) {
-        precision = Math.pow(10, precision | 0);
-        return isNumber(num) ? (fn(num * precision) + 0) / precision : NaN;
+        const prec = Math.pow(10, Math.floor(precision));
+
+        return isNumber(num) ? (fn(num * prec) + 0) / prec : NaN;
     };
 }
