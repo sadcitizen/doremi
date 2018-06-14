@@ -11,9 +11,9 @@ describe('func/partial()', () => {
     test('partially apply arguments to a function', () => {
         const fn = (a, b, c, d, e) => [a, b, c, d, e];
 
-        const partialFn = partial(fn, 1, 'string', true);
-        const result = partialFn(3, false);
-
-        expect(result).toEqual([1, 'string', true, 3, false]);
+        expect(partial(fn, 1)(2, 3, 4, 5)).toEqual([1, 2, 3, 4, 5]);
+        expect(partial(fn, 1, 2)(3, 4, 5)).toEqual([1, 2, 3, 4, 5]);
+        expect(partial(fn, 1, 2, 3)(4, 5)).toEqual([1, 2, 3, 4, 5]);
+        expect(partial(fn, 1, 2, 3, 4)(5)).toEqual([1, 2, 3, 4, 5]);
     });
 });
