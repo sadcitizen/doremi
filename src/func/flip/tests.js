@@ -2,9 +2,7 @@ import flip from '.';
 
 describe('func/flip()', () => {
     test('returns a new function', () => {
-        const fn = jest.fn();
-
-        expect(flip(fn)).toEqual(expect.any(Function));
+        expect(flip(jest.fn())).toEqual(expect.any(Function));
     });
 
     test('reverses the order of arguments', () => {
