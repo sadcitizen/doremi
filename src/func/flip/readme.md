@@ -1,6 +1,6 @@
 # flip(fn)
 
-Return a new function which accepts arguments in the reverse order that the original function specifies.
+Returns a new function which accepts arguments in the reverse order that the original function specifies.
 
 ## Usage
 
