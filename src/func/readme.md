@@ -7,6 +7,7 @@
 - [`delay`](./delay)
 - [`flip`](./flip)
 - [`identity`](./identity)
+- [`isFunction`](./is-function)
 - [`memoize`](./memoize)
 - [`negate`](./negate)
 - [`noop`](./noop)
@@ -14,8 +15,11 @@
 - [`partial`](./partial)
 - [`partialRight`](./partial-right)
 - [`pipe`](./pipe)
+- [`repeat`](./repeat)
 
 ### todo
 
+- [`arity`](./arity)
+- [`curry`](./curry)
 - [`debounce`](./debounce)
 - [`throttle`](./throttle)
