@@ -19,7 +19,6 @@
 
 ### todo
 
-- [`arity`](./arity)
 - [`curry`](./curry)
 - [`debounce`](./debounce)
 - [`throttle`](./throttle)
