@@ -3,7 +3,7 @@
 ## Usage
 
 ```js
-import pick from 'doremi/object/pick-properties';
+import pick from 'doremi/object/pick';
 
 pick({ a: 'a', b: 'b' }, 'a');
 //=> { a: 'a' }
