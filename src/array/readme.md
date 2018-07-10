@@ -1,5 +1,6 @@
 # array
 
+- [`at`](./at)
 - [`averageBy`](./average-by)
 - [`chunk`](./chunk)
 - [`compact`](./compact)
@@ -22,7 +23,6 @@
 ### todo
 
 - [`append`](./append)
-- [`at`](./at)
 - [`differenceWith`](./difference-with)
 - [`is-empty`](./is-empty)
 - [`pluck`](./pluck)
