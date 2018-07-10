@@ -1,6 +1,8 @@
 import date, {
     add,
     clone,
+    compare,
+    endOf,
     equals,
     format,
     isDate,
@@ -22,6 +24,8 @@ describe('doremi/date', () => {
     test('doremi/date has correct properties', () => {
         expect(date).toHaveProperty('add', add);
         expect(date).toHaveProperty('clone', clone);
+        expect(date).toHaveProperty('compare', compare);
+        expect(date).toHaveProperty('endOf', endOf);
         expect(date).toHaveProperty('equals', equals);
         expect(date).toHaveProperty('format', format);
         expect(date).toHaveProperty('isDate', isDate);
