@@ -16,7 +16,7 @@ const symbols = {
     yotta: 'Y' // 1000 ^ 8
 };
 
-const prefixes = {
+const suffixes = {
     3: 'kilo',
     6: 'mega',
     9: 'giga',
@@ -28,19 +28,38 @@ const prefixes = {
 };
 
 const base = 10;
+const defaultOptions = {
+    precision: 2,
+    dictionary: symbols,
+    skipTrailingZeros: true,
+    separator: '.'
+};
 
 /**
  * @param {number} value
- * @param {number} precision
- * @param {Object} dict
+ * @param {Object} specifiedOptions
  * @returns {string}
  */
-export default function (value, precision = 2, dict = symbols) {
+export default function (value, specifiedOptions = {}) {
     if (!isNumber(value)) {
         return '';
     }
 
-    const basis = floor(log(abs(value), base) / 3) * 3;
+    const options = { ...defaultOptions, ...specifiedOptions };
 
-    return fixed(value / pow(base, basis), precision) + dict[prefixes[basis]];
+    const basis = floor(log(abs(value), base) / 3) * 3;
+    const suffix = options.dictionary[suffixes[basis]];
+    const abbreviated = fixed(value / pow(base, basis), options.precision);
+
+    let result = abbreviated;
+
+    if (options.skipTrailingZeros) {
+        result = abbreviated.replace(/\.0+$/, '');
+    }
+
+    if (options.separator !== defaultOptions.separator) {
+        result = result.replace(/\./, options.separator);
+    }
+
+    return result + (suffix || '');
 }
