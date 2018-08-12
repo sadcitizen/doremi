@@ -11,10 +11,10 @@ const defaultOptions = {
 export default function (value, specifiedOptions = {}) {
     const options = { ...defaultOptions, ...specifiedOptions };
 
-    let [decimal, fractional] = fixed(value, options.precision).split('.');
+    let [integer, fractional] = fixed(value, options.precision).split('.');
 
     if (options.groupSeparator.length > 0) {
-        decimal = chopRight(decimal, 3).join(options.groupSeparator);
+        integer = chopRight(integer, 3).join(options.groupSeparator);
     }
 
     if (options.skipTrailingZeros) {
@@ -22,8 +22,8 @@ export default function (value, specifiedOptions = {}) {
     }
 
     if (fractional.length > 0) {
-        return `${decimal}${options.decimalSeparator}${fractional}`;
+        return `${integer}${options.decimalSeparator}${fractional}`;
     }
 
-    return decimal;
+    return integer;
 }
