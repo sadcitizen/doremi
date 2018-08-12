@@ -29,10 +29,10 @@ const suffixes = {
 
 const base = 10;
 const defaultOptions = {
-    precision: 2,
+    decimalSeparator: '.',
     dictionary: symbols,
-    skipTrailingZeros: true,
-    separator: '.'
+    precision: 2,
+    skipTrailingZeros: true
 };
 
 /**
@@ -57,8 +57,8 @@ export default function (value, specifiedOptions = {}) {
         result = abbreviated.replace(/\.0+$/, '');
     }
 
-    if (options.separator !== defaultOptions.separator) {
-        result = result.replace(/\./, options.separator);
+    if (options.decimalSeparator !== defaultOptions.decimalSeparator) {
+        result = result.replace(/\./, options.decimalSeparator);
     }
 
     return result + (suffix || '');
