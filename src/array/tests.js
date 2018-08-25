@@ -1,4 +1,7 @@
-import array, { append } from '.';
+import array, {
+    at,
+    compact
+} from '.';
 
 describe('doremi/array', () => {
     test('imports doremi/array as object', () => {
@@ -6,6 +9,7 @@ describe('doremi/array', () => {
     });
 
     test('doremi/array has correct properties', () => {
-        expect(array).toHaveProperty('append', append);
+        expect(array).toHaveProperty('at', at);
+        expect(array).toHaveProperty('compact', compact);
     });
 });

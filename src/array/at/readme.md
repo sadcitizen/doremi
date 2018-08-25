@@ -1,4 +1,4 @@
-# at(array, ...indexes)
+# at(array, ...indexes): Array
 
 Returns an array of elements corresponding to the given indexes.
 

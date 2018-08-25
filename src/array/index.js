@@ -1,7 +1,10 @@
-import append from './append';
+import at from './at';
+import compact from './compact';
 
-export { append };
+export { at };
+export { compact };
 
 export default {
-    append
+    at,
+    compact
 };

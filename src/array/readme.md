@@ -1,9 +1,12 @@
 # array
 
 - [`at`](./at)
+- [`compact`](./compact)
+
+### todo
+
 - [`averageBy`](./average-by)
 - [`chunk`](./chunk)
-- [`compact`](./compact)
 - [`countBy`](./count-by)
 - [`equals`](./equals)
 - [`first`](./first)
@@ -19,9 +22,6 @@
 - [`sumBy`](./sum-by)
 - [`unionWith`](./union-with)
 - [`uniqueWith`](./unique-with)
-
-### todo
-
 - [`append`](./append)
 - [`differenceWith`](./difference-with)
 - [`is-empty`](./is-empty)
