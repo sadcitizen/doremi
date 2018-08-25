@@ -1,4 +1,4 @@
-import isDate from '../is-date';
+import isDate from '../../common/is-date';
 
 /**
  * @param value

@@ -1,7 +1,7 @@
 import setValue from '../../object/set-value';
 
 const es6 = ['${', '}'];
-const escape = target => target.replace(/[\\\^\$\*\+\.\?\(\)]/g, '\\$&');
+const escape = target => target.replace(/[\\^$*+.?()]/g, '\\$&');
 
 /**
  * Extracts an object from a string based on a pattern.

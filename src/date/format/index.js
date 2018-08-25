@@ -1,5 +1,5 @@
 import isValid from '../is-valid';
-import isString from '../../string/is-string';
+import isString from '../../common/is-string';
 import padLeft from '../../string/pad-left';
 import { UNDEF } from '../../internal/constants';
 import defaultLocale from './locales/en';

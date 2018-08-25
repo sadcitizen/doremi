@@ -11,7 +11,6 @@ import insert from './insert';
 import isBlank from './is-blank';
 import isChar from './is-char';
 import isEmpty from './is-empty';
-import isString from './is-string';
 import join from './join';
 import lines from './lines';
 import pad from './pad';
@@ -41,7 +40,6 @@ export { insert };
 export { isBlank };
 export { isChar };
 export { isEmpty };
-export { isString };
 export { join };
 export { lines };
 export { pad };
@@ -72,7 +70,6 @@ export default {
     isBlank,
     isChar,
     isEmpty,
-    isString,
     join,
     lines,
     pad,

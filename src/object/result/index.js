@@ -1,4 +1,4 @@
-import isFunction from '../../func/is-function';
+import isFunction from '../../common/is-function';
 import getValue from '../get-value';
 
 /**

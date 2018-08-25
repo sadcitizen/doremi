@@ -1,5 +1,5 @@
 import isDefined from '../../common/is-defined';
-import isObject from '../is-object';
+import isObject from '../../common/is-object';
 
 /**
  * Checks if the `target` is created by the `Object` constructor.

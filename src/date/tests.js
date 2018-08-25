@@ -5,7 +5,6 @@ import date, {
     endOf,
     equals,
     format,
-    isDate,
     isFuture,
     isLeapYear,
     isPast,
@@ -28,7 +27,6 @@ describe('doremi/date', () => {
         expect(date).toHaveProperty('endOf', endOf);
         expect(date).toHaveProperty('equals', equals);
         expect(date).toHaveProperty('format', format);
-        expect(date).toHaveProperty('isDate', isDate);
         expect(date).toHaveProperty('isFuture', isFuture);
         expect(date).toHaveProperty('isLeapYear', isLeapYear);
         expect(date).toHaveProperty('isPast', isPast);

@@ -1,4 +1,4 @@
-import type from '../../common/type';
+import type from '../type';
 
 /**
  * @param {*} target

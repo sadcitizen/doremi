@@ -1,4 +1,4 @@
-import isNumber from '../number/is-number';
+import isNumber from '../common/is-number';
 
 /**
  * Creates a `ceil`, `round` or `floor` function.

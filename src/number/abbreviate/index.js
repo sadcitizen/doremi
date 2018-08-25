@@ -1,4 +1,4 @@
-import isNumber from '../is-number';
+import isNumber from '../../common/is-number';
 import log from '../log';
 import floor from '../floor';
 import fixed from '../fixed';

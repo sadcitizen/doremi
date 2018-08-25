@@ -8,7 +8,6 @@ import format from './format';
 import isEven from './is-even';
 import isFloat from './is-float';
 import isInteger from './is-integer';
-import isNumber from './is-number';
 import isOdd from './is-odd';
 import log from './log';
 import round from './round';
@@ -25,7 +24,6 @@ export { format };
 export { isEven };
 export { isFloat };
 export { isInteger };
-export { isNumber };
 export { isOdd };
 export { log };
 export { round };
@@ -43,7 +41,6 @@ export default {
     isEven,
     isFloat,
     isInteger,
-    isNumber,
     isOdd,
     log,
     round,

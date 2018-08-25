@@ -1,4 +1,5 @@
-import isObject from '../is-object';
+import isObject from '../../common/is-object';
+import { UNDEF } from '../../internal/constants';
 
 /**
  * Creates an empty nested object by `path` and returns it.
@@ -26,7 +27,7 @@ export default function (target, path) {
     let obj = target;
 
     path.split('.').forEach(key => {
-        if (!(obj[key] !== undefined && isObject(obj[key]))) {
+        if (!(obj[key] !== UNDEF && isObject(obj[key]))) {
             obj[key] = {};
         }
 

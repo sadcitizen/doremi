@@ -1,4 +1,4 @@
-import isNumber from '../is-number';
+import isNumber from '../../common/is-number';
 
 /**
  * @param {number} target

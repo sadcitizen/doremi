@@ -1,6 +1,6 @@
 import { es6 } from '../../internal/regexes/template';
-import isObject from '../is-object';
-import isString from '../../string/is-string';
+import isObject from '../../common/is-object';
+import isString from '../../common/is-string';
 import getValue from '../get-value';
 import trim from '../../string/trim';
 

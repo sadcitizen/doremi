@@ -1,4 +1,4 @@
-import isString from '../is-string';
+import isString from '../../common/is-string';
 
 /**
  * Checks if `target` is an empty string.

@@ -1,4 +1,4 @@
-import string, { camelize, capitalize, chop, chopRight, clean, count, decapitalize, escape, extract, insert, isBlank, isChar, isEmpty, isString, join, lines, pad, padLeft, padRight, remove, repeat, reverse, swap, template, trim, trimLeft, trimRight, truncate, unescape } from '.';
+import string, { camelize, capitalize, chop, chopRight, clean, count, decapitalize, escape, extract, insert, isBlank, isChar, isEmpty, join, lines, pad, padLeft, padRight, remove, repeat, reverse, swap, template, trim, trimLeft, trimRight, truncate, unescape } from '.';
 
 describe('doremi/string', () => {
     test('imports doremi/string as object', () => {
@@ -19,7 +19,6 @@ describe('doremi/string', () => {
         expect(string).toHaveProperty('isBlank', isBlank);
         expect(string).toHaveProperty('isChar', isChar);
         expect(string).toHaveProperty('isEmpty', isEmpty);
-        expect(string).toHaveProperty('isString', isString);
         expect(string).toHaveProperty('join', join);
         expect(string).toHaveProperty('lines', lines);
         expect(string).toHaveProperty('pad', pad);

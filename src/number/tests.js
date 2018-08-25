@@ -9,7 +9,6 @@ import number, {
     isEven,
     isFloat,
     isInteger,
-    isNumber,
     isOdd,
     log,
     round,
@@ -33,7 +32,6 @@ describe('doremi/number', () => {
         expect(number).toHaveProperty('isEven', isEven);
         expect(number).toHaveProperty('isFloat', isFloat);
         expect(number).toHaveProperty('isInteger', isInteger);
-        expect(number).toHaveProperty('isNumber', isNumber);
         expect(number).toHaveProperty('isOdd', isOdd);
         expect(number).toHaveProperty('log', log);
         expect(number).toHaveProperty('round', round);

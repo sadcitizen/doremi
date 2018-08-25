@@ -4,7 +4,6 @@ import compare from './compare';
 import endOf from './end-of';
 import equals from './equals';
 import format from './format';
-import isDate from './is-date';
 import isFuture from './is-future';
 import isLeapYear from './is-leap-year';
 import isPast from './is-past';
@@ -20,7 +19,6 @@ export { compare };
 export { endOf };
 export { equals };
 export { format };
-export { isDate };
 export { isFuture };
 export { isLeapYear };
 export { isPast };
@@ -37,7 +35,6 @@ export default {
     endOf,
     equals,
     format,
-    isDate,
     isFuture,
     isLeapYear,
     isPast,

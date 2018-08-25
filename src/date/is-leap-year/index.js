@@ -1,5 +1,5 @@
 import isValid from '../is-valid';
-import isNumber from '../../number/is-number';
+import isNumber from '../../common/is-number';
 
 /**
  * @param {Date|number} value

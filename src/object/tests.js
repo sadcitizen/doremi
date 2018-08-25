@@ -1,4 +1,4 @@
-import object, { getValue, invert, isObject, isPlain, namespace, pairs, result, setValue, template, values } from '.';
+import object, { getValue, invert, isPlain, namespace, pairs, result, setValue, template, values } from '.';
 
 describe('doremi/object', () => {
     test('imports doremi/object as object', () => {
@@ -8,7 +8,6 @@ describe('doremi/object', () => {
     test('doremi/object has correct properties', () => {
         expect(object).toHaveProperty('getValue', getValue);
         expect(object).toHaveProperty('invert', invert);
-        expect(object).toHaveProperty('isObject', isObject);
         expect(object).toHaveProperty('isPlain', isPlain);
         expect(object).toHaveProperty('namespace', namespace);
         expect(object).toHaveProperty('pairs', pairs);

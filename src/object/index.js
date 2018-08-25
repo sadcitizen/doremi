@@ -1,6 +1,5 @@
 import getValue from './get-value';
 import invert from './invert';
-import isObject from './is-object';
 import isPlain from './is-plain';
 import namespace from './namespace';
 import omit from './omit';
@@ -13,7 +12,6 @@ import values from './values';
 
 export { getValue };
 export { invert };
-export { isObject };
 export { isPlain };
 export { namespace };
 export { omit };
@@ -27,7 +25,6 @@ export { values };
 export default {
     getValue,
     invert,
-    isObject,
     isPlain,
     namespace,
     omit,
