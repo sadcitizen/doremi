@@ -1,5 +1,5 @@
-// import invert from '.';
-
 describe('object/invert()', () => {
-    test('coming soon...');
+    test('todo', () => {
+        expect(true).toBe(true);
+    });
 });

@@ -3,6 +3,8 @@ import isNumber from '../../common/is-number';
 /**
  * @param {number} target
  * @returns {boolean}
+ *
+ * Number.isInteger
  */
 export default function (target) {
     if (!isNumber(target)) {
