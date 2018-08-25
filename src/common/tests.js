@@ -1,7 +1,10 @@
 import common, {
     isDate,
     isDefined,
-    type
+    isFunction,
+    isNumber,
+    isObject,
+    isString
 } from '.';
 
 describe('doremi/common', () => {
@@ -12,6 +15,9 @@ describe('doremi/common', () => {
     test('doremi/common has correct properties', () => {
         expect(common).toHaveProperty('isDate', isDate);
         expect(common).toHaveProperty('isDefined', isDefined);
-        expect(common).toHaveProperty('type', type);
+        expect(common).toHaveProperty('isFunction', isFunction);
+        expect(common).toHaveProperty('isNumber', isNumber);
+        expect(common).toHaveProperty('isObject', isObject);
+        expect(common).toHaveProperty('isString', isString);
     });
 });

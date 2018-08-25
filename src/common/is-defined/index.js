@@ -1,16 +1,10 @@
 import { UNDEF } from '../../internal/constants';
 
 /**
- * Checks if `target` is 'null' or `undefined`.
+ * Checks if the given value is 'null' or `undefined`.
  *
- * @param {*} target The value to check.
- * @returns {boolean} Return `true` if `target` is not `null` and `undefined`, else `false`.
- *
- * @example
- * isDefined(null);
- * // => false
- *
- * isDefined('');
- * // => true
+ * @category common
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if the value is not `null` and `undefined`, else `false`.
  */
-export default target => target !== UNDEF && target !== null;
+export default value => value !== UNDEF && value !== null;
