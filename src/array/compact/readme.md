@@ -1,6 +1,6 @@
 # compact(array): Array
 
-Returns a copy of the `array` without any `null` or `undefined` values.
+Returns a copy of the given array without any `null` or `undefined` values.
 
 ## Usage
 

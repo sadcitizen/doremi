@@ -26,3 +26,15 @@ import doremi from 'doremi';
 - [object](./src/object)
 - [random](./src/random)
 - [string](./src/string)
+
+### Misc
+
+- array - array | value
+- date - date | value
+- function - fn | value
+- number - number | value
+- object - object | value
+- string - string | value
+- boolean - boolean | value
+- other
+- dirty

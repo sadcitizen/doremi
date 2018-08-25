@@ -1,10 +1,12 @@
-# startOf(date, unit)
+# startOf(date, unit): Date
 
-Creates a new date at the start of time period
+Creates a new date at the start of time period.
 
 ## Usage
 
 ```js
+import startOf from 'doremi/date/start-of';
+
 const date = new Date(2015, 2, 23, 23, 20, 11, 491);
 
 startOf(date, 'year');

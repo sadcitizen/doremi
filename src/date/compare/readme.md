@@ -1,10 +1,12 @@
-# compare
+# compare(array, other): Number
 
 Compares two dates, returns -1 if first date is before second date, returns 1 if first date is after second date, 0 otherwise.
 
 ## Usage
 
 ```js
+import compare from 'doremi/date/compare';
+
 const dates = [new Date(1989, 0, 26), new Date(2000, 2, 1), new Date(1985, 2, 22)];
 
 dates.sort(compare);

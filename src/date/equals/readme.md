@@ -1,4 +1,4 @@
-# equals(value, other, unit)
+# equals(value, other, unit): Boolean
 
 Checks if the dates are equal with time unit.
 

@@ -1,4 +1,4 @@
-# format(date, pattern, locale)
+# format(date, pattern, locale): String
 
 Formats a date to a string according to `pattern`.
 
@@ -35,6 +35,8 @@ Formats a date to a string according to `pattern`.
 ## Usage
 
 ```js
+import format from 'doremi/date/format';
+
 var date = new Date(2015, 1, 1, 13, 29, 6);
 
 format(date, 'DD-MM-YYYY HH:mm:ss');

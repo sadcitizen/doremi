@@ -1,8 +1,10 @@
-# isLeapYear
+# isLeapYear(date): Boolean
 
 Checks if the value is a leap year
 
 ```js
+import isLeapYear from 'doremi/date/is-leap-year';
+
 isLeapYear(2016);
 // => true
 
