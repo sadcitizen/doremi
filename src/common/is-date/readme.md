@@ -1,10 +1,12 @@
-# isDate(value)
+# isDate(value): Boolean
 
-Checks if the value is date.
+Checks if `value` is a date.
 
 ## Usage
 
 ```js
+import isDate from 'doremi/common/is-date';
+
 isDate('2014-11-22');
 // => false
 
