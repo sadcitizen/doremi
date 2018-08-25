@@ -2,7 +2,7 @@ import { VOID_0 } from '../../internal/constants';
 import isFunction from '.';
 
 describe('func/isFunction()', () => {
-    test('returns true if value is a function', () => {
+    test('returns true if the value is a function', () => {
         const noop = () => {};
 
         expect(isFunction(() => {})).toBe(true);
@@ -10,7 +10,7 @@ describe('func/isFunction()', () => {
         expect(isFunction(noop)).toBe(true);
     });
 
-    test('returns false if value is not a function', () => {
+    test('returns false if the value is not a function', () => {
         expect(isFunction(arguments)).toBe(false);
         expect(isFunction(true)).toBe(false);
         expect(isFunction(VOID_0)).toBe(false);

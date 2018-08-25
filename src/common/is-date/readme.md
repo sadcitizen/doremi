@@ -1,6 +1,6 @@
 # isDate(value): Boolean
 
-Checks if `value` is a date.
+Checks if the given value is a date.
 
 ## Usage
 

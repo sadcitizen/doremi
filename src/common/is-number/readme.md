@@ -1,6 +1,6 @@
-# isNumber(num)
+# isNumber(value): Boolean
 
-Checks if the value is a number.
+Checks if the given value is a number (including `NaN`).
 
 ## Usage
 

@@ -1,6 +1,6 @@
-# isFunction(fn)
+# isFunction(value): Boolean
 
-Checks if a value is function.
+Checks if the given value is a function.
 
 ## Usage
 

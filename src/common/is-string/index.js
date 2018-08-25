@@ -1,18 +1,8 @@
 /**
- * Checks if `target` is string.
+ * Checks if the given value is a string.
  *
- * @param {*} target The value to check.
- * @returns {boolean} Returns `true` if `target` is string, else 'false'.
- *
- * @example
- *
- * isString(false);
- * // => false
- *
- * isString(42);
- * // => false
- *
- * isString('42');
- * // => true
+ * @category common
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if the value is string, else 'false'.
  */
-export default target => Object.prototype.toString.call(target) === '[object String]';
+export default value => Object.prototype.toString.call(value) === '[object String]';

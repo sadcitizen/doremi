@@ -1,8 +1,8 @@
 /**
- * Checks if `value` is a date.
+ * Checks if the given value is a date.
  *
  * @category common
  * @param {*} value The value to check.
- * @returns {boolean} True if `value` is a date, else returns false.
+ * @returns {boolean} Returns `true` if the value is a date, else `false`.
  */
 export default value => Object.prototype.toString.call(value) === '[object Date]';

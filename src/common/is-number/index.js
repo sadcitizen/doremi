@@ -1,7 +1,8 @@
-import type from '../type';
-
 /**
- * @param {*} target
- * @returns {boolean}
+ * Checks if the given value is a number.
+ *
+ * @category common
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if the value is a number, else `false`.
  */
-export default target => type(target) === 'number';
+export default value => Object.prototype.toString.call(value) === '[object Number]';
