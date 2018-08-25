@@ -1,3 +1,5 @@
 describe('func/debounce()', () => {
-    test('todo');
+    test('todo', () => {
+        expect(true).toBe(true);
+    });
 });

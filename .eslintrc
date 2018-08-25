@@ -5,6 +5,7 @@
       "@sadcitizen/eslint-config/jest"
   ],
   "rules": {
-    "no-magic-numbers": "off"
+    "no-magic-numbers": "off",
+    "import/unambiguous": "off"
   }
 }

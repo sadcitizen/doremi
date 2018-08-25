@@ -1,4 +1,4 @@
-import isInteger from '../../number/is-int';
+import isInteger from '../../number/is-integer';
 import randomInteger from '.';
 
 describe('random/int()', () => {

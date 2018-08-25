@@ -1,5 +1,5 @@
-// import assign from '.';
-
 describe('object/assign', () => {
-    test('todo');
+    test('todo', () => {
+        expect(true).toBe(true);
+    });
 });

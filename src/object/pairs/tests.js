@@ -1,3 +1,5 @@
 describe('object/pairs()', () => {
-    test('todo');
+    test('todo', () => {
+        expect(true).toBe(true);
+    });
 });

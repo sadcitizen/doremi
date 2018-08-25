@@ -1,3 +1,5 @@
 describe('object/bind', () => {
-    test('');
+    test('todo', () => {
+        expect(true).toBe(true);
+    });
 });

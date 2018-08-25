@@ -1,3 +1,5 @@
 describe('object/equals()', () => {
-    test('todo');
+    test('todo', () => {
+        expect(true).toBe(true);
+    });
 });
