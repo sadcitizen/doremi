@@ -1,4 +1,14 @@
-import object, { getValue, invert, isPlain, namespace, pairs, result, setValue, template, values } from '.';
+import object, {
+    getValue,
+    invert,
+    isPlain,
+    namespace,
+    pairs,
+    result,
+    setValue,
+    template,
+    values
+} from '.';
 
 describe('doremi/object', () => {
     test('imports doremi/object as object', () => {
