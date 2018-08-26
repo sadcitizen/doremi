@@ -14,7 +14,7 @@ export default function (array, ...indexes) {
     const flattenIndexes = flatten(indexes);
 
     if (flattenIndexes.length > 0) {
-        return flattenIndexes.map(value => value[value < 0 ? value.length + value : value]);
+        return flattenIndexes.map(value => array[value < 0 ? array.length + value : value]);
     }
 
     return [];
