@@ -12,20 +12,20 @@ describe('array/differenceWith()', () => {
         const a = ['a', 'f', 'c'];
         const b = ['d', 'c', 'f'];
 
-        expect(differenceWith(a, b)).toEqual(['a', 'f', 'c', 'd']);
-        expect(differenceWith(b, a)).toEqual(['d', 'c', 'f', 'a']);
+        expect(differenceWith(a, b)).toEqual(['a']);
+        expect(differenceWith(b, a)).toEqual(['d']);
     });
 
     test('works with empty arrays', () => {
         expect(differenceWith(['a', 'b', 'c'], [])).toEqual(['a', 'b', 'c']);
-        expect(differenceWith([], ['a', 'b', 'c'])).toEqual(['a', 'b', 'c']);
+        expect(differenceWith([], ['a', 'b', 'c'])).toEqual([]);
     });
 
     test('allows comparator to specify equality', () => {
         const value = [{ name: 'Bill', age: 20 }, { name: 'Hillary', age: 30 }, { name: 'Barak', age: 25 }, { name: 'Donald', age: 27 }];
         const other = [{ name: 'George', age: 21 }, { name: 'Hillary', age: 30 }, { name: 'Barak', age: 24 }, { name: 'John', age: 29 }];
-        const differenceByNames = [{ name: 'Bill', age: 20 }, { name: 'Hillary', age: 30 }, { name: 'Barak', age: 25 }, { name: 'Donald', age: 27 }, { name: 'George', age: 21 }, { name: 'John', age: 29 }];
-        const differenceByNamesAndAges = [{ name: 'Bill', age: 20 }, { name: 'Hillary', age: 30 }, { name: 'Barak', age: 25 }, { name: 'Donald', age: 27 }, { name: 'George', age: 21 }, { name: 'Barak', age: 24 }, { name: 'John', age: 29 }];
+        const differenceByNames = [{ name: 'Bill', age: 20 }, { name: 'Donald', age: 27 }];
+        const differenceByNamesAndAges = [{ name: 'Bill', age: 20 }, { name: 'Barak', age: 25 }, { name: 'Donald', age: 27 }];
 
         expect(differenceWith(value, other, (l, r) => l.name === r.name)).toEqual(differenceByNames);
         expect(differenceWith(value, other, (l, r) => l.name === r.name && l.age === r.age)).toEqual(differenceByNamesAndAges);
