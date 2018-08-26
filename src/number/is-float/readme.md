@@ -1,6 +1,6 @@
-# isFloat(number)
+# isFloat(value): Boolean
 
-Checks if the given number is float.
+Checks if the given value is a float number.
 
 ## Usage
 

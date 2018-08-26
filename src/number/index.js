@@ -5,10 +5,10 @@ import equals from './equals';
 // import fixed from './fixed';
 // import floor from './floor';
 // import format from './format';
-// import isEven from './is-even';
-// import isFloat from './is-float';
-// import isInteger from './is-integer';
-// import isOdd from './is-odd';
+import isEven from './is-even';
+import isFloat from './is-float';
+import isInteger from './is-integer';
+import isOdd from './is-odd';
 // import log from './log';
 // import round from './round';
 // import sign from './sign';
@@ -21,10 +21,10 @@ export { equals };
 // export { fixed };
 // export { floor };
 // export { format };
-// export { isEven };
-// export { isFloat };
-// export { isInteger };
-// export { isOdd };
+export { isEven };
+export { isFloat };
+export { isInteger };
+export { isOdd };
 // export { log };
 // export { round };
 // export { sign };
@@ -34,14 +34,14 @@ export default {
     // abbreviate,
     // ceil,
     // clamp,
-    equals// ,
+    equals,
     // fixed,
     // floor,
     // format,
-    // isEven,
-    // isFloat,
-    // isInteger,
-    // isOdd,
+    isEven,
+    isFloat,
+    isInteger,
+    isOdd// ,
     // log,
     // round,
     // sign,

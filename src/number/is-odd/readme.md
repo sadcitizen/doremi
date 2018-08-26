@@ -1,6 +1,6 @@
-# isOdd(number): Boolean
+# isOdd(value): Boolean
 
-Checks if the given number is odd.
+Checks if the given value is an odd number.
 
 ## Usage
 

@@ -1,6 +1,6 @@
-# isEven(number): Boolean
+# isEven(value): Boolean
 
-Checks if the given number is even.
+Checks if the given value is an even number.
 
 ## Usage
 

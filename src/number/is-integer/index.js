@@ -1,15 +1,16 @@
 import isNumber from '../../common/is-number';
 
 /**
- * @param {number} target
- * @returns {boolean}
+ * Checks if the given value is an integer number.
  *
- * Number.isInteger
+ * @category number
+ * @param {number} value The value to check.
+ * @returns {boolean} Returns `true` if the value is integer number, else `false`.
  */
-export default function (target) {
-    if (!isNumber(target)) {
+export default function (value) {
+    if (!isNumber(value)) {
         throw new Error('A number is expected');
     }
 
-    return target % 1 === 0;
+    return Number.isFinite(value) && value % 1 === 0;
 }

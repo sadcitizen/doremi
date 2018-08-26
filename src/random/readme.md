@@ -6,4 +6,4 @@
 - [`float`](./float)
 - [`guid`](./guid)
 - [`hex`](./hex)
-- [`int`](./int)
+- [`integer`](./integer)

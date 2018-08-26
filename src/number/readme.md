@@ -8,7 +8,7 @@
 - [`floor`](./floor)
 - [`is-even`](./is-even)
 - [`is-float`](./is-float)
-- [`is-int`](./is-int)
+- [`is-integer`](./is-integer)
 - [`is-number`](./is-number)
 - [`is-odd`](./is-odd)
 - [`log`](./log)

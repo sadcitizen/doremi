@@ -1,4 +1,4 @@
-# isInteger(number)
+# isInteger(value): Boolean
 
 Checks if the given number is integer.
 

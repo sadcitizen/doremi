@@ -2,14 +2,14 @@ import number, {
     // abbreviate,
     // ceil,
     // clamp,
-    equals// ,
+    equals,
     // fixed,
     // floor,
     // format,
-    // isEven,
-    // isFloat,
-    // isInteger,
-    // isOdd,
+    isEven,
+    isFloat,
+    isInteger,
+    isOdd// ,
     // log,
     // round,
     // sign,
@@ -29,10 +29,10 @@ describe('doremi/number', () => {
         // expect(number).toHaveProperty('fixed', fixed);
         // expect(number).toHaveProperty('floor', floor);
         // expect(number).toHaveProperty('format', format);
-        // expect(number).toHaveProperty('isEven', isEven);
-        // expect(number).toHaveProperty('isFloat', isFloat);
-        // expect(number).toHaveProperty('isInteger', isInteger);
-        // expect(number).toHaveProperty('isOdd', isOdd);
+        expect(number).toHaveProperty('isEven', isEven);
+        expect(number).toHaveProperty('isFloat', isFloat);
+        expect(number).toHaveProperty('isInteger', isInteger);
+        expect(number).toHaveProperty('isOdd', isOdd);
         // expect(number).toHaveProperty('log', log);
         // expect(number).toHaveProperty('round', round);
         // expect(number).toHaveProperty('sign', sign);

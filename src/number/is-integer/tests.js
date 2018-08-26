@@ -19,9 +19,12 @@ describe('number/isInteger()', () => {
         expect(isInteger(-Infinity)).toBe(false);
     });
 
-    test('throws an error if value is not numeric or is nan', () => {
+    test('returns false if value is NaN', () => {
+        expect(isInteger(NaN)).toBe(false);
+    });
+
+    test('throws an error if value is not numeric', () => {
         expect(() => isInteger(null)).toThrow('A number is expected');
-        expect(() => isInteger(NaN)).toThrow('A number is expected');
         expect(() => isInteger(true)).toThrow('A number is expected');
         expect(() => isInteger('')).toThrow('A number is expected');
         expect(() => isInteger([])).toThrow('A number is expected');

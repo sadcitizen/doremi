@@ -4,7 +4,7 @@ import date from './date';
 import float from './float';
 import guid from './guid';
 import hex from './hex';
-import int from './int';
+import integer from './integer';
 
 export { boolean };
 export { choice };
@@ -12,7 +12,7 @@ export { date };
 export { float };
 export { guid };
 export { hex };
-export { int };
+export { integer };
 
 export default {
     boolean,
@@ -21,5 +21,5 @@ export default {
     float,
     guid,
     hex,
-    int
+    integer
 };
