@@ -1,4 +1,4 @@
-# isOdd(number)
+# isOdd(number): Boolean
 
 Checks if the given number is odd.
 
