@@ -1,4 +1,4 @@
-# isEven(number)
+# isEven(number): Boolean
 
 Checks if the given number is even.
 

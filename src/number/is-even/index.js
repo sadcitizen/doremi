@@ -1,17 +1,10 @@
-import isNumber from '../../common/is-number';
+import isInteger from '../is-integer';
 
 /**
- * @param {number} target
- * @returns {boolean}
+ * Checks if the given number is even.
+ *
+ * @category number
+ * @param {number} value The value to check.
+ * @returns {boolean} Returns `true` if the value is even, else `false`.
  */
-export default function (target) {
-    if (!isNumber(target)) {
-        throw new Error('A number is expected');
-    }
-
-    if (target !== Math.floor(target)) {
-        throw new Error('An integer is expected');
-    }
-
-    return target % 2 === 0;
-}
+export default value => isInteger(value) && value % 2 === 0;
