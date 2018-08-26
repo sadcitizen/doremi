@@ -1,4 +1,5 @@
 import common, {
+    isBoolean,
     isDate,
     isDefined,
     isFunction,
@@ -13,6 +14,7 @@ describe('doremi/common', () => {
     });
 
     test('doremi/common has correct properties', () => {
+        expect(common).toHaveProperty('isBoolean', isBoolean);
         expect(common).toHaveProperty('isDate', isDate);
         expect(common).toHaveProperty('isDefined', isDefined);
         expect(common).toHaveProperty('isFunction', isFunction);
