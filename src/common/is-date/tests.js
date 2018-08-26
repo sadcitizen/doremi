@@ -1,9 +1,10 @@
 import { VOID_0 } from '../../internal/constants';
 import isDate from '.';
 
-describe('date/isDate()', () => {
+describe('common/isDate()', () => {
     test('returns true if the value is a date', () => {
         expect(isDate(new Date())).toBe(true);
+        expect(isDate(Date.now())).toBe(true);
         expect(isDate(new Date('Date'))).toBe(true);
         expect(isDate(new Date(2014, 11, 1))).toBe(true);
     });

@@ -1,7 +1,7 @@
 import { VOID_0 } from '../../internal/constants';
 import isString from '.';
 
-describe('string/isString()', () => {
+describe('common/isString()', () => {
     test('returns false if the value is a string', () => {
         expect(isString('')).toBe(true);
         expect(isString(String(42))).toBe(true);

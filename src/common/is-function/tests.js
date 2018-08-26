@@ -1,7 +1,7 @@
 import { VOID_0 } from '../../internal/constants';
 import isFunction from '.';
 
-describe('func/isFunction()', () => {
+describe('common/isFunction()', () => {
     test('returns true if the value is a function', () => {
         const noop = () => {};
 

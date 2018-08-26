@@ -1,7 +1,7 @@
 import { VOID_0 } from '../../internal/constants';
 import isNumber from '.';
 
-describe('number/isNumber()', () => {
+describe('common/isNumber()', () => {
     test('returns false if the value is an number', () => {
         expect(isNumber(42)).toBe(true);
         expect(isNumber(Number('42'))).toBe(true);
