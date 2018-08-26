@@ -1,7 +1,10 @@
 import { HEX_LETTERS, DIGITS } from '../../internal/constants';
-import int from '../int';
+import integer from '../integer';
 
 /**
+ * Generates a pseudo-random hexadecimal number as string.
+ *
+ * @category random
  * @param {number} length
  * @return {string}
  */
@@ -13,7 +16,7 @@ export default function (length) {
     let count = length && length > 0 ? length : 1;
 
     while (count > 0) {
-        result += letters[int(0, size - 1)];
+        result += letters[integer(0, size - 1)];
         count -= 1;
     }
 

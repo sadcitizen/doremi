@@ -1,4 +1,4 @@
-# date(before, after)
+# date(before, after): Date
 
 Generates a pseudo-random date.
 

@@ -1,4 +1,4 @@
-# choice(list)
+# choice(...array): *
 
 Returns the pseudo-random element of array.
 

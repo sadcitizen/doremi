@@ -1,4 +1,4 @@
-# guid()
+# guid(): String
 
 Generates a pseudo-random Globally Unique Identifier (v4).
 

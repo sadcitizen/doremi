@@ -4,9 +4,12 @@ import { MIN_INT, MAX_INT } from '../../internal/constants';
 const { floor, random } = Math;
 
 /**
+ * Generates a pseudo-random integer number.
+ *
+ * @category random
  * @param {number} min
  * @param {number} max
- * @return {number}
+ * @return {number} Returns a pseudo-random integer number.
  */
 export default function (min, max) {
     const minValue = isDefined(min) ? min : MIN_INT;

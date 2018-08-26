@@ -1,11 +1,14 @@
 import isDefined from '../../common/is-defined';
 import isValid from '../../date/is-valid';
-import int from '../int';
+import integer from '../integer';
 
 /**
+ * Generates a pseudo-random date.
+ *
+ * @category random
  * @param {Date} before
  * @param {Date} after
- * @return {Date}
+ * @return {Date} Returns a pseudo-random date.
  */
 export default (before, after) => {
     if (!isDefined(before) || !isValid(before)) {
@@ -23,5 +26,5 @@ export default (before, after) => {
         throw new Error('Minimum value cannot be greater than maximum value.');
     }
 
-    return new Date(int(min, max));
+    return new Date(integer(min, max));
 };

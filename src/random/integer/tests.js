@@ -1,13 +1,13 @@
 import isInteger from '../../number/is-integer';
-import randomInteger from '.';
+import integer from '.';
 
-describe('random/int()', () => {
+describe('random/integer()', () => {
     let num;
     let range;
 
     beforeAll(() => {
-        num = randomInteger();
-        range = randomInteger(0, 1000);
+        num = integer();
+        range = integer(0, 1000);
     });
 
     test('returns an integer', () => {

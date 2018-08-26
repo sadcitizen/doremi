@@ -1,14 +1,15 @@
 import flatten from '../../array/flatten';
-import int from '../int';
+import integer from '../integer';
 
 /**
+ * Returns the pseudo-random element of array.
+ *
+ * @category random
  * @param {...Array} args
  * @returns {*}
- *
- * @immutable
  */
 export default function (...args) {
     const variants = flatten(args);
 
-    return variants[int(0, variants.length - 1)];
+    return variants[integer(0, variants.length - 1)];
 }

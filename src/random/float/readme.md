@@ -1,4 +1,4 @@
-# float(min, max, precision)
+# float(min, max, precision): Number
 
 Generates a pseudo-random float number.
 

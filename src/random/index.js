@@ -1,4 +1,4 @@
-import bool from './bool';
+import boolean from './boolean';
 import choice from './choice';
 import date from './date';
 import float from './float';
@@ -6,7 +6,7 @@ import guid from './guid';
 import hex from './hex';
 import int from './int';
 
-export { bool };
+export { boolean };
 export { choice };
 export { date };
 export { float };
@@ -15,7 +15,7 @@ export { hex };
 export { int };
 
 export default {
-    bool,
+    boolean,
     choice,
     date,
     float,

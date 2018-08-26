@@ -4,10 +4,13 @@ import { MIN_INT, MAX_INT } from '../../internal/constants';
 const { floor, random } = Math;
 
 /**
+ * Generates a pseudo-random float number.
+ *
+ * @category random
  * @param {number} [min]
  * @param {number} [max]
  * @param {number} [precision]
- * @return {number}
+ * @return {number} Returns a pseudo-random float number.
  */
 export default function (min, max, precision = 5) {
     const frac = random();

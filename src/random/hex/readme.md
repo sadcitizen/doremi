@@ -1,4 +1,4 @@
-# hex(length)
+# hex(length): String
 
 Generates a pseudo-random hexadecimal number as string.
 
