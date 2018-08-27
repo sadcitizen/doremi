@@ -18,7 +18,7 @@ import padLeft from './_pad-left';
 import padRight from './_pad-right';
 import remove from './_remove';
 import repeat from './_repeat';
-import reverse from './_reverse';
+import reverse from './reverse';
 import swap from './_swap';
 import template from './_template';
 import trim from './_trim';

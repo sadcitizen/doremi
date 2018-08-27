@@ -1,6 +1,6 @@
 import reverse from '.';
 
-describe('string/_reverse()', () => {
+describe('string/reverse()', () => {
     test('reverses a substring', () => {
         expect(reverse('Hello, World!')).toBe('!dlroW ,olleH');
         expect(reverse('')).toBe('');
