@@ -1,6 +1,7 @@
 import array, {
     at,
-    compact
+    compact,
+    isEmpty
 } from '.';
 
 describe('doremi/array', () => {
@@ -11,5 +12,6 @@ describe('doremi/array', () => {
     test('doremi/array has correct properties', () => {
         expect(array).toHaveProperty('at', at);
         expect(array).toHaveProperty('compact', compact);
+        expect(array).toHaveProperty('isEmpty', isEmpty);
     });
 });

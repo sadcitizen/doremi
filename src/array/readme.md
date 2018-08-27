@@ -2,6 +2,7 @@
 
 - [`at`](./at)
 - [`compact`](./compact)
+- [`is-empty`](./is-empty)
 
 ### todo
 
@@ -24,7 +25,6 @@
 - [`uniqueWith`](./unique-with)
 - [`append`](./append)
 - [`differenceWith`](./difference-with)
-- [`is-empty`](./is-empty)
 - [`pluck`](./pluck)
 - [`prepend`](./prepend)
 - [`remove`](./remove)
