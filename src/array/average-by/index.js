@@ -3,7 +3,7 @@ import sum from '../sum-by';
 
 /**
  * @param {Array} array
- * @param {Function} iteratee
+ * @param {Function} [iteratee] The iteratee invoked per element.
  * @returns {number}
  */
 export default (array, iteratee = identity) => sum(array, iteratee) / array.length;

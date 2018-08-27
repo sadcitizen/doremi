@@ -3,10 +3,10 @@ import includesWith from '../includes-with';
 import partial from '../../func/partial';
 
 /**
- * @param {Array} array
- * @param {Array} other
- * @param {Function} [comparator]
- * @returns {*[]}
+ * @param {Array} array The first array to inspect.
+ * @param {Array} other The second array to inspect.
+ * @param {Function} [comparator] The comparator invoked per element.
+ * @returns {*[]} Returns the new array of intersecting elements.
  */
 export default function (array, other, comparator = equals) {
     const result = [];

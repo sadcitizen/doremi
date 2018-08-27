@@ -3,7 +3,7 @@ import ternary from '../../logic/ternary';
 
 /**
  * @param {Array} target
- * @param {Function} [iteratee]
+ * @param {Function} [iteratee] The iteratee invoked per element.
  * @return {Array}
  */
 export default function (target, iteratee = identity) {

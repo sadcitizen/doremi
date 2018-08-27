@@ -1,6 +1,6 @@
 /**
  * @param {Array} array
- * @param {Function} [iteratee]
+ * @param {Function} [iteratee] The iteratee invoked per element.
  * @return {*}
  */
 export default function (array, iteratee) {

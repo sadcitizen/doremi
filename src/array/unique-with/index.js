@@ -4,7 +4,7 @@ import includesWith from '../includes-with';
 
 /**
  * @param {Array} array
- * @param {Function} [comparator]
+ * @param {Function} [comparator] The comparator invoked per element.
  * @returns {Array}
  */
 export default function (array, comparator = equals) {
