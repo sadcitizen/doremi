@@ -1,5 +1,5 @@
 import fixed from '../fixed';
-import chopRight from '../../string/chop-right';
+import chopRight from '../../string/_chop-right';
 
 const defaultOptions = {
     decimalSeparator: '.',

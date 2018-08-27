@@ -11,7 +11,7 @@ import append from '../append';
  *
  * @example
  * const target = [1, 2, 3, 4, 5, 6];
- * const evens = remove(target, x => x % 2 === 0);
+ * const evens = _remove(target, x => x % 2 === 0);
  *
  * console.log(target);
  * // => [1, 3, 5]

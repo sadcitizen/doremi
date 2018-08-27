@@ -2,7 +2,7 @@ import { es6 } from '../../internal/regexes/template';
 import isObject from '../../common/is-object';
 import isString from '../../common/is-string';
 import getValue from '../get-value';
-import trim from '../../string/trim';
+import trim from '../../string/_trim';
 
 /**
  * Replaces tokens from `target` on corresponding values from `source`.
@@ -17,7 +17,7 @@ import trim from '../../string/trim';
  * var target = {a: '${a}', b: '${c}', c: '${b}'},
  *     source = {a: 1, b: 5, c: 3};
  *
- * template(target, source);
+ * _template(target, source);
  * // => {a: 1, b: 3, c: 5}
  */
 function template(target, source, syntax = es6) {

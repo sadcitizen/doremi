@@ -1,6 +1,6 @@
 import repeat from '.';
 
-describe('func/repeat()', () => {
+describe('func/_repeat()', () => {
     test('invokes a given amount of times, passes the index as argument', () => {
         const fn = jest.fn();
 
