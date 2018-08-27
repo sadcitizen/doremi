@@ -1,6 +1,6 @@
-# clamp(value, min, max)
+# clamp(value, min, max): Number
 
-Returns number clamped within bounds.
+Clamps the given number within bounds.
 
 ## Usage
 

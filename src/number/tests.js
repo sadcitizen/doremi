@@ -1,7 +1,7 @@
 import number, {
     // abbreviate,
     // ceil,
-    // clamp,
+    clamp,
     equals,
     // fixed,
     // floor,
@@ -24,7 +24,7 @@ describe('doremi/number', () => {
     test('doremi/number has correct properties', () => {
         // expect(number).toHaveProperty('abbreviate', abbreviate);
         // expect(number).toHaveProperty('ceil', ceil);
-        // expect(number).toHaveProperty('clamp', clamp);
+        expect(number).toHaveProperty('clamp', clamp);
         expect(number).toHaveProperty('equals', equals);
         // expect(number).toHaveProperty('fixed', fixed);
         // expect(number).toHaveProperty('floor', floor);

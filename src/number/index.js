@@ -1,6 +1,6 @@
 // import abbreviate from './abbreviate';
 // import ceil from './ceil';
-// import clamp from './clamp';
+import clamp from './clamp';
 import equals from './equals';
 // import fixed from './fixed';
 // import floor from './floor';
@@ -16,7 +16,7 @@ import isOdd from './is-odd';
 
 // export { abbreviate };
 // export { ceil };
-// export { clamp };
+export { clamp };
 export { equals };
 // export { fixed };
 // export { floor };
@@ -33,7 +33,7 @@ export { isOdd };
 export default {
     // abbreviate,
     // ceil,
-    // clamp,
+    clamp,
     equals,
     // fixed,
     // floor,
