@@ -2,6 +2,7 @@
 
 - [`at`](./at)
 - [`compact`](./compact)
+- [`equals`](./equals)
 - [`is-empty`](./is-empty)
 
 ### todo
@@ -9,7 +10,6 @@
 - [`averageBy`](./average-by)
 - [`chunk`](./chunk)
 - [`countBy`](./count-by)
-- [`equals`](./equals)
 - [`first`](./first)
 - [`flatten`](./flatten)
 - [`groupBy`](./group-by)

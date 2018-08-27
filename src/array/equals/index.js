@@ -1,10 +1,13 @@
 const defaultComparator = (value, other) => value === other;
 
 /**
- * @param {Array} array
- * @param {Array} other
- * @param {Function} [comparator]
- * @return {Boolean}
+ * Checks if the arrays contain the same elements.
+ *
+ * @category array
+ * @param {Array} array The array to compare.
+ * @param {Array} other The other array to compare.
+ * @param {Function} [comparator] The comparator invoked per element.
+ * @return {Boolean} Returns `true` if the arrays contain the same elements, else `false`.
  */
 export default function (array, other, comparator = defaultComparator) {
     if (array.length !== other.length) {
