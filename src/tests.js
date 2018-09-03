@@ -1,5 +1,6 @@
 import doremi, {
     array,
+    common,
     date,
     func,
     logic,
@@ -17,6 +18,7 @@ describe('doremi', () => {
 
     test('doremi has correct properties', () => {
         expect(doremi).toHaveProperty('array', array);
+        expect(doremi).toHaveProperty('common', common);
         expect(doremi).toHaveProperty('date', date);
         expect(doremi).toHaveProperty('func', func);
         expect(doremi).toHaveProperty('logic', logic);

@@ -1,4 +1,5 @@
 import array from './array';
+import common from './common';
 import date from './date';
 import func from './func';
 import logic from './logic';
@@ -9,6 +10,7 @@ import random from './random';
 import string from './string';
 
 export { array };
+export { common };
 export { date };
 export { func };
 export { logic };
@@ -20,6 +22,7 @@ export { string };
 
 export default {
     array,
+    common,
     date,
     func,
     logic,
