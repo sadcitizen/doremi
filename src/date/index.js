@@ -10,6 +10,7 @@ import isTomorrow from './is-tomorrow';
 import isValid from './is-valid';
 import isYesterday from './is-yesterday';
 import startOf from './start-of';
+import today from './today';
 
 export { add };
 export { clone };
@@ -23,6 +24,7 @@ export { isTomorrow };
 export { isValid };
 export { isYesterday };
 export { startOf };
+export { today };
 
 export default {
     add,
@@ -36,5 +38,6 @@ export default {
     isTomorrow,
     isValid,
     isYesterday,
-    startOf
+    startOf,
+    today
 };

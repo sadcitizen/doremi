@@ -12,7 +12,8 @@ import date, {
     isTomorrow,
     isValid,
     isYesterday,
-    startOf
+    startOf,
+    today
 } from '.';
 
 describe('doremi/date', () => {
@@ -35,5 +36,6 @@ describe('doremi/date', () => {
         expect(date).toHaveProperty('isValid', isValid);
         expect(date).toHaveProperty('isYesterday', isYesterday);
         expect(date).toHaveProperty('startOf', startOf);
+        expect(date).toHaveProperty('today', today);
     });
 });

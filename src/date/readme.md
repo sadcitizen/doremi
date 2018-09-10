@@ -9,3 +9,4 @@
 - [`isPast`](./is-past)
 - [`isValid`](./is-valid)
 - [`startOf`](./start-of)
+- [`today`](./today)
