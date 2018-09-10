@@ -1,5 +1,6 @@
-import add from '../add';
+import units from '../../constants/time-units';
 import startOf from '../start-of';
+import yesterday from '../yesterday';
 
 /**
  * Checks if the given date is today.
@@ -9,7 +10,5 @@ import startOf from '../start-of';
  * @returns {boolean}
  */
 export default function (value) {
-    const yesterday = add(new Date(), -1, 'D');
-
-    return startOf(value, 'D').getTime() === startOf(yesterday, 'D').getTime();
+    return startOf(value, units.day).getTime() === yesterday().getTime();
 }

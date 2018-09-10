@@ -1,4 +1,5 @@
-import add from '../add';
+import units from '../../constants/time-units';
+import tomorrow from '../tomorrow';
 import startOf from '../start-of';
 
 /**
@@ -9,7 +10,5 @@ import startOf from '../start-of';
  * @returns {boolean}
  */
 export default function (value) {
-    const tomorrow = add(new Date(), 1, 'D');
-
-    return startOf(value, 'D').getTime() === startOf(tomorrow, 'D').getTime();
+    return startOf(value, units.day).getTime() === tomorrow().getTime();
 }

@@ -1,4 +1,6 @@
+import units from '../../constants/time-units';
 import startOf from '../start-of';
+import today from '../today';
 
 /**
  * Checks if the given date is today.
@@ -8,5 +10,5 @@ import startOf from '../start-of';
  * @returns {boolean}
  */
 export default function (value) {
-    return startOf(value, 'D').getTime() === startOf(new Date(), 'D').getTime();
+    return startOf(value, units.day).getTime() === today().getTime();
 }
