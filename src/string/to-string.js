@@ -1,3 +1,4 @@
+/* eslint-disable */
 const values = [
     true,
     false,
@@ -32,3 +33,4 @@ const strings = values.map(value => ({
 }));
 
 console.table(strings);
+/* eslint-enable */

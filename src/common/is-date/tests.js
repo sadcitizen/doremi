@@ -1,4 +1,4 @@
-import { VOID_0 } from '../../internal/constants';
+import VOID_0 from '../../constants/void-0';
 import isDate from '.';
 
 describe('common/isDate()', () => {

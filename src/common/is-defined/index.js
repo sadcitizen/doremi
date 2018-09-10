@@ -1,4 +1,4 @@
-import { UNDEF } from '../../internal/constants';
+import UNDEF from '../../constants/undefined';
 
 /**
  * Checks if the given value is 'null' or `undefined`.

@@ -5,7 +5,7 @@ Checks if the given value is a function.
 ## Usage
 
 ```js
-import isFunction from 'doremi/func/is-function';
+import isFunction from 'doremi/common/is-function';
 
 isFunction(null);
 // => false

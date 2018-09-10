@@ -5,7 +5,7 @@ Checks if the given value is a number (including `NaN`).
 ## Usage
 
 ```js
-import isNumber from 'doremi/number/is-number';
+import isNumber from 'doremi/common/is-number';
 
 isNumber(false);
 // => false

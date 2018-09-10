@@ -1,4 +1,4 @@
-import { UNDEF } from '../../internal/constants';
+import UNDEF from '../../constants/undefined';
 import isDefined from '.';
 
 describe('common/isDefined()', () => {
