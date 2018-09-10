@@ -1,6 +1,6 @@
 # isYesterday(date): Boolean
 
-Checks if a date is yesterday.
+Checks if the given date is yesterday.
 
 ## Usage
 

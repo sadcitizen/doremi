@@ -1,6 +1,6 @@
 # isTomorrow(date): Boolean
 
-Checks if a date is tomorrow.
+Checks if the given date is tomorrow.
 
 ## Usage
 

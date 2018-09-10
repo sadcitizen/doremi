@@ -8,10 +8,10 @@ import date, {
     isFuture,
     // isLeapYear,
     isPast,
-    // isToday,
-    // isTomorrow,
+    isToday,
+    isTomorrow,
     isValid,
-    // isYesterday,
+    isYesterday,
     startOf
 } from '.';
 
@@ -30,10 +30,10 @@ describe('doremi/date', () => {
         expect(date).toHaveProperty('isFuture', isFuture);
         // expect(date).toHaveProperty('isLeapYear', isLeapYear);
         expect(date).toHaveProperty('isPast', isPast);
-        // expect(date).toHaveProperty('isToday', isToday);
-        // expect(date).toHaveProperty('isTomorrow', isTomorrow);
+        expect(date).toHaveProperty('isToday', isToday);
+        expect(date).toHaveProperty('isTomorrow', isTomorrow);
         expect(date).toHaveProperty('isValid', isValid);
-        // expect(date).toHaveProperty('isYesterday', isYesterday);
+        expect(date).toHaveProperty('isYesterday', isYesterday);
         expect(date).toHaveProperty('startOf', startOf);
     });
 });

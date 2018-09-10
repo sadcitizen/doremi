@@ -1,6 +1,6 @@
 # isToday(date): Boolean
 
-Checks if a date is today.
+Checks if the given date is today.
 
 ## Usage
 

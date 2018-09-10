@@ -2,7 +2,10 @@ import add from '../add';
 import startOf from '../start-of';
 
 /**
- * @param {Date} value
+ * Checks if the given date is tomorrow.
+ *
+ * @category date
+ * @param {Date} value The value to check.
  * @returns {boolean}
  */
 export default function (value) {
