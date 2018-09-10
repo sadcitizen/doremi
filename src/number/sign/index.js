@@ -1,6 +1,9 @@
 import ternary from '../../logic/ternary';
 
 /**
+ * Returns sign of the given number.
+ *
+ * @category number
  * @param {number} value
  * @returns {number}
  */

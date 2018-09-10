@@ -1,6 +1,6 @@
-# ternary(condition, truthy, falsy)
+# ternary(condition, truthy, falsy): *
 
-Returns falsy value if all conditions are false, truthy otherwise.
+Returns falsy value if condition is false, truthy otherwise.
 
 ## Usage
 

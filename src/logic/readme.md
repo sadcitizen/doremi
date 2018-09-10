@@ -1,3 +1,5 @@
 # logic
 
+- [`ternary`](./ternary)
+
 

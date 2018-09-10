@@ -1,3 +1,4 @@
+import { INVALID_DATES } from '../../constants/errors';
 import compare from '.';
 
 describe('date/compare()', () => {
@@ -23,6 +24,6 @@ describe('date/compare()', () => {
     });
 
     test('throws an error if dates are invalid', () => {
-        expect(() => compare(new Date('Invalid date'), new Date('Invalid date'))).toThrow('Arguments must be a valid dates');
+        expect(() => compare(new Date('Invalid date'), new Date('Invalid date'))).toThrow(INVALID_DATES);
     });
 });
