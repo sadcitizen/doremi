@@ -1,6 +1,6 @@
 # isFuture(date): Boolean
 
-Checks if a date is future.
+Checks if the given date is future.
 
 ## Usage
 

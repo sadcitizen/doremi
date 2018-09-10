@@ -5,9 +5,9 @@ import date, {
     // endOf,
     // equals,
     // format,
-    // isFuture,
+    isFuture,
     // isLeapYear,
-    // isPast,
+    isPast,
     // isToday,
     // isTomorrow,
     isValid// ,
@@ -27,9 +27,9 @@ describe('doremi/date', () => {
         // expect(date).toHaveProperty('endOf', endOf);
         // expect(date).toHaveProperty('equals', equals);
         // expect(date).toHaveProperty('format', format);
-        // expect(date).toHaveProperty('isFuture', isFuture);
+        expect(date).toHaveProperty('isFuture', isFuture);
         // expect(date).toHaveProperty('isLeapYear', isLeapYear);
-        // expect(date).toHaveProperty('isPast', isPast);
+        expect(date).toHaveProperty('isPast', isPast);
         // expect(date).toHaveProperty('isToday', isToday);
         // expect(date).toHaveProperty('isTomorrow', isTomorrow);
         expect(date).toHaveProperty('isValid', isValid);

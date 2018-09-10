@@ -1,4 +1,6 @@
 # date
 
 - [`clone`](./clone)
-- [`is-valid`](./is-valid)
+- [`isFuture`](./is-future)
+- [`isPast`](./is-past)
+- [`isValid`](./is-valid)

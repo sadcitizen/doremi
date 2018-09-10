@@ -1,6 +1,6 @@
 # isPast(date): Boolean
 
-Checks if a date is past.
+Checks if the given date is past.
 
 ## Usage
 

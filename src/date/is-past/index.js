@@ -1,7 +1,9 @@
 import isValid from '../is-valid';
 
 /**
- * @param {Date} value
+ * Checks if the given date is past.
+ *
+ * @param {Date} value The value to check.
  * @returns {boolean}
  */
 export default function (value) {

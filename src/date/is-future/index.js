@@ -1,7 +1,10 @@
 import isValid from '../is-valid';
 
 /**
- * @param {Date} value
+ * Checks if the given date is future.
+ *
+ * @category date
+ * @param {Date} value The value to check.
  * @returns {boolean}
  */
 export default function (value) {
