@@ -1,3 +1,4 @@
+import { INVALID_DATE, INVALID_TIME_UNIT } from '../../constants/errors';
 import startOf from '.';
 
 describe('date/startOf()', () => {
@@ -38,10 +39,10 @@ describe('date/startOf()', () => {
     });
 
     test('throws exception if date is invalid', () => {
-        expect(() => startOf(new Date('Invalid date'), 'M')).toThrow('A valid date is expected');
+        expect(() => startOf(new Date('Invalid date'), 'M')).toThrow(INVALID_DATE);
     });
 
     test('throws exception if time unit is invalid', () => {
-        expect(() => startOf(date, 'quarter')).toThrow('"quarter" is invalid time unit');
+        expect(() => startOf(date, 'quarter')).toThrow(INVALID_TIME_UNIT);
     });
 });

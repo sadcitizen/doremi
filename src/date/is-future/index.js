@@ -1,4 +1,5 @@
 import isValid from '../is-valid';
+import { INVALID_DATE } from '../../constants/errors';
 
 /**
  * Checks if the given date is future.
@@ -9,7 +10,7 @@ import isValid from '../is-valid';
  */
 export default function (value) {
     if (!isValid(value)) {
-        throw new Error('The value must be a valid date');
+        throw new Error(INVALID_DATE);
     }
 
     const now = new Date();

@@ -1,4 +1,5 @@
 import mockDate from 'mockdate';
+import { INVALID_DATE } from '../../constants/errors';
 import isPast from '.';
 
 describe('date/isPast()', () => {
@@ -25,6 +26,6 @@ describe('date/isPast()', () => {
     test('throws the error if value is invalid', () => {
         const invalidDate = new Date('Invalid date');
 
-        expect(() => isPast(invalidDate)).toThrow('A valid date is expected');
+        expect(() => isPast(invalidDate)).toThrow(INVALID_DATE);
     });
 });

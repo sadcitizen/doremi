@@ -1,8 +1,8 @@
 import date, {
-    // add,
+    add,
     clone,
     // compare,
-    // endOf,
+    endOf,
     // equals,
     // format,
     isFuture,
@@ -10,9 +10,9 @@ import date, {
     isPast,
     // isToday,
     // isTomorrow,
-    isValid// ,
+    isValid,
     // isYesterday,
-    // startOf
+    startOf
 } from '.';
 
 describe('doremi/date', () => {
@@ -21,10 +21,10 @@ describe('doremi/date', () => {
     });
 
     test('doremi/date has correct properties', () => {
-        // expect(date).toHaveProperty('add', add);
+        expect(date).toHaveProperty('add', add);
         expect(date).toHaveProperty('clone', clone);
         // expect(date).toHaveProperty('compare', compare);
-        // expect(date).toHaveProperty('endOf', endOf);
+        expect(date).toHaveProperty('endOf', endOf);
         // expect(date).toHaveProperty('equals', equals);
         // expect(date).toHaveProperty('format', format);
         expect(date).toHaveProperty('isFuture', isFuture);
@@ -34,6 +34,6 @@ describe('doremi/date', () => {
         // expect(date).toHaveProperty('isTomorrow', isTomorrow);
         expect(date).toHaveProperty('isValid', isValid);
         // expect(date).toHaveProperty('isYesterday', isYesterday);
-        // expect(date).toHaveProperty('startOf', startOf);
+        expect(date).toHaveProperty('startOf', startOf);
     });
 });

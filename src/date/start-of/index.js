@@ -1,4 +1,5 @@
-import normalize from '../../internal/normalize-time-unit';
+import units from '../../constants/time-units';
+import { INVALID_DATE, INVALID_TIME_UNIT } from '../../constants/errors';
 import clone from '../clone';
 import isValid from '../is-valid';
 
@@ -41,19 +42,23 @@ function year(value) {
 const handlers = { year, month, day, hour, minute, second };
 
 /**
- * @param {Date} value The date to modify.
+ * Creates a new date at the start of time period.
+ *
+ * @category date
+ * @param {Date} value The original date.
  * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s')} unit The time unit.
- * @returns {Date} The mutated date.
+ * @returns {Date} The new date.
  */
 export default function (value, unit) {
     if (!isValid(value)) {
-        throw new Error('A valid date is expected');
+        throw new Error(INVALID_DATE);
     }
 
-    const handler = handlers[normalize(unit)];
+    const handler = handlers[units[unit]];
 
     if (handler) {
         return handler(clone(value));
     }
-    throw new Error(`"${unit}" is invalid time unit`);
+
+    throw new Error(INVALID_TIME_UNIT);
 }

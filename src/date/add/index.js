@@ -1,5 +1,6 @@
+import units from '../../constants/time-units';
+import { INVALID_DATE, INVALID_TIME_UNIT } from '../../constants/errors';
 import isValid from '../is-valid';
-import normalize from '../../internal/normalize-time-unit';
 import clone from '../clone';
 
 function year(value, num) {
@@ -58,20 +59,24 @@ function millisecond(value, num) {
 const handlers = { year, month, day, hour, minute, second, millisecond };
 
 /**
- * @param {Date} value
+ * Adds time units to the given date.
+ *
+ * @category date
+ * @param {Date} value The original date.
  * @param {number} num
  * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit
- * @returns {Date}
+ * @returns {Date} The new date.
  */
 export default function (value, num, unit) {
     if (!isValid(value)) {
-        throw new Error('A valid date is expected');
+        throw new Error(INVALID_DATE);
     }
 
-    const handler = handlers[normalize(unit)];
+    const handler = handlers[units[unit]];
 
     if (handler) {
         return handler(clone(value), num);
     }
-    throw new Error(`"${unit}" is invalid time unit`);
+
+    throw new Error(INVALID_TIME_UNIT);
 }

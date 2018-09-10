@@ -1,3 +1,4 @@
+import { INVALID_DATE, INVALID_TIME_UNIT } from '../../constants/errors';
 import add from '.';
 
 describe('date/add()', () => {
@@ -129,10 +130,10 @@ describe('date/add()', () => {
     });
 
     test('throws exception if date is invalid', () => {
-        expect(() => add(new Date('Invalid date'), 1, 'M')).toThrow('A valid date is expected');
+        expect(() => add(new Date('Invalid date'), 1, 'M')).toThrow(INVALID_DATE);
     });
 
     test('throws exception if time unit is invalid', () => {
-        expect(() => add(new Date(2015, 0, 1), 1, 'quarter')).toThrow('"quarter" is invalid time unit');
+        expect(() => add(new Date(2015, 0, 1), 1, 'quarter')).toThrow(INVALID_TIME_UNIT);
     });
 });

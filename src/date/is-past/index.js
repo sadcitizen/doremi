@@ -1,4 +1,5 @@
 import isValid from '../is-valid';
+import { INVALID_DATE } from '../../constants/errors';
 
 /**
  * Checks if the given date is past.
@@ -8,7 +9,7 @@ import isValid from '../is-valid';
  */
 export default function (value) {
     if (!isValid(value)) {
-        throw new Error('A valid date is expected');
+        throw new Error(INVALID_DATE);
     }
 
     const now = new Date();

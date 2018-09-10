@@ -1,6 +1,6 @@
 # add(value, num, unit): Date
 
-Adds time units to a date.
+Adds time units to the given date.
 
 ## Usage
 
