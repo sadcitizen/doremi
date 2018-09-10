@@ -1,6 +1,6 @@
 # clone(date): Date
 
-Returns a copy of the date.
+Returns a copy of the given date.
 
 ## Usage
 

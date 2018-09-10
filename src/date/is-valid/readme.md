@@ -1,6 +1,6 @@
 # isValid(date): Boolean
 
-Checks if the value is a valid date.
+Checks if the given value is a valid date.
 
 ## Usage
 
