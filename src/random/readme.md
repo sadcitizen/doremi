@@ -1,3 +1,3 @@
 # random
 
-
+- [`boolean`](./boolean)
