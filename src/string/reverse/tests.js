@@ -4,6 +4,9 @@ describe('string/reverse()', () => {
     test('reverses a substring', () => {
         expect(reverse('Hello, World!')).toBe('!dlroW ,olleH');
         expect(reverse('')).toBe('');
-        expect(reverse(12345)).toBe('54321');
+    });
+
+    test('throws type error if the given value is not a string', () => {
+        expect(() => reverse([1, 2, 3])).toThrow('Argument is not a string');
     });
 });

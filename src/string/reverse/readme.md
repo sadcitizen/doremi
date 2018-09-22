@@ -1,4 +1,4 @@
-# reverse(string): String
+# reverse(value): string
 
 Reverses a string.
 
@@ -10,6 +10,6 @@ import reverse from 'doremi/string/reverse';
 reverse('google');
 // => 'elgoog'
 
-reverse(12345);
+reverse('12345');
 // => '54321'
 ```
