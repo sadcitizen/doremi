@@ -19,7 +19,7 @@ describe('string/repeat()', () => {
     });
 
     test('throws type error if the first argument is not a string', () => {
-        const message = 'First argument must be a string';
+        const message = 'First argument is not a string';
 
         expect(() => repeat(0, 1)).toThrow(message);
         expect(() => repeat(VOID_0, 1)).toThrow(message);
@@ -27,14 +27,14 @@ describe('string/repeat()', () => {
     });
 
     test('throws type error if the second argument is not a number', () => {
-        const message = 'Second argument must be a number';
+        const message = 'Second argument is not a number';
 
         expect(() => repeat(' ', '1')).toThrow(message);
         expect(() => repeat('null', null)).toThrow(message);
     });
 
     test('throws range error if the second argument is a negative number', () => {
-        const message = 'Second argument must be a positive number or zero';
+        const message = 'Second argument is not a positive number or zero';
 
         expect(() => repeat(' ', -1)).toThrow(message);
         expect(() => repeat('null', -100)).toThrow(message);

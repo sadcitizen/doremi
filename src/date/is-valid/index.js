@@ -7,4 +7,10 @@ import isDate from '../../common/is-date';
  * @param {Date} value The value to check.
  * @returns {boolean} Returns `true` if the value is a valid date, else `false`.
  */
-export default value => isDate(value) && !isNaN(value.getTime());
+export default function (value) {
+    if (!isDate(value)) {
+        throw new TypeError('Argument must be a date');
+    }
+
+    return !isNaN(value.getTime());
+}

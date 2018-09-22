@@ -12,15 +12,15 @@ import isNumber from '../../common/is-number';
  */
 export default function (value, times = 1) {
     if (!isString(value)) {
-        throw new TypeError('First argument must be a string');
+        throw new TypeError('First argument is not a string');
     }
 
     if (!isNumber(times)) {
-        throw new TypeError('Second argument must be a number');
+        throw new TypeError('Second argument is not a number');
     }
 
     if (times < 0) {
-        throw new RangeError('Second argument must be a positive number or zero');
+        throw new RangeError('Second argument is not a positive number or zero');
     }
 
     let result = '';
