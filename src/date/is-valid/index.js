@@ -9,7 +9,7 @@ import isDate from '../../common/is-date';
  */
 export default function (value) {
     if (!isDate(value)) {
-        throw new TypeError('Argument must be a date');
+        throw new TypeError('Argument is not a date');
     }
 
     return !isNaN(value.getTime());

@@ -11,4 +11,8 @@ describe('date/isValid()', () => {
         expect(isValid(new Date('date'))).toBe(false);
         expect(isValid(new Date(/\s+/))).toBe(false);
     });
+
+    test('throws type error if argument is not a date', () => {
+        expect(() => isValid('new Date()')).toThrow('Argument is not a date');
+    });
 });
