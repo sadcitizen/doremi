@@ -3,8 +3,11 @@ import { INVALID_TIME_UNIT } from '../../constants/errors';
 import startOf from '../start-of';
 
 /**
- * @param {Date} value
- * @param {Date} other
+ * Checks if two date are equal.
+ *
+ * @category date.
+ * @param {Date} value The first date to compare.
+ * @param {Date} other The second date to compare.
  * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit
  * @returns {boolean}
  */
