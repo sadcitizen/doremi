@@ -1,6 +1,6 @@
-# first(array, count)
+# first(array, length): Array
 
-Returns an array with first element of an array. Passing `count` will return the first `count` elements of the array.
+Returns an array with first element of an array. Passing `length` will return the first `length` elements of the array.
 
 ## Usage
 
