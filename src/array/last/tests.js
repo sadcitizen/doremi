@@ -1,4 +1,4 @@
-import { INVALID_ARRAY } from '../../constants/errors';
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 import last from '.';
 
 describe('array/last()', () => {
@@ -31,7 +31,7 @@ describe('array/last()', () => {
     });
 
     test('throws type error if the given value is not an array', () => {
-        expect(() => last({}, 2)).toThrow(INVALID_ARRAY);
-        expect(() => last('', 2)).toThrow(INVALID_ARRAY);
+        expect(() => last({}, 2)).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => last('', 2)).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
     });
 });

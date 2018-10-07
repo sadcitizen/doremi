@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_ARRAY_SECOND_ARGUMENT } from '../../constants/errors';
 import equals from '.';
 
 describe('array/equals()', () => {
@@ -25,5 +26,10 @@ describe('array/equals()', () => {
 
         expect(equals(a, c)).toBe(false);
         expect(equals(a, c, comparator)).toBe(false);
+    });
+
+    test('throws type error if given values are not arrays', () => {
+        expect(() => equals({}, [])).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => equals([], {})).toThrow(INVALID_ARRAY_SECOND_ARGUMENT);
     });
 });

@@ -1,4 +1,5 @@
-import { VOID_0 } from '../../internal/constants';
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
+import VOID_0 from '../../constants/void-0';
 import chunk from '.';
 
 describe('array/chunk()', () => {
@@ -30,5 +31,9 @@ describe('array/chunk()', () => {
         expect(chunk(array, -0)).toEqual(result);
         expect(chunk(array, -10)).toEqual(result);
         expect(chunk(array, -1000)).toEqual(result);
+    });
+
+    test('throws type error if the given value is not an array', () => {
+        expect(() => chunk({}, 1)).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
     });
 });

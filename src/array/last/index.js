@@ -1,4 +1,4 @@
-import { INVALID_ARRAY } from '../../constants/errors';
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 
 /**
  * Returns new array with last `length` elements of the given array.
@@ -10,7 +10,7 @@ import { INVALID_ARRAY } from '../../constants/errors';
  */
 export default function (value, length = 1) {
     if (!Array.isArray(value)) {
-        throw new TypeError(INVALID_ARRAY);
+        throw new TypeError(INVALID_ARRAY_FIRST_ARGUMENT);
     }
 
     if (length > 0) {

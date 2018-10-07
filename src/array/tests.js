@@ -1,4 +1,5 @@
 import array, {
+    equals,
     first,
     last
 } from '.';
@@ -9,6 +10,7 @@ describe('doremi/array', () => {
     });
 
     test('doremi/array has correct properties', () => {
+        expect(array).toHaveProperty('equals', equals);
         expect(array).toHaveProperty('first', first);
         expect(array).toHaveProperty('last', last);
     });

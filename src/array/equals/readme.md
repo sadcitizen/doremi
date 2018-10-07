@@ -1,4 +1,4 @@
-# equals(array, other, [comparator])
+# equals(array, other, [comparator]): Boolean
 
 Checks if the arrays contain the same elements.
 

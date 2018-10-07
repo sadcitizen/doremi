@@ -1,4 +1,4 @@
-import { INVALID_ARRAY } from '../../constants/errors';
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 import first from '.';
 
 describe('array/first()', () => {
@@ -31,7 +31,7 @@ describe('array/first()', () => {
     });
 
     test('throws type error if the given value is not an array', () => {
-        expect(() => first({}, 2)).toThrow(INVALID_ARRAY);
-        expect(() => first('', 2)).toThrow(INVALID_ARRAY);
+        expect(() => first({}, 2)).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => first('', 2)).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
     });
 });
