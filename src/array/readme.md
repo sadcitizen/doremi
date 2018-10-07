@@ -5,4 +5,6 @@
 - [`equals`](./equals)
 - [`first`](./first)
 - [`last`](./last)
-- [`partitionBy`](./partition-by)
+- [`partitionWith`](./partition-with)
+- [`unionWith`](./union-with)
+- [`uniqueWith`](./unique-with)

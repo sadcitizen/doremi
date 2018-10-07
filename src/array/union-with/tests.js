@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_ARRAY_SECOND_ARGUMENT } from '../../constants/errors';
 import unionWith from '.';
 
 describe('array/unionWith()', () => {
@@ -29,5 +30,10 @@ describe('array/unionWith()', () => {
 
         expect(unionWith(value, other, (l, r) => l.name === r.name)).toEqual(unionByNames);
         expect(unionWith(value, other, (l, r) => l.name === r.name && l.age === r.age)).toEqual(unionByNamesAndAges);
+    });
+
+    test('throws type error if given values are not arrays', () => {
+        expect(() => unionWith({}, [])).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => unionWith([], {})).toThrow(INVALID_ARRAY_SECOND_ARGUMENT);
     });
 });

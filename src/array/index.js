@@ -3,14 +3,18 @@ import compact from './compact';
 import equals from './equals';
 import first from './first';
 import last from './last';
-import partitionBy from './partition-by';
+import partitionWith from './partition-with';
+import unionWith from './union-with';
+import uniqueWith from './unique-with';
 
 export { chunk };
 export { compact };
 export { equals };
 export { first };
 export { last };
-export { partitionBy };
+export { partitionWith };
+export { unionWith };
+export { uniqueWith };
 
 export default {
     chunk,
@@ -18,5 +22,7 @@ export default {
     equals,
     first,
     last,
-    partitionBy
+    partitionWith,
+    unionWith,
+    uniqueWith
 };

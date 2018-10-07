@@ -4,7 +4,9 @@ import array, {
     equals,
     first,
     last,
-    partitionBy
+    partitionWith,
+    unionWith,
+    uniqueWith
 } from '.';
 
 describe('doremi/array', () => {
@@ -18,6 +20,8 @@ describe('doremi/array', () => {
         expect(array).toHaveProperty('equals', equals);
         expect(array).toHaveProperty('first', first);
         expect(array).toHaveProperty('last', last);
-        expect(array).toHaveProperty('partitionBy', partitionBy);
+        expect(array).toHaveProperty('partitionWith', partitionWith);
+        expect(array).toHaveProperty('unionWith', unionWith);
+        expect(array).toHaveProperty('uniqueWith', uniqueWith);
     });
 });
