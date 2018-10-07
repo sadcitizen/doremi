@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 import partitionWith from '.';
 
 describe('array/partitionWith()', () => {
@@ -15,5 +16,9 @@ describe('array/partitionWith()', () => {
 
         expect(trues).toEqual([true, true, true]);
         expect(falses).toEqual([false, false]);
+    });
+
+    test('throws type error if the given value is not an array', () => {
+        expect(() => partitionWith('', 2)).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
     });
 });

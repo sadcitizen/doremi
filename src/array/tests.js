@@ -1,7 +1,10 @@
 import array, {
+    chunk,
+    compact,
     equals,
     first,
-    last
+    last,
+    partitionBy
 } from '.';
 
 describe('doremi/array', () => {
@@ -10,8 +13,11 @@ describe('doremi/array', () => {
     });
 
     test('doremi/array has correct properties', () => {
+        expect(array).toHaveProperty('chunk', chunk);
+        expect(array).toHaveProperty('compact', compact);
         expect(array).toHaveProperty('equals', equals);
         expect(array).toHaveProperty('first', first);
         expect(array).toHaveProperty('last', last);
+        expect(array).toHaveProperty('partitionBy', partitionBy);
     });
 });

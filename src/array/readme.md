@@ -5,3 +5,4 @@
 - [`equals`](./equals)
 - [`first`](./first)
 - [`last`](./last)
+- [`partitionBy`](./partition-by)
