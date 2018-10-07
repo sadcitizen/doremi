@@ -1,4 +1,4 @@
-# uniqueWith(array, [comparator])
+# uniqueWith(array, [comparator]): Array
 
 Removes duplicates and returns unique elements from an array.
 

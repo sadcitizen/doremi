@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 import uniqueWith from '.';
 
 describe('array/uniqueWith()', () => {
@@ -14,5 +15,10 @@ describe('array/uniqueWith()', () => {
         const comparator = (value, other) => value.name === other.name;
 
         expect(uniqueWith(target, comparator)).toEqual(expected);
+    });
+
+    test('throws type error if the given value is not an array', () => {
+        expect(() => uniqueWith({})).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => uniqueWith('')).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
     });
 });
