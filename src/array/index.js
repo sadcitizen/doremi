@@ -2,6 +2,7 @@ import chunk from './chunk';
 import compact from './compact';
 import equals from './equals';
 import first from './first';
+import includesWith from './includes-with';
 import last from './last';
 import partitionWith from './partition-with';
 import unionWith from './union-with';
@@ -11,6 +12,7 @@ export { chunk };
 export { compact };
 export { equals };
 export { first };
+export { includesWith };
 export { last };
 export { partitionWith };
 export { unionWith };
@@ -21,6 +23,7 @@ export default {
     compact,
     equals,
     first,
+    includesWith,
     last,
     partitionWith,
     unionWith,

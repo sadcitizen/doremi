@@ -3,6 +3,7 @@ import array, {
     compact,
     equals,
     first,
+    includesWith,
     last,
     partitionWith,
     unionWith,
@@ -19,6 +20,7 @@ describe('doremi/array', () => {
         expect(array).toHaveProperty('compact', compact);
         expect(array).toHaveProperty('equals', equals);
         expect(array).toHaveProperty('first', first);
+        expect(array).toHaveProperty('includesWith', includesWith);
         expect(array).toHaveProperty('last', last);
         expect(array).toHaveProperty('partitionWith', partitionWith);
         expect(array).toHaveProperty('unionWith', unionWith);

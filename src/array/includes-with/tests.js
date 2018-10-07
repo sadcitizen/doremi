@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 import includesWith from '.';
 
 describe('array/includesWith()', () => {
@@ -16,5 +17,9 @@ describe('array/includesWith()', () => {
     test('checks if the array includes value from specified index', () => {
         expect(includesWith(persons, p => p.age === 21)).toBe(true);
         expect(includesWith(persons, p => p.age === 21, 2)).toBe(false);
+    });
+
+    test('throws type error if the given value is not an array', () => {
+        expect(() => includesWith({}, p => p.age === 20)).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
     });
 });
