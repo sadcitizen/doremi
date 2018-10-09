@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_ARRAY_SECOND_ARGUMENT } from '../../constants/errors';
 import differenceWith from '.';
 
 describe('array/differenceWith()', () => {
@@ -29,5 +30,10 @@ describe('array/differenceWith()', () => {
 
         expect(differenceWith(value, other, (l, r) => l.name === r.name)).toEqual(differenceByNames);
         expect(differenceWith(value, other, (l, r) => l.name === r.name && l.age === r.age)).toEqual(differenceByNamesAndAges);
+    });
+
+    test('throws type error if given values are not arrays', () => {
+        expect(() => differenceWith({}, [])).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => differenceWith([], {})).toThrow(INVALID_ARRAY_SECOND_ARGUMENT);
     });
 });

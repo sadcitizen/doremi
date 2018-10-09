@@ -1,6 +1,6 @@
-# intersectionWith(array, other, [comparator])
+# intersectionWith(array, other, [comparator]): Array
 
-Returns the common items of the arrays.
+Creates new array of intersecting elements of the given arrays.
 
 ## Usage
 

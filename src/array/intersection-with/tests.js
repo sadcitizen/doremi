@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_ARRAY_SECOND_ARGUMENT } from '../../constants/errors';
 import intersectionWith from '.';
 
 describe('array/intersectionWith()', () => {
@@ -24,5 +25,10 @@ describe('array/intersectionWith()', () => {
 
         expect(intersectionWith(value, other, (l, r) => l.name === r.name)).toEqual(intersectionByNames);
         expect(intersectionWith(value, other, (l, r) => l.name === r.name && l.age === r.age)).toEqual(intersectionByNamesAndAges);
+    });
+
+    test('throws type error if given values are not arrays', () => {
+        expect(() => intersectionWith({}, [])).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => intersectionWith([], {})).toThrow(INVALID_ARRAY_SECOND_ARGUMENT);
     });
 });
