@@ -1,8 +1,10 @@
 import chunk from './chunk';
 import compact from './compact';
+import differenceWith from './difference-with';
 import equals from './equals';
 import first from './first';
 import includesWith from './includes-with';
+import intersectionWith from './intersection-with';
 import last from './last';
 import partitionWith from './partition-with';
 import unionWith from './union-with';
@@ -10,9 +12,11 @@ import uniqueWith from './unique-with';
 
 export { chunk };
 export { compact };
+export { differenceWith };
 export { equals };
 export { first };
 export { includesWith };
+export { intersectionWith };
 export { last };
 export { partitionWith };
 export { unionWith };
@@ -21,9 +25,11 @@ export { uniqueWith };
 export default {
     chunk,
     compact,
+    differenceWith,
     equals,
     first,
     includesWith,
+    intersectionWith,
     last,
     partitionWith,
     unionWith,
