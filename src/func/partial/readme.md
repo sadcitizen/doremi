@@ -1,4 +1,4 @@
-# partial(fn, ...args)
+# partial(fn, ...args): Function
 
 Return a new function that invokes `fn` with `args` prepended to the arguments it receives.
 

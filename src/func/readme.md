@@ -1,3 +1,3 @@
 # func
 
-
+- [`partial`](./partial)
