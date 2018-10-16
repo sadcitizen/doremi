@@ -1,4 +1,4 @@
-# compose(...functions)
+# compose(...functions): Function
 
 Create a new function that will compose and invoke functions from right to left,
 passing the return values from each invocation to the next successive function.

@@ -1,4 +1,4 @@
-# pipe(...fns)
+# pipe(...fns): Function
 
 Create a new function that will compose and invoke functions from left to right,
 passing the return values from each invocation to the next successive function.

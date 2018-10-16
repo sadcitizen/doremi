@@ -1,5 +1,7 @@
 import func, {
-    partial
+    compose,
+    partial,
+    pipe
 } from '.';
 
 describe('doremi/func', () => {
@@ -8,6 +10,8 @@ describe('doremi/func', () => {
     });
 
     test('doremi/func has correct properties', () => {
+        expect(func).toHaveProperty('compose', compose);
         expect(func).toHaveProperty('partial', partial);
+        expect(func).toHaveProperty('pipe', pipe);
     });
 });
