@@ -1,4 +1,5 @@
-import { VOID_0 } from '../../internal/constants';
+import { INVALID_NUMBER_ARGUMENT } from '../../constants/errors';
+import VOID_0 from '../../constants/void-0';
 import isEven from '.';
 
 describe('number/isEven()', () => {
@@ -32,13 +33,13 @@ describe('number/isEven()', () => {
     });
 
     test('throws an error if value is not numeric', () => {
-        expect(() => isEven(VOID_0)).toThrow('A number is expected');
-        expect(() => isEven(null)).toThrow('A number is expected');
-        expect(() => isEven(true)).toThrow('A number is expected');
-        expect(() => isEven('')).toThrow('A number is expected');
-        expect(() => isEven([])).toThrow('A number is expected');
-        expect(() => isEven({})).toThrow('A number is expected');
-        expect(() => isEven(new Date())).toThrow('A number is expected');
-        expect(() => isEven(/\s+/ig)).toThrow('A number is expected');
+        expect(() => isEven(VOID_0)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isEven(null)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isEven(true)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isEven('')).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isEven([])).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isEven({})).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isEven(new Date())).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isEven(/\s+/ig)).toThrow(INVALID_NUMBER_ARGUMENT);
     });
 });

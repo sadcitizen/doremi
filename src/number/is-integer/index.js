@@ -1,3 +1,4 @@
+import { INVALID_NUMBER_ARGUMENT } from '../../constants/errors';
 import isNumber from '../../common/is-number';
 
 /**
@@ -9,7 +10,7 @@ import isNumber from '../../common/is-number';
  */
 export default function (value) {
     if (!isNumber(value)) {
-        throw new Error('A number is expected');
+        throw new TypeError(INVALID_NUMBER_ARGUMENT);
     }
 
     return Number.isFinite(value) && value % 1 === 0;

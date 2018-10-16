@@ -1,3 +1,4 @@
+import { INVALID_NUMBER_ARGUMENT } from '../../constants/errors';
 import isInteger from '.';
 
 describe('number/isInteger()', () => {
@@ -24,12 +25,12 @@ describe('number/isInteger()', () => {
     });
 
     test('throws an error if value is not numeric', () => {
-        expect(() => isInteger(null)).toThrow('A number is expected');
-        expect(() => isInteger(true)).toThrow('A number is expected');
-        expect(() => isInteger('')).toThrow('A number is expected');
-        expect(() => isInteger([])).toThrow('A number is expected');
-        expect(() => isInteger({})).toThrow('A number is expected');
-        expect(() => isInteger(new Date())).toThrow('A number is expected');
-        expect(() => isInteger(/\s+/ig)).toThrow('A number is expected');
+        expect(() => isInteger(null)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isInteger(true)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isInteger('')).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isInteger([])).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isInteger({})).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isInteger(new Date())).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isInteger(/\s+/ig)).toThrow(INVALID_NUMBER_ARGUMENT);
     });
 });

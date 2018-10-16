@@ -1,4 +1,5 @@
-import { VOID_0 } from '../../internal/constants';
+import { INVALID_NUMBER_ARGUMENT } from '../../constants/errors';
+import VOID_0 from '../../constants/void-0';
 import isOdd from '.';
 
 describe('number/isOdd()', () => {
@@ -32,13 +33,13 @@ describe('number/isOdd()', () => {
     });
 
     test('throws an error if value is not numeric', () => {
-        expect(() => isOdd(VOID_0)).toThrow('A number is expected');
-        expect(() => isOdd(null)).toThrow('A number is expected');
-        expect(() => isOdd(true)).toThrow('A number is expected');
-        expect(() => isOdd('')).toThrow('A number is expected');
-        expect(() => isOdd([])).toThrow('A number is expected');
-        expect(() => isOdd({})).toThrow('A number is expected');
-        expect(() => isOdd(new Date())).toThrow('A number is expected');
-        expect(() => isOdd(/\s+/ig)).toThrow('A number is expected');
+        expect(() => isOdd(VOID_0)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isOdd(null)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isOdd(true)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isOdd('')).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isOdd([])).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isOdd({})).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isOdd(new Date())).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isOdd(/\s+/ig)).toThrow(INVALID_NUMBER_ARGUMENT);
     });
 });

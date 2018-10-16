@@ -1,3 +1,4 @@
+import { INVALID_NUMBER_ARGUMENT } from '../../constants/errors';
 import isFloat from '.';
 
 describe('number/isFloat()', () => {
@@ -21,12 +22,12 @@ describe('number/isFloat()', () => {
     });
 
     test('throws an error if value is not numeric', () => {
-        expect(() => isFloat(null)).toThrow('A number is expected');
-        expect(() => isFloat(true)).toThrow('A number is expected');
-        expect(() => isFloat('')).toThrow('A number is expected');
-        expect(() => isFloat([])).toThrow('A number is expected');
-        expect(() => isFloat({})).toThrow('A number is expected');
-        expect(() => isFloat(new Date())).toThrow('A number is expected');
-        expect(() => isFloat(/\s+/ig)).toThrow('A number is expected');
+        expect(() => isFloat(null)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isFloat(true)).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isFloat('')).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isFloat([])).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isFloat({})).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isFloat(new Date())).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => isFloat(/\s+/ig)).toThrow(INVALID_NUMBER_ARGUMENT);
     });
 });
