@@ -1,3 +1,4 @@
+import { INVALID_DATE } from '../../constants/errors';
 import isValid from '.';
 
 describe('date/isValid()', () => {
@@ -13,6 +14,6 @@ describe('date/isValid()', () => {
     });
 
     test('throws type error if argument is not a date', () => {
-        expect(() => isValid('new Date()')).toThrow('Argument is not a date');
+        expect(() => isValid('new Date()')).toThrow(INVALID_DATE);
     });
 });
