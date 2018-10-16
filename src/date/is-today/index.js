@@ -7,7 +7,7 @@ import today from '../today';
  *
  * @category date
  * @param {Date} value The value to check.
- * @returns {boolean}
+ * @returns {boolean} Returns `true` if the value is today, else `false`.
  */
 export default function (value) {
     return startOf(value, units.day).getTime() === today().getTime();

@@ -7,7 +7,7 @@ import startOf from '../start-of';
  *
  * @category date
  * @param {Date} value The value to check.
- * @returns {boolean}
+ * @returns {boolean} Returns `true` if the value is tomorrow, else `false`.
  */
 export default function (value) {
     return startOf(value, units.day).getTime() === tomorrow().getTime();

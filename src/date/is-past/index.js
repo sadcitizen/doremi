@@ -5,7 +5,7 @@ import { INVALID_DATE } from '../../constants/errors';
  * Checks if the given date is past.
  *
  * @param {Date} value The value to check.
- * @returns {boolean}
+ * @returns {boolean} Returns `true` if the value is past, else `false`.
  */
 export default function (value) {
     if (!isValid(value)) {

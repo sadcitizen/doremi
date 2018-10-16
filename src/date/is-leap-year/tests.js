@@ -1,28 +1,7 @@
+import { INVALID_DATE } from '../../constants/errors';
 import isLeapYear from '.';
 
 describe('date/isLeapYear()', () => {
-    test('returns true if the year is a leap year', () => {
-        expect(isLeapYear(2000)).toBe(true);
-        expect(isLeapYear(2004)).toBe(true);
-        expect(isLeapYear(2008)).toBe(true);
-        expect(isLeapYear(2012)).toBe(true);
-        expect(isLeapYear(2016)).toBe(true);
-        expect(isLeapYear(2020)).toBe(true);
-        expect(isLeapYear(2024)).toBe(true);
-        expect(isLeapYear(2028)).toBe(true);
-    });
-
-    test('returns false if the year is not a leap year', () => {
-        expect(isLeapYear(2001)).toBe(false);
-        expect(isLeapYear(2005)).toBe(false);
-        expect(isLeapYear(2009)).toBe(false);
-        expect(isLeapYear(2013)).toBe(false);
-        expect(isLeapYear(2017)).toBe(false);
-        expect(isLeapYear(2021)).toBe(false);
-        expect(isLeapYear(2025)).toBe(false);
-        expect(isLeapYear(2029)).toBe(false);
-    });
-
     test('returns true if the year of date is a leap year', () => {
         expect(isLeapYear(new Date(2000, 1, 29))).toBe(true);
         expect(isLeapYear(new Date(2004, 1, 29))).toBe(true);
@@ -46,6 +25,6 @@ describe('date/isLeapYear()', () => {
     });
 
     test('throws the error if value is invalid', () => {
-        expect(() => isLeapYear('2017')).toThrow('The value must be a number or a date');
+        expect(() => isLeapYear('2017')).toThrow(INVALID_DATE);
     });
 });

@@ -1,3 +1,4 @@
+import { INVALID_DATE } from '../../constants/errors';
 import isDate from '../../common/is-date';
 
 /**
@@ -9,7 +10,7 @@ import isDate from '../../common/is-date';
  */
 export default function (value) {
     if (!isDate(value)) {
-        throw new TypeError('Argument is not a date');
+        throw new TypeError(INVALID_DATE);
     }
 
     return !isNaN(value.getTime());

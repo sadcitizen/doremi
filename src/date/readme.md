@@ -6,6 +6,7 @@
 - [`endOf`](./end-of)
 - [`equals`](./equals)
 - [`isFuture`](./is-future)
+- [`isLeapYear`](./is-leap-year)
 - [`isPast`](./is-past)
 - [`isToday`](./is-today)
 - [`isTomorrow`](./is-tomorrow)
