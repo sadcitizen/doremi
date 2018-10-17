@@ -1,4 +1,4 @@
-# delay(fn, ms, context)
+# delay(fn, ms, context): Function
 
 Returns a new function that will always invoke `fn` after `ms` milliseconds.
 
