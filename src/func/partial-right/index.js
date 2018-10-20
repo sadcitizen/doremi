@@ -9,7 +9,7 @@ import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
  * @param {...*} args The arguments to be partially applied.
  * @returns {Function} Returns new partially applied function.
  */
-export default function(fn, ...args) {
+export default function (fn, ...args) {
     if (!isFunction(fn)) {
         throw new TypeError(INVALID_FUNCTION_ARGUMENT);
     }
