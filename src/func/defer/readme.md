@@ -1,6 +1,6 @@
 # defer(fn)
 
-Returns a new function that invoked at the end of the event loop.
+Creates a new function that invoked at the end of the event loop.
 
 ## Usage
 
