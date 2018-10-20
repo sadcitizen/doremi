@@ -1,6 +1,6 @@
 import log from '.';
 
-describe('number/log()', () => {
+describe('math/log()', () => {
     test('returns logarithm of a number', () => {
         expect(log(2, 2)).toBe(1);
         expect(log(9, 3)).toBe(2);
