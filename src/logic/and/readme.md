@@ -1,6 +1,6 @@
-# and(...conditions)
+# and(...conditions): Boolean
 
-Returns true if all conditions are true, false otherwise.
+Checks if all conditions are true.
 
 ## Usage
 

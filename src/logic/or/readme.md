@@ -1,6 +1,6 @@
-# or(...conditions)
+# or(...conditions): Boolean
 
-Returns false if all conditions are false, true otherwise.
+Checks if at least one of conditions is true.
 
 ## Usage
 
