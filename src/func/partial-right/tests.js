@@ -1,3 +1,4 @@
+import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 import partialRight from '.';
 
 describe('func/partialRight()', () => {
@@ -15,5 +16,9 @@ describe('func/partialRight()', () => {
         const result = partialFn(3, false);
 
         expect(result).toEqual([3, false, 1, 'string', true]);
+    });
+
+    test('throws exception if function is invalid', () => {
+        expect(() => partialRight('jest.fn()', 100)).toThrow(INVALID_FUNCTION_ARGUMENT);
     });
 });

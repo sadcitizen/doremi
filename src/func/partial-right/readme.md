@@ -1,6 +1,6 @@
-# partialRight(fn, ...args)
+# partialRight(fn, ...args): Function
 
-Returns a new function that invokes `fn` with `args` appended to the arguments it receives.
+Creates a new function that invokes `fn` with `args` appended to the arguments it receives.
 
 ## Usage
 

@@ -1,6 +1,6 @@
 # partial(fn, ...args): Function
 
-Return a new function that invokes `fn` with `args` prepended to the arguments it receives.
+Creates a new function that invokes `fn` with `args` prepended to the arguments it receives.
 
 ## Usage
 

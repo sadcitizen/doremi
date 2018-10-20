@@ -1,3 +1,4 @@
+import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 import partial from '.';
 
 describe('func/partial()', () => {
@@ -15,5 +16,9 @@ describe('func/partial()', () => {
         expect(partial(fn, 1, 2)(3, 4, 5)).toEqual([1, 2, 3, 4, 5]);
         expect(partial(fn, 1, 2, 3)(4, 5)).toEqual([1, 2, 3, 4, 5]);
         expect(partial(fn, 1, 2, 3, 4)(5)).toEqual([1, 2, 3, 4, 5]);
+    });
+
+    test('throws exception if function is invalid', () => {
+        expect(() => partial('jest.fn()', 100)).toThrow(INVALID_FUNCTION_ARGUMENT);
     });
 });
