@@ -1,3 +1,4 @@
+import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 import memoize from '.';
 
 describe('func/memoize()', () => {
@@ -28,5 +29,9 @@ describe('func/memoize()', () => {
         expect(memoizedSquare(3, 3)).toBe(9);
 
         expect(square).toHaveBeenCalledTimes(1);
+    });
+
+    test('throws exception if function is invalid', () => {
+        expect(() => memoize('jest.fn()', 100)).toThrow(INVALID_FUNCTION_ARGUMENT);
     });
 });

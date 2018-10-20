@@ -1,6 +1,6 @@
-# memoize(fn, resolver)
+# memoize(fn, resolver): Function
 
-Return a new function that caches invocations of `fn`. The default `resolver` is `JSON.stringify`.
+Creates a new function that caches invocations of `fn`. The default `resolver` is `JSON.stringify`.
 
 ## Usage
 

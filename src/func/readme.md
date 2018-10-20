@@ -4,6 +4,7 @@
 - [`defer`](./defer)
 - [`delay`](./delay)
 - [`identity`](./identity)
+- [`memoize`](./memoize)
 - [`partial`](./partial)
 - [`partialRight`](./partial-right)
 - [`pipe`](./pipe)

@@ -3,6 +3,7 @@ import func, {
     defer,
     delay,
     identity,
+    memoize,
     partial,
     partialRight,
     pipe,
@@ -19,6 +20,7 @@ describe('doremi/func', () => {
         expect(func).toHaveProperty('defer', defer);
         expect(func).toHaveProperty('delay', delay);
         expect(func).toHaveProperty('identity', identity);
+        expect(func).toHaveProperty('memoize', memoize);
         expect(func).toHaveProperty('partial', partial);
         expect(func).toHaveProperty('partialRight', partialRight);
         expect(func).toHaveProperty('pipe', pipe);
