@@ -1,6 +1,7 @@
 import func, {
     compose,
     delay,
+    identity,
     partial,
     pipe,
     repeat
@@ -14,6 +15,7 @@ describe('doremi/func', () => {
     test('doremi/func has correct properties', () => {
         expect(func).toHaveProperty('compose', compose);
         expect(func).toHaveProperty('delay', delay);
+        expect(func).toHaveProperty('identity', identity);
         expect(func).toHaveProperty('partial', partial);
         expect(func).toHaveProperty('pipe', pipe);
         expect(func).toHaveProperty('repeat', repeat);

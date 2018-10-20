@@ -1,4 +1,4 @@
-# repeat(fn, count, [ctx])
+# repeat(fn, count, [context])
 
 Invokes the given `fn` function `count` times. Each invocation of `fn` is called with an index argument.
 

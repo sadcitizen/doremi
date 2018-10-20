@@ -1,4 +1,4 @@
-# identity(args)
+# identity(...args): *
 
 Returns the first of provided arguments. Uses as default iteratee.
 
