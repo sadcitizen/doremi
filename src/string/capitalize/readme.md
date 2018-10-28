@@ -1,11 +1,19 @@
-# capitalize(value): string
+# capitalize(value, [restToLowerCase]): string
 
-Capitalizes the first character of the given string.
+Converts first letter of the given string to uppercase
+If `restToLowerCase` is `true` the rest of the given string will be converted to lower case.
 
 ## Usage
 
 ```js
 import capitalize from 'doremi/string/capitalize';
 
+capitalize('lorem ipsum');
+// => 'Lorem ipsum'
 
+capitalize('lower IPSUM', true);
+// => 'Lorem ipsum'
+
+capitalize();
+// => ''
 ```

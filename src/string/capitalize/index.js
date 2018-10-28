@@ -2,19 +2,13 @@ import { INVALID_STRING_ARGUMENT } from '../../constants/errors';
 import isString from '../../common/is-string';
 
 /**
- * Capitalizes the first character of the given string.
+ * Converts first letter of the given string to uppercase.
+ * If `restToLowerCase` is `true` the rest of the given string will be converted to lower case.
  *
  * @category string
  * @param {string} value The string to capitalize.
- * @param {boolean} [restToLowerCase] If `true`
+ * @param {boolean} [restToLowerCase] The flag to convert the rest of the string.
  * @returns {string} Returns the capitalized string.
- *
- * @example
- * capitalize('hi!');
- * // => 'Hi!'
- *
- * capitalize();
- * // => '' (empty string)
  */
 export default function (value = '', restToLowerCase = false) {
     if (!isString(value)) {
