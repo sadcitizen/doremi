@@ -1,4 +1,5 @@
-import { VOID_0 } from '../../internal/constants';
+import { INVALID_STRING_ARGUMENT } from '../../constants/errors';
+import VOID_0 from '../../constants/void-0';
 import chopRight from '.';
 
 describe('string/chopRight()', () => {
@@ -13,7 +14,6 @@ describe('string/chopRight()', () => {
     });
 
     test('works with null and undefined', () => {
-        expect(chopRight(1234567890)).toEqual(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']);
         expect(chopRight('lorem ipsum')).toEqual(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
         expect(chopRight('lorem ipsum', VOID_0)).toEqual(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
         expect(chopRight('lorem ipsum', null)).toEqual(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
@@ -23,5 +23,9 @@ describe('string/chopRight()', () => {
         expect(chopRight('lorem ipsum', -0)).toEqual(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
         expect(chopRight('lorem ipsum', -10)).toEqual(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
         expect(chopRight('lorem ipsum', -1000)).toEqual(['l', 'o', 'r', 'e', 'm', ' ', 'i', 'p', 's', 'u', 'm']);
+    });
+
+    test('throws type error if the given value is not a string', () => {
+        expect(() => chopRight(123456)).toThrow(INVALID_STRING_ARGUMENT);
     });
 });
