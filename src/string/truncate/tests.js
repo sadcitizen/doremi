@@ -1,6 +1,7 @@
+import { INVALID_STRING_ARGUMENT } from '../../constants/errors';
 import truncate from '.';
 
-describe('string/_truncate()', () => {
+describe('string/truncate()', () => {
     const string = 'lorem ipsum dolor sit amet';
 
     test('limits number of chars', () => {
@@ -28,5 +29,9 @@ describe('string/_truncate()', () => {
 
         expect(truncate(string, 14, null, true).length).toBeLessThan(15);
         expect(truncate(string, 14, null, true)).toBe('lorem ipsum...');
+    });
+
+    test('throws type error if the given value is not a string', () => {
+        expect(() => truncate(123456)).toThrow(INVALID_STRING_ARGUMENT);
     });
 });
