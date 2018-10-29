@@ -1,6 +1,6 @@
 import trim from '.';
 
-describe('string/_trim()', () => {
+describe('string/trim()', () => {
     test('removes leading and trailing whitespaces', () => {
         expect(trim('           Hello, World!             ')).toBe('Hello, World!');
         expect(trim('                        ')).toBe('');
@@ -9,7 +9,7 @@ describe('string/_trim()', () => {
     });
 
     test('removes leading and trailing given characters', () => {
-        expect(trim('/* Hello, World! */', '/', ' ', '*')).toBe('Hello, World!');
+        expect(trim('/* Hello, World! */', '/* ')).toBe('Hello, World!');
         expect(trim('~~~****Hello, World!****~~~', '*~')).toBe('Hello, World!');
     });
 });

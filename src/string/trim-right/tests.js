@@ -9,7 +9,7 @@ describe('string/trimRight()', () => {
     });
 
     test('removes trailing given characters', () => {
-        expect(trimRight('/Hello, World! */', '/', ' ', '*')).toBe('/Hello, World!');
+        expect(trimRight('/Hello, World! */', '/* ')).toBe('/Hello, World!');
         expect(trimRight('Hello, World!****~~~', '*~')).toBe('Hello, World!');
     });
 });

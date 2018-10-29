@@ -9,7 +9,7 @@ describe('string/trimLeft()', () => {
     });
 
     test('removes leading given characters', () => {
-        expect(trimLeft('/* Hello, World!*/', '/', ' ', '*')).toBe('Hello, World!*/');
+        expect(trimLeft('/* Hello, World!*/', '/* ')).toBe('Hello, World!*/');
         expect(trimLeft('~~~****Hello, World!', '*~')).toBe('Hello, World!');
     });
 });

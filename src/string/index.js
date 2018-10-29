@@ -6,6 +6,9 @@ import kebabCase from './kebab-case';
 import repeat from './repeat';
 import reverse from './reverse';
 import snakeCase from './snake-case';
+import trim from './trim';
+import trimLeft from './trim-left';
+import trimRight from './trim-right';
 import truncate from './truncate';
 import words from './words';
 
@@ -17,6 +20,9 @@ export { kebabCase };
 export { repeat };
 export { reverse };
 export { snakeCase };
+export { trim };
+export { trimLeft };
+export { trimRight };
 export { truncate };
 export { words };
 
@@ -29,6 +35,9 @@ export default {
     repeat,
     reverse,
     snakeCase,
+    trim,
+    trimLeft,
+    trimRight,
     truncate,
     words
 };
