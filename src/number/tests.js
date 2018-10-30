@@ -1,5 +1,6 @@
 import number, {
     clamp,
+    equals,
     isEven,
     isFloat,
     isInteger,
@@ -16,7 +17,7 @@ describe('doremi/number', () => {
         // expect(number).toHaveProperty('abbreviate', abbreviate);
         // expect(number).toHaveProperty('ceil', ceil);
         expect(number).toHaveProperty('clamp', clamp);
-        // expect(number).toHaveProperty('equals', equals);
+        expect(number).toHaveProperty('equals', equals);
         // expect(number).toHaveProperty('fixed', fixed);
         // expect(number).toHaveProperty('floor', floor);
         // expect(number).toHaveProperty('format', format);

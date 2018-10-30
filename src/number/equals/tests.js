@@ -1,3 +1,4 @@
+import { INVALID_NUMBERS } from '../../constants/errors';
 import equals from '.';
 
 describe('number/equals()', () => {
@@ -14,5 +15,11 @@ describe('number/equals()', () => {
         expect(equals(Math.LN2, 0.69, 0.001)).toBe(false);
         expect(equals(Math.LN10, 2.302, 0.0001)).toBe(false);
         expect(equals(Math.PI, 3.1415, 0.00001)).toBe(false);
+    });
+
+    test('throws an error if arguments are not numeric', () => {
+        expect(() => equals(null, 1, 0.01)).toThrow(INVALID_NUMBERS);
+        expect(() => equals(1, null, 0.01)).toThrow(INVALID_NUMBERS);
+        expect(() => equals(1, 2, null)).toThrow(INVALID_NUMBERS);
     });
 });

@@ -1,4 +1,4 @@
-# equals(value, other, accuracy)
+# equals(value, other, accuracy): Boolean
 
 Checks if two numbers are approximately equal.
 
