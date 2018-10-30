@@ -1,3 +1,4 @@
+import { INVALID_NUMBER_ARGUMENT, INVALID_STRING_ARGUMENT } from '../../constants/errors';
 import VOID_0 from '../../constants/void-0';
 import repeat from '.';
 
@@ -19,24 +20,18 @@ describe('string/repeat()', () => {
     });
 
     test('throws type error if the first argument is not a string', () => {
-        const message = 'First argument is not a string';
-
-        expect(() => repeat(0, 1)).toThrow(message);
-        expect(() => repeat(VOID_0, 1)).toThrow(message);
-        expect(() => repeat(null, 1)).toThrow(message);
+        expect(() => repeat(0, 1)).toThrow(INVALID_STRING_ARGUMENT);
+        expect(() => repeat(VOID_0, 1)).toThrow(INVALID_STRING_ARGUMENT);
+        expect(() => repeat(null, 1)).toThrow(INVALID_STRING_ARGUMENT);
     });
 
     test('throws type error if the second argument is not a number', () => {
-        const message = 'Second argument is not a number';
-
-        expect(() => repeat(' ', '1')).toThrow(message);
-        expect(() => repeat('null', null)).toThrow(message);
+        expect(() => repeat(' ', '1')).toThrow(INVALID_NUMBER_ARGUMENT);
+        expect(() => repeat('null', null)).toThrow(INVALID_NUMBER_ARGUMENT);
     });
 
-    test('throws range error if the second argument is a negative number', () => {
-        const message = 'Second argument is not a positive number or zero';
-
-        expect(() => repeat(' ', -1)).toThrow(message);
-        expect(() => repeat('null', -100)).toThrow(message);
+    test('treats negative second argument as zero', () => {
+        expect(repeat('*', -1)).toBe('');
+        expect(repeat('*', -100)).toBe('');
     });
 });

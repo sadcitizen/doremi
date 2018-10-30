@@ -12,7 +12,7 @@ import isValid from '../is-valid';
  */
 export default function (value, other) {
     if (!isValid(value) || !isValid(other)) {
-        throw new Error(INVALID_DATES);
+        throw new TypeError(INVALID_DATES);
     }
 
     return sign(value.getTime() - other.getTime());

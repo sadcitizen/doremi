@@ -1,3 +1,4 @@
+import { INVALID_STRING_ARGUMENT } from '../../constants/errors';
 import isString from '../../common/is-string';
 
 /**
@@ -9,7 +10,7 @@ import isString from '../../common/is-string';
  */
 export default function (value) {
     if (!isString(value)) {
-        throw new TypeError('Argument is not a string');
+        throw new TypeError(INVALID_STRING_ARGUMENT);
     }
 
     return value.split('').reverse().join('');

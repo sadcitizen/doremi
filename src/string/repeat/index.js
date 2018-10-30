@@ -1,3 +1,4 @@
+import { INVALID_NUMBER_ARGUMENT, INVALID_STRING_ARGUMENT } from '../../constants/errors';
 import isString from '../../common/is-string';
 import isNumber from '../../common/is-number';
 
@@ -12,15 +13,11 @@ import isNumber from '../../common/is-number';
  */
 export default function (value, times = 1) {
     if (!isString(value)) {
-        throw new TypeError('First argument is not a string');
+        throw new TypeError(INVALID_STRING_ARGUMENT);
     }
 
     if (!isNumber(times)) {
-        throw new TypeError('Second argument is not a number');
-    }
-
-    if (times < 0) {
-        throw new RangeError('Second argument is not a positive number or zero');
+        throw new TypeError(INVALID_NUMBER_ARGUMENT);
     }
 
     let result = '';

@@ -1,3 +1,5 @@
+import { INVALID_NUMBERS } from '../../constants/errors';
+import isNumber from '../../common/is-number';
 import ternary from '../../logic/ternary';
 
 /**
@@ -9,4 +11,10 @@ import ternary from '../../logic/ternary';
  * @param {number} max The maximum bound.
  * @returns {number} Returns number clamped within bounds.
  */
-export default (value, min, max) => ternary(value < min, min, ternary(value > max, max, value));
+export default function (value, min, max) {
+    if (!isNumber(value) || !isNumber(min) || !isNumber(max)) {
+        throw new TypeError(INVALID_NUMBERS);
+    }
+
+    return ternary(value < min, min, ternary(value > max, max, value));
+}

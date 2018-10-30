@@ -1,3 +1,4 @@
+import { INVALID_NUMBERS } from '../../constants/errors';
 import clamp from '.';
 
 describe('number/clamp()', () => {
@@ -20,5 +21,11 @@ describe('number/clamp()', () => {
         expect(clamp(-11, -100, -10)).toBe(-11);
         expect(clamp(11, 10, 100)).toBe(11);
         expect(clamp(42, Number.MIN_VALUE, Number.MAX_VALUE)).toBe(42);
+    });
+
+    test('throws an error if arguments are not numeric', () => {
+        expect(() => clamp(null, 1, 5)).toThrow(INVALID_NUMBERS);
+        expect(() => clamp(0, null, 5)).toThrow(INVALID_NUMBERS);
+        expect(() => clamp(0, 1, null)).toThrow(INVALID_NUMBERS);
     });
 });
