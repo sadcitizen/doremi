@@ -8,7 +8,7 @@ const rgx = new RegExp(`[${whitespaces}]+`, 'ig');
  *
  * @memberOf string
  * @param {string} value The string to inspect.
- * @returns {string} The compacted string.
+ * @returns {string} Returns the compacted string.
  */
 export default function (value) {
     return trim(value).replace(rgx, ' ');
