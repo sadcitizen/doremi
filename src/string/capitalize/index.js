@@ -5,7 +5,7 @@ import isString from '../../common/is-string';
  * Converts first letter of the given string to uppercase.
  * If `restToLowerCase` is `true` the rest of the given string will be converted to lower case.
  *
- * @category string
+ * @memberOf string
  * @param {string} value The string to capitalize.
  * @param {boolean} [restToLowerCase] The flag to convert the rest of the string.
  * @returns {string} Returns the capitalized string.

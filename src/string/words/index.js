@@ -4,7 +4,7 @@ import isString from '../../common/is-string';
 /**
  * Splits the given string into an array of words.
  *
- * @category string
+ * @memberOf string
  * @param {string} value The string to split.
  * @returns {string[]} Returns the array of words.
  */

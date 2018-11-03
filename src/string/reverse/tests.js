@@ -1,3 +1,4 @@
+import { INVALID_STRING_ARGUMENT } from '../../constants/errors';
 import reverse from '.';
 
 describe('string/reverse()', () => {
@@ -7,6 +8,6 @@ describe('string/reverse()', () => {
     });
 
     test('throws type error if the given value is not a string', () => {
-        expect(() => reverse([1, 2, 3])).toThrow('Argument is not a string');
+        expect(() => reverse([1, 2, 3])).toThrow(INVALID_STRING_ARGUMENT);
     });
 });

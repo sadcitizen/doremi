@@ -4,7 +4,7 @@ import isString from '../../common/is-string';
 /**
  * Chops the string into pieces with length equal `step` from left to right.
  *
- * @category string
+ * @memberOf string
  * @param {string} value The string to chopping.
  * @param {number} [step] The length of piece.
  * @returns {Array} The array of pieces.

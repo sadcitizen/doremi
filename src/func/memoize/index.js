@@ -4,7 +4,7 @@ import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 /**
  * Creates a new function that caches invocations of `fn`.
  *
- * @category func
+ * @memberOf func
  * @param {Function} fn The function to have its output memoized.
  * @param {Function} resolver The function to resolve the cache key.
  * @return {Function} Returns the memoized function.

@@ -6,7 +6,7 @@ import includesWith from '../includes-with';
 /**
  * Creates new array of elements of the first array that are not present in the second array.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The first array to inspect.
  * @param {Array} other The second array to inspect.
  * @param {Function} [comparator] The comparator invoked per element.

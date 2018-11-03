@@ -5,7 +5,7 @@ import isString from '../../common/is-string';
 /**
  * Removes leading whitespaces or given characters from given string.
  *
- * @category string
+ * @memberOf string
  * @param {string} value The string to trim.
  * @param {string} [characters] The characters to remove.
  * @returns {string} The trimmed string.

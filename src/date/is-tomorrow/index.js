@@ -5,7 +5,7 @@ import startOf from '../start-of';
 /**
  * Checks if the given date is tomorrow.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The value to check.
  * @returns {boolean} Returns `true` if the value is tomorrow, else `false`.
  */

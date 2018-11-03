@@ -4,7 +4,7 @@ import isString from '../../common/is-string';
 /**
  * Truncates the given string if it is longer than the given maximum string length.
  *
- * @category string
+ * @memberOf string
  * @param {string} value The string to truncate.
  * @param {number} limit The maximum string length.
  * @param {string} [sfx] The string to indicate text is omitted. Defaults is '...'.

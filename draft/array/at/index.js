@@ -3,7 +3,7 @@ import flatten from '../flatten';
 /**
  * Returns an array of elements corresponding to the given indexes.
  *
- * @category array
+ * @memberOf array
  * @param {Array} array
  * @param {...Array|Array} indexes
  * @returns {Array}

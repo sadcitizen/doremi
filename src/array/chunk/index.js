@@ -3,7 +3,7 @@ import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 /**
  * Splits the given array into smaller arrays of a specified size.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The array to split.
  * @param {number} size The length of each chunk.
  * @returns {Array} Returns new array of chunks.

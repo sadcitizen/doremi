@@ -2,7 +2,7 @@
  * Create a new function that will compose and invoke functions from left to right,
  * passing the return values from each invocation to the next successive function.
  *
- * @category func
+ * @memberOf func
  * @params {Function[]} fns The array of functions to compose.
  * @returns {Function} Returns new composed function.
  */

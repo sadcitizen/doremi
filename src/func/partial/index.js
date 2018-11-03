@@ -4,7 +4,7 @@ import isFunction from '../../common/is-function';
 /**
  * Creates a new function that invokes `fn` with `args` prepended to the arguments it receives.
  *
- * @category func
+ * @memberOf func
  * @param {Function} fn The function to partially apply.
  * @param {...*} args The arguments to be partially applied.
  * @returns {Function} Returns new partially applied function.

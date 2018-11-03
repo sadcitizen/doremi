@@ -4,7 +4,7 @@ import integer from '../integer';
 /**
  * Returns the pseudo-random element of array.
  *
- * @category random
+ * @memberOf random
  * @param {...Array} args
  * @returns {*}
  */

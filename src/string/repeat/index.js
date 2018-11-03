@@ -6,7 +6,7 @@ import isNumber from '../../common/is-number';
 /**
  * Repeats the given string number of `times`.
  *
- * @category string
+ * @memberOf string
  * @param {string} value The string to repeat.
  * @param {number} [times] The number of times to repeat.
  * @returns {string} Returns the repeated string.

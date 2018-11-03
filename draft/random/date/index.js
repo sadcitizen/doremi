@@ -5,7 +5,7 @@ import integer from '../integer';
 /**
  * Generates a pseudo-random date.
  *
- * @category random
+ * @memberOf random
  * @param {Date} before
  * @param {Date} after
  * @return {Date} Returns a pseudo-random date.

@@ -6,7 +6,7 @@ import includesWith from '../includes-with';
 /**
  * Removes duplicates and returns unique elements from an array.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The array to query.
  * @param {Function} [comparator] The comparator invoked per element.
  * @returns {Array} The new array with unique elements.

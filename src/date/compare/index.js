@@ -5,7 +5,7 @@ import isValid from '../is-valid';
 /**
  * Compares two dates.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The first date to compare.
  * @param {Date} other The second date to compare.
  * @returns {number} Returns `-1` if first date is before second date, returns `1` if first date is after second date, `0` otherwise.

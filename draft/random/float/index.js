@@ -6,7 +6,7 @@ const { floor, random } = Math;
 /**
  * Generates a pseudo-random float number.
  *
- * @category random
+ * @memberOf random
  * @param {number} [min]
  * @param {number} [max]
  * @param {number} [precision]

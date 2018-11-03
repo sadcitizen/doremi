@@ -4,7 +4,7 @@ import isDate from '../../common/is-date';
 /**
  * Checks if the given value is a valid date.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The value to check.
  * @returns {boolean} Returns `true` if the value is a valid date, else `false`.
  */

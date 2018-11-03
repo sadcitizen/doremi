@@ -6,7 +6,7 @@ import partial from '../../func/partial';
 /**
  * Creates new array of intersecting elements of the given arrays.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The first array to inspect.
  * @param {Array} other The second array to inspect.
  * @param {Function} [comparator] The comparator invoked per element.

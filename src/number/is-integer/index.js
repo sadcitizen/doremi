@@ -4,7 +4,7 @@ import isNumber from '../../common/is-number';
 /**
  * Checks if the given value is an integer number.
  *
- * @category number
+ * @memberOf number
  * @param {number} value The value to check.
  * @returns {boolean} Returns `true` if the value is integer number, else `false`.
  */

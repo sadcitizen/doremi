@@ -20,7 +20,7 @@ import string, {
     // remove,
     // repeat,
     reverse// ,
-    // swap,
+    // swapCase,
     // template,
     // trim,
     // trimLeft,
@@ -56,7 +56,7 @@ describe('doremi/string', () => {
         // expect(string).toHaveProperty('remove', remove);
         // expect(string).toHaveProperty('repeat', repeat);
         expect(string).toHaveProperty('reverse', reverse);
-        // expect(string).toHaveProperty('swap', swap);
+        // expect(string).toHaveProperty('swapCase', swapCase);
         // expect(string).toHaveProperty('template', template);
         // expect(string).toHaveProperty('trim', trim);
         // expect(string).toHaveProperty('trimLeft', trimLeft);

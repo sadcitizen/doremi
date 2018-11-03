@@ -4,7 +4,7 @@ import integer from '../integer';
 /**
  * Generates a pseudo-random hexadecimal number as string.
  *
- * @category random
+ * @memberOf random
  * @param {number} length
  * @return {string}
  */

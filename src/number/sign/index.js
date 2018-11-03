@@ -3,7 +3,7 @@ import ternary from '../../logic/ternary';
 /**
  * Returns sign of the given number.
  *
- * @category number
+ * @memberOf number
  * @param {number} value
  * @returns {number}
  */

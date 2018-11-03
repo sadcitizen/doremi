@@ -1,7 +1,7 @@
 /**
  * Returns a copy of the given date.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The value to clone.
  * @returns {Date} Returns the cloned date.
  */

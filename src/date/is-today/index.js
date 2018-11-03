@@ -5,7 +5,7 @@ import today from '../today';
 /**
  * Checks if the given date is today.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The value to check.
  * @returns {boolean} Returns `true` if the value is today, else `false`.
  */

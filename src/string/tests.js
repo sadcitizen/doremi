@@ -7,6 +7,7 @@ import string, {
     repeat,
     reverse,
     snakeCase,
+    swapCase,
     trim,
     trimLeft,
     trimRight,
@@ -28,6 +29,7 @@ describe('doremi/string', () => {
         expect(string).toHaveProperty('repeat', repeat);
         expect(string).toHaveProperty('reverse', reverse);
         expect(string).toHaveProperty('snakeCase', snakeCase);
+        expect(string).toHaveProperty('swapCase', swapCase);
         expect(string).toHaveProperty('trim', trim);
         expect(string).toHaveProperty('trimLeft', trimLeft);
         expect(string).toHaveProperty('trimRight', trimRight);

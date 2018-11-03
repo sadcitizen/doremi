@@ -1,7 +1,7 @@
 /**
  * Checks if the given value is an object.
  *
- * @category common
+ * @memberOf common
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if the value is an object, else 'false'.
  */

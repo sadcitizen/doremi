@@ -5,7 +5,7 @@ import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
  * The first array is elements that return true for the predicate function.
  * The second array is elements that return false for the predicate function.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The array to split.
  * @param {BooleanConstructor|Function} [predicate] The function invoked per iteration.
  * @param {*} [ctx] The context of predicate.

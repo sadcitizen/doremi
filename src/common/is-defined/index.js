@@ -3,7 +3,7 @@ import UNDEF from '../../constants/undefined';
 /**
  * Checks if the given value is 'null' or `undefined`.
  *
- * @category common
+ * @memberOf common
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if the value is not `null` and `undefined`, else `false`.
  */

@@ -4,7 +4,7 @@ import isValid from '../is-valid';
 /**
  * Checks if the value is a leap year.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The date to check.
  * @returns {boolean} Returns `true` if the value is a leap year, else `false`.
  */

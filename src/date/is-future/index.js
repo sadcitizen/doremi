@@ -4,7 +4,7 @@ import { INVALID_DATE } from '../../constants/errors';
 /**
  * Checks if the given date is future.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The value to check.
  * @returns {boolean} Returns `true` if the value is future, else `false`.
  */

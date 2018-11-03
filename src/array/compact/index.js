@@ -4,7 +4,7 @@ import isDefined from '../../common/is-defined';
 /**
  * Returns a copy of the given array without any `null` or `undefined` values.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The array to inspect.
  * @returns {Array} Return new array without `null` or `undefined`.
  */

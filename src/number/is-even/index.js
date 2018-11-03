@@ -3,7 +3,7 @@ import isInteger from '../is-integer';
 /**
  * Checks if the given value is an even number.
  *
- * @category number
+ * @memberOf number
  * @param {number} value The value to check.
  * @returns {boolean} Returns `true` if the value is even number, else `false`.
  */

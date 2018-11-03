@@ -4,7 +4,7 @@ import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 /**
  * Creates a new function that invokes `fn` with `args` appended to the arguments it receives.
  *
- * @category func
+ * @memberOf func
  * @param {Function} fn The function to partially apply.
  * @param {...*} args The arguments to be partially applied.
  * @returns {Function} Returns new partially applied function.

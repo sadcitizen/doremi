@@ -3,7 +3,7 @@ import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 /**
  * Checks if the given array includes elements for which `predicate` returns `true`.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The array to inspect.
  * @param {Function} predicate The function invoked per iteration.
  * @param {number} [fromIndex] The index to search from.

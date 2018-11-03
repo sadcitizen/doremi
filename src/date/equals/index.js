@@ -5,7 +5,7 @@ import startOf from '../start-of';
 /**
  * Checks if two date are equal.
  *
- * @category date.
+ * @memberOf date.
  * @param {Date} value The first date to compare.
  * @param {Date} other The second date to compare.
  * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit

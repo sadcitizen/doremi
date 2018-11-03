@@ -5,7 +5,7 @@ import uniqueWith from '../unique-with';
 /**
  * Unites the arrays.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The first array to unite.
  * @param {Array} other The second array to unite.
  * @param {Function} [comparator] The comparator invoked per element.

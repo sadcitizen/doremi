@@ -5,7 +5,7 @@ const defaultComparator = (value, other) => value === other;
 /**
  * Checks if the arrays contain the same elements.
  *
- * @category array
+ * @memberOf array
  * @param {Array} value The array to compare.
  * @param {Array} other The other array to compare.
  * @param {Function} [comparator] The comparator invoked per element.

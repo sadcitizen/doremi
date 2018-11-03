@@ -1,7 +1,7 @@
 /**
  * Checks if at least one of conditions is true.
  *
- * @category logic
+ * @memberOf logic
  * @param {...boolean} conditions The conditions to check.
  * @return {boolean} Returns `true` at least one of conditions is true, `false` otherwise.
  */

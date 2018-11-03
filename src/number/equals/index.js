@@ -4,7 +4,7 @@ import isNumber from '../../common/is-number';
 /**
  * Checks if the value is approximately equal to the other value.
  *
- * @category number
+ * @memberOf number
  * @param {number} value The value to compare.
  * @param {number} other The other value to compare.
  * @param {number} accuracy The accuracy of comparison.

@@ -4,7 +4,7 @@ import isNumber from '../../common/is-number';
 /**
  * Checks if the given value is a float number.
  *
- * @category number
+ * @memberOf number
  * @param {number} value The value to check.
  * @returns {boolean} Returns `true` if the value is float, else `false`.
  */

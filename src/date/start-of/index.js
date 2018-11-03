@@ -44,7 +44,7 @@ const handlers = { year, month, day, hour, minute, second };
 /**
  * Creates a new date at the start of time period.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The original date.
  * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s')} unit The time unit.
  * @returns {Date} The new date.

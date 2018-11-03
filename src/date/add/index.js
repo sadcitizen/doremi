@@ -61,7 +61,7 @@ const handlers = { year, month, day, hour, minute, second, millisecond };
 /**
  * Adds time units to the given date.
  *
- * @category date
+ * @memberOf date
  * @param {Date} value The original date.
  * @param {number} num
  * @param {('year'|'Y'|'month'|'M'|'day'|'D'|'hour'|'h'|'minute'|'m'|'second'|'s'|'millisecond'|'ms')} unit
