@@ -3,6 +3,7 @@ import string, {
     capitalize,
     chop,
     chopRight,
+    isBlank,
     kebabCase,
     repeat,
     reverse,
@@ -25,6 +26,7 @@ describe('doremi/string', () => {
         expect(string).toHaveProperty('capitalize', capitalize);
         expect(string).toHaveProperty('chop', chop);
         expect(string).toHaveProperty('chopRight', chopRight);
+        expect(string).toHaveProperty('isBlank', isBlank);
         expect(string).toHaveProperty('kebabCase', kebabCase);
         expect(string).toHaveProperty('repeat', repeat);
         expect(string).toHaveProperty('reverse', reverse);

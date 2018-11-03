@@ -1,8 +1,10 @@
 # string
 
 - [`camelCase`](./camel-case)
+- [`capitalize`](./capitalize)
 - [`chop`](./chop)
 - [`chopRight`](./chop-right)
+- [`isBlank`](./is-blank)
 - [`kebabCase`](./kebab-case)
 - [`repeat`](./repeat)
 - [`reverse`](./reverse)
