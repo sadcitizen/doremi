@@ -2,6 +2,7 @@ import camelCase from './camel-case';
 import capitalize from './capitalize';
 import chop from './chop';
 import chopRight from './chop-right';
+import compact from './compact';
 import isBlank from './is-blank';
 import kebabCase from './kebab-case';
 import repeat from './repeat';
@@ -18,6 +19,7 @@ export { camelCase };
 export { capitalize };
 export { chop };
 export { chopRight };
+export { compact };
 export { isBlank };
 export { kebabCase };
 export { repeat };
@@ -35,6 +37,7 @@ export default {
     capitalize,
     chop,
     chopRight,
+    compact,
     isBlank,
     kebabCase,
     repeat,
