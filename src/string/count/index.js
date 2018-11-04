@@ -4,6 +4,7 @@ import isString from '../../common/is-string';
 /**
  * Counts the number of occurrences of a substring in the given string.
  *
+ * @memberOf string
  * @param {string} value The string to search.
  * @param {string} substring The substring to search.
  * @returns {number} Returns the number of occurrences.
