@@ -4,8 +4,10 @@ import chop from './chop';
 import chopRight from './chop-right';
 import compact from './compact';
 import count from './count';
+import first from './first';
 import isBlank from './is-blank';
 import kebabCase from './kebab-case';
+import last from './last';
 import pad from './pad';
 import padLeft from './pad-left';
 import padRight from './pad-right';
@@ -25,8 +27,10 @@ export { chop };
 export { chopRight };
 export { compact };
 export { count };
+export { first };
 export { isBlank };
 export { kebabCase };
+export { last };
 export { pad };
 export { padLeft };
 export { padRight };
@@ -47,8 +51,10 @@ export default {
     chopRight,
     compact,
     count,
+    first,
     isBlank,
     kebabCase,
+    last,
     pad,
     padLeft,
     padRight,

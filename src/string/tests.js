@@ -5,8 +5,10 @@ import string, {
     chopRight,
     compact,
     count,
+    first,
     isBlank,
     kebabCase,
+    last,
     pad,
     padLeft,
     padRight,
@@ -33,8 +35,10 @@ describe('doremi/string', () => {
         expect(string).toHaveProperty('chopRight', chopRight);
         expect(string).toHaveProperty('compact', compact);
         expect(string).toHaveProperty('count', count);
+        expect(string).toHaveProperty('first', first);
         expect(string).toHaveProperty('isBlank', isBlank);
         expect(string).toHaveProperty('kebabCase', kebabCase);
+        expect(string).toHaveProperty('last', last);
         expect(string).toHaveProperty('pad', pad);
         expect(string).toHaveProperty('padLeft', padLeft);
         expect(string).toHaveProperty('padRight', padRight);
