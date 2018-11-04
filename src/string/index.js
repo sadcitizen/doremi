@@ -3,6 +3,7 @@ import capitalize from './capitalize';
 import chop from './chop';
 import chopRight from './chop-right';
 import compact from './compact';
+import count from './count';
 import isBlank from './is-blank';
 import kebabCase from './kebab-case';
 import repeat from './repeat';
@@ -20,6 +21,7 @@ export { capitalize };
 export { chop };
 export { chopRight };
 export { compact };
+export { count };
 export { isBlank };
 export { kebabCase };
 export { repeat };
@@ -38,6 +40,7 @@ export default {
     chop,
     chopRight,
     compact,
+    count,
     isBlank,
     kebabCase,
     repeat,

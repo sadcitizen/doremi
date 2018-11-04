@@ -4,6 +4,7 @@ import string, {
     chop,
     chopRight,
     compact,
+    count,
     isBlank,
     kebabCase,
     repeat,
@@ -28,6 +29,7 @@ describe('doremi/string', () => {
         expect(string).toHaveProperty('chop', chop);
         expect(string).toHaveProperty('chopRight', chopRight);
         expect(string).toHaveProperty('compact', compact);
+        expect(string).toHaveProperty('count', count);
         expect(string).toHaveProperty('isBlank', isBlank);
         expect(string).toHaveProperty('kebabCase', kebabCase);
         expect(string).toHaveProperty('repeat', repeat);
