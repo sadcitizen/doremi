@@ -6,6 +6,9 @@ import compact from './compact';
 import count from './count';
 import isBlank from './is-blank';
 import kebabCase from './kebab-case';
+import pad from './pad';
+import padLeft from './pad-left';
+import padRight from './pad-right';
 import repeat from './repeat';
 import reverse from './reverse';
 import snakeCase from './snake-case';
@@ -24,6 +27,9 @@ export { compact };
 export { count };
 export { isBlank };
 export { kebabCase };
+export { pad };
+export { padLeft };
+export { padRight };
 export { repeat };
 export { reverse };
 export { snakeCase };
@@ -43,6 +49,9 @@ export default {
     count,
     isBlank,
     kebabCase,
+    pad,
+    padLeft,
+    padRight,
     repeat,
     reverse,
     snakeCase,

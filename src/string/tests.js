@@ -7,6 +7,9 @@ import string, {
     count,
     isBlank,
     kebabCase,
+    pad,
+    padLeft,
+    padRight,
     repeat,
     reverse,
     snakeCase,
@@ -32,6 +35,9 @@ describe('doremi/string', () => {
         expect(string).toHaveProperty('count', count);
         expect(string).toHaveProperty('isBlank', isBlank);
         expect(string).toHaveProperty('kebabCase', kebabCase);
+        expect(string).toHaveProperty('pad', pad);
+        expect(string).toHaveProperty('padLeft', padLeft);
+        expect(string).toHaveProperty('padRight', padRight);
         expect(string).toHaveProperty('repeat', repeat);
         expect(string).toHaveProperty('reverse', reverse);
         expect(string).toHaveProperty('snakeCase', snakeCase);

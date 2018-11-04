@@ -1,7 +1,11 @@
-import { VOID_0 } from '../../internal/constants';
+import {
+    INVALID_STRING_FIRST_ARGUMENT,
+    INVALID_NUMBER_SECOND_ARGUMENT,
+    INVALID_STRING_THIRD_ARGUMENT
+} from '../../constants/errors';
 import pad from '.';
 
-describe('string/_pad()', () => {
+describe('string/pad()', () => {
     test('adds characters to the right', () => {
         expect(pad('sit', 4, '^')).toBe('^sit');
         expect(pad('sit', 5, '^')).toBe('^sit^');
@@ -17,8 +21,9 @@ describe('string/_pad()', () => {
         expect(pad('sit', 9, '$&%#')).toBe('$$$sit$$$');
     });
 
-    test('works with null and undefined', () => {
-        expect(pad(VOID_0, 6, '@')).toBe('undefined');
-        expect(pad(null, 6, '@')).toBe('@null@');
+    test('throws type error if the arguments are invalid', () => {
+        expect(() => pad(123456, 6, '@')).toThrow(INVALID_STRING_FIRST_ARGUMENT);
+        expect(() => pad('123456', '6', '@')).toThrow(INVALID_NUMBER_SECOND_ARGUMENT);
+        expect(() => pad('123456', 6, 0)).toThrow(INVALID_STRING_THIRD_ARGUMENT);
     });
 });
