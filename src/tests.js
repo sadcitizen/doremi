@@ -8,6 +8,7 @@ import doremi, {
     number,
     object,
     random,
+    regExp,
     string
 } from '.';
 
@@ -26,6 +27,7 @@ describe('doremi', () => {
         expect(doremi).toHaveProperty('number', number);
         expect(doremi).toHaveProperty('object', object);
         expect(doremi).toHaveProperty('random', random);
+        expect(doremi).toHaveProperty('regExp', regExp);
         expect(doremi).toHaveProperty('string', string);
     });
 });

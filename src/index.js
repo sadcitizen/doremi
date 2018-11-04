@@ -7,6 +7,7 @@ import math from './math';
 import number from './number';
 import object from './object';
 import random from './random';
+import regExp from './reg-exp';
 import string from './string';
 
 export { array };
@@ -18,6 +19,7 @@ export { math };
 export { number };
 export { object };
 export { random };
+export { regExp };
 export { string };
 
 export default {
@@ -30,5 +32,6 @@ export default {
     number,
     object,
     random,
+    regExp,
     string
 };
