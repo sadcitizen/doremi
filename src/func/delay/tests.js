@@ -11,13 +11,13 @@ describe('func/delay()', () => {
         const fn = jest.fn();
         const delayed = delay(fn, 50);
 
-        delayed();
+        delayed('a', 0);
 
         jest.runTimersToTime(49);
         expect(fn).not.toHaveBeenCalled();
 
         jest.runTimersToTime(1);
-        expect(fn).toHaveBeenCalled();
+        expect(fn).toHaveBeenCalledWith('a', 0);
 
         jest.clearAllTimers();
     });
