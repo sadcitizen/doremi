@@ -7,6 +7,7 @@ import isNumber from './is-number';
 import isObject from './is-object';
 import isSet from './is-set';
 import isString from './is-string';
+import isSymbol from './is-symbol';
 import isWeakMap from './is-weak-map';
 import isWeakSet from './is-weak-set';
 
@@ -19,6 +20,7 @@ export { isNumber };
 export { isObject };
 export { isSet };
 export { isString };
+export { isSymbol };
 export { isWeakMap };
 export { isWeakSet };
 
@@ -32,6 +34,7 @@ export default {
     isObject,
     isSet,
     isString,
+    isSymbol,
     isWeakMap,
     isWeakSet
 };

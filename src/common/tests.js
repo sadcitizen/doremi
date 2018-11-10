@@ -8,6 +8,7 @@ import common, {
     isObject,
     isSet,
     isString,
+    isSymbol,
     isWeakMap,
     isWeakSet
 } from '.';
@@ -27,6 +28,7 @@ describe('doremi/common', () => {
         expect(common).toHaveProperty('isObject', isObject);
         expect(common).toHaveProperty('isSet', isSet);
         expect(common).toHaveProperty('isString', isString);
+        expect(common).toHaveProperty('isSymbol', isSymbol);
         expect(common).toHaveProperty('isWeakMap', isWeakMap);
         expect(common).toHaveProperty('isWeakSet', isWeakSet);
     });
