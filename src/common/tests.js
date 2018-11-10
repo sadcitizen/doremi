@@ -3,9 +3,13 @@ import common, {
     isDate,
     isDefined,
     isFunction,
+    isMap,
     isNumber,
     isObject,
-    isString
+    isSet,
+    isString,
+    isWeakMap,
+    isWeakSet
 } from '.';
 
 describe('doremi/common', () => {
@@ -18,8 +22,12 @@ describe('doremi/common', () => {
         expect(common).toHaveProperty('isDate', isDate);
         expect(common).toHaveProperty('isDefined', isDefined);
         expect(common).toHaveProperty('isFunction', isFunction);
+        expect(common).toHaveProperty('isMap', isMap);
         expect(common).toHaveProperty('isNumber', isNumber);
         expect(common).toHaveProperty('isObject', isObject);
+        expect(common).toHaveProperty('isSet', isSet);
         expect(common).toHaveProperty('isString', isString);
+        expect(common).toHaveProperty('isWeakMap', isWeakMap);
+        expect(common).toHaveProperty('isWeakSet', isWeakSet);
     });
 });
