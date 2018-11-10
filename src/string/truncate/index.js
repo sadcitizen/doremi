@@ -1,5 +1,6 @@
 import { INVALID_STRING_ARGUMENT } from '../../constants/errors';
 import isString from '../../common/is-string';
+import trim from '../trim';
 
 /**
  * Truncates the given string if it is longer than the given maximum string length.
@@ -25,9 +26,9 @@ export default function (value, limit = 0, sfx, safe = false) {
 
     sfx = sfx || '...'; // eslint-disable-line no-param-reassign
 
-    let result = value.substr(0, limit - sfx.length + (safe ? 1 : 0));
+    let result = value.slice(0, limit - sfx.length + (safe ? 1 : 0));
 
-    result = safe ? result.substr(0, result.lastIndexOf(' ')) : result;
+    result = safe ? result.slice(0, result.lastIndexOf(' ')) : trim(result);
 
     return result + sfx;
 }

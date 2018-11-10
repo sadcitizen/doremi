@@ -5,11 +5,17 @@ describe('string/truncate()', () => {
     const string = 'lorem ipsum dolor sit amet';
 
     test('limits number of chars', () => {
-        expect(truncate(string, 10).length).toBeLessThan(11);
+        expect(truncate(string, 5)).toBe('lo...');
+        expect(truncate(string, 6)).toBe('lor...');
+        expect(truncate(string, 7)).toBe('lore...');
+        expect(truncate(string, 8)).toBe('lorem...');
+        expect(truncate(string, 9)).toBe('lorem...');
         expect(truncate(string, 10)).toBe('lorem i...');
-
-        expect(truncate(string, 14).length).toBeLessThan(15);
+        expect(truncate(string, 11)).toBe('lorem ip...');
+        expect(truncate(string, 12)).toBe('lorem ips...');
+        expect(truncate(string, 13)).toBe('lorem ipsu...');
         expect(truncate(string, 14)).toBe('lorem ipsum...');
+        expect(truncate(string, 15)).toBe('lorem ipsum...');
     });
 
     test('does not crop string if length is less than limit', () => {
