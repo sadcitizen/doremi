@@ -14,5 +14,15 @@ export default function (fn, ms, context = null) {
         throw new TypeError(INVALID_FUNCTION_ARGUMENT);
     }
 
-    return (...args) => setTimeout(() => fn.apply(context, args), ms);
+    return function (...args) {
+        const timeout = setTimeout(() => fn.apply(context, args), ms);
+
+        return {
+            cancel() {
+                if (timeout) {
+                    clearTimeout(timeout);
+                }
+            }
+        };
+    };
 }
