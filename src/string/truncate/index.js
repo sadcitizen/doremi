@@ -20,6 +20,10 @@ export default function (value, limit = 0, sfx, safe = false) {
         throw new TypeError(INVALID_STRING_ARGUMENT);
     }
 
+    if (limit <= 0) {
+        return '';
+    }
+
     if (value.length <= limit) {
         return value;
     }

@@ -22,6 +22,12 @@ describe('string/truncate()', () => {
         expect(truncate(string, 100)).toBe('lorem ipsum dolor sit amet');
     });
 
+    test('returns empty string if limit is negative or zero', () => {
+        expect(truncate(string, 0)).toBe('');
+        expect(truncate(string, -1)).toBe('');
+        expect(truncate(string, -10)).toBe('');
+    });
+
     test('appends string param', () => {
         const truncated = truncate(string, 10, '--');
 
