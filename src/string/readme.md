@@ -10,6 +10,7 @@
 - [`isBlank`](./is-blank)
 - [`kebabCase`](./kebab-case)
 - [`last`](./last)
+- [`lines`](./lines)
 - [`pad`](./pad)
 - [`padLeft`](./pad-left)
 - [`padRight`](./pad-right)

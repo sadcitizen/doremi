@@ -8,6 +8,7 @@ import first from './first';
 import isBlank from './is-blank';
 import kebabCase from './kebab-case';
 import last from './last';
+import lines from './lines';
 import pad from './pad';
 import padLeft from './pad-left';
 import padRight from './pad-right';
@@ -31,6 +32,7 @@ export { first };
 export { isBlank };
 export { kebabCase };
 export { last };
+export { lines };
 export { pad };
 export { padLeft };
 export { padRight };
@@ -55,6 +57,7 @@ export default {
     isBlank,
     kebabCase,
     last,
+    lines,
     pad,
     padLeft,
     padRight,
