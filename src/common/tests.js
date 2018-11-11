@@ -6,6 +6,7 @@ import common, {
     isMap,
     isNumber,
     isObject,
+    isRegExp,
     isSet,
     isString,
     isSymbol,
@@ -26,6 +27,7 @@ describe('doremi/common', () => {
         expect(common).toHaveProperty('isMap', isMap);
         expect(common).toHaveProperty('isNumber', isNumber);
         expect(common).toHaveProperty('isObject', isObject);
+        expect(common).toHaveProperty('isRegExp', isRegExp);
         expect(common).toHaveProperty('isSet', isSet);
         expect(common).toHaveProperty('isString', isString);
         expect(common).toHaveProperty('isSymbol', isSymbol);

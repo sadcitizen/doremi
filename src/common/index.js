@@ -5,6 +5,7 @@ import isFunction from './is-function';
 import isMap from './is-map';
 import isNumber from './is-number';
 import isObject from './is-object';
+import isRegExp from './is-reg-exp';
 import isSet from './is-set';
 import isString from './is-string';
 import isSymbol from './is-symbol';
@@ -18,6 +19,7 @@ export { isFunction };
 export { isMap };
 export { isNumber };
 export { isObject };
+export { isRegExp };
 export { isSet };
 export { isString };
 export { isSymbol };
@@ -32,6 +34,7 @@ export default {
     isMap,
     isNumber,
     isObject,
+    isRegExp,
     isSet,
     isString,
     isSymbol,

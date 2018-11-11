@@ -7,6 +7,7 @@
 - [`isMap`](./is-map)
 - [`isNumber`](./is-number)
 - [`isObject`](./is-object)
+- [`isRegExp`](./is-reg-exp)
 - [`isSet`](./is-set)
 - [`isString`](./is-string)
 - [`isSymbol`](./is-symbol)
