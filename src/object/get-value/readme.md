@@ -1,4 +1,4 @@
-# getValue(object, path, defaultValue)
+# getValue(object, path, [defaultValue]): *
 
 Gets a nested value of an object by property path. Returns a default value if it is specified.
 
@@ -7,7 +7,7 @@ Gets a nested value of an object by property path. Returns a default value if it
 ```js
 import getValue from 'doremi/object/get-value';
 
-const target = {
+const source = {
     a: {
         b: {
             c: 'd'
@@ -20,9 +20,9 @@ const target = {
     i: ['j', 'k', 'l', { m: 'n', o: { p: 'q' } }]
 };
 
-getValue(target, 'a.b');
+getValue(source, ['a', 'b']);
 // => { c: 'd' }
 
-getValue(target, 'i.3.o');
+getValue(source, ['i', 3, 'o']);
 // => { p: 'q' }
 ```
