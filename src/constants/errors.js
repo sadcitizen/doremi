@@ -7,6 +7,7 @@ export const INVALID_STRING_SECOND_ARGUMENT = 'Second argument must be a string'
 export const INVALID_STRING_THIRD_ARGUMENT = 'Third argument must be a string';
 export const INVALID_STRINGS = 'All arguments must be strings';
 export const INVALID_FUNCTION_ARGUMENT = 'Argument is not a function';
+export const INVALID_FUNCTION_FIRST_ARGUMENT = 'First argument is not a function';
 export const INVALID_NUMBER_ARGUMENT = 'Argument is not a number';
 export const INVALID_NUMBER_FIRST_ARGUMENT = 'First argument is not a number';
 export const INVALID_NUMBER_SECOND_ARGUMENT = 'Second argument is not a number';
