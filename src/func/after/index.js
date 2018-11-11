@@ -2,15 +2,16 @@ import {
     INVALID_FUNCTION_FIRST_ARGUMENT,
     INVALID_NUMBER_SECOND_ARGUMENT
 } from '../../constants/errors';
+import UNDEF from '../../constants/undefined';
 import isFunction from '../../common/is-function';
 import isNumber from '../../common/is-number';
 
 /**
- * Creates a new function that invokes `fn` while it's called less than `times` and store the result of last call.
+ * Creates a new function that invokes `fn` once it's called `times` or more times.
  *
  * @memberOf func
  * @param {Function} fn The function to invoke.
- * @param {number} times The number of calls before `fn` is no longer invoked.
+ * @param {number} times The number of calls before `fn` is invoked.
  * @return {Function} Returns the new restricted function.
  */
 export default function (fn, times) {
@@ -26,19 +27,15 @@ export default function (fn, times) {
         throw new RangeError('Second argument must be a positive number');
     }
 
-    let result;
-
-    return function (...args) {
+    return (...args) => {
         /* eslint-disable no-param-reassign */
         /* eslint-disable no-plusplus */
-        if (--times > 0) {
-            result = fn(...args);
-        } else {
-            fn = null;
+        if (--times < 1) {
+            return fn(...args);
         }
 
-        return result;
         /* eslint-enable no-plusplus */
         /* eslint-enable no-param-reassign */
+        return UNDEF;
     };
 }

@@ -1,3 +1,5 @@
+import after from './after';
+import before from './before';
 import compose from './compose';
 import defer from './defer';
 import delay from './delay';
@@ -8,6 +10,8 @@ import partialRight from './partial-right';
 import pipe from './pipe';
 import repeat from './repeat';
 
+export { after };
+export { before };
 export { compose };
 export { defer };
 export { delay };
@@ -19,6 +23,8 @@ export { pipe };
 export { repeat };
 
 export default {
+    after,
+    before,
     compose,
     defer,
     delay,

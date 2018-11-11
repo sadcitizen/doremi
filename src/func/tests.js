@@ -1,4 +1,6 @@
 import func, {
+    after,
+    before,
     compose,
     defer,
     delay,
@@ -16,6 +18,8 @@ describe('doremi/func', () => {
     });
 
     test('doremi/func has correct properties', () => {
+        expect(func).toHaveProperty('after', after);
+        expect(func).toHaveProperty('before', before);
         expect(func).toHaveProperty('compose', compose);
         expect(func).toHaveProperty('defer', defer);
         expect(func).toHaveProperty('delay', delay);

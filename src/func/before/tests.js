@@ -1,4 +1,7 @@
-import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
+import {
+    INVALID_FUNCTION_FIRST_ARGUMENT,
+    INVALID_NUMBER_SECOND_ARGUMENT
+} from '../../constants/errors';
 import before from '.';
 
 describe('func/before()', () => {
@@ -17,6 +20,9 @@ describe('func/before()', () => {
     });
 
     test('throws exception if function is invalid', () => {
-        expect(() => before('jest.fn()', 100)).toThrow(INVALID_FUNCTION_ARGUMENT);
+        expect(() => before('jest.fn()', 100)).toThrow(INVALID_FUNCTION_FIRST_ARGUMENT);
+        expect(() => before(jest.fn(), '100')).toThrow(INVALID_NUMBER_SECOND_ARGUMENT);
+        expect(() => before(jest.fn(), 0)).toThrow('Second argument must be a positive number');
+        expect(() => before(jest.fn(), -1)).toThrow('Second argument must be a positive number');
     });
 });

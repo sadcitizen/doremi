@@ -1,5 +1,7 @@
 # func
 
+- [`after`](./after)
+- [`before`](./before)
 - [`compose`](./compose)
 - [`defer`](./defer)
 - [`delay`](./delay)
