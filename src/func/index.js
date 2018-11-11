@@ -5,6 +5,7 @@ import defer from './defer';
 import delay from './delay';
 import identity from './identity';
 import memoize from './memoize';
+import once from './once';
 import partial from './partial';
 import partialRight from './partial-right';
 import pipe from './pipe';
@@ -17,6 +18,7 @@ export { defer };
 export { delay };
 export { identity };
 export { memoize };
+export { once };
 export { partial };
 export { partialRight };
 export { pipe };
@@ -30,6 +32,7 @@ export default {
     delay,
     identity,
     memoize,
+    once,
     partial,
     partialRight,
     pipe,
