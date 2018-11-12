@@ -1,4 +1,4 @@
-# fixed(num, precision = 2)
+# fixed(num, [digits]): string
 
 Formats a number using fixed-point notation (like Number.toFixed(), but without rounding).
 

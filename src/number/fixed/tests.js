@@ -13,9 +13,11 @@ describe('number/fixed()', () => {
         expect(fixed(1.23456789, 7)).toBe('1.2345678');
         expect(fixed(1.23456789, 8)).toBe('1.23456789');
         expect(fixed(1.23456789, 9)).toBe('1.234567890');
+
+        expect(fixed(1.23456789e+19, 2)).toBe('12345678900000000000.00');
     });
 
-    test('treats negative precision as zero', () => {
+    test('treats negative digits count as zero', () => {
         expect(fixed(1234.56789, -3)).toBe('1234');
         expect(fixed(12.3456789, -4)).toBe('12');
     });
