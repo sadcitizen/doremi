@@ -7,7 +7,7 @@
     "lint": "eslint src tests --config .eslintrc",
     "test": "jest",
     "build": "babel src --out-dir .",
-    "clean": "rimraf array common date func internal logic number object random string index.js test.js",
+    "clean": "rimraf array common constants date func logic math number object random reg-exp string index.js test.js",
     "prepublish": "npm run build",
     "postpublish": "npm run clean && git push --follow-tags"
   },
@@ -25,7 +25,6 @@
   },
   "devDependencies": {
     "@sadcitizen/eslint-config": "^0.1.0",
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
