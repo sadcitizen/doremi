@@ -4,6 +4,7 @@ import isFunction from '../../common/is-function';
 /**
  * Creates a new function that will always invoke `fn` after `ms` milliseconds.
  *
+ * @memberOf func
  * @param {Function} fn The function to invoke.
  * @param {number} ms The number of milliseconds to delay invocation.
  * @param {*} [context] The context of invocation.
