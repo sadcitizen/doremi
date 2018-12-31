@@ -4,6 +4,7 @@ import array, {
     differenceWith,
     equals,
     first,
+    hasValue,
     includesWith,
     intersectionWith,
     last,
@@ -23,6 +24,7 @@ describe('doremi/array', () => {
         expect(array).toHaveProperty('differenceWith', differenceWith);
         expect(array).toHaveProperty('equals', equals);
         expect(array).toHaveProperty('first', first);
+        expect(array).toHaveProperty('hasValue', hasValue);
         expect(array).toHaveProperty('includesWith', includesWith);
         expect(array).toHaveProperty('intersectionWith', intersectionWith);
         expect(array).toHaveProperty('last', last);

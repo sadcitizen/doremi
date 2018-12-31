@@ -5,6 +5,7 @@
 - [`differenceWith`](./difference-with)
 - [`equals`](./equals)
 - [`first`](./first)
+- [`hasValue`](./has-value)
 - [`includesWith`](./includes-with)
 - [`intersectionWith`](./intersection-with)
 - [`last`](./last)
