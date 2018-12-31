@@ -5,7 +5,7 @@ Returns an array with first element of an array. Passing `length` will return th
 ## Usage
 
 ```js
-import at from 'doremi/array/first';
+import first from 'doremi/array/first';
 
 first([1, 2, 3, 4, 5]);
 // => [1]
