@@ -5,6 +5,7 @@
 - [`compare`](./compare)
 - [`endOf`](./end-of)
 - [`equals`](./equals)
+- [`format`](./format)
 - [`isFuture`](./is-future)
 - [`isLeapYear`](./is-leap-year)
 - [`isPast`](./is-past)
