@@ -8,6 +8,4 @@ import delay from '../delay';
  * @param {*} [context] The context of invocation.
  * @returns {Function} Returns new delayed function.
  */
-export default function (fn, context = null) {
-    return delay(fn, 1, context);
-}
+export default (fn, context = null) => delay(fn, 1, context);
