@@ -8,5 +8,3 @@
 - [`isInteger`](./is-integer)
 - [`isOdd`](./is-odd)
 - [`sign`](./sign)
-
-
