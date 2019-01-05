@@ -3,6 +3,7 @@
 - [`after`](./after)
 - [`before`](./before)
 - [`compose`](./compose)
+- [`debounce`](./debounce)
 - [`defer`](./defer)
 - [`delay`](./delay)
 - [`identity`](./identity)

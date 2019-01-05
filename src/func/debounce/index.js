@@ -2,14 +2,16 @@ import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 import isFunction from '../../common/is-function';
 
 /**
+ * Creates a debounced function that delays its execution until after `ms` milliseconds have passed.
+ * The debounced function comes with a `cancel` method to cancel delayed invocation.
  *
  * @memberOf func
- * @param {Function} fn
- * @param {number} threshold
- * @param {boolean} isLeading
+ * @param {Function} fn The function to debounce.
+ * @param {number} [ms] The number of milliseconds to delay invocation.
+ * @param {boolean} [isLeading]
  * @returns {Function} Returns new debounced function.
  */
-export default function (fn, threshold = 100, isLeading = false) {
+export default function (fn, ms = 100, isLeading = false) {
     if (!isFunction(fn)) {
         throw new TypeError(INVALID_FUNCTION_ARGUMENT);
     }
@@ -37,7 +39,7 @@ export default function (fn, threshold = 100, isLeading = false) {
             }
 
             timeout = null;
-        }, threshold);
+        }, ms);
 
         return result;
     }

@@ -1,6 +1,7 @@
 import after from './after';
 import before from './before';
 import compose from './compose';
+import debounce from './debounce';
 import defer from './defer';
 import delay from './delay';
 import identity from './identity';
@@ -14,6 +15,7 @@ import repeat from './repeat';
 export { after };
 export { before };
 export { compose };
+export { debounce };
 export { defer };
 export { delay };
 export { identity };
@@ -28,6 +30,7 @@ export default {
     after,
     before,
     compose,
+    debounce,
     defer,
     delay,
     identity,
