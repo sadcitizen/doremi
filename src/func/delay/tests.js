@@ -28,12 +28,12 @@ describe('func/delay()', () => {
         const fn = jest.fn();
         const delayed = delay(fn, 50);
 
-        const result = delayed();
+        delayed();
 
         jest.runTimersToTime(45);
         expect(fn).not.toHaveBeenCalled();
 
-        result.cancel();
+        delayed.cancel();
 
         jest.runTimersToTime(100);
         expect(fn).not.toHaveBeenCalled();

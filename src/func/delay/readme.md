@@ -1,14 +1,14 @@
 # delay(fn, ms, context): Function
 
-Creates a new function that will always invoke `fn` after `ms` milliseconds.
+Creates a new function that will always invoke `fn` after `ms` milliseconds have passed.
 
 ## Usage
 
 ```js
 import delay from 'doremi/func/delay';
 
-const delayedLog = delay(console.log, 50);
+const log = delay(console.log, 50);
 
-delayedLog('Hi!');
+log('Hi!');
 // => 'Hi!'
 ```

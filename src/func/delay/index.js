@@ -2,7 +2,7 @@ import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 import isFunction from '../../common/is-function';
 
 /**
- * Creates a new function that will always invoke `fn` after `ms` milliseconds.
+ * Creates a new function that will always invoke `fn` after `ms` milliseconds have passed.
  *
  * @memberOf func
  * @param {Function} fn The function to invoke.
@@ -15,15 +15,19 @@ export default function (fn, ms, context = null) {
         throw new TypeError(INVALID_FUNCTION_ARGUMENT);
     }
 
-    return function (...args) {
-        const timeout = setTimeout(() => fn.apply(context, args), ms);
+    let timeout;
 
-        return {
-            cancel() {
-                if (timeout) {
-                    clearTimeout(timeout);
-                }
-            }
-        };
-    };
+    function delayed(...args) {
+        timeout = setTimeout(() => fn.apply(context, args), ms);
+    }
+
+    function cancel() {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+    }
+
+    delayed.cancel = cancel;
+
+    return delayed;
 }
