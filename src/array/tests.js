@@ -3,7 +3,10 @@ import array, {
     compact,
     differenceWith,
     equals,
+    findLastIndex,
     first,
+    flatten,
+    flattenWithDepth,
     hasValue,
     includesWith,
     intersectionWith,
@@ -23,7 +26,10 @@ describe('doremi/array', () => {
         expect(array).toHaveProperty('compact', compact);
         expect(array).toHaveProperty('differenceWith', differenceWith);
         expect(array).toHaveProperty('equals', equals);
+        expect(array).toHaveProperty('findLastIndex', findLastIndex);
         expect(array).toHaveProperty('first', first);
+        expect(array).toHaveProperty('flatten', flatten);
+        expect(array).toHaveProperty('flattenWithDepth', flattenWithDepth);
         expect(array).toHaveProperty('hasValue', hasValue);
         expect(array).toHaveProperty('includesWith', includesWith);
         expect(array).toHaveProperty('intersectionWith', intersectionWith);
