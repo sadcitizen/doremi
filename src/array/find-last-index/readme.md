@@ -17,4 +17,7 @@ findLastIndex(array, isBoolean);
 
 findLastIndex(array, isNumber);
 // => 2
+
+findLastIndex(array, x => x === 4);
+// => -1
 ```

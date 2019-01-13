@@ -21,7 +21,7 @@ export default function (array, predicate, context = null) {
         throw new TypeError(INVALID_FUNCTION_SECOND_ARGUMENT);
     }
 
-    for (let i = array.length; i >= 0; i--) {
+    for (let i = array.length - 1; i >= 0; i--) {
         if (predicate.call(context, array[i], i, array)) {
             return i;
         }
