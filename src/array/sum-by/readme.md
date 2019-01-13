@@ -1,6 +1,6 @@
 # sumBy(array, [iteratee])
 
-Sums all values in the array.
+Sums all values in the array produced by `iteratee` applied to each element in the array.
 
 ## Usage
 

@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_FUNCTION_SECOND_ARGUMENT } from '../../constants/errors';
 import sumBy from '.';
 
 describe('array/sumBy()', () => {
@@ -32,5 +33,15 @@ describe('array/sumBy()', () => {
 
         expect(sumBy(guests, x => x.age)).toBe(98);
         expect(sumBy(guests, x => x.name.length)).toBe(22);
+    });
+
+    test('throws type error if the given value is not an array', () => {
+        expect(() => sumBy({})).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => sumBy('[]')).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+    });
+
+    test('throws type error if the given iteratee is not a function', () => {
+        expect(() => sumBy([], 'a')).toThrow(INVALID_FUNCTION_SECOND_ARGUMENT);
+        expect(() => sumBy([], {})).toThrow(INVALID_FUNCTION_SECOND_ARGUMENT);
     });
 });
