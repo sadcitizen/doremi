@@ -1,6 +1,6 @@
-# sortBy(array, [iteratee])
+# sortBy(array, [iteratee=identity])
 
-Sorts the array.
+Sorts the elements of the given array.
 
 ## Usage
 
