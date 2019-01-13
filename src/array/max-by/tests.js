@@ -1,4 +1,4 @@
-import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_FUNCTION_SECOND_ARGUMENT } from '../../constants/errors';
 import maxBy from '.';
 
 describe('array/maxBy()', () => {
@@ -38,5 +38,10 @@ describe('array/maxBy()', () => {
     test('throws type error if the given value is not an array', () => {
         expect(() => maxBy({})).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
         expect(() => maxBy('[]')).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+    });
+
+    test('throws type error if the given iteratee is not a function', () => {
+        expect(() => maxBy([], 'a')).toThrow(INVALID_FUNCTION_SECOND_ARGUMENT);
+        expect(() => maxBy([], {})).toThrow(INVALID_FUNCTION_SECOND_ARGUMENT);
     });
 });

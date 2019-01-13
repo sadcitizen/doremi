@@ -1,4 +1,4 @@
-import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_FUNCTION_SECOND_ARGUMENT } from '../../constants/errors';
 import minBy from '.';
 
 describe('array/minBy()', () => {
@@ -38,5 +38,10 @@ describe('array/minBy()', () => {
     test('throws type error if the given value is not an array', () => {
         expect(() => minBy({})).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
         expect(() => minBy('[]')).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+    });
+
+    test('throws type error if the given iteratee is not a function', () => {
+        expect(() => minBy([], 'a')).toThrow(INVALID_FUNCTION_SECOND_ARGUMENT);
+        expect(() => minBy([], {})).toThrow(INVALID_FUNCTION_SECOND_ARGUMENT);
     });
 });

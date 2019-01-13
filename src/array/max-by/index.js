@@ -1,4 +1,5 @@
-import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
+import { INVALID_ARRAY_FIRST_ARGUMENT, INVALID_FUNCTION_SECOND_ARGUMENT } from '../../constants/errors';
+import isFunction from '../../common/is-function';
 
 /**
  * Returns the element in the array with the greatest value.
@@ -11,6 +12,10 @@ import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 export default function (array, iteratee) {
     if (!Array.isArray(array)) {
         throw new TypeError(INVALID_ARRAY_FIRST_ARGUMENT);
+    }
+
+    if (iteratee && !isFunction(iteratee)) {
+        throw new TypeError(INVALID_FUNCTION_SECOND_ARGUMENT);
     }
 
     if (array.length === 0) {
