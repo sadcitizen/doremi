@@ -2,7 +2,7 @@ import { INVALID_FUNCTION_ARGUMENT } from '../../constants/errors';
 import isFunction from '../../common/is-function';
 
 /**
- * Creates a debounced function that delays its execution until after `ms` milliseconds have passed.
+ * Creates a debounced function that delays the execution of `fn` until after `ms` milliseconds have passed.
  * The debounced function comes with a `cancel` method to cancel delayed invocation.
  *
  * @memberOf func

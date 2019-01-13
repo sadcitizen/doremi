@@ -1,3 +1,4 @@
+import { INVALID_ARRAY_FIRST_ARGUMENT } from '../../constants/errors';
 import maxBy from '.';
 
 describe('array/maxBy()', () => {
@@ -32,5 +33,10 @@ describe('array/maxBy()', () => {
 
         expect(maxBy(guests, x => x.age)).toEqual({ name: 'Donald', age: 30 });
         expect(maxBy(guests, x => x.name.length)).toEqual({ name: 'Hillary', age: 22 });
+    });
+
+    test('throws type error if the given value is not an array', () => {
+        expect(() => maxBy({})).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
+        expect(() => maxBy('[]')).toThrow(INVALID_ARRAY_FIRST_ARGUMENT);
     });
 });
