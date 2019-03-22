@@ -30,20 +30,3 @@ export { today };
 export { tomorrow };
 export { yesterday };
 
-export default {
-    add,
-    clone,
-    compare,
-    endOf,
-    equals,
-    isFuture,
-    isPast,
-    isToday,
-    isTomorrow,
-    isValid,
-    isYesterday,
-    startOf,
-    today,
-    tomorrow,
-    yesterday
-};
