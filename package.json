@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src tests --config .eslintrc",
     "test": "jest",
-    "build": "babel src --out-dir .",
+    "build": "babel src --out-dir . --copy-files",
     "clean": "rimraf array common constants date func logic math number object random reg-exp string index.js test.js",
     "prepublish": "npm run build",
     "postpublish": "npm run clean && git push --follow-tags"
