@@ -27,6 +27,18 @@ describe('date/add()', () => {
         expect(add(jan31, 1, 'months')).to.deep.equal(feb28);
     });
 
+    it('work with tail of year', () => {
+        const dec15 = new Date(2015, 11, 31);
+        const jan16 = new Date(2016, 0, 31);
+
+        expect(add(dec15, 1, 'months')).to.deep.equal(jan16);
+
+        const nov14 = new Date(2014, 10, 31);
+        const mar16 = new Date(2016, 2, 31);
+
+        expect(add(nov14, 16, 'months')).to.deep.equal(mar16);
+    });
+
     it('work with tail of month of leap year', () => {
         const jan31 = new Date(2016, 0, 31);
         const feb29 = new Date(2016, 1, 29);

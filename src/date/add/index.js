@@ -14,6 +14,10 @@ const adders = {
             next = 12 + next;
         }
 
+        if (next > 11) {
+            next = 0;
+        }
+
         target.setMonth(target.getMonth() + count);
 
         if (target.getMonth() !== next) {
